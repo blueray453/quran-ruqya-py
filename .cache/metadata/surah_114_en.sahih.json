@@ -1,0 +1,85 @@
+{
+  "number": 114,
+  "name": "سُورَةُ النَّاسِ",
+  "englishName": "An-Naas",
+  "englishNameTranslation": "Mankind",
+  "revelationType": "Meccan",
+  "numberOfAyahs": 6,
+  "ayahs": [
+    {
+      "number": 6231,
+      "text": "Say, \"I seek refuge in the Lord of mankind,",
+      "numberInSurah": 1,
+      "juz": 30,
+      "manzil": 7,
+      "page": 604,
+      "ruku": 556,
+      "hizbQuarter": 240,
+      "sajda": false
+    },
+    {
+      "number": 6232,
+      "text": "The Sovereign of mankind.",
+      "numberInSurah": 2,
+      "juz": 30,
+      "manzil": 7,
+      "page": 604,
+      "ruku": 556,
+      "hizbQuarter": 240,
+      "sajda": false
+    },
+    {
+      "number": 6233,
+      "text": "The God of mankind,",
+      "numberInSurah": 3,
+      "juz": 30,
+      "manzil": 7,
+      "page": 604,
+      "ruku": 556,
+      "hizbQuarter": 240,
+      "sajda": false
+    },
+    {
+      "number": 6234,
+      "text": "From the evil of the retreating whisperer -",
+      "numberInSurah": 4,
+      "juz": 30,
+      "manzil": 7,
+      "page": 604,
+      "ruku": 556,
+      "hizbQuarter": 240,
+      "sajda": false
+    },
+    {
+      "number": 6235,
+      "text": "Who whispers [evil] into the breasts of mankind -",
+      "numberInSurah": 5,
+      "juz": 30,
+      "manzil": 7,
+      "page": 604,
+      "ruku": 556,
+      "hizbQuarter": 240,
+      "sajda": false
+    },
+    {
+      "number": 6236,
+      "text": "From among the jinn and mankind.\"",
+      "numberInSurah": 6,
+      "juz": 30,
+      "manzil": 7,
+      "page": 604,
+      "ruku": 556,
+      "hizbQuarter": 240,
+      "sajda": false
+    }
+  ],
+  "edition": {
+    "identifier": "en.sahih",
+    "language": "en",
+    "name": "Saheeh International",
+    "englishName": "Saheeh International",
+    "format": "text",
+    "type": "translation",
+    "direction": "ltr"
+  }
+}
