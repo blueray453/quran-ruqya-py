@@ -1,0 +1,14 @@
+pyproject.toml
+ruqya-quran.desktop
+icons/quran.png
+ruqya_quran/__init__.py
+ruqya_quran/__main__.py
+ruqya_quran/config.json
+ruqya_quran/custom_playlist.json
+ruqya_quran/main.py
+ruqya_quran.egg-info/PKG-INFO
+ruqya_quran.egg-info/SOURCES.txt
+ruqya_quran.egg-info/dependency_links.txt
+ruqya_quran.egg-info/entry_points.txt
+ruqya_quran.egg-info/requires.txt
+ruqya_quran.egg-info/top_level.txt

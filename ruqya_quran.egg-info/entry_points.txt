@@ -1,0 +1,2 @@
+[console_scripts]
+ruqya-quran = ruqya_quran.main:main

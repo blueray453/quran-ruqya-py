@@ -1,12 +1,28 @@
 #!/usr/bin/env python3
+"""
+ruqya_quran.main — Quranic Ruqya player.
+
+User files (created on first run by copying packaged templates):
+  ~/.config/ruqya-quran/config.json
+  ~/.config/ruqya-quran/custom_playlist.json
+
+Cache (regenerated as needed):
+  ~/.cache/ruqya-quran/metadata/
+  ~/.cache/ruqya-quran/audio/
+
+Run:  ruqya-quran
+"""
 
 import os
 import sys
 import json
 import time
+import shutil
 import logging
-from dataclasses import dataclass, field
+from pathlib import Path
+from dataclasses import dataclass
 from typing import Optional
+from importlib.resources import files as _pkg_files
 
 import requests
 
@@ -30,52 +46,86 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(mess
 log = logging.getLogger("quran_player")
 
 # ------------------------------------------------------------
-# Configuration
+# XDG paths
 # ------------------------------------------------------------
 
-RECITER = "ar.abdurrahmaansudais"
-FONT_FILE = os.path.expanduser("/usr/share/fonts/opentype/fonts-hosny-amiri/AmiriQuran.ttf")
+def _config_dir() -> Path:
+    xdg = os.environ.get("XDG_CONFIG_HOME")
+    base = Path(xdg) if xdg else Path.home() / ".config"
+    return base / "ruqya-quran"
 
-# Translation edition shown under the Arabic text. Set to None to disable
-# translations entirely (app falls back to Arabic-only, old behavior).
-# Any alquran.cloud text edition identifier works, e.g. "en.sahih",
-# "en.pickthall", "ur.jalandhry", "fr.hamidullah", etc.
+def _cache_dir() -> Path:
+    xdg = os.environ.get("XDG_CACHE_HOME")
+    base = Path(xdg) if xdg else Path.home() / ".cache"
+    return base / "ruqya-quran"
 
-# Find Translations
-# curl -s "https://api.alquran.cloud/v1/edition?format=text&type=translation" | jq '.data[] | select(.language == "en" or .language == "bn")'
+CONFIG_DIR = _config_dir()
+CONFIG_PATH = CONFIG_DIR / "config.json"
+CUSTOM_PLAYLIST_PATH = CONFIG_DIR / "custom_playlist.json"
 
-TRANSLATION_EDITION = "en.sahih"
+CACHE_DIR = _cache_dir()
+METADATA_CACHE_DIR = CACHE_DIR / "metadata"
+AUDIO_CACHE_DIR = CACHE_DIR / "audio"
 
-REQUEST_TIMEOUT = 10  # seconds
-MAX_RETRIES = 2
-RETRY_BACKOFF_BASE = 0.5  # seconds, doubles each retry
+TEMPLATE_CONFIG_NAME = "config.json"
+TEMPLATE_PLAYLIST_NAME = "custom_playlist.json"
 
-# Bismillah is just Surah 1, Ayah 1's own recitation — no separate asset or
-# download needed, it rides along with the normal per-ayah cache/download path.
+def _ensure_user_files() -> None:
+    """On first run, copy the packaged templates into ~/.config/ruqya-quran/."""
+    CONFIG_DIR.mkdir(parents=True, exist_ok=True)
+
+    if not CONFIG_PATH.exists():
+        try:
+            src = _pkg_files(__package__).joinpath(TEMPLATE_CONFIG_NAME)
+            with src.open("rb") as fsrc, open(CONFIG_PATH, "wb") as fdst:
+                shutil.copyfileobj(fsrc, fdst)
+            log.info("Created default config at %s", CONFIG_PATH)
+        except OSError as e:
+            log.warning("Could not create %s: %s", CONFIG_PATH, e)
+
+    if not CUSTOM_PLAYLIST_PATH.exists():
+        try:
+            src = _pkg_files(__package__).joinpath(TEMPLATE_PLAYLIST_NAME)
+            with src.open("rb") as fsrc, open(CUSTOM_PLAYLIST_PATH, "wb") as fdst:
+                shutil.copyfileobj(fsrc, fdst)
+            log.info("Created default custom playlist at %s", CUSTOM_PLAYLIST_PATH)
+        except OSError as e:
+            log.warning("Could not create %s: %s", CUSTOM_PLAYLIST_PATH, e)
+
+def _load_config() -> dict:
+    _ensure_user_files()
+    try:
+        with open(CONFIG_PATH, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except (json.JSONDecodeError, OSError) as e:
+        log.warning("Config unreadable (%s); using packaged defaults", e)
+        src = _pkg_files(__package__).joinpath(TEMPLATE_CONFIG_NAME)
+        return json.loads(src.read_text(encoding="utf-8"))
+
+_CFG = _load_config()
+
+# ------------------------------------------------------------
+# Configurable values (all overridable in config.json)
+# ------------------------------------------------------------
+
+RECITER = _CFG.get("reciter", "ar.abdurrahmaansudais")
+TRANSLATION_EDITION = _CFG.get("translation_edition", "en.sahih")
+FONT_FILE = os.path.expanduser(_CFG.get("font_file", "/usr/share/fonts/opentype/fonts-hosny-amiri/AmiriQuran.ttf"))
+CUSTOM_PLAYLIST_SEPARATOR_LABEL = _CFG.get("custom_playlist_separator_label", "Duas")
+REQUEST_TIMEOUT = float(_CFG.get("request_timeout", 10))
+MAX_RETRIES = int(_CFG.get("max_retries", 2))
+RETRY_BACKOFF_BASE = float(_CFG.get("retry_backoff_base", 0.5))
+
+# ------------------------------------------------------------
+# Fixed constants
+# ------------------------------------------------------------
+
 BISMILLAH_SURAH = 1
 BISMILLAH_AYAH = 1
 
-# Cache lives next to this script file, not in the OS temp dir or home dir,
-# so it's easy to find/inspect/delete while developing.
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-CACHE_DIR = os.path.join(SCRIPT_DIR, ".cache")
-METADATA_CACHE_DIR = os.path.join(CACHE_DIR, "metadata")
-AUDIO_CACHE_DIR = os.path.join(CACHE_DIR, "audio")
-
-# Hardcoded extra local mp3/m4a files that get appended to the END of the
-# playlist (e.g. duas, other reciters, etc). Edit this JSON file — no code
-# changes needed. Paths can be absolute or relative to this script's folder.
-CUSTOM_PLAYLIST_JSON = os.path.join(SCRIPT_DIR, "custom_playlist.json")
-
-# Label shown on the separator row inserted before the custom/dua entries.
-CUSTOM_PLAYLIST_SEPARATOR_LABEL = "Duas"
-
-# Playlist definition: (surah, start_ayah, end_ayah, description[, repeat_count])
-# repeat_count is optional and defaults to 1 (play once, no repeat).
-# When repeat_count > 1, the WHOLE section — including its Bismillah, if any
-# — is replayed that many times back-to-back, with a "Repeat i/N" counter
-# shown in the playlist, title, and status bar.
-# Every group opens with Bismillah except At-Tawbah (9), by convention.
+# ------------------------------------------------------------
+# Playlist definition
+# ------------------------------------------------------------
 PLAYLIST = [
     (1, 1, 7, "Surah Fatiha (Full)"),
     (2, 1, 5, "Surah Al Baqarah 1-5"),
@@ -92,7 +142,7 @@ PLAYLIST = [
     (7, 23, 23, "Surah Al Araaf 23"),
     (7, 115, 122, "Surah Al Araaf 115-122"),
     (7, 179, 179, "Surah Al Araaf 179"),
-    (9, 51, 51, "Surah Al Tawbah 51"),  # no Bismillah — see needs_bismillah()
+    (9, 51, 51, "Surah Al Tawbah 51"),
     (10, 76, 82, "Surah Al Yunus 76-82"),
     (10, 107, 107, "Surah Al Yunus 107"),
     (13, 28, 29, "Surah Raad 28-29"),
@@ -128,8 +178,6 @@ def needs_bismillah(surah: int) -> bool:
     return surah != 1
 
 def normalize_playlist_entry(entry):
-    """Accepts either a 4-tuple (no repeat) or 5-tuple (with repeat count)
-    and always returns (surah, start_ayah, end_ayah, description, repeat_count)."""
     if len(entry) == 5:
         surah, start_ayah, end_ayah, description, repeat_count = entry
     else:
@@ -139,22 +187,22 @@ def normalize_playlist_entry(entry):
     return surah, start_ayah, end_ayah, description, repeat_count
 
 # ------------------------------------------------------------
-# Data model for a flattened playback queue item
+# Data models
 # ------------------------------------------------------------
 
 @dataclass
 class QueueItem:
-    kind: str  # "bismillah" or "ayah"
+    kind: str
     surah: int
     ayah: int
     description: str = ""
     group_desc: str = ""
-    repeat_index: int = 1  # which pass through the section this is (1-based)
-    repeat_total: int = 1  # how many times the section repeats overall
+    repeat_index: int = 1
+    repeat_total: int = 1
 
 @dataclass
 class LoadedEntry:
-    kind: str  # "bismillah", "ayah", "custom", or "separator"
+    kind: str
     surah: int
     ayah: int
     description: str
@@ -167,9 +215,6 @@ class LoadedEntry:
     error: Optional[str] = None
 
 def build_queue():
-    """Flatten PLAYLIST into a linear queue, injecting a Bismillah item
-    before each group that needs one, and repeating each whole group
-    (Bismillah + ayahs) repeat_count times when specified."""
     queue = []
     for raw_entry in PLAYLIST:
         surah, start_ayah, end_ayah, description, repeat_count = normalize_playlist_entry(raw_entry)
@@ -197,22 +242,20 @@ def build_queue():
     return queue
 
 # ------------------------------------------------------------
-# Caching + networking helpers
+# Caching + networking
 # ------------------------------------------------------------
 
 def ensure_dirs():
-    os.makedirs(METADATA_CACHE_DIR, exist_ok=True)
-    os.makedirs(AUDIO_CACHE_DIR, exist_ok=True)
+    METADATA_CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    AUDIO_CACHE_DIR.mkdir(parents=True, exist_ok=True)
 
 def get_audio_cache_path(surah, ayah):
-    return os.path.join(AUDIO_CACHE_DIR, f"{surah}_{ayah}.mp3")
+    return str(AUDIO_CACHE_DIR / f"{surah}_{ayah}.mp3")
 
 def get_metadata_cache_path(surah, edition=RECITER):
-    return os.path.join(METADATA_CACHE_DIR, f"surah_{surah}_{edition}.json")
+    return str(METADATA_CACHE_DIR / f"surah_{surah}_{edition}.json")
 
 def request_with_retry(url):
-    """GET with a timeout and a couple of retries with backoff. Raises on
-    final failure so the caller can handle/log it per-item."""
     last_exc = None
     for attempt in range(MAX_RETRIES + 1):
         try:
@@ -233,7 +276,6 @@ def get_cached_surah_metadata(surah, edition=RECITER):
         with open(path, "r", encoding="utf-8") as f:
             return json.load(f)
     except (json.JSONDecodeError, OSError) as e:
-        # Narrow catch: a corrupt/unreadable cache file, not "anything at all".
         log.warning("Corrupt metadata cache for surah %s (%s), refetching: %s", surah, edition, e)
         return None
 
@@ -243,9 +285,6 @@ def save_cached_surah_metadata(surah, data, edition=RECITER):
         json.dump(data, f, ensure_ascii=False, indent=2)
 
 def get_surah_data(surah, edition=RECITER):
-    """Get surah data for a given edition - checks cache first, then
-    downloads the entire surah at once. Used both for the recitation/Arabic
-    edition and for the translation edition."""
     cached = get_cached_surah_metadata(surah, edition)
     if cached:
         log.info("Using cached surah %s metadata (%s)", surah, edition)
@@ -255,12 +294,10 @@ def get_surah_data(surah, edition=RECITER):
     url = f"https://api.alquran.cloud/v1/surah/{surah}/{edition}"
     resp = request_with_retry(url)
     data = resp.json()["data"]
-
     save_cached_surah_metadata(surah, data, edition)
     return data
 
 def ensure_audio_cached(surah, ayah, audio_url):
-    """Download audio only if not already cached. Returns (path, was_cached)."""
     audio_file = get_audio_cache_path(surah, ayah)
     if os.path.exists(audio_file):
         return audio_file, True
@@ -273,45 +310,27 @@ def ensure_audio_cached(surah, ayah, audio_url):
     return audio_file, False
 
 def build_ayah_lookup(surah_data):
-    """O(1) lookup instead of scanning surah_data['ayahs'] per ayah."""
     return {a["numberInSurah"]: a for a in surah_data["ayahs"]}
 
 def load_custom_entries():
-    """Load the hardcoded extra local mp3/m4a files (defined in
-    CUSTOM_PLAYLIST_JSON) that play at the end of the playlist.
-
-    Expected JSON shape:
-    [
-      {
-        "path": "extras/dua1.mp3",
-        "title": "دعاء بعد الرقية",
-        "body": "بِسْمِ اللَّهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ ...",
-        "translation": "In the name of Allah, with whose name nothing is harmed ..."
-      },
-      {"path": "/absolute/path/to/file.m4a", "title": "Some Title", "body": "..."}
-    ]
-
-    `path` may be relative (resolved against this script's folder) or
-    absolute. `title` is optional and defaults to the filename. `body` is
-    optional and holds the Arabic text shown the same way ayahs are (in the
-    big RTL Quran font) — leave it out or empty if you don't have text for
-    that file. `translation` is optional and shown under the Arabic text,
-    same as ayah translations.
-    """
-    if not os.path.exists(CUSTOM_PLAYLIST_JSON):
+    """Load user's custom_playlist.json from ~/.config/ruqya-quran/.
+    Relative paths resolve against the JSON's own directory."""
+    if not CUSTOM_PLAYLIST_PATH.exists():
         return []
 
     try:
-        with open(CUSTOM_PLAYLIST_JSON, "r", encoding="utf-8") as f:
+        with open(CUSTOM_PLAYLIST_PATH, "r", encoding="utf-8") as f:
             items = json.load(f)
     except (json.JSONDecodeError, OSError) as e:
         log.warning("Corrupt custom playlist json, skipping: %s", e)
         return []
 
+    playlist_dir = CUSTOM_PLAYLIST_PATH.parent
     entries = []
+
     for item in items:
         raw_path = item.get("path", "")
-        path = raw_path if os.path.isabs(raw_path) else os.path.join(SCRIPT_DIR, raw_path)
+        path = raw_path if os.path.isabs(raw_path) else str(playlist_dir / raw_path)
         title = item.get("title") or os.path.basename(path)
         body = item.get("body", "")
         translation = item.get("translation", "")
@@ -335,13 +354,13 @@ def load_custom_entries():
     return entries
 
 # ------------------------------------------------------------
-# Background loader (QThread, so networking never blocks the UI)
+# Background loader
 # ------------------------------------------------------------
 
 class PlaylistLoader(QThread):
-    progress = Signal(int, int, int, int)  # loaded, total, cached, downloaded
-    items_loaded = Signal(list)  # list of (index, LoadedEntry) tuples
-    finished_loading = Signal(int, int, int)  # loaded, cached, downloaded
+    progress = Signal(int, int, int, int)
+    items_loaded = Signal(list)
+    finished_loading = Signal(int, int, int)
 
     def run(self):
         queue = build_queue()
@@ -352,7 +371,7 @@ class PlaylistLoader(QThread):
         translation_data_cache = {}
         translation_lookup_cache = {}
         batch = []
-        BATCH_SIZE = 10  # Update UI every 10 items
+        BATCH_SIZE = 10
 
         for index, item in enumerate(queue):
             try:
@@ -364,9 +383,6 @@ class PlaylistLoader(QThread):
                 if ayah_data is None:
                     raise ValueError(f"Ayah {item.ayah} not found in surah {item.surah}")
 
-                # Translation lookup is best-effort: a failure here should
-                # not stop the ayah/audio from loading, it just leaves the
-                # translation blank for that ayah.
                 translation_text = ""
                 if TRANSLATION_EDITION:
                     try:
@@ -381,7 +397,10 @@ class PlaylistLoader(QThread):
                         log.warning("Failed to load translation for %s:%s - %s", item.surah, item.ayah, e)
 
                 audio_url = ayah_data.get(
-                    "audio", f"https://cdn.alquran.cloud/media/audio/ayah/{RECITER}/{item.surah}_{item.ayah}.mp3")
+                    "audio",
+                    f"https://cdn.alquran.cloud/media/audio/ayah/{RECITER}/"
+                    f"{item.surah}_{item.ayah}.mp3",
+                )
                 audio_file, was_cached = ensure_audio_cached(item.surah, item.ayah, audio_url)
                 if was_cached:
                     cached_count += 1
@@ -403,8 +422,6 @@ class PlaylistLoader(QThread):
                 log.info("Loaded: %s (%s)", entry.description, "cached" if was_cached else "downloaded")
 
             except Exception as e:
-                # Per-item failure only — a bad ayah no longer marks its
-                # whole surah/group as errored.
                 log.error("Failed to load %s:%s - %s", item.surah, item.ayah, e)
                 entry = LoadedEntry(
                     kind=item.kind,
@@ -423,7 +440,6 @@ class PlaylistLoader(QThread):
             loaded += 1
             batch.append((index, entry))
 
-            # Emit batch when it reaches BATCH_SIZE or at the end
             if len(batch) >= BATCH_SIZE or loaded == total:
                 self.items_loaded.emit(batch)
                 batch = []
@@ -433,7 +449,7 @@ class PlaylistLoader(QThread):
         self.finished_loading.emit(loaded, cached_count, downloaded_count)
 
 # ------------------------------------------------------------
-# Qt Application
+# Qt helpers
 # ------------------------------------------------------------
 
 def load_quran_font():
@@ -447,20 +463,7 @@ def load_quran_font():
     log.info("Using font: %s", font_family)
     return font_family
 
-# ------------------------------------------------------------
-# WrapLabel — QLabel with reliable heightForWidth for wrapped text
-# ------------------------------------------------------------
-
 class WrapLabel(QLabel):
-    """QLabel with reliable heightForWidth for word-wrapped text.
-
-    A plain QLabel's heightForWidth is unreliable once text wraps to
-    multiple lines, so QVBoxLayout under-allocates its height and
-    sibling widgets end up overlapping it. This subclass computes the
-    real wrapped height from font metrics so the layout always reserves
-    enough space, fixing the "long ayah/translation text overlaps"
-    problem.
-    """
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -470,9 +473,9 @@ class WrapLabel(QLabel):
         if width <= 0:
             return super().heightForWidth(width)
         margins = self.contentsMargins()
-        usable_width = max(1, width - margins.left() - margins.right())
+        usable = max(1, width - margins.left() - margins.right())
         fm = self.fontMetrics()
-        rect = fm.boundingRect(0, 0, usable_width, 0, Qt.TextWordWrap, self.text())
+        rect = fm.boundingRect(0, 0, usable, 0, Qt.TextWordWrap, self.text())
         return rect.height() + margins.top() + margins.bottom()
 
     def hasHeightForWidth(self):
@@ -486,7 +489,7 @@ class WrapLabel(QLabel):
         return self.sizeHint()
 
 # ------------------------------------------------------------
-# Main Window
+# Main window
 # ------------------------------------------------------------
 
 class QuranPlayer(QWidget):
@@ -496,7 +499,7 @@ class QuranPlayer(QWidget):
 
         self.font_family = font_family
         self.current_index = -1
-        self.playlist_data = []  # list[Optional[LoadedEntry]], grows as items load
+        self.playlist_data = []
         self.player = QMediaPlayer()
         self.audio_output = QAudioOutput()
         self.audio_output.setVolume(1.0)
@@ -546,10 +549,6 @@ class QuranPlayer(QWidget):
         self.title_label.setFont(QFont("Arial", 16))
         right_layout.addWidget(self.title_label)
 
-        # --- Scrollable text area for the Arabic ayah + translation ---
-        # Using WrapLabel (accurate heightForWidth) inside a QScrollArea
-        # means long verses/translations always get the vertical space
-        # they need and never overlap each other, even on small windows.
         text_scroll = QScrollArea()
         text_scroll.setWidgetResizable(True)
         text_scroll.setFrameShape(QScrollArea.NoFrame)
@@ -637,24 +636,21 @@ class QuranPlayer(QWidget):
     def on_load_progress(self, loaded, total, cached, downloaded):
         self.progress_bar.setMaximum(total)
         self.progress_bar.setValue(loaded)
-        self.progress_label.setText(f"Loading {loaded}/{total}... (cached: {cached}, downloaded: {downloaded})")
+        self.progress_label.setText(f"Loading {loaded}/{total}... "
+                                    f"(cached: {cached}, downloaded: {downloaded})")
 
     @staticmethod
     def _repeat_suffix(entry):
-        """' (Repeat i/N)' when a section repeats more than once, else ''."""
         if entry.repeat_total and entry.repeat_total > 1:
             return f" (Repeat {entry.repeat_index}/{entry.repeat_total})"
         return ""
 
     def on_items_loaded(self, batch):
-        """Handle a batch of loaded items at once"""
-        # Ensure list is large enough
         max_index = max(idx for idx, _ in batch)
         while len(self.playlist_data) <= max_index:
             self.playlist_data.append(None)
             self.playlist_widget.addItem("Loading…")
 
-        # Update all items in the batch
         for index, entry in batch:
             self.playlist_data[index] = entry
             repeat_suffix = self._repeat_suffix(entry)
@@ -669,7 +665,6 @@ class QuranPlayer(QWidget):
 
             self.playlist_widget.item(index).setText(item_text)
 
-        # Select first valid item if not already selected
         if self.current_index == -1:
             first = self._first_valid_index()
             if first is not None:
@@ -686,9 +681,6 @@ class QuranPlayer(QWidget):
         self.append_custom_entries()
 
     def append_custom_entries(self):
-        """Append the hardcoded local mp3/m4a files to the end of the
-        playlist, after the API-loaded queue is done. A separator row is
-        inserted first so the duas are visually distinct from the ayat."""
         custom_entries = load_custom_entries()
         if not custom_entries:
             return
@@ -706,10 +698,6 @@ class QuranPlayer(QWidget):
         log.info("Appended %s custom entries to playlist", len(custom_entries))
 
     def _add_separator(self, label):
-        """Insert a non-selectable, non-playable divider row into both the
-        list widget and playlist_data. Kept generic (label-based) so it can
-        be reused anywhere a visual break between sections is needed, not
-        just before the duas."""
         separator_entry = LoadedEntry(
             kind="separator",
             surah=0,
@@ -731,10 +719,6 @@ class QuranPlayer(QWidget):
     # ---------------- Playability ----------------
 
     def _is_playable(self, entry):
-        """Single source of truth for 'can this row actually be played'.
-        Every navigation/playback method below routes through this instead
-        of re-deriving the rule, so adding a new non-playable kind later
-        (a header, an ad, whatever) is a one-line change here."""
         return entry is not None and not entry.error and entry.kind != "separator"
 
     # ---------------- Display ----------------
@@ -762,7 +746,8 @@ class QuranPlayer(QWidget):
             self.status_label.setText(f"Loaded: {entry.description}")
         else:
             surah_data = entry.surah_data
-            title_text = (f"{surah_data.get('englishName', 'Unknown')} ({surah_data.get('name', '')})\n"
+            title_text = (f"{surah_data.get('englishName', 'Unknown')} "
+                          f"({surah_data.get('name', '')})\n"
                           f"Ayah {entry.ayah}{repeat_suffix}")
             self.title_label.setText(title_text)
             self.ayah_label.setText(entry.data.get("text", ""))
@@ -772,8 +757,6 @@ class QuranPlayer(QWidget):
         self.select_row_no_scroll(index)
 
     def select_row_no_scroll(self, index):
-        """Highlight the currently-playing row without moving the list's
-        scroll position — the user's manual scroll position is preserved."""
         self.playlist_widget.setAutoScroll(False)
         self.playlist_widget.setCurrentRow(index)
         self.playlist_widget.setAutoScroll(True)
@@ -905,12 +888,16 @@ class QuranPlayer(QWidget):
         super().closeEvent(event)
 
 # ------------------------------------------------------------
-# Main
+# Entry point
 # ------------------------------------------------------------
 
-if __name__ == "__main__":
+def main():
     app = QApplication(sys.argv)
+    app.setDesktopFileName("ruqya-quran")
     font_family = load_quran_font()
     window = QuranPlayer(font_family)
     window.show()
     sys.exit(app.exec())
+
+if __name__ == "__main__":
+    main()

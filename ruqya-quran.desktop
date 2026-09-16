@@ -1,0 +1,11 @@
+
+[Desktop Entry]
+Type=Application
+Name=Ruqya Quran
+Comment=Quranic Ruqya player
+Exec=ruqya-quran
+Icon=quran
+Terminal=false
+Categories=Utility;
+StartupNotify=true
+StartupWMClass=ruqya-quran

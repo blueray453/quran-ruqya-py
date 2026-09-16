@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ruqya-quran"
+version = "0.1.0"
+description = "Quranic Ruqya player (PySide6 GUI)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Ismail", email = "ismail@example.com"}]
+keywords = ["islam", "quran", "ruqya", "recitation", "salah"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: X11 Applications :: Qt",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Religion",
+]
+
+dependencies = [
+    "PySide6>=6.6.0",
+    "requests>=2.28.0",
+]
+
+[project.scripts]
+ruqya-quran = "ruqya_quran.main:main"
+
+[tool.setuptools.packages.find]
+include = ["ruqya_quran*"]
+
+[tool.setuptools.package-data]
+ruqya_quran = ["config.json", "custom_playlist.json"]
+
+[tool.setuptools.data-files]
+"share/applications"                 = ["ruqya-quran.desktop"]
+"share/icons/hicolor/256x256/apps"   = ["icons/quran.png"]
