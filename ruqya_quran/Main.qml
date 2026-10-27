@@ -284,6 +284,7 @@ ApplicationWindow {
                         textRole: "name"
                         valueRole: "id"
                         focusPolicy: Qt.NoFocus
+                        enabled: !player.initializing
 
                         function syncFromPlayer() {
                             var names = player.reciterNames
@@ -375,6 +376,7 @@ ApplicationWindow {
                         textRole: "name"
                         valueRole: "id"
                         focusPolicy: Qt.NoFocus
+                        enabled: !player.initializing
 
                         function syncFromPlayer() {
                             var names = player.translationNames
@@ -461,6 +463,7 @@ ApplicationWindow {
                         t: theme
                         text: "Translation"
                         active: player.showTranslation
+                        enabled: !player.initializing
                         onClicked: player.showTranslation = !player.showTranslation
                         ToolTip.visible: hovered
                         ToolTip.text: "Show/hide translation (T)"
@@ -470,6 +473,7 @@ ApplicationWindow {
                         t: theme
                         text: "Word by word"
                         active: player.wordByWord
+                        enabled: !player.initializing
                         onClicked: player.wordByWord = !player.wordByWord
                         ToolTip.visible: hovered
                         ToolTip.text: "Word-by-word breakdown (W)"
@@ -574,7 +578,7 @@ ApplicationWindow {
                         color: theme.textDim
                     }
 
-                    // ---- word-by-word strip (Arabic + English or Bangla)
+                    // ---- word-by-word strip
                     ColumnLayout {
                         Layout.fillWidth: true
                         Layout.topMargin: 6
@@ -614,7 +618,6 @@ ApplicationWindow {
                                         anchors.centerIn: parent
                                         spacing: 3
 
-                                        // Arabic word
                                         Text {
                                             Layout.alignment: Qt.AlignHCenter
                                             visible: text !== ""
@@ -623,8 +626,6 @@ ApplicationWindow {
                                             font.pixelSize: 22
                                             color: theme.text
                                         }
-
-                                        // Bangla gloss
                                         Text {
                                             Layout.alignment: Qt.AlignHCenter
                                             visible: text !== ""
@@ -636,8 +637,6 @@ ApplicationWindow {
                                             wrapMode: Text.WordWrap
                                             Layout.maximumWidth: 160
                                         }
-
-                                        // English gloss
                                         Text {
                                             Layout.alignment: Qt.AlignHCenter
                                             visible: text !== ""
@@ -659,7 +658,7 @@ ApplicationWindow {
             // ---- empty / preparing state
             ColumnLayout {
                 anchors.centerIn: flick
-                visible: player.currentIndex < 0
+                visible: player.currentIndex < 0 && !player.initializing
                 spacing: 6
                 Text {
                     Layout.alignment: Qt.AlignHCenter
@@ -1035,6 +1034,112 @@ ApplicationWindow {
                             }
                         }
                     }
+                }
+            }
+        }
+
+        // ============ initialization overlay ============
+        Rectangle {
+            id: initOverlay
+            anchors.fill: parent
+            z: 100
+            color: Qt.alpha(theme.bg, 0.96)
+            visible: player.initializing
+
+            MouseArea { anchors.fill: parent }   // block all input while warming up
+
+            ColumnLayout {
+                anchors.centerIn: parent
+                spacing: 20
+
+                Item {
+                    Layout.alignment: Qt.AlignHCenter
+                    Layout.preferredWidth: 72
+                    Layout.preferredHeight: 72
+
+                    Canvas {
+                        id: spinnerCanvas
+                        anchors.fill: parent
+                        onPaint: {
+                            var ctx = getContext("2d")
+                            ctx.reset()
+                            ctx.clearRect(0, 0, width, height)
+                            var cx = width / 2, cy = height / 2, r = width / 2 - 6
+                            ctx.strokeStyle = theme.line
+                            ctx.lineWidth = 5
+                            ctx.beginPath()
+                            ctx.arc(cx, cy, r, 0, 2 * Math.PI)
+                            ctx.stroke()
+                            ctx.strokeStyle = theme.accent
+                            ctx.lineWidth = 5
+                            ctx.lineCap = "round"
+                            ctx.beginPath()
+                            ctx.arc(cx, cy, r, 0, Math.PI / 2)
+                            ctx.stroke()
+                        }
+                    }
+                    RotationAnimator on rotation {
+                        from: 0
+                        to: 360
+                        duration: 900
+                        loops: Animation.Infinite
+                        running: player.initializing
+                    }
+                }
+
+                Text {
+                    Layout.alignment: Qt.AlignHCenter
+                    text: "Preparing Ruqya Quran"
+                    font.pixelSize: 20
+                    font.weight: Font.DemiBold
+                    color: theme.text
+                }
+
+                Text {
+                    Layout.alignment: Qt.AlignHCenter
+                    visible: player.initMessage !== ""
+                    text: player.initMessage
+                    font.pixelSize: 13
+                    color: theme.textDim
+                    elide: Text.ElideRight
+                    Layout.maximumWidth: 420
+                }
+
+                Rectangle {
+                    Layout.alignment: Qt.AlignHCenter
+                    Layout.preferredWidth: 340
+                    Layout.preferredHeight: 4
+                    radius: 2
+                    color: theme.line
+                    visible: player.initTotal > 0
+
+                    Rectangle {
+                        width: player.initTotal > 0
+                               ? parent.width * Math.min(1, player.initCurrent / player.initTotal)
+                               : 0
+                        height: parent.height
+                        radius: 2
+                        color: theme.accent
+                        Behavior on width { NumberAnimation { duration: 200 } }
+                    }
+                }
+
+                Text {
+                    Layout.alignment: Qt.AlignHCenter
+                    visible: player.initTotal > 0
+                    text: player.initCurrent + " / " + player.initTotal
+                    font.pixelSize: 12
+                    color: theme.textDim
+                }
+
+                Text {
+                    Layout.alignment: Qt.AlignHCenter
+                    Layout.topMargin: 12
+                    visible: player.initTotal > 0
+                    text: "First run downloads all reciters. This can take a while."
+                    font.pixelSize: 11
+                    color: theme.textDim
+                    opacity: 0.6
                 }
             }
         }

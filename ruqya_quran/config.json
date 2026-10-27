@@ -13,6 +13,7 @@
   },
   "default_translation": "en.sahih",
   "word_by_word_language": "auto",
+  "max_workers": 4,
   "font_file": "/usr/share/fonts/opentype/fonts-hosny-amiri/AmiriQuran.ttf",
   "bangla_font_file": "/usr/share/fonts/truetype/noto/NotoSansBengali-Regular.ttf",
   "custom_playlist_separator_label": "Duas",
