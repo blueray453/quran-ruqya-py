@@ -1,6 +1,8 @@
+README.md
 pyproject.toml
 ruqya-quran.desktop
 icons/quran.png
+ruqya_quran/Main.qml
 ruqya_quran/__init__.py
 ruqya_quran/__main__.py
 ruqya_quran/config.json

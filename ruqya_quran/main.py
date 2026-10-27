@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-ruqya_quran.main — Quranic Ruqya player.
+ruqya_quran.main — Quranic Ruqya player (Qt Quick UI).
 
 User files (created on first run by copying packaged templates):
   ~/.config/ruqya-quran/config.json
@@ -20,27 +20,29 @@ import time
 import shutil
 import logging
 from pathlib import Path
-from dataclasses import dataclass
+from dataclasses import dataclass, field, replace
 from typing import Optional
 from importlib.resources import files as _pkg_files
 
 import requests
 
-from PySide6.QtCore import Qt, QUrl, QThread, QTimer, Signal, QSize
-from PySide6.QtGui import QFontDatabase, QFont
-from PySide6.QtMultimedia import QMediaPlayer, QAudioOutput
-from PySide6.QtWidgets import (
-    QApplication,
-    QWidget,
-    QLabel,
-    QPushButton,
-    QVBoxLayout,
-    QHBoxLayout,
-    QListWidget,
-    QListWidgetItem,
-    QProgressBar,
-    QScrollArea,
+from PySide6.QtCore import (
+    Qt,
+    QUrl,
+    QThread,
+    QTimer,
+    Signal,
+    Slot,
+    Property,
+    QObject,
+    QAbstractListModel,
+    QModelIndex,
+    QByteArray,
 )
+from PySide6.QtGui import QGuiApplication, QFontDatabase
+from PySide6.QtMultimedia import QMediaPlayer, QAudioOutput
+from PySide6.QtQml import QQmlApplicationEngine
+from PySide6.QtQuickControls2 import QQuickStyle
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger("quran_player")
@@ -74,23 +76,19 @@ def _ensure_user_files() -> None:
     """On first run, copy the packaged templates into ~/.config/ruqya-quran/."""
     CONFIG_DIR.mkdir(parents=True, exist_ok=True)
 
-    if not CONFIG_PATH.exists():
+    for target, name, label in (
+        (CONFIG_PATH, TEMPLATE_CONFIG_NAME, "config"),
+        (CUSTOM_PLAYLIST_PATH, TEMPLATE_PLAYLIST_NAME, "custom playlist"),
+    ):
+        if target.exists():
+            continue
         try:
-            src = _pkg_files(__package__).joinpath(TEMPLATE_CONFIG_NAME)
-            with src.open("rb") as fsrc, open(CONFIG_PATH, "wb") as fdst:
+            src = _pkg_files(__package__).joinpath(name)
+            with src.open("rb") as fsrc, open(target, "wb") as fdst:
                 shutil.copyfileobj(fsrc, fdst)
-            log.info("Created default config at %s", CONFIG_PATH)
+            log.info("Created default %s at %s", label, target)
         except OSError as e:
-            log.warning("Could not create %s: %s", CONFIG_PATH, e)
-
-    if not CUSTOM_PLAYLIST_PATH.exists():
-        try:
-            src = _pkg_files(__package__).joinpath(TEMPLATE_PLAYLIST_NAME)
-            with src.open("rb") as fsrc, open(CUSTOM_PLAYLIST_PATH, "wb") as fdst:
-                shutil.copyfileobj(fsrc, fdst)
-            log.info("Created default custom playlist at %s", CUSTOM_PLAYLIST_PATH)
-        except OSError as e:
-            log.warning("Could not create %s: %s", CUSTOM_PLAYLIST_PATH, e)
+            log.warning("Could not create %s: %s", target, e)
 
 def _load_config() -> dict:
     _ensure_user_files()
@@ -192,52 +190,63 @@ def normalize_playlist_entry(entry):
 
 @dataclass
 class QueueItem:
-    kind: str
-    surah: int
-    ayah: int
-    description: str = ""
-    group_desc: str = ""
-    repeat_index: int = 1
-    repeat_total: int = 1
-
-@dataclass
-class LoadedEntry:
-    kind: str
     surah: int
     ayah: int
     description: str
-    audio_file: str
-    data: dict
-    surah_data: dict
+    repeat_index: int = 1
+    repeat_total: int = 1
+    lead_bismillah: bool = False  # play the Bismillah before this ayah
+
+@dataclass
+class LoadedEntry:
+    kind: str  # "ayah" | "custom" | "bismillah"
+    surah: int
+    ayah: int
+    description: str
+    audio_file: str = ""
+    data: dict = field(default_factory=dict)
+    surah_data: dict = field(default_factory=dict)
     translation: str = ""
     repeat_index: int = 1
     repeat_total: int = 1
+    lead_bismillah: bool = False
+    section: str = ""
+    loaded: bool = False
     error: Optional[str] = None
 
+def repeat_suffix(entry: LoadedEntry) -> str:
+    if entry.repeat_total and entry.repeat_total > 1:
+        return f" (Repeat {entry.repeat_index}/{entry.repeat_total})"
+    return ""
+
+def placeholder(item: QueueItem) -> LoadedEntry:
+    e = LoadedEntry(
+        kind="ayah",
+        surah=item.surah,
+        ayah=item.ayah,
+        description=item.description,
+        repeat_index=item.repeat_index,
+        repeat_total=item.repeat_total,
+        lead_bismillah=item.lead_bismillah,
+    )
+    e.section = f"{item.description}{repeat_suffix(e)}"
+    return e
+
 def build_queue():
+    """One queue item per ayah. The Bismillah is a flag, not a separate row."""
     queue = []
     for raw_entry in PLAYLIST:
         surah, start_ayah, end_ayah, description, repeat_count = normalize_playlist_entry(raw_entry)
         for rep in range(1, repeat_count + 1):
-            if needs_bismillah(surah):
-                queue.append(
-                    QueueItem(
-                        kind="bismillah",
-                        surah=BISMILLAH_SURAH,
-                        ayah=BISMILLAH_AYAH,
-                        group_desc=description,
-                        repeat_index=rep,
-                        repeat_total=repeat_count,
-                    ))
             for ayah in range(start_ayah, end_ayah + 1):
                 queue.append(
                     QueueItem(
-                        kind="ayah",
                         surah=surah,
                         ayah=ayah,
                         description=description,
                         repeat_index=rep,
                         repeat_total=repeat_count,
+                        lead_bismillah=needs_bismillah(surah) and ayah == start_ayah,
                     ))
     return queue
 
@@ -287,13 +296,10 @@ def save_cached_surah_metadata(surah, data, edition=RECITER):
 def get_surah_data(surah, edition=RECITER):
     cached = get_cached_surah_metadata(surah, edition)
     if cached:
-        log.info("Using cached surah %s metadata (%s)", surah, edition)
         return cached
-
     log.info("Downloading surah %s metadata (%s)...", surah, edition)
     url = f"https://api.alquran.cloud/v1/surah/{surah}/{edition}"
-    resp = request_with_retry(url)
-    data = resp.json()["data"]
+    data = request_with_retry(url).json()["data"]
     save_cached_surah_metadata(surah, data, edition)
     return data
 
@@ -301,7 +307,6 @@ def ensure_audio_cached(surah, ayah, audio_url):
     audio_file = get_audio_cache_path(surah, ayah)
     if os.path.exists(audio_file):
         return audio_file, True
-
     ensure_dirs()
     log.info("Downloading audio for %s:%s...", surah, ayah)
     resp = request_with_retry(audio_url)
@@ -313,11 +318,9 @@ def build_ayah_lookup(surah_data):
     return {a["numberInSurah"]: a for a in surah_data["ayahs"]}
 
 def load_custom_entries():
-    """Load user's custom_playlist.json from ~/.config/ruqya-quran/.
-    Relative paths resolve against the JSON's own directory."""
+    """Load user's custom_playlist.json. Relative paths resolve against its directory."""
     if not CUSTOM_PLAYLIST_PATH.exists():
         return []
-
     try:
         with open(CUSTOM_PLAYLIST_PATH, "r", encoding="utf-8") as f:
             items = json.load(f)
@@ -327,15 +330,11 @@ def load_custom_entries():
 
     playlist_dir = CUSTOM_PLAYLIST_PATH.parent
     entries = []
-
     for item in items:
         raw_path = item.get("path", "")
         path = raw_path if os.path.isabs(raw_path) else str(playlist_dir / raw_path)
         title = item.get("title") or os.path.basename(path)
-        body = item.get("body", "")
-        translation = item.get("translation", "")
         exists = os.path.isfile(path)
-
         entries.append(
             LoadedEntry(
                 kind="custom",
@@ -343,560 +342,614 @@ def load_custom_entries():
                 ayah=0,
                 description=title,
                 audio_file=path,
-                data={"text": body},
-                surah_data={},
-                translation=translation,
+                data={"text": item.get("body", "")},
+                translation=item.get("translation", ""),
+                section=CUSTOM_PLAYLIST_SEPARATOR_LABEL,
+                loaded=True,
                 error=None if exists else f"File not found: {path}",
             ))
         if not exists:
             log.warning("Custom playlist file missing: %s", path)
-
     return entries
 
 # ------------------------------------------------------------
 # Background loader
 # ------------------------------------------------------------
 
+class _Resolver:
+    """Per-run caches so each surah's metadata is parsed once."""
+
+    def __init__(self):
+        self.arabic, self.arabic_lookup = {}, {}
+        self.trans, self.trans_lookup = {}, {}
+        self.trans_failed = set()
+
+    def load(self, surah, ayah):
+        if surah not in self.arabic:
+            self.arabic[surah] = get_surah_data(surah)
+            self.arabic_lookup[surah] = build_ayah_lookup(self.arabic[surah])
+        ayah_data = self.arabic_lookup[surah].get(ayah)
+        if ayah_data is None:
+            raise ValueError(f"Ayah {ayah} not found in surah {surah}")
+
+        translation = ""
+        if TRANSLATION_EDITION and surah not in self.trans_failed:
+            try:
+                if surah not in self.trans:
+                    self.trans[surah] = get_surah_data(surah, TRANSLATION_EDITION)
+                    self.trans_lookup[surah] = build_ayah_lookup(self.trans[surah])
+                t = self.trans_lookup[surah].get(ayah)
+                translation = t.get("text", "") if t else ""
+            except Exception as e:
+                self.trans_failed.add(surah)
+                log.warning("Translation unavailable for surah %s: %s", surah, e)
+
+        audio_url = ayah_data.get("audio") or (
+            f"https://cdn.alquran.cloud/media/audio/ayah/{RECITER}/{surah}_{ayah}.mp3")
+        audio_file, was_cached = ensure_audio_cached(surah, ayah, audio_url)
+        log.info("Loaded %s:%s (%s)", surah, ayah, "cached" if was_cached else "downloaded")
+        return ayah_data, self.arabic[surah], translation, audio_file
+
 class PlaylistLoader(QThread):
-    progress = Signal(int, int, int, int)
-    items_loaded = Signal(list)
-    finished_loading = Signal(int, int, int)
+    bismillah_ready = Signal(object)
+    item_loaded = Signal(int, object)
+    finished_loading = Signal()
+
+    def __init__(self, jobs, parent=None):
+        super().__init__(parent)
+        self._jobs = jobs  # list[(row_index, QueueItem)]
 
     def run(self):
-        queue = build_queue()
-        total = len(queue)
-        loaded = cached_count = downloaded_count = 0
-        surah_data_cache = {}
-        ayah_lookup_cache = {}
-        translation_data_cache = {}
-        translation_lookup_cache = {}
-        batch = []
-        BATCH_SIZE = 10
+        r = _Resolver()
 
-        for index, item in enumerate(queue):
+        try:
+            ayah_data, surah_data, translation, audio = r.load(BISMILLAH_SURAH, BISMILLAH_AYAH)
+            self.bismillah_ready.emit(
+                LoadedEntry(kind="bismillah",
+                            surah=BISMILLAH_SURAH,
+                            ayah=BISMILLAH_AYAH,
+                            description="Bismillah",
+                            audio_file=audio,
+                            data=ayah_data,
+                            surah_data=surah_data,
+                            translation=translation,
+                            loaded=True))
+        except Exception as e:
+            log.error("Failed to load Bismillah: %s", e)
+
+        for index, item in self._jobs:
+            if self.isInterruptionRequested():
+                return
+            base = placeholder(item)
             try:
-                if item.surah not in surah_data_cache:
-                    surah_data_cache[item.surah] = get_surah_data(item.surah)
-                    ayah_lookup_cache[item.surah] = build_ayah_lookup(surah_data_cache[item.surah])
-                surah_data = surah_data_cache[item.surah]
-                ayah_data = ayah_lookup_cache[item.surah].get(item.ayah)
-                if ayah_data is None:
-                    raise ValueError(f"Ayah {item.ayah} not found in surah {item.surah}")
-
-                translation_text = ""
-                if TRANSLATION_EDITION:
-                    try:
-                        if item.surah not in translation_data_cache:
-                            translation_data_cache[item.surah] = get_surah_data(item.surah, TRANSLATION_EDITION)
-                            translation_lookup_cache[item.surah] = build_ayah_lookup(
-                                translation_data_cache[item.surah])
-                        translation_ayah = translation_lookup_cache[item.surah].get(item.ayah)
-                        if translation_ayah is not None:
-                            translation_text = translation_ayah.get("text", "")
-                    except Exception as e:
-                        log.warning("Failed to load translation for %s:%s - %s", item.surah, item.ayah, e)
-
-                audio_url = ayah_data.get(
-                    "audio",
-                    f"https://cdn.alquran.cloud/media/audio/ayah/{RECITER}/"
-                    f"{item.surah}_{item.ayah}.mp3",
-                )
-                audio_file, was_cached = ensure_audio_cached(item.surah, item.ayah, audio_url)
-                if was_cached:
-                    cached_count += 1
-                else:
-                    downloaded_count += 1
-
-                entry = LoadedEntry(
-                    kind=item.kind,
-                    surah=item.surah,
-                    ayah=item.ayah,
-                    description=item.description or item.group_desc,
-                    audio_file=audio_file,
-                    data=ayah_data,
-                    surah_data=surah_data,
-                    translation=translation_text,
-                    repeat_index=item.repeat_index,
-                    repeat_total=item.repeat_total,
-                )
-                log.info("Loaded: %s (%s)", entry.description, "cached" if was_cached else "downloaded")
-
+                ayah_data, surah_data, translation, audio = r.load(item.surah, item.ayah)
+                entry = replace(base,
+                                audio_file=audio,
+                                data=ayah_data,
+                                surah_data=surah_data,
+                                translation=translation,
+                                loaded=True)
             except Exception as e:
                 log.error("Failed to load %s:%s - %s", item.surah, item.ayah, e)
-                entry = LoadedEntry(
-                    kind=item.kind,
-                    surah=item.surah,
-                    ayah=item.ayah,
-                    description=item.description or item.group_desc,
-                    audio_file="",
-                    data={},
-                    surah_data={},
-                    translation="",
-                    repeat_index=item.repeat_index,
-                    repeat_total=item.repeat_total,
-                    error=str(e),
-                )
+                entry = replace(base, loaded=True, error=str(e))
+            self.item_loaded.emit(index, entry)
 
-            loaded += 1
-            batch.append((index, entry))
-
-            if len(batch) >= BATCH_SIZE or loaded == total:
-                self.items_loaded.emit(batch)
-                batch = []
-
-            self.progress.emit(loaded, total, cached_count, downloaded_count)
-
-        self.finished_loading.emit(loaded, cached_count, downloaded_count)
+        self.finished_loading.emit()
 
 # ------------------------------------------------------------
-# Qt helpers
+# Playlist model (exposed to QML)
 # ------------------------------------------------------------
 
-def load_quran_font():
-    font_family = "Arial"
-    if os.path.exists(FONT_FILE):
-        font_id = QFontDatabase.addApplicationFont(FONT_FILE)
-        if font_id != -1:
-            families = QFontDatabase.applicationFontFamilies(font_id)
-            if families:
-                font_family = families[0]
-    log.info("Using font: %s", font_family)
-    return font_family
+class PlaylistModel(QAbstractListModel):
+    LABEL, GROUP, STATUS, ERROR = 257, 258, 259, 260
 
-class WrapLabel(QLabel):
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.setWordWrap(True)
-
-    def heightForWidth(self, width):
-        if width <= 0:
-            return super().heightForWidth(width)
-        margins = self.contentsMargins()
-        usable = max(1, width - margins.left() - margins.right())
-        fm = self.fontMetrics()
-        rect = fm.boundingRect(0, 0, usable, 0, Qt.TextWordWrap, self.text())
-        return rect.height() + margins.top() + margins.bottom()
-
-    def hasHeightForWidth(self):
-        return True
-
-    def sizeHint(self):
-        width = self.width() if self.width() > 0 else 400
-        return QSize(width, self.heightForWidth(width))
-
-    def minimumSizeHint(self):
-        return self.sizeHint()
-
-# ------------------------------------------------------------
-# Main window
-# ------------------------------------------------------------
-
-class QuranPlayer(QWidget):
-
-    def __init__(self, font_family):
+    def __init__(self):
         super().__init__()
+        self._entries: list[LoadedEntry] = []
 
-        self.font_family = font_family
-        self.current_index = -1
-        self.playlist_data = []
-        self.player = QMediaPlayer()
-        self.audio_output = QAudioOutput()
-        self.audio_output.setVolume(1.0)
-        self.player.setAudioOutput(self.audio_output)
+    def roleNames(self):
+        return {
+            self.LABEL: QByteArray(b"label"),
+            self.GROUP: QByteArray(b"group"),
+            self.STATUS: QByteArray(b"status"),
+            self.ERROR: QByteArray(b"errorText"),
+        }
 
-        self.loader = None
+    def rowCount(self, parent=QModelIndex()):
+        return 0 if parent.isValid() else len(self._entries)
 
-        self.setup_ui()
+    @staticmethod
+    def _label(e: LoadedEntry) -> str:
+        if e.kind == "custom":
+            return e.description
+        name = e.surah_data.get("englishName") if e.surah_data else None
+        return f"{name} · {e.ayah}" if name else f"{e.surah}:{e.ayah}"
 
-        self.player.mediaStatusChanged.connect(self.on_media_status_changed)
-        self.player.errorOccurred.connect(self.on_player_error)
-        self.playlist_widget.itemDoubleClicked.connect(self.on_item_double_clicked)
+    def data(self, index, role=Qt.ItemDataRole.DisplayRole):
+        if not index.isValid() or not (0 <= index.row() < len(self._entries)):
+            return None
+        e = self._entries[index.row()]
+        if role == self.LABEL:
+            return self._label(e)
+        if role == self.GROUP:
+            return e.section
+        if role == self.STATUS:
+            return "error" if e.error else ("ready" if e.loaded else "loading")
+        if role == self.ERROR:
+            return e.error or ""
+        return None
 
-        self.start_loading()
+    # ---- helpers used by the controller ----
+    def reset_entries(self, entries):
+        self.beginResetModel()
+        self._entries = entries
+        self.endResetModel()
 
-    def setup_ui(self):
-        self.setWindowTitle("Ruqya Quran")
-        self.resize(1400, 800)
+    def update(self, row, entry):
+        self._entries[row] = entry
+        ix = self.index(row)
+        self.dataChanged.emit(ix, ix)
 
-        main_layout = QHBoxLayout(self)
+    def entry(self, row) -> Optional[LoadedEntry]:
+        return self._entries[row] if 0 <= row < len(self._entries) else None
 
-        left_panel = QWidget()
-        left_layout = QVBoxLayout(left_panel)
+    def is_playable(self, row) -> bool:
+        e = self.entry(row)
+        return bool(e and e.loaded and not e.error)
 
-        playlist_label = QLabel(" Playlist")
-        playlist_label.setFont(QFont("Arial", 14, QFont.Bold))
-        left_layout.addWidget(playlist_label)
+    def first_index(self):
+        return next((i for i, e in enumerate(self._entries) if not e.error), None)
 
-        self.playlist_widget = QListWidget()
-        self.playlist_widget.setFont(QFont("Arial", 12))
-        left_layout.addWidget(self.playlist_widget)
+    def next_index(self, row):
+        """Next row that isn't a known failure (may still be loading)."""
+        for i in range(row + 1, len(self._entries)):
+            if not self._entries[i].error:
+                return i
+        return None
 
-        self.progress_bar = QProgressBar()
-        self.progress_bar.setVisible(False)
-        left_layout.addWidget(self.progress_bar)
+    def prev_index(self, row):
+        for i in range(row - 1, -1, -1):
+            if self.is_playable(i):
+                return i
+        return None
 
-        self.progress_label = QLabel("Ready")
-        left_layout.addWidget(self.progress_label)
+# ------------------------------------------------------------
+# Controller (exposed to QML as `player`)
+# ------------------------------------------------------------
 
-        main_layout.addWidget(left_panel, stretch=1)
+class PlayerController(QObject):
+    displayChanged = Signal()
+    currentIndexChanged = Signal()
+    playingChanged = Signal()
+    positionChanged = Signal()
+    durationChanged = Signal()
+    volumeChanged = Signal()
+    mutedChanged = Signal()
+    repeatModeChanged = Signal()
+    translationChanged = Signal()
+    loadingChanged = Signal()
+    toast = Signal(str)
 
-        right_panel = QWidget()
-        right_layout = QVBoxLayout(right_panel)
+    REPEAT_OFF, REPEAT_ONE, REPEAT_ALL = 0, 1, 2
 
-        self.title_label = QLabel("Select a verse from the playlist")
-        self.title_label.setAlignment(Qt.AlignCenter)
-        self.title_label.setFont(QFont("Arial", 16))
-        right_layout.addWidget(self.title_label)
+    def __init__(self, model: PlaylistModel, font_family: str):
+        super().__init__()
+        self.model = model
+        self._font_family = font_family
 
-        text_scroll = QScrollArea()
-        text_scroll.setWidgetResizable(True)
-        text_scroll.setFrameShape(QScrollArea.NoFrame)
-        text_scroll.setStyleSheet("background: transparent;")
+        self._queue: list[QueueItem] = []
+        self._loader: Optional[PlaylistLoader] = None
+        self._bismillah: Optional[LoadedEntry] = None
 
-        text_container = QWidget()
-        text_container.setStyleSheet("background: transparent;")
-        text_layout = QVBoxLayout(text_container)
+        self._current = -1
+        self._stage = "main"  # "bismillah" | "main"
+        self._pending = -1  # row waiting for its download to finish
 
-        self.ayah_label = WrapLabel("")
-        self.ayah_label.setAlignment(Qt.AlignCenter)
-        self.ayah_label.setLayoutDirection(Qt.RightToLeft)
-        self.ayah_label.setFont(QFont(self.font_family, 30))
-        text_layout.addWidget(self.ayah_label)
+        self._position = self._duration = 0
+        self._playing = False
+        self._volume = 1.0
+        self._muted = False
+        self._repeat = self.REPEAT_ALL
+        self._show_translation = bool(TRANSLATION_EDITION)
 
-        self.translation_label = WrapLabel("")
-        self.translation_label.setAlignment(Qt.AlignCenter)
-        self.translation_label.setLayoutDirection(Qt.LeftToRight)
-        self.translation_label.setFont(QFont("Arial", 20))
-        self.translation_label.setStyleSheet("color: white;")
-        text_layout.addWidget(self.translation_label)
+        self._loaded = self._total = self._failed = 0
+        self._loading = False
 
-        text_scroll.setWidget(text_container)
-        right_layout.addWidget(text_scroll, stretch=1)
+        self._title = self._title_ar = self._subtitle = ""
+        self._arabic = self._translation = ""
 
-        self.status_label = QLabel("Ready")
-        self.status_label.setAlignment(Qt.AlignCenter)
-        right_layout.addWidget(self.status_label)
+        self._player = QMediaPlayer(self)
+        self._audio = QAudioOutput(self)
+        self._player.setAudioOutput(self._audio)
+        self._apply_volume()
+        self._player.mediaStatusChanged.connect(self._on_media_status)
+        self._player.errorOccurred.connect(self._on_player_error)
+        self._player.positionChanged.connect(self._on_position)
+        self._player.durationChanged.connect(self._on_duration)
+        self._player.playbackStateChanged.connect(self._on_state)
 
-        button_layout = QHBoxLayout()
-        self.play_btn = QPushButton("▶ Play")
-        self.pause_btn = QPushButton("⏸ Pause")
-        self.stop_btn = QPushButton("■ Stop")
-        self.prev_btn = QPushButton("⏮ Previous")
-        self.next_btn = QPushButton("Next ⏭")
+    # ---------------- QML properties ----------------
 
-        button_layout.addWidget(self.prev_btn)
-        button_layout.addWidget(self.play_btn)
-        button_layout.addWidget(self.pause_btn)
-        button_layout.addWidget(self.stop_btn)
-        button_layout.addWidget(self.next_btn)
-        right_layout.addLayout(button_layout)
+    @Property(str, constant=True)
+    def fontFamily(self):
+        return self._font_family
 
-        nav_layout = QHBoxLayout()
-        self.auto_play_check = QPushButton("🔁 Auto-play: OFF")
-        self.auto_play_check.setCheckable(True)
-        self.auto_play_check.setChecked(True)
-        nav_layout.addWidget(self.auto_play_check)
+    @Property(bool, constant=True)
+    def hasTranslationEdition(self):
+        return bool(TRANSLATION_EDITION)
 
-        self.translation_toggle = QPushButton("🌐 Translation: ON" if TRANSLATION_EDITION else "🌐 Translation: OFF")
-        self.translation_toggle.setCheckable(True)
-        self.translation_toggle.setChecked(bool(TRANSLATION_EDITION))
-        self.translation_toggle.setEnabled(bool(TRANSLATION_EDITION))
-        nav_layout.addWidget(self.translation_toggle)
-        right_layout.addLayout(nav_layout)
+    @Property(int, notify=currentIndexChanged)
+    def currentIndex(self):
+        return self._current
 
-        main_layout.addWidget(right_panel, stretch=2)
+    @Property(bool, notify=playingChanged)
+    def isPlaying(self):
+        return self._playing
 
-        self.play_btn.clicked.connect(self.play_current)
-        self.pause_btn.clicked.connect(self.player.pause)
-        self.stop_btn.clicked.connect(self.stop_playback)
-        self.prev_btn.clicked.connect(self.play_previous)
-        self.next_btn.clicked.connect(self.play_next)
-        self.auto_play_check.toggled.connect(self.toggle_auto_play)
-        self.translation_toggle.toggled.connect(self.toggle_translation)
+    @Property(int, notify=positionChanged)
+    def position(self):
+        return self._position
+
+    @Property(int, notify=durationChanged)
+    def duration(self):
+        return self._duration
+
+    @Property(str, notify=displayChanged)
+    def title(self):
+        return self._title
+
+    @Property(str, notify=displayChanged)
+    def titleArabic(self):
+        return self._title_ar
+
+    @Property(str, notify=displayChanged)
+    def subtitle(self):
+        return self._subtitle
+
+    @Property(str, notify=displayChanged)
+    def arabicText(self):
+        return self._arabic
+
+    @Property(str, notify=displayChanged)
+    def translationText(self):
+        return self._translation
+
+    @Property(bool, notify=loadingChanged)
+    def loading(self):
+        return self._loading
+
+    @Property(int, notify=loadingChanged)
+    def loadedCount(self):
+        return self._loaded
+
+    @Property(int, notify=loadingChanged)
+    def totalCount(self):
+        return self._total
+
+    @Property(int, notify=loadingChanged)
+    def failedCount(self):
+        return self._failed
+
+    @Property(float, notify=volumeChanged)
+    def volume(self):
+        return self._volume
+
+    @volume.setter
+    def volume(self, v):
+        v = max(0.0, min(1.0, float(v)))
+        if v != self._volume:
+            self._volume = v
+            self._apply_volume()
+            self.volumeChanged.emit()
+
+    @Property(bool, notify=mutedChanged)
+    def muted(self):
+        return self._muted
+
+    @muted.setter
+    def muted(self, m):
+        if bool(m) != self._muted:
+            self._muted = bool(m)
+            self._audio.setMuted(self._muted)
+            self.mutedChanged.emit()
+
+    @Property(int, notify=repeatModeChanged)
+    def repeatMode(self):
+        return self._repeat
+
+    @repeatMode.setter
+    def repeatMode(self, m):
+        if int(m) != self._repeat:
+            self._repeat = int(m)
+            self.repeatModeChanged.emit()
+
+    @Property(bool, notify=translationChanged)
+    def showTranslation(self):
+        return self._show_translation
+
+    @showTranslation.setter
+    def showTranslation(self, v):
+        if bool(v) != self._show_translation:
+            self._show_translation = bool(v)
+            self.translationChanged.emit()
+
+    def _apply_volume(self):
+        # Squared curve feels closer to perceived loudness than linear.
+        self._audio.setVolume(self._volume**2)
 
     # ---------------- Loading ----------------
 
-    def start_loading(self):
-        log.info("=" * 60)
-        log.info("Loading playlist (threaded, cache dir: %s)...", CACHE_DIR)
-        log.info("=" * 60)
+    def start(self):
+        self._queue = build_queue()
+        entries = [placeholder(q) for q in self._queue] + load_custom_entries()
+        self.model.reset_entries(entries)
+        self._loaded, self._failed, self._total = 0, 0, len(self._queue)
+        self._run_loader(list(enumerate(self._queue)))
 
-        self.playlist_widget.clear()
-        self.playlist_data = []
-        self.progress_bar.setVisible(True)
-        self.progress_bar.setValue(0)
+    def _run_loader(self, jobs):
+        self._loader = PlaylistLoader(jobs)
+        self._loader.bismillah_ready.connect(self._on_bismillah)
+        self._loader.item_loaded.connect(self._on_item_loaded)
+        self._loader.finished_loading.connect(self._on_load_finished)
+        self._loading = True
+        self.loadingChanged.emit()
+        self._loader.start()
 
-        self.loader = PlaylistLoader()
-        self.loader.progress.connect(self.on_load_progress)
-        self.loader.items_loaded.connect(self.on_items_loaded)
-        self.loader.finished_loading.connect(self.on_load_finished)
-        self.loader.start()
+    @Slot()
+    def retry(self):
+        if self._loading:
+            return
+        jobs = []
+        for i, item in enumerate(self._queue):
+            e = self.model.entry(i)
+            if e and e.error:
+                self.model.update(i, placeholder(item))
+                jobs.append((i, item))
+        if jobs:
+            self._loaded, self._failed, self._total = 0, 0, len(jobs)
+            self._run_loader(jobs)
 
-    def on_load_progress(self, loaded, total, cached, downloaded):
-        self.progress_bar.setMaximum(total)
-        self.progress_bar.setValue(loaded)
-        self.progress_label.setText(f"Loading {loaded}/{total}... "
-                                    f"(cached: {cached}, downloaded: {downloaded})")
+    def _on_bismillah(self, entry):
+        self._bismillah = entry
 
-    @staticmethod
-    def _repeat_suffix(entry):
-        if entry.repeat_total and entry.repeat_total > 1:
-            return f" (Repeat {entry.repeat_index}/{entry.repeat_total})"
-        return ""
+    def _on_item_loaded(self, index, entry):
+        self.model.update(index, entry)
+        self._loaded += 1
+        if entry.error:
+            self._failed += 1
+        self.loadingChanged.emit()
 
-    def on_items_loaded(self, batch):
-        max_index = max(idx for idx, _ in batch)
-        while len(self.playlist_data) <= max_index:
-            self.playlist_data.append(None)
-            self.playlist_widget.addItem("Loading…")
+        if self._current < 0 and self.model.is_playable(index):
+            self._select(index)
+        if index == self._pending:
+            self._pending = -1
+            self.play(index)
 
-        for index, entry in batch:
-            self.playlist_data[index] = entry
-            repeat_suffix = self._repeat_suffix(entry)
+    def _on_load_finished(self):
+        self._loading = False
+        self.loadingChanged.emit()
+        if self._current < 0:
+            for i in range(self.model.rowCount()):
+                if self.model.is_playable(i):
+                    self._select(i)
+                    break
 
-            if entry.error:
-                item_text = f"❌ {entry.description} (Error)"
-            elif entry.kind == "bismillah":
-                item_text = f".....{repeat_suffix}"
+    def shutdown(self):
+        if self._loader is not None and self._loader.isRunning():
+            self._loader.requestInterruption()
+            if not self._loader.wait(2000):
+                self._loader.terminate()
+                self._loader.wait()
+
+    # ---------------- Selection / display ----------------
+
+    def _select(self, index):
+        self._current = index
+        self._stage = "main"
+        self.currentIndexChanged.emit()
+        self._refresh_display()
+
+    def _refresh_display(self):
+        e = self.model.entry(self._current)
+        t = ta = sub = ar = tr = ""
+        if e and e.loaded and not e.error:
+            suffix = repeat_suffix(e)
+            if self._stage == "bismillah" and self._bismillah:
+                t = "Bismillah"
+                sub = f"Before {e.description}{suffix}"
+                ar = self._bismillah.data.get("text", "")
+                tr = self._bismillah.translation
+            elif e.kind == "custom":
+                t = e.description
+                sub = CUSTOM_PLAYLIST_SEPARATOR_LABEL
+                ar = e.data.get("text", "")
+                tr = e.translation
             else:
-                surah_name = entry.surah_data.get("englishName", "")
-                item_text = f"{entry.description} - {surah_name} {entry.ayah}{repeat_suffix}"
-
-            self.playlist_widget.item(index).setText(item_text)
-
-        if self.current_index == -1:
-            first = self._first_valid_index()
-            if first is not None:
-                self.playlist_widget.setCurrentRow(first)
-                self.show_ayah(first)
-
-    def on_load_finished(self, loaded, cached, downloaded):
-        self.progress_bar.setVisible(False)
-        self.progress_label.setText(f"✓ Loaded {loaded} items (cached: {cached}, downloaded: {downloaded})")
-        log.info("=" * 60)
-        log.info("Loaded %s items total (cached: %s, downloaded: %s)", loaded, cached, downloaded)
-        log.info("=" * 60)
-
-        self.append_custom_entries()
-
-    def append_custom_entries(self):
-        custom_entries = load_custom_entries()
-        if not custom_entries:
-            return
-
-        self._add_separator(CUSTOM_PLAYLIST_SEPARATOR_LABEL)
-
-        for entry in custom_entries:
-            self.playlist_data.append(entry)
-            if entry.error:
-                item_text = f"❌ {entry.description} (Error)"
-            else:
-                item_text = f"🎵 {entry.description}"
-            self.playlist_widget.addItem(item_text)
-
-        log.info("Appended %s custom entries to playlist", len(custom_entries))
-
-    def _add_separator(self, label):
-        separator_entry = LoadedEntry(
-            kind="separator",
-            surah=0,
-            ayah=0,
-            description=label,
-            audio_file="",
-            data={},
-            surah_data={},
-        )
-        self.playlist_data.append(separator_entry)
-
-        item = QListWidgetItem(f"───── {label} ─────")
-        item.setFlags(item.flags() & ~Qt.ItemIsSelectable & ~Qt.ItemIsEnabled)
-        font = item.font()
-        font.setItalic(True)
-        item.setFont(font)
-        self.playlist_widget.addItem(item)
-
-    # ---------------- Playability ----------------
-
-    def _is_playable(self, entry):
-        return entry is not None and not entry.error and entry.kind != "separator"
-
-    # ---------------- Display ----------------
-
-    def show_ayah(self, index):
-        if not (0 <= index < len(self.playlist_data)):
-            return
-        entry = self.playlist_data[index]
-        if not self._is_playable(entry):
-            self.title_label.setText("Error: Failed to load this item")
-            self.ayah_label.setText("")
-            self.translation_label.setText("")
-            return
-
-        repeat_suffix = self._repeat_suffix(entry)
-        translation_text = entry.translation if self.translation_toggle.isChecked() else ""
-
-        if entry.kind == "bismillah":
-            self.title_label.setText(f"Bismillah\n{entry.description}{repeat_suffix}")
-            self.ayah_label.setText(entry.data.get("text", ""))
-            self.status_label.setText(f"Bismillah — {entry.description}{repeat_suffix}")
-        elif entry.kind == "custom":
-            self.title_label.setText(entry.description)
-            self.ayah_label.setText(entry.data.get("text", ""))
-            self.status_label.setText(f"Loaded: {entry.description}")
-        else:
-            surah_data = entry.surah_data
-            title_text = (f"{surah_data.get('englishName', 'Unknown')} "
-                          f"({surah_data.get('name', '')})\n"
-                          f"Ayah {entry.ayah}{repeat_suffix}")
-            self.title_label.setText(title_text)
-            self.ayah_label.setText(entry.data.get("text", ""))
-            self.status_label.setText(f"Loaded: {entry.description}{repeat_suffix}")
-
-        self.translation_label.setText(translation_text)
-        self.select_row_no_scroll(index)
-
-    def select_row_no_scroll(self, index):
-        self.playlist_widget.setAutoScroll(False)
-        self.playlist_widget.setCurrentRow(index)
-        self.playlist_widget.setAutoScroll(True)
+                t = e.surah_data.get("englishName", "")
+                ta = e.surah_data.get("name", "")
+                sub = f"Ayah {e.ayah}{suffix}"
+                ar = e.data.get("text", "")
+                tr = e.translation
+        self._title, self._title_ar, self._subtitle = t, ta, sub
+        self._arabic, self._translation = ar, tr
+        self.displayChanged.emit()
 
     # ---------------- Playback ----------------
 
-    def play_current(self):
-        if self.current_index < 0 or self.current_index >= len(self.playlist_data):
-            first = self._first_valid_index()
-            if first is not None:
-                self.play_selected(first)
-            else:
-                self.status_label.setText("No valid item to play")
+    def _bismillah_ok(self):
+        b = self._bismillah
+        return bool(b and not b.error and os.path.exists(b.audio_file))
+
+    def _start_audio(self, path):
+        if not os.path.exists(path):
+            self.toast.emit(f"Audio file not found: {path}")
+            return
+        url = QUrl.fromLocalFile(path)
+        if url == self._player.source():
+            self._player.setPosition(0)
         else:
-            self.play_selected(self.current_index)
+            self._player.setSource(url)
+        self._refresh_display()
+        self._player.play()
 
-    def on_item_double_clicked(self, item):
-        self.play_selected(self.playlist_widget.row(item))
-
-    def play_selected(self, index):
-        if not (0 <= index < len(self.playlist_data)):
+    @Slot(int)
+    def play(self, index):
+        entry = self.model.entry(index)
+        if entry is None:
             return
-        entry = self.playlist_data[index]
-        if not self._is_playable(entry):
-            self.status_label.setText("Error: This item could not be loaded")
+        if entry.error:
+            self.toast.emit("This item couldn't be loaded")
             return
-
-        self.current_index = index
-        if not os.path.exists(entry.audio_file):
-            self.status_label.setText(f"Error: Audio file not found: {entry.audio_file}")
-            return
-
-        log.info("Playing: %s - %s", entry.description, entry.audio_file)
-        self.player.setSource(QUrl.fromLocalFile(entry.audio_file))
-        self.show_ayah(index)
-        self.player.play()
-        label = "Bismillah" if entry.kind == "bismillah" else entry.description
-        self.status_label.setText(f"▶ Playing: {label}{self._repeat_suffix(entry)}")
-
-    def _first_valid_index(self):
-        for i, entry in enumerate(self.playlist_data):
-            if self._is_playable(entry):
-                return i
-        return None
-
-    def _next_valid_index(self, from_index):
-        for i in range(from_index + 1, len(self.playlist_data)):
-            if self._is_playable(self.playlist_data[i]):
-                return i
-        return None
-
-    def _prev_valid_index(self, from_index):
-        for i in range(from_index - 1, -1, -1):
-            if self._is_playable(self.playlist_data[i]):
-                return i
-        return None
-
-    def play_next(self):
-        if self.current_index < 0:
-            first = self._first_valid_index()
-            if first is not None:
-                self.play_selected(first)
+        if not entry.loaded:
+            self._pending = index
+            self.toast.emit("Downloading — it will play as soon as it's ready")
             return
 
-        nxt = self._next_valid_index(self.current_index)
-        if nxt is not None:
-            self.play_selected(nxt)
-            return
+        self._pending = -1
+        if index != self._current:
+            self._current = index
+            self.currentIndexChanged.emit()
 
-        if self.auto_play_check.isChecked():
-            first = self._first_valid_index()
-            if first is not None:
-                self.play_selected(first)
-                return
+        self._stage = "main"
+        path = entry.audio_file
+        if entry.lead_bismillah and self._bismillah_ok():
+            self._stage = "bismillah"
+            path = self._bismillah.audio_file
+        self._start_audio(path)
 
-        self.status_label.setText("End of playlist")
-
-    def play_previous(self):
-        if self.current_index < 0:
-            first = self._first_valid_index()
-            if first is not None:
-                self.play_selected(first)
-            return
-
-        prev = self._prev_valid_index(self.current_index)
-        if prev is not None:
-            self.play_selected(prev)
+    @Slot()
+    def toggle(self):
+        if self._playing:
+            self._player.pause()
+        elif (self._current >= 0 and self._player.source().isValid()
+              and self._player.mediaStatus() != QMediaPlayer.MediaStatus.EndOfMedia):
+            self._player.play()
         else:
-            self.status_label.setText("Beginning of playlist")
+            target = self._current if self._current >= 0 else self.model.first_index()
+            if target is not None:
+                self.play(target)
 
-    def stop_playback(self):
-        self.player.stop()
-        self.status_label.setText("Stopped")
+    @Slot()
+    def playNext(self):
+        if self._current < 0:
+            first = self.model.first_index()
+            if first is not None:
+                self.play(first)
+            return
+        nxt = self.model.next_index(self._current)
+        if nxt is None and self._repeat == self.REPEAT_ALL:
+            nxt = self.model.first_index()
+        if nxt is None:
+            self.toast.emit("End of playlist")
+        else:
+            self.play(nxt)
 
-    def on_media_status_changed(self, status):
+    @Slot()
+    def playPrevious(self):
+        if self._current < 0:
+            return
+        if self._position > 3000:
+            self.seek(0)
+            return
+        prev = self.model.prev_index(self._current)
+        if prev is None:
+            self.seek(0)
+        else:
+            self.play(prev)
+
+    @Slot(int)
+    def seek(self, ms):
+        self._player.setPosition(max(0, int(ms)))
+
+    @Slot(int)
+    def seekBy(self, delta_ms):
+        end = self._duration or (self._position + abs(delta_ms))
+        self.seek(max(0, min(end, self._position + int(delta_ms))))
+
+    @Slot()
+    def cycleRepeat(self):
+        self.repeatMode = (self._repeat + 1) % 3
+
+    # ---------------- Player signals ----------------
+
+    def _on_media_status(self, status):
         if status == QMediaPlayer.MediaStatus.EndOfMedia:
-            self.status_label.setText("Finished")
-            if self.auto_play_check.isChecked():
-                QTimer.singleShot(0, self.play_next)
-        elif status == QMediaPlayer.MediaStatus.LoadedMedia:
-            self.status_label.setText("Loaded, ready to play")
-        elif status == QMediaPlayer.MediaStatus.BufferingMedia:
-            self.status_label.setText("Buffering...")
+            QTimer.singleShot(0, self._on_finished)
 
-    def on_player_error(self, error):
-        error_messages = {
-            QMediaPlayer.Error.NoError: "No error",
-            QMediaPlayer.Error.ResourceError: "Resource error",
-            QMediaPlayer.Error.FormatError: "Format error",
-            QMediaPlayer.Error.NetworkError: "Network error",
-            QMediaPlayer.Error.AccessDeniedError: "Access denied",
-            QMediaPlayer.Error.ServiceMissingError: "Service missing",
-        }
-        self.status_label.setText(f"Player Error: {error_messages.get(error, str(error))}")
-        log.error("Player error: %s", error)
+    def _on_finished(self):
+        entry = self.model.entry(self._current)
+        if entry is None:
+            return
+        if self._stage == "bismillah":
+            self._stage = "main"
+            self._start_audio(entry.audio_file)
+            return
+        if self._repeat == self.REPEAT_ONE:
+            self.play(self._current)
+            return
+        nxt = self.model.next_index(self._current)
+        if nxt is None and self._repeat == self.REPEAT_ALL:
+            nxt = self.model.first_index()
+        if nxt is None:
+            self.toast.emit("End of playlist")
+        else:
+            self.play(nxt)
 
-    def toggle_auto_play(self, checked):
-        self.auto_play_check.setText(f"🔁 Auto-play: {'ON' if checked else 'OFF'}")
+    def _on_position(self, pos):
+        if pos != self._position:
+            self._position = int(pos)
+            self.positionChanged.emit()
 
-    def toggle_translation(self, checked):
-        self.translation_toggle.setText(f"🌐 Translation: {'ON' if checked else 'OFF'}")
-        if self.current_index >= 0:
-            self.show_ayah(self.current_index)
+    def _on_duration(self, dur):
+        self._duration = int(dur)
+        self.durationChanged.emit()
 
-    def closeEvent(self, event):
-        if self.loader is not None and self.loader.isRunning():
-            self.loader.quit()
-            self.loader.wait(2000)
-        super().closeEvent(event)
+    def _on_state(self, state):
+        playing = state == QMediaPlayer.PlaybackState.PlayingState
+        if playing != self._playing:
+            self._playing = playing
+            self.playingChanged.emit()
+
+    def _on_player_error(self, error, message=""):
+        log.error("Player error: %s %s", error, message)
+        self.toast.emit(f"Playback error: {message or error.name}")
 
 # ------------------------------------------------------------
 # Entry point
 # ------------------------------------------------------------
 
+def load_quran_font() -> str:
+    family = "Arial"
+    if os.path.exists(FONT_FILE):
+        font_id = QFontDatabase.addApplicationFont(FONT_FILE)
+        if font_id != -1:
+            families = QFontDatabase.applicationFontFamilies(font_id)
+            if families:
+                family = families[0]
+    log.info("Using font: %s", family)
+    return family
+
 def main():
-    app = QApplication(sys.argv)
+    QQuickStyle.setStyle("Basic")  # fully customisable; we draw our own theme
+    app = QGuiApplication(sys.argv)
+    app.setApplicationName("Ruqya Quran")
+    app.setOrganizationName("ruqya-quran")  # needed for persisted UI settings
     app.setDesktopFileName("ruqya-quran")
+
     font_family = load_quran_font()
-    window = QuranPlayer(font_family)
-    window.show()
+    model = PlaylistModel()
+    controller = PlayerController(model, font_family)
+
+    engine = QQmlApplicationEngine()
+    ctx = engine.rootContext()
+    ctx.setContextProperty("player", controller)
+    ctx.setContextProperty("playlistModel", model)
+    engine.load(QUrl.fromLocalFile(str(Path(__file__).with_name("Main.qml"))))
+    if not engine.rootObjects():
+        sys.exit(1)
+
+    app.aboutToQuit.connect(controller.shutdown)
+    controller.start()
     sys.exit(app.exec())
 
 if __name__ == "__main__":

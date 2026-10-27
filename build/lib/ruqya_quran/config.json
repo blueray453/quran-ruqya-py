@@ -1,0 +1,9 @@
+{
+  "reciter": "ar.abdurrahmaansudais",
+  "translation_edition": "en.sahih",
+  "font_file": "/usr/share/fonts/opentype/fonts-hosny-amiri/AmiriQuran.ttf",
+  "custom_playlist_separator_label": "Duas",
+  "request_timeout": 10,
+  "max_retries": 2,
+  "retry_backoff_base": 0.5
+}

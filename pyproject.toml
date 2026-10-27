@@ -32,7 +32,7 @@ ruqya-quran = "ruqya_quran.main:main"
 include = ["ruqya_quran*"]
 
 [tool.setuptools.package-data]
-ruqya_quran = ["config.json", "custom_playlist.json"]
+ruqya_quran = ["config.json", "custom_playlist.json", "*.qml"]
 
 [tool.setuptools.data-files]
 "share/applications"                 = ["ruqya-quran.desktop"]
