@@ -156,6 +156,8 @@ ApplicationWindow {
     component Track: Slider {
         id: tr
         property var t
+        property real markA: -1
+        property real markB: -1
         focusPolicy: Qt.NoFocus
         implicitHeight: 20
         background: Rectangle {
@@ -170,6 +172,23 @@ ApplicationWindow {
                 height: parent.height
                 radius: 2
                 color: tr.t.accent
+            }
+            Rectangle {   // looped span
+                visible: tr.markA >= 0 && tr.markB > tr.markA
+                x: tr.markA * parent.width
+                width: (tr.markB - tr.markA) * parent.width
+                y: -4; height: parent.height + 8; radius: 2
+                color: Qt.alpha(tr.t.accent, 0.3)
+            }
+            Rectangle {   // start marker
+                visible: tr.markA >= 0
+                x: tr.markA * parent.width - 1; y: -5
+                width: 2; height: 14; color: tr.t.accent
+            }
+            Rectangle {   // end marker
+                visible: tr.markB >= 0
+                x: tr.markB * parent.width - 1; y: -5
+                width: 2; height: 14; color: tr.t.accent
             }
         }
         handle: Rectangle {
@@ -196,6 +215,9 @@ ApplicationWindow {
     Shortcut { sequence: "P";           onActivated: win.sidebarOpen = !win.sidebarOpen }
     Shortcut { sequences: ["+", "="];   onActivated: win.fontScale = Math.min(1.8, win.fontScale + 0.1) }
     Shortcut { sequence: "-";           onActivated: win.fontScale = Math.max(0.6, win.fontScale - 0.1) }
+    Shortcut { sequence: "[";           onActivated: player.markStart() }
+    Shortcut { sequence: "]";           onActivated: player.markEnd() }
+    Shortcut { sequence: "Escape";      onActivated: player.clearLoop() }
 
     Binding {
         target: seek
@@ -269,7 +291,7 @@ ApplicationWindow {
             // ---- reading area
             Flickable {
                 id: flick
-                anchors { top: topBar.bottom; bottom: transport.top; left: parent.left; right: parent.right }
+                anchors { top: topBar.bottom; bottom: loopStrip.top; left: parent.left; right: parent.right }
                 clip: true
                 contentWidth: width
                 contentHeight: Math.max(height, col.implicitHeight + 80)
@@ -294,6 +316,14 @@ ApplicationWindow {
                         font.pixelSize: 13
                         font.weight: Font.DemiBold
                         font.letterSpacing: 1.6
+                        color: theme.accent
+                    }
+                    Text {
+                        Layout.alignment: Qt.AlignHCenter
+                        visible: player.loopActive
+                        text: "Looping · pass " + (player.loopDone + 1)
+                              + (player.loopTotal > 0 ? " of " + player.loopTotal : "")
+                        font.pixelSize: 13
                         color: theme.accent
                     }
                     RowLayout {
@@ -370,7 +400,7 @@ ApplicationWindow {
             // ---- toast
             Rectangle {
                 id: toast
-                anchors { horizontalCenter: parent.horizontalCenter; bottom: transport.top; bottomMargin: 16 }
+                anchors { horizontalCenter: parent.horizontalCenter; bottom: loopStrip.top; bottomMargin: 8 }
                 opacity: 0
                 visible: opacity > 0
                 radius: 18
@@ -385,6 +415,46 @@ ApplicationWindow {
                     color: theme.dark ? "#13171b" : "#ffffff"
                 }
                 Timer { id: toastTimer; interval: 3500; onTriggered: toast.opacity = 0 }
+            }
+
+            // ---- loop strip
+            Item {
+                id: loopStrip
+                height: 44
+                anchors { left: parent.left; right: parent.right; bottom: transport.top }
+
+                RowLayout {
+                    anchors.centerIn: parent
+                    spacing: 8
+                    Text { text: "Loop part"; font.pixelSize: 12; color: theme.textDim }
+                    Pill {
+                        t: theme
+                        active: player.loopStart >= 0
+                        text: player.loopStart >= 0 ? "Start " + (player.loopStart / 1000).toFixed(1) + "s" : "Set start"
+                        ToolTip.visible: hovered; ToolTip.text: "Mark loop start ( [ )"; ToolTip.delay: 600
+                        onClicked: player.markStart()
+                    }
+                    Pill {
+                        t: theme
+                        active: player.loopEnd >= 0
+                        text: player.loopEnd >= 0 ? "End " + (player.loopEnd / 1000).toFixed(1) + "s" : "Set end"
+                        ToolTip.visible: hovered; ToolTip.text: "Mark loop end ( ] )"; ToolTip.delay: 600
+                        onClicked: player.markEnd()
+                    }
+                    Pill {
+                        t: theme
+                        text: player.loopTotal > 0 ? "× " + player.loopTotal : "× ∞"
+                        ToolTip.visible: hovered; ToolTip.text: "Number of passes"; ToolTip.delay: 600
+                        onClicked: player.cycleLoopCount()
+                    }
+                    Pill {
+                        t: theme
+                        visible: player.loopStart >= 0 || player.loopEnd >= 0
+                        text: "Clear"
+                        ToolTip.visible: hovered; ToolTip.text: "Clear loop (Esc)"; ToolTip.delay: 600
+                        onClicked: player.clearLoop()
+                    }
+                }
             }
 
             // ---- transport bar
@@ -422,6 +492,8 @@ ApplicationWindow {
                             to: Math.max(1, player.duration)
                             enabled: player.duration > 0
                             onMoved: player.seek(Math.round(value))
+                            markA: player.duration > 0 && player.loopStart >= 0 ? player.loopStart / player.duration : -1
+                            markB: player.duration > 0 && player.loopEnd >= 0 ? player.loopEnd / player.duration : -1
                         }
                         Text {
                             Layout.preferredWidth: 40

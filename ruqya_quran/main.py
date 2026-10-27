@@ -529,6 +529,7 @@ class PlayerController(QObject):
     translationChanged = Signal()
     loadingChanged = Signal()
     toast = Signal(str)
+    loopChanged = Signal()
 
     REPEAT_OFF, REPEAT_ONE, REPEAT_ALL = 0, 1, 2
 
@@ -550,6 +551,10 @@ class PlayerController(QObject):
         self._volume = 1.0
         self._muted = False
         self._repeat = self.REPEAT_ALL
+        self._loop_a = self._loop_b = -1  # ms, -1 = unset
+        self._loop_total = 3  # passes; 0 = until stopped
+        self._loop_done = 0
+        self._loop_guard = False  # ignore stale positions right after a seek
         self._show_translation = bool(TRANSLATION_EDITION)
 
         self._loaded = self._total = self._failed = 0
@@ -807,6 +812,7 @@ class PlayerController(QObject):
 
         self._pending = -1
         if index != self._current:
+            self.clearLoop()
             self._current = index
             self.currentIndexChanged.emit()
 
@@ -870,6 +876,90 @@ class PlayerController(QObject):
     def cycleRepeat(self):
         self.repeatMode = (self._repeat + 1) % 3
 
+    # ---------------- A-B loop (session only) ----------------
+
+    @Property(int, notify=loopChanged)
+    def loopStart(self):
+        return self._loop_a
+
+    @Property(int, notify=loopChanged)
+    def loopEnd(self):
+        return self._loop_b
+
+    @Property(int, notify=loopChanged)
+    def loopTotal(self):
+        return self._loop_total
+
+    @Property(int, notify=loopChanged)
+    def loopDone(self):
+        return self._loop_done
+
+    @Property(bool, notify=loopChanged)
+    def loopActive(self):
+        return self._loop_valid()
+
+    def _loop_valid(self):
+        return self._loop_a >= 0 and self._loop_b > self._loop_a
+
+    def _loop_running(self):
+        return self._stage == "main" and self._loop_valid()
+
+    def _loop_hit(self):
+        """Loop end reached. Jump back and return True, or finish the loop and return False."""
+        self._loop_done += 1
+        if self._loop_total and self._loop_done >= self._loop_total:
+            self.clearLoop()
+            self.toast.emit("Loop finished")
+            return False
+        self.loopChanged.emit()
+        self._loop_guard = True
+        self._player.setPosition(self._loop_a)
+        return True
+
+    def _can_mark(self):
+        return (self._stage == "main" and self._current >= 0 and self._player.source().isValid())
+
+    @Slot()
+    def markStart(self):
+        if not self._can_mark():
+            return
+        self._loop_a = self._position
+        if self._loop_b <= self._loop_a:
+            self._loop_b = -1
+        self._loop_done = 0
+        self._loop_guard = False
+        self.loopChanged.emit()
+
+    @Slot()
+    def markEnd(self):
+        if not self._can_mark():
+            return
+        if self._loop_a < 0:
+            self._loop_a = 0
+        if self._position - self._loop_a < 300:
+            self.toast.emit("The end must come after the start")
+            return
+        self._loop_b = self._position
+        self._loop_done = 0
+        self.loopChanged.emit()
+        self._loop_guard = True
+        self._player.setPosition(self._loop_a)  # start looping immediately
+        self._player.play()
+
+    @Slot()
+    def clearLoop(self):
+        self._loop_a = self._loop_b = -1
+        self._loop_done = 0
+        self._loop_guard = False
+        self.loopChanged.emit()
+
+    @Slot()
+    def cycleLoopCount(self):
+        opts = (3, 5, 7, 10, 0)
+        i = opts.index(self._loop_total) if self._loop_total in opts else 0
+        self._loop_total = opts[(i + 1) % len(opts)]
+        self.loopChanged.emit()
+
     # ---------------- Player signals ----------------
 
     def _on_media_status(self, status):
@@ -883,6 +973,9 @@ class PlayerController(QObject):
         if self._stage == "bismillah":
             self._stage = "main"
             self._start_audio(entry.audio_file)
+            return
+        if self._loop_running() and self._loop_hit():
+            self._player.play()
             return
         if self._repeat == self.REPEAT_ONE:
             self.play(self._current)
@@ -899,6 +992,14 @@ class PlayerController(QObject):
         if pos != self._position:
             self._position = int(pos)
             self.positionChanged.emit()
+        if not self._loop_running():
+            return
+        if self._loop_guard:
+            if pos < self._loop_b:  # the seek has taken effect
+                self._loop_guard = False
+            return
+        if pos >= self._loop_b:
+            self._loop_hit()
 
     def _on_duration(self, dur):
         self._duration = int(dur)
