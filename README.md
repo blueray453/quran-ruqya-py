@@ -291,3 +291,24 @@ MIT. See `LICENSE`.
 ````
 
 You'll need to create a `LICENSE` file, since `pyproject.toml` references it, and replace `<your-repo-url>` with the real one. One thing worth double-checking: I listed `fonts-noto-core` for the Bengali font because that is where Debian ships `NotoSansBengali-Regular.ttf`. Run `make doctor` once to confirm both font paths resolve on your machine.
+
+## Install Deb
+
+sudo apt install build-essential devscripts debhelper dh-python \
+    pybuild-plugin-pyproject python3-all python3-setuptools lintian
+
+dch --create -v 0.1.0 --package ruqya-quran   # creates debian/changelog
+
+# once: identity for dch (add to ~/.zshrc)
+export DEBFULLNAME="Ismail"
+export DEBEMAIL="your@email.com"
+
+deactivate            # leave the venv
+make deb-version
+make deb-deps
+make check
+make deb
+make deb-lint
+make uninstall        # remove the pipx version first
+make deb-install
+make seed extras
