@@ -154,7 +154,7 @@ AUDIO_SOURCES = {
     "ar.abdurrahmaansudais": ("Abdurrahmaan_As-Sudais_192kbps", "ar.abdurrahmaansudais", 192),
     "ar.saoodshuraym": ("Saood_ash-Shuraym_128kbps", "ar.saoodshuraym", 128),
     "ar.alafasy": ("Mishaari_Raashid_Alafasy_128kbps", "ar.alafasy", 128),
-    "ar.ghamdi": ("Saad_Al-Ghamdi_128kbps", None, None),
+    "ar.ghamdi": ("Ghamadi_40kbps", None, None),
 }
 
 def _audio_urls(reciter, surah, ayah, global_ayah_number):
