@@ -1569,7 +1569,8 @@ def load_bangla_font() -> str:
 def main():
     QQuickStyle.setStyle("Basic")
     app = QGuiApplication(sys.argv)
-    app.setApplicationName("Ruqya Quran")
+    app.setApplicationName("ruqya-quran")
+    app.setApplicationDisplayName("Ruqya Quran")
     app.setOrganizationName("ruqya-quran")
     app.setDesktopFileName("ruqya-quran")
 
