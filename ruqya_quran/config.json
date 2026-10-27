@@ -1,7 +1,20 @@
 {
-  "reciter": "ar.abdurrahmaansudais",
-  "translation_edition": "en.sahih",
+  "reciters": {
+    "ar.abdurrahmaansudais": "Sudais",
+    "ar.saoodshuraym": "Shuraym",
+    "ar.alafasy": "Mishari Rashid",
+    "ar.ghamdi": "Saad al-Ghamdi"
+  },
+  "default_reciter": "ar.abdurrahmaansudais",
+  "translations": {
+    "en.sahih": "English (Saheeh)",
+    "bn.bengali": "বাংলা (Muhiuddin Khan)",
+    "bn.hoque": "বাংলা (Zohurul Hoque)"
+  },
+  "default_translation": "en.sahih",
+  "word_by_word_language": "auto",
   "font_file": "/usr/share/fonts/opentype/fonts-hosny-amiri/AmiriQuran.ttf",
+  "bangla_font_file": "/usr/share/fonts/truetype/noto/NotoSansBengali-Regular.ttf",
   "custom_playlist_separator_label": "Duas",
   "request_timeout": 10,
   "max_retries": 2,

@@ -1,0 +1,1982 @@
+openapi: 3.1.0
+info:
+  title: 'بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ'
+  description: "<p><b />AlQuran API\r\n        <br />The Holy Quran is a divine book from Allah SWT.</p>\r\n        You can get the text for complete edition, search words in text using the endpoints below."
+  version: v1
+servers:
+  -
+    url: 'https://api.alquran.cloud/v1'
+  -
+    url: 'http://alquran.api.islamic.network/v1'
+  -
+    url: 'http://alquran.api.alislam.ru/v1'
+paths:
+  /ayah/random:
+    get:
+      tags:
+        - Ayah
+      summary: 'Single Ayah randomly'
+      description: 'Returns a single Ayah and its details randomly'
+      operationId: 917e5b1f05e0bb5c059ba27aac03ab87
+      parameters:
+        -
+          $ref: '#/components/parameters/Accept-Encoding'
+      responses:
+        '200':
+          description: 'Returns a single Ayah and its details randomly'
+          content:
+            application/json:
+              schema:
+                properties:
+                  code: { type: integer, example: 200 }
+                  status: { type: string, example: OK }
+                  data: { $ref: '#/components/schemas/200AyahQuranUthmaniResponse' }
+                type: object
+        '404':
+          $ref: '#/components/responses/404NotFoundResourceResponse'
+  '/ayah/random/{edition}':
+    get:
+      tags:
+        - Ayah
+      summary: 'Single Ayah randomly based on edition'
+      description: 'Returns a single Ayah and its details randomly based on the edition'
+      operationId: 4f7e69a1183be88b15e6d8f087e35ded
+      parameters:
+        -
+          $ref: '#/components/parameters/AyahEditionNameParameter'
+        -
+          $ref: '#/components/parameters/Accept-Encoding'
+      responses:
+        '200':
+          description: 'Returns a single Ayah and its details randomly based on the edition'
+          content:
+            application/json:
+              schema:
+                properties:
+                  code: { type: integer, example: 200 }
+                  status: { type: string, example: OK }
+                  data: { $ref: '#/components/schemas/200AyahQuranUthmaniResponse' }
+                type: object
+        '404':
+          $ref: '#/components/responses/404NotFoundResourceResponse'
+  '/ayah/random/editions/{editions}':
+    get:
+      tags:
+        - Ayah
+      summary: 'Single Ayah randomly based on list of editions'
+      description: 'Returns a single Ayah and its details randomly based on the given list of editions'
+      operationId: a82b32f2354214385885629da5a7ea9e
+      parameters:
+        -
+          $ref: '#/components/parameters/AyahEditionsListParameter'
+        -
+          $ref: '#/components/parameters/Accept-Encoding'
+      responses:
+        '200':
+          description: 'Returns a single Ayah and its details randomly based on the given list of editions'
+          content:
+            application/json:
+              schema:
+                properties:
+                  code: { type: integer, example: 200 }
+                  status: { type: string, example: OK }
+                  data: { type: array, items: { oneOf: [{ $ref: '#/components/schemas/200AyahQuranUthmaniResponse' }, { $ref: '#/components/schemas/200AyahQuranSimpleResponse' }] } }
+                type: object
+        '404':
+          $ref: '#/components/responses/404NotFoundResourceResponse'
+  '/ayah/{number}':
+    get:
+      tags:
+        - Ayah
+      summary: 'Single Ayah'
+      description: 'Returns a single Ayah and its details based on the given number'
+      operationId: 48e419106a7a8de41384cf0e0798a88f
+      parameters:
+        -
+          $ref: '#/components/parameters/AyahNumberParameter'
+        -
+          $ref: '#/components/parameters/Accept-Encoding'
+      responses:
+        '200':
+          description: 'Returns a single Ayah and its details based on the given number'
+          content:
+            application/json:
+              schema:
+                properties:
+                  code: { type: integer, example: 200 }
+                  status: { type: string, example: OK }
+                  data: { $ref: '#/components/schemas/200AyahQuranUthmaniResponse' }
+                type: object
+        '404':
+          $ref: '#/components/responses/404AyahResponse'
+  '/ayah/{number}/{edition}':
+    get:
+      tags:
+        - Ayah
+      summary: 'Single Ayah based on number and edition'
+      description: 'Returns a single Ayah and its details based on the given number and edition'
+      operationId: 8eac3435f60394d7a8a188668a0d98b5
+      parameters:
+        -
+          $ref: '#/components/parameters/AyahNumberParameter'
+        -
+          $ref: '#/components/parameters/AyahEditionNameParameter'
+        -
+          $ref: '#/components/parameters/Accept-Encoding'
+      responses:
+        '200':
+          description: 'Returns a single Ayah and its details based on the given number and edition'
+          content:
+            application/json:
+              schema:
+                properties:
+                  code: { type: integer, example: 200 }
+                  status: { type: string, example: OK }
+                  data: { $ref: '#/components/schemas/200AyahQuranUthmaniResponse' }
+                type: object
+        '404':
+          $ref: '#/components/responses/404AyahResponse'
+  '/ayah/{number}/editions/{editions}':
+    get:
+      tags:
+        - Ayah
+      summary: 'Single Ayah based on the number and list of editions'
+      description: 'Returns a single Ayah and its details based on the given number and based on the given list of editions'
+      operationId: ed4317310780640d8f8527971ce99ca5
+      parameters:
+        -
+          $ref: '#/components/parameters/AyahNumberParameter'
+        -
+          $ref: '#/components/parameters/AyahEditionsListParameter'
+        -
+          $ref: '#/components/parameters/Accept-Encoding'
+      responses:
+        '200':
+          description: 'Returns a single Ayah and its details based on the given number and based on the given list of editions'
+          content:
+            application/json:
+              schema:
+                properties:
+                  code: { type: integer, example: 200 }
+                  status: { type: string, example: OK }
+                  data: { type: array, items: { oneOf: [{ $ref: '#/components/schemas/200AyahQuranUthmaniResponse' }, { $ref: '#/components/schemas/200AyahQuranSimpleResponse' }] } }
+                type: object
+        '404':
+          description: 'Ayah - Not Found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  code: { type: integer, example: 404 }
+                  status: { type: string, example: 'NOT FOUND' }
+                  data: { type: array, items: { type: string }, example: ['Please specify an Ayah number (1 to 6236).', 'Please specify an Ayah number (1 to 6236).'] }
+                type: object
+  /edition:
+    get:
+      tags:
+        - Edition
+      summary: 'List of all editions'
+      description: 'Returns a list of all editions'
+      operationId: 105038bd4ee8ee8cc993ef7f9ec45904
+      parameters:
+        -
+          name: type
+          in: query
+          description: 'Type of the editions'
+          required: false
+          schema:
+            type: string
+          example: quran
+        -
+          name: format
+          in: query
+          description: 'Format of the editions'
+          required: false
+          schema:
+            type: string
+          example: text
+        -
+          name: language
+          in: query
+          description: 'Language of the editions'
+          required: false
+          schema:
+            type: string
+          example: ar
+        -
+          $ref: '#/components/parameters/Accept-Encoding'
+      responses:
+        '200':
+          description: 'Returns a list of all editions'
+          content:
+            application/json:
+              schema:
+                properties:
+                  code: { type: integer, example: 200 }
+                  status: { type: string, example: OK }
+                  data: { type: array, items: { oneOf: [{ $ref: '#/components/schemas/200EditionQuranUthmaniResponse' }, { $ref: '#/components/schemas/200EditionQuranSimpleResponse' }] } }
+                type: object
+        '404':
+          $ref: '#/components/responses/404NotFoundResourceResponse'
+  /edition/type:
+    get:
+      tags:
+        - Edition
+      summary: 'List of edition types'
+      description: 'Returns a list of all edition types'
+      operationId: 6a0be41754109518226052ce394a4a65
+      responses:
+        '200':
+          description: 'Returns a list of all edition types'
+          content:
+            application/json:
+              schema:
+                properties:
+                  code: { type: integer, example: 200 }
+                  status: { type: string, example: OK }
+                  data: { type: array, items: { type: string }, example: [quran, versebyverse, transliteration, translation, tafsir] }
+                type: object
+        '404':
+          $ref: '#/components/responses/404NotFoundResourceResponse'
+  '/edition/type/{type}':
+    get:
+      tags:
+        - Edition
+      summary: 'List of all editions for the requested type'
+      description: 'Returns a list of all editions that belong to the requested type'
+      operationId: d0e01a92f84071e7814086f4a26ac9ed
+      parameters:
+        -
+          name: type
+          in: path
+          description: 'Type of the editions'
+          required: true
+          schema:
+            type: string
+            enum:
+              - quran
+              - versebyverse
+              - transliteration
+              - translation
+              - tafsir
+          example: quran
+      responses:
+        '200':
+          description: 'Returns a list of all editions that belong to the requested type'
+          content:
+            application/json:
+              schema:
+                properties:
+                  code: { type: integer, example: 200 }
+                  status: { type: string, example: OK }
+                  data: { type: array, items: { oneOf: [{ $ref: '#/components/schemas/200EditionQuranUthmaniResponse' }, { $ref: '#/components/schemas/200EditionQuranSimpleResponse' }] } }
+                type: object
+        '404':
+          description: 'Edition Type - Not Found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  code: { type: integer, example: 404 }
+                  status: { type: string, example: 'NOT FOUND' }
+                  data: { type: string, example: 'Invalid type.' }
+                type: object
+  /edition/format:
+    get:
+      tags:
+        - Edition
+      summary: 'List of edition formats'
+      description: 'Returns a list of all edition formats'
+      operationId: f0482501d21f6fd72c272d82354195ba
+      parameters:
+        -
+          $ref: '#/components/parameters/Accept-Encoding'
+      responses:
+        '200':
+          description: 'Returns a list of all edition formats'
+          content:
+            application/json:
+              schema:
+                properties:
+                  code: { type: integer, example: 200 }
+                  status: { type: string, example: OK }
+                  data: { type: array, items: { type: string }, example: [text, audio] }
+                type: object
+        '404':
+          $ref: '#/components/responses/404NotFoundResourceResponse'
+  '/edition/format/{format}':
+    get:
+      tags:
+        - Edition
+      summary: 'List of all editions for the requested format'
+      description: 'Returns a list of all editions that belong to the requested format'
+      operationId: 1a1f59dcbcbf11c6e44cd41d3e9915b1
+      parameters:
+        -
+          name: format
+          in: path
+          description: 'Format of the editions'
+          required: true
+          schema:
+            type: string
+            enum:
+              - text
+              - audio
+          example: text
+        -
+          $ref: '#/components/parameters/Accept-Encoding'
+      responses:
+        '200':
+          description: 'Returns a list of all editions that belong to the requested format'
+          content:
+            application/json:
+              schema:
+                properties:
+                  code: { type: integer, example: 200 }
+                  status: { type: string, example: OK }
+                  data: { type: array, items: { oneOf: [{ $ref: '#/components/schemas/200EditionQuranUthmaniResponse' }, { $ref: '#/components/schemas/200EditionQuranSimpleResponse' }] } }
+                type: object
+        '404':
+          description: 'Edition Format - Not Found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  code: { type: integer, example: 404 }
+                  status: { type: string, example: 'NOT FOUND' }
+                  data: { type: string, example: 'Invalid format.' }
+                type: object
+  /edition/language:
+    get:
+      tags:
+        - Edition
+      summary: 'List of edition languages'
+      description: 'Returns a list of all edition languages'
+      operationId: 9c8afc2951f001b6e6a7e7ac128f290b
+      parameters:
+        -
+          $ref: '#/components/parameters/Accept-Encoding'
+      responses:
+        '200':
+          description: 'Returns a list of all edition languages'
+          content:
+            application/json:
+              schema:
+                properties:
+                  code: { type: integer, example: 200 }
+                  status: { type: string, example: OK }
+                  data: { type: array, items: { type: string }, example: [ar, am, az, ber, bn, cs, ce, de, dv, en, es, fa, fr, ha, hi, id, it, ja, ko, ku, kk, ml, nl, 'no', pl, ps, pt, ro, ru, sd, so, sq, sv, sw, ta, tg, th, tr, tt, ug, ur, uz] }
+                type: object
+        '404':
+          $ref: '#/components/responses/404NotFoundResourceResponse'
+  '/edition/language/{lang}':
+    get:
+      tags:
+        - Edition
+      summary: 'List of all editions for the requested language'
+      description: 'Returns a list of all editions that belong to the requested language'
+      operationId: d11d091527816a6e91dc810774200619
+      parameters:
+        -
+          name: lang
+          in: path
+          description: 'Language of the editions'
+          required: true
+          schema:
+            type: string
+            enum:
+              - ar
+              - am
+              - az
+              - ber
+              - bn
+              - cs
+              - de
+              - dv
+              - en
+              - es
+              - fa
+              - fr
+              - ha
+              - hi
+              - id
+              - it
+              - ja
+              - ko
+              - ku
+              - ml
+              - nl
+              - 'no'
+              - pl
+              - ps
+              - pt
+              - ro
+              - ru
+              - sd
+              - so
+              - sq
+              - sv
+              - sw
+              - ta
+              - tg
+              - th
+              - tr
+              - tt
+              - ug
+              - ur
+              - uz
+          example: ar
+        -
+          $ref: '#/components/parameters/Accept-Encoding'
+      responses:
+        '200':
+          description: 'Returns a list of all editions that belong to the requested language'
+          content:
+            application/json:
+              schema:
+                properties:
+                  code: { type: integer, example: 200 }
+                  status: { type: string, example: OK }
+                  data: { type: array, items: { oneOf: [{ $ref: '#/components/schemas/200EditionQuranUthmaniResponse' }, { $ref: '#/components/schemas/200EditionQuranSimpleResponse' }] } }
+                type: object
+        '404':
+          description: 'Edition Language - Not Found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  code: { type: integer, example: 404 }
+                  status: { type: string, example: 'NOT FOUND' }
+                  data: { type: string, example: 'Invalid language.' }
+                type: object
+  '/hizbQuarter/{number}':
+    get:
+      tags:
+        - HizbQuarter
+      summary: 'Hizb Quarter for the requested number'
+      description: 'Returns the Hizb Quarter for the requested number'
+      operationId: 155e56b81f25ed3071a1ef34593ffa8c
+      parameters:
+        -
+          $ref: '#/components/parameters/HizbQuarterNumberParameter'
+        -
+          $ref: '#/components/parameters/HizbQuarterOffsetQueryParameter'
+        -
+          $ref: '#/components/parameters/LimitQueryParameter'
+        -
+          $ref: '#/components/parameters/Accept-Encoding'
+      responses:
+        '200':
+          description: 'Returns the Hizb Quarter for the requested number'
+          content:
+            application/json:
+              schema:
+                properties:
+                  code: { type: integer, example: 200 }
+                  status: { type: string, example: OK }
+                  data: { $ref: '#/components/schemas/200QuranUthmaniEntireResponse' }
+                type: object
+        '404':
+          $ref: '#/components/responses/404HizbQuarterResponse'
+  '/hizbQuarter/{number}/{edition}':
+    get:
+      tags:
+        - HizbQuarter
+      summary: 'Hizb Quarter for the requested number and requested edition'
+      description: 'Returns the Hizb Quarter for the requested number and requested edition'
+      operationId: 8502d697bb5cd682f59545056e585fd6
+      parameters:
+        -
+          $ref: '#/components/parameters/HizbQuarterNumberParameter'
+        -
+          name: edition
+          in: path
+          description: 'Edition name'
+          required: true
+          schema:
+            type: string
+          example: quran-uthmani-quran-academy
+        -
+          $ref: '#/components/parameters/HizbQuarterOffsetQueryParameter'
+        -
+          $ref: '#/components/parameters/LimitQueryParameter'
+        -
+          $ref: '#/components/parameters/Accept-Encoding'
+      responses:
+        '200':
+          description: 'Returns the Hizb Quarter for the requested number and requested edition'
+          content:
+            application/json:
+              schema:
+                properties:
+                  code: { type: integer, example: 200 }
+                  status: { type: string, example: OK }
+                  data: { $ref: '#/components/schemas/200QuranUthmaniEntireResponse' }
+                type: object
+        '404':
+          $ref: '#/components/responses/404HizbQuarterResponse'
+  '/juz/{number}':
+    get:
+      tags:
+        - Juz
+      summary: 'Juz for the requested number'
+      description: 'Returns the Juz for the requested number'
+      operationId: a4dde2120cb1c9cad6dd9486c7cfe9db
+      parameters:
+        -
+          $ref: '#/components/parameters/JuzNumberParameter'
+        -
+          $ref: '#/components/parameters/JuzOffsetQueryParameter'
+        -
+          $ref: '#/components/parameters/LimitQueryParameter'
+        -
+          $ref: '#/components/parameters/Accept-Encoding'
+      responses:
+        '200':
+          description: 'Returns the Juz for the requested number'
+          content:
+            application/json:
+              schema:
+                properties:
+                  code: { type: integer, example: 200 }
+                  status: { type: string, example: OK }
+                  data: { $ref: '#/components/schemas/200QuranUthmaniEntireResponse' }
+                type: object
+        '404':
+          $ref: '#/components/responses/404JuzResponse'
+  '/juz/{number}/{edition}':
+    get:
+      tags:
+        - Juz
+      summary: 'Juz for the requested number and edition'
+      description: 'Returns the Juz for the requested number and the requested edition.'
+      operationId: a51e7af3b7896768f5313beea3d656ef
+      parameters:
+        -
+          $ref: '#/components/parameters/JuzNumberParameter'
+        -
+          name: edition
+          in: path
+          description: 'Edition name'
+          required: true
+          schema:
+            type: string
+          example: quran-uthmani-quran-academy
+        -
+          $ref: '#/components/parameters/JuzOffsetQueryParameter'
+        -
+          $ref: '#/components/parameters/LimitQueryParameter'
+        -
+          $ref: '#/components/parameters/Accept-Encoding'
+      responses:
+        '200':
+          description: 'Returns the Juz for the requested number and the requested edition.'
+          content:
+            application/json:
+              schema:
+                properties:
+                  code: { type: integer, example: 200 }
+                  status: { type: string, example: OK }
+                  data: { $ref: '#/components/schemas/200QuranUthmaniEntireResponse' }
+                type: object
+        '404':
+          $ref: '#/components/responses/404JuzResponse'
+  '/manzil/{number}':
+    get:
+      tags:
+        - Manzil
+      summary: 'Manzil for the requested number'
+      description: 'Returns the Manzil for the requested number'
+      operationId: 16889dd71e0afe896e45649023717a7c
+      parameters:
+        -
+          $ref: '#/components/parameters/ManzilNumberParameter'
+        -
+          $ref: '#/components/parameters/ManzilOffsetQueryParameter'
+        -
+          $ref: '#/components/parameters/LimitQueryParameter'
+        -
+          $ref: '#/components/parameters/Accept-Encoding'
+      responses:
+        '200':
+          description: 'Returns the Manzil for the requested number'
+          content:
+            application/json:
+              schema:
+                properties:
+                  code: { type: integer, example: 200 }
+                  status: { type: string, example: OK }
+                  data: { $ref: '#/components/schemas/200QuranUthmaniEntireResponse' }
+                type: object
+        '404':
+          $ref: '#/components/responses/404ManzilResponse'
+  '/manzil/{number}/{edition}':
+    get:
+      tags:
+        - Manzil
+      summary: 'Manzil for the requested number and edition'
+      description: 'Returns the Manzil for the requested number and requested edition.'
+      operationId: 247b037762200238ff81d4c894bbfcd4
+      parameters:
+        -
+          $ref: '#/components/parameters/ManzilNumberParameter'
+        -
+          name: edition
+          in: path
+          description: 'Edition name'
+          required: true
+          schema:
+            type: string
+          example: quran-uthmani-quran-academy
+        -
+          $ref: '#/components/parameters/ManzilOffsetQueryParameter'
+        -
+          $ref: '#/components/parameters/LimitQueryParameter'
+        -
+          $ref: '#/components/parameters/Accept-Encoding'
+      responses:
+        '200':
+          description: 'Returns the Manzil for the requested number and requested edition.'
+          content:
+            application/json:
+              schema:
+                properties:
+                  code: { type: integer, example: 200 }
+                  status: { type: string, example: OK }
+                  data: { $ref: '#/components/schemas/200QuranUthmaniEntireResponse' }
+                type: object
+        '404':
+          $ref: '#/components/responses/404ManzilResponse'
+  /meta:
+    get:
+      tags:
+        - Meta
+      summary: 'Get metadata'
+      description: 'Returns all the available meta data about Surahs, Pages, Hizbs and Juzs.'
+      operationId: d507a008e8d45c60b0e3dbb36d120e83
+      parameters:
+        -
+          $ref: '#/components/parameters/Accept-Encoding'
+      responses:
+        '200':
+          description: 'Returns all the available meta data about Surahs, Pages, Hizbs and Juzs.'
+          content:
+            application/json:
+              schema:
+                properties:
+                  code: { type: integer, example: 200 }
+                  status: { type: string, example: OK }
+                  data: { properties: { ayahs: { properties: { count: { type: integer, example: 6236 } }, type: object }, surahs: { properties: { count: { type: integer, example: 114 }, references: { type: array, items: { properties: { number: { type: integer, example: 1 }, name: { type: string, example: 'سُورَةُ ٱلْفَاتِحَةِ' }, englishName: { type: string, example: Al-Faatiha }, englishNameTranslation: { type: string, example: 'The Opening' }, numberOfAyahs: { type: integer, example: 7 }, revelationType: { type: string, example: Meccan } }, type: object } } }, type: object }, sajdas: { properties: { count: { type: integer, example: 15 }, references: { type: array, items: { properties: { surah: { type: integer, example: 7 }, ayah: { type: integer, example: 206 }, recommended: { type: boolean, example: true }, obligatory: { type: boolean, example: false } }, type: object } } }, type: object }, rukus: { properties: { count: { type: integer, example: 556 }, references: { type: array, items: { $ref: '#/components/schemas/200MetaReferenceResponse' } } }, type: object }, pages: { properties: { count: { type: integer, example: 604 }, references: { type: array, items: { $ref: '#/components/schemas/200MetaReferenceResponse' } } }, type: object }, manzils: { properties: { count: { type: integer, example: 7 }, references: { type: array, items: { $ref: '#/components/schemas/200MetaReferenceResponse' } } }, type: object }, hizbQuarters: { properties: { count: { type: integer, example: 240 }, references: { type: array, items: { $ref: '#/components/schemas/200MetaReferenceResponse' } } }, type: object }, juzs: { properties: { count: { type: integer, example: 30 }, references: { type: array, items: { $ref: '#/components/schemas/200MetaReferenceResponse' } } }, type: object } }, type: object }
+                type: object
+        '404':
+          $ref: '#/components/responses/404NotFoundResourceResponse'
+  '/page/{number}':
+    get:
+      tags:
+        - Page
+      summary: 'Page for the requested number'
+      description: 'Returns the Page for the requested number'
+      operationId: 0b09b0203f5a4b5071df3530f50f24d7
+      parameters:
+        -
+          $ref: '#/components/parameters/PageNumberParameter'
+        -
+          $ref: '#/components/parameters/PageOffsetQueryParameter'
+        -
+          $ref: '#/components/parameters/LimitQueryParameter'
+        -
+          $ref: '#/components/parameters/Accept-Encoding'
+      responses:
+        '200':
+          description: 'Returns the Page for the requested number'
+          content:
+            application/json:
+              schema:
+                properties:
+                  code: { type: integer, example: 200 }
+                  status: { type: string, example: OK }
+                  data: { $ref: '#/components/schemas/200QuranUthmaniEntireResponse' }
+                type: object
+        '404':
+          $ref: '#/components/responses/404PageResponse'
+  '/page/{number}/{edition}':
+    get:
+      tags:
+        - Page
+      summary: 'Page for the requested number and edition'
+      description: 'Returns the Page for the requested number and requested edition.'
+      operationId: 8d3716eb90969e055d9ff251ee2a17ad
+      parameters:
+        -
+          $ref: '#/components/parameters/PageNumberParameter'
+        -
+          name: edition
+          in: path
+          description: 'Edition name'
+          required: true
+          schema:
+            type: string
+          example: quran-uthmani-quran-academy
+        -
+          $ref: '#/components/parameters/PageOffsetQueryParameter'
+        -
+          $ref: '#/components/parameters/LimitQueryParameter'
+        -
+          $ref: '#/components/parameters/Accept-Encoding'
+      responses:
+        '200':
+          description: 'Returns the Page for the requested number and requested edition.'
+          content:
+            application/json:
+              schema:
+                properties:
+                  code: { type: integer, example: 200 }
+                  status: { type: string, example: OK }
+                  data: { $ref: '#/components/schemas/200QuranUthmaniEntireResponse' }
+                type: object
+        '404':
+          $ref: '#/components/responses/404PageResponse'
+  /quran:
+    get:
+      tags:
+        - Quran
+      summary: 'Complete Holy Quran edition'
+      description: 'Returns a complete Holy Quran edition.'
+      operationId: e6b20148b33df5636e7efd2d04be10cb
+      parameters:
+        -
+          $ref: '#/components/parameters/Accept-Encoding'
+      responses:
+        '200':
+          description: 'Returns a complete Holy Quran edition.'
+          content:
+            application/json:
+              schema:
+                properties:
+                  code: { type: integer, example: 200 }
+                  status: { type: string, example: OK }
+                  data: { $ref: '#/components/schemas/200QuranUthmaniResponse' }
+                type: object
+        '404':
+          $ref: '#/components/responses/404NotFoundResourceResponse'
+  '/quran/{edition}':
+    get:
+      tags:
+        - Quran
+      summary: 'Complete Holy Quran edition as per the given edition.'
+      description: 'Returns a complete Holy Quran edition as per the given edition.'
+      operationId: 391022780607fe9aedf76b418af1a7de
+      parameters:
+        -
+          name: edition
+          in: path
+          description: 'Edition name'
+          required: true
+          schema:
+            type: string
+          example: quran-uthmani-quran-academy
+        -
+          $ref: '#/components/parameters/Accept-Encoding'
+      responses:
+        '200':
+          description: 'Returns a complete Holy Quran edition as per the given edition.'
+          content:
+            application/json:
+              schema:
+                properties:
+                  code: { type: integer, example: 200 }
+                  status: { type: string, example: OK }
+                  data: { $ref: '#/components/schemas/200QuranUthmaniResponse' }
+                type: object
+        '404':
+          $ref: '#/components/responses/404NotFoundResourceResponse'
+  '/ruku/{number}':
+    get:
+      tags:
+        - Ruku
+      summary: 'Ruku for the requested number'
+      description: 'Returns the Ruku for the requested number'
+      operationId: deaa4455f611b017574fbe66967c4f42
+      parameters:
+        -
+          $ref: '#/components/parameters/RukuNumberParameter'
+        -
+          $ref: '#/components/parameters/RukuOffsetQueryParameter'
+        -
+          $ref: '#/components/parameters/LimitQueryParameter'
+        -
+          $ref: '#/components/parameters/Accept-Encoding'
+      responses:
+        '200':
+          description: 'Returns the Ruku for the requested number'
+          content:
+            application/json:
+              schema:
+                properties:
+                  code: { type: integer, example: 200 }
+                  status: { type: string, example: OK }
+                  data: { $ref: '#/components/schemas/200QuranUthmaniEntireResponse' }
+                type: object
+        '404':
+          $ref: '#/components/responses/404RukuResponse'
+  '/ruku/{number}/{edition}':
+    get:
+      tags:
+        - Ruku
+      summary: 'Ruku for the requested number and edition'
+      description: 'Returns the Ruku for the requested number and requested edition.'
+      operationId: 6be268719a97b4e2f584f63f2b0d2e6f
+      parameters:
+        -
+          $ref: '#/components/parameters/RukuNumberParameter'
+        -
+          name: edition
+          in: path
+          description: 'Edition name'
+          required: true
+          schema:
+            type: string
+          example: quran-uthmani-quran-academy
+        -
+          $ref: '#/components/parameters/RukuOffsetQueryParameter'
+        -
+          $ref: '#/components/parameters/LimitQueryParameter'
+        -
+          $ref: '#/components/parameters/Accept-Encoding'
+      responses:
+        '200':
+          description: 'Returns the Ruku for the requested number and requested edition.'
+          content:
+            application/json:
+              schema:
+                properties:
+                  code: { type: integer, example: 200 }
+                  status: { type: string, example: OK }
+                  data: { $ref: '#/components/schemas/200QuranUthmaniEntireResponse' }
+                type: object
+        '404':
+          $ref: '#/components/responses/404RukuResponse'
+  /sajda:
+    get:
+      tags:
+        - Sajda
+      summary: 'Verses that require Sajda / Prostration'
+      description: 'Returns all the verses of the Holy Quran that require Sajda / Prostration.'
+      operationId: 84ec7ada4cd91e58783f0d9b4e92a18f
+      parameters:
+        -
+          $ref: '#/components/parameters/Accept-Encoding'
+      responses:
+        '200':
+          description: 'Returns all the verses of the Holy Quran that require Sajda / Prostration.'
+          content:
+            application/json:
+              schema:
+                properties:
+                  code: { type: integer, example: 200 }
+                  status: { type: string, example: OK }
+                  data: { $ref: '#/components/schemas/200SajdaQuranUthmaniResponse' }
+                type: object
+        '404':
+          $ref: '#/components/responses/404NotFoundResourceResponse'
+  '/sajda/{edition}':
+    get:
+      tags:
+        - Sajda
+      summary: 'Verses that require Sajda / Prostration for the requested edition'
+      description: 'Returns all the verses of the Holy Quran for the requested edition that require Sajda / Prostration.'
+      operationId: 6478c770787465d97129b79e683e2903
+      parameters:
+        -
+          name: edition
+          in: path
+          description: 'Edition name'
+          required: true
+          schema:
+            type: string
+          example: quran-uthmani-quran-academy
+        -
+          $ref: '#/components/parameters/Accept-Encoding'
+      responses:
+        '200':
+          description: 'Returns all the verses of the Holy Quran for the requested edition that require Sajda / Prostration.'
+          content:
+            application/json:
+              schema:
+                properties:
+                  code: { type: integer, example: 200 }
+                  status: { type: string, example: OK }
+                  data: { $ref: '#/components/schemas/200SajdaQuranUthmaniResponse' }
+                type: object
+        '404':
+          $ref: '#/components/responses/404NotFoundResourceResponse'
+  '/search/{word}':
+    get:
+      tags:
+        - Search
+      summary: "Returns all ayahs that contain the specified 'word' parameter in all the english editions"
+      description: "Returns ayahs that match the specified 'word' parameter in a given edition or language. \r\n        <br />If you do not specify an edition or language, all english language texts are searched.\r\n        <br />(Text) In this example all ayahs that contain the word 'Path' are returned in all the english editions from all Surahs / Chapters."
+      operationId: b33750a1048644a0eceec01ac2fb77d2
+      parameters:
+        -
+          $ref: '#/components/parameters/SearchWordParameter'
+        -
+          $ref: '#/components/parameters/SearchOffsetParameter'
+        -
+          $ref: '#/components/parameters/SearchLimitParameter'
+        -
+          $ref: '#/components/parameters/Accept-Encoding'
+      responses:
+        '200':
+          description: "Returns all ayahs that contain the word 'Path' in all the english editions from all Surahs / Chapters."
+          content:
+            application/json:
+              schema:
+                properties:
+                  code: { type: integer, example: 200 }
+                  status: { type: string, example: OK }
+                  data: { $ref: '#/components/schemas/200SearchSahihResponse' }
+                type: object
+        '404':
+          $ref: '#/components/responses/404SearchResponse'
+  '/search/{word}/{surah}':
+    get:
+      tags:
+        - Search
+      summary: "Returns all ayahs that contain the specified 'word' parameter from the specified 'surah' parameter in all the english editions"
+      description: "Returns ayahs that match the specified 'word' parameter from the specified 'surah' parameter in a given edition or language. \r\n        <br />If you do not specify an edition or language, all english language texts are searched.\r\n        <br />(Text) In this example all ayahs that contain the word 'Path' are returned in all the english editions from the specified chapter / surah '1'."
+      operationId: 04ca9b04d683131345f2e4f65f8dd885
+      parameters:
+        -
+          $ref: '#/components/parameters/SearchWordParameter'
+        -
+          $ref: '#/components/parameters/SearchSurahParameter'
+        -
+          $ref: '#/components/parameters/SearchOffsetParameter'
+        -
+          $ref: '#/components/parameters/SearchLimitParameter'
+        -
+          $ref: '#/components/parameters/Accept-Encoding'
+      responses:
+        '200':
+          description: "Returns all ayahs that contain the word 'Path' from the specified surah '1' in all the english editions."
+          content:
+            application/json:
+              schema:
+                properties:
+                  code: { type: integer, example: 200 }
+                  status: { type: string, example: OK }
+                  data: { $ref: '#/components/schemas/200SearchSahihResponse' }
+                type: object
+        '404':
+          $ref: '#/components/responses/404SearchResponse'
+  '/search/{word}/{surah}/{language}':
+    get:
+      tags:
+        - Search
+      summary: "Returns all ayahs that contain the specified 'word' parameter from the specified 'surah' parameter in the specified language / edition identifier 'language' parameter"
+      description: "Returns ayahs that match the specified 'word' parameter from the specified 'surah' parameter in a specified language / edition identifier from 'language' parameter. \r\n        <br />If you do not specify an edition or language, all english language texts are searched.\r\n        <br />(Text) In this example all ayahs that contain the word 'Path' are returned in the specified language / edition identifier 'en' or 'en.sahih' from the specified chapter / surah '1'."
+      operationId: 21dc79663be7391405e98eefd6599f93
+      parameters:
+        -
+          $ref: '#/components/parameters/SearchWordParameter'
+        -
+          $ref: '#/components/parameters/SearchSurahParameter'
+        -
+          name: language
+          in: path
+          description: "Enter a language / edition identifier Example: 'en' or 'en.sahih' to search the text in the specified language or edition.\r\n            <br />If specifying language please remember 'language' parameter is 2 digit alpha language code. Example: en for English, fr for french\r\n            "
+          required: true
+          schema:
+            type: string
+          example: en.sahih
+        -
+          $ref: '#/components/parameters/SearchOffsetParameter'
+        -
+          $ref: '#/components/parameters/SearchLimitParameter'
+        -
+          $ref: '#/components/parameters/Accept-Encoding'
+      responses:
+        '200':
+          description: "Returns all ayahs that contain the word 'Path' from the specified surah '1' in the specified language / edition identifier 'en' or 'en.sahih'."
+          content:
+            application/json:
+              schema:
+                properties:
+                  code: { type: integer, example: 200 }
+                  status: { type: string, example: OK }
+                  data: { $ref: '#/components/schemas/200SearchSahihResponse' }
+                type: object
+        '404':
+          $ref: '#/components/responses/404SearchResponse'
+  /surah:
+    get:
+      tags:
+        - Surah
+      summary: 'List of Surahs'
+      description: 'Returns the list of all Surahs in the Holy Quran'
+      operationId: c4e8a77bca24a6a4d9700589bbf99cff
+      parameters:
+        -
+          $ref: '#/components/parameters/Accept-Encoding'
+      responses:
+        '200':
+          description: 'Returns the list of all Surahs in the Holy Quran'
+          content:
+            application/json:
+              schema:
+                properties:
+                  code: { type: integer, example: 200 }
+                  status: { type: string, example: OK }
+                  data: { type: array, items: { $ref: '#/components/schemas/200SurahPartialSurahResponse' } }
+                type: object
+        '404':
+          $ref: '#/components/responses/404NotFoundResourceResponse'
+  '/surah/{number}':
+    get:
+      tags:
+        - Surah
+      summary: 'A Surah along with all Ayahs and details'
+      description: 'Returns a Surah as per the specified number along with all the Ayahs and details'
+      operationId: c514108bb6243d28ca9a8ef351070de5
+      parameters:
+        -
+          $ref: '#/components/parameters/SurahNumberParameter'
+        -
+          $ref: '#/components/parameters/SurahOffsetQueryParameter'
+        -
+          $ref: '#/components/parameters/LimitQueryParameter'
+        -
+          $ref: '#/components/parameters/Accept-Encoding'
+      responses:
+        '200':
+          description: 'Returns a Surah as per the specified number along with all the Ayahs and details'
+          content:
+            application/json:
+              schema:
+                properties:
+                  code: { type: integer, example: 200 }
+                  status: { type: string, example: OK }
+                  data: { $ref: '#/components/schemas/200SurahResponse' }
+                type: object
+        '404':
+          $ref: '#/components/responses/404SurahResponse'
+  '/surah/{number}/{edition}':
+    get:
+      tags:
+        - Surah
+      summary: 'A Surah as per the specified number and specified edition along with all Ayahs and details'
+      description: 'Returns a Surah as per the specified number and specified edition along with all the Ayahs and details'
+      operationId: 4e313f0509dbc62677e2e29dcf21355a
+      parameters:
+        -
+          $ref: '#/components/parameters/SurahNumberParameter'
+        -
+          name: edition
+          in: path
+          description: 'Edition name'
+          required: true
+          schema:
+            type: string
+          example: quran-uthmani-quran-academy
+        -
+          $ref: '#/components/parameters/SurahOffsetQueryParameter'
+        -
+          $ref: '#/components/parameters/LimitQueryParameter'
+        -
+          $ref: '#/components/parameters/Accept-Encoding'
+      responses:
+        '200':
+          description: 'Returns a Surah as per the specified number and specified edition along with all the Ayahs and details'
+          content:
+            application/json:
+              schema:
+                properties:
+                  code: { type: integer, example: 200 }
+                  status: { type: string, example: OK }
+                  data: { $ref: '#/components/schemas/200SurahResponse' }
+                type: object
+        '404':
+          $ref: '#/components/responses/404SurahResponse'
+  '/surah/{number}/editions/{editions}':
+    get:
+      tags:
+        - Surah
+      summary: 'A Surah as per the specified number and specified list of editions along with all Ayahs and details'
+      description: 'Returns a Surah as per the specified number and specified list of editions along with all the Ayahs and details'
+      operationId: 4eddd8a673d5d6187b210e4fd1877656
+      parameters:
+        -
+          $ref: '#/components/parameters/SurahNumberParameter'
+        -
+          name: editions
+          in: path
+          description: 'Comma separated list of edition names'
+          required: true
+          schema:
+            type: string
+          example: 'quran-uthmani-quran-academy,quran-simple'
+        -
+          $ref: '#/components/parameters/SurahOffsetQueryParameter'
+        -
+          $ref: '#/components/parameters/LimitQueryParameter'
+        -
+          $ref: '#/components/parameters/Accept-Encoding'
+      responses:
+        '200':
+          description: 'Returns a Surah as per the specified number and specified list of editions along with all the Ayahs and details'
+          content:
+            application/json:
+              schema:
+                properties:
+                  code: { type: integer, example: 200 }
+                  status: { type: string, example: OK }
+                  data: { type: array, items: { oneOf: [{ $ref: '#/components/schemas/200SurahResponse' }, { $ref: '#/components/schemas/200SurahQuranSimpleResponse' }] } }
+                type: object
+        '404':
+          $ref: '#/components/responses/404NotFoundResourceResponse'
+components:
+  schemas:
+    200EditionQuranUthmaniResponse:
+      allOf:
+        -
+          $ref: '#/components/schemas/200QuranUthmaniEditionResponse'
+        -
+          properties:
+            direction:
+              type: string
+              example: rtl
+          type: object
+    200QuranUthmaniEditionResponse:
+      properties:
+        identifier:
+          type: string
+          example: quran-uthmani-quran-academy
+        language:
+          type: string
+          example: ar
+        name:
+          type: string
+          example: 'القرآن الكريم برسم العثماني (quran-academy)'
+        englishName:
+          type: string
+          example: 'Modified Quran Uthmani Text from the Quran Academy to work with the Kitab font'
+        format:
+          type: string
+          example: text
+        type:
+          type: string
+          example: quran
+      type: object
+    200QuranUthmaniResponse:
+      properties:
+        surahs:
+          type: array
+          items:
+            properties:
+              number:
+                type: integer
+                example: 1
+              name:
+                type: string
+                example: 'سُورَةُ ٱلْفَاتِحَةِ'
+              englishName:
+                type: string
+                example: Al-Faatiha
+              englishNameTranslation:
+                type: string
+                example: 'The Opening'
+              revelationType:
+                type: string
+                example: Meccan
+              ayahs:
+                type: array
+                items:
+                  properties: { number: { type: integer, example: 1 }, text: { type: string, example: 'بِسۡمِ ٱللَّهِ ٱلرَّحۡمَـٰنِ ٱلرَّحِیمِ' }, numberInSurah: { type: integer, example: 1 }, juz: { type: integer, example: 1 }, manzil: { type: integer, example: 1 }, page: { type: integer, example: 1 }, ruku: { type: integer, example: 1 }, hizbQuarter: { type: integer, example: 1 }, sajda: { type: boolean, example: false } }
+                  type: object
+            type: object
+        edition:
+          $ref: '#/components/schemas/200QuranUthmaniEditionResponse'
+      type: object
+    200EditionQuranSimpleResponse:
+      properties:
+        identifier:
+          type: string
+          example: quran-simple
+        language:
+          type: string
+          example: ar
+        name:
+          type: string
+          example: 'القرآن الكريم المبسط (تشكيل بسيط) (simple)'
+        englishName:
+          type: string
+          example: Simple
+        format:
+          type: string
+          example: text
+        type:
+          type: string
+          example: quran
+        direction:
+          type: string
+          example: rtl
+      type: object
+    partialSurahResponse:
+      properties:
+        surah:
+          $ref: '#/components/schemas/200SurahPartialSurahResponse'
+        numberInSurah:
+          type: integer
+          example: 5
+        juz:
+          type: integer
+          example: 1
+        manzil:
+          type: integer
+          example: 1
+        page:
+          type: integer
+          example: 1
+        ruku:
+          type: integer
+          example: 1
+        hizbQuarter:
+          type: integer
+          example: 1
+        sajda:
+          type: boolean
+          example: false
+      type: object
+    200AyahQuranUthmaniResponse:
+      type: object
+      allOf:
+        -
+          properties:
+            number:
+              type: integer
+              example: 5
+            text:
+              type: string
+              example: 'إِیَّاكَ نَعۡبُدُ وَإِیَّاكَ نَسۡتَعِینُ'
+            edition:
+              $ref: '#/components/schemas/200EditionQuranUthmaniResponse'
+          type: object
+        -
+          $ref: '#/components/schemas/partialSurahResponse'
+    200AyahQuranSimpleResponse:
+      properties:
+        number:
+          type: integer
+          example: 5
+        text:
+          type: string
+          example: 'إِیَّاكَ نَعۡبُدُ وَإِیَّاكَ نَسۡتَعِینُ'
+        edition:
+          $ref: '#/components/schemas/200EditionQuranSimpleResponse'
+        surah:
+          $ref: '#/components/schemas/200SurahPartialSurahResponse'
+        numberInSurah:
+          type: integer
+          example: 5
+        juz:
+          type: integer
+          example: 1
+        manzil:
+          type: integer
+          example: 1
+        page:
+          type: integer
+          example: 1
+        ruku:
+          type: integer
+          example: 1
+        hizbQuarter:
+          type: integer
+          example: 1
+        sajda:
+          type: boolean
+          example: false
+      type: object
+    200QuranUthmaniPartialSurahResponse:
+      properties:
+        number:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: 'سُورَةُ ٱلْفَاتِحَةِ'
+        englishName:
+          type: string
+          example: Al-Faatiha
+        englishNameTranslation:
+          type: string
+          example: 'The Opening'
+        revelationType:
+          type: string
+          example: Meccan
+        numberOfAyahs:
+          type: integer
+          example: 7
+      type: object
+    200SajdaQuranUthmaniPartialSurahResponse:
+      properties:
+        number:
+          type: integer
+          example: 7
+        name:
+          type: string
+          example: 'سُورَةُ الأَعۡرَافِ'
+        englishName:
+          type: string
+          example: "Al-A'raaf"
+        englishNameTranslation:
+          type: string
+          example: 'The Heights'
+        revelationType:
+          type: string
+          example: Meccan
+        numberOfAyahs:
+          type: integer
+          example: 206
+      type: object
+    200SurahPartialSurahResponse:
+      properties:
+        number:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: 'سُورَةُ ٱلْفَاتِحَةِ'
+        englishName:
+          type: string
+          example: Al-Faatiha
+        englishNameTranslation:
+          type: string
+          example: 'The Opening'
+        numberOfAyahs:
+          type: integer
+          example: 7
+        revelationType:
+          type: string
+          example: Meccan
+      type: object
+    200SajdaQuranUthmaniResponse:
+      properties:
+        ayahs:
+          type: array
+          items:
+            properties:
+              number:
+                type: integer
+                example: 1160
+              text:
+                type: string
+                example: 'إِنَّ ٱلَّذِینَ عِندَ رَبِّكَ لَا یَسۡتَكۡبِرُونَ عَنۡ عِبَادَتِهِۦ وَیُسَبِّحُونَهُۥ وَلَهُۥ یَسۡجُدُونَ ۩'
+              surah:
+                $ref: '#/components/schemas/200SajdaQuranUthmaniPartialSurahResponse'
+              numberInSurah:
+                type: integer
+                example: 206
+              juz:
+                type: integer
+                example: 9
+              manzil:
+                type: integer
+                example: 2
+              page:
+                type: integer
+                example: 176
+              ruku:
+                type: integer
+                example: 145
+              hizbQuarter:
+                type: integer
+                example: 70
+              sajda:
+                properties:
+                  id: { type: integer, example: 1 }
+                  recommended: { type: boolean, example: true }
+                  obligatory: { type: boolean, example: false }
+                type: object
+            type: object
+        edition:
+          $ref: '#/components/schemas/200EditionQuranUthmaniResponse'
+      type: object
+    200QuranUthmaniEntireResponse:
+      properties:
+        number:
+          type: integer
+          example: 1
+        ayahs:
+          type: array
+          items:
+            properties:
+              number:
+                type: integer
+                example: 5
+              text:
+                type: string
+                example: 'إِیَّاكَ نَعۡبُدُ وَإِیَّاكَ نَسۡتَعِینُ'
+              surah:
+                $ref: '#/components/schemas/200QuranUthmaniPartialSurahResponse'
+              numberInSurah:
+                type: integer
+                example: 5
+              juz:
+                type: integer
+                example: 1
+              manzil:
+                type: integer
+                example: 1
+              page:
+                type: integer
+                example: 1
+              ruku:
+                type: integer
+                example: 1
+              hizbQuarter:
+                type: integer
+                example: 1
+              sajda:
+                type: boolean
+                example: false
+            type: object
+        surahs:
+          properties:
+            '1':
+              $ref: '#/components/schemas/200QuranUthmaniPartialSurahResponse'
+          type: object
+        edition:
+          $ref: '#/components/schemas/200EditionQuranUthmaniResponse'
+      type: object
+    200MetaReferenceResponse:
+      properties:
+        surah:
+          type: integer
+          example: 1
+        ayah:
+          type: integer
+          example: 1
+      type: object
+    200SearchEditionSahihResponse:
+      properties:
+        identifier:
+          type: string
+          example: en.sahih
+        language:
+          type: string
+          example: en
+        name:
+          type: string
+          example: 'Saheeh International'
+        englishName:
+          type: string
+          example: 'Saheeh International'
+        type:
+          type: string
+          example: translation
+      type: object
+    200SearchPartialSurahResponse:
+      properties:
+        number:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: 'سُورَةُ ٱلْفَاتِحَةِ'
+        englishName:
+          type: string
+          example: Al-Faatiha
+        englishNameTranslation:
+          type: string
+          example: 'The Opening'
+        revelationType:
+          type: string
+          example: Meccan
+      type: object
+    200SearchSahihResponse:
+      properties:
+        count:
+          type: integer
+          example: 25
+        matches:
+          type: array
+          items:
+            properties:
+              number:
+                type: integer
+                example: 6
+              text:
+                type: string
+                example: 'Guide us to the straight path -'
+              edition:
+                $ref: '#/components/schemas/200SearchEditionSahihResponse'
+              surah:
+                $ref: '#/components/schemas/200SearchPartialSurahResponse'
+              numberInSurah:
+                type: integer
+                example: 6
+            type: object
+      type: object
+    200SurahResponsePartial:
+      properties:
+        number:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: 'سُورَةُ ٱلْفَاتِحَةِ'
+        englishName:
+          type: string
+          example: Al-Faatiha
+        englishNameTranslation:
+          type: string
+          example: 'The Opening'
+        revelationType:
+          type: string
+          example: Meccan
+        numberOfAyahs:
+          type: integer
+          example: 7
+        ayahs:
+          type: array
+          items:
+            properties:
+              number:
+                type: integer
+                example: 5
+              text:
+                type: string
+                example: 'إِیَّاكَ نَعۡبُدُ وَإِیَّاكَ نَسۡتَعِینُ'
+              numberInSurah:
+                type: integer
+                example: 5
+              juz:
+                type: integer
+                example: 1
+              manzil:
+                type: integer
+                example: 1
+              page:
+                type: integer
+                example: 1
+              ruku:
+                type: integer
+                example: 1
+              hizbQuarter:
+                type: integer
+                example: 1
+              sajda:
+                type: boolean
+                example: false
+            type: object
+      type: object
+    200SurahResponse:
+      type: object
+      allOf:
+        -
+          $ref: '#/components/schemas/200SurahResponsePartial'
+        -
+          properties:
+            edition:
+              $ref: '#/components/schemas/200EditionQuranUthmaniResponse'
+          type: object
+    200SurahQuranSimpleResponse:
+      type: object
+      allOf:
+        -
+          $ref: '#/components/schemas/200SurahResponsePartial'
+        -
+          properties:
+            edition:
+              $ref: '#/components/schemas/200EditionQuranSimpleResponse'
+          type: object
+  responses:
+    404AyahResponse:
+      description: 'Ayah - Not Found'
+      content:
+        application/json:
+          schema:
+            properties:
+              code:
+                type: integer
+                example: 404
+              status:
+                type: string
+                example: 'NOT FOUND'
+              data:
+                type: string
+                example: 'Please specify an Ayah number (1 to 6236).'
+            type: object
+    404NotFoundResourceResponse:
+      description: 'Unable to find the requested resource'
+      content:
+        application/json:
+          schema:
+            properties:
+              code:
+                type: integer
+                example: 404
+              status:
+                type: string
+                example: RESOURCE_NOT_FOUND
+              data:
+                type: string
+                example: 'Not found.'
+            type: object
+    404HizbQuarterResponse:
+      description: 'Hizb Quarter - Not Found'
+      content:
+        application/json:
+          schema:
+            properties:
+              code:
+                type: integer
+                example: 404
+              status:
+                type: string
+                example: 'NOT FOUND'
+              data:
+                type: string
+                example: 'HizbQuarter number should be between 1 and 240'
+            type: object
+    404JuzResponse:
+      description: 'Juz - Not Found'
+      content:
+        application/json:
+          schema:
+            properties:
+              code:
+                type: integer
+                example: 404
+              status:
+                type: string
+                example: 'NOT FOUND'
+              data:
+                type: string
+                example: 'Juz number should be between 1 and 30'
+            type: object
+    404ManzilResponse:
+      description: 'Manzil - Not Found'
+      content:
+        application/json:
+          schema:
+            properties:
+              code:
+                type: integer
+                example: 404
+              status:
+                type: string
+                example: 'NOT FOUND'
+              data:
+                type: string
+                example: 'Manzil number should be between 1 and 7'
+            type: object
+    404PageResponse:
+      description: 'Page - Not Found'
+      content:
+        application/json:
+          schema:
+            properties:
+              code:
+                type: integer
+                example: 404
+              status:
+                type: string
+                example: 'NOT FOUND'
+              data:
+                type: string
+                example: 'Page number should be between 1 and 604'
+            type: object
+    404RukuResponse:
+      description: 'Ruku - Not Found'
+      content:
+        application/json:
+          schema:
+            properties:
+              code:
+                type: integer
+                example: 404
+              status:
+                type: string
+                example: 'NOT FOUND'
+              data:
+                type: string
+                example: 'Ruku number should be between 1 and 556'
+            type: object
+    404SearchResponse:
+      description: "User's Search - Not Found"
+      content:
+        application/json:
+          schema:
+            properties:
+              code:
+                type: integer
+                example: 404
+              status:
+                type: string
+                example: 'NOT FOUND'
+              data:
+                type: string
+                example: 'Nothing matching your search was found..'
+            type: object
+    404SurahResponse:
+      description: 'Surah - Not Found'
+      content:
+        application/json:
+          schema:
+            properties:
+              code:
+                type: integer
+                example: 404
+              status:
+                type: string
+                example: 'NOT FOUND'
+              data:
+                type: string
+                example: 'Surat number should be between 1 and 114.'
+            type: object
+  parameters:
+    AyahNumberParameter:
+      name: number
+      in: path
+      description: 'A number between 1 and 6236'
+      required: true
+      schema:
+        type: integer
+        maximum: 6236
+        minimum: 1
+      example: 5
+    AyahEditionNameParameter:
+      name: edition
+      in: path
+      description: 'Edition name'
+      required: true
+      schema:
+        type: string
+      example: quran-uthmani-quran-academy
+    AyahEditionsListParameter:
+      name: editions
+      in: path
+      description: 'Comma separated list of edition names'
+      required: true
+      schema:
+        type: string
+      example: 'quran-uthmani-quran-academy,quran-simple'
+    HizbQuarterNumberParameter:
+      name: number
+      in: path
+      description: 'A number between 1 and 240'
+      required: true
+      schema:
+        type: integer
+        maximum: 240
+        minimum: 1
+      example: 1
+    HizbQuarterOffsetQueryParameter:
+      name: offset
+      in: query
+      description: 'Offset ayahs in a Hizb Quarter by the given number'
+      required: false
+      schema:
+        type: integer
+      example: 4
+    JuzNumberParameter:
+      name: number
+      in: path
+      description: 'A number between 1 and 30'
+      required: true
+      schema:
+        type: integer
+        enum:
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          - 6
+          - 7
+          - 8
+          - 9
+          - 10
+          - 11
+          - 12
+          - 13
+          - 14
+          - 15
+          - 16
+          - 17
+          - 18
+          - 19
+          - 20
+          - 21
+          - 22
+          - 23
+          - 24
+          - 25
+          - 26
+          - 27
+          - 28
+          - 29
+          - 30
+      example: 1
+    JuzOffsetQueryParameter:
+      name: offset
+      in: query
+      description: 'Offset ayahs in a Juz by the given number'
+      required: false
+      schema:
+        type: integer
+      example: 4
+    ManzilNumberParameter:
+      name: number
+      in: path
+      description: 'A number between 1 and 7'
+      required: true
+      schema:
+        type: integer
+        enum:
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          - 6
+          - 7
+      example: 1
+    ManzilOffsetQueryParameter:
+      name: offset
+      in: query
+      description: 'Offset ayahs in a Manzil by the given number'
+      required: false
+      schema:
+        type: integer
+      example: 4
+    PageNumberParameter:
+      name: number
+      in: path
+      description: 'A number between 1 and 604'
+      required: true
+      schema:
+        type: integer
+        maximum: 604
+        minimum: 1
+      example: 1
+    PageOffsetQueryParameter:
+      name: offset
+      in: query
+      description: 'Offset ayahs in a Page by the given number'
+      required: false
+      schema:
+        type: integer
+      example: 4
+    RukuNumberParameter:
+      name: number
+      in: path
+      description: 'A number between 1 and 556'
+      required: true
+      schema:
+        type: integer
+        maximum: 556
+        minimum: 1
+      example: 1
+    RukuOffsetQueryParameter:
+      name: offset
+      in: query
+      description: 'Offset ayahs in a Ruku by the given number'
+      required: false
+      schema:
+        type: integer
+      example: 4
+    SearchWordParameter:
+      name: word
+      in: path
+      description: 'Word to search in text'
+      required: true
+      schema:
+        type: string
+      example: Path
+    SearchOffsetParameter:
+      name: offset
+      in: query
+      description: 'Offset into the match list (pagination, additive: without offset/limit the full legacy response is returned; when paginating, the response gains total/offset/limit fields and count remains the number of returned matches)'
+      required: false
+      schema:
+        type: integer
+      example: 0
+    SearchLimitParameter:
+      name: limit
+      in: query
+      description: 'Maximum number of matches to return (pagination, additive — see offset)'
+      required: false
+      schema:
+        type: integer
+      example: 50
+    SearchSurahParameter:
+      name: surah
+      in: path
+      description: "Enter a surah number - An integer enum value (between 1 and 114) to search a specific surah or 'all' to search all the text"
+      required: true
+      schema:
+        type: string
+        maximum: 114
+        minimum: 1
+      example: 1
+    SurahNumberParameter:
+      name: number
+      in: path
+      description: 'A number between 1 and 114'
+      required: true
+      schema:
+        type: integer
+        maximum: 114
+        minimum: 1
+      example: 1
+    SurahOffsetQueryParameter:
+      name: offset
+      in: query
+      description: 'Offset ayahs in a Surah by the given number'
+      required: false
+      schema:
+        type: integer
+      example: 4
+    LimitQueryParameter:
+      name: limit
+      in: query
+      description: 'This is the number of ayahs that the response will be limited to'
+      required: false
+      schema:
+        type: integer
+      example: 1
+    Accept-Encoding:
+      name: Accept-Encoding
+      in: header
+      description: 'Content Encoding for compression. Supported values are "gzip" or "zstd".'
+      schema:
+        type: string
+tags:
+  -
+    name: Ayah
+  -
+    name: Edition
+  -
+    name: HizbQuarter
+  -
+    name: Juz
+  -
+    name: Manzil
+  -
+    name: Meta
+  -
+    name: Page
+  -
+    name: Quran
+  -
+    name: Ruku
+  -
+    name: Sajda
+  -
+    name: Search
+  -
+    name: Surah

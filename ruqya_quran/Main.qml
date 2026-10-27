@@ -173,19 +173,19 @@ ApplicationWindow {
                 radius: 2
                 color: tr.t.accent
             }
-            Rectangle {   // looped span
+            Rectangle {
                 visible: tr.markA >= 0 && tr.markB > tr.markA
                 x: tr.markA * parent.width
                 width: (tr.markB - tr.markA) * parent.width
                 y: -4; height: parent.height + 8; radius: 2
                 color: Qt.alpha(tr.t.accent, 0.3)
             }
-            Rectangle {   // start marker
+            Rectangle {
                 visible: tr.markA >= 0
                 x: tr.markA * parent.width - 1; y: -5
                 width: 2; height: 14; color: tr.t.accent
             }
-            Rectangle {   // end marker
+            Rectangle {
                 visible: tr.markB >= 0
                 x: tr.markB * parent.width - 1; y: -5
                 width: 2; height: 14; color: tr.t.accent
@@ -211,6 +211,7 @@ ApplicationWindow {
     Shortcut { sequence: "Down";        onActivated: player.volume = player.volume - 0.05 }
     Shortcut { sequence: "M";           onActivated: player.muted = !player.muted }
     Shortcut { sequence: "T";           onActivated: player.showTranslation = !player.showTranslation }
+    Shortcut { sequence: "W";           onActivated: player.wordByWord = !player.wordByWord }
     Shortcut { sequence: "L";           onActivated: player.cycleRepeat() }
     Shortcut { sequence: "P";           onActivated: win.sidebarOpen = !win.sidebarOpen }
     Shortcut { sequences: ["+", "="];   onActivated: win.fontScale = Math.min(1.8, win.fontScale + 0.1) }
@@ -272,13 +273,209 @@ ApplicationWindow {
                     }
                     Item { Layout.fillWidth: true }
 
+                    // -------- reciter picker
+                    ComboBox {
+                        id: reciterCombo
+                        Layout.preferredWidth: 150
+                        Layout.minimumWidth: 110
+                        implicitHeight: 32
+                        font.pixelSize: 13
+                        model: player.reciterNames
+                        textRole: "name"
+                        valueRole: "id"
+                        focusPolicy: Qt.NoFocus
+
+                        function syncFromPlayer() {
+                            var names = player.reciterNames
+                            if (!names) return
+                            for (var i = 0; i < names.length; i++) {
+                                if (names[i].id === player.currentReciter) {
+                                    currentIndex = i
+                                    return
+                                }
+                            }
+                        }
+                        Component.onCompleted: syncFromPlayer()
+                        Connections {
+                            target: player
+                            function onReciterChanged() { reciterCombo.syncFromPlayer() }
+                        }
+                        onActivated: player.setReciter(currentValue)
+
+                        contentItem: Text {
+                            leftPadding: 10
+                            rightPadding: reciterCombo.indicator.width + 6
+                            text: reciterCombo.displayText || ""
+                            font.pixelSize: 13
+                            color: theme.text
+                            verticalAlignment: Text.AlignVCenter
+                            elide: Text.ElideRight
+                        }
+                        background: Rectangle {
+                            color: reciterCombo.hovered ? theme.surfaceAlt : "transparent"
+                            border.color: theme.line
+                            border.width: 1
+                            radius: 8
+                        }
+                        indicator: Text {
+                            x: reciterCombo.width - width - 8
+                            y: (reciterCombo.height - height) / 2
+                            text: "▾"
+                            font.pixelSize: 12
+                            color: theme.textDim
+                        }
+                        popup: Popup {
+                            y: reciterCombo.height - 1
+                            width: reciterCombo.width
+                            implicitHeight: contentItem.implicitHeight + 4
+                            padding: 2
+                            background: Rectangle {
+                                color: theme.surface
+                                border.color: theme.line
+                                radius: 8
+                            }
+                            contentItem: ListView {
+                                clip: true
+                                implicitHeight: contentHeight
+                                model: reciterCombo.popup.visible ? reciterCombo.delegateModel : null
+                                currentIndex: reciterCombo.highlightedIndex
+                                ScrollBar.vertical: ScrollBar { }
+                            }
+                        }
+                        delegate: ItemDelegate {
+                            width: reciterCombo.width
+                            implicitHeight: 30
+                            highlighted: reciterCombo.highlightedIndex === index
+                            contentItem: Text {
+                                leftPadding: 8
+                                text: modelData.name || ""
+                                font.pixelSize: 13
+                                color: theme.text
+                                elide: Text.ElideRight
+                                verticalAlignment: Text.AlignVCenter
+                            }
+                            background: Rectangle {
+                                color: parent.highlighted ? Qt.alpha(theme.accent, 0.18) : "transparent"
+                                radius: 6
+                            }
+                        }
+                        ToolTip.visible: hovered
+                        ToolTip.text: "Reciter"
+                        ToolTip.delay: 600
+                    }
+
+                    // -------- translation picker
+                    ComboBox {
+                        id: translationCombo
+                        Layout.preferredWidth: 180
+                        Layout.minimumWidth: 130
+                        implicitHeight: 32
+                        font.pixelSize: 13
+                        model: player.translationNames
+                        textRole: "name"
+                        valueRole: "id"
+                        focusPolicy: Qt.NoFocus
+
+                        function syncFromPlayer() {
+                            var names = player.translationNames
+                            if (!names) return
+                            for (var i = 0; i < names.length; i++) {
+                                if (names[i].id === player.currentTranslation) {
+                                    currentIndex = i
+                                    return
+                                }
+                            }
+                        }
+                        Component.onCompleted: syncFromPlayer()
+                        Connections {
+                            target: player
+                            function onTranslationChanged() { translationCombo.syncFromPlayer() }
+                        }
+                        onActivated: player.setTranslation(currentValue)
+
+                        contentItem: Text {
+                            leftPadding: 10
+                            rightPadding: translationCombo.indicator.width + 6
+                            text: translationCombo.displayText || ""
+                            font.pixelSize: 13
+                            font.family: player.banglaFontFamily
+                            color: theme.text
+                            verticalAlignment: Text.AlignVCenter
+                            elide: Text.ElideRight
+                        }
+                        background: Rectangle {
+                            color: translationCombo.hovered ? theme.surfaceAlt : "transparent"
+                            border.color: theme.line
+                            border.width: 1
+                            radius: 8
+                        }
+                        indicator: Text {
+                            x: translationCombo.width - width - 8
+                            y: (translationCombo.height - height) / 2
+                            text: "▾"
+                            font.pixelSize: 12
+                            color: theme.textDim
+                        }
+                        popup: Popup {
+                            y: translationCombo.height - 1
+                            width: translationCombo.width
+                            implicitHeight: contentItem.implicitHeight + 4
+                            padding: 2
+                            background: Rectangle {
+                                color: theme.surface
+                                border.color: theme.line
+                                radius: 8
+                            }
+                            contentItem: ListView {
+                                clip: true
+                                implicitHeight: contentHeight
+                                model: translationCombo.popup.visible ? translationCombo.delegateModel : null
+                                currentIndex: translationCombo.highlightedIndex
+                                ScrollBar.vertical: ScrollBar { }
+                            }
+                        }
+                        delegate: ItemDelegate {
+                            width: translationCombo.width
+                            implicitHeight: 30
+                            highlighted: translationCombo.highlightedIndex === index
+                            contentItem: Text {
+                                leftPadding: 8
+                                text: modelData.name || ""
+                                font.pixelSize: 13
+                                font.family: player.banglaFontFamily
+                                color: theme.text
+                                elide: Text.ElideRight
+                                verticalAlignment: Text.AlignVCenter
+                            }
+                            background: Rectangle {
+                                color: parent.highlighted ? Qt.alpha(theme.accent, 0.18) : "transparent"
+                                radius: 6
+                            }
+                        }
+                        ToolTip.visible: hovered
+                        ToolTip.text: "Translation"
+                        ToolTip.delay: 600
+                    }
+
                     Pill {
                         t: theme
                         text: "Translation"
-                        visible: player.hasTranslationEdition
                         active: player.showTranslation
                         onClicked: player.showTranslation = !player.showTranslation
+                        ToolTip.visible: hovered
+                        ToolTip.text: "Show/hide translation (T)"
+                        ToolTip.delay: 600
                     }
+                    Pill {
+                        t: theme
+                        text: "Word by word"
+                        active: player.wordByWord
+                        onClicked: player.wordByWord = !player.wordByWord
+                        ToolTip.visible: hovered
+                        ToolTip.text: "Word-by-word breakdown (W)"
+                        ToolTip.delay: 600
+                    }
+
                     IconButton { t: theme; text: "A−"; tip: "Smaller text (−)"
                         onClicked: win.fontScale = Math.max(0.6, win.fontScale - 0.1) }
                     IconButton { t: theme; text: "A+"; tip: "Larger text (+)"
@@ -371,9 +568,90 @@ ApplicationWindow {
                         wrapMode: Text.WordWrap
                         horizontalAlignment: Text.AlignHCenter
                         font.pixelSize: Math.round(20 * win.fontScale)
+                        font.family: player.banglaFontFamily
                         lineHeight: 1.4
                         lineHeightMode: Text.ProportionalHeight
                         color: theme.textDim
+                    }
+
+                    // ---- word-by-word strip (Arabic + English or Bangla)
+                    ColumnLayout {
+                        Layout.fillWidth: true
+                        Layout.topMargin: 6
+                        visible: player.wordByWord && player.wordByWordWords.length > 0
+                        spacing: 8
+
+                        RowLayout {
+                            Layout.alignment: Qt.AlignHCenter
+                            spacing: 8
+                            Rectangle { width: 24; height: 1; color: theme.line }
+                            Text {
+                                text: "WORD BY WORD"
+                                font.pixelSize: 11
+                                font.weight: Font.DemiBold
+                                font.letterSpacing: 1.5
+                                color: theme.textDim
+                            }
+                            Rectangle { width: 24; height: 1; color: theme.line }
+                        }
+
+                        Flow {
+                            Layout.fillWidth: true
+                            spacing: 8
+                            Repeater {
+                                model: player.wordByWordWords
+                                delegate: Rectangle {
+                                    required property var modelData
+                                    radius: 8
+                                    color: theme.surfaceAlt
+                                    border.color: theme.line
+                                    border.width: 1
+                                    implicitWidth: Math.max(wbwCol.implicitWidth + 16, 64)
+                                    implicitHeight: wbwCol.implicitHeight + 12
+
+                                    ColumnLayout {
+                                        id: wbwCol
+                                        anchors.centerIn: parent
+                                        spacing: 3
+
+                                        // Arabic word
+                                        Text {
+                                            Layout.alignment: Qt.AlignHCenter
+                                            visible: text !== ""
+                                            text: modelData.arabic || ""
+                                            font.family: player.fontFamily
+                                            font.pixelSize: 22
+                                            color: theme.text
+                                        }
+
+                                        // Bangla gloss
+                                        Text {
+                                            Layout.alignment: Qt.AlignHCenter
+                                            visible: text !== ""
+                                            text: modelData.bangla || ""
+                                            font.family: player.banglaFontFamily
+                                            font.pixelSize: 13
+                                            color: theme.textDim
+                                            horizontalAlignment: Text.AlignHCenter
+                                            wrapMode: Text.WordWrap
+                                            Layout.maximumWidth: 160
+                                        }
+
+                                        // English gloss
+                                        Text {
+                                            Layout.alignment: Qt.AlignHCenter
+                                            visible: text !== ""
+                                            text: modelData.english || ""
+                                            font.pixelSize: 11
+                                            color: theme.textDim
+                                            horizontalAlignment: Text.AlignHCenter
+                                            wrapMode: Text.WordWrap
+                                            Layout.maximumWidth: 130
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -508,7 +786,6 @@ ApplicationWindow {
                         Layout.fillHeight: true
                         spacing: 8
 
-                        // now playing
                         ColumnLayout {
                             Layout.fillWidth: true
                             Layout.preferredWidth: 1
@@ -532,7 +809,6 @@ ApplicationWindow {
                         }
                         Item { visible: content.width <= 720; Layout.fillWidth: true; Layout.preferredWidth: 1 }
 
-                        // controls
                         RowLayout {
                             spacing: 14
                             IconButton { t: theme; size: 44; iconKind: "prev"; tip: "Previous (←)"
@@ -547,7 +823,6 @@ ApplicationWindow {
                                 onClicked: player.playNext() }
                         }
 
-                        // repeat + volume
                         Item {
                             Layout.fillWidth: true
                             Layout.preferredWidth: 1
@@ -719,7 +994,6 @@ ApplicationWindow {
                     }
                 }
 
-                // loading / failure footer
                 Rectangle {
                     Layout.fillWidth: true
                     visible: player.loading || player.failedCount > 0
