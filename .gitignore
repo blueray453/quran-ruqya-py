@@ -1,6 +1,13 @@
 .venv/
+venv/
 build/
 dist/
 *.egg-info/
 __pycache__/
-cache/
+.pybuild/
+debian/.debhelper/
+debian/ruqya-quran/
+debian/files
+debian/*.substvars
+debian/*.debhelper.log
+debian/debhelper-build-stamp

@@ -20,8 +20,8 @@ BIN_DIR    = $(shell pipx environment --value PIPX_BIN_DIR 2>/dev/null || echo $
 
 .DEFAULT_GOAL := help
 .PHONY: help dev run install install-dev desktop extras seed seed-export \
-        uninstall purge check build deb deb-version deb-lint deb-install \
-        deb-uninstall deb-clean clean distclean doctor
+        uninstall purge check fix build deb-deps deb-version deb deb-lint \
+        deb-install deb-uninstall deb-clean clean distclean doctor
 
 help:  ## Show this help
 	@grep -hE '^[a-zA-Z_-]+:.*## ' $(MAKEFILE_LIST) | \
@@ -94,11 +94,20 @@ purge:  ## Delete user config and cache (asks first)
 	  [ "$$a" = y ] && rm -rf "$(CONF_DIR)" "$(CACHE_DIR)" && echo removed || echo aborted
 
 # ---------- Debian package ----------
+deb-deps:  ## Install tools needed to build the .deb (uses sudo)
+	sudo apt install build-essential devscripts debhelper dh-python \
+	  pybuild-plugin-pyproject python3-all python3-setuptools lintian
+
 deb-version:  ## Add a debian/changelog entry for the current __version__
 	@[ -n "$(VERSION)" ] || { echo "could not read version"; exit 1; }
-	dch --newversion $(VERSION) --distribution unstable "Release $(VERSION)"
+	@if head -1 debian/changelog | grep -q "($(VERSION))"; then \
+	  echo "changelog already at $(VERSION)"; \
+	else \
+	  dch --newversion $(VERSION) --distribution unstable "Release $(VERSION)"; \
+	fi
 
 deb:  ## Build the .deb into dist/
+	@[ -z "$$VIRTUAL_ENV" ] || { echo "deactivate your venv first"; exit 1; }
 	@[ -n "$(VERSION)" ] || { echo "could not read version"; exit 1; }
 	@head -1 debian/changelog | grep -q "($(VERSION))" || \
 	  { echo "debian/changelog is not at $(VERSION). Run: make deb-version"; exit 1; }
@@ -108,10 +117,11 @@ deb:  ## Build the .deb into dist/
 	mv -f ../$(APP)_$(VERSION)_* dist/
 	@echo "Built: $(DEB_FILE)"
 
-deb-lint: ## Run lintian on the built package
+deb-lint:  ## Run lintian on the built package
 	lintian --info dist/$(APP)_$(VERSION)_*.changes
 
 deb-install:  ## Install the built .deb (resolves dependencies via apt)
+	@[ -f "$(DEB_FILE)" ] || { echo "$(DEB_FILE) not found. Run: make deb"; exit 1; }
 	sudo apt install ./$(DEB_FILE)
 
 deb-uninstall:  ## Remove the .deb (keeps user config and cache)
@@ -125,6 +135,9 @@ deb-clean:  ## Remove debian build leftovers
 check: dev  ## Lint code and validate .desktop
 	$(VENV)/bin/ruff check src
 	desktop-file-validate data/$(APP).desktop
+
+fix: dev  ## Auto-fix lint problems where safe
+	$(VENV)/bin/ruff check --fix src
 
 build: dev  ## Build Python sdist + wheel into dist/ (for pip users)
 	$(PY) -m build
