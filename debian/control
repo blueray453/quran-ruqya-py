@@ -1,0 +1,22 @@
+Source: ruqya-quran
+Section: sound
+Priority: optional
+Maintainer: Ismail <you@example.com>
+Build-Depends: debhelper-compat (= 13), dh-python, pybuild-plugin-pyproject,
+ python3-all, python3-setuptools
+Standards-Version: 4.6.2
+Rules-Requires-Root: no
+
+Package: ruqya-quran
+Architecture: all
+Depends: ${python3:Depends}, ${misc:Depends}, python3-requests,
+ python3-pyside6.qtcore, python3-pyside6.qtgui, python3-pyside6.qtqml,
+ python3-pyside6.qtquick, python3-pyside6.qtquickcontrols2,
+ python3-pyside6.qtmultimedia,
+ qml6-module-qtquick, qml6-module-qtquick-controls,
+ qml6-module-qtquick-layouts, qml6-module-qtquick-templates,
+ qml6-module-qtquick-window, qml6-module-qtcore,
+ fonts-hosny-amiri, fonts-noto-core
+Description: Quranic Ruqya player
+ Plays ayah-by-ayah recitations with Arabic text, translations and
+ word-by-word breakdown. Built with PySide6 and Qt Quick.
