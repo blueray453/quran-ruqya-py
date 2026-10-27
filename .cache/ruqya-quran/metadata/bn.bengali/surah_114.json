@@ -1,0 +1,85 @@
+{
+  "number": 114,
+  "name": "سُورَةُ النَّاسِ",
+  "englishName": "An-Naas",
+  "englishNameTranslation": "Mankind",
+  "revelationType": "Meccan",
+  "numberOfAyahs": 6,
+  "ayahs": [
+    {
+      "number": 6231,
+      "text": "বলুন, আমি আশ্রয় গ্রহণ করিতেছি মানুষের পালনকর্তার,",
+      "numberInSurah": 1,
+      "juz": 30,
+      "manzil": 7,
+      "page": 604,
+      "ruku": 556,
+      "hizbQuarter": 240,
+      "sajda": false
+    },
+    {
+      "number": 6232,
+      "text": "মানুষের অধিপতির,",
+      "numberInSurah": 2,
+      "juz": 30,
+      "manzil": 7,
+      "page": 604,
+      "ruku": 556,
+      "hizbQuarter": 240,
+      "sajda": false
+    },
+    {
+      "number": 6233,
+      "text": "মানুষের মা’বুদের",
+      "numberInSurah": 3,
+      "juz": 30,
+      "manzil": 7,
+      "page": 604,
+      "ruku": 556,
+      "hizbQuarter": 240,
+      "sajda": false
+    },
+    {
+      "number": 6234,
+      "text": "তার অনিষ্ট থেকে, যে কুমন্ত্রণা দেয় ও আত্নগোপন করে,",
+      "numberInSurah": 4,
+      "juz": 30,
+      "manzil": 7,
+      "page": 604,
+      "ruku": 556,
+      "hizbQuarter": 240,
+      "sajda": false
+    },
+    {
+      "number": 6235,
+      "text": "যে কুমন্ত্রণা দেয় মানুষের অন্তরে",
+      "numberInSurah": 5,
+      "juz": 30,
+      "manzil": 7,
+      "page": 604,
+      "ruku": 556,
+      "hizbQuarter": 240,
+      "sajda": false
+    },
+    {
+      "number": 6236,
+      "text": "জ্বিনের মধ্য থেকে অথবা মানুষের মধ্য থেকে।",
+      "numberInSurah": 6,
+      "juz": 30,
+      "manzil": 7,
+      "page": 604,
+      "ruku": 556,
+      "hizbQuarter": 240,
+      "sajda": false
+    }
+  ],
+  "edition": {
+    "identifier": "bn.bengali",
+    "language": "bn",
+    "name": "মুহিউদ্দীন খান",
+    "englishName": "Muhiuddin Khan",
+    "format": "text",
+    "type": "translation",
+    "direction": "ltr"
+  }
+}

@@ -5,6 +5,11 @@ ruqya_quran.main — Quranic Ruqya player (Qt Quick UI).
 First run: warmup downloads metadata for all preloaded editions and audio
 for all preloaded reciters. Later runs skip warmup when the cache is complete.
 
+Audio source health:
+  Everyayah is primary (reliable). cdn.islamic.network is fallback.
+  A host that fails 3 times in a row is skipped for the rest of the session,
+  so a flaky CDN doesn't drag down warmup with retry waits.
+
 Cache layout (XDG_CACHE_HOME or ~/.cache):
   ruqya-quran/
     audio/{reciter}/{surah}_{ayah}.mp3
@@ -143,12 +148,13 @@ REQUEST_TIMEOUT = float(_CFG.get("request_timeout", 10))
 MAX_RETRIES = int(_CFG.get("max_retries", 2))
 RETRY_BACKOFF_BASE = float(_CFG.get("retry_backoff_base", 0.5))
 MAX_WORKERS = int(_CFG.get("max_workers", 4))
+SOURCE_FAIL_THRESHOLD = int(_CFG.get("source_fail_threshold", 3))
 
 BISMILLAH_SURAH = 1
 BISMILLAH_AYAH = 1
 
 # ------------------------------------------------------------
-# Audio sources
+# Audio source registry
 # ------------------------------------------------------------
 
 AUDIO_SOURCES = {
@@ -159,18 +165,55 @@ AUDIO_SOURCES = {
 }
 
 def _audio_urls(reciter, surah, ayah, global_ayah_number):
+    """Everyayah first (empirically reliable), cdn.islamic.network as fallback."""
     everyayah_dir, alquran_edition, bitrate = AUDIO_SOURCES.get(reciter, (None, reciter, None))
     urls = []
-    if alquran_edition and global_ayah_number is not None and bitrate is not None:
-        urls.append(f"https://cdn.islamic.network/quran/audio/{bitrate}/{alquran_edition}/{global_ayah_number}.mp3")
     if everyayah_dir:
         urls.append(f"https://everyayah.com/data/{everyayah_dir}/{surah:03d}{ayah:03d}.mp3")
+    if alquran_edition and global_ayah_number is not None and bitrate is not None:
+        urls.append(f"https://cdn.islamic.network/quran/audio/{bitrate}/{alquran_edition}/{global_ayah_number}.mp3")
     return urls
 
 WORD_BY_WORD_URL = ("https://api.quran.com/api/v4/verses/by_key/{surah}:{ayah}"
                     "?words=true"
                     "&word_fields=text_uthmani,translation"
                     "&language={lang}")
+
+# ------------------------------------------------------------
+# Source health — auto-disable flaky hosts for the session
+# ------------------------------------------------------------
+
+class _SourceHealth:
+    """Track per-host outcomes. After N consecutive failures, disable the
+    host for the rest of the session. A single success resets the streak."""
+
+    def __init__(self, threshold=3):
+        self._lock = threading.Lock()
+        self._failures = {}
+        self._disabled = set()
+        self._threshold = threshold
+
+    def is_disabled(self, host):
+        with self._lock:
+            return host in self._disabled
+
+    def record_success(self, host):
+        with self._lock:
+            if host in self._failures:
+                self._failures[host] = 0
+
+    def record_failure(self, host):
+        with self._lock:
+            self._failures[host] = self._failures.get(host, 0) + 1
+            if (self._failures[host] >= self._threshold and host not in self._disabled):
+                self._disabled.add(host)
+                log.warning("Disabling %s for this session (>= %d consecutive failures)", host, self._threshold)
+
+    def disabled_hosts(self):
+        with self._lock:
+            return sorted(self._disabled)
+
+_SOURCE_HEALTH = _SourceHealth(threshold=SOURCE_FAIL_THRESHOLD)
 
 # ------------------------------------------------------------
 # Playlist
@@ -364,12 +407,20 @@ def _migrate_metadata_layout():
 # ------------------------------------------------------------
 
 def request_with_retry(url):
+    """Retry transient errors only. 4xx (except 408, 429) fails fast."""
     last_exc = None
     for attempt in range(MAX_RETRIES + 1):
         try:
             resp = requests.get(url, timeout=REQUEST_TIMEOUT)
             resp.raise_for_status()
             return resp
+        except requests.HTTPError as e:
+            code = e.response.status_code if e.response is not None else None
+            if code is not None and 400 <= code < 500 and code not in (408, 429):
+                raise  # permanent — don't waste retries
+            last_exc = e
+            if attempt < MAX_RETRIES:
+                time.sleep(RETRY_BACKOFF_BASE * (2**attempt))
         except requests.RequestException as e:
             last_exc = e
             if attempt < MAX_RETRIES:
@@ -408,14 +459,23 @@ def ensure_audio_cached(surah, ayah, reciter, ayah_data):
     audio_file = get_audio_cache_path(surah, ayah, reciter)
     if os.path.exists(audio_file):
         return audio_file, True
+
     ensure_dirs()
     Path(audio_file).parent.mkdir(parents=True, exist_ok=True)
+
     global_ayah_number = ayah_data.get("number")
     if global_ayah_number is None:
         raise RuntimeError(f"Global ayah number missing for {surah}:{ayah}")
+
     urls = _audio_urls(reciter, surah, ayah, global_ayah_number)
     if not urls:
         raise RuntimeError(f"No audio source known for reciter {reciter}")
+
+    # Skip hosts that have been auto-disabled this session.
+    urls = [u for u in urls if not _SOURCE_HEALTH.is_disabled(u.split("/")[2])]
+    if not urls:
+        raise RuntimeError(f"All audio sources disabled for this session ({surah}:{ayah})")
+
     last_err = None
     for url in urls:
         host = url.split("/")[2]
@@ -424,10 +484,13 @@ def ensure_audio_cached(surah, ayah, reciter, ayah_data):
             resp = request_with_retry(url)
             with open(audio_file, "wb") as f:
                 f.write(resp.content)
+            _SOURCE_HEALTH.record_success(host)
             return audio_file, False
         except Exception as e:
             last_err = e
+            _SOURCE_HEALTH.record_failure(host)
             log.warning("  %s failed: %s", host, e.__class__.__name__)
+
     raise last_err or RuntimeError("All audio sources failed")
 
 def build_ayah_lookup(surah_data):
@@ -484,9 +547,7 @@ def load_custom_entries():
     return entries
 
 # ------------------------------------------------------------
-# Warmup loader — download metadata for all preload editions
-# and audio for all preload reciters, in parallel with locks
-# that prevent duplicate fetches of the same surah.
+# Warmup loader
 # ------------------------------------------------------------
 
 class WarmupLoader(QThread):
@@ -503,8 +564,6 @@ class WarmupLoader(QThread):
     def run(self):
         surahs = sorted({q.surah for q in self._queue})
 
-        # Build job lists
-        # metadata: every reciter (its own recitation edition) + every translation
         meta_editions = list(dict.fromkeys(self._reciters + self._translations))
         meta_jobs = [(ed, s) for ed in meta_editions for s in surahs]
         audio_jobs = [(r, q.surah, q.ayah) for r in self._reciters for q in self._queue]
@@ -527,9 +586,8 @@ class WarmupLoader(QThread):
                 current += 1
                 c = current
             self.progress.emit(c, total, label)
-            return c
 
-        # -- Phase 1: metadata (parallel, locked per edition+surah) --
+        # ---- Phase 1: metadata ----
         def fetch_meta(edition, surah):
             if self.isInterruptionRequested():
                 return
@@ -550,12 +608,11 @@ class WarmupLoader(QThread):
                         return
                     fut.result()
 
-        # -- Phase 2: audio (parallel; each job is unique per reciter/ayah) --
+        # ---- Phase 2: audio ----
         def fetch_audio(reciter, surah, ayah):
             if self.isInterruptionRequested():
                 return
             try:
-                # metadata is already cached from phase 1
                 surah_data = get_surah_data(surah, reciter)
                 ayah_data = build_ayah_lookup(surah_data).get(ayah)
                 if ayah_data is None:
@@ -629,7 +686,7 @@ class _Resolver:
         return ayah_data, surah_data, translation, audio_file
 
 # ------------------------------------------------------------
-# Playlist loader (parallel)
+# Playlist loader
 # ------------------------------------------------------------
 
 class PlaylistLoader(QThread):
@@ -791,7 +848,7 @@ class PlayerController(QObject):
     loopChanged = Signal()
     reciterChanged = Signal()
     wordByWordChanged = Signal()
-    initStateChanged = Signal()  # for initializing/initMessage/initCurrent/initTotal
+    initStateChanged = Signal()
 
     REPEAT_OFF, REPEAT_ONE, REPEAT_ALL = 0, 1, 2
 
@@ -1067,14 +1124,12 @@ class PlayerController(QObject):
         self._start_warmup()
 
     def _is_cache_complete(self, queue) -> bool:
-        # Metadata for every preload edition on every surah we'll display
         surahs = {q.surah for q in queue}
         editions = set(PRELOAD_RECITERS) | set(PRELOAD_TRANSLATIONS) | {self._reciter} | {self._translation_edition}
         for edition in editions:
             for surah in surahs:
                 if not os.path.exists(get_metadata_cache_path(surah, edition)):
                     return False
-        # Audio for every preload reciter on every ayah
         for reciter in set(PRELOAD_RECITERS) | {self._reciter}:
             for q in queue:
                 if not os.path.exists(get_audio_cache_path(q.surah, q.ayah, reciter)):
@@ -1106,7 +1161,7 @@ class PlayerController(QObject):
         self.initStateChanged.emit()
 
     def _on_warmup_finished(self):
-        log.info("Warmup finished")
+        log.info("Warmup finished. Disabled sources: %s", _SOURCE_HEALTH.disabled_hosts() or "none")
         self._initializing = False
         self.initStateChanged.emit()
         self._begin_playlist_load()
