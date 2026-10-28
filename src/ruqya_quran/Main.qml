@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Controls.Basic
 import QtQuick.Layouts
+import QtQuick.Dialogs
 import QtCore
 
 ApplicationWindow {
@@ -10,7 +11,7 @@ ApplicationWindow {
     minimumWidth: 640
     minimumHeight: 480
     visible: false
-    title: "Ruqya Quran"
+    title: player.playlistName !== "" ? player.playlistName + " — Ruqya Quran" : "Ruqya Quran"
     color: theme.bg
 
     property real fontScale: 1.0
@@ -418,6 +419,7 @@ ApplicationWindow {
     Shortcut { sequence: "G";           onActivated: player.cycleGroupRepeat() }
     Shortcut { sequence: "D";           onActivated: win.themeName = theme.dark ? "light" : "dark" }
     Shortcut { sequence: "P";           onActivated: win.sidebarOpen = !win.sidebarOpen }
+    Shortcut { sequence: "O";           onActivated: openDialog.open() }
     Shortcut { sequences: ["+", "="];   onActivated: win.fontScale = Math.min(1.8, win.fontScale + 0.1) }
     Shortcut { sequence: "-";           onActivated: win.fontScale = Math.max(0.6, win.fontScale - 0.1) }
     Shortcut { sequence: "[";           onActivated: player.markStart() }
@@ -444,6 +446,14 @@ ApplicationWindow {
         function onToast(msg) { toastText.text = msg; toast.opacity = 1; toastTimer.restart() }
     }
 
+    // ------------------------------------------------ file dialog
+    FileDialog {
+        id: openDialog
+        title: "Open playlist"
+        nameFilters: ["Ruqya playlists (*.ruqya)", "JSON (*.json)", "All files (*)"]
+        onAccepted: player.openPlaylist(selectedFile.toString())
+    }
+
     // ------------------------------------------------ popups
     Popup {
         id: settingsPopup
@@ -458,7 +468,7 @@ ApplicationWindow {
             spacing: 10
             Text { text: "Settings"; font.pixelSize: 18; font.weight: Font.DemiBold; color: theme.text }
 
-            Text { text: "Playlist"; font.pixelSize: 12; color: theme.textDim; Layout.topMargin: 6 }
+            Text { text: "Recent playlists"; font.pixelSize: 12; color: theme.textDim; Layout.topMargin: 6 }
             Picker {
                 t: theme
                 Layout.fillWidth: true
@@ -466,7 +476,14 @@ ApplicationWindow {
                 selectedId: player.currentPlaylistId
                 onChosen: function(id) { player.setPlaylist(id) }
             }
-            Text { text: "Reciter"; font.pixelSize: 12; color: theme.textDim }
+            Pill {
+                t: theme
+                text: "Open playlist…"
+                active: true
+                onClicked: { settingsPopup.close(); openDialog.open() }
+            }
+
+            Text { text: "Reciter"; font.pixelSize: 12; color: theme.textDim; Layout.topMargin: 6 }
             Picker {
                 t: theme
                 Layout.fillWidth: true
@@ -607,14 +624,18 @@ ApplicationWindow {
                     IconButton { t: theme; text: "☰"; tip: "Playlist (P)"
                         onClicked: win.sidebarOpen = !win.sidebarOpen }
                     Text {
-                        text: "Ruqya"
+                        text: player.playlistName !== "" ? player.playlistName : "Ruqya"
                         visible: !(win.wide && win.sidebarOpen)
                         font.pixelSize: 16
                         font.weight: Font.DemiBold
                         color: theme.textDim
+                        elide: Text.ElideRight
+                        Layout.maximumWidth: 200
                     }
                     Item { Layout.fillWidth: true }
 
+                    Pill { t: theme; text: "Open…"; onClicked: openDialog.open()
+                           ToolTip.visible: hovered; ToolTip.text: "Open playlist (O)"; ToolTip.delay: 600 }
                     Pill {
                         t: theme
                         text: "Translation"
@@ -675,7 +696,6 @@ ApplicationWindow {
                         color: theme.accent
                     }
 
-                    // ---- repeat progress readout ----
                     Text {
                         Layout.alignment: Qt.AlignHCenter
                         visible: player.effAyahRepeat !== 1 || player.effGroupRepeat !== 1
@@ -841,18 +861,23 @@ ApplicationWindow {
             ColumnLayout {
                 anchors.centerIn: flick
                 visible: player.currentIndex < 0 && !player.initializing
-                spacing: 8
+                spacing: 10
                 Text {
                     Layout.alignment: Qt.AlignHCenter
-                    text: "Preparing your playlist…"
-                    font.pixelSize: 20
-                    color: theme.text
+                    text: player.hasPlaylist ? "Preparing your playlist…" : "Open a playlist to begin"
+                    font.pixelSize: 20; color: theme.text
                 }
                 Text {
                     Layout.alignment: Qt.AlignHCenter
-                    text: "The first run downloads audio; after that it works offline."
-                    font.pixelSize: 14
-                    color: theme.textDim
+                    visible: player.hasPlaylist
+                    text: "Missing items download into the playlist's data folder on first use."
+                    font.pixelSize: 14; color: theme.textDim
+                }
+                Pill {
+                    Layout.alignment: Qt.AlignHCenter
+                    visible: !player.hasPlaylist
+                    t: theme; text: "Open playlist…"; active: true
+                    onClicked: openDialog.open()
                 }
             }
 
@@ -889,7 +914,6 @@ ApplicationWindow {
                               leftMargin: 20; rightMargin: 20 }
                     spacing: 16
 
-                    // ---- A-B loop (stays visible — different concept)
                     Row {
                         spacing: 6
                         Text { anchors.verticalCenter: parent.verticalCenter; text: "Loop part"
@@ -920,7 +944,6 @@ ApplicationWindow {
                         }
                     }
 
-                    // ---- repeat (single pill → popover)
                     Pill {
                         id: repeatPill
                         t: theme
@@ -1088,13 +1111,25 @@ ApplicationWindow {
                     Layout.rightMargin: 8
                     spacing: 6
 
+                    Text {
+                        Layout.fillWidth: true
+                        visible: player.availablePlaylists.length === 0
+                        text: player.playlistName !== "" ? player.playlistName : "Playlist"
+                        font.pixelSize: 18
+                        font.weight: Font.DemiBold
+                        color: theme.text
+                        elide: Text.ElideRight
+                    }
                     Picker {
                         t: theme
                         Layout.fillWidth: true
+                        visible: player.availablePlaylists.length > 0
                         model: player.availablePlaylists
                         selectedId: player.currentPlaylistId
                         onChosen: function(id) { player.setPlaylist(id) }
                     }
+                    IconButton { t: theme; size: 36; text: "＋"; tip: "Open playlist (O)"
+                        onClicked: openDialog.open() }
 
                     IconButton { t: theme; size: 36; text: "◎"; tip: "Jump to current"
                         onClicked: list.positionViewAtIndex(Math.max(0, player.currentIndex), ListView.Center) }
@@ -1283,7 +1318,7 @@ ApplicationWindow {
                 }
                 Text {
                     Layout.alignment: Qt.AlignHCenter
-                    text: "Preparing Ruqya Quran"
+                    text: "Preparing " + (player.playlistName || "Ruqya Quran")
                     font.pixelSize: 20
                     font.weight: Font.DemiBold
                     color: theme.text
@@ -1322,7 +1357,7 @@ ApplicationWindow {
                     Layout.alignment: Qt.AlignHCenter
                     Layout.topMargin: 12
                     visible: player.initTotal > 0
-                    text: "Downloads happen once; after that it works offline."
+                    text: "Downloads happen once into the playlist's data folder."
                     font.pixelSize: 11
                     color: theme.textDim
                     opacity: 0.6

@@ -2,23 +2,43 @@
 """
 ruqya_quran.main — Quranic Ruqya player (Qt Quick UI).
 
-Playlists live in ~/.config/ruqya-quran/playlists/*.json — one file per
-playlist.  Each item supports:
-  {"surah": 2, "from": 1, "to": 5, "description": "...",
-   "ayah_repeat": 1, "group_repeat": 3}     # 0 = infinite
-or the legacy form:
-  {"surah": 2, "from": 1, "to": 5, "repeat": 3, "repeat_mode": "group"}
-or a custom audio entry:
-  {"path": "extras/x.mp3", "title": "...", "body": "...", "section": "Duas"}
+A playlist is a standalone <name>.ruqya file (JSON) inside a workspace folder:
 
-Runtime repeat state (session only):
-  ayahRepeat  = -1 (Auto) | 0 (∞) | 1..N     — user override or Auto
-  groupRepeat = -1 (Auto) | 0 (∞) | 1..N
-  playlistLoop = bool
-The effective value = user override if != -1, else the current item's JSON.
+  Ruqya/
+    default.ruqya
+    data/
+      audio/<reciter>/<surah>_<ayah>.mp3
+      text/<edition>/surah_<n>.json
+      words/<lang>/<surah>_<ayah>.json
+      clips/*.mp3                      # user's own audio
 
-Persisted (see _settings): theme, font scale, sidebar, window geometry,
-playlistId, reciter, translation, volume, showTranslation.
+Open with:  ruqya-quran path/to/file.ruqya   (or double-click)
+
+Playlist format (v1):
+  {
+    "format": "ruqya-playlist",
+    "version": 1,
+    "name": "Default Ruqya",
+    "reciter": "ar.abdurrahmaansudais",         # optional default
+    "translation": "en.sahih",                  # optional default
+    "data_dir": "data",                         # optional, default "data"
+    "offline": false,                           # optional
+    "preload_reciters": [],                     # optional overrides
+    "preload_translations": [],
+    "items": [
+      {"surah": 2, "from": 1, "to": 5, "description": "...",
+       "ayah_repeat": 1, "group_repeat": 3},    # 0 = ∞
+      {"surah": 2, "from": 255, "to": 257,
+       "repeat": 3, "repeat_mode": "group"},    # legacy form, also honoured
+      {"path": "clips/dua.mp3", "title": "...", "body": "...",
+       "translation": "...", "section": "Duas"}
+    ]
+  }
+
+Persisted (QSettings, shared with QML Settings { category: "ui" }):
+  theme, font scale, sidebar, window geometry,
+  recentPlaylists, lastPlaylist,
+  reciter, translation, volume, showTranslation.
 
 Session-only (reset each launch): wordByWord, ayahRepeat, groupRepeat,
 playlistLoop, muted, loop A/B marks, position, current ayah, focus word.
@@ -28,6 +48,7 @@ import os
 import sys
 import json
 import time
+import hashlib
 import shutil
 import logging
 import threading
@@ -65,28 +86,15 @@ logging.getLogger("qt.qpa.services").setLevel(logging.ERROR)
 _GLOBAL_REFS = {}
 
 # ------------------------------------------------------------
-# XDG paths
+# Config directory (only config.json lives here now)
 # ------------------------------------------------------------
 
 def _config_dir() -> Path:
     xdg = os.environ.get("XDG_CONFIG_HOME")
     return (Path(xdg) if xdg else Path.home() / ".config") / "ruqya-quran"
 
-def _cache_dir() -> Path:
-    xdg = os.environ.get("XDG_CACHE_HOME")
-    return (Path(xdg) if xdg else Path.home() / ".cache") / "ruqya-quran"
-
 CONFIG_DIR = _config_dir()
 CONFIG_PATH = CONFIG_DIR / "config.json"
-PLAYLISTS_DIR = CONFIG_DIR / "playlists"
-EXTRAS_DIR = CONFIG_DIR / "extras"
-CUSTOM_PLAYLIST_PATH = CONFIG_DIR / "custom_playlist.json"  # legacy
-
-CACHE_DIR = _cache_dir()
-METADATA_CACHE_DIR = CACHE_DIR / "metadata"
-AUDIO_CACHE_DIR = CACHE_DIR / "audio"
-WBW_CACHE_DIR = CACHE_DIR / "wbw"
-
 TEMPLATE_CONFIG_NAME = "config.json"
 
 def _copy_pkg_file(rel: str, dst: Path) -> bool:
@@ -101,41 +109,10 @@ def _copy_pkg_file(rel: str, dst: Path) -> bool:
         log.warning("Could not copy %s: %s", rel, e)
         return False
 
-def _migrate_legacy_custom_playlist() -> None:
-    duas = PLAYLISTS_DIR / "duas.json"
-    if duas.exists() or not CUSTOM_PLAYLIST_PATH.exists():
-        return
-    try:
-        with open(CUSTOM_PLAYLIST_PATH, "r", encoding="utf-8") as f:
-            legacy = json.load(f)
-        if isinstance(legacy, list):
-            items = [{
-                "path": it.get("path", ""),
-                "title": it.get("title", ""),
-                "body": it.get("body", ""),
-                "translation": it.get("translation", ""),
-                "section": "Duas",
-            } for it in legacy]
-            with open(duas, "w", encoding="utf-8") as f:
-                json.dump({"name": "Duas", "items": items}, f, ensure_ascii=False, indent=2)
-            log.info("Migrated legacy custom_playlist.json → playlists/duas.json")
-    except (json.JSONDecodeError, OSError) as e:
-        log.warning("Could not migrate legacy custom playlist: %s", e)
-
 def _ensure_user_files() -> None:
     CONFIG_DIR.mkdir(parents=True, exist_ok=True)
-    PLAYLISTS_DIR.mkdir(parents=True, exist_ok=True)
-    EXTRAS_DIR.mkdir(parents=True, exist_ok=True)
-
     if not CONFIG_PATH.exists():
         _copy_pkg_file(TEMPLATE_CONFIG_NAME, CONFIG_PATH)
-
-    for name in ("default.json", "duas.json"):
-        dst = PLAYLISTS_DIR / name
-        if not dst.exists():
-            _copy_pkg_file(f"playlists/{name}", dst)
-
-    _migrate_legacy_custom_playlist()
 
 def _load_config() -> dict:
     _ensure_user_files()
@@ -257,32 +234,69 @@ class _SourceHealth:
 _SOURCE_HEALTH = _SourceHealth(threshold=SOURCE_FAIL_THRESHOLD)
 
 # ------------------------------------------------------------
-# Playlist discovery
+# Workspace (one per .ruqya file)
 # ------------------------------------------------------------
 
-def load_playlist_files() -> list:
-    _ensure_user_files()
-    out = []
-    for path in sorted(PLAYLISTS_DIR.glob("*.json")):
+class Workspace:
+    """Folder of a .ruqya file + its data folder (the source of truth)."""
+
+    def __init__(self, playlist_path: Path, data_dir: str = ""):
+        self.playlist_path = playlist_path.resolve()
+        self.base_dir = self.playlist_path.parent
+        d = Path(data_dir).expanduser() if data_dir else Path("data")
+        self.data_dir = d if d.is_absolute() else self.base_dir / d
+        self.write_dir = self._pick_write_dir()
+
+    def _pick_write_dir(self) -> Path:
         try:
-            with open(path, "r", encoding="utf-8") as f:
-                data = json.load(f)
-        except (json.JSONDecodeError, OSError) as e:
-            log.warning("Could not load playlist %s: %s", path, e)
-            continue
+            self.data_dir.mkdir(parents=True, exist_ok=True)
+            if os.access(self.data_dir, os.W_OK):
+                return self.data_dir
+        except OSError:
+            pass
+        digest = hashlib.sha1(str(self.data_dir).encode()).hexdigest()[:12]
+        base = Path(os.environ.get("XDG_DATA_HOME") or Path.home() / ".local/share")
+        fallback = base / "ruqya-quran" / digest
+        fallback.mkdir(parents=True, exist_ok=True)
+        log.warning("Data folder is read-only; downloads go to %s", fallback)
+        return fallback
 
-        if isinstance(data, list):
-            name = path.stem.title()
-            items = data
-        elif isinstance(data, dict):
-            name = data.get("name") or path.stem.title()
-            items = data.get("items") or []
-        else:
-            log.warning("Invalid playlist shape in %s", path)
-            continue
+    def find(self, *parts: str) -> Path:
+        """Existing file in data_dir, else where a new file should be written."""
+        p = self.data_dir.joinpath(*parts)
+        return p if p.exists() else self.write_dir.joinpath(*parts)
 
-        out.append({"id": path.stem, "name": name, "items": items, "path": str(path)})
-    return out
+_WS: Optional[Workspace] = None
+_OFFLINE = False
+
+def set_workspace(ws: Workspace, offline: bool = False) -> None:
+    global _WS, _OFFLINE
+    _WS, _OFFLINE = ws, offline
+
+def read_playlist_file(path: Path) -> dict:
+    with open(path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    if isinstance(data, list):  # bare list = items only
+        data = {"items": data}
+    if not isinstance(data, dict) or not isinstance(data.get("items"), list):
+        raise ValueError("not a playlist (missing 'items' list)")
+    if data.get("format", "ruqya-playlist") != "ruqya-playlist":
+        raise ValueError("unknown playlist format")
+    try:
+        if int(data.get("version", 1)) > 1:
+            log.warning("Playlist version %s is newer than supported", data["version"])
+    except (TypeError, ValueError):
+        pass
+    return {
+        "name": data.get("name") or path.stem.replace("_", " ").title(),
+        "items": data["items"],
+        "reciter": data.get("reciter") or "",
+        "translation": data.get("translation") or "",
+        "data_dir": data.get("data_dir") or "",
+        "offline": bool(data.get("offline", False)),
+        "preload_reciters": data.get("preload_reciters") or [],
+        "preload_translations": data.get("preload_translations") or [],
+    }
 
 # ------------------------------------------------------------
 # Queue items
@@ -309,9 +323,10 @@ class QueueItem:
 def _resolve_custom_path(raw: str) -> str:
     if not raw:
         return ""
-    if os.path.isabs(raw):
-        return raw
-    return str(CONFIG_DIR / raw)
+    p = Path(raw).expanduser()
+    if p.is_absolute():
+        return str(p)
+    return str(_WS.data_dir / p)
 
 def _read_repeats(raw: dict) -> tuple[int, int]:
     """Return (ayah_repeat, group_repeat) with 0 meaning ∞.
@@ -437,69 +452,25 @@ def placeholder(item: QueueItem) -> LoadedEntry:
     return e
 
 # ------------------------------------------------------------
-# Cache paths
+# Data paths (inside the workspace's data folder)
 # ------------------------------------------------------------
 
-def ensure_dirs():
-    METADATA_CACHE_DIR.mkdir(parents=True, exist_ok=True)
-    AUDIO_CACHE_DIR.mkdir(parents=True, exist_ok=True)
-    WBW_CACHE_DIR.mkdir(parents=True, exist_ok=True)
+def audio_path(surah, ayah, reciter):
+    return str(_WS.find("audio", reciter, f"{surah}_{ayah}.mp3"))
 
-def get_audio_cache_path(surah, ayah, reciter):
-    return str(AUDIO_CACHE_DIR / reciter / f"{surah}_{ayah}.mp3")
+def text_path(surah, edition):
+    return str(_WS.find("text", edition, f"surah_{surah}.json"))
 
-def get_metadata_cache_path(surah, edition):
-    return str(METADATA_CACHE_DIR / edition / f"surah_{surah}.json")
-
-def get_wbw_cache_path(surah, ayah, lang):
-    return str(WBW_CACHE_DIR / lang / f"{surah}_{ayah}.json")
-
-def _all_known_editions():
-    return set(RECITERS) | set(TRANSLATIONS)
-
-def _migrate_audio_layout():
-    if not AUDIO_CACHE_DIR.exists():
-        return
-    moved = 0
-    for f in AUDIO_CACHE_DIR.glob("*.mp3"):
-        stem = f.stem
-        for reciter in RECITERS:
-            marker = "_" + reciter.replace(".", "_")
-            if stem.endswith(marker):
-                surah_ayah = stem[:-len(marker)]
-                target_dir = AUDIO_CACHE_DIR / reciter
-                target_dir.mkdir(exist_ok=True)
-                f.rename(target_dir / f"{surah_ayah}.mp3")
-                moved += 1
-                break
-    if moved:
-        log.info("Migrated %s audio files", moved)
-
-def _migrate_metadata_layout():
-    if not METADATA_CACHE_DIR.exists():
-        return
-    moved = 0
-    editions_by_mangle = {e.replace(".", "_"): e for e in _all_known_editions()}
-    for f in METADATA_CACHE_DIR.glob("surah_*_*.json"):
-        parts = f.stem.split("_", 2)
-        if len(parts) != 3 or parts[0] != "surah":
-            continue
-        surah, mangled = parts[1], parts[2]
-        edition = editions_by_mangle.get(mangled)
-        if edition is None:
-            continue
-        target_dir = METADATA_CACHE_DIR / edition
-        target_dir.mkdir(exist_ok=True)
-        f.rename(target_dir / f"surah_{surah}.json")
-        moved += 1
-    if moved:
-        log.info("Migrated %s metadata files", moved)
+def words_path(surah, ayah, lang):
+    return str(_WS.find("words", lang, f"{surah}_{ayah}.json"))
 
 # ------------------------------------------------------------
 # Networking
 # ------------------------------------------------------------
 
 def request_with_retry(url):
+    if _OFFLINE:
+        raise RuntimeError("Offline playlist: network disabled")
     last_exc = None
     for attempt in range(MAX_RETRIES + 1):
         try:
@@ -520,19 +491,18 @@ def request_with_retry(url):
     raise last_exc
 
 def get_cached_surah_metadata(surah, edition):
-    path = get_metadata_cache_path(surah, edition)
+    path = text_path(surah, edition)
     if not os.path.exists(path):
         return None
     try:
         with open(path, "r", encoding="utf-8") as f:
             return json.load(f)
     except (json.JSONDecodeError, OSError) as e:
-        log.warning("Corrupt metadata cache %s/%s: %s", surah, edition, e)
+        log.warning("Corrupt text file %s/%s: %s", surah, edition, e)
         return None
 
 def save_cached_surah_metadata(surah, data, edition):
-    ensure_dirs()
-    path = Path(get_metadata_cache_path(surah, edition))
+    path = Path(text_path(surah, edition))
     path.parent.mkdir(parents=True, exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
@@ -548,11 +518,10 @@ def get_surah_data(surah, edition):
     return data
 
 def ensure_audio_cached(surah, ayah, reciter, ayah_data):
-    audio_file = get_audio_cache_path(surah, ayah, reciter)
+    audio_file = audio_path(surah, ayah, reciter)
     if os.path.exists(audio_file):
         return audio_file, True
 
-    ensure_dirs()
     Path(audio_file).parent.mkdir(parents=True, exist_ok=True)
 
     global_ayah_number = ayah_data.get("number")
@@ -588,18 +557,18 @@ def build_ayah_lookup(surah_data):
     return {a["numberInSurah"]: a for a in surah_data["ayahs"]}
 
 def get_cached_wbw(surah, ayah, lang):
-    path = get_wbw_cache_path(surah, ayah, lang)
+    path = words_path(surah, ayah, lang)
     if not os.path.exists(path):
         return None
     try:
         with open(path, "r", encoding="utf-8") as f:
             return json.load(f)
     except (json.JSONDecodeError, OSError) as e:
-        log.warning("Corrupt WBW cache %s:%s: %s", surah, ayah, e)
+        log.warning("Corrupt words file %s:%s: %s", surah, ayah, e)
         return None
 
 def save_cached_wbw(surah, ayah, lang, data):
-    path = Path(get_wbw_cache_path(surah, ayah, lang))
+    path = Path(words_path(surah, ayah, lang))
     path.parent.mkdir(parents=True, exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
@@ -917,19 +886,12 @@ class PlayerController(QObject):
         self._font_family = font_family
         self._bangla_font_family = "Noto Sans Bengali"
 
-        # Shared with QML Settings { category: "ui" }
         self._settings = QSettings("ruqya-quran", "ruqya-quran")
 
-        # --- persisted: playlist ---
-        self._playlists: list = load_playlist_files()
-        saved_id = self._settings.value("ui/playlistId", "", type=str)
-        self._current_playlist_id = ""
-        for p in self._playlists:
-            if p["id"] == saved_id:
-                self._current_playlist_id = p["id"]
-                break
-        if not self._current_playlist_id and self._playlists:
-            self._current_playlist_id = self._playlists[0]["id"]
+        # --- playlist (opened from a .ruqya file) ---
+        self._playlist: dict = {"name": "", "items": []}
+        self._playlist_path = ""
+        self._recent: list = self._load_recent()
 
         # --- persisted: reciter / translation / volume / showTranslation ---
         saved_reciter = self._settings.value("ui/reciter", DEFAULT_RECITER, type=str)
@@ -957,10 +919,8 @@ class PlayerController(QObject):
         self._group_repeat = -1
         self._playlist_loop = False
 
-        # Pass counters (completed counts; display uses pass+1)
         self._ayah_pass = 0
         self._group_pass = 0
-
         self._current_group_id = ""
 
         self._queue: list[QueueItem] = []
@@ -1019,24 +979,76 @@ class PlayerController(QObject):
     def translationNames(self):
         return [{"id": k, "name": v} for k, v in TRANSLATIONS.items()]
 
+    # ---- recent playlists (also exposed as the Picker's model) ----
+    def _load_recent(self) -> list:
+        try:
+            raw = json.loads(self._settings.value("ui/recent", "[]", type=str))
+        except (ValueError, TypeError):
+            raw = []
+        return [r for r in raw if isinstance(r, dict) and os.path.isfile(r.get("path", ""))][:10]
+
+    def _remember(self, path: str, name: str) -> None:
+        self._recent = ([{"path": path, "name": name}] + [r for r in self._recent if r["path"] != path])[:10]
+        self._settings.setValue("ui/recent", json.dumps(self._recent))
+        self._settings.setValue("ui/lastPlaylist", path)
+        self.availablePlaylistsChanged.emit()
+
     @Property(list, notify=availablePlaylistsChanged)
     def availablePlaylists(self):
-        return [{"id": p["id"], "name": p["name"]} for p in self._playlists]
+        return [{"id": r["path"], "name": r["name"]} for r in self._recent]
 
     @Property(str, notify=currentPlaylistChanged)
     def currentPlaylistId(self):
-        return self._current_playlist_id
+        return self._playlist_path
+
+    @Property(str, notify=currentPlaylistChanged)
+    def playlistName(self):
+        return self._playlist.get("name", "")
+
+    @Property(bool, notify=currentPlaylistChanged)
+    def hasPlaylist(self):
+        return bool(self._playlist_path)
 
     @Slot(str)
     def setPlaylist(self, playlist_id):
-        if playlist_id == self._current_playlist_id:
-            return
-        if not any(p["id"] == playlist_id for p in self._playlists):
-            return
-        self._current_playlist_id = playlist_id
-        self._settings.setValue("ui/playlistId", playlist_id)
+        if playlist_id != self._playlist_path:
+            self.openPlaylist(playlist_id)
+
+    @Slot(str, result=bool)
+    def openPlaylist(self, location):
+        path = (Path(QUrl(location).toLocalFile()) if location.startswith("file:") else Path(location).expanduser())
+        try:
+            data = read_playlist_file(path)
+        except (OSError, ValueError) as e:
+            self.toast.emit(f"Can't open playlist: {e}")
+            return False
+
+        self.shutdown()
+        ws = Workspace(path, data["data_dir"])
+        set_workspace(ws, data["offline"])
+        self._playlist, self._playlist_path = data, str(ws.playlist_path)
+        self._bismillah = None  # belongs to the old reciter
+
+        if data["reciter"] in RECITERS:  # file default; not written back
+            self._reciter = data["reciter"]
+        if data["translation"] in TRANSLATIONS:
+            self._translation_edition = data["translation"]
+
+        self._remember(self._playlist_path, data["name"])
+        self.reciterChanged.emit()
+        self.translationChanged.emit()
         self.currentPlaylistChanged.emit()
         self._restart_loader(keep_position=False)
+        return True
+
+    def openInitial(self, args):
+        """argv file first, else last used playlist, else the empty state."""
+        for a in args:
+            if not a.startswith("-") and self.openPlaylist(a):
+                return
+        last = self._settings.value("ui/lastPlaylist", "", type=str)
+        if last and os.path.isfile(last):
+            self.openPlaylist(last)
 
     # --- reciter / translation ---
     @Property(str, notify=reciterChanged)
@@ -1253,7 +1265,6 @@ class PlayerController(QObject):
             self._playlist_loop = v
             self.repeatChanged.emit()
 
-    # helper getters for QML
     def _cur_q(self) -> Optional[QueueItem]:
         return self._queue[self._current] if 0 <= self._current < len(self._queue) else None
 
@@ -1335,11 +1346,13 @@ class PlayerController(QObject):
 
     # ---------------- Load ----------------
 
-    def _current_playlist_items(self) -> list:
-        for p in self._playlists:
-            if p["id"] == self._current_playlist_id:
-                return p["items"]
-        return self._playlists[0]["items"] if self._playlists else []
+    def _preload_reciters(self) -> list:
+        want = [r for r in self._playlist.get("preload_reciters", []) if r in RECITERS]
+        return want or PRELOAD_RECITERS
+
+    def _preload_translations(self) -> list:
+        want = [t for t in self._playlist.get("preload_translations", []) if t in TRANSLATIONS]
+        return want or PRELOAD_TRANSLATIONS
 
     def _restart_loader(self, keep_position: bool = True):
         keep_index = self._current if (keep_position and self._current >= 0) else -1
@@ -1363,30 +1376,33 @@ class PlayerController(QObject):
         self.start()
 
     def start(self):
-        self._queue = build_queue_from_items(self._current_playlist_items())
+        if _WS is None:
+            return
+        self._queue = build_queue_from_items(self._playlist["items"])
         if not self._queue:
             self.model.reset_entries([])
             self._current = -1
             self.currentIndexChanged.emit()
             self.contentReset.emit()
             return
-        if self._is_cache_complete(self._queue):
-            log.info("Cache complete — skipping warmup")
+        if _OFFLINE or self._is_data_complete(self._queue):
+            log.info("Data complete or offline — skipping warmup")
             self._begin_playlist_load()
             return
         self._start_warmup()
 
-    def _is_cache_complete(self, queue) -> bool:
+    def _is_data_complete(self, queue) -> bool:
         quran_items = [q for q in queue if q.kind == "quran"]
         surahs = {q.surah for q in quran_items}
-        editions = set(PRELOAD_RECITERS) | set(PRELOAD_TRANSLATIONS) | {self._reciter} | {self._translation_edition}
+        reciters = set(self._preload_reciters()) | {self._reciter}
+        editions = (reciters | set(self._preload_translations()) | {self._translation_edition})
         for edition in editions:
             for surah in surahs:
-                if not os.path.exists(get_metadata_cache_path(surah, edition)):
+                if not os.path.exists(text_path(surah, edition)):
                     return False
-        for reciter in set(PRELOAD_RECITERS) | {self._reciter}:
+        for reciter in reciters:
             for q in quran_items:
-                if not os.path.exists(get_audio_cache_path(q.surah, q.ayah, reciter)):
+                if not os.path.exists(audio_path(q.surah, q.ayah, reciter)):
                     return False
         return True
 
@@ -1397,7 +1413,10 @@ class PlayerController(QObject):
         self._init_total = 0
         self.initStateChanged.emit()
 
-        self._warmup = WarmupLoader(PRELOAD_RECITERS, PRELOAD_TRANSLATIONS, self._queue, max_workers=MAX_WORKERS)
+        self._warmup = WarmupLoader(self._preload_reciters(),
+                                    self._preload_translations(),
+                                    self._queue,
+                                    max_workers=MAX_WORKERS)
         self._warmup.progress.connect(self._on_warmup_progress)
         self._warmup.finished_warmup.connect(self._on_warmup_finished)
         self._warmup.start()
@@ -1555,7 +1574,7 @@ class PlayerController(QObject):
                     try:
                         save_cached_wbw(surah, ayah, lang, out)
                     except OSError as ex:
-                        log.warning("Could not write WBW cache: %s", ex)
+                        log.warning("Could not write words cache: %s", ex)
                 self._word_by_word_data = out
             except Exception as exc:
                 log.warning("Word-by-word fetch failed: %s", exc)
@@ -1636,7 +1655,6 @@ class PlayerController(QObject):
         return None
 
     def _enter_playback(self, index):
-        """Advance group/pass counters when entering a new item for playback."""
         item = self._queue[index] if 0 <= index < len(self._queue) else None
         if not item:
             return
@@ -1813,18 +1831,15 @@ class PlayerController(QObject):
         entry = self.model.entry(self._current)
         if entry is None: return
 
-        # --- Bismillah bridge ---
         if self._stage == "bismillah":
             self._stage = "main"
             self._start_audio(entry.audio_file)
             return
 
-        # --- A-B loop inside the ayah ---
         if self._loop_running() and self._loop_hit():
             self._player.play()
             return
 
-        # --- each-ayah repeat ---
         self._ayah_pass += 1
         n = self._eff_ayah_repeat()
         if n == 0 or self._ayah_pass < n:
@@ -1832,14 +1847,12 @@ class PlayerController(QObject):
             self._replay_current()
             return
 
-        # --- advance ---
         nxt = self.model.next_index(self._current)
         if nxt is None and self._playlist_loop:
             nxt = self.model.first_index()
 
         leaving = (nxt is None or nxt <= self._current or self._queue[nxt].group_id != self._current_group_id)
 
-        # --- group repeat ---
         if leaving:
             self._group_pass += 1
             g = self._eff_group_repeat()
@@ -1911,9 +1924,6 @@ def main():
     app.setOrganizationName("ruqya-quran")
     app.setDesktopFileName("ruqya-quran")
 
-    _migrate_audio_layout()
-    _migrate_metadata_layout()
-
     font_family = load_quran_font()
     bangla_font = load_bangla_font()
 
@@ -1934,7 +1944,7 @@ def main():
         sys.exit(1)
 
     app.aboutToQuit.connect(controller.shutdown)
-    controller.start()
+    controller.openInitial(sys.argv[1:])
     sys.exit(app.exec())
 
 if __name__ == "__main__":

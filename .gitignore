@@ -1,13 +1,61 @@
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*$py.class
 .venv/
 venv/
 build/
 dist/
-*.egg-info/
-__pycache__/
 .pybuild/
+*.egg-info/
+*.egg
+
+# ---------- Ruff ----------
+.ruff_cache/
+
+# ---------- Debian build artifacts ----------
+# (source files under debian/ — control, rules, changelog, copyright,
+#  ruqya-quran.install — stay tracked)
 debian/.debhelper/
-debian/ruqya-quran/
 debian/files
 debian/*.substvars
 debian/*.debhelper.log
 debian/debhelper-build-stamp
+debian/ruqya-quran/
+debian/tmp/
+debian/*.postinst.debhelper
+debian/*.prerm.debhelper
+debian/*.postrm.debhelper
+debian/*.preinst.debhelper
+.pbuilder/
+
+# ---------- Qt / QML ----------
+*.qmlc
+*.jsc
+qmlcache/
+.qmlcache/
+*qtpipelinecache*/
+
+# ---------- IDE / OS ----------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ---------- Merge / patch artifacts ----------
+*.orig
+*.rej
+*.patch
+
+# ---------- Local dev overrides ----------
+.env
+.env.local
+
+# ---------- Analysis / migration helpers (not source) ----------
+combined.txt
+tree.txt
+tree-*.txt
+migrate.sh
