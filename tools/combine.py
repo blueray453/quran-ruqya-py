@@ -5,13 +5,13 @@ Concatenate project source into a single file for LLM context.
 Uses `git ls-files --cached --others --exclude-standard` so .gitignore is
 the single source of truth for what's in the project. Then:
 
-  1. Filters out bulk binary/data trees (examples/Ruqya/data/, docs/), the
-     output file itself, this script, standard MIT boilerplate that every
-     LLM already knows, trivial one-liners, binary files, and anything
-     above a size cap.
+  1. Filters out bulk binary/data trees, the OpenAPI spec, the output
+     itself, this script, standard MIT boilerplate that every LLM already
+     knows, trivial one-liners, binary files, and anything above a size cap.
   2. Emits a small ASCII tree at the top, derived from the filtered list,
      with skipped directories collapsed to a "[N files not shown]" marker.
-  3. Emits each remaining file with a `// ===== FILE: path =====` header.
+  3. Emits README.md, then docs/INSTALL.md, then each remaining file
+     alphabetically, with a `// ===== FILE: path =====` header.
 
 Usage:
     python3 tools/combine.py                 # → combined.txt
@@ -26,12 +26,18 @@ from pathlib import Path
 OUT = Path(sys.argv[1] if len(sys.argv) > 1 else "combined.txt")
 MAX_KB = int(sys.argv[2]) if len(sys.argv) > 2 else 500
 
+# High-signal files that come first after the tree, in this order, so an
+# LLM reads "what is this project?" then "how do I install it?" before
+# diving into source.
+PRIORITY = [
+    "README.md",
+    "docs/INSTALL.md",
+]
+
 # Directories whose contents are tracked in git but not useful as LLM
-# context. Collapsed to a marker in the tree so the LLM still knows the
-# directory exists.
+# context. Collapsed to a marker in the tree.
 SKIP_PREFIXES = (
     "examples/Ruqya/data/",  # bulk audio, text, words, clips
-    "docs/",  # only file is the full alquran.cloud OpenAPI spec
 )
 
 # Exact relative paths dropped silently — no tree marker, no content.
@@ -39,6 +45,10 @@ SKIP_PATHS = {
     # Meta: this script and its output
     "combined.txt",
     "tools/combine.py",
+
+    # Full alquran.cloud OpenAPI spec — app uses only 2 endpoints, both
+    # spelled out in main.py. ~1400 lines of mostly-irrelevant API schema.
+    "docs/API.txt",
 
     # MIT boilerplate — LLMs know it verbatim; also in pyproject.toml
     "LICENSE",
@@ -124,8 +134,6 @@ def render_tree(
     `included_rel` — files that end up in combined.txt (rendered as leaves).
     `skipped_dir_counts` — prefix → number of files skipped under it
         (rendered as `<dir>/  [N files not shown]`).
-
-    Directories sort before markers before files; alphabetical within each.
     """
     tree: dict = {}
 
@@ -137,7 +145,7 @@ def render_tree(
             node[parts[-1]] = value
 
     for rel in included_rel:
-        insert(rel.split("/"), None)  # None = regular file
+        insert(rel.split("/"), None)
 
     for prefix, count in skipped_dir_counts.items():
         insert(prefix.rstrip("/").split("/"), ("[skipped]", count))
@@ -171,6 +179,16 @@ def render_tree(
     return "\n".join(lines)
 
 # ---------------------------------------------------------------
+# Content ordering
+# ---------------------------------------------------------------
+
+def content_sort_key(rel: str) -> tuple:
+    """Priority files first in fixed order; everything else alphabetically."""
+    if rel in PRIORITY:
+        return (0, PRIORITY.index(rel))
+    return (1, rel)
+
+# ---------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------
 
@@ -178,38 +196,33 @@ def main() -> None:
     root = repo_root()
     files = list_files(root)
 
-    included: list[tuple[str, str]] = []  # (rel, content)
+    included: list[tuple[str, str]] = []
     skipped_dir_counts: dict[str, int] = {}
     skipped = 0
 
     for path in files:
         rel = path.relative_to(root).as_posix()
 
-        # Exact path in SKIP_PATHS — drop silently, no tree marker
         if rel in SKIP_PATHS:
             skipped += 1
             continue
 
-        # Bulk skipped directory — count and render as a collapsed marker
         matched_prefix = next((p for p in SKIP_PREFIXES if rel.startswith(p)), None)
         if matched_prefix is not None:
             skipped_dir_counts[matched_prefix] = skipped_dir_counts.get(matched_prefix, 0) + 1
             skipped += 1
             continue
 
-        # Binary files — dropped from both tree and content
         if path.suffix in BINARY_SUFFIXES:
             skipped += 1
             continue
 
-        # Oversized files — dropped with a stderr note
         size = path.stat().st_size
         if size > MAX_KB * 1024:
             print(f"SKIP (size {size // 1024} KB): {rel}", file=sys.stderr)
             skipped += 1
             continue
 
-        # Unreadable as UTF-8 — drop
         try:
             content = path.read_text(encoding="utf-8")
         except (OSError, UnicodeDecodeError) as e:
@@ -219,6 +232,9 @@ def main() -> None:
 
         included.append((rel, content))
 
+    # Reading order: tree → README → INSTALL → everything else alphabetically.
+    included.sort(key=lambda pair: content_sort_key(pair[0]))
+
     with open(OUT, "w", encoding="utf-8") as fout:
         fout.write("// ===== PROJECT TREE =====\n")
         fout.write("// Every file shown below appears verbatim later in this dump.\n")
@@ -226,6 +242,11 @@ def main() -> None:
         fout.write("// intentionally excluded (bulk data, OpenAPI spec, boilerplate).\n")
         fout.write(render_tree(root.name, [r for r, _ in included], skipped_dir_counts))
         fout.write("\n\n")
+
+        fout.write("// ===== READING ORDER =====\n")
+        fout.write("// README.md explains what the project is and the playlist format.\n")
+        fout.write("// docs/INSTALL.md explains deployment, MIME registration, and\n")
+        fout.write("// troubleshooting. Everything else follows alphabetically.\n\n")
 
         for rel, content in included:
             fout.write(f"// ===== FILE: {rel} =====\n")
