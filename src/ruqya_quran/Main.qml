@@ -9,13 +9,13 @@ ApplicationWindow {
     height: 740
     minimumWidth: 640
     minimumHeight: 480
-    visible: false                             // restored after geometry
+    visible: false
     title: "Ruqya Quran"
     color: theme.bg
 
     property real fontScale: 1.0
     property bool sidebarOpen: true
-    property string themeName: "dark"          // "dark" | "light" (Solarized)
+    property string themeName: "dark"
     property int focusWord: -1
     readonly property bool wide: width >= 940
     readonly property int sidebarWidth: 340
@@ -27,10 +27,12 @@ ApplicationWindow {
     function ensureVisible(i) {
         var item = list.itemAtIndex(i)
         if (item && item.y >= list.contentY && item.y + item.height <= list.contentY + list.height)
-            return                                  // already visible: don't move the panel
+            return
         list.positionViewAtIndex(i, ListView.Contain)
     }
     function times(n) { return n === 0 ? "∞" : n }
+    function rep(v) { return v === -1 ? "Auto" : (v === 0 ? "∞" : "×" + v) }
+    function autoHint(n) { return "Auto = ×" + (n === 0 ? "∞" : n) + " for this item" }
 
     // ------------------------------------------------ theme (Solarized)
     QtObject {
@@ -48,7 +50,6 @@ ApplicationWindow {
         readonly property color danger:     "#dc322f"
     }
 
-    // ---- persistent UI settings (green list) ----
     Settings {
         category: "ui"
         property alias themeName: win.themeName
@@ -56,7 +57,6 @@ ApplicationWindow {
         property alias sidebarOpen: win.sidebarOpen
     }
 
-    // ---- persistent window geometry ----
     Settings {
         id: geomSettings
         category: "window"
@@ -69,14 +69,10 @@ ApplicationWindow {
     Component.onCompleted: {
         var sx = geomSettings.wx, sy = geomSettings.wy
         var sw = geomSettings.ww, sh = geomSettings.wh
-        // Safety: if saved geometry looks off-screen / degenerate, fall back
         if (sx < -2000 || sy < -2000 || sw < 400 || sh < 300) {
             sx = 100; sy = 100; sw = 1120; sh = 740
         }
-        win.x = sx
-        win.y = sy
-        win.width = sw
-        win.height = sh
+        win.x = sx; win.y = sy; win.width = sw; win.height = sh
         win.visible = true
     }
 
@@ -241,6 +237,40 @@ ApplicationWindow {
                         color: index === sg.current ? sg.t.onAccent : sg.t.textDim
                     }
                     MouseArea { anchors.fill: parent; onClicked: sg.picked(index) }
+                }
+            }
+        }
+    }
+
+    component ChipRow: Row {
+        id: cr
+        property var t
+        property int current: -1
+        property var values: [-1, 1, 2, 3, 5, 10, 0]
+        signal picked(int value)
+        spacing: 4
+        Repeater {
+            model: cr.values
+            delegate: Rectangle {
+                required property int modelData
+                readonly property bool sel: modelData === cr.current
+                width: modelData === -1 ? 54 : 36
+                height: 30
+                radius: 15
+                color: sel ? cr.t.accent : "transparent"
+                border.width: 1
+                border.color: sel ? cr.t.accent : cr.t.line
+                Text {
+                    anchors.centerIn: parent
+                    text: modelData === -1 ? "Auto" : (modelData === 0 ? "∞" : modelData)
+                    font.pixelSize: 13
+                    font.weight: Font.DemiBold
+                    color: parent.sel ? cr.t.onAccent : cr.t.textDim
+                }
+                MouseArea {
+                    anchors.fill: parent
+                    cursorShape: Qt.PointingHandCursor
+                    onClicked: cr.picked(modelData)
                 }
             }
         }
@@ -414,7 +444,7 @@ ApplicationWindow {
         function onToast(msg) { toastText.text = msg; toast.opacity = 1; toastTimer.restart() }
     }
 
-    // ------------------------------------------------ settings popup
+    // ------------------------------------------------ popups
     Popup {
         id: settingsPopup
         parent: Overlay.overlay
@@ -467,6 +497,84 @@ ApplicationWindow {
                 Text { text: Math.round(win.fontScale * 100) + "%"; color: theme.text; font.pixelSize: 14
                        Layout.preferredWidth: 48; horizontalAlignment: Text.AlignHCenter }
                 IconButton { t: theme; text: "A+"; onClicked: win.fontScale = Math.min(1.8, win.fontScale + 0.1) }
+            }
+        }
+    }
+
+    Popup {
+        id: repeatPopup
+        parent: Overlay.overlay
+        anchors.centerIn: Overlay.overlay
+        modal: false
+        focus: true
+        closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutside
+        width: 420
+        padding: 20
+        background: Rectangle { color: theme.surface; radius: 14; border.color: theme.line }
+
+        contentItem: ColumnLayout {
+            spacing: 8
+
+            Text { text: "Repeat"; font.pixelSize: 18; font.weight: Font.DemiBold; color: theme.text }
+
+            Text { text: "Each ayah plays"; font.pixelSize: 13; font.weight: Font.DemiBold
+                   color: theme.text; Layout.topMargin: 6 }
+            ChipRow {
+                t: theme
+                current: player.ayahRepeat
+                onPicked: function(v) { player.setAyahRepeat(v) }
+            }
+            Text {
+                Layout.fillWidth: true
+                wrapMode: Text.WordWrap
+                text: "1 · 1 · 1  →  2 · 2 · 2  →  3 · 3 · 3"
+                      + (player.ayahRepeat === -1 ? "     " + win.autoHint(player.playlistAyahRepeat) : "")
+                font.pixelSize: 11; color: theme.textDim
+            }
+
+            Text { text: "Whole section plays"; font.pixelSize: 13; font.weight: Font.DemiBold
+                   color: theme.text; Layout.topMargin: 8 }
+            ChipRow {
+                t: theme
+                current: player.groupRepeat
+                onPicked: function(v) { player.setGroupRepeat(v) }
+            }
+            Text {
+                Layout.fillWidth: true
+                wrapMode: Text.WordWrap
+                text: "1 · 2 · 3  →  1 · 2 · 3  →  1 · 2 · 3"
+                      + (player.groupRepeat === -1 ? "     " + win.autoHint(player.playlistGroupRepeat) : "")
+                font.pixelSize: 11; color: theme.textDim
+            }
+
+            Rectangle { Layout.fillWidth: true; height: 1; color: theme.line; Layout.topMargin: 6 }
+
+            RowLayout {
+                Layout.fillWidth: true
+                Text { Layout.fillWidth: true; text: "Start over at end of playlist"
+                       font.pixelSize: 13; color: theme.text }
+                Segmented {
+                    t: theme
+                    labels: ["Off", "On"]
+                    current: player.playlistLoop ? 1 : 0
+                    onPicked: function(i) { player.playlistLoop = (i === 1) }
+                }
+            }
+
+            Rectangle { Layout.fillWidth: true; height: 1; color: theme.line; Layout.topMargin: 6 }
+
+            Text { text: "Presets"; font.pixelSize: 12; color: theme.textDim }
+            Flow {
+                Layout.fillWidth: true
+                spacing: 6
+                Pill { t: theme; text: "Auto (playlist)"
+                       onClicked: { player.setAyahRepeat(-1); player.setGroupRepeat(-1) } }
+                Pill { t: theme; text: "Practice"
+                       onClicked: { player.setAyahRepeat(3); player.setGroupRepeat(1) } }
+                Pill { t: theme; text: "Ruqya session"
+                       onClicked: { player.setAyahRepeat(1); player.setGroupRepeat(3) } }
+                Pill { t: theme; text: "Memorize"
+                       onClicked: { player.setAyahRepeat(5); player.setGroupRepeat(2) } }
             }
         }
     }
@@ -566,6 +674,25 @@ ApplicationWindow {
                         font.pixelSize: 13
                         color: theme.accent
                     }
+
+                    // ---- repeat progress readout ----
+                    Text {
+                        Layout.alignment: Qt.AlignHCenter
+                        visible: player.effAyahRepeat !== 1 || player.effGroupRepeat !== 1
+                        font.pixelSize: 13
+                        color: theme.accent
+                        text: {
+                            var parts = []
+                            if (player.effAyahRepeat !== 1)
+                                parts.push("Ayah pass " + player.ayahPass
+                                           + (player.effAyahRepeat > 0 ? " of " + player.effAyahRepeat : ""))
+                            if (player.effGroupRepeat !== 1)
+                                parts.push("Section pass " + player.groupPass
+                                           + (player.effGroupRepeat > 0 ? " of " + player.effGroupRepeat : ""))
+                            return parts.join("  ·  ")
+                        }
+                    }
+
                     RowLayout {
                         Layout.alignment: Qt.AlignHCenter
                         spacing: 12
@@ -584,7 +711,6 @@ ApplicationWindow {
                         }
                     }
 
-                    // plain Arabic text (Bismillah, duas, or when word data isn't available)
                     Text {
                         Layout.fillWidth: true
                         Layout.topMargin: 8
@@ -600,7 +726,6 @@ ApplicationWindow {
                         color: theme.text
                     }
 
-                    // Arabic text as words: hover highlights, meaning shows below
                     Flow {
                         id: wordFlow
                         Layout.fillWidth: true
@@ -641,7 +766,6 @@ ApplicationWindow {
                         }
                     }
 
-                    // meaning bar (fixed height so nothing jumps while hovering)
                     Rectangle {
                         id: meaningBar
                         Layout.fillWidth: true
@@ -713,7 +837,7 @@ ApplicationWindow {
                 }
             }
 
-            // ---- empty / preparing state
+            // ---- empty state
             ColumnLayout {
                 anchors.centerIn: flick
                 visible: player.currentIndex < 0 && !player.initializing
@@ -752,7 +876,7 @@ ApplicationWindow {
                 Timer { id: toastTimer; interval: 3500; onTriggered: toast.opacity = 0 }
             }
 
-            // ---- tools strip: A–B loop, repeat, playlist loop
+            // ---- tools strip
             Item {
                 id: tools
                 implicitHeight: toolsFlow.implicitHeight + 16
@@ -765,6 +889,7 @@ ApplicationWindow {
                               leftMargin: 20; rightMargin: 20 }
                     spacing: 16
 
+                    // ---- A-B loop (stays visible — different concept)
                     Row {
                         spacing: 6
                         Text { anchors.verticalCenter: parent.verticalCenter; text: "Loop part"
@@ -795,31 +920,18 @@ ApplicationWindow {
                         }
                     }
 
-                    Row {
-                        spacing: 6
-                        Text { anchors.verticalCenter: parent.verticalCenter; text: "Repeat"
-                               font.pixelSize: 12; color: theme.textDim }
-                        Pill {
-                            t: theme
-                            active: player.ayahRepeat !== 1
-                            text: "Ayah × " + win.times(player.ayahRepeat)
-                            ToolTip.visible: hovered; ToolTip.text: "Play each ayah N times (R)"; ToolTip.delay: 600
-                            onClicked: player.cycleAyahRepeat()
-                        }
-                        Pill {
-                            t: theme
-                            active: player.groupRepeat !== 1
-                            text: "Group × " + win.times(player.groupRepeat)
-                            ToolTip.visible: hovered; ToolTip.text: "Repeat the whole group (e.g. Al Baqarah 1–5) N times (G)"; ToolTip.delay: 600
-                            onClicked: player.cycleGroupRepeat()
-                        }
-                        Pill {
-                            t: theme
-                            active: player.playlistLoop
-                            text: "Playlist ↻"
-                            ToolTip.visible: hovered; ToolTip.text: "Start over at the end (L)"; ToolTip.delay: 600
-                            onClicked: player.togglePlaylistLoop()
-                        }
+                    // ---- repeat (single pill → popover)
+                    Pill {
+                        id: repeatPill
+                        t: theme
+                        active: player.ayahRepeat !== -1 || player.groupRepeat !== -1 || player.playlistLoop
+                        text: "Repeat · Ayah " + win.rep(player.ayahRepeat)
+                              + " · Section " + win.rep(player.groupRepeat)
+                              + (player.playlistLoop ? " · All ↻" : "")
+                        ToolTip.visible: hovered && !repeatPopup.visible
+                        ToolTip.text: "Repeat options (R / G / L)"
+                        ToolTip.delay: 600
+                        onClicked: repeatPopup.opened ? repeatPopup.close() : repeatPopup.open()
                     }
                 }
             }
@@ -1131,7 +1243,7 @@ ApplicationWindow {
             }
         }
 
-        // ============ initialization overlay ============
+        // ============ init overlay ============
         Rectangle {
             id: initOverlay
             anchors.fill: parent

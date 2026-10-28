@@ -2,7 +2,13 @@
   "name": "Default Ruqya",
   "items": [
     { "surah": 1, "from": 1, "to": 7, "description": "Surah Fatiha (Full)" },
-    { "surah": 2, "from": 1, "to": 5, "description": "Surah Al Baqarah 1-5" },
+    {
+      "surah": 2,
+      "from": 1,
+      "to": 5,
+      "description": "Surah Al Baqarah 1-5",
+      "group_repeat": 3
+    },
     {
       "surah": 2,
       "from": 102,
@@ -20,8 +26,7 @@
       "from": 255,
       "to": 257,
       "description": "Ayatul Kursi & following",
-      "repeat": 3,
-      "repeat_mode": "group"
+      "group_repeat": 3
     },
     {
       "surah": 2,
@@ -140,24 +145,21 @@
       "from": 1,
       "to": 4,
       "description": "Surah Ikhlas (Full)",
-      "repeat": 3,
-      "repeat_mode": "group"
+      "group_repeat": 3
     },
     {
       "surah": 113,
       "from": 1,
       "to": 5,
       "description": "Surah Falaq (Full)",
-      "repeat": 3,
-      "repeat_mode": "group"
+      "group_repeat": 3
     },
     {
       "surah": 114,
       "from": 1,
       "to": 6,
       "description": "Surah An-Nas (Full)",
-      "repeat": 3,
-      "repeat_mode": "group"
+      "group_repeat": 3
     }
   ]
 }

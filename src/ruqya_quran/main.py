@@ -2,26 +2,32 @@
 """
 ruqya_quran.main — Quranic Ruqya player (Qt Quick UI).
 
-Playlists live in ~/.config/ruqya-quran/playlists/*.json — each file is one
-playlist.  On first run the bundled defaults are copied there.
-
-Each playlist item supports:
+Playlists live in ~/.config/ruqya-quran/playlists/*.json — one file per
+playlist.  Each item supports:
   {"surah": 2, "from": 1, "to": 5, "description": "...",
-   "ayah_repeat": 1, "group_repeat": 3}     # runtime multipliers
+   "ayah_repeat": 1, "group_repeat": 3}     # 0 = infinite
+or the legacy form:
+  {"surah": 2, "from": 1, "to": 5, "repeat": 3, "repeat_mode": "group"}
 or a custom audio entry:
   {"path": "extras/x.mp3", "title": "...", "body": "...", "section": "Duas"}
 
-Runtime repeat controls (in addition to the JSON defaults):
-  ayahRepeat   — play each ayah N times before advancing
-  groupRepeat  — play each group N times before advancing to the next group
-  playlistLoop — restart at end of queue
+Runtime repeat state (session only):
+  ayahRepeat  = -1 (Auto) | 0 (∞) | 1..N     — user override or Auto
+  groupRepeat = -1 (Auto) | 0 (∞) | 1..N
+  playlistLoop = bool
+The effective value = user override if != -1, else the current item's JSON.
+
+Persisted (see _settings): theme, font scale, sidebar, window geometry,
+playlistId, reciter, translation, volume, showTranslation.
+
+Session-only (reset each launch): wordByWord, ayahRepeat, groupRepeat,
+playlistLoop, muted, loop A/B marks, position, current ayah, focus word.
 """
 
 import os
 import sys
 import json
 import time
-import uuid
 import shutil
 import logging
 import threading
@@ -75,8 +81,6 @@ CONFIG_PATH = CONFIG_DIR / "config.json"
 PLAYLISTS_DIR = CONFIG_DIR / "playlists"
 EXTRAS_DIR = CONFIG_DIR / "extras"
 CUSTOM_PLAYLIST_PATH = CONFIG_DIR / "custom_playlist.json"  # legacy
-MISTAKES_PATH = CONFIG_DIR / "mistakes.json"
-MEMORIZATION_PATH = CONFIG_DIR / "memorization.json"
 
 CACHE_DIR = _cache_dir()
 METADATA_CACHE_DIR = CACHE_DIR / "metadata"
@@ -130,11 +134,6 @@ def _ensure_user_files() -> None:
         dst = PLAYLISTS_DIR / name
         if not dst.exists():
             _copy_pkg_file(f"playlists/{name}", dst)
-
-    if not MEMORIZATION_PATH.exists():
-        MEMORIZATION_PATH.write_text("[]", encoding="utf-8")
-    if not MISTAKES_PATH.exists():
-        MISTAKES_PATH.write_text("{}", encoding="utf-8")
 
     _migrate_legacy_custom_playlist()
 
@@ -286,46 +285,7 @@ def load_playlist_files() -> list:
     return out
 
 # ------------------------------------------------------------
-# Memorization storage
-# ------------------------------------------------------------
-
-def load_memorization() -> list:
-    if not MEMORIZATION_PATH.exists():
-        return []
-    try:
-        with open(MEMORIZATION_PATH, "r", encoding="utf-8") as f:
-            data = json.load(f)
-        return data if isinstance(data, list) else []
-    except (json.JSONDecodeError, OSError):
-        return []
-
-def save_memorization(items: list) -> None:
-    try:
-        with open(MEMORIZATION_PATH, "w", encoding="utf-8") as f:
-            json.dump(items, f, ensure_ascii=False, indent=2)
-    except OSError as e:
-        log.warning("Could not save memorization: %s", e)
-
-def load_mistakes() -> dict:
-    if not MISTAKES_PATH.exists():
-        return {}
-    try:
-        with open(MISTAKES_PATH, "r", encoding="utf-8") as f:
-            raw = json.load(f)
-        return {tuple(int(x) for x in k.split(":")): set(v) for k, v in raw.items()}
-    except (json.JSONDecodeError, OSError, ValueError):
-        return {}
-
-def save_mistakes(mistakes: dict) -> None:
-    raw = {f"{k[0]}:{k[1]}": sorted(v) for k, v in mistakes.items() if v}
-    try:
-        with open(MISTAKES_PATH, "w", encoding="utf-8") as f:
-            json.dump(raw, f, indent=2)
-    except OSError as e:
-        log.warning("Could not save mistakes: %s", e)
-
-# ------------------------------------------------------------
-# Queue
+# Queue items
 # ------------------------------------------------------------
 
 def needs_bismillah(surah: int) -> bool:
@@ -343,8 +303,8 @@ class QueueItem:
     custom_body: str = ""
     custom_translation: str = ""
     custom_section: str = ""
-    ayah_repeat: int = 1
-    group_repeat: int = 1
+    ayah_repeat: int = 1  # 0 = ∞
+    group_repeat: int = 1  # 0 = ∞
 
 def _resolve_custom_path(raw: str) -> str:
     if not raw:
@@ -353,6 +313,28 @@ def _resolve_custom_path(raw: str) -> str:
         return raw
     return str(CONFIG_DIR / raw)
 
+def _read_repeats(raw: dict) -> tuple[int, int]:
+    """Return (ayah_repeat, group_repeat) with 0 meaning ∞.
+
+    Accepts both modern keys and the legacy {"repeat": N, "repeat_mode": "..."} form.
+    """
+    ayah = raw.get("ayah_repeat", 1)
+    group = raw.get("group_repeat", 1)
+    if "repeat" in raw:
+        if raw.get("repeat_mode", "ayah") == "group":
+            group = raw["repeat"]
+        else:
+            ayah = raw["repeat"]
+    try:
+        ayah = max(0, int(ayah))
+    except (TypeError, ValueError):
+        ayah = 1
+    try:
+        group = max(0, int(group))
+    except (TypeError, ValueError):
+        group = 1
+    return ayah, group
+
 def build_queue_from_items(items: list) -> list:
     queue: list[QueueItem] = []
     for idx, raw in enumerate(items):
@@ -360,6 +342,7 @@ def build_queue_from_items(items: list) -> list:
             continue
         if "path" in raw:
             path = _resolve_custom_path(raw.get("path", ""))
+            ar, gr = _read_repeats(raw)
             queue.append(
                 QueueItem(
                     surah=0,
@@ -371,8 +354,8 @@ def build_queue_from_items(items: list) -> list:
                     custom_body=raw.get("body", ""),
                     custom_translation=raw.get("translation", ""),
                     custom_section=raw.get("section") or CUSTOM_PLAYLIST_SEPARATOR_LABEL,
-                    ayah_repeat=max(1, int(raw.get("ayah_repeat", 1))),
-                    group_repeat=max(1, int(raw.get("group_repeat", 1))),
+                    ayah_repeat=ar,
+                    group_repeat=gr,
                 ))
             continue
 
@@ -383,8 +366,7 @@ def build_queue_from_items(items: list) -> list:
         from_ayah = int(raw.get("from", 1))
         to_ayah = int(raw.get("to", from_ayah))
         description = raw.get("description") or f"Surah {surah}:{from_ayah}-{to_ayah}"
-        ayah_rep = max(1, int(raw.get("ayah_repeat", 1)))
-        group_rep = max(1, int(raw.get("group_repeat", 1)))
+        ayah_rep, group_rep = _read_repeats(raw)
         group_id = f"g{idx}:{surah}:{from_ayah}-{to_ayah}"
 
         for ayah in range(from_ayah, to_ayah + 1):
@@ -924,14 +906,10 @@ class PlayerController(QObject):
     reciterChanged = Signal()
     wordByWordChanged = Signal()
     wordsChanged = Signal()
-    textHiddenChanged = Signal()
-    markModeChanged = Signal()
     repeatChanged = Signal()
     initStateChanged = Signal()
     availablePlaylistsChanged = Signal()
     currentPlaylistChanged = Signal()
-    memorizationGroupsChanged = Signal()
-    memorizeModeChanged = Signal()
 
     def __init__(self, model, font_family, parent=None):
         super().__init__(parent)
@@ -939,11 +917,13 @@ class PlayerController(QObject):
         self._font_family = font_family
         self._bangla_font_family = "Noto Sans Bengali"
 
+        # Shared with QML Settings { category: "ui" }
         self._settings = QSettings("ruqya-quran", "ruqya-quran")
 
+        # --- persisted: playlist ---
         self._playlists: list = load_playlist_files()
+        saved_id = self._settings.value("ui/playlistId", "", type=str)
         self._current_playlist_id = ""
-        saved_id = self._settings.value("ui/playlistId", "")
         for p in self._playlists:
             if p["id"] == saved_id:
                 self._current_playlist_id = p["id"]
@@ -951,8 +931,37 @@ class PlayerController(QObject):
         if not self._current_playlist_id and self._playlists:
             self._current_playlist_id = self._playlists[0]["id"]
 
-        self._memorization: list = load_memorization()
-        self._memorize_mode = False
+        # --- persisted: reciter / translation / volume / showTranslation ---
+        saved_reciter = self._settings.value("ui/reciter", DEFAULT_RECITER, type=str)
+        self._reciter = saved_reciter if saved_reciter in RECITERS else DEFAULT_RECITER
+
+        saved_trans = self._settings.value("ui/translation", DEFAULT_TRANSLATION, type=str)
+        self._translation_edition = saved_trans if saved_trans in TRANSLATIONS else DEFAULT_TRANSLATION
+
+        try:
+            saved_vol = float(self._settings.value("ui/volume", 1.0, type=float))
+        except (TypeError, ValueError):
+            saved_vol = 1.0
+        self._volume = max(0.0, min(1.0, saved_vol))
+        self._muted = False
+
+        self._show_translation = self._settings.value("ui/showTranslation", True, type=bool)
+
+        # --- session-only state ---
+        self._word_by_word = False
+        self._word_by_word_data: list = []
+        self._words_with_state: list = []
+
+        # Repeat: -1 = Auto (use item JSON), 0 = ∞, 1..N = explicit
+        self._ayah_repeat = -1
+        self._group_repeat = -1
+        self._playlist_loop = False
+
+        # Pass counters (completed counts; display uses pass+1)
+        self._ayah_pass = 0
+        self._group_pass = 0
+
+        self._current_group_id = ""
 
         self._queue: list[QueueItem] = []
         self._loader: Optional[PlaylistLoader] = None
@@ -962,33 +971,14 @@ class PlayerController(QObject):
         self._current = -1
         self._stage = "main"
         self._pending = -1
+        self._resume_index = -1
 
         self._position = self._duration = 0
         self._playing = False
-        self._volume = 1.0
-        self._muted = False
         self._loop_a = self._loop_b = -1
         self._loop_total = 3
         self._loop_done = 0
         self._loop_guard = False
-        self._show_translation = True
-
-        self._reciter = DEFAULT_RECITER
-        self._translation_edition = DEFAULT_TRANSLATION
-        self._word_by_word = False
-        self._word_by_word_data: list = []
-        self._words_with_state: list = []
-        self._text_hidden = False
-        self._mark_mode = False
-        self._mistakes: dict = load_mistakes()
-
-        # repeat/loop state
-        self._ayah_repeat = 1
-        self._group_repeat = 1
-        self._playlist_loop = False
-        self._ayah_plays_left = 0
-        self._group_plays_left = 0
-        self._current_group_id = ""
 
         self._loaded = self._total = self._failed = 0
         self._loading = False
@@ -1046,79 +1036,9 @@ class PlayerController(QObject):
         self._current_playlist_id = playlist_id
         self._settings.setValue("ui/playlistId", playlist_id)
         self.currentPlaylistChanged.emit()
-        if not self._memorize_mode:
-            self._restart_loader()
+        self._restart_loader(keep_position=False)
 
-    # --- memorize mode
-    @Property(bool, notify=memorizeModeChanged)
-    def memorizeMode(self):
-        return self._memorize_mode
-
-    @Slot(str)
-    def setMode(self, mode):
-        want = (mode == "memorize")
-        if want == self._memorize_mode:
-            return
-        self._memorize_mode = want
-        self.memorizeModeChanged.emit()
-        self._restart_loader()
-
-    @Property(list, notify=memorizationGroupsChanged)
-    def memorizationGroups(self):
-        return [{"id": m["id"], "label": m.get("label") or self._mem_label(m)} for m in self._memorization]
-
-    @staticmethod
-    def _mem_label(m):
-        s, f, t = m["surah"], m["from"], m["to"]
-        return f"{s}:{f}" + (f"-{t}" if t != f else "")
-
-    @Slot(str, result=bool)
-    def addMemorization(self, text):
-        text = (text or "").strip()
-        if not text:
-            return False
-        try:
-            if "-" in text:
-                part, to_part = text.split("-", 1)
-                surah_s, from_s = part.split(":", 1)
-                surah, from_ayah, to_ayah = int(surah_s), int(from_s), int(to_part)
-            elif ":" in text:
-                surah_s, from_s = text.split(":", 1)
-                surah, from_ayah = int(surah_s), int(from_s)
-                to_ayah = from_ayah
-            else:
-                return False
-            if not (1 <= surah <= 114) or from_ayah < 1 or to_ayah < from_ayah:
-                return False
-        except (ValueError, TypeError):
-            return False
-
-        entry = {
-            "id": uuid.uuid4().hex[:8],
-            "surah": surah,
-            "from": from_ayah,
-            "to": to_ayah,
-            "label": f"{surah}:{from_ayah}" + (f"-{to_ayah}" if to_ayah != from_ayah else ""),
-        }
-        self._memorization.append(entry)
-        save_memorization(self._memorization)
-        self.memorizationGroupsChanged.emit()
-        if self._memorize_mode:
-            self._restart_loader()
-        return True
-
-    @Slot(str)
-    def removeMemorization(self, mem_id):
-        before = len(self._memorization)
-        self._memorization = [m for m in self._memorization if m["id"] != mem_id]
-        if len(self._memorization) == before:
-            return
-        save_memorization(self._memorization)
-        self.memorizationGroupsChanged.emit()
-        if self._memorize_mode:
-            self._restart_loader()
-
-    # --- reciter/translation
+    # --- reciter / translation ---
     @Property(str, notify=reciterChanged)
     def currentReciter(self):
         return self._reciter
@@ -1132,22 +1052,24 @@ class PlayerController(QObject):
         if self._initializing: return
         if reciter_id in RECITERS and reciter_id != self._reciter:
             self._reciter = reciter_id
+            self._settings.setValue("ui/reciter", reciter_id)
             self.reciterChanged.emit()
             self.toast.emit(f"Reciter: {RECITERS[reciter_id]} — reloading")
-            self._restart_loader()
+            self._restart_loader(keep_position=True)
 
     @Slot(str)
     def setTranslation(self, edition):
         if self._initializing: return
         if edition in TRANSLATIONS and edition != self._translation_edition:
             self._translation_edition = edition
+            self._settings.setValue("ui/translation", edition)
             self.translationChanged.emit()
             self.toast.emit(f"Translation: {TRANSLATIONS[edition]} — reloading")
-            self._restart_loader()
+            self._restart_loader(keep_position=True)
             if self._word_by_word:
                 self._fetch_word_by_word()
 
-    # --- word-by-word / text
+    # --- word-by-word ---
     @Property(bool, notify=wordByWordChanged)
     def wordByWord(self):
         return self._word_by_word
@@ -1169,65 +1091,7 @@ class PlayerController(QObject):
     def words(self):
         return self._words_with_state
 
-    @Property(bool, notify=textHiddenChanged)
-    def textHidden(self):
-        return self._text_hidden
-
-    @textHidden.setter
-    def textHidden(self, v):
-        v = bool(v)
-        if v == self._text_hidden: return
-        self._text_hidden = v
-        if v and not self._word_by_word:
-            self.wordByWord = True
-        self.textHiddenChanged.emit()
-
-    @Property(bool, notify=textHiddenChanged)
-    def hideText(self):
-        return self._text_hidden
-
-    @hideText.setter
-    def hideText(self, v):
-        self.textHidden = v
-
-    @Property(bool, notify=markModeChanged)
-    def markMode(self):
-        return self._mark_mode
-
-    @markMode.setter
-    def markMode(self, v):
-        v = bool(v)
-        if v != self._mark_mode:
-            self._mark_mode = v
-            self.markModeChanged.emit()
-
-    @Property(int, notify=wordsChanged)
-    def mistakeCount(self):
-        e = self.model.entry(self._current) if self._current >= 0 else None
-        if not e: return 0
-        return len(self._mistakes.get((e.surah, e.ayah), set()))
-
-    @Slot(int)
-    def toggleMistake(self, index):
-        e = self.model.entry(self._current) if self._current >= 0 else None
-        if not e: return
-        key = (e.surah, e.ayah)
-        s = self._mistakes.setdefault(key, set())
-        if index in s: s.discard(index)
-        else: s.add(index)
-        if not s: self._mistakes.pop(key, None)
-        save_mistakes(self._mistakes)
-        self._rebuild_words_with_state()
-
-    @Slot()
-    def clearMistakes(self):
-        e = self.model.entry(self._current) if self._current >= 0 else None
-        if not e: return
-        self._mistakes.pop((e.surah, e.ayah), None)
-        save_mistakes(self._mistakes)
-        self._rebuild_words_with_state()
-
-    # --- core player state
+    # --- core player state ---
     @Property(int, notify=currentIndexChanged)
     def currentIndex(self):
         return self._current
@@ -1296,6 +1160,7 @@ class PlayerController(QObject):
     def initTotal(self):
         return self._init_total
 
+    # --- volume (persisted) ---
     @Property(float, notify=volumeChanged)
     def volume(self):
         return self._volume
@@ -1306,6 +1171,7 @@ class PlayerController(QObject):
         if v != self._volume:
             self._volume = v
             self._apply_volume()
+            self._settings.setValue("ui/volume", v)
             self.volumeChanged.emit()
 
     @Property(bool, notify=mutedChanged)
@@ -1319,17 +1185,20 @@ class PlayerController(QObject):
             self._audio.setMuted(self._muted)
             self.mutedChanged.emit()
 
+    # --- showTranslation (persisted) ---
     @Property(bool, notify=translationChanged)
     def showTranslation(self):
         return self._show_translation
 
     @showTranslation.setter
     def showTranslation(self, v):
-        if bool(v) != self._show_translation:
-            self._show_translation = bool(v)
+        v = bool(v)
+        if v != self._show_translation:
+            self._show_translation = v
+            self._settings.setValue("ui/showTranslation", v)
             self.translationChanged.emit()
 
-    # --- loop
+    # --- loop A-B (session only) ---
     @Property(int, notify=loopChanged)
     def loopStart(self):
         return self._loop_a
@@ -1350,15 +1219,14 @@ class PlayerController(QObject):
     def loopActive(self):
         return self._loop_valid()
 
-    # --- repeat
+    # --- repeat (session only) ---
     @Property(int, notify=repeatChanged)
     def ayahRepeat(self):
         return self._ayah_repeat
 
     @ayahRepeat.setter
     def ayahRepeat(self, v):
-        v = int(v)
-        if v < 0: v = 0
+        v = max(-1, int(v))
         if v != self._ayah_repeat:
             self._ayah_repeat = v
             self.repeatChanged.emit()
@@ -1369,8 +1237,7 @@ class PlayerController(QObject):
 
     @groupRepeat.setter
     def groupRepeat(self, v):
-        v = int(v)
-        if v < 0: v = 0
+        v = max(-1, int(v))
         if v != self._group_repeat:
             self._group_repeat = v
             self.repeatChanged.emit()
@@ -1386,21 +1253,82 @@ class PlayerController(QObject):
             self._playlist_loop = v
             self.repeatChanged.emit()
 
+    # helper getters for QML
+    def _cur_q(self) -> Optional[QueueItem]:
+        return self._queue[self._current] if 0 <= self._current < len(self._queue) else None
+
+    def _eff_ayah_repeat(self) -> int:
+        if self._ayah_repeat != -1:
+            return self._ayah_repeat
+        q = self._cur_q()
+        return q.ayah_repeat if q else 1
+
+    def _eff_group_repeat(self) -> int:
+        if self._group_repeat != -1:
+            return self._group_repeat
+        q = self._cur_q()
+        return q.group_repeat if q else 1
+
+    @Property(int, notify=repeatChanged)
+    def playlistAyahRepeat(self):
+        q = self._cur_q()
+        return q.ayah_repeat if q else 1
+
+    @Property(int, notify=repeatChanged)
+    def playlistGroupRepeat(self):
+        q = self._cur_q()
+        return q.group_repeat if q else 1
+
+    @Property(int, notify=repeatChanged)
+    def effAyahRepeat(self):
+        return self._eff_ayah_repeat()
+
+    @Property(int, notify=repeatChanged)
+    def effGroupRepeat(self):
+        return self._eff_group_repeat()
+
+    @Property(int, notify=repeatChanged)
+    def ayahPass(self):
+        return self._ayah_pass + 1
+
+    @Property(int, notify=repeatChanged)
+    def groupPass(self):
+        return self._group_pass + 1
+
+    @Slot(int)
+    def setAyahRepeat(self, v):
+        self.ayahRepeat = v
+
+    @Slot(int)
+    def setGroupRepeat(self, v):
+        self.groupRepeat = v
+
     @Slot()
     def cycleAyahRepeat(self):
-        opts = (1, 2, 3, 5, 10, 0)
+        opts = (-1, 1, 2, 3, 5, 10, 0)
         i = opts.index(self._ayah_repeat) if self._ayah_repeat in opts else 0
         self.ayahRepeat = opts[(i + 1) % len(opts)]
+        self._toast_repeat()
 
     @Slot()
     def cycleGroupRepeat(self):
-        opts = (1, 2, 3, 5, 10, 0)
+        opts = (-1, 1, 2, 3, 5, 10, 0)
         i = opts.index(self._group_repeat) if self._group_repeat in opts else 0
         self.groupRepeat = opts[(i + 1) % len(opts)]
+        self._toast_repeat()
 
     @Slot()
     def togglePlaylistLoop(self):
         self.playlistLoop = not self._playlist_loop
+
+    def _toast_repeat(self):
+
+        def f(n):
+            return "∞" if n == 0 else str(n)
+
+        a = self._eff_ayah_repeat()
+        g = self._eff_group_repeat()
+        self.toast.emit(f"Each ayah ×{f(a)} · Section ×{f(g)}")
 
     def _apply_volume(self):
         self._audio.setVolume(self._volume**2)
@@ -1408,20 +1336,30 @@ class PlayerController(QObject):
     # ---------------- Load ----------------
 
     def _current_playlist_items(self) -> list:
-        if self._memorize_mode:
-            return [{
-                "surah": m["surah"],
-                "from": m["from"],
-                "to": m["to"],
-                "description": m.get("label") or self._mem_label(m)
-            } for m in self._memorization]
         for p in self._playlists:
             if p["id"] == self._current_playlist_id:
                 return p["items"]
         return self._playlists[0]["items"] if self._playlists else []
 
-    def _restart_loader(self):
+    def _restart_loader(self, keep_position: bool = True):
+        keep_index = self._current if (keep_position and self._current >= 0) else -1
         self.shutdown()
+        self._player.stop()
+        self._current = -1
+        self._stage = "main"
+        self._pending = -1
+        self._resume_index = keep_index
+        self._current_group_id = ""
+        self._ayah_pass = self._group_pass = 0
+        self._position = 0
+        self._duration = 0
+        self._word_by_word_data = []
+        self._words_with_state = []
+        self.clearLoop()
+        self.currentIndexChanged.emit()
+        self.positionChanged.emit()
+        self.durationChanged.emit()
+        self.wordsChanged.emit()
         self.start()
 
     def start(self):
@@ -1522,7 +1460,7 @@ class PlayerController(QObject):
             if entry.error:
                 self._failed += 1
             self.loadingChanged.emit()
-            if self._current < 0 and self.model.is_playable(index):
+            if self._current < 0 and self.model.is_playable(index) and self._resume_index < 0:
                 self._select(index)
             if index == self._pending:
                 self._pending = -1
@@ -1533,6 +1471,12 @@ class PlayerController(QObject):
     def _on_load_finished(self):
         self._loading = False
         self.loadingChanged.emit()
+        if self._current < 0 and self._resume_index >= 0 and self.model.is_playable(self._resume_index):
+            idx = self._resume_index
+            self._resume_index = -1
+            self.play(idx)
+            return
+        self._resume_index = -1
         if self._current < 0:
             for i in range(self.model.rowCount()):
                 if self.model.is_playable(i):
@@ -1567,9 +1511,11 @@ class PlayerController(QObject):
         e = self.model.entry(self._current)
         if not e or e.kind == "custom" or not e.surah:
             return
-        # no WBW during Bismillah stage
         if self._stage == "bismillah":
             return
+        if e.surah == 1 and e.ayah == 1:
+            return
+
         lang = self._wbw_language()
         want_bangla = (lang == "bn")
         surah, ayah = e.surah, e.ayah
@@ -1619,12 +1565,6 @@ class PlayerController(QObject):
         threading.Thread(target=work, daemon=True).start()
 
     def _rebuild_words_with_state(self):
-        e = self.model.entry(self._current) if self._current >= 0 else None
-        if not e:
-            self._words_with_state = []
-            self.wordsChanged.emit()
-            return
-        mistakes = self._mistakes.get((e.surah, e.ayah), set())
         out = []
         for i, w in enumerate(self._word_by_word_data):
             out.append({
@@ -1632,7 +1572,6 @@ class PlayerController(QObject):
                 "arabic": w.get("arabic", ""),
                 "english": w.get("english", ""),
                 "bangla": w.get("bangla", ""),
-                "mistake": i in mistakes,
             })
         self._words_with_state = out
         self.wordsChanged.emit()
@@ -1643,6 +1582,7 @@ class PlayerController(QObject):
         self._current = index
         self._stage = "main"
         self.currentIndexChanged.emit()
+        self.repeatChanged.emit()
         self._refresh_display()
         if self._word_by_word:
             self._fetch_word_by_word()
@@ -1696,18 +1636,15 @@ class PlayerController(QObject):
         return None
 
     def _enter_playback(self, index):
-        """Called from play(). Sets group_id + repeat counters."""
+        """Advance group/pass counters when entering a new item for playback."""
         item = self._queue[index] if 0 <= index < len(self._queue) else None
         if not item:
             return
         if item.group_id != self._current_group_id:
             self._current_group_id = item.group_id
-            # group_repeat wins if explicit; else JSON default; else 1
-            self._group_repeat = max(1, item.group_repeat or 1)
-            self._ayah_repeat = max(1, item.ayah_repeat or 1)
-            self._group_plays_left = (self._group_repeat - 1) if self._group_repeat != 0 else -1
-            self.repeatChanged.emit()
-        self._ayah_plays_left = (self._ayah_repeat - 1) if self._ayah_repeat != 0 else -1
+            self._group_pass = 0
+        self._ayah_pass = 0
+        self.repeatChanged.emit()
 
     @Slot(int)
     def play(self, index):
@@ -1741,7 +1678,6 @@ class PlayerController(QObject):
     def _replay_current(self):
         entry = self.model.entry(self._current)
         if not entry: return
-        # bismillah does not replay on ayah repeat
         self._stage = "main"
         self._start_audio(entry.audio_file)
 
@@ -1768,6 +1704,7 @@ class PlayerController(QObject):
         nxt = self.model.next_index(self._current)
         if nxt is None and self._playlist_loop:
             nxt = self.model.first_index()
+            self._current_group_id = ""
         if nxt is None:
             self.toast.emit("End of playlist")
         else:
@@ -1875,43 +1812,48 @@ class PlayerController(QObject):
     def _on_finished(self):
         entry = self.model.entry(self._current)
         if entry is None: return
+
+        # --- Bismillah bridge ---
         if self._stage == "bismillah":
             self._stage = "main"
             self._start_audio(entry.audio_file)
             return
+
+        # --- A-B loop inside the ayah ---
         if self._loop_running() and self._loop_hit():
             self._player.play()
             return
-        # ayah repeat
-        if self._ayah_plays_left == -1:
+
+        # --- each-ayah repeat ---
+        self._ayah_pass += 1
+        n = self._eff_ayah_repeat()
+        if n == 0 or self._ayah_pass < n:
+            self.repeatChanged.emit()
             self._replay_current()
             return
-        if self._ayah_plays_left > 0:
-            self._ayah_plays_left -= 1
-            self._replay_current()
-            return
-        # advance
+
+        # --- advance ---
         nxt = self.model.next_index(self._current)
-        if nxt is None:
-            if self._playlist_loop:
-                nxt = self.model.first_index()
+        if nxt is None and self._playlist_loop:
+            nxt = self.model.first_index()
+
+        leaving = (nxt is None or nxt <= self._current or self._queue[nxt].group_id != self._current_group_id)
+
+        # --- group repeat ---
+        if leaving:
+            self._group_pass += 1
+            g = self._eff_group_repeat()
+            if g == 0 or self._group_pass < g:
+                first = self._first_in_group(self._current_group_id)
+                if first is not None and self.model.is_playable(first):
+                    self.repeatChanged.emit()
+                    self.play(first)
+                    return
+            self._group_pass = 0
+
         if nxt is None:
             self.toast.emit("End of playlist")
             return
-        nxt_item = self._queue[nxt] if 0 <= nxt < len(self._queue) else None
-        # group repeat check: if leaving the group and group cycles remain
-        if nxt_item and nxt_item.group_id != self._current_group_id:
-            if self._group_plays_left == -1:
-                first = self._first_in_group(self._current_group_id)
-                if first is not None:
-                    self.play(first)
-                    return
-            elif self._group_plays_left > 0:
-                self._group_plays_left -= 1
-                first = self._first_in_group(self._current_group_id)
-                if first is not None:
-                    self.play(first)
-                    return
         self.play(nxt)
 
     def _on_position(self, pos):
