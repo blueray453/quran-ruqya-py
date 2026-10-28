@@ -15,6 +15,9 @@ ApplicationWindow {
 
     property real fontScale: 1.0
     property bool sidebarOpen: true
+    property string themeName: "dark"          // "dark" | "light" (Solarized)
+    property int focusWord: -1
+    property var revealed: ({})
     readonly property bool wide: width >= 940
     readonly property int sidebarWidth: 340
 
@@ -22,38 +25,39 @@ ApplicationWindow {
         var s = Math.max(0, Math.floor(ms / 1000))
         return Math.floor(s / 60) + ":" + ("0" + (s % 60)).slice(-2)
     }
+    function reveal(i) {
+        var r = {}
+        for (var k in revealed) r[k] = true
+        r[i] = true
+        revealed = r
+    }
+    function ensureVisible(i) {
+        var item = list.itemAtIndex(i)
+        if (item && item.y >= list.contentY && item.y + item.height <= list.contentY + list.height)
+            return                                  // already visible: don't move the panel
+        list.positionViewAtIndex(i, ListView.Contain)
+    }
+    function times(n) { return n === 0 ? "∞" : n }
 
-    // ------------------------------------------------ Solarized theme
+    // ------------------------------------------------ theme (Solarized)
     QtObject {
         id: theme
-        property bool dark: Application.styleHints.colorScheme !== Qt.ColorScheme.Light
-
-        // Solarized base palette
-        readonly property color base03: "#002b36"
-        readonly property color base02: "#073642"
-        readonly property color base01: "#586e75"
-        readonly property color base00: "#657b83"
-        readonly property color base0:  "#839496"
-        readonly property color base1:  "#93a1a1"
-        readonly property color base2:  "#eee8d5"
-        readonly property color base3:  "#fdf6e3"
-        readonly property color cyan:   "#2aa198"
-        readonly property color red:    "#dc322f"
-
-        readonly property color bg:         dark ? base03 : base3
-        readonly property color surface:    dark ? base02 : base2
-        readonly property color surfaceAlt: dark ? "#0d4052" : "#e4decb"
-        readonly property color text:       dark ? base0  : base00
-        readonly property color textDim:    dark ? base01 : base01
-        readonly property color accent:     cyan
-        readonly property color onAccent:   base03
-        readonly property color line:       dark ? "#0d3d4a" : "#d9d2be"
-        readonly property color danger:     red
+        readonly property bool dark: win.themeName === "dark"
+        readonly property color bg:         dark ? "#002b36" : "#fdf6e3"
+        readonly property color surface:    dark ? "#073642" : "#eee8d5"
+        readonly property color surfaceAlt: dark ? "#0e4452" : "#e4dcc3"
+        readonly property color text:       dark ? "#eee8d5" : "#586e75"
+        readonly property color textDim:    dark ? "#839496" : "#657b83"
+        readonly property color accent:     "#2aa198"
+        readonly property color onAccent:   dark ? "#002b36" : "#fdf6e3"
+        readonly property color line:       dark ? "#125463" : "#d6cfb6"
+        readonly property color highlight:  "#b58900"
+        readonly property color danger:     "#dc322f"
     }
 
     Settings {
         category: "ui"
-        property alias dark: theme.dark
+        property alias themeName: win.themeName
         property alias fontScale: win.fontScale
         property alias sidebarOpen: win.sidebarOpen
     }
@@ -71,14 +75,11 @@ ApplicationWindow {
         onWidthChanged: requestPaint()
         onPaint: {
             var c = getContext("2d")
-            c.reset()
-            c.clearRect(0, 0, width, height)
+            c.reset(); c.clearRect(0, 0, width, height)
             var s = width / 24
             c.scale(s, s)
-            c.fillStyle = color
-            c.strokeStyle = color
-            c.lineWidth = 2
-            c.lineCap = "round"
+            c.fillStyle = color; c.strokeStyle = color
+            c.lineWidth = 2; c.lineCap = "round"
             if (kind === "play") {
                 c.beginPath(); c.moveTo(7, 4); c.lineTo(20, 12); c.lineTo(7, 20); c.closePath(); c.fill()
             } else if (kind === "pause") {
@@ -126,8 +127,7 @@ ApplicationWindow {
                 anchors.centerIn: parent
                 visible: ib.iconKind !== ""
                 kind: ib.iconKind
-                width: ib.size * 0.42
-                height: width
+                width: ib.size * 0.42; height: width
                 color: ib.accent ? ib.t.onAccent : ib.t.text
             }
         }
@@ -147,22 +147,76 @@ ApplicationWindow {
         id: pl
         property var t
         property bool active: false
+        property bool closable: false
+        signal closed()
         focusPolicy: Qt.NoFocus
         hoverEnabled: true
-        implicitHeight: 30
-        implicitWidth: contentItem.implicitWidth + 24
-        contentItem: Text {
-            text: pl.text
-            font.pixelSize: 12
-            horizontalAlignment: Text.AlignHCenter
-            verticalAlignment: Text.AlignVCenter
-            color: pl.active ? pl.t.accent : pl.t.textDim
+        implicitHeight: 32
+        leftPadding: 14
+        rightPadding: pl.closable ? 10 : 14
+        implicitWidth: contentItem.implicitWidth + leftPadding + rightPadding
+        contentItem: RowLayout {
+            spacing: 8
+            Text {
+                Layout.alignment: Qt.AlignVCenter
+                text: pl.text
+                font.pixelSize: 13
+                color: pl.active ? pl.t.accent : pl.t.textDim
+            }
+            Text {
+                Layout.alignment: Qt.AlignVCenter
+                visible: pl.closable
+                text: "✕"
+                font.pixelSize: 11
+                color: pl.t.textDim
+                MouseArea {
+                    anchors.fill: parent; anchors.margins: -8
+                    cursorShape: Qt.PointingHandCursor
+                    onClicked: pl.closed()
+                }
+            }
         }
         background: Rectangle {
             radius: height / 2
             color: pl.active ? Qt.alpha(pl.t.accent, 0.15) : (pl.hovered ? pl.t.surfaceAlt : "transparent")
             border.width: 1
             border.color: pl.active ? pl.t.accent : pl.t.line
+        }
+    }
+
+    component Segmented: Rectangle {
+        id: sg
+        property var t
+        property var labels: []
+        property int current: 0
+        signal picked(int index)
+        implicitHeight: 32
+        implicitWidth: segRow.implicitWidth + 4
+        radius: height / 2
+        color: t.surfaceAlt
+        Row {
+            id: segRow
+            anchors.centerIn: parent
+            Repeater {
+                model: sg.labels
+                delegate: Rectangle {
+                    required property int index
+                    required property string modelData
+                    width: lbl.implicitWidth + 28
+                    height: 28
+                    radius: 14
+                    color: index === sg.current ? sg.t.accent : "transparent"
+                    Text {
+                        id: lbl
+                        anchors.centerIn: parent
+                        text: modelData
+                        font.pixelSize: 13
+                        font.weight: Font.DemiBold
+                        color: index === sg.current ? sg.t.onAccent : sg.t.textDim
+                    }
+                    MouseArea { anchors.fill: parent; onClicked: sg.picked(index) }
+                }
+            }
         }
     }
 
@@ -177,31 +231,28 @@ ApplicationWindow {
             x: tr.leftPadding
             y: tr.topPadding + tr.availableHeight / 2 - height / 2
             width: tr.availableWidth
-            height: 4
-            radius: 2
+            height: 4; radius: 2
             color: tr.t.line
             Rectangle {
                 width: tr.visualPosition * parent.width
-                height: parent.height
-                radius: 2
-                color: tr.t.accent
+                height: parent.height; radius: 2; color: tr.t.accent
             }
             Rectangle {
                 visible: tr.markA >= 0 && tr.markB > tr.markA
                 x: tr.markA * parent.width
                 width: (tr.markB - tr.markA) * parent.width
                 y: -4; height: parent.height + 8; radius: 2
-                color: Qt.alpha(tr.t.accent, 0.35)
+                color: Qt.alpha(tr.t.accent, 0.3)
             }
             Rectangle {
                 visible: tr.markA >= 0
-                x: tr.markA * parent.width - 1.5; y: -6
-                width: 3; height: 16; radius: 1.5; color: tr.t.accent
+                x: tr.markA * parent.width - 1; y: -5
+                width: 2; height: 14; color: tr.t.accent
             }
             Rectangle {
                 visible: tr.markB >= 0
-                x: tr.markB * parent.width - 1.5; y: -6
-                width: 3; height: 16; radius: 1.5; color: tr.t.accent
+                x: tr.markB * parent.width - 1; y: -5
+                width: 2; height: 14; color: tr.t.accent
             }
         }
         handle: Rectangle {
@@ -211,6 +262,87 @@ ApplicationWindow {
             color: tr.t.accent
             scale: (tr.pressed || tr.hovered) ? 1 : 0
             Behavior on scale { NumberAnimation { duration: 120 } }
+        }
+    }
+
+    component Picker: ComboBox {
+        id: pk
+        property var t
+        property string family: ""
+        property string selectedId: ""
+        signal chosen(string id)
+
+        function sync() {
+            var m = model
+            if (!m) return
+            for (var i = 0; i < m.length; i++) {
+                if (m[i].id === selectedId) { currentIndex = i; return }
+            }
+        }
+        onSelectedIdChanged: sync()
+        onModelChanged: sync()
+        Component.onCompleted: sync()
+        onActivated: function(i) { pk.chosen(pk.model[i].id) }
+
+        implicitHeight: 34
+        font.pixelSize: 13
+        textRole: "name"
+        focusPolicy: Qt.NoFocus
+
+        contentItem: Text {
+            leftPadding: 10
+            rightPadding: pk.indicator.width + 6
+            text: pk.displayText || ""
+            font.pixelSize: 13
+            font.family: pk.family !== "" ? pk.family : Qt.application.font.family
+            color: pk.t.text
+            verticalAlignment: Text.AlignVCenter
+            elide: Text.ElideRight
+        }
+        background: Rectangle {
+            color: pk.hovered ? pk.t.surfaceAlt : "transparent"
+            border.color: pk.t.line
+            border.width: 1
+            radius: 8
+        }
+        indicator: Text {
+            x: pk.width - width - 8
+            y: (pk.height - height) / 2
+            text: "▾"
+            font.pixelSize: 12
+            color: pk.t.textDim
+        }
+        popup: Popup {
+            y: pk.height - 1
+            width: pk.width
+            implicitHeight: contentItem.implicitHeight + 4
+            padding: 2
+            background: Rectangle { color: pk.t.surface; border.color: pk.t.line; radius: 8 }
+            contentItem: ListView {
+                clip: true
+                implicitHeight: contentHeight
+                model: pk.popup.visible ? pk.delegateModel : null
+                currentIndex: pk.highlightedIndex
+                ScrollBar.vertical: ScrollBar { }
+            }
+        }
+        delegate: ItemDelegate {
+            width: pk.width
+            implicitHeight: 32
+            highlighted: pk.highlightedIndex === index
+            contentItem: Text {
+                leftPadding: 8
+                text: modelData.name || ""
+                font.pixelSize: 13
+                font.family: pk.family !== "" ? pk.family : Qt.application.font.family
+                color: pk.t.text
+                elide: Text.ElideRight
+                verticalAlignment: Text.AlignVCenter
+            }
+            background: Rectangle {
+                color: parent.highlighted ? Qt.alpha(pk.t.accent, 0.18) : "transparent"
+                radius: 6
+            }
         }
     }
 
@@ -225,7 +357,12 @@ ApplicationWindow {
     Shortcut { sequence: "M";           onActivated: player.muted = !player.muted }
     Shortcut { sequence: "T";           onActivated: player.showTranslation = !player.showTranslation }
     Shortcut { sequence: "W";           onActivated: player.wordByWord = !player.wordByWord }
-    Shortcut { sequence: "L";           onActivated: player.cycleRepeat() }
+    Shortcut { sequence: "L";           onActivated: player.togglePlaylistLoop() }
+    Shortcut { sequence: "R";           onActivated: player.cycleAyahRepeat() }
+    Shortcut { sequence: "G";           onActivated: player.cycleGroupRepeat() }
+    Shortcut { sequence: "H";           onActivated: player.hideText = !player.hideText }
+    Shortcut { sequence: "X";           onActivated: player.markMode = !player.markMode }
+    Shortcut { sequence: "D";           onActivated: win.themeName = theme.dark ? "light" : "dark" }
     Shortcut { sequence: "P";           onActivated: win.sidebarOpen = !win.sidebarOpen }
     Shortcut { sequences: ["+", "="];   onActivated: win.fontScale = Math.min(1.8, win.fontScale + 0.1) }
     Shortcut { sequence: "-";           onActivated: win.fontScale = Math.max(0.6, win.fontScale - 0.1) }
@@ -242,8 +379,144 @@ ApplicationWindow {
 
     Connections {
         target: player
-        function onDisplayChanged() { fadeIn.restart(); flick.contentY = 0 }
+        function onContentReset() {
+            fadeIn.restart()
+            flick.contentY = 0
+            win.focusWord = -1
+            win.revealed = ({})
+        }
+        function onCurrentIndexChanged() {
+            if (player.currentIndex >= 0) win.ensureVisible(player.currentIndex)
+        }
         function onToast(msg) { toastText.text = msg; toast.opacity = 1; toastTimer.restart() }
+    }
+
+    // ------------------------------------------------ popups
+    Popup {
+        id: settingsPopup
+        parent: Overlay.overlay
+        anchors.centerIn: Overlay.overlay
+        modal: true
+        focus: true
+        width: 380
+        padding: 20
+        background: Rectangle { color: theme.surface; radius: 14; border.color: theme.line }
+        contentItem: ColumnLayout {
+            spacing: 10
+            Text { text: "Settings"; font.pixelSize: 18; font.weight: Font.DemiBold; color: theme.text }
+
+            Text { text: "Playlist"; font.pixelSize: 12; color: theme.textDim; Layout.topMargin: 6 }
+            Picker {
+                t: theme
+                Layout.fillWidth: true
+                model: player.availablePlaylists
+                selectedId: player.currentPlaylistId
+                onChosen: function(id) { player.setPlaylist(id) }
+            }
+            Text { text: "Reciter"; font.pixelSize: 12; color: theme.textDim }
+            Picker {
+                t: theme
+                Layout.fillWidth: true
+                model: player.reciterNames
+                selectedId: player.currentReciter
+                onChosen: function(id) { player.setReciter(id) }
+            }
+            Text { text: "Translation"; font.pixelSize: 12; color: theme.textDim }
+            Picker {
+                t: theme
+                Layout.fillWidth: true
+                family: player.banglaFontFamily
+                model: player.translationNames
+                selectedId: player.currentTranslation
+                onChosen: function(id) { player.setTranslation(id) }
+            }
+            Text { text: "Theme"; font.pixelSize: 12; color: theme.textDim }
+            Segmented {
+                t: theme
+                labels: ["Solarized Dark", "Solarized Light"]
+                current: theme.dark ? 0 : 1
+                onPicked: function(i) { win.themeName = i === 0 ? "dark" : "light" }
+            }
+            Text { text: "Text size"; font.pixelSize: 12; color: theme.textDim }
+            RowLayout {
+                spacing: 10
+                IconButton { t: theme; text: "A−"; onClicked: win.fontScale = Math.max(0.6, win.fontScale - 0.1) }
+                Text { text: Math.round(win.fontScale * 100) + "%"; color: theme.text; font.pixelSize: 14
+                       Layout.preferredWidth: 48; horizontalAlignment: Text.AlignHCenter }
+                IconButton { t: theme; text: "A+"; onClicked: win.fontScale = Math.min(1.8, win.fontScale + 0.1) }
+            }
+        }
+    }
+
+    Popup {
+        id: managePopup
+        parent: Overlay.overlay
+        anchors.centerIn: Overlay.overlay
+        modal: true
+        focus: true
+        width: 380
+        padding: 20
+        background: Rectangle { color: theme.surface; radius: 14; border.color: theme.line }
+        onOpened: addField.forceActiveFocus()
+        contentItem: ColumnLayout {
+            spacing: 10
+            Text { text: "Memorization list"; font.pixelSize: 18; font.weight: Font.DemiBold; color: theme.text }
+            Text {
+                Layout.fillWidth: true
+                wrapMode: Text.WordWrap
+                text: "Add an ayah or range as surah:ayah — for example 2:255, 2:1-5 or 36:1-10."
+                font.pixelSize: 12
+                color: theme.textDim
+            }
+            RowLayout {
+                Layout.fillWidth: true
+                spacing: 8
+                TextField {
+                    id: addField
+                    Layout.fillWidth: true
+                    placeholderText: "2:255"
+                    color: theme.text
+                    placeholderTextColor: theme.textDim
+                    font.pixelSize: 14
+                    selectByMouse: true
+                    background: Rectangle { color: theme.bg; radius: 8; border.color: theme.line }
+                    onAccepted: if (player.addMemorization(text)) text = ""
+                }
+                Pill {
+                    t: theme; text: "Add"; active: true
+                    onClicked: if (player.addMemorization(addField.text)) addField.text = ""
+                }
+            }
+            ListView {
+                Layout.fillWidth: true
+                Layout.preferredHeight: Math.min(240, contentHeight)
+                clip: true
+                model: player.memorizationGroups
+                spacing: 2
+                ScrollBar.vertical: ScrollBar { }
+                delegate: Rectangle {
+                    required property var modelData
+                    width: ListView.view.width
+                    height: 36
+                    radius: 8
+                    color: theme.surfaceAlt
+                    RowLayout {
+                        anchors.fill: parent
+                        anchors.leftMargin: 12
+                        anchors.rightMargin: 6
+                        Text { Layout.fillWidth: true; text: modelData.label; color: theme.text; font.pixelSize: 14 }
+                        IconButton { t: theme; size: 28; text: "✕"; tip: "Remove"
+                            onClicked: player.removeMemorization(modelData.id) }
+                    }
+                }
+            }
+            Text {
+                visible: player.memorizationGroups.length === 0
+                text: "Nothing yet."
+                color: theme.textDim
+                font.pixelSize: 13
+            }
+        }
     }
 
     // ------------------------------------------------ layout
@@ -269,7 +542,7 @@ ApplicationWindow {
                     anchors.fill: parent
                     anchors.leftMargin: 12
                     anchors.rightMargin: 12
-                    spacing: 4
+                    spacing: 8
 
                     IconButton { t: theme; text: "☰"; tip: "Playlist (P)"
                         onClicked: win.sidebarOpen = !win.sidebarOpen }
@@ -282,226 +555,38 @@ ApplicationWindow {
                     }
                     Item { Layout.fillWidth: true }
 
-                    // -------- reciter picker
-                    ComboBox {
-                        id: reciterCombo
-                        Layout.preferredWidth: 150
-                        Layout.minimumWidth: 110
-                        implicitHeight: 32
-                        font.pixelSize: 13
-                        model: player.reciterNames
-                        textRole: "name"
-                        valueRole: "id"
-                        focusPolicy: Qt.NoFocus
+                    Segmented {
+                        t: theme
+                        labels: ["Listen", "Memorize"]
+                        current: player.memorizeMode ? 1 : 0
                         enabled: !player.initializing
-
-                        function syncFromPlayer() {
-                            var names = player.reciterNames
-                            if (!names) return
-                            for (var i = 0; i < names.length; i++) {
-                                if (names[i].id === player.currentReciter) {
-                                    currentIndex = i
-                                    return
-                                }
-                            }
-                        }
-                        Component.onCompleted: syncFromPlayer()
-                        Connections {
-                            target: player
-                            function onReciterChanged() { reciterCombo.syncFromPlayer() }
-                        }
-                        onActivated: player.setReciter(currentValue)
-
-                        contentItem: Text {
-                            leftPadding: 10
-                            rightPadding: reciterCombo.indicator.width + 6
-                            text: reciterCombo.displayText || ""
-                            font.pixelSize: 13
-                            color: theme.text
-                            verticalAlignment: Text.AlignVCenter
-                            elide: Text.ElideRight
-                        }
-                        background: Rectangle {
-                            color: reciterCombo.hovered ? theme.surfaceAlt : "transparent"
-                            border.color: theme.line
-                            border.width: 1
-                            radius: 8
-                        }
-                        indicator: Text {
-                            x: reciterCombo.width - width - 8
-                            y: (reciterCombo.height - height) / 2
-                            text: "▾"
-                            font.pixelSize: 12
-                            color: theme.textDim
-                        }
-                        popup: Popup {
-                            y: reciterCombo.height - 1
-                            width: reciterCombo.width
-                            implicitHeight: contentItem.implicitHeight + 4
-                            padding: 2
-                            background: Rectangle {
-                                color: theme.surface
-                                border.color: theme.line
-                                radius: 8
-                            }
-                            contentItem: ListView {
-                                clip: true
-                                implicitHeight: contentHeight
-                                model: reciterCombo.popup.visible ? reciterCombo.delegateModel : null
-                                currentIndex: reciterCombo.highlightedIndex
-                                ScrollBar.vertical: ScrollBar { }
-                            }
-                        }
-                        delegate: ItemDelegate {
-                            width: reciterCombo.width
-                            implicitHeight: 30
-                            highlighted: reciterCombo.highlightedIndex === index
-                            contentItem: Text {
-                                leftPadding: 8
-                                text: modelData.name || ""
-                                font.pixelSize: 13
-                                color: theme.text
-                                elide: Text.ElideRight
-                                verticalAlignment: Text.AlignVCenter
-                            }
-                            background: Rectangle {
-                                color: parent.highlighted ? Qt.alpha(theme.accent, 0.18) : "transparent"
-                                radius: 6
-                            }
-                        }
-                        ToolTip.visible: hovered
-                        ToolTip.text: "Reciter"
-                        ToolTip.delay: 600
+                        onPicked: function(i) { player.setMode(i === 1 ? "memorize" : "listen") }
                     }
-
-                    // -------- translation picker
-                    ComboBox {
-                        id: translationCombo
-                        Layout.preferredWidth: 180
-                        Layout.minimumWidth: 130
-                        implicitHeight: 32
-                        font.pixelSize: 13
-                        model: player.translationNames
-                        textRole: "name"
-                        valueRole: "id"
-                        focusPolicy: Qt.NoFocus
-                        enabled: !player.initializing
-
-                        function syncFromPlayer() {
-                            var names = player.translationNames
-                            if (!names) return
-                            for (var i = 0; i < names.length; i++) {
-                                if (names[i].id === player.currentTranslation) {
-                                    currentIndex = i
-                                    return
-                                }
-                            }
-                        }
-                        Component.onCompleted: syncFromPlayer()
-                        Connections {
-                            target: player
-                            function onTranslationChanged() { translationCombo.syncFromPlayer() }
-                        }
-                        onActivated: player.setTranslation(currentValue)
-
-                        contentItem: Text {
-                            leftPadding: 10
-                            rightPadding: translationCombo.indicator.width + 6
-                            text: translationCombo.displayText || ""
-                            font.pixelSize: 13
-                            font.family: player.banglaFontFamily
-                            color: theme.text
-                            verticalAlignment: Text.AlignVCenter
-                            elide: Text.ElideRight
-                        }
-                        background: Rectangle {
-                            color: translationCombo.hovered ? theme.surfaceAlt : "transparent"
-                            border.color: theme.line
-                            border.width: 1
-                            radius: 8
-                        }
-                        indicator: Text {
-                            x: translationCombo.width - width - 8
-                            y: (translationCombo.height - height) / 2
-                            text: "▾"
-                            font.pixelSize: 12
-                            color: theme.textDim
-                        }
-                        popup: Popup {
-                            y: translationCombo.height - 1
-                            width: translationCombo.width
-                            implicitHeight: contentItem.implicitHeight + 4
-                            padding: 2
-                            background: Rectangle {
-                                color: theme.surface
-                                border.color: theme.line
-                                radius: 8
-                            }
-                            contentItem: ListView {
-                                clip: true
-                                implicitHeight: contentHeight
-                                model: translationCombo.popup.visible ? translationCombo.delegateModel : null
-                                currentIndex: translationCombo.highlightedIndex
-                                ScrollBar.vertical: ScrollBar { }
-                            }
-                        }
-                        delegate: ItemDelegate {
-                            width: translationCombo.width
-                            implicitHeight: 30
-                            highlighted: translationCombo.highlightedIndex === index
-                            contentItem: Text {
-                                leftPadding: 8
-                                text: modelData.name || ""
-                                font.pixelSize: 13
-                                font.family: player.banglaFontFamily
-                                color: theme.text
-                                elide: Text.ElideRight
-                                verticalAlignment: Text.AlignVCenter
-                            }
-                            background: Rectangle {
-                                color: parent.highlighted ? Qt.alpha(theme.accent, 0.18) : "transparent"
-                                radius: 6
-                            }
-                        }
-                        ToolTip.visible: hovered
-                        ToolTip.text: "Translation"
-                        ToolTip.delay: 600
-                    }
-
                     Pill {
                         t: theme
                         text: "Translation"
                         active: player.showTranslation
-                        enabled: !player.initializing
                         onClicked: player.showTranslation = !player.showTranslation
-                        ToolTip.visible: hovered
-                        ToolTip.text: "Show/hide translation (T)"
-                        ToolTip.delay: 600
+                        ToolTip.visible: hovered; ToolTip.text: "Show/hide translation (T)"; ToolTip.delay: 600
                     }
                     Pill {
                         t: theme
-                        text: "Word-by-word"
+                        text: "Word by word"
                         active: player.wordByWord
-                        enabled: !player.initializing
                         onClicked: player.wordByWord = !player.wordByWord
-                        ToolTip.visible: hovered
-                        ToolTip.text: "Highlight each Arabic word as it plays (W)"
-                        ToolTip.delay: 600
+                        ToolTip.visible: hovered; ToolTip.text: "Highlight words and see their meaning (W)"; ToolTip.delay: 600
                     }
-
-                    IconButton { t: theme; text: "A−"; tip: "Smaller text (−)"
-                        onClicked: win.fontScale = Math.max(0.6, win.fontScale - 0.1) }
-                    IconButton { t: theme; text: "A+"; tip: "Larger text (+)"
-                        onClicked: win.fontScale = Math.min(1.8, win.fontScale + 0.1) }
-                    IconButton { t: theme; text: "◐"; tip: "Light / dark"
-                        onClicked: theme.dark = !theme.dark }
+                    IconButton { t: theme; text: "◐"; tip: "Light / dark (D)"
+                        onClicked: win.themeName = theme.dark ? "light" : "dark" }
+                    IconButton { t: theme; text: "⚙"; tip: "Settings"
+                        onClicked: settingsPopup.open() }
                 }
             }
 
             // ---- reading area
             Flickable {
                 id: flick
-                anchors { top: topBar.bottom; bottom: loopStrip.top; left: parent.left; right: parent.right }
+                anchors { top: topBar.bottom; bottom: tools.top; left: parent.left; right: parent.right }
                 clip: true
                 contentWidth: width
                 contentHeight: Math.max(height, col.implicitHeight + 80)
@@ -515,8 +600,6 @@ ApplicationWindow {
                     x: (flick.width - width) / 2
                     y: Math.max(32, (flick.height - implicitHeight) / 2)
                     spacing: 18
-
-                    readonly property bool wbwMode: player.wordByWord && player.arabicWords.length > 0
 
                     NumberAnimation { id: fadeIn; target: col; property: "opacity"
                         from: 0; to: 1; duration: 280; easing.type: Easing.OutQuad }
@@ -556,11 +639,11 @@ ApplicationWindow {
                         }
                     }
 
-                    // -------- Arabic text: plain OR word-by-word
+                    // plain Arabic text (Bismillah, duas, or when word data isn't available)
                     Text {
                         Layout.fillWidth: true
                         Layout.topMargin: 8
-                        visible: !col.wbwMode
+                        visible: player.words.length === 0 && !player.textHidden
                         text: player.arabicText
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
@@ -571,57 +654,121 @@ ApplicationWindow {
                         lineHeightMode: Text.ProportionalHeight
                         color: theme.text
                     }
+                    Text {
+                        Layout.alignment: Qt.AlignHCenter
+                        Layout.topMargin: 8
+                        visible: player.words.length === 0 && player.textHidden
+                        text: "Text hidden — recite from memory"
+                        font.pixelSize: 18
+                        color: theme.textDim
+                    }
 
+                    // Arabic text as words: hover highlights, meaning shows below, mistakes marked in red
                     Flow {
+                        id: wordFlow
                         Layout.fillWidth: true
                         Layout.topMargin: 8
-                        visible: col.wbwMode
-                        spacing: 4
+                        visible: player.words.length > 0
                         layoutDirection: Qt.RightToLeft
+                        spacing: 4
 
                         Repeater {
-                            model: player.arabicWords
+                            model: player.words
                             delegate: Rectangle {
+                                id: wd
                                 required property var modelData
-                                required property int index
-                                readonly property bool active: index === player.currentWordIndex
-
-                                width: wordText.implicitWidth + 10
-                                height: wordText.implicitHeight + 4
-                                radius: 6
-                                color: active ? Qt.alpha(theme.accent, 0.28) : "transparent"
-                                Behavior on color { ColorAnimation { duration: 100 } }
+                                readonly property bool concealed: player.textHidden && !win.revealed[modelData.index]
+                                readonly property bool focused: win.focusWord === modelData.index
+                                radius: 8
+                                color: modelData.mistake ? Qt.alpha(theme.danger, 0.18)
+                                     : focused ? Qt.alpha(theme.highlight, 0.28)
+                                     : wma.containsMouse ? Qt.alpha(theme.highlight, 0.14) : "transparent"
+                                border.width: modelData.mistake ? 1 : 0
+                                border.color: theme.danger
+                                implicitWidth: wt.implicitWidth + 14
+                                implicitHeight: wt.implicitHeight + 6
 
                                 Text {
-                                    id: wordText
+                                    id: wt
                                     anchors.centerIn: parent
-                                    text: modelData.arabic || ""
+                                    text: wd.concealed
+                                          ? "•".repeat(Math.max(2, Math.round(wd.modelData.arabic.length / 3)))
+                                          : wd.modelData.arabic
                                     font.family: player.fontFamily
                                     font.pixelSize: Math.round(40 * win.fontScale)
-                                    color: active ? theme.accent : theme.text
+                                    color: wd.modelData.mistake ? theme.danger
+                                         : wd.concealed ? theme.textDim : theme.text
+                                }
+                                MouseArea {
+                                    id: wma
+                                    anchors.fill: parent
+                                    hoverEnabled: true
+                                    acceptedButtons: Qt.LeftButton | Qt.RightButton
+                                    cursorShape: Qt.PointingHandCursor
+                                    onEntered: if (!wd.concealed) win.focusWord = wd.modelData.index
+                                    onClicked: function(m) {
+                                        var i = wd.modelData.index
+                                        if (player.memorizeMode && (m.button === Qt.RightButton || player.markMode)) {
+                                            win.reveal(i)
+                                            player.toggleMistake(i)
+                                        } else if (wd.concealed) {
+                                            win.reveal(i)
+                                        } else {
+                                            win.focusWord = i
+                                        }
+                                    }
                                 }
                             }
                         }
                     }
 
-                    // current word translation (only during word-by-word)
-                    Text {
+                    // meaning bar (fixed height so nothing jumps while hovering)
+                    Rectangle {
+                        id: meaningBar
                         Layout.fillWidth: true
-                        Layout.alignment: Qt.AlignHCenter
-                        horizontalAlignment: Text.AlignHCenter
-                        property string cur: {
-                            if (!col.wbwMode || player.currentWordIndex < 0) return ""
-                            var words = player.arabicWords
-                            if (player.currentWordIndex >= words.length) return ""
-                            var w = words[player.currentWordIndex]
-                            return (w.bangla || w.english || "")
+                        visible: player.wordByWord && player.words.length > 0
+                        height: 64
+                        radius: 10
+                        color: theme.surfaceAlt
+                        border.color: theme.line
+                        border.width: 1
+                        property var w: (win.focusWord >= 0 && win.focusWord < player.words.length)
+                                        ? player.words[win.focusWord] : null
+
+                        Text {
+                            anchors.centerIn: parent
+                            visible: meaningBar.w === null
+                            text: "Hover or tap a word to see its meaning"
+                            font.pixelSize: 13
+                            color: theme.textDim
                         }
-                        visible: cur !== ""
-                        text: cur
-                        font.pixelSize: Math.round(16 * win.fontScale)
-                        font.family: player.banglaFontFamily
-                        color: theme.textDim
-                        wrapMode: Text.WordWrap
+                        RowLayout {
+                            anchors.centerIn: parent
+                            visible: meaningBar.w !== null
+                            spacing: 16
+                            Text {
+                                text: meaningBar.w ? meaningBar.w.arabic : ""
+                                font.family: player.fontFamily
+                                font.pixelSize: 30
+                                color: theme.text
+                            }
+                            ColumnLayout {
+                                spacing: 2
+                                Text {
+                                    visible: text !== ""
+                                    text: meaningBar.w ? meaningBar.w.bangla : ""
+                                    font.family: player.banglaFontFamily
+                                    font.pixelSize: 16
+                                    color: theme.text
+                                }
+                                Text {
+                                    visible: text !== ""
+                                    text: meaningBar.w ? meaningBar.w.english : ""
+                                    font.pixelSize: 14
+                                    color: theme.textDim
+                                }
+                            }
+                        }
                     }
 
                     Rectangle {
@@ -651,31 +798,38 @@ ApplicationWindow {
             ColumnLayout {
                 anchors.centerIn: flick
                 visible: player.currentIndex < 0 && !player.initializing
-                spacing: 6
+                spacing: 8
                 Text {
                     Layout.alignment: Qt.AlignHCenter
-                    text: player.availablePlaylists.length > 0
-                          ? "Select a playlist to begin"
-                          : "No playlists found"
+                    text: (player.memorizeMode && player.totalCount === 0)
+                          ? "Your memorization list is empty" : "Preparing your playlist…"
                     font.pixelSize: 20
                     color: theme.text
                 }
                 Text {
                     Layout.alignment: Qt.AlignHCenter
-                    text: "Add JSON files to ~/.config/ruqya-quran/playlists/"
-                    font.pixelSize: 13
+                    text: (player.memorizeMode && player.totalCount === 0)
+                          ? "Add the ayahs you are memorizing and they will be recited here."
+                          : "The first run downloads audio; after that it works offline."
+                    font.pixelSize: 14
                     color: theme.textDim
+                }
+                Pill {
+                    Layout.alignment: Qt.AlignHCenter
+                    visible: player.memorizeMode && player.totalCount === 0
+                    t: theme; text: "＋ Add ayahs"; active: true
+                    onClicked: managePopup.open()
                 }
             }
 
             // ---- toast
             Rectangle {
                 id: toast
-                anchors { horizontalCenter: parent.horizontalCenter; bottom: loopStrip.top; bottomMargin: 8 }
+                anchors { horizontalCenter: parent.horizontalCenter; bottom: tools.top; bottomMargin: 8 }
                 opacity: 0
                 visible: opacity > 0
                 radius: 18
-                color: theme.dark ? theme.base3 : theme.base02
+                color: theme.dark ? "#eee8d5" : "#073642"
                 width: toastText.implicitWidth + 36
                 height: 36
                 Behavior on opacity { NumberAnimation { duration: 200 } }
@@ -683,60 +837,110 @@ ApplicationWindow {
                     id: toastText
                     anchors.centerIn: parent
                     font.pixelSize: 13
-                    color: theme.dark ? theme.base03 : theme.base3
+                    color: theme.dark ? "#002b36" : "#fdf6e3"
                 }
                 Timer { id: toastTimer; interval: 3500; onTriggered: toast.opacity = 0 }
             }
 
-            // ---- loop strip
+            // ---- tools strip: loop A–B, repeat, memorization practice
             Item {
-                id: loopStrip
-                height: 40
+                id: tools
+                implicitHeight: toolsFlow.implicitHeight + 16
+                height: implicitHeight
                 anchors { left: parent.left; right: parent.right; bottom: transport.top }
 
-                RowLayout {
-                    anchors.centerIn: parent
-                    spacing: 6
-                    Text {
-                        text: "LOOP"
-                        font.pixelSize: 10
-                        font.weight: Font.DemiBold
-                        font.letterSpacing: 1.5
-                        color: theme.textDim
+                Flow {
+                    id: toolsFlow
+                    anchors { left: parent.left; right: parent.right; verticalCenter: parent.verticalCenter
+                              leftMargin: 20; rightMargin: 20 }
+                    spacing: 12
+
+                    Row {
+                        spacing: 6
+                        Text { anchors.verticalCenter: parent.verticalCenter; text: "Loop part"
+                               font.pixelSize: 12; color: theme.textDim }
+                        Pill {
+                            t: theme
+                            active: player.loopStart >= 0
+                            closable: player.loopStart >= 0
+                            text: player.loopStart >= 0 ? "A · " + (player.loopStart / 1000).toFixed(1) + "s" : "Set A"
+                            ToolTip.visible: hovered; ToolTip.text: "Mark loop start here ( [ )"; ToolTip.delay: 600
+                            onClicked: player.markStart()
+                            onClosed: player.clearStart()
+                        }
+                        Pill {
+                            t: theme
+                            active: player.loopEnd >= 0
+                            closable: player.loopEnd >= 0
+                            text: player.loopEnd >= 0 ? "B · " + (player.loopEnd / 1000).toFixed(1) + "s" : "Set B"
+                            ToolTip.visible: hovered; ToolTip.text: "Mark loop end here ( ] )"; ToolTip.delay: 600
+                            onClicked: player.markEnd()
+                            onClosed: player.clearEnd()
+                        }
+                        Pill {
+                            t: theme
+                            text: "× " + win.times(player.loopTotal)
+                            ToolTip.visible: hovered; ToolTip.text: "Passes for the A–B loop"; ToolTip.delay: 600
+                            onClicked: player.cycleLoopCount()
+                        }
                     }
-                    Rectangle { width: 1; height: 16; color: theme.line }
-                    Pill {
-                        t: theme
-                        active: player.loopStart >= 0
-                        text: player.loopStart >= 0 ? "A · " + (player.loopStart / 1000).toFixed(1) + "s" : "A"
-                        ToolTip.visible: hovered; ToolTip.text: "Mark loop start ( [ )"; ToolTip.delay: 600
-                        onClicked: player.markStart()
+
+                    Row {
+                        spacing: 6
+                        Text { anchors.verticalCenter: parent.verticalCenter; text: "Repeat"
+                               font.pixelSize: 12; color: theme.textDim }
+                        Pill {
+                            t: theme
+                            active: player.ayahRepeat !== 1
+                            text: "Ayah × " + win.times(player.ayahRepeat)
+                            ToolTip.visible: hovered; ToolTip.text: "Play each ayah N times (R)"; ToolTip.delay: 600
+                            onClicked: player.cycleAyahRepeat()
+                        }
+                        Pill {
+                            t: theme
+                            active: player.groupRepeat !== 1
+                            text: "Group × " + win.times(player.groupRepeat)
+                            ToolTip.visible: hovered; ToolTip.text: "Repeat the whole group (e.g. Al Baqarah 1–5) N times (G)"; ToolTip.delay: 600
+                            onClicked: player.cycleGroupRepeat()
+                        }
+                        Pill {
+                            t: theme
+                            active: player.playlistLoop
+                            text: "Playlist ↻"
+                            ToolTip.visible: hovered; ToolTip.text: "Start over at the end (L)"; ToolTip.delay: 600
+                            onClicked: player.togglePlaylistLoop()
+                        }
                     }
-                    Pill {
-                        t: theme
-                        active: player.loopEnd >= 0
-                        text: player.loopEnd >= 0 ? "B · " + (player.loopEnd / 1000).toFixed(1) + "s" : "B"
-                        ToolTip.visible: hovered; ToolTip.text: "Mark loop end ( ] )"; ToolTip.delay: 600
-                        onClicked: player.markEnd()
-                    }
-                    Pill {
-                        t: theme
-                        text: player.loopTotal > 0 ? "× " + player.loopTotal : "∞"
-                        ToolTip.visible: hovered; ToolTip.text: "Number of passes"; ToolTip.delay: 600
-                        onClicked: player.cycleLoopCount()
-                    }
-                    Pill {
-                        t: theme
-                        visible: player.loopActive
-                        text: "pass " + (player.loopDone + 1) + "/" + (player.loopTotal > 0 ? player.loopTotal : "∞")
-                        onClicked: player.cycleLoopCount()
-                    }
-                    Pill {
-                        t: theme
-                        visible: player.loopStart >= 0 || player.loopEnd >= 0
-                        text: "Clear"
-                        ToolTip.visible: hovered; ToolTip.text: "Clear loop (Esc)"; ToolTip.delay: 600
-                        onClicked: player.clearLoop()
+
+                    Row {
+                        visible: player.memorizeMode
+                        spacing: 6
+                        Text { anchors.verticalCenter: parent.verticalCenter; text: "Practice"
+                               font.pixelSize: 12; color: theme.textDim }
+                        Pill {
+                            t: theme
+                            active: player.hideText
+                            text: "Hide text"
+                            ToolTip.visible: hovered; ToolTip.text: "Hide words; click a word to reveal it (H)"; ToolTip.delay: 600
+                            onClicked: player.hideText = !player.hideText
+                        }
+                        Pill {
+                            t: theme
+                            active: player.markMode
+                            text: "Mark mistakes"
+                            ToolTip.visible: hovered
+                            ToolTip.text: "Click words you got wrong (X). Right-click always marks."
+                            ToolTip.delay: 600
+                            onClicked: player.markMode = !player.markMode
+                        }
+                        Pill {
+                            t: theme
+                            visible: player.mistakeCount > 0
+                            text: player.mistakeCount + " marked"
+                            closable: true
+                            ToolTip.visible: hovered; ToolTip.text: "✕ clears the marks on this ayah"; ToolTip.delay: 600
+                            onClosed: player.clearMistakes()
+                        }
                     }
                 }
             }
@@ -837,22 +1041,16 @@ ApplicationWindow {
                                 anchors.right: parent.right
                                 anchors.verticalCenter: parent.verticalCenter
                                 spacing: 8
-                                Pill {
-                                    t: theme
-                                    text: ["Repeat: off", "Repeat: one", "Repeat: all"][player.repeatMode]
-                                    active: player.repeatMode > 0
-                                    onClicked: player.cycleRepeat()
-                                }
                                 IconButton {
                                     t: theme; size: 36
-                                    visible: content.width > 860
+                                    visible: content.width > 640
                                     iconKind: player.muted || player.volume === 0 ? "muted" : "volume"
                                     tip: "Mute (M)"
                                     onClicked: player.muted = !player.muted
                                 }
                                 Track {
                                     t: theme
-                                    visible: content.width > 860
+                                    visible: content.width > 640
                                     Layout.preferredWidth: 90
                                     from: 0; to: 1
                                     value: player.volume
@@ -897,96 +1095,30 @@ ApplicationWindow {
                     Layout.preferredHeight: 56
                     Layout.leftMargin: 16
                     Layout.rightMargin: 8
-                    spacing: 4
+                    spacing: 6
 
-                    ComboBox {
-                        id: playlistCombo
+                    // Playlist picker in listen mode
+                    Picker {
+                        t: theme
                         Layout.fillWidth: true
-                        Layout.minimumWidth: 140
-                        implicitHeight: 32
-                        font.pixelSize: 13
+                        visible: !player.memorizeMode
                         model: player.availablePlaylists
-                        textRole: "name"
-                        valueRole: "id"
-                        focusPolicy: Qt.NoFocus
-
-                        function syncFromPlayer() {
-                            var lists = player.availablePlaylists
-                            if (!lists) return
-                            for (var i = 0; i < lists.length; i++) {
-                                if (lists[i].id === player.currentPlaylistId) {
-                                    currentIndex = i
-                                    return
-                                }
-                            }
-                        }
-                        Component.onCompleted: syncFromPlayer()
-                        Connections {
-                            target: player
-                            function onCurrentPlaylistChanged() { playlistCombo.syncFromPlayer() }
-                        }
-                        onActivated: player.setPlaylist(currentValue)
-
-                        contentItem: Text {
-                            leftPadding: 10
-                            rightPadding: playlistCombo.indicator.width + 6
-                            text: playlistCombo.displayText || ""
-                            font.pixelSize: 14
-                            font.weight: Font.DemiBold
-                            color: theme.text
-                            verticalAlignment: Text.AlignVCenter
-                            elide: Text.ElideRight
-                        }
-                        background: Rectangle {
-                            color: playlistCombo.hovered ? theme.surfaceAlt : "transparent"
-                            border.color: theme.line
-                            border.width: 1
-                            radius: 8
-                        }
-                        indicator: Text {
-                            x: playlistCombo.width - width - 8
-                            y: (playlistCombo.height - height) / 2
-                            text: "▾"
-                            font.pixelSize: 12
-                            color: theme.textDim
-                        }
-                        popup: Popup {
-                            y: playlistCombo.height - 1
-                            width: playlistCombo.width
-                            implicitHeight: contentItem.implicitHeight + 4
-                            padding: 2
-                            background: Rectangle {
-                                color: theme.surface
-                                border.color: theme.line
-                                radius: 8
-                            }
-                            contentItem: ListView {
-                                clip: true
-                                implicitHeight: contentHeight
-                                model: playlistCombo.popup.visible ? playlistCombo.delegateModel : null
-                                currentIndex: playlistCombo.highlightedIndex
-                                ScrollBar.vertical: ScrollBar { }
-                            }
-                        }
-                        delegate: ItemDelegate {
-                            width: playlistCombo.width
-                            implicitHeight: 30
-                            highlighted: playlistCombo.highlightedIndex === index
-                            contentItem: Text {
-                                leftPadding: 8
-                                text: modelData.name || ""
-                                font.pixelSize: 13
-                                color: theme.text
-                                elide: Text.ElideRight
-                                verticalAlignment: Text.AlignVCenter
-                            }
-                            background: Rectangle {
-                                color: parent.highlighted ? Qt.alpha(theme.accent, 0.18) : "transparent"
-                                radius: 6
-                            }
-                        }
+                        selectedId: player.currentPlaylistId
+                        onChosen: function(id) { player.setPlaylist(id) }
+                    }
+                    // Title in memorize mode
+                    Text {
+                        Layout.fillWidth: true
+                        visible: player.memorizeMode
+                        text: "Memorization"
+                        font.pixelSize: 18
+                        font.weight: Font.DemiBold
+                        color: theme.text
                     }
 
+                    IconButton { t: theme; size: 36; text: "＋"; tip: "Add / manage ayahs"
+                        visible: player.memorizeMode
+                        onClicked: managePopup.open() }
                     IconButton { t: theme; size: 36; text: "◎"; tip: "Jump to current"
                         onClicked: list.positionViewAtIndex(Math.max(0, player.currentIndex), ListView.Center) }
                 }
@@ -1002,21 +1134,20 @@ ApplicationWindow {
 
                     section.property: "group"
                     section.criteria: ViewSection.FullString
-                    section.labelPositioning: ViewSection.InlineLabels | ViewSection.CurrentLabelAtStart
-                    section.delegate: Rectangle {
+                    section.labelPositioning: ViewSection.InlineLabels
+                    section.delegate: Item {
                         required property string section
                         width: list.width
-                        height: 34
-                        color: theme.surface
+                        height: 40
                         Text {
                             anchors { left: parent.left; leftMargin: 16; right: parent.right
-                                      rightMargin: 16; bottom: parent.bottom; bottomMargin: 4 }
+                                      rightMargin: 16; bottom: parent.bottom; bottomMargin: 6 }
                             text: parent.section
                             elide: Text.ElideRight
-                            font.pixelSize: 11
+                            font.pixelSize: 12
                             font.weight: Font.DemiBold
                             font.letterSpacing: 0.5
-                            color: theme.textDim
+                            color: theme.accent
                         }
                     }
 
@@ -1026,8 +1157,9 @@ ApplicationWindow {
                         required property string label
                         required property string status
                         required property string errorText
+                        required property int ayahNo
                         width: list.width
-                        height: 42
+                        height: 44
                         focusPolicy: Qt.NoFocus
                         highlighted: row.index === player.currentIndex
 
@@ -1052,25 +1184,31 @@ ApplicationWindow {
                                     color: theme.accent
                                 }
                             }
+                            Rectangle {
+                                visible: row.ayahNo > 0
+                                Layout.preferredWidth: 30
+                                Layout.preferredHeight: 22
+                                radius: 11
+                                color: row.highlighted ? theme.accent : theme.surfaceAlt
+                                Text {
+                                    anchors.centerIn: parent
+                                    text: row.ayahNo
+                                    font.pixelSize: 12
+                                    font.weight: Font.DemiBold
+                                    color: row.highlighted ? theme.onAccent : theme.textDim
+                                }
+                            }
                             Text {
                                 Layout.fillWidth: true
                                 text: row.label
                                 elide: Text.ElideRight
-                                font.pixelSize: 13
+                                font.pixelSize: 14
                                 font.weight: row.highlighted ? Font.DemiBold : Font.Normal
                                 color: row.status === "error" ? theme.danger
                                      : row.status === "loading" ? theme.textDim : theme.text
                             }
-                            Text {
-                                visible: row.status === "loading"
-                                text: "…"
-                                color: theme.textDim
-                            }
-                            Text {
-                                visible: row.status === "error"
-                                text: "⚠"
-                                color: theme.danger
-                            }
+                            Text { visible: row.status === "loading"; text: "…"; color: theme.textDim }
+                            Text { visible: row.status === "error"; text: "⚠"; color: theme.danger }
                         }
                         ToolTip.visible: hovered && errorText !== ""
                         ToolTip.text: errorText
@@ -1152,20 +1290,12 @@ ApplicationWindow {
                         anchors.fill: parent
                         onPaint: {
                             var ctx = getContext("2d")
-                            ctx.reset()
-                            ctx.clearRect(0, 0, width, height)
+                            ctx.reset(); ctx.clearRect(0, 0, width, height)
                             var cx = width / 2, cy = height / 2, r = width / 2 - 6
-                            ctx.strokeStyle = theme.line
-                            ctx.lineWidth = 5
-                            ctx.beginPath()
-                            ctx.arc(cx, cy, r, 0, 2 * Math.PI)
-                            ctx.stroke()
-                            ctx.strokeStyle = theme.accent
-                            ctx.lineWidth = 5
-                            ctx.lineCap = "round"
-                            ctx.beginPath()
-                            ctx.arc(cx, cy, r, 0, Math.PI / 2)
-                            ctx.stroke()
+                            ctx.strokeStyle = theme.line; ctx.lineWidth = 5
+                            ctx.beginPath(); ctx.arc(cx, cy, r, 0, 2 * Math.PI); ctx.stroke()
+                            ctx.strokeStyle = theme.accent; ctx.lineWidth = 5; ctx.lineCap = "round"
+                            ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI / 2); ctx.stroke()
                         }
                     }
                     RotationAnimator on rotation {
@@ -1174,7 +1304,6 @@ ApplicationWindow {
                         running: player.initializing
                     }
                 }
-
                 Text {
                     Layout.alignment: Qt.AlignHCenter
                     text: "Preparing Ruqya Quran"
@@ -1182,7 +1311,6 @@ ApplicationWindow {
                     font.weight: Font.DemiBold
                     color: theme.text
                 }
-
                 Text {
                     Layout.alignment: Qt.AlignHCenter
                     visible: player.initMessage !== ""
@@ -1192,7 +1320,6 @@ ApplicationWindow {
                     elide: Text.ElideRight
                     Layout.maximumWidth: 420
                 }
-
                 Rectangle {
                     Layout.alignment: Qt.AlignHCenter
                     Layout.preferredWidth: 340
@@ -1200,18 +1327,13 @@ ApplicationWindow {
                     radius: 2
                     color: theme.line
                     visible: player.initTotal > 0
-
                     Rectangle {
                         width: player.initTotal > 0
-                               ? parent.width * Math.min(1, player.initCurrent / player.initTotal)
-                               : 0
-                        height: parent.height
-                        radius: 2
-                        color: theme.accent
+                               ? parent.width * Math.min(1, player.initCurrent / player.initTotal) : 0
+                        height: parent.height; radius: 2; color: theme.accent
                         Behavior on width { NumberAnimation { duration: 200 } }
                     }
                 }
-
                 Text {
                     Layout.alignment: Qt.AlignHCenter
                     visible: player.initTotal > 0
@@ -1219,12 +1341,11 @@ ApplicationWindow {
                     font.pixelSize: 12
                     color: theme.textDim
                 }
-
                 Text {
                     Layout.alignment: Qt.AlignHCenter
                     Layout.topMargin: 12
                     visible: player.initTotal > 0
-                    text: "First run downloads all reciters. This can take a while."
+                    text: "Downloads happen once; after that it works offline."
                     font.pixelSize: 11
                     color: theme.textDim
                     opacity: 0.6
