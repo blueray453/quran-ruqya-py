@@ -5,9 +5,10 @@ Concatenate project source into a single file for LLM context.
 Uses `git ls-files --cached --others --exclude-standard` so .gitignore is
 the single source of truth for what's in the project. Then:
 
-  1. Filters out bulk binary/data trees, the OpenAPI spec, the output
-     itself, this script, standard MIT boilerplate that every LLM already
-     knows, trivial one-liners, binary files, and anything above a size cap.
+  1. Filters out bulk binary/data trees, the OpenAPI spec, this script,
+     pure-reference docs that duplicate code (keyboard map, config keys,
+     deploy recipes), standard MIT boilerplate, trivial one-liners,
+     binary files, and anything above a size cap.
   2. Emits a small ASCII tree at the top, derived from the filtered list,
      with skipped directories collapsed to a "[N files not shown]" marker.
   3. Emits README.md, then docs/INSTALL.md, then each remaining file
@@ -49,6 +50,12 @@ SKIP_PATHS = {
     # Full alquran.cloud OpenAPI spec — app uses only 2 endpoints, both
     # spelled out in main.py. ~1400 lines of mostly-irrelevant API schema.
     "docs/API.txt",
+
+    # Pure reference: keyboard map, config keys, "make your own playlist"
+    # walkthrough, folder-layout table. All of it is derivable from
+    # Shortcut { ... } blocks in Main.qml, _CFG.get(...) calls in main.py,
+    # and the docstring at the top of main.py. No reasoning value here.
+    "docs/REFERENCE.md",
 
     # MIT boilerplate — LLMs know it verbatim; also in pyproject.toml
     "LICENSE",
@@ -239,7 +246,8 @@ def main() -> None:
         fout.write("// ===== PROJECT TREE =====\n")
         fout.write("// Every file shown below appears verbatim later in this dump.\n")
         fout.write("// Folders marked [N files not shown] are tracked in git but\n")
-        fout.write("// intentionally excluded (bulk data, OpenAPI spec, boilerplate).\n")
+        fout.write("// intentionally excluded (bulk data, OpenAPI spec, boilerplate,\n")
+        fout.write("// reference tables that duplicate code).\n")
         fout.write(render_tree(root.name, [r for r, _ in included], skipped_dir_counts))
         fout.write("\n\n")
 

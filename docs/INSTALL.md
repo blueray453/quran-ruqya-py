@@ -337,7 +337,6 @@ Run `make` or `make help` to list everything from the terminal.
 | `make fix` | Auto-fixes lint problems where safe |
 | `make build` | Builds an sdist and wheel into `dist/` |
 | `make combined` | Builds `combined.txt` (project dump for LLM context) |
-| `make combined-tight` | Same, but skips files > 50 KB |
 
 ### Deploy to this machine
 

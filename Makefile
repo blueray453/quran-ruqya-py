@@ -10,8 +10,7 @@
 #
 # Variables (override on the command line, e.g. `make install PREFIX=/usr/local`):
 #   PREFIX   install prefix, default ~/.local
-#   ARGS     arguments passed to `make run` and `make combined`
-#   SEED     unused (kept for backwards compatibility, prints a warning)
+#   ARGS     arguments passed to `make run`
 # ---------------------------------------------------------------------------
 
 APP       := ruqya-quran
@@ -37,7 +36,7 @@ EXAMPLE      := examples/Ruqya/default.ruqya
 BIN_DIR := $(shell pipx environment --value PIPX_BIN_DIR 2>/dev/null || echo $(HOME)/.local/bin)
 
 .DEFAULT_GOAL := help
-.PHONY: help dev run combined combined-tight \
+.PHONY: help dev run combined \
         install install-dev desktop mime uninstall purge \
         check fix build clean distclean doctor \
         deb-deps deb-version deb deb-lint deb-install deb-uninstall deb-clean
@@ -68,9 +67,6 @@ run-empty: dev  ## Run from source with no playlist (fresh empty state)
 
 combined:  ## Build combined.txt from tracked source (LLM context, git-aware)
 	@python3 tools/combine.py combined.txt
-
-combined-tight:  ## Same, but skip any file >50 KB
-	@python3 tools/combine.py combined.txt 50
 
 # ---------------------------------------------------------------------------
 # Deploy to this machine
