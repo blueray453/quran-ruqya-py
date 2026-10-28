@@ -9,7 +9,7 @@ ApplicationWindow {
     height: 740
     minimumWidth: 640
     minimumHeight: 480
-    visible: true
+    visible: false                             // restored after geometry
     title: "Ruqya Quran"
     color: theme.bg
 
@@ -17,19 +17,12 @@ ApplicationWindow {
     property bool sidebarOpen: true
     property string themeName: "dark"          // "dark" | "light" (Solarized)
     property int focusWord: -1
-    property var revealed: ({})
     readonly property bool wide: width >= 940
     readonly property int sidebarWidth: 340
 
     function fmt(ms) {
         var s = Math.max(0, Math.floor(ms / 1000))
         return Math.floor(s / 60) + ":" + ("0" + (s % 60)).slice(-2)
-    }
-    function reveal(i) {
-        var r = {}
-        for (var k in revealed) r[k] = true
-        r[i] = true
-        revealed = r
     }
     function ensureVisible(i) {
         var item = list.itemAtIndex(i)
@@ -55,11 +48,44 @@ ApplicationWindow {
         readonly property color danger:     "#dc322f"
     }
 
+    // ---- persistent UI settings (green list) ----
     Settings {
         category: "ui"
         property alias themeName: win.themeName
         property alias fontScale: win.fontScale
         property alias sidebarOpen: win.sidebarOpen
+    }
+
+    // ---- persistent window geometry ----
+    Settings {
+        id: geomSettings
+        category: "window"
+        property int wx: 100
+        property int wy: 100
+        property int ww: 1120
+        property int wh: 740
+    }
+
+    Component.onCompleted: {
+        var sx = geomSettings.wx, sy = geomSettings.wy
+        var sw = geomSettings.ww, sh = geomSettings.wh
+        // Safety: if saved geometry looks off-screen / degenerate, fall back
+        if (sx < -2000 || sy < -2000 || sw < 400 || sh < 300) {
+            sx = 100; sy = 100; sw = 1120; sh = 740
+        }
+        win.x = sx
+        win.y = sy
+        win.width = sw
+        win.height = sh
+        win.visible = true
+    }
+
+    onClosing: function(close) {
+        geomSettings.wx = win.x
+        geomSettings.wy = win.y
+        geomSettings.ww = win.width
+        geomSettings.wh = win.height
+        geomSettings.sync()
     }
 
     // ------------------------------------------------ reusable pieces
@@ -360,8 +386,6 @@ ApplicationWindow {
     Shortcut { sequence: "L";           onActivated: player.togglePlaylistLoop() }
     Shortcut { sequence: "R";           onActivated: player.cycleAyahRepeat() }
     Shortcut { sequence: "G";           onActivated: player.cycleGroupRepeat() }
-    Shortcut { sequence: "H";           onActivated: player.hideText = !player.hideText }
-    Shortcut { sequence: "X";           onActivated: player.markMode = !player.markMode }
     Shortcut { sequence: "D";           onActivated: win.themeName = theme.dark ? "light" : "dark" }
     Shortcut { sequence: "P";           onActivated: win.sidebarOpen = !win.sidebarOpen }
     Shortcut { sequences: ["+", "="];   onActivated: win.fontScale = Math.min(1.8, win.fontScale + 0.1) }
@@ -383,7 +407,6 @@ ApplicationWindow {
             fadeIn.restart()
             flick.contentY = 0
             win.focusWord = -1
-            win.revealed = ({})
         }
         function onCurrentIndexChanged() {
             if (player.currentIndex >= 0) win.ensureVisible(player.currentIndex)
@@ -391,7 +414,7 @@ ApplicationWindow {
         function onToast(msg) { toastText.text = msg; toast.opacity = 1; toastTimer.restart() }
     }
 
-    // ------------------------------------------------ popups
+    // ------------------------------------------------ settings popup
     Popup {
         id: settingsPopup
         parent: Overlay.overlay
@@ -448,77 +471,6 @@ ApplicationWindow {
         }
     }
 
-    Popup {
-        id: managePopup
-        parent: Overlay.overlay
-        anchors.centerIn: Overlay.overlay
-        modal: true
-        focus: true
-        width: 380
-        padding: 20
-        background: Rectangle { color: theme.surface; radius: 14; border.color: theme.line }
-        onOpened: addField.forceActiveFocus()
-        contentItem: ColumnLayout {
-            spacing: 10
-            Text { text: "Memorization list"; font.pixelSize: 18; font.weight: Font.DemiBold; color: theme.text }
-            Text {
-                Layout.fillWidth: true
-                wrapMode: Text.WordWrap
-                text: "Add an ayah or range as surah:ayah — for example 2:255, 2:1-5 or 36:1-10."
-                font.pixelSize: 12
-                color: theme.textDim
-            }
-            RowLayout {
-                Layout.fillWidth: true
-                spacing: 8
-                TextField {
-                    id: addField
-                    Layout.fillWidth: true
-                    placeholderText: "2:255"
-                    color: theme.text
-                    placeholderTextColor: theme.textDim
-                    font.pixelSize: 14
-                    selectByMouse: true
-                    background: Rectangle { color: theme.bg; radius: 8; border.color: theme.line }
-                    onAccepted: if (player.addMemorization(text)) text = ""
-                }
-                Pill {
-                    t: theme; text: "Add"; active: true
-                    onClicked: if (player.addMemorization(addField.text)) addField.text = ""
-                }
-            }
-            ListView {
-                Layout.fillWidth: true
-                Layout.preferredHeight: Math.min(240, contentHeight)
-                clip: true
-                model: player.memorizationGroups
-                spacing: 2
-                ScrollBar.vertical: ScrollBar { }
-                delegate: Rectangle {
-                    required property var modelData
-                    width: ListView.view.width
-                    height: 36
-                    radius: 8
-                    color: theme.surfaceAlt
-                    RowLayout {
-                        anchors.fill: parent
-                        anchors.leftMargin: 12
-                        anchors.rightMargin: 6
-                        Text { Layout.fillWidth: true; text: modelData.label; color: theme.text; font.pixelSize: 14 }
-                        IconButton { t: theme; size: 28; text: "✕"; tip: "Remove"
-                            onClicked: player.removeMemorization(modelData.id) }
-                    }
-                }
-            }
-            Text {
-                visible: player.memorizationGroups.length === 0
-                text: "Nothing yet."
-                color: theme.textDim
-                font.pixelSize: 13
-            }
-        }
-    }
-
     // ------------------------------------------------ layout
     Item {
         anchors.fill: parent
@@ -555,13 +507,6 @@ ApplicationWindow {
                     }
                     Item { Layout.fillWidth: true }
 
-                    Segmented {
-                        t: theme
-                        labels: ["Listen", "Memorize"]
-                        current: player.memorizeMode ? 1 : 0
-                        enabled: !player.initializing
-                        onPicked: function(i) { player.setMode(i === 1 ? "memorize" : "listen") }
-                    }
                     Pill {
                         t: theme
                         text: "Translation"
@@ -643,7 +588,7 @@ ApplicationWindow {
                     Text {
                         Layout.fillWidth: true
                         Layout.topMargin: 8
-                        visible: player.words.length === 0 && !player.textHidden
+                        visible: player.words.length === 0
                         text: player.arabicText
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
@@ -654,16 +599,8 @@ ApplicationWindow {
                         lineHeightMode: Text.ProportionalHeight
                         color: theme.text
                     }
-                    Text {
-                        Layout.alignment: Qt.AlignHCenter
-                        Layout.topMargin: 8
-                        visible: player.words.length === 0 && player.textHidden
-                        text: "Text hidden — recite from memory"
-                        font.pixelSize: 18
-                        color: theme.textDim
-                    }
 
-                    // Arabic text as words: hover highlights, meaning shows below, mistakes marked in red
+                    // Arabic text as words: hover highlights, meaning shows below
                     Flow {
                         id: wordFlow
                         Layout.fillWidth: true
@@ -677,46 +614,28 @@ ApplicationWindow {
                             delegate: Rectangle {
                                 id: wd
                                 required property var modelData
-                                readonly property bool concealed: player.textHidden && !win.revealed[modelData.index]
                                 readonly property bool focused: win.focusWord === modelData.index
                                 radius: 8
-                                color: modelData.mistake ? Qt.alpha(theme.danger, 0.18)
-                                     : focused ? Qt.alpha(theme.highlight, 0.28)
+                                color: focused ? Qt.alpha(theme.highlight, 0.28)
                                      : wma.containsMouse ? Qt.alpha(theme.highlight, 0.14) : "transparent"
-                                border.width: modelData.mistake ? 1 : 0
-                                border.color: theme.danger
                                 implicitWidth: wt.implicitWidth + 14
                                 implicitHeight: wt.implicitHeight + 6
 
                                 Text {
                                     id: wt
                                     anchors.centerIn: parent
-                                    text: wd.concealed
-                                          ? "•".repeat(Math.max(2, Math.round(wd.modelData.arabic.length / 3)))
-                                          : wd.modelData.arabic
+                                    text: wd.modelData.arabic || ""
                                     font.family: player.fontFamily
                                     font.pixelSize: Math.round(40 * win.fontScale)
-                                    color: wd.modelData.mistake ? theme.danger
-                                         : wd.concealed ? theme.textDim : theme.text
+                                    color: theme.text
                                 }
                                 MouseArea {
                                     id: wma
                                     anchors.fill: parent
                                     hoverEnabled: true
-                                    acceptedButtons: Qt.LeftButton | Qt.RightButton
                                     cursorShape: Qt.PointingHandCursor
-                                    onEntered: if (!wd.concealed) win.focusWord = wd.modelData.index
-                                    onClicked: function(m) {
-                                        var i = wd.modelData.index
-                                        if (player.memorizeMode && (m.button === Qt.RightButton || player.markMode)) {
-                                            win.reveal(i)
-                                            player.toggleMistake(i)
-                                        } else if (wd.concealed) {
-                                            win.reveal(i)
-                                        } else {
-                                            win.focusWord = i
-                                        }
-                                    }
+                                    onEntered: win.focusWord = wd.modelData.index
+                                    onClicked: win.focusWord = wd.modelData.index
                                 }
                             }
                         }
@@ -801,24 +720,15 @@ ApplicationWindow {
                 spacing: 8
                 Text {
                     Layout.alignment: Qt.AlignHCenter
-                    text: (player.memorizeMode && player.totalCount === 0)
-                          ? "Your memorization list is empty" : "Preparing your playlist…"
+                    text: "Preparing your playlist…"
                     font.pixelSize: 20
                     color: theme.text
                 }
                 Text {
                     Layout.alignment: Qt.AlignHCenter
-                    text: (player.memorizeMode && player.totalCount === 0)
-                          ? "Add the ayahs you are memorizing and they will be recited here."
-                          : "The first run downloads audio; after that it works offline."
+                    text: "The first run downloads audio; after that it works offline."
                     font.pixelSize: 14
                     color: theme.textDim
-                }
-                Pill {
-                    Layout.alignment: Qt.AlignHCenter
-                    visible: player.memorizeMode && player.totalCount === 0
-                    t: theme; text: "＋ Add ayahs"; active: true
-                    onClicked: managePopup.open()
                 }
             }
 
@@ -842,7 +752,7 @@ ApplicationWindow {
                 Timer { id: toastTimer; interval: 3500; onTriggered: toast.opacity = 0 }
             }
 
-            // ---- tools strip: loop A–B, repeat, memorization practice
+            // ---- tools strip: A–B loop, repeat, playlist loop
             Item {
                 id: tools
                 implicitHeight: toolsFlow.implicitHeight + 16
@@ -853,7 +763,7 @@ ApplicationWindow {
                     id: toolsFlow
                     anchors { left: parent.left; right: parent.right; verticalCenter: parent.verticalCenter
                               leftMargin: 20; rightMargin: 20 }
-                    spacing: 12
+                    spacing: 16
 
                     Row {
                         spacing: 6
@@ -909,37 +819,6 @@ ApplicationWindow {
                             text: "Playlist ↻"
                             ToolTip.visible: hovered; ToolTip.text: "Start over at the end (L)"; ToolTip.delay: 600
                             onClicked: player.togglePlaylistLoop()
-                        }
-                    }
-
-                    Row {
-                        visible: player.memorizeMode
-                        spacing: 6
-                        Text { anchors.verticalCenter: parent.verticalCenter; text: "Practice"
-                               font.pixelSize: 12; color: theme.textDim }
-                        Pill {
-                            t: theme
-                            active: player.hideText
-                            text: "Hide text"
-                            ToolTip.visible: hovered; ToolTip.text: "Hide words; click a word to reveal it (H)"; ToolTip.delay: 600
-                            onClicked: player.hideText = !player.hideText
-                        }
-                        Pill {
-                            t: theme
-                            active: player.markMode
-                            text: "Mark mistakes"
-                            ToolTip.visible: hovered
-                            ToolTip.text: "Click words you got wrong (X). Right-click always marks."
-                            ToolTip.delay: 600
-                            onClicked: player.markMode = !player.markMode
-                        }
-                        Pill {
-                            t: theme
-                            visible: player.mistakeCount > 0
-                            text: player.mistakeCount + " marked"
-                            closable: true
-                            ToolTip.visible: hovered; ToolTip.text: "✕ clears the marks on this ayah"; ToolTip.delay: 600
-                            onClosed: player.clearMistakes()
                         }
                     }
                 }
@@ -1097,28 +976,14 @@ ApplicationWindow {
                     Layout.rightMargin: 8
                     spacing: 6
 
-                    // Playlist picker in listen mode
                     Picker {
                         t: theme
                         Layout.fillWidth: true
-                        visible: !player.memorizeMode
                         model: player.availablePlaylists
                         selectedId: player.currentPlaylistId
                         onChosen: function(id) { player.setPlaylist(id) }
                     }
-                    // Title in memorize mode
-                    Text {
-                        Layout.fillWidth: true
-                        visible: player.memorizeMode
-                        text: "Memorization"
-                        font.pixelSize: 18
-                        font.weight: Font.DemiBold
-                        color: theme.text
-                    }
 
-                    IconButton { t: theme; size: 36; text: "＋"; tip: "Add / manage ayahs"
-                        visible: player.memorizeMode
-                        onClicked: managePopup.open() }
                     IconButton { t: theme; size: 36; text: "◎"; tip: "Jump to current"
                         onClicked: list.positionViewAtIndex(Math.max(0, player.currentIndex), ListView.Center) }
                 }
