@@ -1,0 +1,163 @@
+{
+  "name": "Default Ruqya",
+  "items": [
+    { "surah": 1, "from": 1, "to": 7, "description": "Surah Fatiha (Full)" },
+    { "surah": 2, "from": 1, "to": 5, "description": "Surah Al Baqarah 1-5" },
+    {
+      "surah": 2,
+      "from": 102,
+      "to": 103,
+      "description": "Surah Al Baqarah 102"
+    },
+    {
+      "surah": 2,
+      "from": 163,
+      "to": 164,
+      "description": "Surah Al Baqarah 163"
+    },
+    {
+      "surah": 2,
+      "from": 255,
+      "to": 257,
+      "description": "Ayatul Kursi & following",
+      "repeat": 3,
+      "repeat_mode": "group"
+    },
+    {
+      "surah": 2,
+      "from": 285,
+      "to": 286,
+      "description": "Surah Al Baqarah 285"
+    },
+    { "surah": 3, "from": 18, "to": 19, "description": "Surah Al Imran 18-19" },
+    { "surah": 3, "from": 26, "to": 27, "description": "Surah Al Imran 26-27" },
+    { "surah": 3, "from": 160, "to": 160, "description": "Surah Al Imran 160" },
+    { "surah": 4, "from": 76, "to": 76, "description": "Surah Al Nisaa 76" },
+    {
+      "surah": 5,
+      "from": 118,
+      "to": 118,
+      "description": "Surah Al Maaidah 118"
+    },
+    { "surah": 6, "from": 17, "to": 18, "description": "Surah Al Anaam 17-18" },
+    { "surah": 7, "from": 23, "to": 23, "description": "Surah Al Araaf 23" },
+    {
+      "surah": 7,
+      "from": 115,
+      "to": 122,
+      "description": "Surah Al Araaf 115-122"
+    },
+    { "surah": 7, "from": 179, "to": 179, "description": "Surah Al Araaf 179" },
+    { "surah": 9, "from": 51, "to": 51, "description": "Surah Al Tawbah 51" },
+    {
+      "surah": 10,
+      "from": 76,
+      "to": 82,
+      "description": "Surah Al Yunus 76-82"
+    },
+    {
+      "surah": 10,
+      "from": 107,
+      "to": 107,
+      "description": "Surah Al Yunus 107"
+    },
+    { "surah": 13, "from": 28, "to": 29, "description": "Surah Raad 28-29" },
+    { "surah": 17, "from": 32, "to": 32, "description": "Surah Al Isra 32" },
+    { "surah": 17, "from": 81, "to": 82, "description": "Surah Al Isra 81-82" },
+    { "surah": 17, "from": 97, "to": 97, "description": "Surah Al Isra 97" },
+    { "surah": 20, "from": 25, "to": 28, "description": "Surah Al Taha 25-28" },
+    { "surah": 20, "from": 65, "to": 76, "description": "Surah Al Taha 65-76" },
+    { "surah": 21, "from": 87, "to": 87, "description": "Surah Al Anbiya 87" },
+    {
+      "surah": 23,
+      "from": 115,
+      "to": 118,
+      "description": "Surah Al Muminun 115-118"
+    },
+    { "surah": 28, "from": 24, "to": 24, "description": "Surah Al Qasas 24" },
+    { "surah": 31, "from": 27, "to": 27, "description": "Surah Al Luqman 27" },
+    {
+      "surah": 32,
+      "from": 13,
+      "to": 14,
+      "description": "Surah Al Sajdah 13-14"
+    },
+    { "surah": 35, "from": 2, "to": 2, "description": "Surah Al Fatir 2" },
+    {
+      "surah": 35,
+      "from": 36,
+      "to": 37,
+      "description": "Surah Al Fatir 36-37"
+    },
+    { "surah": 36, "from": 1, "to": 10, "description": "Surah Al Yaseen 1-10" },
+    { "surah": 37, "from": 1, "to": 10, "description": "Surah Al Saffat 1-10" },
+    {
+      "surah": 40,
+      "from": 59,
+      "to": 60,
+      "description": "Surah Al Ghafir 59-60"
+    },
+    { "surah": 54, "from": 10, "to": 10, "description": "Surah Al Qamar 10" },
+    {
+      "surah": 55,
+      "from": 33,
+      "to": 36,
+      "description": "Surah Al Rahman 33-36"
+    },
+    {
+      "surah": 58,
+      "from": 19,
+      "to": 21,
+      "description": "Surah Al Mujadila 19-21"
+    },
+    {
+      "surah": 59,
+      "from": 18,
+      "to": 24,
+      "description": "Surah Al Hashr 18-24"
+    },
+    { "surah": 72, "from": 1, "to": 28, "description": "Surah Al Jinn (Full)" },
+    {
+      "surah": 85,
+      "from": 1,
+      "to": 22,
+      "description": "Surah Al Burooj (Full)"
+    },
+    {
+      "surah": 99,
+      "from": 1,
+      "to": 8,
+      "description": "Surah Al Zalzalah (Full)"
+    },
+    {
+      "surah": 109,
+      "from": 1,
+      "to": 6,
+      "description": "Surah Al-Kafirun (Full)"
+    },
+    {
+      "surah": 112,
+      "from": 1,
+      "to": 4,
+      "description": "Surah Ikhlas (Full)",
+      "repeat": 3,
+      "repeat_mode": "group"
+    },
+    {
+      "surah": 113,
+      "from": 1,
+      "to": 5,
+      "description": "Surah Falaq (Full)",
+      "repeat": 3,
+      "repeat_mode": "group"
+    },
+    {
+      "surah": 114,
+      "from": 1,
+      "to": 6,
+      "description": "Surah An-Nas (Full)",
+      "repeat": 3,
+      "repeat_mode": "group"
+    }
+  ]
+}
