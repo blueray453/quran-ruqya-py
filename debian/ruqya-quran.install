@@ -1,2 +1,3 @@
-data/ruqya-quran.desktop  usr/share/applications/
-data/icons/hicolor        usr/share/icons/
+data/ruqya-quran.desktop         usr/share/applications/
+data/icons/hicolor               usr/share/icons/
+data/ruqya-quran-playlist.xml    usr/share/mime/packages/

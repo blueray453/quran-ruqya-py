@@ -110,9 +110,9 @@ Installs the Python package into an isolated venv managed by pipx.
 
 | What | Where |
 |---|---|
-| venv | `~/.local/pipx/venvs/ruqya-quran/` |
-| Executable symlink | `~/.local/bin/ruqya-quran` → `~/.local/pipx/venvs/ruqya-quran/bin/ruqya-quran` |
-| Registry entry | `~/.local/pipx/pipx_metadata.json` |
+| venv | `~/.local/share/pipx/venvs/ruqya-quran/` |
+| Executable symlink | `~/.local/bin/ruqya-quran` → `~/.local/share/pipx/venvs/ruqya-quran/bin/ruqya-quran` |
+| Registry entry | `~/.local/share/pipx/pipx_metadata.json` |
 
 The Makefile asks pipx for its bin dir with
 `pipx environment --value PIPX_BIN_DIR`, so this works even if you've
@@ -191,7 +191,7 @@ which ruqya-quran
 # → /home/you/.local/bin/ruqya-quran
 
 readlink -f ~/.local/bin/ruqya-quran
-# → /home/you/.local/pipx/venvs/ruqya-quran/bin/ruqya-quran
+# → /home/you/.local/share/pipx/venvs/ruqya-quran/bin/ruqya-quran
 ```
 
 If `which` returns nothing, `~/.local/bin` isn't on `$PATH`. Fix once with
@@ -484,8 +484,9 @@ Notes:
   `/usr/lib/python3/dist-packages/ruqya_quran/`
 - `.desktop` and icon go to `/usr/share/applications/` and
   `/usr/share/icons/hicolor/256x256/apps/`
-- To also register the MIME type **system-wide**, add
-  `data/ruqya-quran-playlist.xml` to `debian/ruqya-quran.install` under
-  `/usr/share/mime/packages/`, and run `update-mime-database
-  /usr/share/mime` in `debian/ruqya-quran.postinst`. This is optional —
-  the pipx route (`make install`) already handles MIME per-user
+- The MIME type **is** registered system-wide by the package:
+  `debian/ruqya-quran.install` ships
+  `data/ruqya-quran-playlist.xml` to `/usr/share/mime/packages/`, and the
+  `shared-mime-info` dpkg trigger runs `update-mime-database
+  /usr/share/mime` automatically on install and removal. No `postinst`,
+  `prerm`, or manual command is needed.

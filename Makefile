@@ -36,7 +36,7 @@ EXAMPLE      := examples/Ruqya/default.ruqya
 BIN_DIR := $(shell pipx environment --value PIPX_BIN_DIR 2>/dev/null || echo $(HOME)/.local/bin)
 
 .DEFAULT_GOAL := help
-.PHONY: help dev run combined \
+.PHONY: help dev run run-empty combined \
         install install-dev desktop mime uninstall purge \
         check fix build clean distclean doctor \
         deb-deps deb-version deb deb-lint deb-install deb-uninstall deb-clean

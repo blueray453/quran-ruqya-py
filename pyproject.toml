@@ -27,7 +27,7 @@ dependencies = [
 [project.optional-dependencies]
 dev = ["build", "ruff"]
 
-[project.scripts]
+[project.gui-scripts]
 ruqya-quran = "ruqya_quran.main:main"
 
 [tool.setuptools.dynamic]
