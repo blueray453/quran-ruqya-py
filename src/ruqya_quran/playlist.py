@@ -34,6 +34,8 @@ def read_playlist_file(path: Path) -> dict:
         "preload_translations": data.get("preload_translations") or [],
     }
 
+# Surah 9 is included on purpose — see docs/KNOWN-NON-ISSUES.md.
+# Don't "fix" this to exclude 9.
 def needs_bismillah(surah: int) -> bool:
     return surah != 1
 

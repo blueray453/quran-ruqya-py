@@ -31,7 +31,7 @@ CONF_DIR  := $(or $(XDG_CONFIG_HOME),$(HOME)/.config)/$(APP)
 DESKTOP_FILE := data/$(APP).desktop
 ICON_FILE    := data/icons/hicolor/256x256/apps/$(APP).png
 MIME_FILE    := data/$(APP)-playlist.xml
-EXAMPLE      := examples/Ruqya/default.ruqya
+EXAMPLE      := examples/Ruqya/ruqya.ruqya
 
 # Path to the pipx-managed binary; used to fill in Exec= in the .desktop file.
 BIN_DIR := $(shell pipx environment --value PIPX_BIN_DIR 2>/dev/null || echo $(HOME)/.local/bin)

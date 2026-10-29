@@ -5,14 +5,18 @@ Concatenate project source into a single file for LLM context.
 Uses `git ls-files --cached --others --exclude-standard` so .gitignore is
 the single source of truth for what's in the project. Then:
 
-  1. Filters out bulk binary/data trees, the OpenAPI spec, this script,
-     pure-reference docs that duplicate code (keyboard map, config keys,
-     deploy recipes), standard MIT boilerplate, trivial one-liners,
-     binary files, and anything above a size cap.
-  2. Emits a small ASCII tree at the top, derived from the filtered list,
-     with skipped directories collapsed to a "[N files not shown]" marker.
-  3. Emits README.md, then docs/INSTALL.md, then each remaining file
-     alphabetically, with a `// ===== FILE: path =====` header.
+  1. Filters out bulk binary/data trees, the OpenAPI spec, pure-reference
+     docs that duplicate code (keyboard map, config keys, deploy recipes),
+     standard MIT boilerplate, trivial one-liners, binary files, and
+     anything above a size cap (except this script itself).
+  2. Emits tools/combine.py first — context-first: the reader sees how
+     the dump was built before reading what's in it.
+  3. Emits a small ASCII tree derived from the filtered list, with
+     skipped directories collapsed to a "[N files not shown]" marker.
+  4. Emits docs/KNOWN-NON-ISSUES.md first (so the reader knows what
+     *not* to flag), then README.md, then docs/INSTALL.md, then each
+     remaining file alphabetically, with a `// ===== FILE: path =====`
+     header.
 
 Usage:
     python3 tools/combine.py                 # → combined.txt
@@ -27,10 +31,15 @@ from pathlib import Path
 OUT = Path(sys.argv[1] if len(sys.argv) > 1 else "combined.txt")
 MAX_KB = int(sys.argv[2]) if len(sys.argv) > 2 else 500
 
-# High-signal files that come first after the tree, in this order, so an
-# LLM reads "what is this project?" then "how do I install it?" before
-# diving into source.
+# The script itself. Emitted before the tree so the reader sees how the
+# dump was built before reading what's in it. Never skipped for size.
+SELF_PATH = "tools/combine.py"
+
+# High-signal files that come first after the tree, in this order.
+# KNOWN-NON-ISSUES goes first so an LLM sees "don't flag these" before
+# it reads any source.
 PRIORITY = [
+    "docs/KNOWN-NON-ISSUES.md",
     "README.md",
     "docs/INSTALL.md",
 ]
@@ -43,9 +52,8 @@ SKIP_PREFIXES = (
 
 # Exact relative paths dropped silently — no tree marker, no content.
 SKIP_PATHS = {
-    # Meta: this script and its output
+    # Meta: this script's output (the script itself is emitted up top)
     "combined.txt",
-    "tools/combine.py",
 
     # Full alquran.cloud OpenAPI spec — app uses only 2 endpoints, both
     # spelled out in main.py. ~1400 lines of mostly-irrelevant API schema.
@@ -225,7 +233,7 @@ def main() -> None:
             continue
 
         size = path.stat().st_size
-        if size > MAX_KB * 1024:
+        if rel != SELF_PATH and size > MAX_KB * 1024:
             print(f"SKIP (size {size // 1024} KB): {rel}", file=sys.stderr)
             skipped += 1
             continue
@@ -239,28 +247,42 @@ def main() -> None:
 
         included.append((rel, content))
 
-    # Reading order: tree → README → INSTALL → everything else alphabetically.
-    included.sort(key=lambda pair: content_sort_key(pair[0]))
+    # Context-first: split out the script, then sort the remainder.
+    self_pairs = [(r, c) for r, c in included if r == SELF_PATH]
+    other_pairs = sorted(
+        ((r, c) for r, c in included if r != SELF_PATH),
+        key=lambda pair: content_sort_key(pair[0]),
+    )
 
     with open(OUT, "w", encoding="utf-8") as fout:
+        # 1. The tool first, so the reader sees how the dump was built.
+        for rel, content in self_pairs:
+            fout.write(f"// ===== FILE: {rel} =====\n")
+            fout.write(content if content.endswith("\n") else content + "\n")
+            fout.write("\n")
+
+        # 2. Tree of everything else.
         fout.write("// ===== PROJECT TREE =====\n")
-        fout.write("// Every file shown below appears verbatim later in this dump.\n")
+        fout.write("// tools/combine.py (the script that produced this dump)\n")
+        fout.write("// appears first, above this tree. Every other file listed\n")
+        fout.write("// below appears verbatim later in the dump.\n")
         fout.write("// Folders marked [N files not shown] are tracked in git but\n")
         fout.write("// intentionally excluded (bulk data, OpenAPI spec, boilerplate,\n")
         fout.write("// reference tables that duplicate code).\n")
         fout.write(render_tree(root.name, [r for r, _ in included], skipped_dir_counts))
         fout.write("\n\n")
 
+        # 3. Reading-order comment, then the rest.
         fout.write("// ===== READING ORDER =====\n")
+        fout.write("// docs/KNOWN-NON-ISSUES.md lists behaviors that look wrong\n")
+        fout.write("// but are intentional — read it before flagging anything.\n")
         fout.write("// README.md explains what the project is and the playlist format.\n")
         fout.write("// docs/INSTALL.md explains deployment, MIME registration, and\n")
         fout.write("// troubleshooting. Everything else follows alphabetically.\n\n")
 
-        for rel, content in included:
+        for rel, content in other_pairs:
             fout.write(f"// ===== FILE: {rel} =====\n")
-            fout.write(content)
-            if not content.endswith("\n"):
-                fout.write("\n")
+            fout.write(content if content.endswith("\n") else content + "\n")
             fout.write("\n")
 
     actual = OUT.stat().st_size

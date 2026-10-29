@@ -22,7 +22,7 @@ download any missing pieces on first run.
 
 - Curated Ruqya playlist (Fatiha, Ayatul Kursi, the last three surahs, more)
 - Portable `.ruqya` playlists — data travels with the file
-- Four reciters, three translations (English, two Bengali), switchable live
+- Six reciters, three translations (English, two Bengali), switchable live
 - Word-by-word breakdown with a hover-to-translate bar
 - A-B loop, per-ayah repeat, per-section repeat, and whole-playlist loop
 - Custom audio items (your own `.mp3` duas) mixed in
@@ -40,7 +40,7 @@ See [`docs/REFERENCE.md`](docs/REFERENCE.md) for the full keyboard map.
 git clone <your-repo-url> ruqya-quran
 cd ruqya-quran
 make install
-ruqya-quran examples/Ruqya/default.ruqya
+ruqya-quran examples/Ruqya/ruqya.ruqya
 ```
 
 Full deployment details (what `make install` writes, how to verify the

@@ -12,7 +12,7 @@ Module map:
 A playlist is a standalone <name>.ruqya file (JSON) next to a data folder:
 
   Ruqya/
-    default.ruqya
+    ruqya.ruqya
     memorize.ruqya
     data/
       audio/<reciter>/<surah>_<ayah>.mp3
@@ -357,7 +357,7 @@ class PlaylistModel(QAbstractListModel):
         if role == self.GROUP: return e.section
         if role == self.STATUS: return "error" if e.error else ("ready" if e.loaded else "loading")
         if role == self.ERROR: return e.error or ""
-        if role == self.AYAH_NO: return e.ayah if e.kind == "quran" else 0
+        if role == self.AYAH_NO: return e.ayah if e.kind == "ayah" else 0
         return None
 
     def reset_entries(self, entries):

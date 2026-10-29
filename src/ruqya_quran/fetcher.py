@@ -3,7 +3,7 @@
 The app imports this inside try/except. Delete the file (and `requests`) and the
 app keeps working from local data only.
 
-CLI:  python -m ruqya_quran.fetcher examples/Ruqya/default.ruqya [more.ruqya ...]
+CLI:  python -m ruqya_quran.fetcher examples/Ruqya/ruqya.ruqya [more.ruqya ...]
 """
 
 import logging

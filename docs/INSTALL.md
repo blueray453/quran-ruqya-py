@@ -43,9 +43,20 @@ sudo apt install python3 python3-venv make pipx desktop-file-utils \
     fonts-hosny-amiri fonts-noto-core libxcb-cursor0
 ```
 
-Font paths are set in `config.json`; see the README's Configuration
-section. If your fonts live elsewhere, change `font_file` and
-`bangla_font_file` there.
+Font paths are read from `~/.config/ruqya-quran/config.json`, which is
+created on first launch from the packaged defaults. The two relevant
+keys are `font_file` (Arabic) and `bangla_font_file` (Bengali). If your
+fonts live elsewhere, edit those keys and restart the app.
+
+The same file also holds the reciter and translation lists (`reciters`,
+`translations`), the default selections (`default_reciter`,
+`default_translation`), the preload sets (`preload_reciters`,
+`preload_translations`), the word-by-word language
+(`word_by_word_language`), download tuning (`request_timeout`,
+`max_retries`, `retry_backoff_base`, `source_fail_threshold`,
+`max_workers`), and the custom-item sidebar label
+(`custom_playlist_separator_label`). `make purge` deletes it and
+regenerates the packaged defaults on next launch.
 
 ### Python dependencies
 
@@ -79,7 +90,7 @@ git clone <your-repo-url> ruqya-quran
 cd ruqya-quran
 make doctor                       # checks prerequisites
 make install                      # deploy everything (see below)
-ruqya-quran examples/Ruqya/default.ruqya
+ruqya-quran examples/Ruqya/ruqya.ruqya
 ```
 
 After `make install` you have, from every angle:
@@ -173,7 +184,11 @@ are untouched.
 
 - Your playlists — wherever you keep `.ruqya` files, `make install` never
   reads or writes them
-- Your config — `~/.config/ruqya-quran/config.json` is only created if missing
+- Your config — `~/.config/ruqya-quran/config.json` is only created if
+  missing; an existing file is never overwritten, so reciter/translation
+  additions shipped in a new release won't appear in your pickers until
+  you edit it by hand or run `make purge` (see
+  [Troubleshooting](#troubleshooting))
 - Your other defaults in `~/.config/mimeapps.list` for other file types
 - Any files at `/usr/` — everything is per-user under `~/.local/` and `~/.config/`
 
@@ -217,7 +232,7 @@ The `Exec=` path must match the symlink from step 1. If it doesn't, re-run
 ### 3. MIME type is registered
 
 ```bash
-xdg-mime query filetype examples/Ruqya/default.ruqya
+xdg-mime query filetype examples/Ruqya/ruqya.ruqya
 ```
 
 Expected:
@@ -251,7 +266,7 @@ If empty, `xdg-mime default` didn't run — re-run `make mime`.
 ### 5. End-to-end: simulate the double-click
 
 ```bash
-gio open examples/Ruqya/default.ruqya
+gio open examples/Ruqya/ruqya.ruqya
 ```
 
 This is exactly what your file manager does on double-click. If the
@@ -331,8 +346,10 @@ Run `make` or `make help` to list everything from the terminal.
 | Command | What it does |
 |---|---|
 | `make dev` | Creates `.venv` and installs editable with dev tools (`build`, `ruff`) |
-| `make run` | Runs from source inside `.venv`, default to `examples/Ruqya/default.ruqya` |
+| `make run` | Runs from source inside `.venv`, default to `examples/Ruqya/ruqya.ruqya` |
 | `make run-empty` | Same, but clears the last-playlist memory first |
+| `make data` | Downloads every missing audio/text file a playlist needs (`make data ARGS="a.ruqya b.ruqya"`) |
+| `make data-all` | Same, for every `.ruqya` in the example folder |
 | `make check` | Lints with ruff, validates `.desktop`, sanity-checks the MIME XML |
 | `make fix` | Auto-fixes lint problems where safe |
 | `make build` | Builds an sdist and wheel into `dist/` |
@@ -370,6 +387,7 @@ Run `make` or `make help` to list everything from the terminal.
 make install PREFIX=/usr/local      # system-wide install (needs sudo)
 make desktop PREFIX=/usr/local
 make run ARGS="~/Ruqya/my.ruqya"    # run against a specific playlist
+make data ARGS="~/Ruqya/my.ruqya"   # fetch all data for one playlist
 ```
 
 `PREFIX` defaults to `$(HOME)/.local`. The Makefile queries pipx for its
@@ -401,7 +419,7 @@ Walk the chain in [How double-click works](#how-double-click-works):
 
 ```bash
 # 1. MIME type registered?
-xdg-mime query filetype examples/Ruqya/default.ruqya
+xdg-mime query filetype examples/Ruqya/ruqya.ruqya
 # → application/x-ruqya-playlist
 
 # 2. Handler associated?
@@ -412,7 +430,7 @@ xdg-mime query default application/x-ruqya-playlist
 grep ^Exec= ~/.local/share/applications/ruqya-quran.desktop
 
 # 4. Simulate the double-click
-gio open examples/Ruqya/default.ruqya
+gio open examples/Ruqya/ruqya.ruqya
 ```
 
 Whichever step returns the wrong thing is the fix. For 1 or 2, `make
@@ -423,13 +441,25 @@ log out — your file manager cached the old association.
 Nautilus caches preferences per user. `nautilus -q` and reopen. If that
 fails, log out and back in once.
 
+**Reciter or translation pickers don't show an edition added in a recent release.**
+`~/.config/ruqya-quran/config.json` is only created on first install; an
+existing file is never overwritten by `make install`. New reciters (for
+example the two Husary variants) or new translations will not appear
+until you either edit the `reciters` / `translations` maps by hand, or
+run `make purge` and restart the app to regenerate the file from the
+packaged defaults. `make purge` does not touch your playlists. If your
+existing config has no `preload_reciters` key, the default set is the
+list in your config's `reciters` — so even a hand-edit that adds the
+reciters won't pre-warm them unless you also update `preload_reciters`
+or delete the key.
+
 **`Makefile:NN: *** missing separator`.**
 Recipe lines must begin with a **tab**, not spaces. Your editor may have
 converted them.
 
 **Arabic or Bengali text shows as boxes.**
-Fonts missing, or `font_file` / `bangla_font_file` in `config.json` wrong.
-Run `make doctor`.
+Fonts missing, or `font_file` / `bangla_font_file` in
+`~/.config/ruqya-quran/config.json` wrong. Run `make doctor`.
 
 **Qt fails with "could not load the Qt platform plugin xcb".**
 Install `libxcb-cursor0`.
@@ -440,9 +470,11 @@ If you opened a playlist from a read-only location, downloads go to
 keep everything together, copy the folder to a writable location.
 
 **First open is slow.**
-It warms every reciter in `preload_reciters`. Set the playlist's
-`preload_reciters` (or the config's) to just the reciter you use. Or copy
-a populated `data/` folder next to the `.ruqya` file.
+It warms every reciter in `preload_reciters` — six by default. Set the
+playlist's `preload_reciters` (or the config's) to just the reciter you
+use. Or copy a populated `data/` folder next to the `.ruqya` file. If
+`make data` was already run for the playlist, the warm-up is skipped
+entirely.
 
 **`pipx: command not found` after install.**
 Run `pipx ensurepath` and open a new terminal.
@@ -490,3 +522,9 @@ Notes:
   `shared-mime-info` dpkg trigger runs `update-mime-database
   /usr/share/mime` automatically on install and removal. No `postinst`,
   `prerm`, or manual command is needed.
+- The Debian package ships its **own** `/etc`-level config path (via the
+  packaged default in `src/ruqya_quran/config.json`), and each user still
+  gets a fresh `~/.config/ruqya-quran/config.json` on first launch. The
+  upgrade caveat above applies equally here: existing user configs are
+  not overwritten by a package upgrade.
+
