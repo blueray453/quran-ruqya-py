@@ -18,9 +18,8 @@ the single source of truth for what's in the project. Then:
      remaining file alphabetically, with a `// ===== FILE: path =====`
      header.
   5. Prints, to stdout, the total line count of the finished combined.txt
-     and the line where each file's content begins (i.e. the line right
-     after its `// ===== FILE: ... =====` header), so a reader can jump
-     straight to it.
+     and the line count of every emitted source file (i.e. its `wc -l`,
+     not its position inside combined.txt).
 
 Usage:
     python3 tools/combine.py                 # → combined.txt
@@ -215,9 +214,8 @@ class _LineWriter:
     """Tracks the current 1-based line number as text is written.
 
     Every `write()` advances `line` by the number of `\\n` characters it
-    received, so `line` always equals the line on which the next
-    character will land. After the file is complete, `line - 1` equals
-    the total number of newlines written — i.e. `wc -l`.
+    received. After the file is complete, `line - 1` equals the total
+    number of newlines written — i.e. `wc -l`.
     """
 
     def __init__(self, fout):
@@ -279,19 +277,25 @@ def main() -> None:
         key=lambda pair: content_sort_key(pair[0]),
     )
 
-    # (relative path, 1-based line where that file's content begins)
-    file_lines: list[tuple[str, int]] = []
+    # (relative path, line count of that source file)
+    file_counts: list[tuple[str, int]] = []
     total_lines = 0
+
+    def emit(w: "_LineWriter", rel: str, content: str) -> None:
+        # Normalise trailing newline so the count and the written bytes
+        # agree: `body.count("\n")` == `wc -l` of the emitted block.
+        body = content if content.endswith("\n") else content + "\n"
+        file_counts.append((rel, body.count("\n")))
+        w.write(f"// ===== FILE: {rel} =====\n")
+        w.write(body)
+        w.write("\n")
 
     with open(OUT, "w", encoding="utf-8") as fout:
         w = _LineWriter(fout)
 
         # 1. The tool first, so the reader sees how the dump was built.
         for rel, content in self_pairs:
-            w.write(f"// ===== FILE: {rel} =====\n")  # header
-            file_lines.append((rel, w.line))  # content starts here
-            w.write(content if content.endswith("\n") else content + "\n")
-            w.write("\n")
+            emit(w, rel, content)
 
         # 2. Tree of everything else.
         w.write("// ===== PROJECT TREE =====\n")
@@ -313,20 +317,17 @@ def main() -> None:
         w.write("// troubleshooting. Everything else follows alphabetically.\n\n")
 
         for rel, content in other_pairs:
-            w.write(f"// ===== FILE: {rel} =====\n")  # header
-            file_lines.append((rel, w.line))  # content starts here
-            w.write(content if content.endswith("\n") else content + "\n")
-            w.write("\n")
+            emit(w, rel, content)
 
         total_lines = w.line - 1
 
     actual = OUT.stat().st_size
     print(f"Wrote {OUT}: {len(included)} files, {total_lines} lines, "
           f"{actual // 1024} KB (skipped {skipped})")
-    if file_lines:
+    if file_counts:
         print()
-        for rel, ln in file_lines:
-            print(f"{rel} ({ln})")
+        for rel, n in file_counts:
+            print(f"{rel} ({n})")
 
     if actual > 200_000:
         print(f"WARNING: {OUT} is {actual // 1024} KB — may be large "
