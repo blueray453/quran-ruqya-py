@@ -2,10 +2,18 @@
 """
 ruqya_quran.main — Quranic Ruqya player (Qt Quick UI).
 
-A playlist is a standalone <name>.ruqya file (JSON) inside a workspace folder:
+Module map:
+  config.py    config.json + derived constants
+  playlist.py  .ruqya parsing and queue building
+  store.py     local data folder access (no network)
+  fetcher.py   optional: everything that touches the network
+  main.py      this file: Qt controller, models, loaders
+
+A playlist is a standalone <name>.ruqya file (JSON) next to a data folder:
 
   Ruqya/
     default.ruqya
+    memorize.ruqya
     data/
       audio/<reciter>/<surah>_<ayah>.mp3
       text/<edition>/surah_<n>.json
@@ -22,7 +30,7 @@ Playlist format (v1):
     "reciter": "ar.abdurrahmaansudais",         # optional default
     "translation": "en.sahih",                  # optional default
     "data_dir": "data",                         # optional, default "data"
-    "offline": false,                           # optional
+    "offline": false,                           # optional: never attach the fetcher
     "preload_reciters": [],                     # optional overrides
     "preload_translations": [],
     "items": [
@@ -47,18 +55,12 @@ playlistLoop, muted, loop A/B marks, position, current ayah, focus word.
 import os
 import sys
 import json
-import time
-import hashlib
-import shutil
 import logging
 import threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from dataclasses import dataclass, field, replace
 from typing import Optional
-from importlib.resources import files as _pkg_files
-
-import requests
 
 from PySide6.QtCore import (
     Qt,
@@ -79,323 +81,40 @@ from PySide6.QtMultimedia import QMediaPlayer, QAudioOutput
 from PySide6.QtQml import QQmlApplicationEngine
 from PySide6.QtQuickControls2 import QQuickStyle
 
+from .config import (
+    CFG,
+    RECITERS,
+    TRANSLATIONS,
+    DEFAULT_RECITER,
+    DEFAULT_TRANSLATION,
+    WORD_BY_WORD_LANGUAGE,
+    PRELOAD_RECITERS,
+    PRELOAD_TRANSLATIONS,
+    FONT_FILE,
+    BANGLA_FONT_FILE,
+    CUSTOM_PLAYLIST_SEPARATOR_LABEL,
+    MAX_WORKERS,
+)
+from .playlist import QueueItem, read_playlist_file, build_queue_from_items
+from .store import DataStore, build_ayah_lookup
+
+try:  # optional: the app runs fine from local data without it
+    from .fetcher import Fetcher, FetchSettings
+except ImportError:
+    Fetcher = None
+    FetchSettings = None
+
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger("quran_player")
 logging.getLogger("qt.qpa.services").setLevel(logging.ERROR)
 
 _GLOBAL_REFS = {}
 
-# ------------------------------------------------------------
-# Config directory (only config.json lives here now)
-# ------------------------------------------------------------
-
-def _config_dir() -> Path:
-    xdg = os.environ.get("XDG_CONFIG_HOME")
-    return (Path(xdg) if xdg else Path.home() / ".config") / "ruqya-quran"
-
-CONFIG_DIR = _config_dir()
-CONFIG_PATH = CONFIG_DIR / "config.json"
-TEMPLATE_CONFIG_NAME = "config.json"
-
-def _copy_pkg_file(rel: str, dst: Path) -> bool:
-    try:
-        node = _pkg_files(__package__)
-        for part in Path(rel).parts:
-            node = node.joinpath(part)
-        with node.open("rb") as fsrc, open(dst, "wb") as fdst:
-            shutil.copyfileobj(fsrc, fdst)
-        return True
-    except (OSError, AttributeError) as e:
-        log.warning("Could not copy %s: %s", rel, e)
-        return False
-
-def _ensure_user_files() -> None:
-    CONFIG_DIR.mkdir(parents=True, exist_ok=True)
-    if not CONFIG_PATH.exists():
-        _copy_pkg_file(TEMPLATE_CONFIG_NAME, CONFIG_PATH)
-
-def _load_config() -> dict:
-    _ensure_user_files()
-    try:
-        with open(CONFIG_PATH, "r", encoding="utf-8") as f:
-            return json.load(f)
-    except (json.JSONDecodeError, OSError) as e:
-        log.warning("Config unreadable (%s); using packaged defaults", e)
-        try:
-            node = _pkg_files(__package__).joinpath(TEMPLATE_CONFIG_NAME)
-            return json.loads(node.read_text(encoding="utf-8"))
-        except Exception:
-            return {}
-
-_CFG = _load_config()
-
-# ------------------------------------------------------------
-# Configurable values
-# ------------------------------------------------------------
-
-RECITERS: dict = _CFG.get(
-    "reciters", {
-        "ar.abdurrahmaansudais": "Sudais",
-        "ar.saoodshuraym": "Shuraym",
-        "ar.alafasy": "Mishari Rashid",
-        "ar.ghamdi": "Saad al-Ghamdi",
-    })
-DEFAULT_RECITER = _CFG.get("default_reciter", next(iter(RECITERS)))
-
-TRANSLATIONS: dict = _CFG.get("translations", {
-    "en.sahih": "English (Saheeh)",
-    "bn.bengali": "বাংলা (Muhiuddin Khan)",
-    "bn.hoque": "বাংলা (Zohurul Hoque)",
-})
-DEFAULT_TRANSLATION = _CFG.get("default_translation", next(iter(TRANSLATIONS)))
-
-WORD_BY_WORD_LANGUAGE = _CFG.get("word_by_word_language", "auto")
-
-def _resolve_preload_list(value, valid_keys):
-    if value in (None, "all", []):
-        return list(valid_keys)
-    if isinstance(value, str):
-        value = [value]
-    return [k for k in value if k in valid_keys]
-
-PRELOAD_RECITERS = _resolve_preload_list(_CFG.get("preload_reciters"), list(RECITERS))
-PRELOAD_TRANSLATIONS = _resolve_preload_list(_CFG.get("preload_translations"), list(TRANSLATIONS))
-
-FONT_FILE = os.path.expanduser(_CFG.get("font_file", "/usr/share/fonts/opentype/fonts-hosny-amiri/AmiriQuran.ttf"))
-BANGLA_FONT_FILE = os.path.expanduser(
-    _CFG.get("bangla_font_file", "/usr/share/fonts/truetype/noto/NotoSansBengali-Regular.ttf"))
-CUSTOM_PLAYLIST_SEPARATOR_LABEL = _CFG.get("custom_playlist_separator_label", "Duas")
-REQUEST_TIMEOUT = float(_CFG.get("request_timeout", 10))
-MAX_RETRIES = int(_CFG.get("max_retries", 2))
-RETRY_BACKOFF_BASE = float(_CFG.get("retry_backoff_base", 0.5))
-MAX_WORKERS = int(_CFG.get("max_workers", 4))
-SOURCE_FAIL_THRESHOLD = int(_CFG.get("source_fail_threshold", 3))
-
 BISMILLAH_SURAH = 1
 BISMILLAH_AYAH = 1
 
-# ------------------------------------------------------------
-# Audio source registry
-# ------------------------------------------------------------
-
-AUDIO_SOURCES = {
-    "ar.abdurrahmaansudais": ("Abdurrahmaan_As-Sudais_192kbps", "ar.abdurrahmaansudais", 192),
-    "ar.saoodshuraym": ("Saood_ash-Shuraym_128kbps", "ar.saoodshuraym", 128),
-    "ar.alafasy": ("Mishaari_Raashid_Alafasy_128kbps", "ar.alafasy", 128),
-    "ar.ghamdi": ("Ghamadi_40kbps", None, None),
-}
-
-def _audio_urls(reciter, surah, ayah, global_ayah_number):
-    everyayah_dir, alquran_edition, bitrate = AUDIO_SOURCES.get(reciter, (None, reciter, None))
-    urls = []
-    if everyayah_dir:
-        urls.append(f"https://everyayah.com/data/{everyayah_dir}/{surah:03d}{ayah:03d}.mp3")
-    if alquran_edition and global_ayah_number is not None and bitrate is not None:
-        urls.append(f"https://cdn.islamic.network/quran/audio/{bitrate}/{alquran_edition}/{global_ayah_number}.mp3")
-    return urls
-
-WORD_BY_WORD_URL = ("https://api.quran.com/api/v4/verses/by_key/{surah}:{ayah}"
-                    "?words=true"
-                    "&word_fields=text_uthmani,translation"
-                    "&language={lang}")
-
-# ------------------------------------------------------------
-# Source health
-# ------------------------------------------------------------
-
-class _SourceHealth:
-
-    def __init__(self, threshold=3):
-        self._lock = threading.Lock()
-        self._failures = {}
-        self._disabled = set()
-        self._threshold = threshold
-
-    def is_disabled(self, host):
-        with self._lock:
-            return host in self._disabled
-
-    def record_success(self, host):
-        with self._lock:
-            if host in self._failures:
-                self._failures[host] = 0
-
-    def record_failure(self, host):
-        with self._lock:
-            self._failures[host] = self._failures.get(host, 0) + 1
-            if self._failures[host] >= self._threshold and host not in self._disabled:
-                self._disabled.add(host)
-                log.warning("Disabling %s for this session", host)
-
-    def disabled_hosts(self):
-        with self._lock:
-            return sorted(self._disabled)
-
-_SOURCE_HEALTH = _SourceHealth(threshold=SOURCE_FAIL_THRESHOLD)
-
-# ------------------------------------------------------------
-# Workspace (one per .ruqya file)
-# ------------------------------------------------------------
-
-class Workspace:
-    """Folder of a .ruqya file + its data folder (the source of truth)."""
-
-    def __init__(self, playlist_path: Path, data_dir: str = ""):
-        self.playlist_path = playlist_path.resolve()
-        self.base_dir = self.playlist_path.parent
-        d = Path(data_dir).expanduser() if data_dir else Path("data")
-        self.data_dir = d if d.is_absolute() else self.base_dir / d
-        self.write_dir = self._pick_write_dir()
-
-    def _pick_write_dir(self) -> Path:
-        try:
-            self.data_dir.mkdir(parents=True, exist_ok=True)
-            if os.access(self.data_dir, os.W_OK):
-                return self.data_dir
-        except OSError:
-            pass
-        digest = hashlib.sha1(str(self.data_dir).encode()).hexdigest()[:12]
-        base = Path(os.environ.get("XDG_DATA_HOME") or Path.home() / ".local/share")
-        fallback = base / "ruqya-quran" / digest
-        fallback.mkdir(parents=True, exist_ok=True)
-        log.warning("Data folder is read-only; downloads go to %s", fallback)
-        return fallback
-
-    def find(self, *parts: str) -> Path:
-        """Existing file in data_dir, else where a new file should be written."""
-        p = self.data_dir.joinpath(*parts)
-        return p if p.exists() else self.write_dir.joinpath(*parts)
-
-_WS: Optional[Workspace] = None
-_OFFLINE = False
-
-def set_workspace(ws: Workspace, offline: bool = False) -> None:
-    global _WS, _OFFLINE
-    _WS, _OFFLINE = ws, offline
-
-def read_playlist_file(path: Path) -> dict:
-    with open(path, "r", encoding="utf-8") as f:
-        data = json.load(f)
-    if isinstance(data, list):  # bare list = items only
-        data = {"items": data}
-    if not isinstance(data, dict) or not isinstance(data.get("items"), list):
-        raise ValueError("not a playlist (missing 'items' list)")
-    if data.get("format", "ruqya-playlist") != "ruqya-playlist":
-        raise ValueError("unknown playlist format")
-    try:
-        if int(data.get("version", 1)) > 1:
-            log.warning("Playlist version %s is newer than supported", data["version"])
-    except (TypeError, ValueError):
-        pass
-    return {
-        "name": data.get("name") or path.stem.replace("_", " ").title(),
-        "items": data["items"],
-        "reciter": data.get("reciter") or "",
-        "translation": data.get("translation") or "",
-        "data_dir": data.get("data_dir") or "",
-        "offline": bool(data.get("offline", False)),
-        "preload_reciters": data.get("preload_reciters") or [],
-        "preload_translations": data.get("preload_translations") or [],
-    }
-
-# ------------------------------------------------------------
-# Queue items
-# ------------------------------------------------------------
-
-def needs_bismillah(surah: int) -> bool:
-    return surah != 1
-
-@dataclass
-class QueueItem:
-    surah: int
-    ayah: int
-    description: str
-    group_id: str = ""
-    lead_bismillah: bool = False
-    kind: str = "quran"  # "quran" or "custom"
-    custom_path: str = ""
-    custom_body: str = ""
-    custom_translation: str = ""
-    custom_section: str = ""
-    ayah_repeat: int = 1  # 0 = ∞
-    group_repeat: int = 1  # 0 = ∞
-
-def _resolve_custom_path(raw: str) -> str:
-    if not raw:
-        return ""
-    p = Path(raw).expanduser()
-    if p.is_absolute():
-        return str(p)
-    return str(_WS.data_dir / p)
-
-def _read_repeats(raw: dict) -> tuple[int, int]:
-    """Return (ayah_repeat, group_repeat) with 0 meaning ∞.
-
-    Accepts both modern keys and the legacy {"repeat": N, "repeat_mode": "..."} form.
-    """
-    ayah = raw.get("ayah_repeat", 1)
-    group = raw.get("group_repeat", 1)
-    if "repeat" in raw:
-        if raw.get("repeat_mode", "ayah") == "group":
-            group = raw["repeat"]
-        else:
-            ayah = raw["repeat"]
-    try:
-        ayah = max(0, int(ayah))
-    except (TypeError, ValueError):
-        ayah = 1
-    try:
-        group = max(0, int(group))
-    except (TypeError, ValueError):
-        group = 1
-    return ayah, group
-
-def build_queue_from_items(items: list) -> list:
-    queue: list[QueueItem] = []
-    for idx, raw in enumerate(items):
-        if not isinstance(raw, dict):
-            continue
-        if "path" in raw:
-            path = _resolve_custom_path(raw.get("path", ""))
-            ar, gr = _read_repeats(raw)
-            queue.append(
-                QueueItem(
-                    surah=0,
-                    ayah=0,
-                    description=raw.get("title") or os.path.basename(path),
-                    group_id=f"custom:{idx}",
-                    kind="custom",
-                    custom_path=path,
-                    custom_body=raw.get("body", ""),
-                    custom_translation=raw.get("translation", ""),
-                    custom_section=raw.get("section") or CUSTOM_PLAYLIST_SEPARATOR_LABEL,
-                    ayah_repeat=ar,
-                    group_repeat=gr,
-                ))
-            continue
-
-        if "surah" not in raw:
-            continue
-
-        surah = int(raw["surah"])
-        from_ayah = int(raw.get("from", 1))
-        to_ayah = int(raw.get("to", from_ayah))
-        description = raw.get("description") or f"Surah {surah}:{from_ayah}-{to_ayah}"
-        ayah_rep, group_rep = _read_repeats(raw)
-        group_id = f"g{idx}:{surah}:{from_ayah}-{to_ayah}"
-
-        for ayah in range(from_ayah, to_ayah + 1):
-            queue.append(
-                QueueItem(
-                    surah=surah,
-                    ayah=ayah,
-                    description=description,
-                    group_id=group_id,
-                    lead_bismillah=needs_bismillah(surah) and ayah == from_ayah,
-                    ayah_repeat=ayah_rep,
-                    group_repeat=group_rep,
-                ))
-    return queue
+# The data store of the currently open playlist.
+_STORE: Optional[DataStore] = None
 
 # ------------------------------------------------------------
 # Data models
@@ -452,211 +171,30 @@ def placeholder(item: QueueItem) -> LoadedEntry:
     return e
 
 # ------------------------------------------------------------
-# Data paths (inside the workspace's data folder)
+# Warmup (thin Qt wrapper; the work lives in fetcher.Fetcher.warm)
 # ------------------------------------------------------------
 
-def audio_path(surah, ayah, reciter):
-    return str(_WS.find("audio", reciter, f"{surah}_{ayah}.mp3"))
-
-def text_path(surah, edition):
-    return str(_WS.find("text", edition, f"surah_{surah}.json"))
-
-def words_path(surah, ayah, lang):
-    return str(_WS.find("words", lang, f"{surah}_{ayah}.json"))
-
-# ------------------------------------------------------------
-# Networking
-# ------------------------------------------------------------
-
-def request_with_retry(url):
-    if _OFFLINE:
-        raise RuntimeError("Offline playlist: network disabled")
-    last_exc = None
-    for attempt in range(MAX_RETRIES + 1):
-        try:
-            resp = requests.get(url, timeout=REQUEST_TIMEOUT)
-            resp.raise_for_status()
-            return resp
-        except requests.HTTPError as e:
-            code = e.response.status_code if e.response is not None else None
-            if code is not None and 400 <= code < 500 and code not in (408, 429):
-                raise
-            last_exc = e
-            if attempt < MAX_RETRIES:
-                time.sleep(RETRY_BACKOFF_BASE * (2**attempt))
-        except requests.RequestException as e:
-            last_exc = e
-            if attempt < MAX_RETRIES:
-                time.sleep(RETRY_BACKOFF_BASE * (2**attempt))
-    raise last_exc
-
-def get_cached_surah_metadata(surah, edition):
-    path = text_path(surah, edition)
-    if not os.path.exists(path):
-        return None
-    try:
-        with open(path, "r", encoding="utf-8") as f:
-            return json.load(f)
-    except (json.JSONDecodeError, OSError) as e:
-        log.warning("Corrupt text file %s/%s: %s", surah, edition, e)
-        return None
-
-def save_cached_surah_metadata(surah, data, edition):
-    path = Path(text_path(surah, edition))
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
-
-def get_surah_data(surah, edition):
-    cached = get_cached_surah_metadata(surah, edition)
-    if cached:
-        return cached
-    log.info("Downloading surah %s metadata (%s)...", surah, edition)
-    url = f"https://api.alquran.cloud/v1/surah/{surah}/{edition}"
-    data = request_with_retry(url).json()["data"]
-    save_cached_surah_metadata(surah, data, edition)
-    return data
-
-def ensure_audio_cached(surah, ayah, reciter, ayah_data):
-    audio_file = audio_path(surah, ayah, reciter)
-    if os.path.exists(audio_file):
-        return audio_file, True
-
-    Path(audio_file).parent.mkdir(parents=True, exist_ok=True)
-
-    global_ayah_number = ayah_data.get("number")
-    if global_ayah_number is None:
-        raise RuntimeError(f"Global ayah number missing for {surah}:{ayah}")
-
-    urls = _audio_urls(reciter, surah, ayah, global_ayah_number)
-    if not urls:
-        raise RuntimeError(f"No audio source for reciter {reciter}")
-
-    urls = [u for u in urls if not _SOURCE_HEALTH.is_disabled(u.split("/")[2])]
-    if not urls:
-        raise RuntimeError(f"All audio sources disabled ({surah}:{ayah})")
-
-    last_err = None
-    for url in urls:
-        host = url.split("/")[2]
-        try:
-            log.info("Downloading %s:%s from %s...", surah, ayah, host)
-            resp = request_with_retry(url)
-            with open(audio_file, "wb") as f:
-                f.write(resp.content)
-            _SOURCE_HEALTH.record_success(host)
-            return audio_file, False
-        except Exception as e:
-            last_err = e
-            _SOURCE_HEALTH.record_failure(host)
-            log.warning("  %s failed: %s", host, e.__class__.__name__)
-
-    raise last_err or RuntimeError("All audio sources failed")
-
-def build_ayah_lookup(surah_data):
-    return {a["numberInSurah"]: a for a in surah_data["ayahs"]}
-
-def get_cached_wbw(surah, ayah, lang):
-    path = words_path(surah, ayah, lang)
-    if not os.path.exists(path):
-        return None
-    try:
-        with open(path, "r", encoding="utf-8") as f:
-            return json.load(f)
-    except (json.JSONDecodeError, OSError) as e:
-        log.warning("Corrupt words file %s:%s: %s", surah, ayah, e)
-        return None
-
-def save_cached_wbw(surah, ayah, lang, data):
-    path = Path(words_path(surah, ayah, lang))
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
-
-# ------------------------------------------------------------
-# Warmup
-# ------------------------------------------------------------
-
-class WarmupLoader(QThread):
+class WarmupJob(QThread):
     progress = Signal(int, int, str)
     finished_warmup = Signal()
 
-    def __init__(self, reciters, translations, queue, max_workers=4, parent=None):
+    def __init__(self, fetcher, pairs, reciters, translations, parent=None):
         super().__init__(parent)
+        self._fetcher = fetcher
+        self._pairs = list(pairs)
         self._reciters = list(reciters)
         self._translations = list(translations)
-        self._queue = [q for q in queue if q.kind == "quran"]
-        self._max_workers = max(1, int(max_workers))
 
     def run(self):
-        surahs = sorted({q.surah for q in self._queue})
-        meta_editions = list(dict.fromkeys(self._reciters + self._translations))
-        meta_jobs = [(ed, s) for ed in meta_editions for s in surahs]
-        audio_jobs = [(r, q.surah, q.ayah) for r in self._reciters for q in self._queue]
-        total = len(meta_jobs) + len(audio_jobs)
-        current = 0
-        current_lock = threading.Lock()
-        meta_locks = {}
-        meta_locks_lock = threading.Lock()
-
-        def meta_lock(key):
-            with meta_locks_lock:
-                l = meta_locks.get(key)
-                if l is None:
-                    l = meta_locks[key] = threading.Lock()
-                return l
-
-        def tick(label):
-            nonlocal current
-            with current_lock:
-                current += 1
-                c = current
-            self.progress.emit(c, total, label)
-
-        def fetch_meta(edition, surah):
-            if self.isInterruptionRequested():
-                return
-            with meta_lock((edition, surah)):
-                try:
-                    get_surah_data(surah, edition)
-                except Exception as e:
-                    log.warning("Warmup metadata %s/%s failed: %s", surah, edition, e)
-            tick(f"Downloading text · {edition}")
-
-        if meta_jobs:
-            with ThreadPoolExecutor(max_workers=self._max_workers, thread_name_prefix="warmup-meta") as pool:
-                futures = [pool.submit(fetch_meta, ed, s) for ed, s in meta_jobs]
-                for fut in as_completed(futures):
-                    if self.isInterruptionRequested():
-                        for f in futures:
-                            f.cancel()
-                        return
-                    fut.result()
-
-        def fetch_audio(reciter, surah, ayah):
-            if self.isInterruptionRequested():
-                return
-            try:
-                surah_data = get_surah_data(surah, reciter)
-                ayah_data = build_ayah_lookup(surah_data).get(ayah)
-                if ayah_data is None:
-                    return
-                ensure_audio_cached(surah, ayah, reciter, ayah_data)
-            except Exception as e:
-                log.warning("Warmup audio %s:%s (%s) failed: %s", surah, ayah, reciter, e)
-            tick(f"Downloading audio · {reciter}")
-
-        if audio_jobs:
-            with ThreadPoolExecutor(max_workers=self._max_workers, thread_name_prefix="warmup-audio") as pool:
-                futures = [pool.submit(fetch_audio, r, s, a) for r, s, a in audio_jobs]
-                for fut in as_completed(futures):
-                    if self.isInterruptionRequested():
-                        for f in futures:
-                            f.cancel()
-                        return
-                    fut.result()
-
-        self.finished_warmup.emit()
+        ok = self._fetcher.warm(
+            self._pairs,
+            self._reciters,
+            self._translations,
+            progress=self.progress.emit,
+            cancelled=self.isInterruptionRequested,
+        )
+        if ok:
+            self.finished_warmup.emit()
 
 # ------------------------------------------------------------
 # Resolver
@@ -683,7 +221,7 @@ class _Resolver:
     def get_ayah_metadata(self, surah, ayah):
         with self._surah_lock(surah):
             if surah not in self.arabic:
-                self.arabic[surah] = get_surah_data(surah, self.reciter)
+                self.arabic[surah] = _STORE.surah(surah, self.reciter)
                 self.arabic_lookup[surah] = build_ayah_lookup(self.arabic[surah])
         ayah_data = self.arabic_lookup[surah].get(ayah)
         if ayah_data is None:
@@ -694,7 +232,7 @@ class _Resolver:
             try:
                 with self._surah_lock(surah):
                     if surah not in self.trans:
-                        self.trans[surah] = get_surah_data(surah, self.translation_edition)
+                        self.trans[surah] = _STORE.surah(surah, self.translation_edition)
                         self.trans_lookup[surah] = build_ayah_lookup(self.trans[surah])
                 t = self.trans_lookup[surah].get(ayah)
                 translation = t.get("text", "") if t else ""
@@ -705,7 +243,7 @@ class _Resolver:
 
     def load(self, surah, ayah):
         ayah_data, surah_data, translation = self.get_ayah_metadata(surah, ayah)
-        audio_file, _ = ensure_audio_cached(surah, ayah, self.reciter, ayah_data)
+        audio_file = _STORE.audio(surah, ayah, self.reciter, ayah_data)
         return ayah_data, surah_data, translation, audio_file
 
 # ------------------------------------------------------------
@@ -925,7 +463,7 @@ class PlayerController(QObject):
 
         self._queue: list[QueueItem] = []
         self._loader: Optional[PlaylistLoader] = None
-        self._warmup: Optional[WarmupLoader] = None
+        self._warmup: Optional[WarmupJob] = None
         self._bismillah: Optional[LoadedEntry] = None
 
         self._current = -1
@@ -1016,6 +554,7 @@ class PlayerController(QObject):
 
     @Slot(str, result=bool)
     def openPlaylist(self, location):
+        global _STORE
         path = (Path(QUrl(location).toLocalFile()) if location.startswith("file:") else Path(location).expanduser())
         try:
             data = read_playlist_file(path)
@@ -1024,9 +563,11 @@ class PlayerController(QObject):
             return False
 
         self.shutdown()
-        ws = Workspace(path, data["data_dir"])
-        set_workspace(ws, data["offline"])
-        self._playlist, self._playlist_path = data, str(ws.playlist_path)
+        store = DataStore(path, data["data_dir"])
+        if Fetcher is not None and not data["offline"]:
+            store.attach(Fetcher(store, FetchSettings.from_cfg(CFG)))
+        _STORE = store
+        self._playlist, self._playlist_path = data, str(store.playlist_path)
         self._bismillah = None  # belongs to the old reciter
 
         if data["reciter"] in RECITERS:  # file default; not written back
@@ -1376,35 +917,28 @@ class PlayerController(QObject):
         self.start()
 
     def start(self):
-        if _WS is None:
+        if _STORE is None:
             return
-        self._queue = build_queue_from_items(self._playlist["items"])
+        self._queue = build_queue_from_items(self._playlist["items"], _STORE)
         if not self._queue:
             self.model.reset_entries([])
             self._current = -1
             self.currentIndexChanged.emit()
             self.contentReset.emit()
             return
-        if _OFFLINE or self._is_data_complete(self._queue):
-            log.info("Data complete or offline — skipping warmup")
+        if not _STORE.can_fetch or self._is_data_complete():
+            log.info("Data complete or no fetcher — skipping warmup")
             self._begin_playlist_load()
             return
         self._start_warmup()
 
-    def _is_data_complete(self, queue) -> bool:
-        quran_items = [q for q in queue if q.kind == "quran"]
-        surahs = {q.surah for q in quran_items}
+    def _quran_pairs(self) -> list:
+        return [(q.surah, q.ayah) for q in self._queue if q.kind == "quran"]
+
+    def _is_data_complete(self) -> bool:
         reciters = set(self._preload_reciters()) | {self._reciter}
-        editions = (reciters | set(self._preload_translations()) | {self._translation_edition})
-        for edition in editions:
-            for surah in surahs:
-                if not os.path.exists(text_path(surah, edition)):
-                    return False
-        for reciter in reciters:
-            for q in quran_items:
-                if not os.path.exists(audio_path(q.surah, q.ayah, reciter)):
-                    return False
-        return True
+        editions = reciters | set(self._preload_translations()) | {self._translation_edition}
+        return _STORE.is_complete(self._quran_pairs(), reciters, editions)
 
     def _start_warmup(self):
         self._initializing = True
@@ -1413,10 +947,8 @@ class PlayerController(QObject):
         self._init_total = 0
         self.initStateChanged.emit()
 
-        self._warmup = WarmupLoader(self._preload_reciters(),
-                                    self._preload_translations(),
-                                    self._queue,
-                                    max_workers=MAX_WORKERS)
+        self._warmup = WarmupJob(_STORE.provider, self._quran_pairs(), self._preload_reciters(),
+                                 self._preload_translations())
         self._warmup.progress.connect(self._on_warmup_progress)
         self._warmup.finished_warmup.connect(self._on_warmup_finished)
         self._warmup.start()
@@ -1428,7 +960,6 @@ class PlayerController(QObject):
         self.initStateChanged.emit()
 
     def _on_warmup_finished(self):
-        log.info("Warmup finished. Disabled sources: %s", _SOURCE_HEALTH.disabled_hosts() or "none")
         self._initializing = False
         self.initStateChanged.emit()
         self._begin_playlist_load()
@@ -1525,7 +1056,7 @@ class PlayerController(QObject):
         self._words_with_state = []
         self.wordsChanged.emit()
 
-        if self._initializing or self._current < 0:
+        if self._initializing or self._current < 0 or _STORE is None:
             return
         e = self.model.entry(self._current)
         if not e or e.kind == "custom" or not e.surah:
@@ -1536,49 +1067,11 @@ class PlayerController(QObject):
             return
 
         lang = self._wbw_language()
-        want_bangla = (lang == "bn")
         surah, ayah = e.surah, e.ayah
+        store = _STORE
 
         def work():
-            cached = get_cached_wbw(surah, ayah, lang)
-            if cached is not None:
-                self._word_by_word_data = cached
-                self._rebuild_words_with_state()
-                return
-            try:
-                url = WORD_BY_WORD_URL.format(surah=surah, ayah=ayah, lang=lang)
-                resp = request_with_retry(url)
-                words = resp.json().get("verse", {}).get("words", [])
-                out = []
-                have_bangla = False
-                for w in words:
-                    trans = w.get("translation", {}) or {}
-                    trans_lang = (trans.get("language_name") or "").lower()
-                    text = trans.get("text", "") or ""
-                    is_bn = trans_lang in ("bengali", "bangla", "bn")
-                    arabic = w.get("text_uthmani", "") or ""
-                    if is_bn:
-                        have_bangla = True
-                        out.append({"arabic": arabic, "english": "", "bangla": text})
-                    else:
-                        out.append({"arabic": arabic, "english": text, "bangla": ""})
-                if want_bangla and not have_bangla:
-                    try:
-                        bn_data = get_surah_data(surah, "bn.bengali")
-                        bn_ayah = build_ayah_lookup(bn_data).get(ayah, {}).get("text", "")
-                        if bn_ayah:
-                            out.append({"arabic": "", "english": "", "bangla": bn_ayah})
-                    except Exception as ex:
-                        log.warning("Bangla ayah fallback failed: %s", ex)
-                if out:
-                    try:
-                        save_cached_wbw(surah, ayah, lang, out)
-                    except OSError as ex:
-                        log.warning("Could not write words cache: %s", ex)
-                self._word_by_word_data = out
-            except Exception as exc:
-                log.warning("Word-by-word fetch failed: %s", exc)
-                self._word_by_word_data = []
+            self._word_by_word_data = store.words(surah, ayah, lang) or []
             self._rebuild_words_with_state()
 
         threading.Thread(target=work, daemon=True).start()

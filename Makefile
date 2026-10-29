@@ -4,13 +4,14 @@
 #   make help          list all targets
 #   make dev           create .venv and install editable with dev tools
 #   make run           run from source (respects .venv)
+#   make data          download all data a playlist needs (uses fetcher.py)
 #   make install       deploy: pipx + menu entry + icon + MIME registration
 #   make uninstall     remove app, menu entry, icon, MIME registration
 #   make deb           build a .deb into dist/
 #
 # Variables (override on the command line, e.g. `make install PREFIX=/usr/local`):
 #   PREFIX   install prefix, default ~/.local
-#   ARGS     arguments passed to `make run`
+#   ARGS     arguments passed to `make run` / `make data`
 # ---------------------------------------------------------------------------
 
 APP       := ruqya-quran
@@ -36,7 +37,7 @@ EXAMPLE      := examples/Ruqya/default.ruqya
 BIN_DIR := $(shell pipx environment --value PIPX_BIN_DIR 2>/dev/null || echo $(HOME)/.local/bin)
 
 .DEFAULT_GOAL := help
-.PHONY: help dev run run-empty combined \
+.PHONY: help dev run run-empty data data-all combined \
         install install-dev desktop mime uninstall purge \
         check fix build clean distclean doctor \
         deb-deps deb-version deb deb-lint deb-install deb-uninstall deb-clean
@@ -64,6 +65,12 @@ run-empty: dev  ## Run from source with no playlist (fresh empty state)
 	@$(PY) -c "from PySide6.QtCore import QSettings; \
 	  QSettings('ruqya-quran','ruqya-quran').remove('ui/lastPlaylist')"
 	$(PY) -m $(PKG) $(ARGS)
+
+data: dev  ## Download missing data for playlists: make data ARGS="a.ruqya b.ruqya"
+	$(PY) -m $(PKG).fetcher $(or $(ARGS),$(EXAMPLE))
+
+data-all: dev  ## Download data for every .ruqya in the example folder
+	$(PY) -m $(PKG).fetcher $(wildcard $(dir $(EXAMPLE))*.ruqya)
 
 combined:  ## Build combined.txt from tracked source (LLM context, git-aware)
 	@python3 tools/combine.py combined.txt
@@ -196,6 +203,9 @@ doctor:  ## Check system prerequisites
 	@[ -f $(MIME_FILE) ]    && echo "ok      $(MIME_FILE)"    || echo "MISSING $(MIME_FILE)"
 	@[ -f $(EXAMPLE) ]      && echo "ok      example playlist" || echo "MISSING $(EXAMPLE)"
 	@[ -f tools/combine.py ] && echo "ok      tools/combine.py" || echo "MISSING tools/combine.py"
+	@echo "--- source modules ---"
+	@for m in config playlist store fetcher main; do \
+	  [ -f src/$(PKG)/$$m.py ] && echo "ok      $$m.py" || echo "MISSING $$m.py"; done
 	@echo "--- version ---"
 	@echo "version: $(VERSION)"
 	@echo "pipx bin dir: $(BIN_DIR)"

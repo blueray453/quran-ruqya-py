@@ -1,0 +1,12 @@
+{
+  "format": "ruqya-playlist",
+  "version": 1,
+  "name": "Memorize",
+  "reciter": "ar.abdurrahmaansudais",
+  "translation": "en.sahih",
+  "data_dir": "data",
+  "offline": false,
+  "items": [
+    { "surah": 3, "from": 190, "to": 200, "description": "Surah Al Imran 190-200" }
+  ]
+}
