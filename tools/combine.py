@@ -17,6 +17,10 @@ the single source of truth for what's in the project. Then:
      *not* to flag), then README.md, then docs/INSTALL.md, then each
      remaining file alphabetically, with a `// ===== FILE: path =====`
      header.
+  5. Prints, to stdout, the total line count of the finished combined.txt
+     and the line where each file's content begins (i.e. the line right
+     after its `// ===== FILE: ... =====` header), so a reader can jump
+     straight to it.
 
 Usage:
     python3 tools/combine.py                 # → combined.txt
@@ -204,6 +208,27 @@ def content_sort_key(rel: str) -> tuple:
     return (1, rel)
 
 # ---------------------------------------------------------------
+# Line-tracking writer
+# ---------------------------------------------------------------
+
+class _LineWriter:
+    """Tracks the current 1-based line number as text is written.
+
+    Every `write()` advances `line` by the number of `\\n` characters it
+    received, so `line` always equals the line on which the next
+    character will land. After the file is complete, `line - 1` equals
+    the total number of newlines written — i.e. `wc -l`.
+    """
+
+    def __init__(self, fout):
+        self.fout = fout
+        self.line = 1
+
+    def write(self, s: str) -> None:
+        self.fout.write(s)
+        self.line += s.count("\n")
+
+# ---------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------
 
@@ -254,40 +279,54 @@ def main() -> None:
         key=lambda pair: content_sort_key(pair[0]),
     )
 
+    # (relative path, 1-based line where that file's content begins)
+    file_lines: list[tuple[str, int]] = []
+    total_lines = 0
+
     with open(OUT, "w", encoding="utf-8") as fout:
+        w = _LineWriter(fout)
+
         # 1. The tool first, so the reader sees how the dump was built.
         for rel, content in self_pairs:
-            fout.write(f"// ===== FILE: {rel} =====\n")
-            fout.write(content if content.endswith("\n") else content + "\n")
-            fout.write("\n")
+            w.write(f"// ===== FILE: {rel} =====\n")  # header
+            file_lines.append((rel, w.line))  # content starts here
+            w.write(content if content.endswith("\n") else content + "\n")
+            w.write("\n")
 
         # 2. Tree of everything else.
-        fout.write("// ===== PROJECT TREE =====\n")
-        fout.write("// tools/combine.py (the script that produced this dump)\n")
-        fout.write("// appears first, above this tree. Every other file listed\n")
-        fout.write("// below appears verbatim later in the dump.\n")
-        fout.write("// Folders marked [N files not shown] are tracked in git but\n")
-        fout.write("// intentionally excluded (bulk data, OpenAPI spec, boilerplate,\n")
-        fout.write("// reference tables that duplicate code).\n")
-        fout.write(render_tree(root.name, [r for r, _ in included], skipped_dir_counts))
-        fout.write("\n\n")
+        w.write("// ===== PROJECT TREE =====\n")
+        w.write("// tools/combine.py (the script that produced this dump)\n")
+        w.write("// appears first, above this tree. Every other file listed\n")
+        w.write("// below appears verbatim later in the dump.\n")
+        w.write("// Folders marked [N files not shown] are tracked in git but\n")
+        w.write("// intentionally excluded (bulk data, OpenAPI spec, boilerplate,\n")
+        w.write("// reference tables that duplicate code).\n")
+        w.write(render_tree(root.name, [r for r, _ in included], skipped_dir_counts))
+        w.write("\n\n")
 
         # 3. Reading-order comment, then the rest.
-        fout.write("// ===== READING ORDER =====\n")
-        fout.write("// docs/KNOWN-NON-ISSUES.md lists behaviors that look wrong\n")
-        fout.write("// but are intentional — read it before flagging anything.\n")
-        fout.write("// README.md explains what the project is and the playlist format.\n")
-        fout.write("// docs/INSTALL.md explains deployment, MIME registration, and\n")
-        fout.write("// troubleshooting. Everything else follows alphabetically.\n\n")
+        w.write("// ===== READING ORDER =====\n")
+        w.write("// docs/KNOWN-NON-ISSUES.md lists behaviors that look wrong\n")
+        w.write("// but are intentional — read it before flagging anything.\n")
+        w.write("// README.md explains what the project is and the playlist format.\n")
+        w.write("// docs/INSTALL.md explains deployment, MIME registration, and\n")
+        w.write("// troubleshooting. Everything else follows alphabetically.\n\n")
 
         for rel, content in other_pairs:
-            fout.write(f"// ===== FILE: {rel} =====\n")
-            fout.write(content if content.endswith("\n") else content + "\n")
-            fout.write("\n")
+            w.write(f"// ===== FILE: {rel} =====\n")  # header
+            file_lines.append((rel, w.line))  # content starts here
+            w.write(content if content.endswith("\n") else content + "\n")
+            w.write("\n")
+
+        total_lines = w.line - 1
 
     actual = OUT.stat().st_size
-    print(f"Wrote {OUT}: {len(included)} files, {actual // 1024} KB "
-          f"(skipped {skipped})")
+    print(f"Wrote {OUT}: {len(included)} files, {total_lines} lines, "
+          f"{actual // 1024} KB (skipped {skipped})")
+    if file_lines:
+        print()
+        for rel, ln in file_lines:
+            print(f"{rel} ({ln})")
 
     if actual > 200_000:
         print(f"WARNING: {OUT} is {actual // 1024} KB — may be large "
