@@ -24,7 +24,16 @@ AUDIO_SOURCES = {
     "ar.saoodshuraym": ("Saood_ash-Shuraym_128kbps", "ar.saoodshuraym", 128),
     "ar.alafasy": ("Mishaari_Raashid_Alafasy_128kbps", "ar.alafasy", 128),
     "ar.ghamdi": ("Ghamadi_40kbps", None, None),
+    "ar.husary": ("Husary_128kbps", "ar.husary", 128),
+    "ar.husarymuallim": ("Husary_Muallim_128kbps", None, None),  # everyayah only
 }
+
+# Reciter ids with no alquran.cloud edition of their own: fetch text from this one,
+# but still save under the reciter's id.
+TEXT_EDITION_ALIAS = {
+    "ar.husarymuallim": "ar.husary",
+}
+
 SURAH_URL = "https://api.alquran.cloud/v1/surah/{surah}/{edition}"
 WORD_BY_WORD_URL = ("https://api.quran.com/api/v4/verses/by_key/{surah}:{ayah}"
                     "?words=true&word_fields=text_uthmani,translation&language={lang}")
@@ -113,9 +122,10 @@ class Fetcher:
 
     # ---- provider interface (called by DataStore) ----
     def fetch_surah(self, surah, edition) -> dict:
-        log.info("Downloading surah %s (%s)...", surah, edition)
-        data = self._get(SURAH_URL.format(surah=surah, edition=edition)).json()["data"]
-        self.store.save_surah(surah, edition, data)
+        remote = TEXT_EDITION_ALIAS.get(edition, edition)
+        log.info("Downloading surah %s (%s)...", surah, remote)
+        data = self._get(SURAH_URL.format(surah=surah, edition=remote)).json()["data"]
+        self.store.save_surah(surah, edition, data)  # saved under the reciter's own id
         return data
 
     def fetch_audio(self, surah, ayah, reciter, ayah_data) -> str:

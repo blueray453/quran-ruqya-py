@@ -60,6 +60,8 @@ RECITERS: dict = CFG.get(
         "ar.saoodshuraym": "Shuraym",
         "ar.alafasy": "Mishari Rashid",
         "ar.ghamdi": "Saad al-Ghamdi",
+        "ar.husary": "Mahmoud Khalil Al-Husary (Murattal)",
+        "ar.husarymuallim": "Mahmoud Khalil Al-Husary (Muallim)",
     })
 DEFAULT_RECITER = CFG.get("default_reciter", next(iter(RECITERS)))
 
