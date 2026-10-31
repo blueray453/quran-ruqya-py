@@ -85,6 +85,15 @@ bundle-one: dev  ## Bundle a specific playlist: make bundle-one PL=path/to/foo.r
 	@[ -n "$(PL)" ] || { echo "PL=path/to/foo.ruqya required"; exit 1; }
 	$(PY) tools/fetch_qul.py --src $(RAW_DIR) --playlist $(PL)
 
+bundle-sudais: dev  ## Bundle ONLY Sudais (for testing; removes other reciters first)
+	$(PY) tools/fetch_qul.py --src $(RAW_DIR) --playlist $(EXAMPLE) \
+	  --only-reciter ar.abdurrahmaansudais --prune-others
+
+bundle-reciter: dev  ## Bundle one reciter: make bundle-reciter R=ar.alafasy
+	@[ -n "$(R)" ] || { echo "R=reciter_id required"; exit 1; }
+	$(PY) tools/fetch_qul.py --src $(RAW_DIR) --playlist $(EXAMPLE) --only-reciter $(R)
+
+
 bundle-clean:  ## Delete example playlist's data (asks first; frees ~2.5 GB)
 	@read -p "Delete $(EX_DATA)/? [y/N] " a; \
 	  [ "$$a" = y ] && rm -rf $(EX_DATA) && echo removed || echo aborted

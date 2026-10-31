@@ -49,6 +49,7 @@ DEFAULTS = {
         "ar.ghamdi": "Saad al-Ghamdi",
         "ar.husary": "Mahmoud Khalil Al-Husary (Murattal)",
         "ar.husarymuallim": "Mahmoud Khalil Al-Husary (Muallim)",
+        "ar.saoodshuraym": "Shuraym",
     },
     "default_reciter": "ar.abdurrahmaansudais",
     "translations": {
