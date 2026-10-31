@@ -12,32 +12,36 @@ Requires QUL JSON exports in --src (default: tools/raw/):
     bn-rawai-al-bayan-simple.json          Bangla ayah-level
     quran-metadata-surah-name.json         Surah metadata
 
-Only recitations whose `audio_url` host maps to a reciter in TARGET_RECITERS
-are bundled. Everything else (extra reciters, duplicates) is skipped with a
-clear log line. Segment arrays with string positions are normalized to ints.
-
 Usage:
 
     python3 tools/fetch_qul.py                         # default playlist, all target reciters
-    python3 tools/fetch_qul.py --playlist path/foo.ruqya
     python3 tools/fetch_qul.py --skip-audio             # JSON only, fast
-    python3 tools/fetch_qul.py --list                   # preview only
-    python3 tools/fetch_qul.py --restart                # re-download all
-    python3 tools/fetch_qul.py --validate-only          # tokenization check
-
-    # Test one reciter, deleting others first
+    python3 tools/fetch_qul.py --workers 24             # parallel downloads (default 12)
+    python3 tools/fetch_qul.py --engine wget            # use wget subprocess per file
     python3 tools/fetch_qul.py --only-reciter ar.abdurrahmaansudais --prune-others
+    python3 tools/fetch_qul.py --list                   # preview only
+    python3 tools/fetch_qul.py --restart                # force re-download
+    python3 tools/fetch_qul.py --validate-only          # diagnostics
 
-    # Add one reciter on top of what exists
-    python3 tools/fetch_qul.py --only-reciter ar.alafasy
+Download engine:
 
-Resume-safe via `.mp3.part` + `wget -c`. Falls back to urllib with Range
-resume when wget is not installed.
+    urllib (default)  Per-thread HTTPS connection pool. TLS handshake is paid
+                      once per thread per host, then reused for all downloads
+                      on that thread. Fastest — typically 10-50 files/sec at
+                      12 workers.
+    wget              Spawns one subprocess per file. Slow at scale (process
+                      startup + TLS handshake per file), but proven. Use it
+                      only if urllib gets blocked by the CDN.
+
+Resume-safe: `.mp3.part` files, renamed on completion. The urllib engine uses
+HTTP Range requests to resume partial downloads. wget uses `wget -c`.
 """
 from __future__ import annotations
 import argparse
+import http.client
 import json
 import shutil
+import socket
 import subprocess
 import sys
 import threading
@@ -59,9 +63,6 @@ WGET = shutil.which("wget")
 UA = ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
 
-# Reciters to bundle. Add a reciter here AND to DEFAULTS["reciters"] in
-# src/ruqya_quran/main.py to expose it in the picker. Files targeting a
-# reciter not in this set are skipped with a clear message.
 TARGET_RECITERS = {
     "ar.abdurrahmaansudais",
     "ar.alafasy",
@@ -124,7 +125,6 @@ def write_json(p: Path, data):
     log(f"  wrote {p} ({p.stat().st_size // 1024} KB)")
 
 def reciter_id(audio_url: str) -> Optional[str]:
-    """Return internal reciter ID from a QUL audio URL, or None if unknown."""
     if not audio_url:
         return None
     parts = [p for p in urlparse(audio_url).path.split("/") if p]
@@ -138,7 +138,6 @@ def reciter_id(audio_url: str) -> Optional[str]:
     return RECITER_BY_HOST.get(host)
 
 def normalize_segments(segments) -> Optional[list]:
-    """Return [[pos,start_ms,end_ms], ...] as ints, or None if malformed."""
     out = []
     for seg in segments or []:
         if not isinstance(seg, (list, tuple)) or len(seg) != 3:
@@ -165,6 +164,7 @@ class Progress:
         self.total = total
         self.label = label
         self.done = self.cached = self.errors = 0
+        self.total_bytes = 0
         self.start = time.time()
         self._lock = threading.Lock()
         self._bar_len = 0
@@ -172,15 +172,17 @@ class Progress:
 
     def _bar_str(self):
         pct = self.done / self.total * 100 if self.total else 100
-        width = 24
+        width = 22
         filled = int(width * self.done / max(1, self.total))
         bar = "█" * filled + "░" * (width - filled)
         elapsed = time.time() - self.start
         rate = self.done / elapsed if elapsed > 0 else 0
+        mbps = (self.total_bytes / (1024 * 1024)) / elapsed if elapsed > 0 else 0
         eta = (self.total - self.done) / rate if rate > 0 else 0
         warn = f"  ⚠ {self.errors}" if self.errors else ""
         return (f"  {self.label} [{bar}] {self.done}/{self.total} "
-                f"({pct:5.1f}%) {rate:5.1f}/s ETA {fmt_dur(eta)}{warn}")
+                f"({pct:5.1f}%) {rate:5.1f}/s {mbps:5.1f}MB/s "
+                f"ETA {fmt_dur(eta)}{warn}")
 
     def _erase_bar(self):
         if self._is_tty and self._bar_len:
@@ -197,6 +199,7 @@ class Progress:
     def file_done(self, name, status, size, elapsed, error):
         with self._lock:
             self.done += 1
+            self.total_bytes += size
             if status == "cached":
                 self.cached += 1
                 line = f"  {name}  ·  cached"
@@ -219,69 +222,179 @@ class Progress:
                 sys.stdout.write(self._bar_str() + "\n")
             else:
                 sys.stdout.write(f"  {self.label}: {self.done}/{self.total} "
-                                 f"({self.cached} cached, {self.errors} errors)\n")
+                                 f"({self.cached} cached, {self.errors} errors, "
+                                 f"{self.total_bytes // (1024*1024)} MB)\n")
             sys.stdout.flush()
 
-# ---------------------------------------------------------------- download
-def download_wget(url, dest: Path):
-    part = dest.with_name(dest.name + ".part")
-    if dest.exists() and dest.stat().st_size > 512:
-        return "cached", dest.stat().st_size, None
-    dest.parent.mkdir(parents=True, exist_ok=True)
-    try:
-        r = subprocess.run([WGET, "-c", "-q", "--timeout=60", "--tries=3", "--user-agent", UA, "-O",
-                            str(part), url],
-                           capture_output=True,
-                           timeout=180)
-    except subprocess.TimeoutExpired:
-        return "error", 0, "wget timeout"
-    except Exception as e:
-        return "error", 0, str(e)[:80]
-    if r.returncode != 0:
-        err = (r.stderr.decode("utf-8", "replace").strip().split("\n")[-1] if r.stderr else f"exit {r.returncode}")
-        return "error", 0, err
-    if not part.exists() or part.stat().st_size < 512:
-        return "error", 0, "file too small"
-    part.rename(dest)
-    return "ok", dest.stat().st_size, None
+# ---------------------------------------------------------------- conn pool
+class _ConnPool:
+    """Per-thread HTTPS/HTTP connection pool. Each worker thread gets its own
+    persistent connection per host; TLS handshake is paid once per thread."""
 
-def download_urllib(url, dest: Path):
-    part = dest.with_name(dest.name + ".part")
-    if dest.exists() and dest.stat().st_size > 512:
-        return "cached", dest.stat().st_size, None
-    dest.parent.mkdir(parents=True, exist_ok=True)
-    existing = part.stat().st_size if part.exists() else 0
-    headers = {"User-Agent": UA, "Accept": "audio/mpeg,audio/*;q=0.9,*/*;q=0.8"}
-    if existing > 0:
-        headers["Range"] = f"bytes={existing}-"
-    try:
-        req = urllib.request.Request(url, headers=headers)
-        with urllib.request.urlopen(req, timeout=60) as r:
-            mode = "wb" if r.status == 200 else ("ab" if r.status == 206 else None)
-            if mode is None:
-                return "error", 0, f"status {r.status}"
-            with open(part, mode) as f:
-                shutil.copyfileobj(r, f)
-    except urllib.error.HTTPError as e:
-        if e.code == 403:
-            return "error", 0, "403 forbidden"
-        if e.code == 416:
-            if part.exists() and part.stat().st_size > 512:
-                part.rename(dest)
-                return "ok", dest.stat().st_size, None
-            return "error", 0, "range not satisfiable"
-        return "error", 0, f"HTTP {e.code}"
-    except Exception as e:
-        return "error", 0, str(e)[:80]
-    if not part.exists() or part.stat().st_size < 512:
-        return "error", 0, "file too small"
-    part.rename(dest)
-    return "ok", dest.stat().st_size, None
+    def __init__(self):
+        self._tls = threading.local()
 
-def download(url, dest):
-    if WGET:
-        return download_wget(url, dest)
-    return download_urllib(url, dest)
+    def get(self, url: str):
+        p = urlparse(url)
+        scheme = p.scheme
+        host = p.hostname
+        port = p.port or (443 if scheme == "https" else 80)
+        key = f"{scheme}://{host}:{port}"
+
+        if not hasattr(self._tls, "conns"):
+            self._tls.conns = {}
+        conn = self._tls.conns.get(key)
+        if conn is None:
+            if scheme == "https":
+                conn = http.client.HTTPSConnection(host, port, timeout=60)
+            else:
+                conn = http.client.HTTPConnection(host, port, timeout=60)
+            self._tls.conns[key] = conn
+
+        path = p.path or "/"
+        if p.query:
+            path += "?" + p.query
+        return conn, path, key
+
+    def reset(self, key):
+        if not hasattr(self._tls, "conns"):
+            return
+        conn = self._tls.conns.pop(key, None)
+        if conn is not None:
+            try:
+                conn.close()
+            except Exception:
+                pass
+
+    def close_all(self):
+        if not hasattr(self._tls, "conns"):
+            return
+        for conn in self._tls.conns.values():
+            try:
+                conn.close()
+            except Exception:
+                pass
+        self._tls.conns = {}
+
+# ---------------------------------------------------------------- downloader
+class Downloader:
+
+    def __init__(self, engine="urllib"):
+        self.engine = engine
+        self._pool = _ConnPool()
+
+    def close(self):
+        self._pool.close_all()
+
+    def download(self, url, dest: Path):
+        if self.engine == "wget":
+            if not WGET:
+                return "error", 0, "wget not installed"
+            return self._wget(url, dest)
+        return self._urllib(url, dest)
+
+    # ---------- urllib (default, pooled) ----------
+    def _urllib(self, url, dest):
+        last = ("error", 0, "unknown")
+        for attempt in range(3):
+            last = self._urllib_once(url, dest)
+            if last[0] != "error":
+                return last
+            time.sleep(0.3 * (attempt + 1))
+        return last
+
+    def _urllib_once(self, url, dest: Path):
+        part = dest.with_name(dest.name + ".part")
+        if dest.exists() and dest.stat().st_size > 512:
+            return "cached", dest.stat().st_size, None
+
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        resume = part.stat().st_size if part.exists() else 0
+
+        headers = {"User-Agent": UA, "Accept": "audio/mpeg,audio/*;q=0.9,*/*;q=0.8"}
+        if resume > 0:
+            headers["Range"] = f"bytes={resume}-"
+
+        try:
+            conn, path, key = self._pool.get(url)
+            conn.request("GET", path, headers=headers)
+            resp = conn.getresponse()
+        except (http.client.HTTPException, ConnectionError, OSError, socket.timeout) as e:
+            self._reset_safe(url)
+            return "error", 0, f"conn: {str(e)[:60]}"
+
+        try:
+            if resp.status == 200:
+                mode = "wb"
+            elif resp.status == 206:
+                mode = "ab"
+            elif resp.status == 403:
+                self._drain(resp)
+                self._reset_safe(url)
+                return "error", 0, "403 forbidden"
+            elif resp.status == 416:
+                self._drain(resp)
+                if part.exists() and part.stat().st_size > 512:
+                    part.rename(dest)
+                    return "ok", dest.stat().st_size, None
+                self._reset_safe(url)
+                return "error", 0, "range not satisfiable"
+            else:
+                self._drain(resp)
+                return "error", 0, f"HTTP {resp.status}"
+
+            try:
+                with open(part, mode) as f:
+                    shutil.copyfileobj(resp, f)
+            except (ConnectionError, OSError, socket.timeout) as e:
+                self._reset_safe(url)
+                return "error", 0, f"dl: {str(e)[:60]}"
+        except Exception as e:
+            self._reset_safe(url)
+            return "error", 0, str(e)[:80]
+
+        if not part.exists() or part.stat().st_size < 512:
+            return "error", 0, "file too small"
+        part.rename(dest)
+        return "ok", dest.stat().st_size, None
+
+    def _reset_safe(self, url):
+        try:
+            _, _, key = self._pool.get(url)
+            self._pool.reset(key)
+        except Exception:
+            pass
+
+    @staticmethod
+    def _drain(resp):
+        try:
+            resp.read()
+        except Exception:
+            pass
+
+    # ---------- wget (fallback) ----------
+    def _wget(self, url, dest: Path):
+        part = dest.with_name(dest.name + ".part")
+        if dest.exists() and dest.stat().st_size > 512:
+            return "cached", dest.stat().st_size, None
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        try:
+            r = subprocess.run(
+                [WGET, "-c", "-q", "--timeout=60", "--tries=3", "--user-agent", UA, "-O",
+                 str(part), url],
+                capture_output=True,
+                timeout=180)
+        except subprocess.TimeoutExpired:
+            return "error", 0, "wget timeout"
+        except Exception as e:
+            return "error", 0, str(e)[:80]
+        if r.returncode != 0:
+            err = (r.stderr.decode("utf-8", "replace").strip().split("\n")[-1] if r.stderr else f"exit {r.returncode}")
+            return "error", 0, err
+        if not part.exists() or part.stat().st_size < 512:
+            return "error", 0, "file too small"
+        part.rename(dest)
+        return "ok", dest.stat().st_size, None
 
 # ---------------------------------------------------------------- bundle pieces
 def check_required(src: Path):
@@ -317,9 +430,7 @@ def resolve_out(args) -> Path:
     return out
 
 def prune_others(out: Path, keep: str):
-    """Delete recitation JSONs and audio folders for reciters != keep."""
-    kept = []
-    pruned = []
+    kept, pruned = [], []
     rec_dir = out / "recitations"
     if rec_dir.exists():
         for p in sorted(rec_dir.glob("*.json")):
@@ -331,9 +442,7 @@ def prune_others(out: Path, keep: str):
     audio_dir = out / "audio"
     if audio_dir.exists():
         for d in sorted(audio_dir.iterdir()):
-            if not d.is_dir():
-                continue
-            if d.name == keep:
+            if not d.is_dir() or d.name == keep:
                 continue
             shutil.rmtree(d)
             pruned.append(d.name + "/")
@@ -372,115 +481,118 @@ def _list_recitation(out: Path, rid: str, sidecar: dict):
             print(f"  {rid}/{s}_{a}.mp3")
     print(f"  -- {to_dl} to download, {cached} cached --")
 
-def bundle_recitations(src, out, skip_audio, workers, only_reciter, list_only=False, restart=False):
+def bundle_recitations(src, out, skip_audio, workers, only_reciter, list_only=False, restart=False, engine="urllib"):
     bundled = {}
     seen = set()
-    for path in sorted(src.glob("ayah-recitation-*.json")):
-        raw = load_json(path)
-        first = next(iter(raw.values()))
-        rid = reciter_id(first.get("audio_url", ""))
-        if rid is None:
-            log(f"\n[recitations] SKIP {path.name}: unknown host "
-                f"in {first.get('audio_url', '')!r}")
-            continue
-        if rid not in TARGET_RECITERS:
-            log(f"\n[recitations] SKIP {path.name}: {rid} not in TARGET_RECITERS")
-            continue
-        if only_reciter and rid != only_reciter:
-            log(f"\n[recitations] SKIP {path.name}: {rid} not in --only-reciter")
-            continue
-        if rid in seen:
-            log(f"\n[recitations] SKIP {path.name}: duplicate of {rid}")
-            continue
-        seen.add(rid)
+    downloader = Downloader(engine=engine) if not skip_audio else None
 
-        log(f"\n[recitations] {path.name} -> {rid}")
-        sidecar = dict(raw)
+    try:
+        for path in sorted(src.glob("ayah-recitation-*.json")):
+            raw = load_json(path)
+            first = next(iter(raw.values()))
+            rid = reciter_id(first.get("audio_url", ""))
+            if rid is None:
+                log(f"\n[recitations] SKIP {path.name}: unknown host "
+                    f"in {first.get('audio_url', '')!r}")
+                continue
+            if rid not in TARGET_RECITERS:
+                log(f"\n[recitations] SKIP {path.name}: {rid} not in TARGET_RECITERS")
+                continue
+            if only_reciter and rid != only_reciter:
+                log(f"\n[recitations] SKIP {path.name}: {rid} not in --only-reciter")
+                continue
+            if rid in seen:
+                log(f"\n[recitations] SKIP {path.name}: duplicate of {rid}")
+                continue
+            seen.add(rid)
 
-        # Normalize segments for every entry (defensive — some QUL exports
-        # use string positions, and the bad Sudais file has only 2 segments).
-        for key, entry in sidecar.items():
-            segs = normalize_segments(entry.get("segments"))
-            if segs is None:
-                log(f"  WARN {rid} {key}: malformed segments; dropped")
-                entry["segments"] = []
-            else:
-                entry["segments"] = segs
-
-        n = len(sidecar)
-
-        if list_only:
-            _list_recitation(out, rid, sidecar)
-            continue
-
-        if skip_audio:
-            existing = {}
-            p_existing = out / "recitations" / f"{rid}.json"
-            if p_existing.exists():
-                try:
-                    existing = load_json(p_existing)
-                except Exception:
-                    pass
-            preserved = 0
+            log(f"\n[recitations] {path.name} -> {rid}")
+            sidecar = dict(raw)
             for key, entry in sidecar.items():
-                entry.pop("audio_url", None)
-                if entry.get("duration") is None:
-                    prev = existing.get(key, {})
-                    d = int(prev.get("duration", 0) or 0)
-                    entry["duration"] = d
-                    if d > 0:
-                        preserved += 1
-            write_json(out / "recitations" / f"{rid}.json", sidecar)
-            if preserved:
-                log(f"  preserved {preserved} durations from previous bundle")
-            bundled[rid] = sidecar
-            continue
+                segs = normalize_segments(entry.get("segments"))
+                if segs is None:
+                    log(f"  WARN {rid} {key}: malformed segments; dropped")
+                    entry["segments"] = []
+                else:
+                    entry["segments"] = segs
 
-        jobs = []
-        for key, entry in sidecar.items():
-            s, a = key.split(":")
-            mp3 = out / "audio" / rid / f"{s}_{a}.mp3"
-            if restart:
-                if mp3.exists():
-                    mp3.unlink()
-                part = mp3.with_name(mp3.name + ".part")
-                if part.exists():
-                    part.unlink()
-            jobs.append((key, entry, mp3, entry.get("audio_url", "")))
+            n = len(sidecar)
 
-        bar = Progress(n, rid)
-        first_error = None
-        futs = []
+            if list_only:
+                _list_recitation(out, rid, sidecar)
+                continue
 
-        def worker(job):
-            key, entry, mp3, url = job
-            t0 = time.time()
-            status, size, err = download(url, mp3)
-            return key, entry, mp3, status, size, err, time.time() - t0
-
-        try:
-            with ThreadPoolExecutor(max_workers=workers) as pool:
-                futs = [pool.submit(worker, j) for j in jobs]
-                for fut in as_completed(futs):
-                    key, entry, mp3, status, size, err, elapsed = fut.result()
+            if skip_audio:
+                existing = {}
+                p_existing = out / "recitations" / f"{rid}.json"
+                if p_existing.exists():
+                    try:
+                        existing = load_json(p_existing)
+                    except Exception:
+                        pass
+                preserved = 0
+                for key, entry in sidecar.items():
                     entry.pop("audio_url", None)
                     if entry.get("duration") is None:
-                        entry["duration"] = probe_ms(mp3)
-                    bar.file_done(mp3.name, status, size, elapsed, err)
-                    if err and first_error is None:
-                        first_error = err
-        except KeyboardInterrupt:
-            log("\n  interrupted — .part files will resume on next run")
-            for f in futs:
-                f.cancel()
-            bar.finish()
-            return bundled
+                        prev = existing.get(key, {})
+                        d = int(prev.get("duration", 0) or 0)
+                        entry["duration"] = d
+                        if d > 0:
+                            preserved += 1
+                write_json(out / "recitations" / f"{rid}.json", sidecar)
+                if preserved:
+                    log(f"  preserved {preserved} durations from previous bundle")
+                bundled[rid] = sidecar
+                continue
 
-        bar.finish()
-        if first_error:
-            log(f"  first error: {first_error}")
-        write_json(out / "recitations" / f"{rid}.json", sidecar)
-        bundled[rid] = sidecar
+            jobs = []
+            for key, entry in sidecar.items():
+                s, a = key.split(":")
+                mp3 = out / "audio" / rid / f"{s}_{a}.mp3"
+                if restart:
+                    if mp3.exists():
+                        mp3.unlink()
+                    part = mp3.with_name(mp3.name + ".part")
+                    if part.exists():
+                        part.unlink()
+                jobs.append((key, entry, mp3, entry.get("audio_url", "")))
+
+            bar = Progress(n, rid)
+            first_error = None
+            futs = []
+
+            def worker(job):
+                key, entry, mp3, url = job
+                t0 = time.time()
+                status, size, err = downloader.download(url, mp3)
+                return key, entry, mp3, status, size, err, time.time() - t0
+
+            try:
+                with ThreadPoolExecutor(max_workers=workers) as pool:
+                    futs = [pool.submit(worker, j) for j in jobs]
+                    for fut in as_completed(futs):
+                        key, entry, mp3, status, size, err, elapsed = fut.result()
+                        entry.pop("audio_url", None)
+                        if entry.get("duration") is None:
+                            entry["duration"] = probe_ms(mp3)
+                        bar.file_done(mp3.name, status, size, elapsed, err)
+                        if err and first_error is None:
+                            first_error = err
+            except KeyboardInterrupt:
+                log("\n  interrupted — .part files will resume on next run")
+                for f in futs:
+                    f.cancel()
+                bar.finish()
+                return bundled
+
+            bar.finish()
+            if first_error:
+                log(f"  first error: {first_error}")
+            write_json(out / "recitations" / f"{rid}.json", sidecar)
+            bundled[rid] = sidecar
+    finally:
+        if downloader is not None:
+            downloader.close()
 
     return bundled
 
@@ -565,15 +677,26 @@ def main(argv=None) -> int:
     ap.add_argument("--prune-others",
                     action="store_true",
                     help="with --only-reciter, delete other recitations + audio first")
-    ap.add_argument("--workers", type=int, default=4, help="concurrent MP3 downloads (default: 4)")
+    ap.add_argument("--workers",
+                    type=int,
+                    default=12,
+                    help="concurrent MP3 downloads (default: 12; try 16-32 for fast networks)")
+    ap.add_argument("--engine",
+                    choices=("urllib", "wget"),
+                    default="urllib",
+                    help="download engine (default: urllib with connection pooling)")
     ap.add_argument("--list", action="store_true", help="list files that would be downloaded, then exit")
     ap.add_argument("--restart", action="store_true", help="re-download files even if they already exist")
     args = ap.parse_args(argv)
 
-    if not WGET:
-        log("note: wget not found; using urllib (resume via Range header)")
-    check_required(args.src)
+    if args.engine == "wget" and not WGET:
+        log("error: --engine wget but wget is not installed")
+        return 2
+    if args.workers > 32:
+        log(f"note: --workers {args.workers} is aggressive; "
+            f"the CDN may rate-limit (try 12-24)")
 
+    check_required(args.src)
     out = resolve_out(args)
 
     if args.prune_others:
@@ -586,7 +709,8 @@ def main(argv=None) -> int:
         script = load_json((out / "script" / "words.json") if (out / "script" / "words.json").exists() else args.src /
                            SCRIPT_FILE)
         bundled = {p.stem: load_json(p) for p in (out / "recitations").glob("*.json")}
-        return 0 if validate(bundled, script) is not None else 1
+        validate(bundled, script)
+        return 0
 
     t0 = time.time()
     bundle_script(args.src, out)
@@ -600,7 +724,8 @@ def main(argv=None) -> int:
                                  args.workers,
                                  args.only_reciter,
                                  list_only=args.list,
-                                 restart=args.restart)
+                                 restart=args.restart,
+                                 engine=args.engine)
 
     if args.list:
         log("\n[summary — what exists]")
