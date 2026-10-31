@@ -1,17 +1,23 @@
 # ---------------------------------------------------------------------------
 # Ruqya Quran — top-level Makefile
 #
+# Each playlist is self-contained: <name>.ruqya + <data_dir>/ next to it.
+# `make bundle` populates the example playlist's data folder.
+#
 #   make help          list all targets
 #   make dev           create .venv and install editable with dev tools
+#   make bundle        build the example playlist's data folder (~2.5 GB)
+#   make bundle-fast   build JSON only (fast; validates tokenization)
+#   make bundle-one    bundle a specific playlist: make bundle-one PL=path.ruqya
 #   make run           run from source (respects .venv)
-#   make data          download all data a playlist needs (uses fetcher.py)
 #   make install       deploy: pipx + menu entry + icon + MIME registration
 #   make uninstall     remove app, menu entry, icon, MIME registration
 #   make deb           build a .deb into dist/
 #
-# Variables (override on the command line, e.g. `make install PREFIX=/usr/local`):
+# Variables (override on the command line):
 #   PREFIX   install prefix, default ~/.local
-#   ARGS     arguments passed to `make run` / `make data`
+#   ARGS     arguments passed to `make run`
+#   PL       playlist path for `make bundle-one`
 # ---------------------------------------------------------------------------
 
 APP       := ruqya-quran
@@ -28,16 +34,17 @@ MIME_ROOT := $(PREFIX)/share/mime
 MIME_DIR  := $(MIME_ROOT)/packages
 CONF_DIR  := $(or $(XDG_CONFIG_HOME),$(HOME)/.config)/$(APP)
 
+RAW_DIR      := tools/raw
 DESKTOP_FILE := data/$(APP).desktop
 ICON_FILE    := data/icons/hicolor/256x256/apps/$(APP).png
 MIME_FILE    := data/$(APP)-playlist.xml
 EXAMPLE      := examples/Ruqya/ruqya.ruqya
+EX_DATA      := examples/Ruqya/data
 
-# Path to the pipx-managed binary; used to fill in Exec= in the .desktop file.
 BIN_DIR := $(shell pipx environment --value PIPX_BIN_DIR 2>/dev/null || echo $(HOME)/.local/bin)
 
 .DEFAULT_GOAL := help
-.PHONY: help dev run run-empty data data-all combined \
+.PHONY: help dev run run-empty bundle bundle-fast bundle-one bundle-clean combined \
         install install-dev desktop mime uninstall purge \
         check fix build clean distclean doctor \
         deb-deps deb-version deb deb-lint deb-install deb-uninstall deb-clean
@@ -58,7 +65,7 @@ $(VENV)/.stamp: pyproject.toml
 
 dev: $(VENV)/.stamp  ## Create .venv and install editable with dev tools
 
-run: dev  ## Run from source. Default: example playlist. Override: make run ARGS=path.ruqya
+run: dev  ## Run from source. Default: example playlist.
 	$(PY) -m $(PKG) $(or $(ARGS),$(EXAMPLE))
 
 run-empty: dev  ## Run from source with no playlist (fresh empty state)
@@ -66,13 +73,23 @@ run-empty: dev  ## Run from source with no playlist (fresh empty state)
 	  QSettings('ruqya-quran','ruqya-quran').remove('ui/lastPlaylist')"
 	$(PY) -m $(PKG) $(ARGS)
 
-data: dev  ## Download missing data for playlists: make data ARGS="a.ruqya b.ruqya"
-	$(PY) -m $(PKG).fetcher $(or $(ARGS),$(EXAMPLE))
+bundle: dev  ## Build example playlist's data (downloads MP3s once; ~2.5 GB)
+	@[ -d $(RAW_DIR) ] || { echo "$(RAW_DIR)/ missing — drop QUL JSONs there first"; exit 1; }
+	$(PY) tools/fetch_qul.py --src $(RAW_DIR) --playlist $(EXAMPLE)
 
-data-all: dev  ## Download data for every .ruqya in the example folder
-	$(PY) -m $(PKG).fetcher $(wildcard $(dir $(EXAMPLE))*.ruqya)
+bundle-fast: dev  ## Build JSON only for example playlist (fast, validates)
+	@[ -d $(RAW_DIR) ] || { echo "$(RAW_DIR)/ missing — drop QUL JSONs there first"; exit 1; }
+	$(PY) tools/fetch_qul.py --src $(RAW_DIR) --playlist $(EXAMPLE) --skip-audio
 
-combined:  ## Build combined.txt from tracked source (LLM context, git-aware)
+bundle-one: dev  ## Bundle a specific playlist: make bundle-one PL=path/to/foo.ruqya
+	@[ -n "$(PL)" ] || { echo "PL=path/to/foo.ruqya required"; exit 1; }
+	$(PY) tools/fetch_qul.py --src $(RAW_DIR) --playlist $(PL)
+
+bundle-clean:  ## Delete example playlist's data (asks first; frees ~2.5 GB)
+	@read -p "Delete $(EX_DATA)/? [y/N] " a; \
+	  [ "$$a" = y ] && rm -rf $(EX_DATA) && echo removed || echo aborted
+
+combined:  ## Build combined.txt for LLM context
 	@python3 tools/combine.py combined.txt
 
 # ---------------------------------------------------------------------------
@@ -85,6 +102,9 @@ install:  ## Deploy: pipx + menu entry + icon + MIME registration
 	@echo
 	@echo "Installed. Launch with '$(APP)' or from the application menu."
 	@echo "Open a playlist with:  $(APP) $(EXAMPLE)"
+	@echo
+	@echo "Note: each playlist needs its own <data_dir>/ populated by"
+	@echo "      tools/fetch_qul.py --playlist <name>.ruqya."
 
 install-dev:  ## Same as install, but editable (code changes apply live)
 	pipx install --force --editable .
@@ -113,7 +133,7 @@ uninstall:  ## Remove pipx app, menu entry, icon, MIME registration
 	-gtk-update-icon-cache -f -t $(PREFIX)/share/icons/hicolor
 	-update-mime-database $(MIME_ROOT)
 	@echo "Config ($(CONF_DIR)) kept. 'make purge' removes it."
-	@echo "Note: the ~/.config/mimeapps.list entry is left behind (harmless)."
+	@echo "Playlist data folders (e.g. $(EX_DATA)/) are never touched."
 
 purge:  ## Delete user config (asks first). Playlists are never touched.
 	@read -p "Delete $(CONF_DIR)? [y/N] " a; \
@@ -140,6 +160,7 @@ deb:  ## Build the .deb into dist/
 	@[ -n "$(VERSION)" ] || { echo "could not read version"; exit 1; }
 	@head -1 debian/changelog | grep -q "($(VERSION))" || \
 	  { echo "debian/changelog is not at $(VERSION). Run: make deb-version"; exit 1; }
+	@echo "Note: .deb ships the app only. Playlist data folders are per-playlist."
 	chmod +x debian/rules
 	dpkg-buildpackage -us -uc -b
 	mkdir -p dist
@@ -175,12 +196,12 @@ fix: dev  ## Auto-fix lint problems where safe
 build: dev  ## Build sdist + wheel into dist/ (for pip users)
 	$(PY) -m build
 
-clean: deb-clean  ## Remove build artifacts
+clean: deb-clean  ## Remove build artifacts (does NOT delete playlist data)
 	rm -rf build dist src/*.egg-info
 	find . -name __pycache__ -prune -exec rm -rf {} +
 	rm -f combined.txt
 
-distclean: clean  ## clean + remove .venv
+distclean: clean  ## clean + remove .venv (does NOT delete playlist data)
 	rm -rf $(VENV)
 
 # ---------------------------------------------------------------------------
@@ -189,7 +210,7 @@ distclean: clean  ## clean + remove .venv
 
 doctor:  ## Check system prerequisites
 	@echo "--- tools ---"
-	@for c in python3 pipx desktop-file-validate xdg-mime update-mime-database; do \
+	@for c in python3 pipx wget desktop-file-validate xdg-mime update-mime-database; do \
 	  command -v $$c >/dev/null && echo "ok      $$c" || echo "MISSING $$c"; done
 	@for c in dpkg-buildpackage dch lintian; do \
 	  command -v $$c >/dev/null && echo "ok      $$c (deb)" || echo "MISSING $$c (only needed for make deb)"; done
@@ -202,10 +223,20 @@ doctor:  ## Check system prerequisites
 	@[ -f $(ICON_FILE) ]    && echo "ok      $(ICON_FILE)"    || echo "MISSING $(ICON_FILE)"
 	@[ -f $(MIME_FILE) ]    && echo "ok      $(MIME_FILE)"    || echo "MISSING $(MIME_FILE)"
 	@[ -f $(EXAMPLE) ]      && echo "ok      example playlist" || echo "MISSING $(EXAMPLE)"
-	@[ -f tools/combine.py ] && echo "ok      tools/combine.py" || echo "MISSING tools/combine.py"
-	@echo "--- source modules ---"
-	@for m in config playlist store fetcher main; do \
-	  [ -f src/$(PKG)/$$m.py ] && echo "ok      $$m.py" || echo "MISSING $$m.py"; done
+	@[ -f tools/combine.py ]  && echo "ok      tools/combine.py" || echo "MISSING tools/combine.py"
+	@[ -f tools/fetch_qul.py ] && echo "ok      tools/fetch_qul.py" || echo "MISSING tools/fetch_qul.py"
+	@echo "--- source files ---"
+	@[ -f src/$(PKG)/main.py ] && echo "ok      main.py" || echo "MISSING main.py"
+	@[ -f src/$(PKG)/Main.qml ] && echo "ok      Main.qml" || echo "MISSING Main.qml"
+	@[ -f src/$(PKG)/__init__.py ] && echo "ok      __init__.py" || echo "MISSING __init__.py"
+	@[ -f src/$(PKG)/__main__.py ] && echo "ok      __main__.py" || echo "MISSING __main__.py"
+	@echo "--- example playlist data ---"
+	@[ -f $(EX_DATA)/VERSION ] && echo "ok      $(EX_DATA)" || echo "MISSING $(EX_DATA) (run 'make bundle-fast' then 'make bundle')"
+	@n=$$(ls $(EX_DATA)/recitations/*.json 2>/dev/null | wc -l); \
+	  [ "$$n" -gt 0 ] && echo "ok      recitations: $$n" || echo "MISSING recitations"
+	@if [ -d $(EX_DATA)/audio ]; then \
+	  du -sh $(EX_DATA)/audio | sed 's/^/ok      audio: /'; \
+	else echo "MISSING audio (run 'make bundle')"; fi
 	@echo "--- version ---"
 	@echo "version: $(VERSION)"
 	@echo "pipx bin dir: $(BIN_DIR)"

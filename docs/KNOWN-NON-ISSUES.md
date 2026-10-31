@@ -1,22 +1,27 @@
 # Known non-issues
 
-> **To LLM reviewers reading this dump:** the items below look like bugs
-> from the source alone, but they are intentional. Do not raise them in
-> review. Add new entries here as new false positives get confirmed.
+> **To LLM reviewers:** these look like bugs from the source alone but are intentional.
 
 ---
 
-## Bismillah before Surah 9
+## Surah 9 has no Bismillah prelude
 
-`src/ruqya_quran/playlist.py::needs_bismillah()` returns `surah != 1`,
-so a Bismillah preamble plays before every surah except Al-Fatiha —
-including Surah 9 (At-Tawbah). This is intentional.
+`needs_bismillah(surah)` returns `surah not in (1, 9)`.
 
-Do not change `needs_bismillah` to exclude 9. The `"lead_bismillah"`
-flag on each `QueueItem` is meant to reflect the reciter's actual audio
-file (the 9:51 tracks include the Bismillah preamble), and the general
-rule `surah != 1` is deliberate.
+- Surah 1 already begins with the Bismillah as ayah 1, so playing a prelude would double-play it.
+- Surah 9 (At-Tawbah) has no Bismillah by tradition.
+- QUL audio never embeds a Bismillah in the first-ayah file, so the prelude is the sole source for other surahs.
 
-If a future playlist ever needs different behavior, add a per-item
-override (e.g. `"lead_bismillah": false`) rather than changing the
-default.
+Do not revert to `surah != 1`.
+
+---
+
+## Bismillah prelude uses the reciter's 1:1 audio
+
+`PlaylistLoader` loads `(1, 1)` as the prelude. It is not a special file — it is the reciter's own Fatiha ayah 1, which is the Bismillah. Playing it before a section naturally matches the reciter's voice.
+
+---
+
+## Custom items have no word-level timing
+
+`clips/*.mp3` items have no segments or script. Underline, hover tooltips, and word marks are unavailable for them. Playback, repeat, and A-B loop still work at the clip level. This is intentional — no reliable external timing source exists for user-supplied audio.

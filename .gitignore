@@ -14,8 +14,6 @@ dist/
 .ruff_cache/
 
 # ---------- Debian build artifacts ----------
-# (source files under debian/ — control, rules, changelog, copyright,
-#  ruqya-quran.install — stay tracked)
 debian/.debhelper/
 debian/files
 debian/*.substvars
@@ -54,8 +52,14 @@ Thumbs.db
 .env
 .env.local
 
-# ---------- Analysis / migration helpers (not source) ----------
+# ---------- Analysis / migration helpers ----------
 combined.txt
 tree.txt
 tree-*.txt
 migrate.sh
+
+# ---------- QUL raw downloads (fetched by tools/fetch_qul.py) ----------
+tools/raw/
+
+# ---------- Bundled playlist data (regenerate with `make bundle`) ----------
+examples/Ruqya/data/

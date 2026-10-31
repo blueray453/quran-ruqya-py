@@ -13,7 +13,7 @@ Rules-Requires-Root: no
 Package: ruqya-quran
 Architecture: all
 Depends: ${python3:Depends}, ${misc:Depends},
- python3-requests,
+ python3-mutagen,
  python3-pyside6.qtcore,
  python3-pyside6.qtgui,
  python3-pyside6.qtqml,
@@ -32,4 +32,6 @@ Depends: ${python3:Depends}, ${misc:Depends},
  fonts-noto-core
 Description: Quranic Ruqya player
  Plays ayah-by-ayah recitations with Arabic text, translations and
- word-by-word breakdown. Built with PySide6 and Qt Quick.
+ word-by-word breakdown. Playlist audio, word timings, and translations
+ are bundled per-playlist under <playlist>_data/; no network required
+ at runtime. Built with PySide6 and Qt Quick.
