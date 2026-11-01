@@ -57,6 +57,3 @@ combined.txt
 tree.txt
 tree-*.txt
 migrate.sh
-
-# ---------- Bundled playlist data (regenerate with `make bundle`) ----------
-examples/Ruqya/data/
