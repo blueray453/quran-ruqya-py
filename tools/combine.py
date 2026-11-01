@@ -13,11 +13,14 @@ the single source of truth for what's in the project. Then:
      the dump was built before reading what's in it.
   3. Emits a small ASCII tree derived from the filtered list, with
      skipped directories collapsed to a "[N files not shown]" marker.
-  4. Emits docs/KNOWN-NON-ISSUES.md first (so the reader knows what
-     *not* to flag), then README.md, then docs/INSTALL.md, then each
-     remaining file alphabetically, with a `// ===== FILE: path =====`
-     header.
-  5. Prints, to stdout, the total line count of the finished combined.txt
+  4. Emits a DATA INVENTORY section — walk of examples/Ruqya/data/ with
+     file sizes plus one `to_entries[0]` sample per JSON file — so the
+     reader sees the data-folder schema without the bulk.
+  5. Emits docs/KNOWN-NON-ISSUES.md first (so the reader knows what
+     *not* to flag), then docs/DATA-SCHEMA.md (the data contract), then
+     README.md, then docs/INSTALL.md, then each remaining file
+     alphabetically, with a `// ===== FILE: path =====` header.
+  6. Prints, to stdout, the total line count of the finished combined.txt
      and the line count of every emitted source file (i.e. its `wc -l`,
      not its position inside combined.txt).
 
@@ -27,6 +30,7 @@ Usage:
     python3 tools/combine.py combined.txt 100  # skip files > 100 KB
 """
 
+import json
 import subprocess
 import sys
 from pathlib import Path
@@ -40,9 +44,12 @@ SELF_PATH = "tools/combine.py"
 
 # High-signal files that come first after the tree, in this order.
 # KNOWN-NON-ISSUES goes first so an LLM sees "don't flag these" before
-# it reads any source.
+# it reads any source. DATA-SCHEMA comes second — before main.py —
+# so the reader knows what the data folder contains when it reads
+# DataStore._load / words / segments / translation / wbw.
 PRIORITY = [
     "docs/KNOWN-NON-ISSUES.md",
+    "docs/DATA-SCHEMA.md",
     "README.md",
     "docs/INSTALL.md",
 ]
@@ -197,6 +204,118 @@ def render_tree(
     return "\n".join(lines)
 
 # ---------------------------------------------------------------
+# Data inventory (one sample entry per JSON file in the data dir)
+# ---------------------------------------------------------------
+
+def _sample_json(path: Path, max_chars: int = 800) -> str:
+    """Return one representative entry from a JSON file, compacted.
+
+    For dicts: `to_entries[0]` — first key/value pair.
+    For lists: first element.
+    Truncates at `max_chars` so a huge first value doesn't dominate.
+    """
+    try:
+        with open(path, encoding="utf-8") as f:
+            data = json.load(f)
+    except Exception as e:
+        return f"// (unreadable: {e})"
+
+    if isinstance(data, dict) and data:
+        key = next(iter(data))
+        try:
+            dumped = json.dumps({key: data[key]}, ensure_ascii=False)
+        except Exception as e:
+            return f"// (unserializable: {e})"
+        if len(dumped) > max_chars:
+            dumped = dumped[:max_chars] + " …}"
+        return dumped
+
+    if isinstance(data, list) and data:
+        try:
+            dumped = json.dumps([data[0]], ensure_ascii=False)
+        except Exception as e:
+            return f"// (unserializable: {e})"
+        if len(dumped) > max_chars:
+            dumped = dumped[:max_chars] + " …]"
+        return dumped
+
+    try:
+        return json.dumps(data, ensure_ascii=False)[:max_chars]
+    except Exception as e:
+        return f"// (unserializable: {e})"
+
+def _walk_data_dir(data_root: Path) -> tuple[dict, list]:
+    """Return (audio_by_reciter, other_files).
+
+    audio_by_reciter: {reciter: [(path, size), ...]}
+    other_files:      [(rel_path, path, size), ...] — everything except audio/
+    """
+    audio: dict[str, list] = {}
+    other: list = []
+    for p in sorted(data_root.rglob("*")):
+        if not p.is_file():
+            continue
+        rel = p.relative_to(data_root).as_posix()
+        parts = rel.split("/")
+        size = p.stat().st_size
+        if len(parts) >= 2 and parts[0] == "audio":
+            audio.setdefault(parts[1], []).append((p, size))
+        else:
+            other.append((rel, p, size))
+    return audio, other
+
+def _render_data_inventory(data_root: Path, display_name: str) -> list[str]:
+    """Build the DATA INVENTORY lines for combined.txt."""
+    lines: list[str] = []
+
+    if not data_root.exists():
+        lines.append(f"// (data folder not present: {display_name}/)")
+        lines.append("// Fresh checkout — run 'make bundle-fast' for JSON only,")
+        lines.append("// or 'make bundle' for JSON + audio, after populating tools/raw/.")
+        lines.append("// See docs/DATA-SCHEMA.md for the full contract.")
+        return lines
+
+    audio, other = _walk_data_dir(data_root)
+
+    lines.append(f"// {display_name}/")
+    for rel, p, size in other:
+        if p.suffix == ".json" or p.name == "VERSION":
+            lines.append(f"//   {rel}  ({size:,} B)")
+    if audio:
+        lines.append("//   audio/")
+        for rid in sorted(audio):
+            entries = audio[rid]
+            total = sum(sz for _, sz in entries)
+            lines.append(f"//     {rid}/  ({len(entries):,} files, {total:,} B)")
+    lines.append("")
+
+    for rel, p, size in other:
+        if p.suffix != ".json":
+            continue
+        lines.append(f"// --- {rel}  (first entry; {size:,} B total) ---")
+        sample = _sample_json(p)
+        for raw in sample.splitlines():
+            lines.append("// " + raw)
+        lines.append("")
+
+    for rel, p, size in other:
+        if p.name != "VERSION":
+            continue
+        lines.append(f"// --- {rel}  (full) ---")
+        try:
+            content = p.read_text(encoding="utf-8")
+        except Exception as e:
+            lines.append(f"// (unreadable: {e})")
+            lines.append("")
+            break
+        for raw in content.splitlines():
+            lines.append("// " + raw)
+        lines.append("")
+        break
+
+    return lines
+
+# ---------------------------------------------------------------
 # Content ordering
 # ---------------------------------------------------------------
 
@@ -290,6 +409,9 @@ def main() -> None:
         w.write(body)
         w.write("\n")
 
+    data_root = root / "examples/Ruqya/data"
+    data_display = "examples/Ruqya/data"
+
     with open(OUT, "w", encoding="utf-8") as fout:
         w = _LineWriter(fout)
 
@@ -308,10 +430,28 @@ def main() -> None:
         w.write(render_tree(root.name, [r for r, _ in included], skipped_dir_counts))
         w.write("\n\n")
 
-        # 3. Reading-order comment, then the rest.
+        # 3. Data inventory — one sample entry per JSON file so the reader
+        #    sees the schema without the bulk. This is ground truth; if the
+        #    static doc (docs/DATA-SCHEMA.md) disagrees, this wins.
+        w.write("// ===== DATA INVENTORY =====\n")
+        w.write("// The bundled data folder for examples/Ruqya/ruqya.ruqya.\n")
+        w.write("// Excluded from the main tree above (bulk audio); shown here\n")
+        w.write("// as a file tree plus one representative entry per JSON file,\n")
+        w.write("// so you can see the exact schema without downloading 2.5 GB.\n")
+        w.write("// Sample shape is 'to_entries[0]' — first key/value pair —\n")
+        w.write("// truncated to 800 chars. Contract: docs/DATA-SCHEMA.md.\n")
+        for line in _render_data_inventory(data_root, data_display):
+            w.write(line + "\n")
+        w.write("\n")
+
+        # 4. Reading-order comment, then the rest.
         w.write("// ===== READING ORDER =====\n")
         w.write("// docs/KNOWN-NON-ISSUES.md lists behaviors that look wrong\n")
         w.write("// but are intentional — read it before flagging anything.\n")
+        w.write("// docs/DATA-SCHEMA.md is the data folder contract — the schema\n")
+        w.write("// that DataStore in main.py reads. The DATA INVENTORY above is\n")
+        w.write("// ground truth; if the doc and the samples disagree, trust the\n")
+        w.write("// samples (schema has drifted, doc needs updating).\n")
         w.write("// README.md explains what the project is and the playlist format.\n")
         w.write("// docs/INSTALL.md explains deployment, MIME registration, and\n")
         w.write("// troubleshooting. Everything else follows alphabetically.\n\n")
