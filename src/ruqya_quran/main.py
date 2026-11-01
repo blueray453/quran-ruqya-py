@@ -240,7 +240,7 @@ class QueueItem:
     description: str
     group_id: str = ""
     lead_bismillah: bool = False
-    kind: str = "quran"
+    kind: str = "ayah"  # "ayah" for Quran entries; "custom" for clip items
     custom_path: str = ""
     custom_body: str = ""
     custom_translation: str = ""
@@ -327,6 +327,7 @@ def build_queue_from_items(items: list, store) -> list:
                           description=desc,
                           group_id=gid,
                           lead_bismillah=needs_bismillah(surah) and ayah == f_a,
+                          kind="ayah",
                           ayah_repeat=ar,
                           group_repeat=gr))
     return queue
@@ -503,7 +504,6 @@ class PlayerController(QObject):
     wordByWordChanged = Signal()
     wordsChanged = Signal()
     repeatChanged = Signal()
-    initStateChanged = Signal()
     availablePlaylistsChanged = Signal()
     currentPlaylistChanged = Signal()
 
@@ -784,22 +784,6 @@ class PlayerController(QObject):
     def failedCount(self):
         return self._failed
 
-    @Property(bool, constant=True)
-    def initializing(self):
-        return False
-
-    @Property(str, constant=True)
-    def initMessage(self):
-        return ""
-
-    @Property(int, constant=True)
-    def initCurrent(self):
-        return 0
-
-    @Property(int, constant=True)
-    def initTotal(self):
-        return 0
-
     # ---- volume ----
     @Property(float, notify=volumeChanged)
     def volume(self):
@@ -1074,7 +1058,7 @@ class PlayerController(QObject):
         entries = []
         for q in self._queue:
             base = placeholder(q, _DATA)
-            if q.kind == "ayah":
+            if q.kind != "custom":
                 try:
                     loaded = _load_ayah(_DATA, self._reciter, self._translation_edition, q.surah, q.ayah)
                     if loaded is None:
@@ -1088,12 +1072,19 @@ class PlayerController(QObject):
                         loaded.group_repeat = base.group_repeat
                         base = loaded
                 except Exception as e:
+                    log.exception("_load_ayah failed for %d:%d", q.surah, q.ayah)
                     base = replace(base, loaded=True, error=str(e))
             entries.append(base)
 
+        n_err = sum(1 for e in entries if e.error)
+        log.info("start(): %d entries, %d errors", len(entries), n_err)
+        for i, e in enumerate(entries):
+            if e.error:
+                log.warning("  item %d %d:%d -> %s", i, e.surah, e.ayah, e.error)
+
         self.model.reset_entries(entries)
         self._loaded = sum(1 for e in entries if e.loaded and not e.error)
-        self._failed = sum(1 for e in entries if e.error)
+        self._failed = n_err
         self._total = len(entries)
         self.loadingChanged.emit()
         self._on_load_finished()
@@ -1103,17 +1094,24 @@ class PlayerController(QObject):
         self._restart_loader(keep_position=self._current >= 0)
 
     def _on_load_finished(self):
-        if (self._current < 0 and self._resume_index >= 0 and self.model.is_playable(self._resume_index)):
+        # 1) If we saved a resume position and it's now playable, use it.
+        if (self._resume_index >= 0 and self._resume_index < self.model.rowCount()
+                and self.model.is_playable(self._resume_index)):
             idx = self._resume_index
             self._resume_index = -1
             self.play(idx)
             return
         self._resume_index = -1
+
+        # 2) Otherwise, if nothing is selected yet, pick something —
+        #    playable if possible, else the first row even if it has an
+        #    error, so the reading area shows content immediately.
         if self._current < 0:
-            for i in range(self.model.rowCount()):
-                if self.model.is_playable(i):
-                    self._select(i)
-                    break
+            target = next((i for i in range(self.model.rowCount()) if self.model.is_playable(i)), None)
+            if target is None and self.model.rowCount() > 0:
+                target = 0
+            if target is not None:
+                self._select(target)
 
     def shutdown(self):
         pass
@@ -1164,15 +1162,18 @@ class PlayerController(QObject):
         self._current = index
         self._stage = "main"
         self.currentIndexChanged.emit()
-        self.repeatChanged.emit()
-        self._refresh_display()
-        self._refresh_words()
+        try:
+            self.repeatChanged.emit()
+            self._refresh_display()
+            self._refresh_words()
+        except Exception:
+            log.exception("_select(%d): rendering failed (current index still %d)", index, self._current)
 
     def _refresh_display(self):
         e = self.model.entry(self._current)
         t = ta = sub = ar = tr = ""
-        if e and e.loaded and not e.error:
-            if self._stage == "bismillah" and self._bismillah:
+        if e:
+            if self._stage == "bismillah" and self._bismillah and not self._bismillah.error:
                 t = "Bismillah"
                 sub = f"Before {e.description}"
                 ar = self._bismillah.arabic
@@ -1183,11 +1184,13 @@ class PlayerController(QObject):
                 ar = e.arabic
                 tr = e.translation
             else:
-                t = e.surah_name
+                t = e.surah_name or e.description
                 ta = e.surah_name_ar
                 sub = f"Ayah {e.ayah}"
                 ar = e.arabic
                 tr = e.translation
+            if e.error:
+                sub = (sub + " — " if sub else "") + e.error
         self._title, self._title_ar, self._subtitle = t, ta, sub
         self._arabic, self._translation = ar, tr
         self.contentReset.emit()

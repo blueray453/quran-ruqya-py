@@ -857,21 +857,15 @@ ApplicationWindow {
                 }
             }
 
-            // ---- empty state
+            // ---- empty state (no playlist open, or playlist has zero items)
             ColumnLayout {
                 anchors.centerIn: flick
-                visible: player.currentIndex < 0 && !player.initializing
+                visible: !player.hasPlaylist || player.totalCount === 0
                 spacing: 10
                 Text {
                     Layout.alignment: Qt.AlignHCenter
-                    text: player.hasPlaylist ? "Preparing your playlist…" : "Open a playlist to begin"
+                    text: player.hasPlaylist ? "Playlist is empty" : "Open a playlist to begin"
                     font.pixelSize: 20; color: theme.text
-                }
-                Text {
-                    Layout.alignment: Qt.AlignHCenter
-                    visible: player.hasPlaylist
-                    text: "Missing items download into the playlist's data folder on first use."
-                    font.pixelSize: 14; color: theme.textDim
                 }
                 Pill {
                     Layout.alignment: Qt.AlignHCenter
@@ -1235,132 +1229,25 @@ ApplicationWindow {
 
                 Rectangle {
                     Layout.fillWidth: true
-                    visible: player.loading || player.failedCount > 0
-                    implicitHeight: footCol.implicitHeight + 24
+                    visible: player.failedCount > 0
+                    implicitHeight: 40
                     color: theme.surfaceAlt
 
-                    ColumnLayout {
-                        id: footCol
+                    RowLayout {
                         anchors { left: parent.left; right: parent.right; verticalCenter: parent.verticalCenter
                                   leftMargin: 16; rightMargin: 16 }
-                        spacing: 8
-                        RowLayout {
+                        Text {
                             Layout.fillWidth: true
-                            Text {
-                                Layout.fillWidth: true
-                                font.pixelSize: 12
-                                color: theme.textDim
-                                text: player.loading
-                                      ? "Preparing audio… " + player.loadedCount + " / " + player.totalCount
-                                      : player.failedCount + " item(s) failed to load"
-                            }
-                            Pill {
-                                t: theme
-                                visible: !player.loading && player.failedCount > 0
-                                text: "Retry"
-                                onClicked: player.retry()
-                            }
+                            font.pixelSize: 12
+                            color: theme.danger
+                            text: player.failedCount + " item(s) could not be loaded"
                         }
-                        Rectangle {
-                            Layout.fillWidth: true
-                            visible: player.loading
-                            height: 3; radius: 1.5
-                            color: theme.line
-                            Rectangle {
-                                height: parent.height; radius: 1.5
-                                color: theme.accent
-                                width: player.totalCount > 0 ? parent.width * player.loadedCount / player.totalCount : 0
-                                Behavior on width { NumberAnimation { duration: 150 } }
-                            }
+                        Pill {
+                            t: theme
+                            text: "Retry"
+                            onClicked: player.retry()
                         }
                     }
-                }
-            }
-        }
-
-        // ============ init overlay ============
-        Rectangle {
-            id: initOverlay
-            anchors.fill: parent
-            z: 100
-            color: Qt.alpha(theme.bg, 0.96)
-            visible: player.initializing
-
-            MouseArea { anchors.fill: parent }
-
-            ColumnLayout {
-                anchors.centerIn: parent
-                spacing: 20
-
-                Item {
-                    Layout.alignment: Qt.AlignHCenter
-                    Layout.preferredWidth: 72
-                    Layout.preferredHeight: 72
-
-                    Canvas {
-                        id: spinnerCanvas
-                        anchors.fill: parent
-                        onPaint: {
-                            var ctx = getContext("2d")
-                            ctx.reset(); ctx.clearRect(0, 0, width, height)
-                            var cx = width / 2, cy = height / 2, r = width / 2 - 6
-                            ctx.strokeStyle = theme.line; ctx.lineWidth = 5
-                            ctx.beginPath(); ctx.arc(cx, cy, r, 0, 2 * Math.PI); ctx.stroke()
-                            ctx.strokeStyle = theme.accent; ctx.lineWidth = 5; ctx.lineCap = "round"
-                            ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI / 2); ctx.stroke()
-                        }
-                    }
-                    RotationAnimator on rotation {
-                        from: 0; to: 360; duration: 900
-                        loops: Animation.Infinite
-                        running: player.initializing
-                    }
-                }
-                Text {
-                    Layout.alignment: Qt.AlignHCenter
-                    text: "Preparing " + (player.playlistName || "Ruqya Quran")
-                    font.pixelSize: 20
-                    font.weight: Font.DemiBold
-                    color: theme.text
-                }
-                Text {
-                    Layout.alignment: Qt.AlignHCenter
-                    visible: player.initMessage !== ""
-                    text: player.initMessage
-                    font.pixelSize: 13
-                    color: theme.textDim
-                    elide: Text.ElideRight
-                    Layout.maximumWidth: 420
-                }
-                Rectangle {
-                    Layout.alignment: Qt.AlignHCenter
-                    Layout.preferredWidth: 340
-                    Layout.preferredHeight: 4
-                    radius: 2
-                    color: theme.line
-                    visible: player.initTotal > 0
-                    Rectangle {
-                        width: player.initTotal > 0
-                               ? parent.width * Math.min(1, player.initCurrent / player.initTotal) : 0
-                        height: parent.height; radius: 2; color: theme.accent
-                        Behavior on width { NumberAnimation { duration: 200 } }
-                    }
-                }
-                Text {
-                    Layout.alignment: Qt.AlignHCenter
-                    visible: player.initTotal > 0
-                    text: player.initCurrent + " / " + player.initTotal
-                    font.pixelSize: 12
-                    color: theme.textDim
-                }
-                Text {
-                    Layout.alignment: Qt.AlignHCenter
-                    Layout.topMargin: 12
-                    visible: player.initTotal > 0
-                    text: "Downloads happen once into the playlist's data folder."
-                    font.pixelSize: 11
-                    color: theme.textDim
-                    opacity: 0.6
                 }
             }
         }
