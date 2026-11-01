@@ -1,0 +1,30 @@
+## Category URLs
+
+| File | QUL Category URL | What to look for |
+|---|---|---|
+| `qpc-hafs-word-by-word.json` | `https://qul.tarteel.ai/resources/quran-script` | Open the **QPC Hafs — Word-by-Word** card |
+| `quran-metadata-surah-name.json` | `https://qul.tarteel.ai/resources/quran-metadata` | Open the card titled **Surah names** (the Preview tab will say "Surah names Preview") |
+| `en-sahih-international-simple.json` | `https://qul.tarteel.ai/resources/translation` | Filter to **English**, pick **Saheeh International**, choose the **Ayah-by-Ayah** variant, then the `-simple` shape |
+| `bn-taisirul-quran-simple.json` | `https://qul.tarteel.ai/resources/translation` | Filter to **Bengali**, pick **Taisirul Quran**, **Ayah-by-Ayah**, `-simple` |
+| `bn-rawai-al-bayan-simple.json` | `https://qul.tarteel.ai/resources/translation` | Filter to **Bengali**, pick **Rawai al-Bayan**, **Ayah-by-Ayah**, `-simple` |
+| `english-wbw-translation.json` | `https://qul.tarteel.ai/resources/translation` | Switch to the **Word-by-Word** tab (or filter by "Word by Word"), pick **English Word by Word Translation** |
+| `bangali-word-by-word-translation.json` | `https://qul.tarteel.ai/resources/translation` | Same Word-by-Word tab, pick **Bengali Word by Word Translation** |
+| `ayah-recitation-…-sudais-951.json` | `https://qul.tarteel.ai/resources/recitation` | Find **Abdul Rahman Al-Sudais — Murattal (Hafs)**, open its card |
+| `ayah-recitation-…-alafasy-953.json` | `https://qul.tarteel.ai/resources/recitation` | Find **Mishari Rashid Alafasy — Murattal (Hafs)** |
+| `ayah-recitation-…-ghamdi-954.json` | `https://qul.tarteel.ai/resources/recitation` | Find **Saad Al-Ghamdi — Murattal (Hafs)** |
+| `ayah-recitation-…-husary-955.json` | `https://qul.tarteel.ai/resources/recitation` | Find **Mahmoud Khalil Al-Husary — Muallim** (the one whose `audio_url` host is `husaryMuallim`) |
+| `ayah-recitation-…-husary-957.json` | `https://qul.tarteel.ai/resources/recitation` | Find **Mahmoud Khalil Al-Husary — Murattal** (host `husary`) |
+
+## How to get the JSON download link on any detail page
+
+1. Open the category URL above.
+2. Click the card for the specific resource.
+3. On the detail page, find the **Download** section (or a dropdown next to the resource title).
+4. Choose **JSON** (not SQLite). The button triggers a file download; the browser's download manager will show the actual URL if you right-click → Copy link address.
+5. Save the file into `tools/raw/` with the exact filename from the table above (the script matches by name).
+
+The QUL documentation confirms the pattern: open `https://qul.tarteel.ai/resources/recitation`, pick the card, and download JSON or SQLite. Same for script, translations, and metadata.
+
+## One shortcut for the recitation files
+
+If the browser download URLs are awkward to capture one by one, the recitation JSON is what `fetch_qul.py` uses to derive everything—including the audio CDN URLs. You can capture the recitation JSON once per reciter from the detail page, and the script does the rest (`audio_url` host → internal reciter ID → MP3 download). The five recitation files are the only ones where the exact filename includes the numeric suffix (`951`, `953`, etc.), so verify the filename matches what the script expects; if QUL has updated a resource and the suffix changed, just rename the downloaded file to match the table.
