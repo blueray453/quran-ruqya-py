@@ -67,12 +67,10 @@ SKIP_PREFIXES = (
 
 # Exact relative paths dropped silently — no tree marker, no content.
 SKIP_PATHS = {
+    "tools/fetch_qul.py",
     # Meta: this script's output (the script itself is emitted up top)
     "combined.txt",
-
-    # Full alquran.cloud OpenAPI spec — app uses only 2 endpoints, both
-    # spelled out in main.py. ~1400 lines of mostly-irrelevant API schema.
-    "docs/API.txt",
+    "docs/INSTALL.md",
 
     # Pure reference: keyboard map, config keys, "make your own playlist"
     # walkthrough, folder-layout table. All of it is derivable from
