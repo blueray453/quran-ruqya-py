@@ -13,9 +13,10 @@ the single source of truth for what's in the project. Then:
      the dump was built before reading what's in it.
   3. Emits a small ASCII tree derived from the filtered list, with
      skipped directories collapsed to a "[N files not shown]" marker.
-  4. Emits a DATA INVENTORY section — walk of examples/Ruqya/data/ with
-     file sizes plus one `to_entries[0]` sample per JSON file — so the
-     reader sees the data-folder schema without the bulk.
+  4. Emits a DATA INVENTORY section — walk of the resolved data folder
+     (see `resolve_data_dir`) with file sizes plus one `to_entries[0]`
+     sample per JSON file — so the reader sees the data-folder schema
+     without the bulk.
   5. Emits docs/KNOWN-NON-ISSUES.md first (so the reader knows what
      *not* to flag), then docs/DATA-SCHEMA.md (the data contract), then
      README.md, then docs/INSTALL.md, then each remaining file
@@ -25,12 +26,15 @@ the single source of truth for what's in the project. Then:
      not its position inside combined.txt).
 
 Usage:
-    python3 tools/combine.py                 # → combined.txt
-    python3 tools/combine.py out.txt         # custom name
-    python3 tools/combine.py combined.txt 100  # skip files > 100 KB
+    python3 tools/combine.py                                       # → combined.txt
+    python3 tools/combine.py out.txt                               # custom name
+    python3 tools/combine.py combined.txt 100                      # skip files > 100 KB
+    python3 tools/combine.py combined.txt 500 /path/to/data        # explicit data dir
+    RUQYA_DATA_ROOT=/path/to/Ruqya python3 tools/combine.py        # env override
 """
 
 import json
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -57,7 +61,8 @@ PRIORITY = [
 # Directories whose contents are tracked in git but not useful as LLM
 # context. Collapsed to a marker in the tree.
 SKIP_PREFIXES = (
-    "examples/Ruqya/data/",  # bulk audio, text, words, clips
+    "tools/raw/",  # QUL JSON source files for bundle; mirrored at <data>/
+    "examples/Ruqya/data/",  # legacy in-repo bundle target (if present)
 )
 
 # Exact relative paths dropped silently — no tree marker, no content.
@@ -110,6 +115,32 @@ BINARY_SUFFIXES = {
     ".dylib",
     ".dll",
 }
+
+# ---------------------------------------------------------------
+# Data-dir resolution
+# ---------------------------------------------------------------
+
+def _as_data_dir(p: Path) -> Path:
+    """If p wraps a bundled data/ subfolder, descend into it."""
+    if p.is_dir() and not (p / "VERSION").exists() and (p / "data" / "VERSION").exists():
+        return p / "data"
+    return p
+
+def resolve_data_dir(root: Path) -> Path:
+    """Find the bundled data folder for the DATA INVENTORY.
+
+    Resolution order (first wins):
+      1. third CLI argument     (python3 combine.py OUT MAX_KB DATADIR)
+      2. RUQYA_DATA_ROOT env    (may point at the wrapper or at data/)
+      3. examples/Ruqya/data inside the repo — may not exist;
+         _render_data_inventory handles the missing case with a notice.
+    """
+    if len(sys.argv) > 3:
+        return _as_data_dir(Path(sys.argv[3]).expanduser())
+    env_root = os.environ.get("RUQYA_DATA_ROOT")
+    if env_root:
+        return _as_data_dir(Path(env_root).expanduser())
+    return root / "examples" / "Ruqya" / "data"
 
 # ---------------------------------------------------------------
 # Repository scan
@@ -270,9 +301,10 @@ def _render_data_inventory(data_root: Path, display_name: str) -> list[str]:
 
     if not data_root.exists():
         lines.append(f"// (data folder not present: {display_name}/)")
-        lines.append("// Fresh checkout — run 'make bundle-fast' for JSON only,")
-        lines.append("// or 'make bundle' for JSON + audio, after populating tools/raw/.")
-        lines.append("// See docs/DATA-SCHEMA.md for the full contract.")
+        lines.append("// Fresh checkout — run 'make init' then 'make bundle-fast'")
+        lines.append("// for JSON only, or 'make bundle' for JSON + audio, after")
+        lines.append("// populating tools/raw/. See docs/DATA-SCHEMA.md for the")
+        lines.append("// full contract.")
         return lines
 
     audio, other = _walk_data_dir(data_root)
@@ -409,8 +441,9 @@ def main() -> None:
         w.write(body)
         w.write("\n")
 
-    data_root = root / "examples/Ruqya/data"
-    data_display = "examples/Ruqya/data"
+    local_data = (root / "examples/Ruqya/data").resolve()
+    data_root = resolve_data_dir(root)
+    data_display = ("examples/Ruqya/data" if data_root.resolve() == local_data else str(data_root))
 
     with open(OUT, "w", encoding="utf-8") as fout:
         w = _LineWriter(fout)
@@ -434,7 +467,7 @@ def main() -> None:
         #    sees the schema without the bulk. This is ground truth; if the
         #    static doc (docs/DATA-SCHEMA.md) disagrees, this wins.
         w.write("// ===== DATA INVENTORY =====\n")
-        w.write("// The bundled data folder for examples/Ruqya/ruqya.ruqya.\n")
+        w.write(f"// The bundled data folder: {data_display}\n")
         w.write("// Excluded from the main tree above (bulk audio); shown here\n")
         w.write("// as a file tree plus one representative entry per JSON file,\n")
         w.write("// so you can see the exact schema without downloading 2.5 GB.\n")

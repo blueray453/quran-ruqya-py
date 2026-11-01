@@ -3,20 +3,30 @@
 This file covers requirements, the full `make install` chain, how the
 `*.ruqya` file association works, verification steps, and every Make
 target. For what the app *is* and how to author a playlist, see
-[`../README.md`](../README.md).
+[`../README.md`](../README.md) and [`DATA-SCHEMA.md`](DATA-SCHEMA.md).
+
+**The data model, in one paragraph.** Every `.ruqya` file is
+self-contained. The `data_dir` field inside it (default `data`) points
+at the folder holding its audio, words, and translations, **resolved
+relative to the `.ruqya` file itself**. The app has no global data path,
+reads no environment variables, and never touches the network at
+runtime. `RUQYA_DATA_ROOT` exists only as a developer convenience for
+the build tools (`make bundle*`, `tools/fetch_qul.py`,
+`tools/combine.py`).
 
 ---
 
 ## Table of contents
 
 1. [Requirements](#requirements)
-2. [Deploy — the short version](#deploy--the-short-version)
-3. [What `make install` actually does](#what-make-install-actually-does)
-4. [Verifying the install](#verifying-the-install)
-5. [How double-click works](#how-double-click-works)
-6. [Full Make command reference](#full-make-command-reference)
-7. [Troubleshooting](#troubleshooting)
-8. [Debian package](#debian-package)
+2. [Where the data lives](#where-the-data-lives)
+3. [Deploy — the short version](#deploy--the-short-version)
+4. [What `make install` actually does](#what-make-install-actually-does)
+5. [Verifying the install](#verifying-the-install)
+6. [How double-click works](#how-double-click-works)
+7. [Full Make command reference](#full-make-command-reference)
+8. [Troubleshooting](#troubleshooting)
+9. [Debian package](#debian-package)
 
 ---
 
@@ -24,23 +34,24 @@ target. For what the app *is* and how to author a playlist, see
 
 ### System packages (Debian / Ubuntu)
 
-| Package | Why |
-|---|---|
-| `python3`, `python3-venv` | Runtime and venv support |
-| `pipx` | Isolated install — the recommended deploy path |
-| `make` | All project commands |
-| `desktop-file-utils` | `desktop-file-validate`, `update-desktop-database` |
-| `shared-mime-info` | `update-mime-database` — registers `*.ruqya` |
-| `xdg-utils` | `xdg-mime` — sets the default handler |
-| `libxml2-utils` | Optional: `xmllint` sanity-checks the MIME XML |
-| `fonts-hosny-amiri` | Arabic text (Amiri Quran) |
-| `fonts-noto-core` | Bengali text (Noto Sans Bengali) |
-| `libxcb-cursor0` | Qt 6 on X11 |
+| Package | Why | Needed for |
+|---|---|---|
+| `python3`, `python3-venv` | Runtime and venv support | runtime |
+| `pipx` | Isolated install — the recommended deploy path | install |
+| `make` | All project commands | dev / install |
+| `desktop-file-utils` | `desktop-file-validate`, `update-desktop-database` | install |
+| `shared-mime-info` | `update-mime-database` — registers `*.ruqya` | install |
+| `xdg-utils` | `xdg-mime` — sets the default handler | install |
+| `libxml2-utils` | Optional: `xmllint` sanity-checks the MIME XML | dev |
+| `fonts-hosny-amiri` | Arabic text (Amiri Quran) | runtime |
+| `fonts-noto-core` | Bengali text (Noto Sans Bengali) | runtime |
+| `libxcb-cursor0` | Qt 6 on X11 | runtime |
+| `wget` | Resume-safe MP3 downloads | bundle (optional; urllib fallback) |
 
 ```bash
 sudo apt install python3 python3-venv make pipx desktop-file-utils \
     shared-mime-info xdg-utils libxml2-utils \
-    fonts-hosny-amiri fonts-noto-core libxcb-cursor0
+    fonts-hosny-amiri fonts-noto-core libxcb-cursor0 wget
 ```
 
 Font paths are read from `~/.config/ruqya-quran/config.json`, which is
@@ -50,11 +61,7 @@ fonts live elsewhere, edit those keys and restart the app.
 
 The same file also holds the reciter and translation lists (`reciters`,
 `translations`), the default selections (`default_reciter`,
-`default_translation`), the preload sets (`preload_reciters`,
-`preload_translations`), the word-by-word language
-(`word_by_word_language`), download tuning (`request_timeout`,
-`max_retries`, `retry_backoff_base`, `source_fail_threshold`,
-`max_workers`), and the custom-item sidebar label
+`default_translation`), and the custom-item sidebar label
 (`custom_playlist_separator_label`). `make purge` deletes it and
 regenerates the packaged defaults on next launch.
 
@@ -65,21 +72,89 @@ Declared in `pyproject.toml`:
 | Package | Version |
 |---|---|
 | PySide6 | ≥ 6.6.0 |
-| requests | ≥ 2.28.0 |
+| mutagen | ≥ 1.47.0 |
 
 Development extras (`build`, `ruff`) are installed by `make dev` — you
 don't need them to deploy.
 
+`mutagen` is used only at bundle time (probe MP3 durations) and at
+runtime for playlist durations when a recitation JSON has no stored
+`duration`. Everything else is stdlib + PySide6.
+
 ### Network
 
-Needed **only** when a playlist's `data/` folder is missing files, for:
+The shipped app is **offline-only at runtime**. It reads audio, text,
+and word timings from the playlist's `data/` folder; it never touches
+the network. The playlist's `offline` field is therefore informational
+today — there is no network path to disable.
+
+Network is needed **only** for `make bundle` / `tools/fetch_qul.py`,
+which downloads from:
 
 - `everyayah.com` — audio (primary)
 - `cdn.islamic.network` — audio (fallback)
 - `api.alquran.cloud` — text and translations
 - `api.quran.com` — word-by-word
 
-A playlist with `"offline": true` never touches the network.
+If you're not building data, you don't need network.
+
+---
+
+## Where the data lives
+
+Every `.ruqya` file is self-contained. The `data_dir` field inside it
+(default `data`) points at its data folder, **resolved relative to the
+`.ruqya` file itself**:
+
+```
+/path/to/Ruqya/
+├── ruqya.ruqya       ← playlist (JSON)
+└── data/             ← everything it plays (see DATA-SCHEMA.md)
+    ├── VERSION
+    ├── audio/
+    ├── meta/
+    ├── recitations/
+    ├── script/
+    ├── translations/
+    └── wbw/
+```
+
+Copy the whole folder to another machine and open the `.ruqya` file —
+same app, same experience, no network. The app carries no default path;
+it opens whichever `.ruqya` you give it.
+
+`data_dir` may be an absolute path if you want to share one large
+`data/` folder across multiple playlists. The runtime handles both.
+
+### For developers
+
+`RUQYA_DATA_ROOT` tells the **build tools** where your dev playlist
+and data live. It's read by:
+
+- the `Makefile` — `init`, `bundle`, `bundle-fast`, `bundle-one`,
+  `bundle-sudais`, `bundle-reciter`, `bundle-clean`, `run`
+- `tools/fetch_qul.py` — when no `--playlist` / `--out` is given
+- `tools/combine.py` — when no explicit CLI arg is given
+
+The shipped application **never** reads it. Set it once in your shell rc
+file:
+
+```bash
+export RUQYA_DATA_ROOT=~/Ruqya
+```
+
+and it's used for all build targets. Every target also accepts an
+explicit override:
+
+```bash
+make bundle RUQYA_DATA_ROOT=/media/ismail/8TBRaid0/_IslamQuranApp
+python3 tools/fetch_qul.py --playlist /media/.../ruqya.ruqya
+python3 tools/combine.py combined.txt 500 /media/.../data
+```
+
+`make run` with `RUQYA_DATA_ROOT` unset starts the app with no
+playlist (empty state, unless `lastPlaylist` history exists). Pass an
+explicit path to override: `make run ARGS=/path/ruqya.ruqya`.
 
 ---
 
@@ -89,8 +164,8 @@ A playlist with `"offline": true` never touches the network.
 git clone <your-repo-url> ruqya-quran
 cd ruqya-quran
 make doctor                       # checks prerequisites
-make install                      # deploy everything (see below)
-ruqya-quran examples/Ruqya/ruqya.ruqya
+make install                      # deploy the app (see below)
+ruqya-quran /path/to/Ruqya/ruqya.ruqya
 ```
 
 After `make install` you have, from every angle:
@@ -102,6 +177,8 @@ After `make install` you have, from every angle:
 
 Re-running `make install` upgrades an existing install without touching
 your config or your playlists.
+
+The playlist path is wherever you keep it. There is no default.
 
 ---
 
@@ -182,8 +259,8 @@ are untouched.
 
 ### What does **not** get touched
 
-- Your playlists — wherever you keep `.ruqya` files, `make install` never
-  reads or writes them
+- Your playlists — wherever you keep `.ruqya` files and their `data/`
+  folders, `make install` never reads or writes them
 - Your config — `~/.config/ruqya-quran/config.json` is only created if
   missing; an existing file is never overwritten, so reciter/translation
   additions shipped in a new release won't appear in your pickers until
@@ -197,7 +274,8 @@ are untouched.
 ## Verifying the install
 
 If `make install` was clean, these five commands prove it end-to-end. Stop
-at the first failure.
+at the first failure. Replace `/path/to/Ruqya` with wherever your own
+playlist lives.
 
 ### 1. Binary exists and runs
 
@@ -232,7 +310,7 @@ The `Exec=` path must match the symlink from step 1. If it doesn't, re-run
 ### 3. MIME type is registered
 
 ```bash
-xdg-mime query filetype examples/Ruqya/ruqya.ruqya
+xdg-mime query filetype /path/to/Ruqya/ruqya.ruqya
 ```
 
 Expected:
@@ -266,7 +344,7 @@ If empty, `xdg-mime default` didn't run — re-run `make mime`.
 ### 5. End-to-end: simulate the double-click
 
 ```bash
-gio open examples/Ruqya/ruqya.ruqya
+gio open /path/to/Ruqya/ruqya.ruqya
 ```
 
 This is exactly what your file manager does on double-click. If the
@@ -314,6 +392,10 @@ a `.ruqya` file, the system walks five links:
    launches: ruqya-quran /path/to/foo.ruqya
 ```
 
+The app resolves `data_dir` relative to that path and reads audio and
+text from beside it. No environment variable is consulted, no global
+default is assumed.
+
 Each link fails in a distinct, testable way:
 
 | Link broken | Symptom | Fix |
@@ -346,14 +428,29 @@ Run `make` or `make help` to list everything from the terminal.
 | Command | What it does |
 |---|---|
 | `make dev` | Creates `.venv` and installs editable with dev tools (`build`, `ruff`) |
-| `make run` | Runs from source inside `.venv`, default to `examples/Ruqya/ruqya.ruqya` |
+| `make run` | Runs from source. Uses `$(RUQYA_DATA_ROOT)/ruqya.ruqya` if the env var is set, else no-arg (last-played / empty state) |
 | `make run-empty` | Same, but clears the last-playlist memory first |
-| `make data` | Downloads every missing audio/text file a playlist needs (`make data ARGS="a.ruqya b.ruqya"`) |
-| `make data-all` | Same, for every `.ruqya` in the example folder |
+| `make combined` | Builds `combined.txt` (project dump for LLM context) |
 | `make check` | Lints with ruff, validates `.desktop`, sanity-checks the MIME XML |
 | `make fix` | Auto-fixes lint problems where safe |
 | `make build` | Builds an sdist and wheel into `dist/` |
-| `make combined` | Builds `combined.txt` (project dump for LLM context) |
+| `make doctor` | Checks every prerequisite and reports the resolved data root |
+
+### Building playlist data (requires `RUQYA_DATA_ROOT`)
+
+| Command | What it does |
+|---|---|
+| `make init` | Creates `$RUQYA_DATA_ROOT/ruqya.ruqya` if missing |
+| `make bundle-fast` | Populates `$RUQYA_DATA_ROOT/data/` with JSON only — fast, validates tokenization |
+| `make bundle` | Full bundle — JSON + MP3s (~2.5 GB) |
+| `make bundle-one PL=path/foo.ruqya` | Bundles a specific playlist (does not need `RUQYA_DATA_ROOT`) |
+| `make bundle-sudais` | Bundles one reciter only for smoke tests (deletes others first) |
+| `make bundle-reciter R=ar.alafasy` | Adds one reciter on top of what exists |
+| `make bundle-clean` | Deletes `$RUQYA_DATA_ROOT/data/` (asks first; frees ~2.5 GB) |
+
+`make bundle*` (except `bundle-one`) require `RUQYA_DATA_ROOT`; they
+error out with a clear message if it's unset. `bundle-one` takes an
+explicit `PL=` instead.
 
 ### Deploy to this machine
 
@@ -384,14 +481,21 @@ Run `make` or `make help` to list everything from the terminal.
 ### Variables
 
 ```bash
-make install PREFIX=/usr/local      # system-wide install (needs sudo)
+make install PREFIX=/usr/local                    # system-wide install (needs sudo)
 make desktop PREFIX=/usr/local
-make run ARGS="~/Ruqya/my.ruqya"    # run against a specific playlist
-make data ARGS="~/Ruqya/my.ruqya"   # fetch all data for one playlist
+make run ARGS=~/Ruqya/my.ruqya                    # run against a specific playlist
+make bundle-one PL=~/Ruqya/my.ruqya               # bundle one specific playlist
+make bundle-reciter R=ar.alafasy                  # add one reciter
+make bundle RUQYA_DATA_ROOT=~/Ruqya               # override env var for one run
 ```
 
-`PREFIX` defaults to `$(HOME)/.local`. The Makefile queries pipx for its
-bin dir at build time, so `Exec=` is always the correct absolute path.
+| Variable | Default | Used by |
+|---|---|---|
+| `PREFIX` | `$(HOME)/.local` | install targets; the Makefile queries pipx for its bin dir at build time, so `Exec=` is always the correct absolute path |
+| `ARGS` | (none) | passed verbatim to `make run` / `make run-empty` |
+| `PL` | (none) | playlist path for `make bundle-one` |
+| `R` | (none) | reciter id for `make bundle-reciter` |
+| `RUQYA_DATA_ROOT` | (unset) | dev default for `bundle*`, `init`, `run` — **not read by the runtime** |
 
 ---
 
@@ -419,7 +523,7 @@ Walk the chain in [How double-click works](#how-double-click-works):
 
 ```bash
 # 1. MIME type registered?
-xdg-mime query filetype examples/Ruqya/ruqya.ruqya
+xdg-mime query filetype /path/to/Ruqya/ruqya.ruqya
 # → application/x-ruqya-playlist
 
 # 2. Handler associated?
@@ -430,7 +534,7 @@ xdg-mime query default application/x-ruqya-playlist
 grep ^Exec= ~/.local/share/applications/ruqya-quran.desktop
 
 # 4. Simulate the double-click
-gio open examples/Ruqya/ruqya.ruqya
+gio open /path/to/Ruqya/ruqya.ruqya
 ```
 
 Whichever step returns the wrong thing is the fix. For 1 or 2, `make
@@ -441,17 +545,37 @@ log out — your file manager cached the old association.
 Nautilus caches preferences per user. `nautilus -q` and reopen. If that
 fails, log out and back in once.
 
+**Playlist opens but nothing plays, sidebar shows "audio missing".**
+The `.ruqya` file's `data_dir` doesn't contain the MP3s for the selected
+reciter. Check `data/audio/<reciter>/<surah>_<ayah>.mp3` exists beside
+the playlist. If you copied the folder from elsewhere, make sure the
+`audio/` subfolder came with it, and that the reciter shown in the
+sidebar matches a subfolder under `data/audio/`. Building a fresh data
+folder for the playlist is described in
+[`../README.md`](../README.md#building-the-bundled-data).
+
+**`make bundle` says "RUQYA_DATA_ROOT is not set".**
+That's the guard. Set it once:
+
+```bash
+export RUQYA_DATA_ROOT=~/Ruqya
+```
+
+or pass it on the command line: `make bundle RUQYA_DATA_ROOT=/path/to/Ruqya`.
+Or use `make bundle-one PL=/path/to/foo.ruqya` which doesn't need it.
+The env var is a **build-time** convenience; the runtime ignores it.
+
+**`make bundle` says `tools/raw/` missing.**
+`make bundle` reads QUL JSON exports from `tools/raw/`. What to download
+from where is in [`../tools/raw/DATA_SOURCE.adoc`](../tools/raw/DATA_SOURCE.adoc).
+
 **Reciter or translation pickers don't show an edition added in a recent release.**
 `~/.config/ruqya-quran/config.json` is only created on first install; an
 existing file is never overwritten by `make install`. New reciters (for
 example the two Husary variants) or new translations will not appear
 until you either edit the `reciters` / `translations` maps by hand, or
 run `make purge` and restart the app to regenerate the file from the
-packaged defaults. `make purge` does not touch your playlists. If your
-existing config has no `preload_reciters` key, the default set is the
-list in your config's `reciters` — so even a hand-edit that adds the
-reciters won't pre-warm them unless you also update `preload_reciters`
-or delete the key.
+packaged defaults. `make purge` does not touch your playlists.
 
 **`Makefile:NN: *** missing separator`.**
 Recipe lines must begin with a **tab**, not spaces. Your editor may have
@@ -463,18 +587,6 @@ Fonts missing, or `font_file` / `bangla_font_file` in
 
 **Qt fails with "could not load the Qt platform plugin xcb".**
 Install `libxcb-cursor0`.
-
-**Playlist data folder not writable.**
-If you opened a playlist from a read-only location, downloads go to
-`~/.local/share/ruqya-quran/<hash>/` instead. A warning is logged. To
-keep everything together, copy the folder to a writable location.
-
-**First open is slow.**
-It warms every reciter in `preload_reciters` — six by default. Set the
-playlist's `preload_reciters` (or the config's) to just the reciter you
-use. Or copy a populated `data/` folder next to the `.ruqya` file. If
-`make data` was already run for the playlist, the warm-up is skipped
-entirely.
 
 **`pipx: command not found` after install.**
 Run `pipx ensurepath` and open a new terminal.
@@ -522,9 +634,12 @@ Notes:
   `shared-mime-info` dpkg trigger runs `update-mime-database
   /usr/share/mime` automatically on install and removal. No `postinst`,
   `prerm`, or manual command is needed.
+- The `.deb` ships **no playlist data** — it's the app only. Users open
+  their own `.ruqya` files, wherever they live.
 - The Debian package ships its **own** `/etc`-level config path (via the
   packaged default in `src/ruqya_quran/config.json`), and each user still
   gets a fresh `~/.config/ruqya-quran/config.json` on first launch. The
   upgrade caveat above applies equally here: existing user configs are
   not overwritten by a package upgrade.
 
+---

@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """Fetch and bundle QUL data into a playlist's data folder.
 
+Build-time bundler. Dev tool — not shipped. The runtime never reads
+RUQYA_DATA_ROOT; it resolves `data_dir` next to the playlist file.
+
 Requires QUL JSON exports in --src (default: tools/raw/):
 
     ayah-recitation-*.json          recitations (audio_url + segments)
@@ -18,12 +21,13 @@ clear log line. Segment arrays with string positions are normalized to ints.
 
 Usage:
 
-    python3 tools/fetch_qul.py                         # default playlist, all target reciters
-    python3 tools/fetch_qul.py --playlist path/foo.ruqya
-    python3 tools/fetch_qul.py --skip-audio             # JSON only, fast
-    python3 tools/fetch_qul.py --list                   # preview only
-    python3 tools/fetch_qul.py --restart                # re-download all
-    python3 tools/fetch_qul.py --validate-only          # tokenization check
+    RUQYA_DATA_ROOT=/path/to/Ruqya python3 tools/fetch_qul.py    # $RUQYA_DATA_ROOT/ruqya.ruqya
+    python3 tools/fetch_qul.py --playlist /path/to/foo.ruqya      # explicit playlist
+    python3 tools/fetch_qul.py --out /path/to/data                # explicit data dir
+    python3 tools/fetch_qul.py --skip-audio                       # JSON only, fast
+    python3 tools/fetch_qul.py --list                             # preview only
+    python3 tools/fetch_qul.py --restart                          # re-download all
+    python3 tools/fetch_qul.py --validate-only                    # tokenization check
 
     # Test one reciter, deleting others first
     python3 tools/fetch_qul.py --only-reciter ar.abdurrahmaansudais --prune-others
@@ -37,6 +41,7 @@ resume when wget is not installed.
 from __future__ import annotations
 import argparse
 import json
+import os
 import shutil
 import subprocess
 import sys
@@ -100,7 +105,6 @@ WBW = {
 SCRIPT_FILE = "qpc-hafs-word-by-word.json"
 META_FILE = "quran-metadata-surah-name.json"
 REQUIRED = [SCRIPT_FILE, META_FILE, *TRANSLATIONS, *WBW]
-DEFAULT_PLAYLIST = Path("examples/Ruqya/ruqya.ruqya")
 
 def log(msg):
     print(msg, flush=True)
@@ -296,24 +300,32 @@ def check_required(src: Path):
         raise SystemExit(2)
 
 def resolve_out(args) -> Path:
+    """Resolve the output data folder.
+
+    Precedence:
+      1. --out <path>
+      2. --playlist <path>  → <playlist_dir>/<data_dir from JSON>
+      3. $RUQYA_DATA_ROOT   → $RUQYA_DATA_ROOT/ruqya.ruqya, same rule
+      4. error out
+    """
     if args.out is not None:
         return args.out.resolve()
-    if args.playlist is not None:
-        pl = load_json(args.playlist)
-        data_dir = pl.get("data_dir") or "data"
-        out = (args.playlist.parent / data_dir).resolve()
-        log(f"playlist:  {args.playlist}")
-        log(f"data dir:  {out}")
-        return out
-    if DEFAULT_PLAYLIST.exists():
-        pl = load_json(DEFAULT_PLAYLIST)
-        data_dir = pl.get("data_dir") or "data"
-        out = (DEFAULT_PLAYLIST.parent / data_dir).resolve()
-        log(f"playlist:  {DEFAULT_PLAYLIST}  (default)")
-        log(f"data dir:  {out}")
-        return out
-    out = Path("data").resolve()
-    log(f"data dir:  {out}  (no playlist found, using ./data)")
+
+    playlist = args.playlist
+    if playlist is None:
+        root = os.environ.get("RUQYA_DATA_ROOT")
+        if not root:
+            log("error: no --playlist/--out given and RUQYA_DATA_ROOT is not set")
+            log("  usage: RUQYA_DATA_ROOT=/path/to/Ruqya python3 tools/fetch_qul.py --src tools/raw")
+            log("     or: python3 tools/fetch_qul.py --src tools/raw --playlist /path/to/foo.ruqya")
+            raise SystemExit(2)
+        playlist = Path(root).expanduser() / "ruqya.ruqya"
+
+    pl = load_json(playlist)
+    data_dir = pl.get("data_dir") or "data"
+    out = (playlist.parent / data_dir).resolve()
+    log(f"playlist:  {playlist}")
+    log(f"data dir:  {out}")
     return out
 
 def prune_others(out: Path, keep: str):
@@ -557,7 +569,8 @@ def main(argv=None) -> int:
     ap.add_argument("--playlist",
                     type=Path,
                     default=None,
-                    help=".ruqya file; output becomes <playlist_dir>/<data_dir>")
+                    help=".ruqya file; output becomes <playlist_dir>/<data_dir>. "
+                    "Default: $RUQYA_DATA_ROOT/ruqya.ruqya")
     ap.add_argument("--out", type=Path, default=None, help="explicit data dir (overrides --playlist)")
     ap.add_argument("--skip-audio", action="store_true", help="write JSON only, no MP3 download")
     ap.add_argument("--validate-only", action="store_true", help="check tokenization alignment without re-bundling")
