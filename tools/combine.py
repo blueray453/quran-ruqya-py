@@ -61,6 +61,7 @@ PRIORITY = [
 # Directories whose contents are tracked in git but not useful as LLM
 # context. Collapsed to a marker in the tree.
 SKIP_PREFIXES = (
+    "prototype/"
     "tools/raw/",  # QUL JSON source files for bundle; mirrored at <data>/
     "examples/Ruqya/data/",  # legacy in-repo bundle target (if present)
 )
