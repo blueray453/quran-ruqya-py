@@ -1,0 +1,32 @@
+[
+ {
+  "tag": "NS",
+  "arabic": "جملة اسمية",
+  "english": "Nominal sentence"
+ },
+ {
+  "tag": "VS",
+  "arabic": "جملة فعلية",
+  "english": "Verbal sentence"
+ },
+ {
+  "tag": "CS",
+  "arabic": "جملة شرط",
+  "english": "Conditional sentence"
+ },
+ {
+  "tag": "PP",
+  "arabic": "جار ومجرور",
+  "english": "Prepositional phrase"
+ },
+ {
+  "tag": "SC",
+  "arabic": "مصدر مؤول",
+  "english": "Subordinate clause"
+ },
+ {
+  "tag": "S",
+  "arabic": "جملة",
+  "english": "Sentence"
+ }
+]
