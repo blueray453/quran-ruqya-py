@@ -1,0 +1,45 @@
+{
+  "surah": 67,
+  "surah_name": "Al-Mulk",
+  "inputs": {
+    "eqtb_csv": "data/Primary Quranic.csv",
+    "eqtb_encoding": "utf-16",
+    "qac_morphology_txt": "data/quranic-corpus-morphology-0.4.txt",
+    "qac_encoding": "utf-8-sig"
+  },
+  "counts": {
+    "eqtb_rows": 583,
+    "qac_morphology_rows": 529,
+    "aligned_rows": 583,
+    "exact_location_matches": 529,
+    "eqtb_only_rows": 54,
+    "qac_only_rows": 0,
+    "clause_review_candidates": 139,
+    "eqtb_duplicate_location_keys": 17,
+    "qac_duplicate_location_keys": 0
+  },
+  "duplicate_locations": {
+    "eqtb": {
+      "67:2:0:1": 2,
+      "67:3:0:1": 4,
+      "67:8:0:1": 2,
+      "67:10:0:1": 3,
+      "67:11:0:1": 2,
+      "67:12:0:1": 2,
+      "67:15:0:1": 2,
+      "67:16:0:1": 3,
+      "67:17:0:1": 2,
+      "67:20:0:1": 2,
+      "67:21:0:1": 2,
+      "67:22:0:1": 2,
+      "67:23:0:1": 5,
+      "67:24:0:1": 2,
+      "67:26:0:1": 2,
+      "67:28:0:1": 4,
+      "67:30:0:1": 2
+    },
+    "qac": {}
+  },
+  "warnings": [],
+  "interpretation": "Exact matches mean only that the four-part location strings matched. They do not prove the two sources use identical tokenization or analyses. Clause candidates are heuristic review items, not validated clause annotations."
+}

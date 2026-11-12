@@ -38,7 +38,20 @@ python combine_surah_mulk.py \
   --out outputs/surah_67
 ```
 
-Surah 67 is the default. To select a different surah, pass `--surah N`.
+The script detects common encodings automatically, including UTF-16 LE/BE (with a BOM) and UTF-8 with or without a BOM. This handles EQTB CSV files exported as UTF-16; no `iconv` conversion is necessary.
+
+If automatic detection does not match your file, pass an explicit encoding:
+
+```bash
+python combine_surah_mulk.py \
+  --eqtb "data/Primary Quranic.csv" \
+  --qac "data/quranic-corpus-morphology-0.4.txt" \
+  --eqtb-encoding utf-16 \
+  --qac-encoding utf-8-sig \
+  --out outputs/surah_67
+```
+
+Surah 67 is the default. To select a different surah, pass `--surah N`. The detected encodings are recorded in `summary_surah_67.json`.
 
 ## 4. Outputs
 

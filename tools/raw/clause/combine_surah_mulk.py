@@ -103,8 +103,38 @@ def location_key(parts: Tuple[int, int, int, int]) -> str:
     return ":".join(str(x) for x in parts)
 
 
-def sniff_csv_delimiter(path: Path) -> str:
-    with path.open("r", encoding="utf-8-sig", newline="") as handle:
+def detect_text_encoding(path: Path, requested: str = "auto") -> str:
+    """Detect common Unicode encodings from a BOM or UTF-16 null-byte pattern.
+
+    CSV exports from spreadsheet applications are often UTF-16 LE with a BOM.
+    Python's ``utf-16`` codec consumes that BOM and selects the correct byte order.
+    An explicit encoding can be supplied with --eqtb-encoding or --qac-encoding.
+    """
+    if requested and requested.lower() != "auto":
+        return requested
+
+    with path.open("rb") as handle:
+        sample = handle.read(8192)
+
+    if sample.startswith((b"\xff\xfe", b"\xfe\xff")):
+        return "utf-16"
+    if sample.startswith(b"\xef\xbb\xbf"):
+        return "utf-8-sig"
+
+    # Detect UTF-16 files that do not include a BOM. ASCII CSV headers and
+    # delimiters produce a regular pattern of zero bytes in one byte position.
+    if sample and b"\x00" in sample:
+        even_nulls = sum(sample[i] == 0 for i in range(0, len(sample), 2))
+        odd_nulls = sum(sample[i] == 0 for i in range(1, len(sample), 2))
+        if max(even_nulls, odd_nulls) >= max(2, len(sample) // 20):
+            return "utf-16-be" if even_nulls > odd_nulls else "utf-16-le"
+
+    return "utf-8-sig"
+
+
+def sniff_csv_delimiter(path: Path, encoding: str = "auto") -> str:
+    resolved_encoding = detect_text_encoding(path, encoding)
+    with path.open("r", encoding=resolved_encoding, newline="") as handle:
         sample = handle.read(8192)
     try:
         return csv.Sniffer().sniff(sample, delimiters=",;\t|").delimiter
@@ -112,12 +142,15 @@ def sniff_csv_delimiter(path: Path) -> str:
         return ","
 
 
-def load_eqtb(path: Path, surah: int) -> Tuple[List[Dict[str, str]], List[str]]:
-    delimiter = sniff_csv_delimiter(path)
+def load_eqtb(
+    path: Path, surah: int, encoding: str = "auto"
+) -> Tuple[List[Dict[str, str]], List[str]]:
+    resolved_encoding = detect_text_encoding(path, encoding)
+    delimiter = sniff_csv_delimiter(path, resolved_encoding)
     rows: List[Dict[str, str]] = []
     warnings: List[str] = []
 
-    with path.open("r", encoding="utf-8-sig", newline="") as handle:
+    with path.open("r", encoding=resolved_encoding, newline="") as handle:
         reader = csv.DictReader(handle, delimiter=delimiter)
         if not reader.fieldnames:
             raise ValueError("EQTB CSV has no header row.")
@@ -157,9 +190,12 @@ def find_qac_header(lines: List[str]) -> Optional[int]:
     return None
 
 
-def load_qac_morphology(path: Path, surah: int) -> Tuple[List[Dict[str, str]], List[str]]:
+def load_qac_morphology(
+    path: Path, surah: int, encoding: str = "auto"
+) -> Tuple[List[Dict[str, str]], List[str]]:
     """Parse QAC's tab-separated morphology file (LOCATION, FORM, TAG, FEATURES)."""
-    text = path.read_text(encoding="utf-8-sig")
+    resolved_encoding = detect_text_encoding(path, encoding)
+    text = path.read_text(encoding=resolved_encoding)
     lines = text.splitlines()
     header_index = find_qac_header(lines)
     start = header_index + 1 if header_index is not None else 0
@@ -339,11 +375,20 @@ def write_json(path: Path, payload: Dict[str, object]) -> None:
     path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
-def run(eqtb_path: Path, qac_path: Path, output_dir: Path, surah: int) -> Dict[str, object]:
+def run(
+    eqtb_path: Path,
+    qac_path: Path,
+    output_dir: Path,
+    surah: int,
+    eqtb_encoding: str = "auto",
+    qac_encoding: str = "auto",
+) -> Dict[str, object]:
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    eqtb_rows, eqtb_warnings = load_eqtb(eqtb_path, surah)
-    qac_rows, qac_warnings = load_qac_morphology(qac_path, surah)
+    resolved_eqtb_encoding = detect_text_encoding(eqtb_path, eqtb_encoding)
+    resolved_qac_encoding = detect_text_encoding(qac_path, qac_encoding)
+    eqtb_rows, eqtb_warnings = load_eqtb(eqtb_path, surah, resolved_eqtb_encoding)
+    qac_rows, qac_warnings = load_qac_morphology(qac_path, surah, resolved_qac_encoding)
 
     eqtb_duplicates = count_duplicate_locations(eqtb_rows)
     qac_duplicates = count_duplicate_locations(qac_rows)
@@ -360,7 +405,12 @@ def run(eqtb_path: Path, qac_path: Path, output_dir: Path, surah: int) -> Dict[s
     summary: Dict[str, object] = {
         "surah": surah,
         "surah_name": "Al-Mulk" if surah == 67 else None,
-        "inputs": {"eqtb_csv": str(eqtb_path), "qac_morphology_txt": str(qac_path)},
+        "inputs": {
+            "eqtb_csv": str(eqtb_path),
+            "eqtb_encoding": resolved_eqtb_encoding,
+            "qac_morphology_txt": str(qac_path),
+            "qac_encoding": resolved_qac_encoding,
+        },
         "counts": {
             "eqtb_rows": len(eqtb_rows),
             "qac_morphology_rows": len(qac_rows),
@@ -399,6 +449,14 @@ def main() -> int:
                         help="Output directory (default: outputs/surah_67).")
     parser.add_argument("--surah", type=int, default=SURAH_DEFAULT,
                         help="Surah number (default: 67, Al-Mulk).")
+    parser.add_argument(
+        "--eqtb-encoding", default="auto",
+        help="EQTB CSV encoding (default: auto; also accepts utf-16, utf-8-sig, etc.).",
+    )
+    parser.add_argument(
+        "--qac-encoding", default="auto",
+        help="QAC text encoding (default: auto; also accepts utf-16, utf-8-sig, etc.).",
+    )
     args = parser.parse_args()
 
     for label, path in (("EQTB", args.eqtb), ("QAC", args.qac)):
@@ -407,7 +465,11 @@ def main() -> int:
             return 2
 
     try:
-        summary = run(args.eqtb, args.qac, args.out, args.surah)
+        summary = run(
+            args.eqtb, args.qac, args.out, args.surah,
+            eqtb_encoding=args.eqtb_encoding,
+            qac_encoding=args.qac_encoding,
+        )
     except Exception as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
         return 1
