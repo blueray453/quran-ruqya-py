@@ -1,0 +1,141 @@
+﻿relation_code,arabic,source_rel_id
+gen,مجرور,0
+Pred,خبر,1
+Adj,صفة,2
+cog,مفعول مطلق,3
+cert,تحقيق,4
+Pass,نائب فاعل,5
+state,بيان,6
+ans,جواب,7
+neg,نفي,8
+intg,استفهام,9
+sub,صلة,10
+voc,منادى,11
+circ,حال,12
+prp,المفعول لأجله,13
+exp,مستثني,14
+sup,زائد,15
+caus,سببية,16
+conj,معطوف,17
+Spec,تمييز,18
+fut,استقبال,19
+res,حصر,20
+amd,استدراك,21
+link,متعلق,22
+impv,أمر,23
+exl,تفصيل,24
+Poss,مضاف إليه,25
+emph,توكيد,26
+ret,اضراب,27
+Cpnd,مركب,28
+eq,تسوية,29
+prev,كاف,30
+sur,فجاءة,31
+Subj,فاعل,32
+avr,ردع,33
+rslt,جواب الشرط,34
+imrs,جواب أمر,35
+int,تفسير,36
+Pro,نهي,37
+exh,تحضيض,38
+inc,ابتداء,39
+Obj,مفعول به,40
+cond,شرط,41
+App,بدل,42
+subj <<kan>>,اسم كان,43
+pred <<kan>>,خبر كان,44
+subj <<tkon>>,اسم تكون,45
+pred <<tkon>>,خبر تكون,46
+subj <<yk>>,اسم يك,47
+pred <<yk>>,خبر يك,48
+subj <<tk>>,اسم تك,49
+pred <<tk>>,خبر تك,50
+subj <<lakun>>,اسم لاكن,51
+pred <<lakun>>,خبر لاكن,52
+subj <<akn>>,اسم اكن,53
+pred <<akn>>,خبر اكن,54
+subj <<nkon>>,اسم نكون,55
+pred <<nkon>>,خبر نكون,56
+subj <<nkn>>,اسم نكن,57
+pred <<nkn>>,خبر نكن,58
+subj <<kn>>,اسم كن,59
+pred <<kn>>,خبر كن,60
+subj <<tkn>>,اسم تكن,61
+pred <<tkn>>,خبر تكن,62
+subj <<tknm>>,اسم تكنۢ,63
+pred <<tknm>>,خبر تكنۢ,64
+subj <<kon>>,اسم كون,65
+pred <<kon>>,خبر كون,66
+subj <<ykon>>,اسم يكون,67
+pred <<ykon>>,خبر يكون,68
+subj <<akon>>,اسم اكون,69
+pred <<akon>>,خبر اكون,70
+subj <<kant>>,اسم كانت,71
+pred <<kant>>,خبر كانت,72
+subj <<ykn>>,اسم يكن,73
+pred <<ykn>>,خبر يكن,74
+subj <<nko>>,اسم نك,75
+pred <<nko>>,خبر نك,76
+subj <<ka>>,اسم ك,77
+pred <<ka>>,خبر ك,78
+subj <<zala>>,اسم ظل,79
+pred <<zala>>,خبر ظل,80
+subj <<yazal>>,اسم يزال,81
+pred <<yazal>>,خبر يزال,82
+subj <<lays>>,اسم ليس,83
+pred <<lays>>,خبر ليس,84
+subj <<layst>>,اسم ليست,85
+pred <<layst>>,خبر ليست,86
+subj <<tafta'>>,اسم تفتاء,87
+pred <<tafta'>>,خبر تفتاء,88
+subj <<ma>>,اسم ما,89
+pred <<ma>>,خبر ما,90
+subj <<asbah>>,اسم أصبح,91
+pred <<asbah>>,خبر أصبح,92
+subj <<asbaht>>,اسم اصبحت,93
+pred <<asbaht>>,خبر اصبحت,94
+subj <<tusbih>>,اسم تصبح,95
+pred <<tusbih>>,خبر تصبح,96
+subj <<ysbah>>,اسم يصبح,97
+pred <<ysbah>>,خبر يصبح,98
+subj <<barah>>,اسم برح,99
+pred <<barah>>,خبر برح,100
+subj <<dam>>,اسم دام,101
+pred <<dam>>,خبر دام,102
+subj <<dm>>,اسم دم,103
+pred <<dm>>,خبر دم,104
+subj <<las>>,اسم لس,105
+pred <<las>>,خبر لس,106
+subj<<in>>,اسم إن,107
+pred<<in>>,خبر إن,108
+subj<<an>>,اسم أن,109
+pred<<an>>,خبر أن,110
+subj<<en>>,اسم ان,111
+pred<<en>>,خبر ان,112
+subj<<'n>>,اسم أن,113
+pred<<'n>>,خبر أن,114
+subj<<yin>>,اسم أن,115
+pred<<yin>>,خبر أن,116
+subj <<ka'ana>>,اسم كأن,117
+pred <<ka'ana>>,خبر كأن,118
+subj <<lakin>>,اسم لكن,119
+pred <<lakin>>,خبر لكن,120
+subj <<layt>>,اسم ليت,121
+pred <<layt>>,خبر ليت,122
+subj <<la>>,اسم لا,123
+pred <<la>>,خبر لا,124
+subj <<lel>>,اسم لعل,125
+pred <<lel>>,خبر لعل,126
+subj <<kad>>,اسم كاد,127
+pred <<kad>>,خبر كاد,128
+subj <<akad>>,اسم اكاد,129
+pred <<akad>>,خبر اكاد,130
+subj <<ykad>>,اسم يكاد,131
+pred <<ykad>>,خبر يكاد,132
+subj <<tkad>>,اسم تكاد,133
+pred <<tkad>>,خبر تكاد,134
+subj <<easaa>>,اسم عسى,135
+pred <<easaa>>,خبر عسى,136
+root,root,137
+NonRel,NonRel,138
+_,_,139

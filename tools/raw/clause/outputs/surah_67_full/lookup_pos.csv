@@ -1,0 +1,46 @@
+﻿pos_code,arabic,english,source_pid
+N,اسم,Noun,0
+PN,اسم علم,Proper noun,1
+ADJ,صفة,Adjective,2
+IMPN,اسم فعل أمر,Imperative verbal noun,3
+PRON,ضمير,Personal pronoun,4
+DEM,اسم اشارة,Demonstrative pronoun,5
+REL,اسم موصول,Relative pronoun,6
+T,ظرف زمان,Time adverb,7
+LOC,ظرف مكان,Location adverb,8
+V,فعل,Verb,9
+P,حرف جر,Preposition,10
+EMPH,حرف توكيد,Emphatic lām prefix,11
+IMPV,حرف امر,Imperative lām prefix,12
+PRP,حرف تعليل,Purpose lām prefix,13
+CONJ,حرف عطف,Coordinating conjunction,14
+SUB,حرف مصدري,Subordinating conjunction,15
+ACC,حرف نصب,Accusative particle,16
+AMD,حرف استدراك,Amendment particle,17
+ANS,حرف جواب,Answer particle,18
+AVR,حرف ردع,Aversion particle,19
+CAUS,حرف سببية,Particle of cause,20
+CERT,حرف تحقيق,Particle of certainty,21
+CIRC,حرف حال,Circumstantial particle,22
+COM,حرف معية,Comitative particle,23
+COND,حرف شرط,Conditional particle,24
+EQ,حرف تسوية,Equalization particle,25
+EXH,حرف تحضيض,Exhortation particle,26
+EXL,حرف تفصيل,Explanation particle,27
+EXP,أداة استثناء,Exceptive particle,28
+FUT,حرف استقبال,Future particle,29
+INC,حرف ابتداء,Inceptive particle,30
+INT,حرف تفسير,Particle of interpretation,31
+INTG,حرف استفهام,Interogative particle,32
+NEG,حرف نفي,Negative particle,33
+PREV,حرف كاف,Preventive particle,34
+PRO,حرف نهي,Prohibition particle,35
+REM,حرف استئنافية,Resumption particle,36
+RES,أداة حصر,Restriction particle,37
+RET,حرف اضراب,Retraction particle,38
+RSLT,حرف واقع في جواب الشرط,Result particle,39
+SUP,حرف زائد,Supplemental particle,40
+SUR,حرف فجاءة,Surprise particle,41
+VOC,حرف نداء,Vocative particle,42
+INL,حروف مقطعة,Quranic initials,43
+DET,أداة تعريف,Determiner,44

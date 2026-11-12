@@ -1,0 +1,221 @@
+{
+  "surah": 67,
+  "surah_name": "Al-Mulk",
+  "input_files": {
+    "eqtb_main": {
+      "path": "data/Quranic.csv",
+      "encoding": "utf-16",
+      "delimiter": "TAB",
+      "rows_in_file": 139376,
+      "rows_for_surah": 583,
+      "rows_other_surahs": 138793
+    },
+    "auxiliary": {
+      "RelLabels.csv": {
+        "path": "eqtb_aux/RelLabels.csv",
+        "encoding": "utf-16",
+        "delimiter": "TAB",
+        "rows": 140
+      },
+      "CAPoS.csv": {
+        "path": "eqtb_aux/CAPoS.csv",
+        "encoding": "utf-16",
+        "delimiter": "TAB",
+        "rows": 45
+      },
+      "ConstituentsTags.csv": {
+        "path": "eqtb_aux/ConstituentsTags.csv",
+        "encoding": "utf-16",
+        "delimiter": "TAB",
+        "rows": 6
+      },
+      "CAMorphFeatures.xlsx": {
+        "path": "eqtb_aux/CAMorphFeatures.xlsx",
+        "sheets": {
+          "NominalCase": {
+            "rows": 3,
+            "field": "nominal_case"
+          },
+          "DerivedNoun": {
+            "rows": 3,
+            "field": "derived_nouns"
+          },
+          "NominalState": {
+            "rows": 2,
+            "field": "nominal_state"
+          },
+          "Number": {
+            "rows": 3,
+            "field": "number"
+          },
+          "Prefixs": {
+            "rows": 24,
+            "field": "prefix"
+          },
+          "Suffixs": {
+            "rows": 4,
+            "field": "suffix"
+          },
+          "VerbForm": {
+            "rows": 12,
+            "field": "verb_form"
+          },
+          "VerbMood": {
+            "rows": 3,
+            "field": "verb_mood"
+          },
+          "VerbState": {
+            "rows": 3,
+            "field": "verb_aspect"
+          },
+          "VerbVoice": {
+            "rows": 2,
+            "field": "verb_voice"
+          },
+          "SpecialGroup": {
+            "rows": 3,
+            "field": "special_group"
+          },
+          "Gender": {
+            "rows": 2,
+            "field": "gender"
+          },
+          "Person": {
+            "rows": 3,
+            "field": "person"
+          }
+        }
+      },
+      "CALemmaLexicon.csv": {
+        "path": "eqtb_aux/CALemmaLexicon.csv",
+        "encoding": "utf-16",
+        "delimiter": "TAB",
+        "rows": 4833
+      },
+      "CARootLexicon.csv": {
+        "path": "eqtb_aux/CARootLexicon.csv",
+        "encoding": "utf-16",
+        "delimiter": "TAB",
+        "rows": 1643
+      }
+    },
+    "qac_morphology": {
+      "provided": true,
+      "path": "data/quranic-corpus-morphology-0.4.txt",
+      "encoding": "utf-8-sig",
+      "rows": 529,
+      "warnings": []
+    }
+  },
+  "counts": {
+    "eqtb_token_rows": 583,
+    "qac_morphology_rows": 529,
+    "alignment_rows": 583,
+    "alignment_status": {
+      "exact_location_match": 529,
+      "eqtb_implicit_no_quranic_location": 54
+    },
+    "eqtb_duplicate_location_keys": 0,
+    "qac_duplicate_location_keys": 0,
+    "constituents_total": 116,
+    "constituents_by_label": {
+      "PP": 50,
+      "NS": 17,
+      "VS": 44,
+      "SC": 3,
+      "CS": 2
+    },
+    "clause_candidate_spans": 66,
+    "constituent_token_memberships": 560,
+    "dependency_rows": 583,
+    "unique_lemmas_in_surah": 171,
+    "unique_roots_in_surah": 128,
+    "lemmas_found_in_lexicon": 171,
+    "roots_found_in_lexicon": 128
+  },
+  "codebook_mapping_counts": {
+    "pos": {
+      "yes": 583
+    },
+    "rel_label": {
+      "yes": 583
+    },
+    "nominal_case": {
+      "no": 461,
+      "yes": 122
+    },
+    "derived_nouns": {
+      "no": 571,
+      "yes": 12
+    },
+    "nominal_state": {
+      "no": 537,
+      "yes": 46
+    },
+    "number": {
+      "yes": 245,
+      "no": 338
+    },
+    "prefix": {
+      "no": 469,
+      "yes": 114
+    },
+    "suffix": {
+      "no": 506,
+      "yes": 77
+    },
+    "verb_form": {
+      "yes": 27,
+      "no": 556
+    },
+    "verb_mood": {
+      "no": 583
+    },
+    "verb_aspect": {
+      "yes": 87,
+      "no": 496
+    },
+    "verb_voice": {
+      "no": 578,
+      "yes": 5
+    },
+    "special_group": {
+      "no": 583
+    },
+    "gender": {
+      "yes": 288,
+      "no": 295
+    },
+    "person": {
+      "yes": 188,
+      "no": 395
+    },
+    "constituent_label": {
+      "yes": 116
+    }
+  },
+  "unknown_codes": {
+    "pos": [],
+    "rel_label": [],
+    "constituent_label": []
+  },
+  "alignment_details": {
+    "status_counts": {
+      "exact_location_match": 529,
+      "eqtb_implicit_no_quranic_location": 54
+    },
+    "eqtb_duplicate_locations": {},
+    "qac_duplicate_locations": {}
+  },
+  "warnings": [],
+  "methodological_notes": [
+    "RelLabels.csv's rel_en column stores relation codes (e.g. cond, rslt, circ), not English glosses; Arabic descriptions are mapped from rel_ar.",
+    "VerbMood English descriptions in the workbook are reversed for JUS and SUBJ; output English labels are corrected using Arabic descriptions.",
+    "QAC input is the morphology export, not a complete QAC syntactic treebank.",
+    "Exact location alignment is coordinate-based; duplicate coordinates are paired by within-file occurrence order and must be reviewed.",
+    "Implicit EQTB tokens without real Quranic word coordinates are retained and excluded from direct QAC location matching.",
+    "Constituent spans use sentence_id + inclusive sentence-local token_id ranges from constituents_loc.",
+    "Clause candidates are EQTB constituent spans with labels S, NS, VS, CS, or SC; they require linguistic review and are not final clause labels.",
+    "Lexicon membership is a lookup check, not a proof that the source lemma/root analysis is linguistically correct."
+  ]
+}

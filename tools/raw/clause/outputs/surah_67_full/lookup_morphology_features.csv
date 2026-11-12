@@ -1,0 +1,68 @@
+﻿dimension,code,arabic,english,pattern
+NominalCase,NOM,مرفوع,Nominative case,
+NominalCase,ACC,منصوب,Accusative case,
+NominalCase,GEN,مجرور,Genitive case,
+DerivedNoun,ACT_PCPL,اسم فاعل,Active Participle,
+DerivedNoun,PASS_PCPL,اسم مفعول,Passive Participle,
+DerivedNoun,VN,مصدر,Verbal Noun,
+NominalState,DEF,معرفة,Definite state,
+NominalState,INDEF,نكرة,Indefinite state,
+Number,S,مفرد,singular,
+Number,D,مثنى,dual,
+Number,P,جمع,plural,
+Prefixs,A:EQ+,همزة تسوية,Hamza of equivalence,
+Prefixs,A:INTG+,همزة استفهام,Interrogative hamza,
+Prefixs,Al+,ال التعريف,Definite article (Al),
+Prefixs,bi+,باء الجر,Prepositional bāʼ,
+Prefixs,f:CAUS+,فاء السببية,Causal fāʼ,
+Prefixs,f:CONJ+,فاء العطف,Coordinating fāʼ,
+Prefixs,f:REM+,فاء الإستئناف,Resumptive fāʼ,
+Prefixs,f:RSLT+,فاء الشرط,Resultative fāʼ,
+Prefixs,f:SUP+,فاء الزائدة,Superfluous fāʼ,
+Prefixs,ha+,هاء النداء,Vocative hāʼ,
+Prefixs,ka+,كاف الجر,Prepositional kāf,
+Prefixs,l:EMPH+,لام التوكيد,Emphatic lām,
+Prefixs,l:IMPV+,لام الأمر,Imperative lām,
+Prefixs,l:P+,لام الجر,Prepositional lām,
+Prefixs,l:PRP+,لام التعليل,Purpose lām,
+Prefixs,sa+,سين المستقبل,Future particle sīn,
+Prefixs,ta+,تاء النداء,Vocative tāʼ,
+Prefixs,w:CIRC+,واو الظرفية,Circumstantial wāw,
+Prefixs,w:COM+,واو المعية,Comitative wāw,
+Prefixs,w:CONJ+,واو العطف,Coordinating wāw,
+Prefixs,w:P+,واو الجر,Prepositional wāw,
+Prefixs,w:REM+,واو الإستئناف,Resumptive wāw,
+Prefixs,w:SUP+,واو الزائدة,Superfluous wāw,
+Prefixs,ya+,ياء النداء,Vocative yāʼ,
+Suffixs,VOC:m,ميم النداء,ميم النداء,
+Suffixs,EMPH:n,نون التوكيد,نون التوكيد,
+Suffixs,PRON,ضمير متصل,ضمير متصل,
+Suffixs,l:P+,لام الجر,لام الجر,
+VerbForm,(I),فَعَلَ,First form (default),/faʕala/
+VerbForm,(II),فَعَّلَ,Second form,/faʕʕala/
+VerbForm,(III),فَاعَلَ,Third form,/faʕala/
+VerbForm,(IV),أَفْعَلَ,Fourth form,/ʔafʕala/
+VerbForm,(IX),إِفْعَلَّ,Fifth form,/ʔifʕalla/
+VerbForm,(V),تَفَعَّلَ,Sixth form,/tafaʕʕala/
+VerbForm,(VI),تَفَاعَلَ,Seventh form,/tafaaʕala/
+VerbForm,(VII),إِنْفَعَلَ,Eighth form,/ʔinfaʕala/
+VerbForm,(VIII),إِفْتَعَلَ,Ninth form,/ʔiftaʕala/
+VerbForm,(X),إِسْتَفْعَلَ,Tenth form,/ʔistafʕala/
+VerbForm,(XI),فَعْلَلَ,Eleventh form,/faʕlala/
+VerbForm,(XII),تَفَعْلَلَ,Twelfth form,/tafaʕlala/
+VerbMood,IND,مرفوع,Indicative mood,
+VerbMood,JUS,مجزوم,Jussive mood,
+VerbMood,SUBJ,منصوب,Subjunctive mood,
+VerbState,PERF,فعل ماضي,Perfect verb,
+VerbState,IMPF,فعل مضارع,Imperfect verb,
+VerbState,IMPV,فعل أمر,Imperative verb,
+VerbVoice,ACT,مبني للمعلوم,Active voice,
+VerbVoice,PASS,مبني للمجهول,Passive voice,
+SpecialGroup,<in~,ان واخواتها,inna wa akhowatuha (Emphasis),
+SpecialGroup,kaAd,كاد واخواتها,kaada wa akhowatuha (Mood),
+SpecialGroup,kaAn,كان واخواتها,kaan wa akhowatuha (Tense),
+Gender,M,مذكر,masculine,
+Gender,F,مؤنث,feminine,
+Person,1,واحد,first person,
+Person,2,اثنين,second person,
+Person,3,ثلاثة,third person,

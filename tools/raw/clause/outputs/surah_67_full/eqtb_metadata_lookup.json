@@ -1,0 +1,1444 @@
+{
+  "relations": [
+    {
+      "rel_id": "0",
+      "rel_en": "gen",
+      "rel_ar": "مجرور"
+    },
+    {
+      "rel_id": "1",
+      "rel_en": "Pred",
+      "rel_ar": "خبر"
+    },
+    {
+      "rel_id": "2",
+      "rel_en": "Adj",
+      "rel_ar": "صفة"
+    },
+    {
+      "rel_id": "3",
+      "rel_en": "cog",
+      "rel_ar": "مفعول مطلق"
+    },
+    {
+      "rel_id": "4",
+      "rel_en": "cert",
+      "rel_ar": "تحقيق"
+    },
+    {
+      "rel_id": "5",
+      "rel_en": "Pass",
+      "rel_ar": "نائب فاعل"
+    },
+    {
+      "rel_id": "6",
+      "rel_en": "state",
+      "rel_ar": "بيان"
+    },
+    {
+      "rel_id": "7",
+      "rel_en": "ans",
+      "rel_ar": "جواب"
+    },
+    {
+      "rel_id": "8",
+      "rel_en": "neg",
+      "rel_ar": "نفي"
+    },
+    {
+      "rel_id": "9",
+      "rel_en": "intg",
+      "rel_ar": "استفهام"
+    },
+    {
+      "rel_id": "10",
+      "rel_en": "sub",
+      "rel_ar": "صلة"
+    },
+    {
+      "rel_id": "11",
+      "rel_en": "voc",
+      "rel_ar": "منادى"
+    },
+    {
+      "rel_id": "12",
+      "rel_en": "circ",
+      "rel_ar": "حال"
+    },
+    {
+      "rel_id": "13",
+      "rel_en": "prp",
+      "rel_ar": "المفعول لأجله"
+    },
+    {
+      "rel_id": "14",
+      "rel_en": "exp",
+      "rel_ar": "مستثني"
+    },
+    {
+      "rel_id": "15",
+      "rel_en": "sup",
+      "rel_ar": "زائد"
+    },
+    {
+      "rel_id": "16",
+      "rel_en": "caus",
+      "rel_ar": "سببية"
+    },
+    {
+      "rel_id": "17",
+      "rel_en": "conj",
+      "rel_ar": "معطوف"
+    },
+    {
+      "rel_id": "18",
+      "rel_en": "Spec",
+      "rel_ar": "تمييز"
+    },
+    {
+      "rel_id": "19",
+      "rel_en": "fut",
+      "rel_ar": "استقبال"
+    },
+    {
+      "rel_id": "20",
+      "rel_en": "res",
+      "rel_ar": "حصر"
+    },
+    {
+      "rel_id": "21",
+      "rel_en": "amd",
+      "rel_ar": "استدراك"
+    },
+    {
+      "rel_id": "22",
+      "rel_en": "link",
+      "rel_ar": "متعلق"
+    },
+    {
+      "rel_id": "23",
+      "rel_en": "impv",
+      "rel_ar": "أمر"
+    },
+    {
+      "rel_id": "24",
+      "rel_en": "exl",
+      "rel_ar": "تفصيل"
+    },
+    {
+      "rel_id": "25",
+      "rel_en": "Poss",
+      "rel_ar": "مضاف إليه"
+    },
+    {
+      "rel_id": "26",
+      "rel_en": "emph",
+      "rel_ar": "توكيد"
+    },
+    {
+      "rel_id": "27",
+      "rel_en": "ret",
+      "rel_ar": "اضراب"
+    },
+    {
+      "rel_id": "28",
+      "rel_en": "Cpnd",
+      "rel_ar": "مركب"
+    },
+    {
+      "rel_id": "29",
+      "rel_en": "eq",
+      "rel_ar": "تسوية"
+    },
+    {
+      "rel_id": "30",
+      "rel_en": "prev",
+      "rel_ar": "كاف"
+    },
+    {
+      "rel_id": "31",
+      "rel_en": "sur",
+      "rel_ar": "فجاءة"
+    },
+    {
+      "rel_id": "32",
+      "rel_en": "Subj",
+      "rel_ar": "فاعل"
+    },
+    {
+      "rel_id": "33",
+      "rel_en": "avr",
+      "rel_ar": "ردع"
+    },
+    {
+      "rel_id": "34",
+      "rel_en": "rslt",
+      "rel_ar": "جواب الشرط"
+    },
+    {
+      "rel_id": "35",
+      "rel_en": "imrs",
+      "rel_ar": "جواب أمر"
+    },
+    {
+      "rel_id": "36",
+      "rel_en": "int",
+      "rel_ar": "تفسير"
+    },
+    {
+      "rel_id": "37",
+      "rel_en": "Pro",
+      "rel_ar": "نهي"
+    },
+    {
+      "rel_id": "38",
+      "rel_en": "exh",
+      "rel_ar": "تحضيض"
+    },
+    {
+      "rel_id": "39",
+      "rel_en": "inc",
+      "rel_ar": "ابتداء"
+    },
+    {
+      "rel_id": "40",
+      "rel_en": "Obj",
+      "rel_ar": "مفعول به"
+    },
+    {
+      "rel_id": "41",
+      "rel_en": "cond",
+      "rel_ar": "شرط"
+    },
+    {
+      "rel_id": "42",
+      "rel_en": "App",
+      "rel_ar": "بدل"
+    },
+    {
+      "rel_id": "43",
+      "rel_en": "subj <<kan>>",
+      "rel_ar": "اسم كان"
+    },
+    {
+      "rel_id": "44",
+      "rel_en": "pred <<kan>>",
+      "rel_ar": "خبر كان"
+    },
+    {
+      "rel_id": "45",
+      "rel_en": "subj <<tkon>>",
+      "rel_ar": "اسم تكون"
+    },
+    {
+      "rel_id": "46",
+      "rel_en": "pred <<tkon>>",
+      "rel_ar": "خبر تكون"
+    },
+    {
+      "rel_id": "47",
+      "rel_en": "subj <<yk>>",
+      "rel_ar": "اسم يك"
+    },
+    {
+      "rel_id": "48",
+      "rel_en": "pred <<yk>>",
+      "rel_ar": "خبر يك"
+    },
+    {
+      "rel_id": "49",
+      "rel_en": "subj <<tk>>",
+      "rel_ar": "اسم تك"
+    },
+    {
+      "rel_id": "50",
+      "rel_en": "pred <<tk>>",
+      "rel_ar": "خبر تك"
+    },
+    {
+      "rel_id": "51",
+      "rel_en": "subj <<lakun>>",
+      "rel_ar": "اسم لاكن"
+    },
+    {
+      "rel_id": "52",
+      "rel_en": "pred <<lakun>>",
+      "rel_ar": "خبر لاكن"
+    },
+    {
+      "rel_id": "53",
+      "rel_en": "subj <<akn>>",
+      "rel_ar": "اسم اكن"
+    },
+    {
+      "rel_id": "54",
+      "rel_en": "pred <<akn>>",
+      "rel_ar": "خبر اكن"
+    },
+    {
+      "rel_id": "55",
+      "rel_en": "subj <<nkon>>",
+      "rel_ar": "اسم نكون"
+    },
+    {
+      "rel_id": "56",
+      "rel_en": "pred <<nkon>>",
+      "rel_ar": "خبر نكون"
+    },
+    {
+      "rel_id": "57",
+      "rel_en": "subj <<nkn>>",
+      "rel_ar": "اسم نكن"
+    },
+    {
+      "rel_id": "58",
+      "rel_en": "pred <<nkn>>",
+      "rel_ar": "خبر نكن"
+    },
+    {
+      "rel_id": "59",
+      "rel_en": "subj <<kn>>",
+      "rel_ar": "اسم كن"
+    },
+    {
+      "rel_id": "60",
+      "rel_en": "pred <<kn>>",
+      "rel_ar": "خبر كن"
+    },
+    {
+      "rel_id": "61",
+      "rel_en": "subj <<tkn>>",
+      "rel_ar": "اسم تكن"
+    },
+    {
+      "rel_id": "62",
+      "rel_en": "pred <<tkn>>",
+      "rel_ar": "خبر تكن"
+    },
+    {
+      "rel_id": "63",
+      "rel_en": "subj <<tknm>>",
+      "rel_ar": "اسم تكنۢ"
+    },
+    {
+      "rel_id": "64",
+      "rel_en": "pred <<tknm>>",
+      "rel_ar": "خبر تكنۢ"
+    },
+    {
+      "rel_id": "65",
+      "rel_en": "subj <<kon>>",
+      "rel_ar": "اسم كون"
+    },
+    {
+      "rel_id": "66",
+      "rel_en": "pred <<kon>>",
+      "rel_ar": "خبر كون"
+    },
+    {
+      "rel_id": "67",
+      "rel_en": "subj <<ykon>>",
+      "rel_ar": "اسم يكون"
+    },
+    {
+      "rel_id": "68",
+      "rel_en": "pred <<ykon>>",
+      "rel_ar": "خبر يكون"
+    },
+    {
+      "rel_id": "69",
+      "rel_en": "subj <<akon>>",
+      "rel_ar": "اسم اكون"
+    },
+    {
+      "rel_id": "70",
+      "rel_en": "pred <<akon>>",
+      "rel_ar": "خبر اكون"
+    },
+    {
+      "rel_id": "71",
+      "rel_en": "subj <<kant>>",
+      "rel_ar": "اسم كانت"
+    },
+    {
+      "rel_id": "72",
+      "rel_en": "pred <<kant>>",
+      "rel_ar": "خبر كانت"
+    },
+    {
+      "rel_id": "73",
+      "rel_en": "subj <<ykn>>",
+      "rel_ar": "اسم يكن"
+    },
+    {
+      "rel_id": "74",
+      "rel_en": "pred <<ykn>>",
+      "rel_ar": "خبر يكن"
+    },
+    {
+      "rel_id": "75",
+      "rel_en": "subj <<nko>>",
+      "rel_ar": "اسم نك"
+    },
+    {
+      "rel_id": "76",
+      "rel_en": "pred <<nko>>",
+      "rel_ar": "خبر نك"
+    },
+    {
+      "rel_id": "77",
+      "rel_en": "subj <<ka>>",
+      "rel_ar": "اسم ك"
+    },
+    {
+      "rel_id": "78",
+      "rel_en": "pred <<ka>>",
+      "rel_ar": "خبر ك"
+    },
+    {
+      "rel_id": "79",
+      "rel_en": "subj <<zala>>",
+      "rel_ar": "اسم ظل"
+    },
+    {
+      "rel_id": "80",
+      "rel_en": "pred <<zala>>",
+      "rel_ar": "خبر ظل"
+    },
+    {
+      "rel_id": "81",
+      "rel_en": "subj <<yazal>>",
+      "rel_ar": "اسم يزال"
+    },
+    {
+      "rel_id": "82",
+      "rel_en": "pred <<yazal>>",
+      "rel_ar": "خبر يزال"
+    },
+    {
+      "rel_id": "83",
+      "rel_en": "subj <<lays>>",
+      "rel_ar": "اسم ليس"
+    },
+    {
+      "rel_id": "84",
+      "rel_en": "pred <<lays>>",
+      "rel_ar": "خبر ليس"
+    },
+    {
+      "rel_id": "85",
+      "rel_en": "subj <<layst>>",
+      "rel_ar": "اسم ليست"
+    },
+    {
+      "rel_id": "86",
+      "rel_en": "pred <<layst>>",
+      "rel_ar": "خبر ليست"
+    },
+    {
+      "rel_id": "87",
+      "rel_en": "subj <<tafta'>>",
+      "rel_ar": "اسم تفتاء"
+    },
+    {
+      "rel_id": "88",
+      "rel_en": "pred <<tafta'>>",
+      "rel_ar": "خبر تفتاء"
+    },
+    {
+      "rel_id": "89",
+      "rel_en": "subj <<ma>>",
+      "rel_ar": "اسم ما"
+    },
+    {
+      "rel_id": "90",
+      "rel_en": "pred <<ma>>",
+      "rel_ar": "خبر ما"
+    },
+    {
+      "rel_id": "91",
+      "rel_en": "subj <<asbah>>",
+      "rel_ar": "اسم أصبح"
+    },
+    {
+      "rel_id": "92",
+      "rel_en": "pred <<asbah>>",
+      "rel_ar": "خبر أصبح"
+    },
+    {
+      "rel_id": "93",
+      "rel_en": "subj <<asbaht>>",
+      "rel_ar": "اسم اصبحت"
+    },
+    {
+      "rel_id": "94",
+      "rel_en": "pred <<asbaht>>",
+      "rel_ar": "خبر اصبحت"
+    },
+    {
+      "rel_id": "95",
+      "rel_en": "subj <<tusbih>>",
+      "rel_ar": "اسم تصبح"
+    },
+    {
+      "rel_id": "96",
+      "rel_en": "pred <<tusbih>>",
+      "rel_ar": "خبر تصبح"
+    },
+    {
+      "rel_id": "97",
+      "rel_en": "subj <<ysbah>>",
+      "rel_ar": "اسم يصبح"
+    },
+    {
+      "rel_id": "98",
+      "rel_en": "pred <<ysbah>>",
+      "rel_ar": "خبر يصبح"
+    },
+    {
+      "rel_id": "99",
+      "rel_en": "subj <<barah>>",
+      "rel_ar": "اسم برح"
+    },
+    {
+      "rel_id": "100",
+      "rel_en": "pred <<barah>>",
+      "rel_ar": "خبر برح"
+    },
+    {
+      "rel_id": "101",
+      "rel_en": "subj <<dam>>",
+      "rel_ar": "اسم دام"
+    },
+    {
+      "rel_id": "102",
+      "rel_en": "pred <<dam>>",
+      "rel_ar": "خبر دام"
+    },
+    {
+      "rel_id": "103",
+      "rel_en": "subj <<dm>>",
+      "rel_ar": "اسم دم"
+    },
+    {
+      "rel_id": "104",
+      "rel_en": "pred <<dm>>",
+      "rel_ar": "خبر دم"
+    },
+    {
+      "rel_id": "105",
+      "rel_en": "subj <<las>>",
+      "rel_ar": "اسم لس"
+    },
+    {
+      "rel_id": "106",
+      "rel_en": "pred <<las>>",
+      "rel_ar": "خبر لس"
+    },
+    {
+      "rel_id": "107",
+      "rel_en": "subj<<in>>",
+      "rel_ar": "اسم إن"
+    },
+    {
+      "rel_id": "108",
+      "rel_en": "pred<<in>>",
+      "rel_ar": "خبر إن"
+    },
+    {
+      "rel_id": "109",
+      "rel_en": "subj<<an>>",
+      "rel_ar": "اسم أن"
+    },
+    {
+      "rel_id": "110",
+      "rel_en": "pred<<an>>",
+      "rel_ar": "خبر أن"
+    },
+    {
+      "rel_id": "111",
+      "rel_en": "subj<<en>>",
+      "rel_ar": "اسم ان"
+    },
+    {
+      "rel_id": "112",
+      "rel_en": "pred<<en>>",
+      "rel_ar": "خبر ان"
+    },
+    {
+      "rel_id": "113",
+      "rel_en": "subj<<'n>>",
+      "rel_ar": "اسم أن"
+    },
+    {
+      "rel_id": "114",
+      "rel_en": "pred<<'n>>",
+      "rel_ar": "خبر أن"
+    },
+    {
+      "rel_id": "115",
+      "rel_en": "subj<<yin>>",
+      "rel_ar": "اسم أن"
+    },
+    {
+      "rel_id": "116",
+      "rel_en": "pred<<yin>>",
+      "rel_ar": "خبر أن"
+    },
+    {
+      "rel_id": "117",
+      "rel_en": "subj <<ka'ana>>",
+      "rel_ar": "اسم كأن"
+    },
+    {
+      "rel_id": "118",
+      "rel_en": "pred <<ka'ana>>",
+      "rel_ar": "خبر كأن"
+    },
+    {
+      "rel_id": "119",
+      "rel_en": "subj <<lakin>>",
+      "rel_ar": "اسم لكن"
+    },
+    {
+      "rel_id": "120",
+      "rel_en": "pred <<lakin>>",
+      "rel_ar": "خبر لكن"
+    },
+    {
+      "rel_id": "121",
+      "rel_en": "subj <<layt>>",
+      "rel_ar": "اسم ليت"
+    },
+    {
+      "rel_id": "122",
+      "rel_en": "pred <<layt>>",
+      "rel_ar": "خبر ليت"
+    },
+    {
+      "rel_id": "123",
+      "rel_en": "subj <<la>>",
+      "rel_ar": "اسم لا"
+    },
+    {
+      "rel_id": "124",
+      "rel_en": "pred <<la>>",
+      "rel_ar": "خبر لا"
+    },
+    {
+      "rel_id": "125",
+      "rel_en": "subj <<lel>>",
+      "rel_ar": "اسم لعل"
+    },
+    {
+      "rel_id": "126",
+      "rel_en": "pred <<lel>>",
+      "rel_ar": "خبر لعل"
+    },
+    {
+      "rel_id": "127",
+      "rel_en": "subj <<kad>>",
+      "rel_ar": "اسم كاد"
+    },
+    {
+      "rel_id": "128",
+      "rel_en": "pred <<kad>>",
+      "rel_ar": "خبر كاد"
+    },
+    {
+      "rel_id": "129",
+      "rel_en": "subj <<akad>>",
+      "rel_ar": "اسم اكاد"
+    },
+    {
+      "rel_id": "130",
+      "rel_en": "pred <<akad>>",
+      "rel_ar": "خبر اكاد"
+    },
+    {
+      "rel_id": "131",
+      "rel_en": "subj <<ykad>>",
+      "rel_ar": "اسم يكاد"
+    },
+    {
+      "rel_id": "132",
+      "rel_en": "pred <<ykad>>",
+      "rel_ar": "خبر يكاد"
+    },
+    {
+      "rel_id": "133",
+      "rel_en": "subj <<tkad>>",
+      "rel_ar": "اسم تكاد"
+    },
+    {
+      "rel_id": "134",
+      "rel_en": "pred <<tkad>>",
+      "rel_ar": "خبر تكاد"
+    },
+    {
+      "rel_id": "135",
+      "rel_en": "subj <<easaa>>",
+      "rel_ar": "اسم عسى"
+    },
+    {
+      "rel_id": "136",
+      "rel_en": "pred <<easaa>>",
+      "rel_ar": "خبر عسى"
+    },
+    {
+      "rel_id": "137",
+      "rel_en": "root",
+      "rel_ar": "root"
+    },
+    {
+      "rel_id": "138",
+      "rel_en": "NonRel",
+      "rel_ar": "NonRel"
+    },
+    {
+      "rel_id": "139",
+      "rel_en": "_",
+      "rel_ar": "_"
+    }
+  ],
+  "pos": [
+    {
+      "pid": "0",
+      "pos": "N",
+      "pos_ar": "اسم",
+      "pos_en": "Noun"
+    },
+    {
+      "pid": "1",
+      "pos": "PN",
+      "pos_ar": "اسم علم",
+      "pos_en": "Proper noun"
+    },
+    {
+      "pid": "2",
+      "pos": "ADJ",
+      "pos_ar": "صفة",
+      "pos_en": "Adjective"
+    },
+    {
+      "pid": "3",
+      "pos": "IMPN",
+      "pos_ar": "اسم فعل أمر",
+      "pos_en": "Imperative verbal noun"
+    },
+    {
+      "pid": "4",
+      "pos": "PRON",
+      "pos_ar": "ضمير",
+      "pos_en": "Personal pronoun"
+    },
+    {
+      "pid": "5",
+      "pos": "DEM",
+      "pos_ar": "اسم اشارة",
+      "pos_en": "Demonstrative pronoun"
+    },
+    {
+      "pid": "6",
+      "pos": "REL",
+      "pos_ar": "اسم موصول",
+      "pos_en": "Relative pronoun"
+    },
+    {
+      "pid": "7",
+      "pos": "T",
+      "pos_ar": "ظرف زمان",
+      "pos_en": "Time adverb"
+    },
+    {
+      "pid": "8",
+      "pos": "LOC",
+      "pos_ar": "ظرف مكان",
+      "pos_en": "Location adverb"
+    },
+    {
+      "pid": "9",
+      "pos": "V",
+      "pos_ar": "فعل",
+      "pos_en": "Verb"
+    },
+    {
+      "pid": "10",
+      "pos": "P",
+      "pos_ar": "حرف جر",
+      "pos_en": "Preposition"
+    },
+    {
+      "pid": "11",
+      "pos": "EMPH",
+      "pos_ar": "حرف توكيد",
+      "pos_en": "Emphatic lām prefix"
+    },
+    {
+      "pid": "12",
+      "pos": "IMPV",
+      "pos_ar": "حرف امر",
+      "pos_en": "Imperative lām prefix"
+    },
+    {
+      "pid": "13",
+      "pos": "PRP",
+      "pos_ar": "حرف تعليل",
+      "pos_en": "Purpose lām prefix"
+    },
+    {
+      "pid": "14",
+      "pos": "CONJ",
+      "pos_ar": "حرف عطف",
+      "pos_en": "Coordinating conjunction"
+    },
+    {
+      "pid": "15",
+      "pos": "SUB",
+      "pos_ar": "حرف مصدري",
+      "pos_en": "Subordinating conjunction"
+    },
+    {
+      "pid": "16",
+      "pos": "ACC",
+      "pos_ar": "حرف نصب",
+      "pos_en": "Accusative particle"
+    },
+    {
+      "pid": "17",
+      "pos": "AMD",
+      "pos_ar": "حرف استدراك",
+      "pos_en": "Amendment particle"
+    },
+    {
+      "pid": "18",
+      "pos": "ANS",
+      "pos_ar": "حرف جواب",
+      "pos_en": "Answer particle"
+    },
+    {
+      "pid": "19",
+      "pos": "AVR",
+      "pos_ar": "حرف ردع",
+      "pos_en": "Aversion particle"
+    },
+    {
+      "pid": "20",
+      "pos": "CAUS",
+      "pos_ar": "حرف سببية",
+      "pos_en": "Particle of cause"
+    },
+    {
+      "pid": "21",
+      "pos": "CERT",
+      "pos_ar": "حرف تحقيق",
+      "pos_en": "Particle of certainty"
+    },
+    {
+      "pid": "22",
+      "pos": "CIRC",
+      "pos_ar": "حرف حال",
+      "pos_en": "Circumstantial particle"
+    },
+    {
+      "pid": "23",
+      "pos": "COM",
+      "pos_ar": "حرف معية",
+      "pos_en": "Comitative particle"
+    },
+    {
+      "pid": "24",
+      "pos": "COND",
+      "pos_ar": "حرف شرط",
+      "pos_en": "Conditional particle"
+    },
+    {
+      "pid": "25",
+      "pos": "EQ",
+      "pos_ar": "حرف تسوية",
+      "pos_en": "Equalization particle"
+    },
+    {
+      "pid": "26",
+      "pos": "EXH",
+      "pos_ar": "حرف تحضيض",
+      "pos_en": "Exhortation particle"
+    },
+    {
+      "pid": "27",
+      "pos": "EXL",
+      "pos_ar": "حرف تفصيل",
+      "pos_en": "Explanation particle"
+    },
+    {
+      "pid": "28",
+      "pos": "EXP",
+      "pos_ar": "أداة استثناء",
+      "pos_en": "Exceptive particle"
+    },
+    {
+      "pid": "29",
+      "pos": "FUT",
+      "pos_ar": "حرف استقبال",
+      "pos_en": "Future particle"
+    },
+    {
+      "pid": "30",
+      "pos": "INC",
+      "pos_ar": "حرف ابتداء",
+      "pos_en": "Inceptive particle"
+    },
+    {
+      "pid": "31",
+      "pos": "INT",
+      "pos_ar": "حرف تفسير",
+      "pos_en": "Particle of interpretation"
+    },
+    {
+      "pid": "32",
+      "pos": "INTG",
+      "pos_ar": "حرف استفهام",
+      "pos_en": "Interogative particle"
+    },
+    {
+      "pid": "33",
+      "pos": "NEG",
+      "pos_ar": "حرف نفي",
+      "pos_en": "Negative particle"
+    },
+    {
+      "pid": "34",
+      "pos": "PREV",
+      "pos_ar": "حرف كاف",
+      "pos_en": "Preventive particle"
+    },
+    {
+      "pid": "35",
+      "pos": "PRO",
+      "pos_ar": "حرف نهي",
+      "pos_en": "Prohibition particle"
+    },
+    {
+      "pid": "36",
+      "pos": "REM",
+      "pos_ar": "حرف استئنافية",
+      "pos_en": "Resumption particle"
+    },
+    {
+      "pid": "37",
+      "pos": "RES",
+      "pos_ar": "أداة حصر",
+      "pos_en": "Restriction particle"
+    },
+    {
+      "pid": "38",
+      "pos": "RET",
+      "pos_ar": "حرف اضراب",
+      "pos_en": "Retraction particle"
+    },
+    {
+      "pid": "39",
+      "pos": "RSLT",
+      "pos_ar": "حرف واقع في جواب الشرط",
+      "pos_en": "Result particle"
+    },
+    {
+      "pid": "40",
+      "pos": "SUP",
+      "pos_ar": "حرف زائد",
+      "pos_en": "Supplemental particle"
+    },
+    {
+      "pid": "41",
+      "pos": "SUR",
+      "pos_ar": "حرف فجاءة",
+      "pos_en": "Surprise particle"
+    },
+    {
+      "pid": "42",
+      "pos": "VOC",
+      "pos_ar": "حرف نداء",
+      "pos_en": "Vocative particle"
+    },
+    {
+      "pid": "43",
+      "pos": "INL",
+      "pos_ar": "حروف مقطعة",
+      "pos_en": "Quranic initials"
+    },
+    {
+      "pid": "44",
+      "pos": "DET",
+      "pos_ar": "أداة تعريف",
+      "pos_en": "Determiner"
+    }
+  ],
+  "constituents": [
+    {
+      "pid": "0",
+      "tag": "NS",
+      "tag_ar": "جملة اسمية",
+      "tag_en": "Nominal sentence"
+    },
+    {
+      "pid": "1",
+      "tag": "VS",
+      "tag_ar": "جملة فعلية",
+      "tag_en": "Verbal sentence"
+    },
+    {
+      "pid": "2",
+      "tag": "CS",
+      "tag_ar": "جملة شرط",
+      "tag_en": "Conditional sentence"
+    },
+    {
+      "pid": "3",
+      "tag": "PP",
+      "tag_ar": "جار ومجرور",
+      "tag_en": "Prepositional phrase"
+    },
+    {
+      "pid": "4",
+      "tag": "SC",
+      "tag_ar": "مصدر مؤول",
+      "tag_en": "Subordinate clause"
+    },
+    {
+      "pid": "5",
+      "tag": "S",
+      "tag_ar": "جملة",
+      "tag_en": "Sentence"
+    }
+  ],
+  "morphology_features": {
+    "NominalCase": {
+      "nom": {
+        "code": "NOM",
+        "arabic": "مرفوع",
+        "english": "Nominative case",
+        "pattern": ""
+      },
+      "acc": {
+        "code": "ACC",
+        "arabic": "منصوب",
+        "english": "Accusative case",
+        "pattern": ""
+      },
+      "gen": {
+        "code": "GEN",
+        "arabic": "مجرور",
+        "english": "Genitive case",
+        "pattern": ""
+      }
+    },
+    "DerivedNoun": {
+      "act_pcpl": {
+        "code": "ACT_PCPL",
+        "arabic": "اسم فاعل",
+        "english": "Active Participle",
+        "pattern": ""
+      },
+      "pass_pcpl": {
+        "code": "PASS_PCPL",
+        "arabic": "اسم مفعول",
+        "english": "Passive Participle",
+        "pattern": ""
+      },
+      "vn": {
+        "code": "VN",
+        "arabic": "مصدر",
+        "english": "Verbal Noun",
+        "pattern": ""
+      }
+    },
+    "NominalState": {
+      "def": {
+        "code": "DEF",
+        "arabic": "معرفة",
+        "english": "Definite state",
+        "pattern": ""
+      },
+      "indef": {
+        "code": "INDEF",
+        "arabic": "نكرة",
+        "english": "Indefinite state",
+        "pattern": ""
+      }
+    },
+    "Number": {
+      "s": {
+        "code": "S",
+        "arabic": "مفرد",
+        "english": "singular",
+        "pattern": ""
+      },
+      "d": {
+        "code": "D",
+        "arabic": "مثنى",
+        "english": "dual",
+        "pattern": ""
+      },
+      "p": {
+        "code": "P",
+        "arabic": "جمع",
+        "english": "plural",
+        "pattern": ""
+      }
+    },
+    "Prefixs": {
+      "a:eq+": {
+        "code": "A:EQ+",
+        "arabic": "همزة تسوية",
+        "english": "Hamza of equivalence",
+        "pattern": ""
+      },
+      "a:intg+": {
+        "code": "A:INTG+",
+        "arabic": "همزة استفهام",
+        "english": "Interrogative hamza",
+        "pattern": ""
+      },
+      "al+": {
+        "code": "Al+",
+        "arabic": "ال التعريف",
+        "english": "Definite article (Al)",
+        "pattern": ""
+      },
+      "bi+": {
+        "code": "bi+",
+        "arabic": "باء الجر",
+        "english": "Prepositional bāʼ",
+        "pattern": ""
+      },
+      "f:caus+": {
+        "code": "f:CAUS+",
+        "arabic": "فاء السببية",
+        "english": "Causal fāʼ",
+        "pattern": ""
+      },
+      "f:conj+": {
+        "code": "f:CONJ+",
+        "arabic": "فاء العطف",
+        "english": "Coordinating fāʼ",
+        "pattern": ""
+      },
+      "f:rem+": {
+        "code": "f:REM+",
+        "arabic": "فاء الإستئناف",
+        "english": "Resumptive fāʼ",
+        "pattern": ""
+      },
+      "f:rslt+": {
+        "code": "f:RSLT+",
+        "arabic": "فاء الشرط",
+        "english": "Resultative fāʼ",
+        "pattern": ""
+      },
+      "f:sup+": {
+        "code": "f:SUP+",
+        "arabic": "فاء الزائدة",
+        "english": "Superfluous fāʼ",
+        "pattern": ""
+      },
+      "ha+": {
+        "code": "ha+",
+        "arabic": "هاء النداء",
+        "english": "Vocative hāʼ",
+        "pattern": ""
+      },
+      "ka+": {
+        "code": "ka+",
+        "arabic": "كاف الجر",
+        "english": "Prepositional kāf",
+        "pattern": ""
+      },
+      "l:emph+": {
+        "code": "l:EMPH+",
+        "arabic": "لام التوكيد",
+        "english": "Emphatic lām",
+        "pattern": ""
+      },
+      "l:impv+": {
+        "code": "l:IMPV+",
+        "arabic": "لام الأمر",
+        "english": "Imperative lām",
+        "pattern": ""
+      },
+      "l:p+": {
+        "code": "l:P+",
+        "arabic": "لام الجر",
+        "english": "Prepositional lām",
+        "pattern": ""
+      },
+      "l:prp+": {
+        "code": "l:PRP+",
+        "arabic": "لام التعليل",
+        "english": "Purpose lām",
+        "pattern": ""
+      },
+      "sa+": {
+        "code": "sa+",
+        "arabic": "سين المستقبل",
+        "english": "Future particle sīn",
+        "pattern": ""
+      },
+      "ta+": {
+        "code": "ta+",
+        "arabic": "تاء النداء",
+        "english": "Vocative tāʼ",
+        "pattern": ""
+      },
+      "w:circ+": {
+        "code": "w:CIRC+",
+        "arabic": "واو الظرفية",
+        "english": "Circumstantial wāw",
+        "pattern": ""
+      },
+      "w:com+": {
+        "code": "w:COM+",
+        "arabic": "واو المعية",
+        "english": "Comitative wāw",
+        "pattern": ""
+      },
+      "w:conj+": {
+        "code": "w:CONJ+",
+        "arabic": "واو العطف",
+        "english": "Coordinating wāw",
+        "pattern": ""
+      },
+      "w:p+": {
+        "code": "w:P+",
+        "arabic": "واو الجر",
+        "english": "Prepositional wāw",
+        "pattern": ""
+      },
+      "w:rem+": {
+        "code": "w:REM+",
+        "arabic": "واو الإستئناف",
+        "english": "Resumptive wāw",
+        "pattern": ""
+      },
+      "w:sup+": {
+        "code": "w:SUP+",
+        "arabic": "واو الزائدة",
+        "english": "Superfluous wāw",
+        "pattern": ""
+      },
+      "ya+": {
+        "code": "ya+",
+        "arabic": "ياء النداء",
+        "english": "Vocative yāʼ",
+        "pattern": ""
+      }
+    },
+    "Suffixs": {
+      "voc:m": {
+        "code": "VOC:m",
+        "arabic": "ميم النداء",
+        "english": "ميم النداء",
+        "pattern": ""
+      },
+      "emph:n": {
+        "code": "EMPH:n",
+        "arabic": "نون التوكيد",
+        "english": "نون التوكيد",
+        "pattern": ""
+      },
+      "pron": {
+        "code": "PRON",
+        "arabic": "ضمير متصل",
+        "english": "ضمير متصل",
+        "pattern": ""
+      },
+      "l:p+": {
+        "code": "l:P+",
+        "arabic": "لام الجر",
+        "english": "لام الجر",
+        "pattern": ""
+      }
+    },
+    "VerbForm": {
+      "(i)": {
+        "code": "(I)",
+        "arabic": "فَعَلَ",
+        "english": "First form (default)",
+        "pattern": "/faʕala/"
+      },
+      "(ii)": {
+        "code": "(II)",
+        "arabic": "فَعَّلَ",
+        "english": "Second form",
+        "pattern": "/faʕʕala/"
+      },
+      "(iii)": {
+        "code": "(III)",
+        "arabic": "فَاعَلَ",
+        "english": "Third form",
+        "pattern": "/faʕala/"
+      },
+      "(iv)": {
+        "code": "(IV)",
+        "arabic": "أَفْعَلَ",
+        "english": "Fourth form",
+        "pattern": "/ʔafʕala/"
+      },
+      "(ix)": {
+        "code": "(IX)",
+        "arabic": "إِفْعَلَّ",
+        "english": "Fifth form",
+        "pattern": "/ʔifʕalla/"
+      },
+      "(v)": {
+        "code": "(V)",
+        "arabic": "تَفَعَّلَ",
+        "english": "Sixth form",
+        "pattern": "/tafaʕʕala/"
+      },
+      "(vi)": {
+        "code": "(VI)",
+        "arabic": "تَفَاعَلَ",
+        "english": "Seventh form",
+        "pattern": "/tafaaʕala/"
+      },
+      "(vii)": {
+        "code": "(VII)",
+        "arabic": "إِنْفَعَلَ",
+        "english": "Eighth form",
+        "pattern": "/ʔinfaʕala/"
+      },
+      "(viii)": {
+        "code": "(VIII)",
+        "arabic": "إِفْتَعَلَ",
+        "english": "Ninth form",
+        "pattern": "/ʔiftaʕala/"
+      },
+      "(x)": {
+        "code": "(X)",
+        "arabic": "إِسْتَفْعَلَ",
+        "english": "Tenth form",
+        "pattern": "/ʔistafʕala/"
+      },
+      "(xi)": {
+        "code": "(XI)",
+        "arabic": "فَعْلَلَ",
+        "english": "Eleventh form",
+        "pattern": "/faʕlala/"
+      },
+      "(xii)": {
+        "code": "(XII)",
+        "arabic": "تَفَعْلَلَ",
+        "english": "Twelfth form",
+        "pattern": "/tafaʕlala/"
+      }
+    },
+    "VerbMood": {
+      "ind": {
+        "code": "IND",
+        "arabic": "مرفوع",
+        "english": "Indicative mood",
+        "pattern": ""
+      },
+      "jus": {
+        "code": "JUS",
+        "arabic": "مجزوم",
+        "english": "Jussive mood",
+        "pattern": ""
+      },
+      "subj": {
+        "code": "SUBJ",
+        "arabic": "منصوب",
+        "english": "Subjunctive mood",
+        "pattern": ""
+      }
+    },
+    "VerbState": {
+      "perf": {
+        "code": "PERF",
+        "arabic": "فعل ماضي",
+        "english": "Perfect verb",
+        "pattern": ""
+      },
+      "impf": {
+        "code": "IMPF",
+        "arabic": "فعل مضارع",
+        "english": "Imperfect verb",
+        "pattern": ""
+      },
+      "impv": {
+        "code": "IMPV",
+        "arabic": "فعل أمر",
+        "english": "Imperative verb",
+        "pattern": ""
+      }
+    },
+    "VerbVoice": {
+      "act": {
+        "code": "ACT",
+        "arabic": "مبني للمعلوم",
+        "english": "Active voice",
+        "pattern": ""
+      },
+      "pass": {
+        "code": "PASS",
+        "arabic": "مبني للمجهول",
+        "english": "Passive voice",
+        "pattern": ""
+      }
+    },
+    "SpecialGroup": {
+      "<in~": {
+        "code": "<in~",
+        "arabic": "ان واخواتها",
+        "english": "inna wa akhowatuha (Emphasis)",
+        "pattern": ""
+      },
+      "kaad": {
+        "code": "kaAd",
+        "arabic": "كاد واخواتها",
+        "english": "kaada wa akhowatuha (Mood)",
+        "pattern": ""
+      },
+      "kaan": {
+        "code": "kaAn",
+        "arabic": "كان واخواتها",
+        "english": "kaan wa akhowatuha (Tense)",
+        "pattern": ""
+      }
+    },
+    "Gender": {
+      "m": {
+        "code": "M",
+        "arabic": "مذكر",
+        "english": "masculine",
+        "pattern": ""
+      },
+      "f": {
+        "code": "F",
+        "arabic": "مؤنث",
+        "english": "feminine",
+        "pattern": ""
+      }
+    },
+    "Person": {
+      "1": {
+        "code": "1",
+        "arabic": "واحد",
+        "english": "first person",
+        "pattern": ""
+      },
+      "2": {
+        "code": "2",
+        "arabic": "اثنين",
+        "english": "second person",
+        "pattern": ""
+      },
+      "3": {
+        "code": "3",
+        "arabic": "ثلاثة",
+        "english": "third person",
+        "pattern": ""
+      }
+    }
+  }
+}

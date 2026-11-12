@@ -1,0 +1,7 @@
+﻿constituent_code,arabic,english,source_pid
+NS,جملة اسمية,Nominal sentence,0
+VS,جملة فعلية,Verbal sentence,1
+CS,جملة شرط,Conditional sentence,2
+PP,جار ومجرور,Prepositional phrase,3
+SC,مصدر مؤول,Subordinate clause,4
+S,جملة,Sentence,5
