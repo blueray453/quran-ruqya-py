@@ -1,0 +1,114 @@
+
+=== ALL EQTB CONSTITUENT HEADS ===
+Total: 116
+
+Labels:
+PP: 50
+VS: 44
+NS: 17
+SC: 3
+CS: 2
+
+=== UNIQUE CONSTITUENT SPANS ===
+CS: 2 records, 2 unique spans
+SC: 3 records, 3 unique spans
+VS: 44 records, 44 unique spans
+NS: 17 records, 17 unique spans
+PP: 50 records, 50 unique spans
+
+=== CONSTITUENT SPAN EXAMPLES ===
+
+--- CS ---
+{'sentence_id': '10838', 'token_id': '3', 'location': '(67:10:2:1)', 'constituent_label': 'CS', 'constituents_loc': '[3-18]', 'constituents': 'لَوْ كُنَّا نَسْمَعُ (نحْنُ) أَوْ نَعْقِلُ (نحْنُ) مَا كُنَّا (*) فِىٓ أَصْحَٰبِ ٱلسَّعِيرِ'}
+{'sentence_id': '10869', 'token_id': '8', 'location': '(67:25:5:1)', 'constituent_label': 'CS', 'constituents_loc': '[8-11]', 'constituents': 'إِن كُنتُمْ صَٰدِقِينَ'}
+
+--- SC ---
+{'sentence_id': '10823', 'token_id': '22', 'location': '(67:2:5:1)', 'constituent_label': 'SC', 'constituents_loc': '[22-29]', 'constituents': 'لِيَبْلُوَكُمْ (هُوَ) أَيُّكُمْ أَحْسَنُ عَمَلًا'}
+{'sentence_id': '10849', 'token_id': '8', 'location': '(67:16:5:1)', 'constituent_label': 'SC', 'constituents_loc': '[8-14]', 'constituents': 'أَن يَخْسِفَ (هُوَ) بِكُمُ ٱلْأَرْضَ'}
+{'sentence_id': '10851', 'token_id': '8', 'location': '(67:17:6:1)', 'constituent_label': 'SC', 'constituents_loc': '[8-13]', 'constituents': 'أَن يُرْسِلَ (هُوَ) عَلَيْكُمْ حَاصِبًا'}
+
+--- VS ---
+{'sentence_id': '10823', 'token_id': '15', 'location': '(67:2:2:1)', 'constituent_label': 'VS', 'constituents_loc': '[15-29]', 'constituents': 'خَلَقَ (هُوَ) ٱلْمَوْتَ وَٱلْحَيَوٰةَ لِيَبْلُوَكُمْ (هُوَ) أَيُّكُمْ أَحْسَنُ عَمَلًا'}
+{'sentence_id': '10823', 'token_id': '23', 'location': '(67:2:5:2)', 'constituent_label': 'VS', 'constituents_loc': '[23-29]', 'constituents': 'يَبْلُوَكُمْ (هُوَ) أَيُّكُمْ أَحْسَنُ عَمَلًا'}
+{'sentence_id': '10824', 'token_id': '7', 'location': '(67:3:2:1)', 'constituent_label': 'VS', 'constituents_loc': '[7-11]', 'constituents': 'خَلَقَ (هُوَ) سَبْعَ سَمَٰوَٰتٍ طِبَاقًا'}
+{'sentence_id': '10828', 'token_id': '6', 'location': '(67:4:5:1)', 'constituent_label': 'VS', 'constituents_loc': '[6-14]', 'constituents': 'يَنقَلِبْ إِلَيْكَ ٱلْبَصَرُ خَاسِئًا وَهُوَ حَسِيرٌ'}
+{'sentence_id': '10830', 'token_id': '3', 'location': '(67:6:2:1)', 'constituent_label': 'VS', 'constituents_loc': '[3-7]', 'constituents': 'كَفَرُوا۟ بِرَبِّهِمْ'}
+
+--- NS ---
+{'sentence_id': '10823', 'token_id': '7', 'location': '(67:1:4:2)', 'constituent_label': 'NS', 'constituents_loc': '[2-7]', 'constituents': 'بِيَدِهِ (*) ٱلْمُلْكُ'}
+{'sentence_id': '10823', 'token_id': '26', 'location': '(67:2:6:1)', 'constituent_label': 'NS', 'constituents_loc': '[26-29]', 'constituents': 'أَيُّكُمْ أَحْسَنُ عَمَلًا'}
+{'sentence_id': '10828', 'token_id': '13', 'location': '(67:4:9:2)', 'constituent_label': 'NS', 'constituents_loc': '[13-14]', 'constituents': 'هُوَ حَسِيرٌ'}
+{'sentence_id': '10832', 'token_id': '11', 'location': '(67:7:7:2)', 'constituent_label': 'NS', 'constituents_loc': '[11-13]', 'constituents': 'هِىَ تَفُورُ (هِيَ)'}
+{'sentence_id': '10838', 'token_id': '11', 'location': '(67:10:7:1)', 'constituent_label': 'NS', 'constituents_loc': '[11-18]', 'constituents': 'مَا كُنَّا (*) فِىٓ أَصْحَٰبِ ٱلسَّعِيرِ'}
+
+--- PP ---
+{'sentence_id': '10823', 'token_id': '2', 'location': '(67:1:3:1)', 'constituent_label': 'PP', 'constituents_loc': '[2-3]', 'constituents': 'بِيَدِ'}
+{'sentence_id': '10823', 'token_id': '10', 'location': '(67:1:6:1)', 'constituent_label': 'PP', 'constituents_loc': '[10-11]', 'constituents': 'عَلَىٰ كُلِّ'}
+{'sentence_id': '10825', 'token_id': '3', 'location': '(67:3:8:1)', 'constituent_label': 'PP', 'constituents_loc': '[3-4]', 'constituents': 'فِى خَلْقِ'}
+{'sentence_id': '10825', 'token_id': '7', 'location': '(67:3:11:1)', 'constituent_label': 'PP', 'constituents_loc': '[7-8]', 'constituents': 'مِن تَفَٰوُتٍ'}
+{'sentence_id': '10827', 'token_id': '3', 'location': '(67:3:17:1)', 'constituent_label': 'PP', 'constituents_loc': '[3-4]', 'constituents': 'مِن فُطُورٍ'}
+
+=== ZERO-WORD LOCATION RECORDS ===
+Total: 54
+{'tid': '130477', 'token_id': '5', 'sentence_id': '10823', 'sentence_word': '0', 'location': '_', 'uthmani_token': '(*)', 'trans': '_', 'pos': 'N', 'rel_label': 'Pred'}
+{'tid': '130488', 'token_id': '16', 'sentence_id': '10823', 'sentence_word': '0', 'location': '_', 'uthmani_token': '(هُوَ)', 'trans': '_', 'pos': 'PRON', 'rel_label': 'Subj'}
+{'tid': '130497', 'token_id': '25', 'sentence_id': '10823', 'sentence_word': '0', 'location': '_', 'uthmani_token': '(هُوَ)', 'trans': '_', 'pos': 'PRON', 'rel_label': 'Subj'}
+{'tid': '130510', 'token_id': '8', 'sentence_id': '10824', 'sentence_word': '0', 'location': '_', 'uthmani_token': '(هُوَ)', 'trans': '_', 'pos': 'PRON', 'rel_label': 'Subj'}
+{'tid': '130516', 'token_id': '2', 'sentence_id': '10825', 'sentence_word': '0', 'location': '_', 'uthmani_token': '(أَنْتَ)', 'trans': '_', 'pos': 'PRON', 'rel_label': 'Subj'}
+{'tid': '130525', 'token_id': '2', 'sentence_id': '10826', 'sentence_word': '0', 'location': '_', 'uthmani_token': '(أَنْتَ)', 'trans': '_', 'pos': 'PRON', 'rel_label': 'Subj'}
+{'tid': '130530', 'token_id': '2', 'sentence_id': '10827', 'sentence_word': '0', 'location': '_', 'uthmani_token': '(أَنْتَ)', 'trans': '_', 'pos': 'PRON', 'rel_label': 'Subj'}
+{'tid': '130535', 'token_id': '2', 'sentence_id': '10828', 'sentence_word': '0', 'location': '_', 'uthmani_token': '(أَنْتَ)', 'trans': '_', 'pos': 'PRON', 'rel_label': 'Subj'}
+{'tid': '130583', 'token_id': '8', 'sentence_id': '10830', 'sentence_word': '0', 'location': '_', 'uthmani_token': '(*)', 'trans': '_', 'pos': 'N', 'rel_label': 'Pred'}
+{'tid': '130603', 'token_id': '13', 'sentence_id': '10832', 'sentence_word': '0', 'location': '_', 'uthmani_token': '(هِيَ)', 'trans': '_', 'pos': 'PRON', 'rel_label': 'Subj'}
+{'tid': '130605', 'token_id': '1', 'sentence_id': '10833', 'sentence_word': '0', 'location': '_', 'uthmani_token': '(هِيَ)', 'trans': '_', 'pos': 'PRON', 'rel_label': 'Subj'}
+{'tid': '130607', 'token_id': '3', 'sentence_id': '10833', 'sentence_word': '0', 'location': '_', 'uthmani_token': '(هِيَ)', 'trans': '_', 'pos': 'PRON', 'rel_label': 'Subj'}
+{'tid': '130646', 'token_id': '3', 'sentence_id': '10837', 'sentence_word': '0', 'location': '_', 'uthmani_token': '(*)', 'trans': '_', 'pos': 'N', 'rel_label': 'Pred'}
+{'tid': '130657', 'token_id': '7', 'sentence_id': '10838', 'sentence_word': '0', 'location': '_', 'uthmani_token': '(نحْنُ)', 'trans': '_', 'pos': 'PRON', 'rel_label': 'Subj'}
+{'tid': '130660', 'token_id': '10', 'sentence_id': '10838', 'sentence_word': '0', 'location': '_', 'uthmani_token': '(نحْنُ)', 'trans': '_', 'pos': 'PRON', 'rel_label': 'Subj'}
+{'tid': '130664', 'token_id': '14', 'sentence_id': '10838', 'sentence_word': '0', 'location': '_', 'uthmani_token': '(*)', 'trans': '_', 'pos': 'N', 'rel_label': 'pred <<ka>>'}
+{'tid': '130675', 'token_id': '0', 'sentence_id': '10840', 'sentence_word': '0', 'location': '_', 'uthmani_token': '(*)', 'trans': '_', 'pos': 'V', 'rel_label': 'root'}
+{'tid': '130678', 'token_id': '3', 'sentence_id': '10840', 'sentence_word': '0', 'location': '_', 'uthmani_token': '(*)', 'trans': '_', 'pos': 'ADJ', 'rel_label': 'Adj'}
+{'tid': '130689', 'token_id': '6', 'sentence_id': '10841', 'sentence_word': '0', 'location': '_', 'uthmani_token': '(*)', 'trans': '_', 'pos': 'N', 'rel_label': 'circ'}
+{'tid': '130695', 'token_id': '12', 'sentence_id': '10841', 'sentence_word': '0', 'location': '_', 'uthmani_token': '(*)', 'trans': '_', 'pos': 'N', 'rel_label': 'Pred'}
+{'tid': '130722', 'token_id': '5', 'sentence_id': '10844', 'sentence_word': '0', 'location': '_', 'uthmani_token': '(هُوَ)', 'trans': '_', 'pos': 'PRON', 'rel_label': 'Subj'}
+{'tid': '130732', 'token_id': '3', 'sentence_id': '10846', 'sentence_word': '0', 'location': '_', 'uthmani_token': '(هُوَ)', 'trans': '_', 'pos': 'PRON', 'rel_label': 'Subj'}
+{'tid': '130753', 'token_id': '3', 'sentence_id': '10848', 'sentence_word': '0', 'location': '_', 'uthmani_token': '(*)', 'trans': '_', 'pos': 'N', 'rel_label': 'Pred'}
+{'tid': '130760', 'token_id': '4', 'sentence_id': '10849', 'sentence_word': '0', 'location': '_', 'uthmani_token': '(*)', 'trans': '_', 'pos': 'N', 'rel_label': 'sub'}
+{'tid': '130766', 'token_id': '10', 'sentence_id': '10849', 'sentence_word': '0', 'location': '_', 'uthmani_token': '(هُوَ)', 'trans': '_', 'pos': 'PRON', 'rel_label': 'Subj'}
+{'tid': '130775', 'token_id': '4', 'sentence_id': '10850', 'sentence_word': '0', 'location': '_', 'uthmani_token': '(هِيَ)', 'trans': '_', 'pos': 'PRON', 'rel_label': 'Subj'}
+{'tid': '130780', 'token_id': '4', 'sentence_id': '10851', 'sentence_word': '0', 'location': '_', 'uthmani_token': '(*)', 'trans': '_', 'pos': 'N', 'rel_label': 'sub'}
+{'tid': '130786', 'token_id': '10', 'sentence_id': '10851', 'sentence_word': '0', 'location': '_', 'uthmani_token': '(هُوَ)', 'trans': '_', 'pos': 'PRON', 'rel_label': 'Subj'}
+{'tid': '130802', 'token_id': '5', 'sentence_id': '10853', 'sentence_word': '0', 'location': '_', 'uthmani_token': '(*)', 'trans': '_', 'pos': 'N', 'rel_label': 'sub'}
+{'tid': '130819', 'token_id': '8', 'sentence_id': '10855', 'sentence_word': '0', 'location': '_', 'uthmani_token': '(*)', 'trans': '_', 'pos': 'N', 'rel_label': 'circ'}
+
+=== SENTENCE 10823 ===
+(67:1:1:1) تَبَٰرَكَ V
+(67:1:2:1) ٱلَّذِى REL
+(67:1:3:1) بِ P
+(67:1:3:2) يَدِ N
+(67:1:3:3) هِ PRON
+_ (*) N
+(67:1:4:1) ٱلْ DET
+(67:1:4:2) مُلْكُ N
+(67:1:5:1) وَ CONJ
+(67:1:5:2) هُوَ PRON
+(67:1:6:1) عَلَىٰ P
+(67:1:7:1) كُلِّ N
+(67:1:8:1) شَىْءٍ N
+(67:1:9:1) قَدِيرٌ N
+(67:2:1:1) ٱلَّذِى REL
+(67:2:2:1) خَلَقَ V
+_ (هُوَ) PRON
+(67:2:3:1) ٱلْ DET
+(67:2:3:2) مَوْتَ N
+(67:2:4:1) وَ CONJ
+(67:2:4:2) ٱلْ DET
+(67:2:4:3) حَيَوٰةَ N
+(67:2:5:1) لِ PRP
+(67:2:5:2) يَبْلُوَ V
+(67:2:5:3) كُمْ PRON
+_ (هُوَ) PRON
+(67:2:6:1) أَيُّ N
+(67:2:6:2) كُمْ PRON
+(67:2:7:1) أَحْسَنُ N
+(67:2:8:1) عَمَلًا N

@@ -1,0 +1,122 @@
+[
+ {
+  "tag": "A:EQ+",
+  "arabic": "همزة تسوية",
+  "english": "Hamza of equivalence"
+ },
+ {
+  "tag": "A:INTG+",
+  "arabic": "همزة استفهام",
+  "english": "Interrogative hamza"
+ },
+ {
+  "tag": "Al+",
+  "arabic": "ال التعريف",
+  "english": "Definite article (Al)"
+ },
+ {
+  "tag": "bi+",
+  "arabic": "باء الجر",
+  "english": "Prepositional bāʼ"
+ },
+ {
+  "tag": "f:CAUS+",
+  "arabic": "فاء السببية",
+  "english": "Causal fāʼ"
+ },
+ {
+  "tag": "f:CONJ+",
+  "arabic": "فاء العطف",
+  "english": "Coordinating fāʼ"
+ },
+ {
+  "tag": "f:REM+",
+  "arabic": "فاء الإستئناف",
+  "english": "Resumptive fāʼ"
+ },
+ {
+  "tag": "f:RSLT+",
+  "arabic": "فاء الشرط",
+  "english": "Resultative fāʼ"
+ },
+ {
+  "tag": "f:SUP+",
+  "arabic": "فاء الزائدة",
+  "english": "Superfluous fāʼ"
+ },
+ {
+  "tag": "ha+",
+  "arabic": "هاء النداء",
+  "english": "Vocative hāʼ"
+ },
+ {
+  "tag": "ka+",
+  "arabic": "كاف الجر",
+  "english": "Prepositional kāf"
+ },
+ {
+  "tag": "l:EMPH+",
+  "arabic": "لام التوكيد",
+  "english": "Emphatic lām"
+ },
+ {
+  "tag": "l:IMPV+",
+  "arabic": "لام الأمر",
+  "english": "Imperative lām"
+ },
+ {
+  "tag": "l:P+",
+  "arabic": "لام الجر",
+  "english": "Prepositional lām"
+ },
+ {
+  "tag": "l:PRP+",
+  "arabic": "لام التعليل",
+  "english": "Purpose lām"
+ },
+ {
+  "tag": "sa+",
+  "arabic": "سين المستقبل",
+  "english": "Future particle sīn"
+ },
+ {
+  "tag": "ta+",
+  "arabic": "تاء النداء",
+  "english": "Vocative tāʼ"
+ },
+ {
+  "tag": "w:CIRC+",
+  "arabic": "واو الظرفية",
+  "english": "Circumstantial wāw"
+ },
+ {
+  "tag": "w:COM+",
+  "arabic": "واو المعية",
+  "english": "Comitative wāw"
+ },
+ {
+  "tag": "w:CONJ+",
+  "arabic": "واو العطف",
+  "english": "Coordinating wāw"
+ },
+ {
+  "tag": "w:P+",
+  "arabic": "واو الجر",
+  "english": "Prepositional wāw"
+ },
+ {
+  "tag": "w:REM+",
+  "arabic": "واو الإستئناف",
+  "english": "Resumptive wāw"
+ },
+ {
+  "tag": "w:SUP+",
+  "arabic": "واو الزائدة",
+  "english": "Superfluous wāw"
+ },
+ {
+  "tag": "ya+",
+  "arabic": "ياء النداء",
+  "english": "Vocative yāʼ"
+ }
+]

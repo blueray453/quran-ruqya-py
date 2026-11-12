@@ -1,0 +1,132 @@
+Total candidate records: 139
+
+Available columns:
+tid
+sentence_id
+sentence_word
+token_id
+location
+chapter_id
+verse_id
+word_id
+tok_id
+uthmani_token
+uthmani_unicode
+imlaai_token
+imlaai_unicode
+phonetic
+trans
+pos
+pos_ar
+features
+segment
+lemma
+lemma_ar
+root
+root_ar
+verb_form
+prefix
+suffix
+verb_aspect
+nominal_state
+verb_mood
+special_group
+nominal_case
+derived_nouns
+verb_voice
+person
+gender
+number
+rel_label
+rel_label_ar
+ref_token_id
+is_constituent
+constituents_loc
+constituents
+constituent_label
+location_key
+candidate_reason
+review_status
+
+constituent_label:
+  PP: 50
+  VS: 44
+  -: 23
+  NS: 17
+  SC: 3
+  CS: 2
+
+rel_label:
+  link: 47
+  sub: 22
+  Obj: 18
+  circ: 9
+  intg: 8
+  cond: 8
+  Pred: 7
+  rslt: 6
+  emph: 3
+  conj: 3
+  pred <<kan>>: 2
+  caus: 1
+  imrs: 1
+  pred <<tkad>>: 1
+  ans: 1
+  pred<<in>>: 1
+  Adj: 1
+
+pos:
+  P: 50
+  V: 43
+  N: 14
+  PRON: 7
+  INTG: 5
+  NEG: 5
+  EMPH: 2
+  COND: 2
+  SUB: 2
+  REL: 2
+  ACC: 2
+  PRP: 1
+  CAUS: 1
+  ANS: 1
+  CERT: 1
+  DEM: 1
+
+First 15 candidates:
+{'tid': '130474', 'sentence_id': '10823', 'location': '(67:1:3:1)', 'uthmani_token': 'بِ', 'pos': 'P', 'rel_label': 'link', 'ref_token_id': '5', 'is_constituent': '1', 'constituent_label': 'PP', 'constituents': 'بِيَدِ', 'candidate_reason': 'is_constituent_flag'}
+{'tid': '130479', 'sentence_id': '10823', 'location': '(67:1:4:2)', 'uthmani_token': 'مُلْكُ', 'pos': 'N', 'rel_label': 'sub', 'ref_token_id': '1', 'is_constituent': '1', 'constituent_label': 'NS', 'constituents': 'بِيَدِهِ (*) ٱلْمُلْكُ', 'candidate_reason': 'constituent_label:NS;dependency_relation:sub;arabic_dependency_label_hint'}
+{'tid': '130482', 'sentence_id': '10823', 'location': '(67:1:6:1)', 'uthmani_token': 'عَلَىٰ', 'pos': 'P', 'rel_label': 'link', 'ref_token_id': '13', 'is_constituent': '1', 'constituent_label': 'PP', 'constituents': 'عَلَىٰ كُلِّ', 'candidate_reason': 'is_constituent_flag'}
+{'tid': '130487', 'sentence_id': '10823', 'location': '(67:2:2:1)', 'uthmani_token': 'خَلَقَ', 'pos': 'V', 'rel_label': 'sub', 'ref_token_id': '14', 'is_constituent': '1', 'constituent_label': 'VS', 'constituents': 'خَلَقَ (هُوَ) ٱلْمَوْتَ وَٱلْحَيَوٰةَ لِيَبْلُوَكُمْ (هُوَ) أَيُّكُمْ أَحْسَنُ عَمَلًا', 'candidate_reason': 'constituent_label:VS;dependency_relation:sub;arabic_dependency_label_hint'}
+{'tid': '130494', 'sentence_id': '10823', 'location': '(67:2:5:1)', 'uthmani_token': 'لِ', 'pos': 'PRP', 'rel_label': 'link', 'ref_token_id': '15', 'is_constituent': '1', 'constituent_label': 'SC', 'constituents': 'لِيَبْلُوَكُمْ (هُوَ) أَيُّكُمْ أَحْسَنُ عَمَلًا', 'candidate_reason': 'constituent_label:SC'}
+{'tid': '130495', 'sentence_id': '10823', 'location': '(67:2:5:2)', 'uthmani_token': 'يَبْلُوَ', 'pos': 'V', 'rel_label': 'sub', 'ref_token_id': '22', 'is_constituent': '1', 'constituent_label': 'VS', 'constituents': 'يَبْلُوَكُمْ (هُوَ) أَيُّكُمْ أَحْسَنُ عَمَلًا', 'candidate_reason': 'constituent_label:VS;dependency_relation:sub;arabic_dependency_label_hint'}
+{'tid': '130498', 'sentence_id': '10823', 'location': '(67:2:6:1)', 'uthmani_token': 'أَيُّ', 'pos': 'N', 'rel_label': 'Obj', 'ref_token_id': '23', 'is_constituent': '1', 'constituent_label': 'NS', 'constituents': 'أَيُّكُمْ أَحْسَنُ عَمَلًا', 'candidate_reason': 'constituent_label:NS'}
+{'tid': '130509', 'sentence_id': '10824', 'location': '(67:3:2:1)', 'uthmani_token': 'خَلَقَ', 'pos': 'V', 'rel_label': 'sub', 'ref_token_id': '6', 'is_constituent': '1', 'constituent_label': 'VS', 'constituents': 'خَلَقَ (هُوَ) سَبْعَ سَمَٰوَٰتٍ طِبَاقًا', 'candidate_reason': 'constituent_label:VS;dependency_relation:sub;arabic_dependency_label_hint'}
+{'tid': '130517', 'sentence_id': '10825', 'location': '(67:3:8:1)', 'uthmani_token': 'فِى', 'pos': 'P', 'rel_label': 'link', 'ref_token_id': '1', 'is_constituent': '1', 'constituent_label': 'PP', 'constituents': 'فِى خَلْقِ', 'candidate_reason': 'is_constituent_flag'}
+{'tid': '130521', 'sentence_id': '10825', 'location': '(67:3:11:1)', 'uthmani_token': 'مِن', 'pos': 'P', 'rel_label': 'Obj', 'ref_token_id': '1', 'is_constituent': '1', 'constituent_label': 'PP', 'constituents': 'مِن تَفَٰوُتٍ', 'candidate_reason': 'is_constituent_flag'}
+{'tid': '130523', 'sentence_id': '10826', 'location': '(67:3:13:1)', 'uthmani_token': 'فَ', 'pos': 'CAUS', 'rel_label': 'caus', 'ref_token_id': '1', 'is_constituent': '0', 'constituent_label': '-', 'constituents': '_', 'candidate_reason': 'dependency_relation:caus;arabic_dependency_label_hint'}
+{'tid': '130529', 'sentence_id': '10827', 'location': '(67:3:16:1)', 'uthmani_token': 'تَرَىٰ', 'pos': 'V', 'rel_label': 'intg', 'ref_token_id': '0', 'is_constituent': '0', 'constituent_label': '-', 'constituents': '_', 'candidate_reason': 'dependency_relation:intg;arabic_dependency_label_hint'}
+{'tid': '130531', 'sentence_id': '10827', 'location': '(67:3:17:1)', 'uthmani_token': 'مِن', 'pos': 'P', 'rel_label': 'link', 'ref_token_id': '1', 'is_constituent': '1', 'constituent_label': 'PP', 'constituents': 'مِن فُطُورٍ', 'candidate_reason': 'is_constituent_flag'}
+{'tid': '130539', 'sentence_id': '10828', 'location': '(67:4:5:1)', 'uthmani_token': 'يَنقَلِبْ', 'pos': 'V', 'rel_label': 'imrs', 'ref_token_id': '1', 'is_constituent': '1', 'constituent_label': 'VS', 'constituents': 'يَنقَلِبْ إِلَيْكَ ٱلْبَصَرُ خَاسِئًا وَهُوَ حَسِيرٌ', 'candidate_reason': 'constituent_label:VS;arabic_dependency_label_hint'}
+{'tid': '130540', 'sentence_id': '10828', 'location': '(67:4:6:1)', 'uthmani_token': 'إِلَيْ', 'pos': 'P', 'rel_label': 'link', 'ref_token_id': '6', 'is_constituent': '1', 'constituent_label': 'PP', 'constituents': 'إِلَيْكَ', 'candidate_reason': 'is_constituent_flag'}
+
+Duplicate EQTB locations:
+{
+  "67:2:0:1": 2,
+  "67:3:0:1": 4,
+  "67:8:0:1": 2,
+  "67:10:0:1": 3,
+  "67:11:0:1": 2,
+  "67:12:0:1": 2,
+  "67:15:0:1": 2,
+  "67:16:0:1": 3,
+  "67:17:0:1": 2,
+  "67:20:0:1": 2,
+  "67:21:0:1": 2,
+  "67:22:0:1": 2,
+  "67:23:0:1": 5,
+  "67:24:0:1": 2,
+  "67:26:0:1": 2,
+  "67:28:0:1": 4,
+  "67:30:0:1": 2
+}

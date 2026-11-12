@@ -1,0 +1,227 @@
+[
+ {
+  "tag": "N",
+  "arabic": "اسم",
+  "english": "Noun"
+ },
+ {
+  "tag": "PN",
+  "arabic": "اسم علم",
+  "english": "Proper noun"
+ },
+ {
+  "tag": "ADJ",
+  "arabic": "صفة",
+  "english": "Adjective"
+ },
+ {
+  "tag": "IMPN",
+  "arabic": "اسم فعل أمر",
+  "english": "Imperative verbal noun"
+ },
+ {
+  "tag": "PRON",
+  "arabic": "ضمير",
+  "english": "Personal pronoun"
+ },
+ {
+  "tag": "DEM",
+  "arabic": "اسم اشارة",
+  "english": "Demonstrative pronoun"
+ },
+ {
+  "tag": "REL",
+  "arabic": "اسم موصول",
+  "english": "Relative pronoun"
+ },
+ {
+  "tag": "T",
+  "arabic": "ظرف زمان",
+  "english": "Time adverb"
+ },
+ {
+  "tag": "LOC",
+  "arabic": "ظرف مكان",
+  "english": "Location adverb"
+ },
+ {
+  "tag": "V",
+  "arabic": "فعل",
+  "english": "Verb"
+ },
+ {
+  "tag": "P",
+  "arabic": "حرف جر",
+  "english": "Preposition"
+ },
+ {
+  "tag": "EMPH",
+  "arabic": "حرف توكيد",
+  "english": "Emphatic lām prefix"
+ },
+ {
+  "tag": "IMPV",
+  "arabic": "حرف امر",
+  "english": "Imperative lām prefix"
+ },
+ {
+  "tag": "PRP",
+  "arabic": "حرف تعليل",
+  "english": "Purpose lām prefix"
+ },
+ {
+  "tag": "CONJ",
+  "arabic": "حرف عطف",
+  "english": "Coordinating conjunction"
+ },
+ {
+  "tag": "SUB",
+  "arabic": "حرف مصدري",
+  "english": "Subordinating conjunction"
+ },
+ {
+  "tag": "ACC",
+  "arabic": "حرف نصب",
+  "english": "Accusative particle"
+ },
+ {
+  "tag": "AMD",
+  "arabic": "حرف استدراك",
+  "english": "Amendment particle"
+ },
+ {
+  "tag": "ANS",
+  "arabic": "حرف جواب",
+  "english": "Answer particle"
+ },
+ {
+  "tag": "AVR",
+  "arabic": "حرف ردع",
+  "english": "Aversion particle"
+ },
+ {
+  "tag": "CAUS",
+  "arabic": "حرف سببية",
+  "english": "Particle of cause"
+ },
+ {
+  "tag": "CERT",
+  "arabic": "حرف تحقيق",
+  "english": "Particle of certainty"
+ },
+ {
+  "tag": "CIRC",
+  "arabic": "حرف حال",
+  "english": "Circumstantial particle"
+ },
+ {
+  "tag": "COM",
+  "arabic": "حرف معية",
+  "english": "Comitative particle"
+ },
+ {
+  "tag": "COND",
+  "arabic": "حرف شرط",
+  "english": "Conditional particle"
+ },
+ {
+  "tag": "EQ",
+  "arabic": "حرف تسوية",
+  "english": "Equalization particle"
+ },
+ {
+  "tag": "EXH",
+  "arabic": "حرف تحضيض",
+  "english": "Exhortation particle"
+ },
+ {
+  "tag": "EXL",
+  "arabic": "حرف تفصيل",
+  "english": "Explanation particle"
+ },
+ {
+  "tag": "EXP",
+  "arabic": "أداة استثناء",
+  "english": "Exceptive particle"
+ },
+ {
+  "tag": "FUT",
+  "arabic": "حرف استقبال",
+  "english": "Future particle"
+ },
+ {
+  "tag": "INC",
+  "arabic": "حرف ابتداء",
+  "english": "Inceptive particle"
+ },
+ {
+  "tag": "INT",
+  "arabic": "حرف تفسير",
+  "english": "Particle of interpretation"
+ },
+ {
+  "tag": "INTG",
+  "arabic": "حرف استفهام",
+  "english": "Interogative particle"
+ },
+ {
+  "tag": "NEG",
+  "arabic": "حرف نفي",
+  "english": "Negative particle"
+ },
+ {
+  "tag": "PREV",
+  "arabic": "حرف كاف",
+  "english": "Preventive particle"
+ },
+ {
+  "tag": "PRO",
+  "arabic": "حرف نهي",
+  "english": "Prohibition particle"
+ },
+ {
+  "tag": "REM",
+  "arabic": "حرف استئنافية",
+  "english": "Resumption particle"
+ },
+ {
+  "tag": "RES",
+  "arabic": "أداة حصر",
+  "english": "Restriction particle"
+ },
+ {
+  "tag": "RET",
+  "arabic": "حرف اضراب",
+  "english": "Retraction particle"
+ },
+ {
+  "tag": "RSLT",
+  "arabic": "حرف واقع في جواب الشرط",
+  "english": "Result particle"
+ },
+ {
+  "tag": "SUP",
+  "arabic": "حرف زائد",
+  "english": "Supplemental particle"
+ },
+ {
+  "tag": "SUR",
+  "arabic": "حرف فجاءة",
+  "english": "Surprise particle"
+ },
+ {
+  "tag": "VOC",
+  "arabic": "حرف نداء",
+  "english": "Vocative particle"
+ },
+ {
+  "tag": "INL",
+  "arabic": "حروف مقطعة",
+  "english": "Quranic initials"
+ },
+ {
+  "tag": "DET",
+  "arabic": "أداة تعريف",
+  "english": "Determiner"
+ }
+]
