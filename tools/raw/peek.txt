@@ -1,0 +1,101 @@
+===== english-translation/english-wbw-translation.json
+1854 KB
+dict, 83665 keys; first: ['1:1:1', '1:1:2', '1:1:3']
+1:1:1 -> "In (the) name"
+1:1:2 -> "(of) Allah"
+67:1:1 -> "Blessed is"
+67:1:2 -> "He"
+67:1:3 -> "in Whose Hand"
+===== bangla-translation/bangali-word-by-word-translation.json
+3341 KB
+dict, 83664 keys; first: ['1:1:1', '1:1:2', '1:1:3']
+1:1:1 -> "নামে"
+1:1:2 -> "আল্লাহ (র)"
+67:1:1 -> "বড় বরকতময়"
+67:1:2 -> "সেই(সত্তা)"
+67:1:3 -> "যার হাতে"
+===== bangla-translation/bn-dr-abu-bakr-muhammad-zakaria-simple.json
+2201 KB
+dict, 6236 keys; first: ['1:1', '1:2', '1:3']
+1:1 -> {"t": "রহমান, রহীম আল্লাহ্‌র নামে"}
+1:2 -> {"t": "সকল ‘হাম্‌দ’ আল্লাহ্‌র , যিনি সৃষ্টিকুলের রব,"}
+67:1 -> {"t": "বরকতময় তিনি, সর্বময় কর্তৃত্ব যাঁর হাতে; আর তিনি সবকিছুর উপর ক্ষমতাবান।"}
+67:2 -> {"t": "যিনি সৃষ্টি করেছেন মৃত্যু ও জীবন, তোমাদেরকে পরীক্ষা করার জন্য --- কে তোমাদের মধ্যে আমলের দিক থেকে উত্তম? তিনি পরাক্রমশালী, ক্ষমাশীল।"}
+67:3 -> {"t": "যিনি সৃষ্টি করেছেন স্তরে স্তরে সাত আসমান। রহমানের সৃষ্টিতে আপনি কোনো খুঁত দেখতে পাবেন না; আপনি আবার তাকিয়ে দেখুন, কোনো ত্রুটি দেখতে পান কি?"}
+===== bangla-translation/bn-rawai-al-bayan-simple.json
+2210 KB
+dict, 6236 keys; first: ['1:1', '1:2', '1:3']
+1:1 -> {"t": "পরম করুণাময় অতি দয়ালু আল্লাহর নামে।"}
+1:2 -> {"t": "সমস্ত প্রশংসা আল্লাহর জন্য, যিনি সৃষ্টিকুলের রব।"}
+67:1 -> {"t": "বরকতময় তিনি যার হাতে সর্বময় কর্তৃত্ব। আর তিনি সব কিছুর উপর সর্বশক্তিমান।"}
+67:2 -> {"t": "যিনি মৃত্যু ও জীবন সৃষ্টি করেছেন যাতে তিনি তোমাদেরকে পরীক্ষা করতে পারেন যে, কে তোমাদের মধ্যে আমলের দিক থেকে উত্তম। আর তিনি মহাপরাক্রমশালী, অতিশয় ক্ষমাশীল।"}
+67:3 -> {"t": "যিনি সাত আসমান স্তরে স্তরে সৃষ্টি করেছেন। পরম করুণাময়ের সৃষ্টিতে তুমি কোন অসামঞ্জস্য দেখতে পাবে না। তুমি আবার দৃষ্টি ফিরাও, কোন ত্রুটি দেখতে পাও কি?"}
+===== metadata/quran-metadata-ayah.json
+1940 KB
+dict, 6236 keys; first: ['1', '2', '3']
+1 -> {"id": 1, "surah_number": 1, "ayah_number": 1, "verse_key": "1:1", "words_count": 4, "text": "بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ ١"}
+2 -> {"id": 2, "surah_number": 1, "ayah_number": 2, "verse_key": "1:2", "words_count": 4, "text": "ٱلۡحَمۡدُ لِلَّهِ رَبِّ ٱلۡعَٰلَمِينَ ٢"}
+===== metadata/quran-metadata-surah-name.json
+19 KB
+dict, 114 keys; first: ['1', '2', '3']
+1 -> {"id": 1, "name": "Al-Fātiĥah", "name_simple": "Al-Fatihah", "name_arabic": "الفاتحة", "revelation_order": 5, "revelation_place": "makkah", "verses_count": 7, "bismillah_pre": false}
+2 -> {"id": 2, "name": "Al-Baqarah", "name_simple": "Al-Baqarah", "name_arabic": "البقرة", "revelation_order": 87, "revelation_place": "madinah", "verses_count": 286, "bismillah_pre": true}
+===== Mutashabihat ul Quran/phrases.json
+130 KB
+dict, 814 keys; first: ['50', '75', '91']
+50 -> {"surahs": 32, "ayahs": 70, "count": 71, "source": {"key": "2:23", "from": 15, "to": 17}, "ayah": {"19:48": [[4, 6]], "2:23": [[15, 17]], "25:55": [[2, 4]], "2:107": [[11, 13]], "2:165": [[5, 7]], "3:79": [[16, 18]], "4:123": [[15, 17]], "4:173": [[21, 23]], "5:76": [[3, 5]], "5:116": [[13, 15]], "6:70": [[19, 21]], "6:71": [[3, 5]], "6:108": [[5, 7]], "7:30": [[11, 13]], "7:194": [[4, 6]], "3:64": [[23, 25]], "9:16": [[13, 15]], "9:31": [[5, 7]], "9:116": [[11, 13]], "10:37": [[7, 9]], "10:38":…
+75 -> {"surahs": 32, "ayahs": 56, "count": 57, "source": {"key": "2:134", "from": 13, "to": 15}, "ayah": {"24:24": [[7, 9]], "26:112": [[4, 6]], "27:90": [[11, 13]], "28:84": [[16, 18]], "29:8": [[19, 21]], "5:105": [[17, 19]], "31:15": [[27, 29]], "32:14": [[12, 14]], "32:17": [[11, 13]], "16:28": [[17, 19], [17, 19]], "2:134": [[13, 15]], "5:62": [[11, 13]], "45:28": [[12, 14]], "6:43": [[12, 14]], "6:60": [[20, 22]], "6:88": [[14, 16]], "6:108": [[23, 25]], "6:122": [[22, 24]], "6:127": [[8, 10]], …
+===== Mutashabihat ul Quran/phrase_verses.json
+40 KB
+dict, 2232 keys; first: ['2:23', '2:107', '2:165']
+2:23 -> [50, 16379]
+2:107 -> [50, 15935, 16379]
+67:1 -> [189]
+67:26 -> [4468, 11937]
+67:18 -> [4499]
+===== matching-ayah.json
+364 KB
+dict, 1162 keys; first: ['1:1', '1:2', '1:3']
+1:1 -> [{"matched_ayah_key": "27:30", "matched_words_count": 4, "coverage": 50, "score": 80, "match_words": [[5, 8]]}, {"matched_ayah_key": "59:22", "matched_words_count": 2, "coverage": 15, "score": 56, "match_words": [[12, 13]]}, {"matched_ayah_key": "1:3", "matched_words_count": 2, "coverage": 100, "score": 50, "match_words": [[1, 2]]}, {"matched_ayah_key": "41:2", "matched_words_count": 2, "coverage": 50, "score": 50, "match_words": [[3, 4]]}]
+1:2 -> [{"matched_ayah_key": "37:182", "matched_words_count": 4, "coverage": 100, "score": 90, "match_words": [[1, 4]]}, {"matched_ayah_key": "10:10", "matched_words_count": 4, "coverage": 29, "score": 73, "match_words": [[11, 14]]}, {"matched_ayah_key": "6:45", "matched_words_count": 4, "coverage": 44, "score": 73, "match_words": [[6, 9]]}, {"matched_ayah_key": "40:65", "matched_words_count": 4, "coverage": 29, "score": 72, "match_words": [[11, 14]]}, {"matched_ayah_key": "39:75", "matched_words_count…
+67:1 -> [{"matched_ayah_key": "5:120", "matched_words_count": 5, "coverage": 45, "score": 58, "match_words": [[7, 11]]}, {"matched_ayah_key": "57:2", "matched_words_count": 5, "coverage": 45, "score": 58, "match_words": [[7, 11]]}, {"matched_ayah_key": "64:1", "matched_words_count": 5, "coverage": 29, "score": 55, "match_words": [[13, 17]]}]
+67:24 -> [{"matched_ayah_key": "23:79", "matched_words_count": 7, "coverage": 100, "score": 83, "match_words": [[1, 7]]}]
+67:25 -> [{"matched_ayah_key": "10:48", "matched_words_count": 7, "coverage": 100, "score": 100, "match_words": [[1, 7]]}, {"matched_ayah_key": "36:48", "matched_words_count": 7, "coverage": 100, "score": 100, "match_words": [[1, 7]]}, {"matched_ayah_key": "34:29", "matched_words_count": 7, "coverage": 100, "score": 100, "match_words": [[1, 7]]}, {"matched_ayah_key": "27:71", "matched_words_count": 7, "coverage": 100, "score": 100, "match_words": [[1, 7]]}, {"matched_ayah_key": "21:38", "matched_words_co…
+===== recitation/ayah-recitation-abdul-rahman-al-sudais-murattal-hafs-951.json
+2050 KB
+dict, 6236 keys; first: ['1:1', '1:2', '1:3']
+1:1 -> {"surah_number": 1, "ayah_number": 1, "audio_url": "https://audio-cdn.tarteel.ai/quran/abdulrahmanAlSudais/001001.mp3", "duration": null, "segments": [[1, 0, 680], [2, 800, 1080], [3, 1680, 1960], [4, 2240, 3040]]}
+1:2 -> {"surah_number": 1, "ayah_number": 2, "audio_url": "https://audio-cdn.tarteel.ai/quran/abdulrahmanAlSudais/001002.mp3", "duration": null, "segments": [[1, 520, 880], [2, 1170, 1270], [3, 2130, 2230], [4, 2360, 4480]]}
+67:1 -> {"surah_number": 67, "ayah_number": 1, "audio_url": "https://audio-cdn.tarteel.ai/quran/abdulrahmanAlSudais/067001.mp3", "duration": null, "segments": [[1, 0, 1040], [2, 1250, 1350], [3, 1960, 2640], [4, 2920, 3480], [5, 3600, 4040], [6, 4200, 4480], [7, 4690, 4790], [8, 5400, 5880], [9, 8010, 8070]]}
+67:2 -> {"surah_number": 67, "ayah_number": 2, "audio_url": "https://audio-cdn.tarteel.ai/quran/abdulrahmanAlSudais/067002.mp3", "duration": null, "segments": [[1, 0, 70], [2, 850, 950], [3, 1720, 2120], [4, 2320, 3280], [5, 3480, 4520], [6, 4760, 5480], [7, 6160, 6440], [8, 6840, 7120], [9, 7800, 8320], [10, 8850, 8950], [11, 9680, 11760]]}
+67:3 -> {"surah_number": 67, "ayah_number": 3, "audio_url": "https://audio-cdn.tarteel.ai/quran/abdulrahmanAlSudais/067003.mp3", "duration": null, "segments": [[1, 0, 70], [2, 890, 990], [3, 1640, 2160], [4, 2280, 3320], [5, 3840, 4680], [6, 5090, 5190], [7, 5560, 5680], [8, 6290, 6390], [9, 6720, 7240], [10, 7960, 8360], [11, 8490, 8590], [12, 9080, 10360], [13, 10760, 11640], [14, 11840, 12320], [15, 12480, 12760], [16, 12800, 12920], [17, 13450, 13550], [18, 13960, 16080]]}
+## Category URLs
+
+| File | QUL Category URL | What to look for |
+|---|---|---|
+| `qpc-hafs-word-by-word.json` | `https://qul.tarteel.ai/resources/quran-script` | Open the **QPC Hafs — Word-by-Word** card |
+| `quran-metadata-surah-name.json` | `https://qul.tarteel.ai/resources/quran-metadata` | Open the card titled **Surah names** (the Preview tab will say "Surah names Preview") |
+| `en-sahih-international-simple.json` | `https://qul.tarteel.ai/resources/translation` | Filter to **English**, pick **Saheeh International**, choose the **Ayah-by-Ayah** variant, then the `-simple` shape |
+| `bn-taisirul-quran-simple.json` | `https://qul.tarteel.ai/resources/translation` | Filter to **Bengali**, pick **Taisirul Quran**, **Ayah-by-Ayah**, `-simple` |
+| `bn-rawai-al-bayan-simple.json` | `https://qul.tarteel.ai/resources/translation` | Filter to **Bengali**, pick **Rawai al-Bayan**, **Ayah-by-Ayah**, `-simple` |
+| `english-wbw-translation.json` | `https://qul.tarteel.ai/resources/translation` | Switch to the **Word-by-Word** tab (or filter by "Word by Word"), pick **English Word by Word Translation** |
+| `bangali-word-by-word-translation.json` | `https://qul.tarteel.ai/resources/translation` | Same Word-by-Word tab, pick **Bengali Word by Word Translation** |
+| `ayah-recitation-…-sudais-951.json` | `https://qul.tarteel.ai/resources/recitation` | Find **Abdul Rahman Al-Sudais — Murattal (Hafs)**, open its card |
+| `ayah-recitation-…-alafasy-953.json` | `https://qul.tarteel.ai/resources/recitation` | Find **Mishari Rashid Alafasy — Murattal (Hafs)** |
+| `ayah-recitation-…-ghamdi-954.json` | `https://qul.tarteel.ai/resources/recitation` | Find **Saad Al-Ghamdi — Murattal (Hafs)** |
+| `ayah-recitation-…-husary-955.json` | `https://qul.tarteel.ai/resources/recitation` | Find **Mahmoud Khalil Al-Husary — Muallim** (the one whose `audio_url` host is `husaryMuallim`) |
+| `ayah-recitation-…-husary-957.json` | `https://qul.tarteel.ai/resources/recitation` | Find **Mahmoud Khalil Al-Husary — Murattal** (host `husary`) |
+
+## How to get the JSON download link on any detail page
+
+1. Open the category URL above.
+2. Click the card for the specific resource.
+3. On the detail page, find the **Download** section (or a dropdown next to the resource title).
+4. Choose **JSON** (not SQLite). The button triggers a file download; the browser's download manager will show the actual URL if you right-click → Copy link address.
+5. Save the file into `tools/raw/` with the exact filename from the table above (the script matches by name).
+
+The QUL documentation confirms the pattern: open `https://qul.tarteel.ai/resources/recitation`, pick the card, and download JSON or SQLite. Same for script, translations, and metadata.
+
+## One shortcut for the recitation files
+
+If the browser download URLs are awkward to capture one by one, the recitation JSON is what `fetch_qul.py` uses to derive everything—including the audio CDN URLs. You can capture the recitation JSON once per reciter from the detail page, and the script does the rest (`audio_url` host → internal reciter ID → MP3 download). The five recitation files are the only ones where the exact filename includes the numeric suffix (`951`, `953`, etc.), so verify the filename matches what the script expects; if QUL has updated a resource and the suffix changed, just rename the downloaded file to match the table.

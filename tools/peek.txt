@@ -1,0 +1,18 @@
+===== english-translation/english-wbw-translation.json
+ERROR [Errno 2] No such file or directory: 'english-translation/english-wbw-translation.json'
+===== bangla-translation/bangali-word-by-word-translation.json
+ERROR [Errno 2] No such file or directory: 'bangla-translation/bangali-word-by-word-translation.json'
+===== bangla-translation/bn-dr-abu-bakr-muhammad-zakaria-simple.json
+ERROR [Errno 2] No such file or directory: 'bangla-translation/bn-dr-abu-bakr-muhammad-zakaria-simple.json'
+===== bangla-translation/bn-rawai-al-bayan-simple.json
+ERROR [Errno 2] No such file or directory: 'bangla-translation/bn-rawai-al-bayan-simple.json'
+===== metadata/quran-metadata-ayah.json
+ERROR [Errno 2] No such file or directory: 'metadata/quran-metadata-ayah.json'
+===== metadata/quran-metadata-surah-name.json
+ERROR [Errno 2] No such file or directory: 'metadata/quran-metadata-surah-name.json'
+===== Mutashabihat ul Quran/phrases.json
+ERROR [Errno 2] No such file or directory: 'Mutashabihat ul Quran/phrases.json'
+===== Mutashabihat ul Quran/phrase_verses.json
+ERROR [Errno 2] No such file or directory: 'Mutashabihat ul Quran/phrase_verses.json'
+===== matching-ayah.json
+ERROR [Errno 2] No such file or directory: 'matching-ayah.json'
