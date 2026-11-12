@@ -1,0 +1,87 @@
+﻿clause_id,ayah,order,word_start,word_end,n_words,n_phrases,text,text_norm,translation,translation_key,pattern,first_cat,first_prefix,ends_with_waqf,is_ayah_final
+67:1:c1,1,1,1,4,4,3,تَبَٰرَكَ ٱلَّذِي بِيَدِهِ ٱلۡمُلۡكُ,تبرك الذي بيده الملك,"Blessed is He in whose hand is the dominion,",blessed is he in whose hand is the dominion,V | REL P+N | N,V,,0,0
+67:1:c2,1,2,5,9,5,2,وَهُوَ عَلَىٰ كُلِّ شَيۡءٖ قَدِيرٌ,وهو علي كل شيء قدير,and He is capable of all things.,and he is capable of all things,CONJ+PRON | P N N N,PRON,CONJ,0,1
+67:2:c1,2,1,1,4,4,4,ٱلَّذِي خَلَقَ ٱلۡمَوۡتَ وَٱلۡحَيَوٰةَ,الذي خلق الموت والحيوة,The One who created death and life,the one who created death and life,REL | V | N | CONJ+DET+N,REL,,0,0
+67:2:c2,2,2,5,8,4,3,لِيَبۡلُوَكُمۡ أَيُّكُمۡ أَحۡسَنُ عَمَلٗاۚ,ليبلوكم أيكم أحسن عملا,"to test you as to which of you is best in deed,",to test you as to which of you is best in deed,PRP+V | N | N N,V,PRP,1,0
+67:2:c3,2,3,9,11,3,3,وَهُوَ ٱلۡعَزِيزُ ٱلۡغَفُورُ,وهو العزيز الغفور,"and He is the Almighty, the Forgiving.",and he is the almighty the forgiving,REM+PRON | N | ADJ,PRON,REM,0,1
+67:3:c1,3,1,1,5,5,4,ٱلَّذِي خَلَقَ سَبۡعَ سَمَٰوَٰتٖ طِبَاقٗاۖ,الذي خلق سبع سموت طباقا,The One who created seven heavens in layers.,the one who created seven heavens in layers,REL | V | N N | ADJ,REL,,1,0
+67:3:c2,3,2,6,12,7,3,مَّا تَرَىٰ فِي خَلۡقِ ٱلرَّحۡمَٰنِ مِن تَفَٰوُتٖۖ,ما تري في خلق الرحمن من تفوت,You do not see in the creation of the Most Merciful any inconsistency.,you do not see in the creation of the most merciful any inconsistency,NEG V | P N N | P N,NEG,,1,0
+67:3:c3,3,3,13,14,2,2,فَٱرۡجِعِ ٱلۡبَصَرَ,فارجع البصر,So return your vision.,so return your vision,CAUS+V | N,V,CAUS,0,0
+67:3:c4,3,4,15,18,4,2,هَلۡ تَرَىٰ مِن فُطُورٖ,هل تري من فطور,Do you see any breaks?,do you see any breaks,INTG V | P N,INTG,,0,1
+67:4:c1,4,1,1,4,4,3,ثُمَّ ٱرۡجِعِ ٱلۡبَصَرَ كَرَّتَيۡنِ,ثم ارجع البصر كرتين,Then return your vision twice more.,then return your vision twice more,CONJ | V N | N,CONJ,,0,0
+67:4:c2,4,2,5,10,6,4,يَنقَلِبۡ إِلَيۡكَ ٱلۡبَصَرُ خَاسِئٗا وَهُوَ حَسِيرٞ,ينقلب إليك البصر خاسئا وهو حسير,"Your vision will return to you humbled, and it is exhausted.",your vision will return to you humbled and he is exhausted,V P N | PCPL | CIRC+PRON | N,V,,0,1
+67:5:c1,5,1,1,5,5,4,وَلَقَدۡ زَيَّنَّا ٱلسَّمَآءَ ٱلدُّنۡيَا بِمَصَٰبِيحَ,ولقد زينا السماء الدنيا بمصبيح,And indeed We adorned the lowest heaven with lamps,and indeed we adorned the lowest heaven with lamps,REM+EMPH+CERT | V | N ADJ | P+N,CERT,REM+EMPH,0,0
+67:5:c2,5,2,6,8,3,3,وَجَعَلۡنَٰهَا رُجُومٗا لِّلشَّيَٰطِينِۖ,وجعلنها رجوما للشيطين,"and made them things to be thrown at the devils,",and made them things to be thrown at the devils,CONJ+V | N | P+DET+PN,V,CONJ,1,0
+67:5:c3,5,3,9,12,4,3,وَأَعۡتَدۡنَا لَهُمۡ عَذَابَ ٱلسَّعِيرِ,وأعتدنا لهم عذاب السعير,and We have prepared for them the punishment of the Blaze.,and we have prepared for them the punishment of the blaze,CONJ+V | P+PRON | N N,V,CONJ,0,1
+67:6:c1,6,1,1,5,5,4,وَلِلَّذِينَ كَفَرُواْ بِرَبِّهِمۡ عَذَابُ جَهَنَّمَۖ,وللذين كفروا بربهم عذاب جهنم,"And for those who disbelieved in their Lord is the punishment of Hell,",and for those who disbelieved in their lord is the punishment of hell,REM+P+REL | V | P+N | N PN,REL,REM+P,1,0
+67:6:c2,6,2,6,7,2,2,وَبِئۡسَ ٱلۡمَصِيرُ,وبئس المصير,and wretched is the destination.,and wretched is the destination,REM+V | N,V,REM,0,1
+67:7:c1,7,1,1,3,3,3,إِذَآ أُلۡقُواْ فِيهَا,إذا ألقوا فيها,"When they are thrown into it,",when they are thrown into it,T | V | P,T,,0,0
+67:7:c2,7,2,4,6,3,3,سَمِعُواْ لَهَا شَهِيقٗا,سمعوا لها شهيقا,they hear from it a harsh roar,they hear from it a harsh roar,V | P+PRON | N,V,,0,0
+67:7:c3,7,3,7,8,2,2,وَهِيَ تَفُورُ,وهي تفور,while it boils.,while it boils,CIRC+PRON | V,PRON,CIRC,0,1
+67:8:c1,8,1,1,4,4,3,تَكَادُ تَمَيَّزُ مِنَ ٱلۡغَيۡظِۖ,تكاد تميز من الغيظ,It almost bursts with rage.,it almost bursts with rage,V | V | P N,V,,1,0
+67:8:c2,8,2,5,8,4,2,كُلَّمَآ أُلۡقِيَ فِيهَا فَوۡجٞ,كلما ألقي فيها فوج,"Every time a group is thrown into it,",every time a group is thrown into it,T | V P N,T,,0,0
+67:8:c3,8,3,9,10,2,1,سَأَلَهُمۡ خَزَنَتُهَآ,سألهم خزنتها,"its keepers ask them,",its keepers ask them,V N,V,,0,0
+67:8:c4,8,4,11,13,3,2,أَلَمۡ يَأۡتِكُمۡ نَذِيرٞ,ألم يأتكم نذير,“Did there not come to you a warner?”,did there not come to you a warner,INTG+NEG V | N,NEG,INTG,0,1
+67:9:c1,9,1,1,2,2,2,قَالُواْ بَلَىٰ,قالوا بلي,"They will say, “Yes,",they will say yes,V | ANS,V,,0,0
+67:9:c2,9,2,3,5,3,1,قَدۡ جَآءَنَا نَذِيرٞ,قد جاءنا نذير,"a warner did come to us,",a warner did come to us,CERT V N,CERT,,0,0
+67:9:c3,9,3,6,7,2,2,فَكَذَّبۡنَا وَقُلۡنَا,فكذبنا وقلنا,"but we denied and said,",but we denied and said,CONJ+V | CONJ+V,V,CONJ,0,0
+67:9:c4,9,4,8,12,5,2,مَا نَزَّلَ ٱللَّهُ مِن شَيۡءٍ,ما نزل الله من شيء,‘Allah has not sent down anything.,allah has not sent down anything,NEG V PN | P N,NEG,,0,0
+67:9:c5,9,5,13,18,6,2,إِنۡ أَنتُمۡ إِلَّا فِي ضَلَٰلٖ كَبِيرٖ,إن أنتم إلا في ضلل كبير,You are only in great error.’”,you are only in great error,NEG PRON RES | P N ADJ,NEG,,0,1
+67:10:c1,10,1,1,1,1,1,وَقَالُواْ,وقالوا,"And they will say,",and they will say,CONJ+V,V,CONJ,0,0
+67:10:c2,10,2,2,6,5,3,لَوۡ كُنَّا نَسۡمَعُ أَوۡ نَعۡقِلُ,لو كنا نسمع أو نعقل,"“If only we had been listening or reasoning,",if only we had been listening or reasoning,COND | V V | CONJ V,COND,,0,0
+67:10:c3,10,3,7,11,5,2,مَا كُنَّا فِيٓ أَصۡحَٰبِ ٱلسَّعِيرِ,ما كنا في أصحب السعير,we would not have been among the companions of the Blaze.”,we would not have been among the companions of the blaze,NEG V | P N N,NEG,,0,1
+67:11:c1,11,1,1,2,2,2,فَٱعۡتَرَفُواْ بِذَنۢبِهِمۡ,فاعترفوا بذنبهم,So they admit their sin;,so they admit their sin,REM+V | P+N,V,REM,0,0
+67:11:c2,11,2,3,5,3,2,فَسُحۡقٗا لِّأَصۡحَٰبِ ٱلسَّعِيرِ,فسحقا لأصحب السعير,away with the companions of the Blaze!,away with the companions of the blaze,REM+N | P+N N,N,REM,0,1
+67:12:c1,12,1,1,5,5,3,إِنَّ ٱلَّذِينَ يَخۡشَوۡنَ رَبَّهُم بِٱلۡغَيۡبِ,إن الذين يخشون ربهم بالغيب,"Indeed, those who fear their Lord unseen",indeed those who fear their lord unseen,ACC REL | V N | P+DET+N,ACC,,0,0
+67:12:c2,12,2,6,9,4,2,لَهُم مَّغۡفِرَةٞ وَأَجۡرٞ كَبِيرٞ,لهم مغفرة وأجر كبير,will have forgiveness and a great reward.,will have forgiveness and a great reward,P+PRON N | CONJ+N ADJ,PRON,P,0,1
+67:13:c1,13,1,1,5,5,2,وَأَسِرُّواْ قَوۡلَكُمۡ أَوِ ٱجۡهَرُواْ بِهِۦٓۖ,وأسروا قولكم أو اجهروا به,And conceal your speech or declare it openly;,and conceal your speech or declare it openly,REM+V N | CONJ V P+PRON,V,REM,1,0
+67:13:c2,13,2,6,9,4,3,إِنَّهُۥ عَلِيمُۢ بِذَاتِ ٱلصُّدُورِ,إنه عليم بذات الصدور,"Indeed, He is All-Knowing of what lies within the breasts.",indeed he is all-knowing of what lies within the breasts,ACC | N | P+N N,ACC,,0,1
+67:14:c1,14,1,1,4,4,1,أَلَا يَعۡلَمُ مَنۡ خَلَقَ,ألا يعلم من خلق,Would the One who created not know?,would the one who created not know,INTG+NEG V REL V,NEG,INTG,0,0
+67:14:c2,14,2,5,7,3,3,وَهُوَ ٱللَّطِيفُ ٱلۡخَبِيرُ,وهو اللطيف الخبير,"And He is the Subtle, the All-Aware.",and he is the subtle the all-aware,CIRC+PRON | N | ADJ,PRON,CIRC,0,1
+67:15:c1,15,1,1,2,2,1,هُوَ ٱلَّذِي,هو الذي,He is the One who,he is the one who,PRON REL,PRON,,0,0
+67:15:c2,15,2,3,6,4,2,جَعَلَ لَكُمُ ٱلۡأَرۡضَ ذَلُولٗا,جعل لكم الأرض ذلولا,"made the earth manageable for you,",made the earth manageable for you,V | P+PRON N N,V,,0,0
+67:15:c3,15,3,7,9,3,2,فَٱمۡشُواْ فِي مَنَاكِبِهَا,فامشوا في مناكبها,so walk through its regions,so walk through its regions,REM+V | P N,V,REM,0,0
+67:15:c4,15,4,10,12,3,2,وَكُلُواْ مِن رِّزۡقِهِۦۖ,وكلوا من رزقه,and eat from His provision;,and eat from his provision,CONJ+V | P N,V,CONJ,1,0
+67:15:c5,15,5,13,14,2,2,وَإِلَيۡهِ ٱلنُّشُورُ,وإليه النشور,and to Him is the resurrection.,and to him is the resurrection,REM+P | N,P,REM,0,1
+67:16:c1,16,1,1,4,4,2,ءَأَمِنتُم مَّن فِي ٱلسَّمَآءِ,ءأمنتم من في السماء,Do you feel secure that He who is in the heaven,do you feel secure that he who is in the heaven,INTG+V | REL P N,V,INTG,0,0
+67:16:c2,16,2,5,8,4,1,أَن يَخۡسِفَ بِكُمُ ٱلۡأَرۡضَ,أن يخسف بكم الأرض,"would not cause the earth to swallow you,",would not cause the earth to swallow you,SUB V P+PRON N,SUB,,0,0
+67:16:c3,16,3,9,11,3,2,فَإِذَا هِيَ تَمُورُ,فإذا هي تمور,and suddenly it sways?,and suddenly it sways,REM+SUR PRON | V,SUR,REM,0,1
+67:17:c1,17,1,1,5,5,2,أَمۡ أَمِنتُم مَّن فِي ٱلسَّمَآءِ,أم أمنتم من في السماء,Or do you feel secure that He who is in the heaven,or do you feel secure that he who is in the heaven,CONJ V | REL P N,CONJ,,0,0
+67:17:c2,17,2,6,9,4,3,أَن يُرۡسِلَ عَلَيۡكُمۡ حَاصِبٗاۖ,أن يرسل عليكم حاصبا,would not send against you a storm of stones?,would not send against you a storm of stones,SUB V | P | PCPL,SUB,,1,0
+67:17:c3,17,3,10,12,3,2,فَسَتَعۡلَمُونَ كَيۡفَ نَذِيرِ,فستعلمون كيف نذير,So you will soon know how terrible My warning was.,so you will soon know how terrible my warning was,REM+FUT+V | N N,V,REM+FUT,0,1
+67:18:c1,18,1,1,5,5,2,وَلَقَدۡ كَذَّبَ ٱلَّذِينَ مِن قَبۡلِهِمۡ,ولقد كذب الذين من قبلهم,"And indeed those who came before them denied,",and indeed those who came before them denied,REM+EMPH+CERT | V REL P N,CERT,REM+EMPH,0,0
+67:18:c2,18,2,6,8,3,2,فَكَيۡفَ كَانَ نَكِيرِ,فكيف كان نكير,and how terrible My reproach was!,and how terrible my reproach was,REM+N | V N,N,REM,0,1
+67:19:c1,19,1,1,7,7,5,أَوَلَمۡ يَرَوۡاْ إِلَى ٱلطَّيۡرِ فَوۡقَهُمۡ صَٰٓفَّٰتٖ وَيَقۡبِضۡنَۚ,أولم يروا إلي الطير فوقهم صفت ويقبضن,"Have they not seen the birds above them, spreading their wings and folding them in?",have they not seen the birds above them spreading their wings and folding them in,INTG+SUP+NEG V | P N | LOC | PCPL | CONJ+V,NEG,INTG+SUP,1,0
+67:19:c2,19,2,8,11,4,2,مَا يُمۡسِكُهُنَّ إِلَّا ٱلرَّحۡمَٰنُۚ,ما يمسكهن إلا الرحمن,None holds them up except the Most Merciful.,none holds them up except the most merciful,NEG V | RES N,NEG,,1,0
+67:19:c3,19,3,12,15,4,2,إِنَّهُۥ بِكُلِّ شَيۡءِۭ بَصِيرٌ,إنه بكل شيء بصير,"Indeed, He is All-Seeing over everything.",indeed he is all-seeing over everything,ACC | P+N N N,ACC,,0,1
+67:20:c1,20,1,1,6,6,3,أَمَّنۡ هَٰذَا ٱلَّذِي هُوَ جُندٞ لَّكُمۡ,أمن هذا الذي هو جند لكم,"Or who is this one who is an army for you,",or who is this one who is an army for you,CONJ ATT+DEM REL | PRON N | P+PRON,CONJ,,0,0
+67:20:c2,20,2,7,10,4,2,يَنصُرُكُم مِّن دُونِ ٱلرَّحۡمَٰنِۚ,ينصركم من دون الرحمن,to help you besides the Most Merciful?,to help you besides the most merciful,V | P N N,V,,1,0
+67:20:c3,20,3,11,15,5,3,إِنِ ٱلۡكَٰفِرُونَ إِلَّا فِي غُرُورٍ,إن الكفرون إلا في غرور,The disbelievers are only in delusion.,the disbelievers are only in delusion,NEG PCPL | RES | P N,NEG,,0,1
+67:21:c1,21,1,1,4,4,2,أَمَّنۡ هَٰذَا ٱلَّذِي يَرۡزُقُكُمۡ,أمن هذا الذي يرزقكم,Or who is this one who could provide for you,or who is this one who could provide for you,CONJ ATT+DEM REL | V,CONJ,,0,0
+67:21:c2,21,2,5,7,3,3,إِنۡ أَمۡسَكَ رِزۡقَهُۥۚ,إن أمسك رزقه,if He withheld His provision?,if he withheld his provision,COND | V | N,COND,,1,0
+67:21:c3,21,3,8,12,5,3,بَل لَّجُّواْ فِي عُتُوّٖ وَنُفُورٍ,بل لجوا في عتو ونفور,"Rather, they persist in arrogance and aversion.",rather they persist in arrogance and aversion,RET V | P N | CONJ+N,RET,,0,1
+67:22:c1,22,1,1,5,5,2,أَفَمَن يَمۡشِي مُكِبًّا عَلَىٰ وَجۡهِهِۦٓ,أفمن يمشي مكبا علي وجهه,Is the one who walks bent over on his face,is the one who walks bent over on his face,INTG+SUP+REL V | PCPL P N,REL,INTG+SUP,0,0
+67:22:c2,22,2,6,6,1,1,أَهۡدَىٰٓ,أهدي,"better guided,",better guided,N,N,,0,0
+67:22:c3,22,3,7,12,6,3,أَمَّن يَمۡشِي سَوِيًّا عَلَىٰ صِرَٰطٖ مُّسۡتَقِيمٖ,أمن يمشي سويا علي صرط مستقيم,or the one who walks upright on a straight path?,or the one who walks upright on a straight path,CONJ V | N | P N ADJ,CONJ,,0,1
+67:23:c1,23,1,1,4,4,3,قُلۡ هُوَ ٱلَّذِيٓ أَنشَأَكُمۡ,قل هو الذي أنشأكم,"Say, “He is the One who created you",say he is the one who created you,V | PRON REL | V,V,,0,0
+67:23:c2,23,2,5,9,5,5,وَجَعَلَ لَكُمُ ٱلسَّمۡعَ وَٱلۡأَبۡصَٰرَ وَٱلۡأَفۡـِٔدَةَۚ,وجعل لكم السمع والأبصر والأفدة,"and made for you hearing, sight, and hearts;",and made for you hearing sight and hearts,CONJ+V | P+PRON | N | CONJ+DET+N | CONJ+DET+N,V,CONJ,1,0
+67:23:c3,23,3,10,12,3,2,قَلِيلٗا مَّا تَشۡكُرُونَ,قليلا ما تشكرون,how little you give thanks!”,how little you give thanks,ADJ REL | V,ADJ,,0,1
+67:24:c1,24,1,1,6,6,4,قُلۡ هُوَ ٱلَّذِي ذَرَأَكُمۡ فِي ٱلۡأَرۡضِ,قل هو الذي ذرأكم في الأرض,"Say, “He is the One who dispersed you throughout the earth,",say he is the one who dispersed you throughout the earth,V | PRON REL | V | P N,V,,0,0
+67:24:c2,24,2,7,8,2,2,وَإِلَيۡهِ تُحۡشَرُونَ,وإليه تحشرون,and to Him you will be gathered.”,and to him you will be gathered,REM+P | V,P,REM,0,1
+67:25:c1,25,1,1,4,4,3,وَيَقُولُونَ مَتَىٰ هَٰذَا ٱلۡوَعۡدُ,ويقولون متي هذا الوعد,"And they say, “When is this promise,",and they say when is this promise,REM+V | N | ATT+DEM N,V,REM,0,0
+67:25:c2,25,2,5,7,3,2,إِن كُنتُمۡ صَٰدِقِينَ,إن كنتم صدقين,if you are truthful?”,if you are truthful,COND V | PCPL,COND,,0,1
+67:26:c1,26,1,1,5,5,3,قُلۡ إِنَّمَا ٱلۡعِلۡمُ عِندَ ٱللَّهِ,قل إنما العلم عند الله,"Say, “The knowledge is only with Allah,",say the knowledge is only with allah,V | ACC N | LOC PN,V,,0,0
+67:26:c2,26,2,6,9,4,2,وَإِنَّمَآ أَنَا۠ نَذِيرٞ مُّبِينٞ,وإنما أنا نذير مبين,and I am only a clear warner.”,and i am only a clear warner,CONJ+ACC PRON | N ADJ,ACC,CONJ,0,1
+67:27:c1,27,1,1,3,3,3,فَلَمَّا رَأَوۡهُ زُلۡفَةٗ,فلما رأوه زلفة,"But when they see it close at hand,",but when they see it close at hand,REM+T | V | N,T,REM,0,0
+67:27:c2,27,2,4,7,4,1,سِيٓـَٔتۡ وُجُوهُ ٱلَّذِينَ كَفَرُواْ,سيت وجوه الذين كفروا,"the faces of those who disbelieved will be distressed,",the faces of those who disbelieved will be distressed,V N REL V,V,,0,0
+67:27:c3,27,3,8,13,6,3,وَقِيلَ هَٰذَا ٱلَّذِي كُنتُم بِهِۦ تَدَّعُونَ,وقيل هذا الذي كنتم به تدعون,"and it will be said, “This is what you used to call for.”",and it will be said this is what you used to call for,CONJ+V | ATT+DEM REL | V P+PRON V,V,CONJ,0,1
+67:28:c1,28,1,1,2,2,2,قُلۡ أَرَءَيۡتُمۡ,قل أرءيتم,"Say, “Have you considered:",say have you considered,V | INTG+V,V,,0,0
+67:28:c2,28,2,3,7,5,3,إِنۡ أَهۡلَكَنِيَ ٱللَّهُ وَمَن مَّعِيَ,إن أهلكني الله ومن معي,"if Allah were to destroy me and those with me,",if allah were to destroy me and those with me,COND | V PN | CONJ+REL LOC,COND,,0,0
+67:28:c3,28,3,8,9,2,2,أَوۡ رَحِمَنَا,أو رحمنا,"or have mercy on us,",or have mercy on us,CONJ | V,CONJ,,0,0
+67:28:c4,28,4,10,15,6,4,فَمَن يُجِيرُ ٱلۡكَٰفِرِينَ مِنۡ عَذَابٍ أَلِيمٖ,فمن يجير الكفرين من عذاب أليم,who then can protect the disbelievers from a painful punishment?”,who then can protect the disbelievers from a painful punishment,RSLT+N | V | PCPL | P N ADJ,N,RSLT,0,1
+67:29:c1,29,1,1,5,5,3,قُلۡ هُوَ ٱلرَّحۡمَٰنُ ءَامَنَّا بِهِۦ,قل هو الرحمن ءامنا به,"Say, “He is the Most Merciful; we believe in Him,",say he is the most merciful we believe in him,V | PRON N | V P+PRON,V,,0,0
+67:29:c2,29,2,6,7,2,2,وَعَلَيۡهِ تَوَكَّلۡنَاۖ,وعليه توكلنا,and upon Him we rely.,and upon him we rely,CONJ+P | V,P,CONJ,1,0
+67:29:c3,29,3,8,13,6,3,فَسَتَعۡلَمُونَ مَنۡ هُوَ فِي ضَلَٰلٖ مُّبِينٖ,فستعلمون من هو في ضلل مبين,So you will soon know who it is that is in clear error.”,so you will soon know who it is that is in clear error,REM+FUT+V | REL PRON | P N ADJ,V,REM+FUT,0,1
+67:30:c1,30,1,1,2,2,2,قُلۡ أَرَءَيۡتُمۡ,قل أرءيتم,"Say, “Have you considered:",say have you considered,V | INTG+V,V,,0,0
+67:30:c2,30,2,3,6,4,2,إِنۡ أَصۡبَحَ مَآؤُكُمۡ غَوۡرٗا,إن أصبح ماؤكم غورا,"if your water were to sink away,",if your water were to sink away,COND | V N N,COND,,0,0
+67:30:c3,30,3,7,10,4,3,فَمَن يَأۡتِيكُم بِمَآءٖ مَّعِينِۭ,فمن يأتيكم بماء معين,who then could bring you flowing water?”,who then could bring you flowing water,RSLT+N | V | P+N ADJ,N,RSLT,0,1

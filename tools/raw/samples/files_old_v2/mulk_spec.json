@@ -1,0 +1,1303 @@
+{
+ "_comment": "Hand-edited annotation. ayah -> clauses -> phrases = [word_start, word_end, english]. Phrases must tile each clause and clauses must tile the ayah (build script asserts this).",
+ "surah": 67,
+ "ayahs": {
+  "1": [
+   [
+    [
+     1,
+     1,
+     "Blessed is"
+    ],
+    [
+     2,
+     3,
+     "He in whose hand"
+    ],
+    [
+     4,
+     4,
+     "is the dominion,"
+    ]
+   ],
+   [
+    [
+     5,
+     5,
+     "and He is"
+    ],
+    [
+     6,
+     9,
+     "capable of all things."
+    ]
+   ]
+  ],
+  "2": [
+   [
+    [
+     1,
+     1,
+     "The One who"
+    ],
+    [
+     2,
+     2,
+     "created"
+    ],
+    [
+     3,
+     3,
+     "death"
+    ],
+    [
+     4,
+     4,
+     "and life"
+    ]
+   ],
+   [
+    [
+     5,
+     5,
+     "to test you"
+    ],
+    [
+     6,
+     6,
+     "as to which of you"
+    ],
+    [
+     7,
+     8,
+     "is best in deed,"
+    ]
+   ],
+   [
+    [
+     9,
+     9,
+     "and He is"
+    ],
+    [
+     10,
+     10,
+     "the Almighty,"
+    ],
+    [
+     11,
+     11,
+     "the Forgiving."
+    ]
+   ]
+  ],
+  "3": [
+   [
+    [
+     1,
+     1,
+     "The One who"
+    ],
+    [
+     2,
+     2,
+     "created"
+    ],
+    [
+     3,
+     4,
+     "seven heavens"
+    ],
+    [
+     5,
+     5,
+     "in layers."
+    ]
+   ],
+   [
+    [
+     6,
+     7,
+     "You do not see"
+    ],
+    [
+     8,
+     10,
+     "in the creation of the Most Merciful"
+    ],
+    [
+     11,
+     12,
+     "any inconsistency."
+    ]
+   ],
+   [
+    [
+     13,
+     13,
+     "So return"
+    ],
+    [
+     14,
+     14,
+     "your vision."
+    ]
+   ],
+   [
+    [
+     15,
+     16,
+     "Do you see"
+    ],
+    [
+     17,
+     18,
+     "any breaks?"
+    ]
+   ]
+  ],
+  "4": [
+   [
+    [
+     1,
+     1,
+     "Then"
+    ],
+    [
+     2,
+     3,
+     "return your vision"
+    ],
+    [
+     4,
+     4,
+     "twice more."
+    ]
+   ],
+   [
+    [
+     5,
+     7,
+     "Your vision will return to you"
+    ],
+    [
+     8,
+     8,
+     "humbled,"
+    ],
+    [
+     9,
+     9,
+     "and it is"
+    ],
+    [
+     10,
+     10,
+     "exhausted."
+    ]
+   ]
+  ],
+  "5": [
+   [
+    [
+     1,
+     1,
+     "And indeed"
+    ],
+    [
+     2,
+     2,
+     "We adorned"
+    ],
+    [
+     3,
+     4,
+     "the lowest heaven"
+    ],
+    [
+     5,
+     5,
+     "with lamps"
+    ]
+   ],
+   [
+    [
+     6,
+     6,
+     "and made them"
+    ],
+    [
+     7,
+     7,
+     "things to be thrown"
+    ],
+    [
+     8,
+     8,
+     "at the devils,"
+    ]
+   ],
+   [
+    [
+     9,
+     9,
+     "and We have prepared"
+    ],
+    [
+     10,
+     10,
+     "for them"
+    ],
+    [
+     11,
+     12,
+     "the punishment of the Blaze."
+    ]
+   ]
+  ],
+  "6": [
+   [
+    [
+     1,
+     1,
+     "And for those who"
+    ],
+    [
+     2,
+     2,
+     "disbelieved"
+    ],
+    [
+     3,
+     3,
+     "in their Lord"
+    ],
+    [
+     4,
+     5,
+     "is the punishment of Hell,"
+    ]
+   ],
+   [
+    [
+     6,
+     6,
+     "and wretched is"
+    ],
+    [
+     7,
+     7,
+     "the destination."
+    ]
+   ]
+  ],
+  "7": [
+   [
+    [
+     1,
+     1,
+     "When"
+    ],
+    [
+     2,
+     2,
+     "they are thrown"
+    ],
+    [
+     3,
+     3,
+     "into it,"
+    ]
+   ],
+   [
+    [
+     4,
+     4,
+     "they hear"
+    ],
+    [
+     5,
+     5,
+     "from it"
+    ],
+    [
+     6,
+     6,
+     "a harsh roar"
+    ]
+   ],
+   [
+    [
+     7,
+     7,
+     "while it"
+    ],
+    [
+     8,
+     8,
+     "boils."
+    ]
+   ]
+  ],
+  "8": [
+   [
+    [
+     1,
+     1,
+     "It almost"
+    ],
+    [
+     2,
+     2,
+     "bursts"
+    ],
+    [
+     3,
+     4,
+     "with rage."
+    ]
+   ],
+   [
+    [
+     5,
+     5,
+     "Every time"
+    ],
+    [
+     6,
+     8,
+     "a group is thrown into it,"
+    ]
+   ],
+   [
+    [
+     9,
+     10,
+     "its keepers ask them,"
+    ]
+   ],
+   [
+    [
+     11,
+     12,
+     "“Did there not come to you"
+    ],
+    [
+     13,
+     13,
+     "a warner?”"
+    ]
+   ]
+  ],
+  "9": [
+   [
+    [
+     1,
+     1,
+     "They will say,"
+    ],
+    [
+     2,
+     2,
+     "“Yes,"
+    ]
+   ],
+   [
+    [
+     3,
+     5,
+     "a warner did come to us,"
+    ]
+   ],
+   [
+    [
+     6,
+     6,
+     "but we denied"
+    ],
+    [
+     7,
+     7,
+     "and said,"
+    ]
+   ],
+   [
+    [
+     8,
+     10,
+     "‘Allah has not sent down"
+    ],
+    [
+     11,
+     12,
+     "anything."
+    ]
+   ],
+   [
+    [
+     13,
+     15,
+     "You are only"
+    ],
+    [
+     16,
+     18,
+     "in great error.’”"
+    ]
+   ]
+  ],
+  "10": [
+   [
+    [
+     1,
+     1,
+     "And they will say,"
+    ]
+   ],
+   [
+    [
+     2,
+     2,
+     "“If only"
+    ],
+    [
+     3,
+     4,
+     "we had been listening"
+    ],
+    [
+     5,
+     6,
+     "or reasoning,"
+    ]
+   ],
+   [
+    [
+     7,
+     8,
+     "we would not have been"
+    ],
+    [
+     9,
+     11,
+     "among the companions of the Blaze.”"
+    ]
+   ]
+  ],
+  "11": [
+   [
+    [
+     1,
+     1,
+     "So they admit"
+    ],
+    [
+     2,
+     2,
+     "their sin;"
+    ]
+   ],
+   [
+    [
+     3,
+     3,
+     "away with"
+    ],
+    [
+     4,
+     5,
+     "the companions of the Blaze!"
+    ]
+   ]
+  ],
+  "12": [
+   [
+    [
+     1,
+     2,
+     "Indeed, those who"
+    ],
+    [
+     3,
+     4,
+     "fear their Lord"
+    ],
+    [
+     5,
+     5,
+     "unseen"
+    ]
+   ],
+   [
+    [
+     6,
+     7,
+     "will have forgiveness"
+    ],
+    [
+     8,
+     9,
+     "and a great reward."
+    ]
+   ]
+  ],
+  "13": [
+   [
+    [
+     1,
+     2,
+     "And conceal your speech"
+    ],
+    [
+     3,
+     5,
+     "or declare it openly;"
+    ]
+   ],
+   [
+    [
+     6,
+     6,
+     "Indeed, He is"
+    ],
+    [
+     7,
+     7,
+     "All-Knowing"
+    ],
+    [
+     8,
+     9,
+     "of what lies within the breasts."
+    ]
+   ]
+  ],
+  "14": [
+   [
+    [
+     1,
+     4,
+     "Would the One who created not know?"
+    ]
+   ],
+   [
+    [
+     5,
+     5,
+     "And He is"
+    ],
+    [
+     6,
+     6,
+     "the Subtle,"
+    ],
+    [
+     7,
+     7,
+     "the All-Aware."
+    ]
+   ]
+  ],
+  "15": [
+   [
+    [
+     1,
+     2,
+     "He is the One who"
+    ]
+   ],
+   [
+    [
+     3,
+     3,
+     "made"
+    ],
+    [
+     4,
+     6,
+     "the earth manageable for you,"
+    ]
+   ],
+   [
+    [
+     7,
+     7,
+     "so walk"
+    ],
+    [
+     8,
+     9,
+     "through its regions"
+    ]
+   ],
+   [
+    [
+     10,
+     10,
+     "and eat"
+    ],
+    [
+     11,
+     12,
+     "from His provision;"
+    ]
+   ],
+   [
+    [
+     13,
+     13,
+     "and to Him"
+    ],
+    [
+     14,
+     14,
+     "is the resurrection."
+    ]
+   ]
+  ],
+  "16": [
+   [
+    [
+     1,
+     1,
+     "Do you feel secure"
+    ],
+    [
+     2,
+     4,
+     "that He who is in the heaven"
+    ]
+   ],
+   [
+    [
+     5,
+     8,
+     "would not cause the earth to swallow you,"
+    ]
+   ],
+   [
+    [
+     9,
+     10,
+     "and suddenly it"
+    ],
+    [
+     11,
+     11,
+     "sways?"
+    ]
+   ]
+  ],
+  "17": [
+   [
+    [
+     1,
+     2,
+     "Or do you feel secure"
+    ],
+    [
+     3,
+     5,
+     "that He who is in the heaven"
+    ]
+   ],
+   [
+    [
+     6,
+     7,
+     "would not send"
+    ],
+    [
+     8,
+     8,
+     "against you"
+    ],
+    [
+     9,
+     9,
+     "a storm of stones?"
+    ]
+   ],
+   [
+    [
+     10,
+     10,
+     "So you will soon know"
+    ],
+    [
+     11,
+     12,
+     "how terrible My warning was."
+    ]
+   ]
+  ],
+  "18": [
+   [
+    [
+     1,
+     1,
+     "And indeed"
+    ],
+    [
+     2,
+     5,
+     "those who came before them denied,"
+    ]
+   ],
+   [
+    [
+     6,
+     6,
+     "and how"
+    ],
+    [
+     7,
+     8,
+     "terrible My reproach was!"
+    ]
+   ]
+  ],
+  "19": [
+   [
+    [
+     1,
+     2,
+     "Have they not seen"
+    ],
+    [
+     3,
+     4,
+     "the birds"
+    ],
+    [
+     5,
+     5,
+     "above them,"
+    ],
+    [
+     6,
+     6,
+     "spreading their wings"
+    ],
+    [
+     7,
+     7,
+     "and folding them in?"
+    ]
+   ],
+   [
+    [
+     8,
+     9,
+     "None holds them up"
+    ],
+    [
+     10,
+     11,
+     "except the Most Merciful."
+    ]
+   ],
+   [
+    [
+     12,
+     12,
+     "Indeed, He is"
+    ],
+    [
+     13,
+     15,
+     "All-Seeing over everything."
+    ]
+   ]
+  ],
+  "20": [
+   [
+    [
+     1,
+     3,
+     "Or who is this one who"
+    ],
+    [
+     4,
+     5,
+     "is an army"
+    ],
+    [
+     6,
+     6,
+     "for you,"
+    ]
+   ],
+   [
+    [
+     7,
+     7,
+     "to help you"
+    ],
+    [
+     8,
+     10,
+     "besides the Most Merciful?"
+    ]
+   ],
+   [
+    [
+     11,
+     12,
+     "The disbelievers are"
+    ],
+    [
+     13,
+     13,
+     "only"
+    ],
+    [
+     14,
+     15,
+     "in delusion."
+    ]
+   ]
+  ],
+  "21": [
+   [
+    [
+     1,
+     3,
+     "Or who is this one who"
+    ],
+    [
+     4,
+     4,
+     "could provide for you"
+    ]
+   ],
+   [
+    [
+     5,
+     5,
+     "if"
+    ],
+    [
+     6,
+     6,
+     "He withheld"
+    ],
+    [
+     7,
+     7,
+     "His provision?"
+    ]
+   ],
+   [
+    [
+     8,
+     9,
+     "Rather, they persist"
+    ],
+    [
+     10,
+     11,
+     "in arrogance"
+    ],
+    [
+     12,
+     12,
+     "and aversion."
+    ]
+   ]
+  ],
+  "22": [
+   [
+    [
+     1,
+     2,
+     "Is the one who walks"
+    ],
+    [
+     3,
+     5,
+     "bent over on his face"
+    ]
+   ],
+   [
+    [
+     6,
+     6,
+     "better guided,"
+    ]
+   ],
+   [
+    [
+     7,
+     8,
+     "or the one who walks"
+    ],
+    [
+     9,
+     9,
+     "upright"
+    ],
+    [
+     10,
+     12,
+     "on a straight path?"
+    ]
+   ]
+  ],
+  "23": [
+   [
+    [
+     1,
+     1,
+     "Say,"
+    ],
+    [
+     2,
+     3,
+     "“He is the One who"
+    ],
+    [
+     4,
+     4,
+     "created you"
+    ]
+   ],
+   [
+    [
+     5,
+     5,
+     "and made"
+    ],
+    [
+     6,
+     6,
+     "for you"
+    ],
+    [
+     7,
+     7,
+     "hearing,"
+    ],
+    [
+     8,
+     8,
+     "sight,"
+    ],
+    [
+     9,
+     9,
+     "and hearts;"
+    ]
+   ],
+   [
+    [
+     10,
+     11,
+     "how little"
+    ],
+    [
+     12,
+     12,
+     "you give thanks!”"
+    ]
+   ]
+  ],
+  "24": [
+   [
+    [
+     1,
+     1,
+     "Say,"
+    ],
+    [
+     2,
+     3,
+     "“He is the One who"
+    ],
+    [
+     4,
+     4,
+     "dispersed you"
+    ],
+    [
+     5,
+     6,
+     "throughout the earth,"
+    ]
+   ],
+   [
+    [
+     7,
+     7,
+     "and to Him"
+    ],
+    [
+     8,
+     8,
+     "you will be gathered.”"
+    ]
+   ]
+  ],
+  "25": [
+   [
+    [
+     1,
+     1,
+     "And they say,"
+    ],
+    [
+     2,
+     2,
+     "“When"
+    ],
+    [
+     3,
+     4,
+     "is this promise,"
+    ]
+   ],
+   [
+    [
+     5,
+     6,
+     "if you are"
+    ],
+    [
+     7,
+     7,
+     "truthful?”"
+    ]
+   ]
+  ],
+  "26": [
+   [
+    [
+     1,
+     1,
+     "Say,"
+    ],
+    [
+     2,
+     3,
+     "“The knowledge is only"
+    ],
+    [
+     4,
+     5,
+     "with Allah,"
+    ]
+   ],
+   [
+    [
+     6,
+     7,
+     "and I am only"
+    ],
+    [
+     8,
+     9,
+     "a clear warner.”"
+    ]
+   ]
+  ],
+  "27": [
+   [
+    [
+     1,
+     1,
+     "But when"
+    ],
+    [
+     2,
+     2,
+     "they see it"
+    ],
+    [
+     3,
+     3,
+     "close at hand,"
+    ]
+   ],
+   [
+    [
+     4,
+     7,
+     "the faces of those who disbelieved will be distressed,"
+    ]
+   ],
+   [
+    [
+     8,
+     8,
+     "and it will be said,"
+    ],
+    [
+     9,
+     10,
+     "“This is what"
+    ],
+    [
+     11,
+     13,
+     "you used to call for.”"
+    ]
+   ]
+  ],
+  "28": [
+   [
+    [
+     1,
+     1,
+     "Say,"
+    ],
+    [
+     2,
+     2,
+     "“Have you considered:"
+    ]
+   ],
+   [
+    [
+     3,
+     3,
+     "if"
+    ],
+    [
+     4,
+     5,
+     "Allah were to destroy me"
+    ],
+    [
+     6,
+     7,
+     "and those with me,"
+    ]
+   ],
+   [
+    [
+     8,
+     8,
+     "or"
+    ],
+    [
+     9,
+     9,
+     "have mercy on us,"
+    ]
+   ],
+   [
+    [
+     10,
+     10,
+     "who then"
+    ],
+    [
+     11,
+     11,
+     "can protect"
+    ],
+    [
+     12,
+     12,
+     "the disbelievers"
+    ],
+    [
+     13,
+     15,
+     "from a painful punishment?”"
+    ]
+   ]
+  ],
+  "29": [
+   [
+    [
+     1,
+     1,
+     "Say,"
+    ],
+    [
+     2,
+     3,
+     "“He is the Most Merciful;"
+    ],
+    [
+     4,
+     5,
+     "we believe in Him,"
+    ]
+   ],
+   [
+    [
+     6,
+     6,
+     "and upon Him"
+    ],
+    [
+     7,
+     7,
+     "we rely."
+    ]
+   ],
+   [
+    [
+     8,
+     8,
+     "So you will soon know"
+    ],
+    [
+     9,
+     10,
+     "who it is"
+    ],
+    [
+     11,
+     13,
+     "that is in clear error.”"
+    ]
+   ]
+  ],
+  "30": [
+   [
+    [
+     1,
+     1,
+     "Say,"
+    ],
+    [
+     2,
+     2,
+     "“Have you considered:"
+    ]
+   ],
+   [
+    [
+     3,
+     3,
+     "if"
+    ],
+    [
+     4,
+     6,
+     "your water were to sink away,"
+    ]
+   ],
+   [
+    [
+     7,
+     7,
+     "who then"
+    ],
+    [
+     8,
+     8,
+     "could bring you"
+    ],
+    [
+     9,
+     10,
+     "flowing water?”"
+    ]
+   ]
+  ]
+ }
+}

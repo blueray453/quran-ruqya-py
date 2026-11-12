@@ -1,0 +1,214 @@
+﻿phrase_id,clause_id,ayah,order,word_start,word_end,n_words,text,text_norm,translation,translation_key,pattern,first_cat,last_cat,has_waqf
+67:1:c1:p1,67:1:c1,1,1,1,1,1,تَبَٰرَكَ,تبرك,Blessed is,blessed is,V,V,V,0
+67:1:c1:p2,67:1:c1,1,2,2,3,2,ٱلَّذِي بِيَدِهِ,الذي بيده,He in whose hand,he in whose hand,REL P+N,REL,N,0
+67:1:c1:p3,67:1:c1,1,3,4,4,1,ٱلۡمُلۡكُ,الملك,"is the dominion,",is the dominion,N,N,N,0
+67:1:c2:p1,67:1:c2,1,1,5,5,1,وَهُوَ,وهو,and He is,and he is,CONJ+PRON,PRON,PRON,0
+67:1:c2:p2,67:1:c2,1,2,6,9,4,عَلَىٰ كُلِّ شَيۡءٖ قَدِيرٌ,علي كل شيء قدير,capable of all things.,capable of all things,P N N N,P,N,0
+67:2:c1:p1,67:2:c1,2,1,1,1,1,ٱلَّذِي,الذي,The One who,the one who,REL,REL,REL,0
+67:2:c1:p2,67:2:c1,2,2,2,2,1,خَلَقَ,خلق,created,created,V,V,V,0
+67:2:c1:p3,67:2:c1,2,3,3,3,1,ٱلۡمَوۡتَ,الموت,death,death,N,N,N,0
+67:2:c1:p4,67:2:c1,2,4,4,4,1,وَٱلۡحَيَوٰةَ,والحيوة,and life,and life,CONJ+DET+N,N,N,0
+67:2:c2:p1,67:2:c2,2,1,5,5,1,لِيَبۡلُوَكُمۡ,ليبلوكم,to test you,to test you,PRP+V,V,V,0
+67:2:c2:p2,67:2:c2,2,2,6,6,1,أَيُّكُمۡ,أيكم,as to which of you,as to which of you,N,N,N,0
+67:2:c2:p3,67:2:c2,2,3,7,8,2,أَحۡسَنُ عَمَلٗاۚ,أحسن عملا,"is best in deed,",is best in deed,N N,N,N,1
+67:2:c3:p1,67:2:c3,2,1,9,9,1,وَهُوَ,وهو,and He is,and he is,REM+PRON,PRON,PRON,0
+67:2:c3:p2,67:2:c3,2,2,10,10,1,ٱلۡعَزِيزُ,العزيز,"the Almighty,",the almighty,N,N,N,0
+67:2:c3:p3,67:2:c3,2,3,11,11,1,ٱلۡغَفُورُ,الغفور,the Forgiving.,the forgiving,ADJ,ADJ,ADJ,0
+67:3:c1:p1,67:3:c1,3,1,1,1,1,ٱلَّذِي,الذي,The One who,the one who,REL,REL,REL,0
+67:3:c1:p2,67:3:c1,3,2,2,2,1,خَلَقَ,خلق,created,created,V,V,V,0
+67:3:c1:p3,67:3:c1,3,3,3,4,2,سَبۡعَ سَمَٰوَٰتٖ,سبع سموت,seven heavens,seven heavens,N N,N,N,0
+67:3:c1:p4,67:3:c1,3,4,5,5,1,طِبَاقٗاۖ,طباقا,in layers.,in layers,ADJ,ADJ,ADJ,1
+67:3:c2:p1,67:3:c2,3,1,6,7,2,مَّا تَرَىٰ,ما تري,You do not see,you do not see,NEG V,NEG,V,0
+67:3:c2:p2,67:3:c2,3,2,8,10,3,فِي خَلۡقِ ٱلرَّحۡمَٰنِ,في خلق الرحمن,in the creation of the Most Merciful,in the creation of the most merciful,P N N,P,N,0
+67:3:c2:p3,67:3:c2,3,3,11,12,2,مِن تَفَٰوُتٖۖ,من تفوت,any inconsistency.,any inconsistency,P N,P,N,1
+67:3:c3:p1,67:3:c3,3,1,13,13,1,فَٱرۡجِعِ,فارجع,So return,so return,CAUS+V,V,V,0
+67:3:c3:p2,67:3:c3,3,2,14,14,1,ٱلۡبَصَرَ,البصر,your vision.,your vision,N,N,N,0
+67:3:c4:p1,67:3:c4,3,1,15,16,2,هَلۡ تَرَىٰ,هل تري,Do you see,do you see,INTG V,INTG,V,0
+67:3:c4:p2,67:3:c4,3,2,17,18,2,مِن فُطُورٖ,من فطور,any breaks?,any breaks,P N,P,N,0
+67:4:c1:p1,67:4:c1,4,1,1,1,1,ثُمَّ,ثم,Then,then,CONJ,CONJ,CONJ,0
+67:4:c1:p2,67:4:c1,4,2,2,3,2,ٱرۡجِعِ ٱلۡبَصَرَ,ارجع البصر,return your vision,return your vision,V N,V,N,0
+67:4:c1:p3,67:4:c1,4,3,4,4,1,كَرَّتَيۡنِ,كرتين,twice more.,twice more,N,N,N,0
+67:4:c2:p1,67:4:c2,4,1,5,7,3,يَنقَلِبۡ إِلَيۡكَ ٱلۡبَصَرُ,ينقلب إليك البصر,Your vision will return to you,your vision will return to you,V P N,V,N,0
+67:4:c2:p2,67:4:c2,4,2,8,8,1,خَاسِئٗا,خاسئا,"humbled,",humbled,PCPL,PCPL,PCPL,0
+67:4:c2:p3,67:4:c2,4,3,9,9,1,وَهُوَ,وهو,and it is,and he is,CIRC+PRON,PRON,PRON,0
+67:4:c2:p4,67:4:c2,4,4,10,10,1,حَسِيرٞ,حسير,exhausted.,exhausted,N,N,N,0
+67:5:c1:p1,67:5:c1,5,1,1,1,1,وَلَقَدۡ,ولقد,And indeed,and indeed,REM+EMPH+CERT,CERT,CERT,0
+67:5:c1:p2,67:5:c1,5,2,2,2,1,زَيَّنَّا,زينا,We adorned,we adorned,V,V,V,0
+67:5:c1:p3,67:5:c1,5,3,3,4,2,ٱلسَّمَآءَ ٱلدُّنۡيَا,السماء الدنيا,the lowest heaven,the lowest heaven,N ADJ,N,ADJ,0
+67:5:c1:p4,67:5:c1,5,4,5,5,1,بِمَصَٰبِيحَ,بمصبيح,with lamps,with lamps,P+N,N,N,0
+67:5:c2:p1,67:5:c2,5,1,6,6,1,وَجَعَلۡنَٰهَا,وجعلنها,and made them,and made them,CONJ+V,V,V,0
+67:5:c2:p2,67:5:c2,5,2,7,7,1,رُجُومٗا,رجوما,things to be thrown,things to be thrown,N,N,N,0
+67:5:c2:p3,67:5:c2,5,3,8,8,1,لِّلشَّيَٰطِينِۖ,للشيطين,"at the devils,",at the devils,P+DET+PN,PN,PN,1
+67:5:c3:p1,67:5:c3,5,1,9,9,1,وَأَعۡتَدۡنَا,وأعتدنا,and We have prepared,and we have prepared,CONJ+V,V,V,0
+67:5:c3:p2,67:5:c3,5,2,10,10,1,لَهُمۡ,لهم,for them,for them,P+PRON,PRON,PRON,0
+67:5:c3:p3,67:5:c3,5,3,11,12,2,عَذَابَ ٱلسَّعِيرِ,عذاب السعير,the punishment of the Blaze.,the punishment of the blaze,N N,N,N,0
+67:6:c1:p1,67:6:c1,6,1,1,1,1,وَلِلَّذِينَ,وللذين,And for those who,and for those who,REM+P+REL,REL,REL,0
+67:6:c1:p2,67:6:c1,6,2,2,2,1,كَفَرُواْ,كفروا,disbelieved,disbelieved,V,V,V,0
+67:6:c1:p3,67:6:c1,6,3,3,3,1,بِرَبِّهِمۡ,بربهم,in their Lord,in their lord,P+N,N,N,0
+67:6:c1:p4,67:6:c1,6,4,4,5,2,عَذَابُ جَهَنَّمَۖ,عذاب جهنم,"is the punishment of Hell,",is the punishment of hell,N PN,N,PN,1
+67:6:c2:p1,67:6:c2,6,1,6,6,1,وَبِئۡسَ,وبئس,and wretched is,and wretched is,REM+V,V,V,0
+67:6:c2:p2,67:6:c2,6,2,7,7,1,ٱلۡمَصِيرُ,المصير,the destination.,the destination,N,N,N,0
+67:7:c1:p1,67:7:c1,7,1,1,1,1,إِذَآ,إذا,When,when,T,T,T,0
+67:7:c1:p2,67:7:c1,7,2,2,2,1,أُلۡقُواْ,ألقوا,they are thrown,they are thrown,V,V,V,0
+67:7:c1:p3,67:7:c1,7,3,3,3,1,فِيهَا,فيها,"into it,",into it,P,P,P,0
+67:7:c2:p1,67:7:c2,7,1,4,4,1,سَمِعُواْ,سمعوا,they hear,they hear,V,V,V,0
+67:7:c2:p2,67:7:c2,7,2,5,5,1,لَهَا,لها,from it,from it,P+PRON,PRON,PRON,0
+67:7:c2:p3,67:7:c2,7,3,6,6,1,شَهِيقٗا,شهيقا,a harsh roar,a harsh roar,N,N,N,0
+67:7:c3:p1,67:7:c3,7,1,7,7,1,وَهِيَ,وهي,while it,while it,CIRC+PRON,PRON,PRON,0
+67:7:c3:p2,67:7:c3,7,2,8,8,1,تَفُورُ,تفور,boils.,boils,V,V,V,0
+67:8:c1:p1,67:8:c1,8,1,1,1,1,تَكَادُ,تكاد,It almost,it almost,V,V,V,0
+67:8:c1:p2,67:8:c1,8,2,2,2,1,تَمَيَّزُ,تميز,bursts,bursts,V,V,V,0
+67:8:c1:p3,67:8:c1,8,3,3,4,2,مِنَ ٱلۡغَيۡظِۖ,من الغيظ,with rage.,with rage,P N,P,N,1
+67:8:c2:p1,67:8:c2,8,1,5,5,1,كُلَّمَآ,كلما,Every time,every time,T,T,T,0
+67:8:c2:p2,67:8:c2,8,2,6,8,3,أُلۡقِيَ فِيهَا فَوۡجٞ,ألقي فيها فوج,"a group is thrown into it,",a group is thrown into it,V P N,V,N,0
+67:8:c3:p1,67:8:c3,8,1,9,10,2,سَأَلَهُمۡ خَزَنَتُهَآ,سألهم خزنتها,"its keepers ask them,",its keepers ask them,V N,V,N,0
+67:8:c4:p1,67:8:c4,8,1,11,12,2,أَلَمۡ يَأۡتِكُمۡ,ألم يأتكم,“Did there not come to you,did there not come to you,INTG+NEG V,NEG,V,0
+67:8:c4:p2,67:8:c4,8,2,13,13,1,نَذِيرٞ,نذير,a warner?”,a warner,N,N,N,0
+67:9:c1:p1,67:9:c1,9,1,1,1,1,قَالُواْ,قالوا,"They will say,",they will say,V,V,V,0
+67:9:c1:p2,67:9:c1,9,2,2,2,1,بَلَىٰ,بلي,"“Yes,",yes,ANS,ANS,ANS,0
+67:9:c2:p1,67:9:c2,9,1,3,5,3,قَدۡ جَآءَنَا نَذِيرٞ,قد جاءنا نذير,"a warner did come to us,",a warner did come to us,CERT V N,CERT,N,0
+67:9:c3:p1,67:9:c3,9,1,6,6,1,فَكَذَّبۡنَا,فكذبنا,but we denied,but we denied,CONJ+V,V,V,0
+67:9:c3:p2,67:9:c3,9,2,7,7,1,وَقُلۡنَا,وقلنا,"and said,",and said,CONJ+V,V,V,0
+67:9:c4:p1,67:9:c4,9,1,8,10,3,مَا نَزَّلَ ٱللَّهُ,ما نزل الله,‘Allah has not sent down,allah has not sent down,NEG V PN,NEG,PN,0
+67:9:c4:p2,67:9:c4,9,2,11,12,2,مِن شَيۡءٍ,من شيء,anything.,anything,P N,P,N,0
+67:9:c5:p1,67:9:c5,9,1,13,15,3,إِنۡ أَنتُمۡ إِلَّا,إن أنتم إلا,You are only,you are only,NEG PRON RES,NEG,RES,0
+67:9:c5:p2,67:9:c5,9,2,16,18,3,فِي ضَلَٰلٖ كَبِيرٖ,في ضلل كبير,in great error.’”,in great error,P N ADJ,P,ADJ,0
+67:10:c1:p1,67:10:c1,10,1,1,1,1,وَقَالُواْ,وقالوا,"And they will say,",and they will say,CONJ+V,V,V,0
+67:10:c2:p1,67:10:c2,10,1,2,2,1,لَوۡ,لو,“If only,if only,COND,COND,COND,0
+67:10:c2:p2,67:10:c2,10,2,3,4,2,كُنَّا نَسۡمَعُ,كنا نسمع,we had been listening,we had been listening,V V,V,V,0
+67:10:c2:p3,67:10:c2,10,3,5,6,2,أَوۡ نَعۡقِلُ,أو نعقل,"or reasoning,",or reasoning,CONJ V,CONJ,V,0
+67:10:c3:p1,67:10:c3,10,1,7,8,2,مَا كُنَّا,ما كنا,we would not have been,we would not have been,NEG V,NEG,V,0
+67:10:c3:p2,67:10:c3,10,2,9,11,3,فِيٓ أَصۡحَٰبِ ٱلسَّعِيرِ,في أصحب السعير,among the companions of the Blaze.”,among the companions of the blaze,P N N,P,N,0
+67:11:c1:p1,67:11:c1,11,1,1,1,1,فَٱعۡتَرَفُواْ,فاعترفوا,So they admit,so they admit,REM+V,V,V,0
+67:11:c1:p2,67:11:c1,11,2,2,2,1,بِذَنۢبِهِمۡ,بذنبهم,their sin;,their sin,P+N,N,N,0
+67:11:c2:p1,67:11:c2,11,1,3,3,1,فَسُحۡقٗا,فسحقا,away with,away with,REM+N,N,N,0
+67:11:c2:p2,67:11:c2,11,2,4,5,2,لِّأَصۡحَٰبِ ٱلسَّعِيرِ,لأصحب السعير,the companions of the Blaze!,the companions of the blaze,P+N N,N,N,0
+67:12:c1:p1,67:12:c1,12,1,1,2,2,إِنَّ ٱلَّذِينَ,إن الذين,"Indeed, those who",indeed those who,ACC REL,ACC,REL,0
+67:12:c1:p2,67:12:c1,12,2,3,4,2,يَخۡشَوۡنَ رَبَّهُم,يخشون ربهم,fear their Lord,fear their lord,V N,V,N,0
+67:12:c1:p3,67:12:c1,12,3,5,5,1,بِٱلۡغَيۡبِ,بالغيب,unseen,unseen,P+DET+N,N,N,0
+67:12:c2:p1,67:12:c2,12,1,6,7,2,لَهُم مَّغۡفِرَةٞ,لهم مغفرة,will have forgiveness,will have forgiveness,P+PRON N,PRON,N,0
+67:12:c2:p2,67:12:c2,12,2,8,9,2,وَأَجۡرٞ كَبِيرٞ,وأجر كبير,and a great reward.,and a great reward,CONJ+N ADJ,N,ADJ,0
+67:13:c1:p1,67:13:c1,13,1,1,2,2,وَأَسِرُّواْ قَوۡلَكُمۡ,وأسروا قولكم,And conceal your speech,and conceal your speech,REM+V N,V,N,0
+67:13:c1:p2,67:13:c1,13,2,3,5,3,أَوِ ٱجۡهَرُواْ بِهِۦٓۖ,أو اجهروا به,or declare it openly;,or declare it openly,CONJ V P+PRON,CONJ,PRON,1
+67:13:c2:p1,67:13:c2,13,1,6,6,1,إِنَّهُۥ,إنه,"Indeed, He is",indeed he is,ACC,ACC,ACC,0
+67:13:c2:p2,67:13:c2,13,2,7,7,1,عَلِيمُۢ,عليم,All-Knowing,all-knowing,N,N,N,0
+67:13:c2:p3,67:13:c2,13,3,8,9,2,بِذَاتِ ٱلصُّدُورِ,بذات الصدور,of what lies within the breasts.,of what lies within the breasts,P+N N,N,N,0
+67:14:c1:p1,67:14:c1,14,1,1,4,4,أَلَا يَعۡلَمُ مَنۡ خَلَقَ,ألا يعلم من خلق,Would the One who created not know?,would the one who created not know,INTG+NEG V REL V,NEG,V,0
+67:14:c2:p1,67:14:c2,14,1,5,5,1,وَهُوَ,وهو,And He is,and he is,CIRC+PRON,PRON,PRON,0
+67:14:c2:p2,67:14:c2,14,2,6,6,1,ٱللَّطِيفُ,اللطيف,"the Subtle,",the subtle,N,N,N,0
+67:14:c2:p3,67:14:c2,14,3,7,7,1,ٱلۡخَبِيرُ,الخبير,the All-Aware.,the all-aware,ADJ,ADJ,ADJ,0
+67:15:c1:p1,67:15:c1,15,1,1,2,2,هُوَ ٱلَّذِي,هو الذي,He is the One who,he is the one who,PRON REL,PRON,REL,0
+67:15:c2:p1,67:15:c2,15,1,3,3,1,جَعَلَ,جعل,made,made,V,V,V,0
+67:15:c2:p2,67:15:c2,15,2,4,6,3,لَكُمُ ٱلۡأَرۡضَ ذَلُولٗا,لكم الأرض ذلولا,"the earth manageable for you,",the earth manageable for you,P+PRON N N,PRON,N,0
+67:15:c3:p1,67:15:c3,15,1,7,7,1,فَٱمۡشُواْ,فامشوا,so walk,so walk,REM+V,V,V,0
+67:15:c3:p2,67:15:c3,15,2,8,9,2,فِي مَنَاكِبِهَا,في مناكبها,through its regions,through its regions,P N,P,N,0
+67:15:c4:p1,67:15:c4,15,1,10,10,1,وَكُلُواْ,وكلوا,and eat,and eat,CONJ+V,V,V,0
+67:15:c4:p2,67:15:c4,15,2,11,12,2,مِن رِّزۡقِهِۦۖ,من رزقه,from His provision;,from his provision,P N,P,N,1
+67:15:c5:p1,67:15:c5,15,1,13,13,1,وَإِلَيۡهِ,وإليه,and to Him,and to him,REM+P,P,P,0
+67:15:c5:p2,67:15:c5,15,2,14,14,1,ٱلنُّشُورُ,النشور,is the resurrection.,is the resurrection,N,N,N,0
+67:16:c1:p1,67:16:c1,16,1,1,1,1,ءَأَمِنتُم,ءأمنتم,Do you feel secure,do you feel secure,INTG+V,V,V,0
+67:16:c1:p2,67:16:c1,16,2,2,4,3,مَّن فِي ٱلسَّمَآءِ,من في السماء,that He who is in the heaven,that he who is in the heaven,REL P N,REL,N,0
+67:16:c2:p1,67:16:c2,16,1,5,8,4,أَن يَخۡسِفَ بِكُمُ ٱلۡأَرۡضَ,أن يخسف بكم الأرض,"would not cause the earth to swallow you,",would not cause the earth to swallow you,SUB V P+PRON N,SUB,N,0
+67:16:c3:p1,67:16:c3,16,1,9,10,2,فَإِذَا هِيَ,فإذا هي,and suddenly it,and suddenly it,REM+SUR PRON,SUR,PRON,0
+67:16:c3:p2,67:16:c3,16,2,11,11,1,تَمُورُ,تمور,sways?,sways,V,V,V,0
+67:17:c1:p1,67:17:c1,17,1,1,2,2,أَمۡ أَمِنتُم,أم أمنتم,Or do you feel secure,or do you feel secure,CONJ V,CONJ,V,0
+67:17:c1:p2,67:17:c1,17,2,3,5,3,مَّن فِي ٱلسَّمَآءِ,من في السماء,that He who is in the heaven,that he who is in the heaven,REL P N,REL,N,0
+67:17:c2:p1,67:17:c2,17,1,6,7,2,أَن يُرۡسِلَ,أن يرسل,would not send,would not send,SUB V,SUB,V,0
+67:17:c2:p2,67:17:c2,17,2,8,8,1,عَلَيۡكُمۡ,عليكم,against you,against you,P,P,P,0
+67:17:c2:p3,67:17:c2,17,3,9,9,1,حَاصِبٗاۖ,حاصبا,a storm of stones?,a storm of stones,PCPL,PCPL,PCPL,1
+67:17:c3:p1,67:17:c3,17,1,10,10,1,فَسَتَعۡلَمُونَ,فستعلمون,So you will soon know,so you will soon know,REM+FUT+V,V,V,0
+67:17:c3:p2,67:17:c3,17,2,11,12,2,كَيۡفَ نَذِيرِ,كيف نذير,how terrible My warning was.,how terrible my warning was,N N,N,N,0
+67:18:c1:p1,67:18:c1,18,1,1,1,1,وَلَقَدۡ,ولقد,And indeed,and indeed,REM+EMPH+CERT,CERT,CERT,0
+67:18:c1:p2,67:18:c1,18,2,2,5,4,كَذَّبَ ٱلَّذِينَ مِن قَبۡلِهِمۡ,كذب الذين من قبلهم,"those who came before them denied,",those who came before them denied,V REL P N,V,N,0
+67:18:c2:p1,67:18:c2,18,1,6,6,1,فَكَيۡفَ,فكيف,and how,and how,REM+N,N,N,0
+67:18:c2:p2,67:18:c2,18,2,7,8,2,كَانَ نَكِيرِ,كان نكير,terrible My reproach was!,terrible my reproach was,V N,V,N,0
+67:19:c1:p1,67:19:c1,19,1,1,2,2,أَوَلَمۡ يَرَوۡاْ,أولم يروا,Have they not seen,have they not seen,INTG+SUP+NEG V,NEG,V,0
+67:19:c1:p2,67:19:c1,19,2,3,4,2,إِلَى ٱلطَّيۡرِ,إلي الطير,the birds,the birds,P N,P,N,0
+67:19:c1:p3,67:19:c1,19,3,5,5,1,فَوۡقَهُمۡ,فوقهم,"above them,",above them,LOC,LOC,LOC,0
+67:19:c1:p4,67:19:c1,19,4,6,6,1,صَٰٓفَّٰتٖ,صفت,spreading their wings,spreading their wings,PCPL,PCPL,PCPL,0
+67:19:c1:p5,67:19:c1,19,5,7,7,1,وَيَقۡبِضۡنَۚ,ويقبضن,and folding them in?,and folding them in,CONJ+V,V,V,1
+67:19:c2:p1,67:19:c2,19,1,8,9,2,مَا يُمۡسِكُهُنَّ,ما يمسكهن,None holds them up,none holds them up,NEG V,NEG,V,0
+67:19:c2:p2,67:19:c2,19,2,10,11,2,إِلَّا ٱلرَّحۡمَٰنُۚ,إلا الرحمن,except the Most Merciful.,except the most merciful,RES N,RES,N,1
+67:19:c3:p1,67:19:c3,19,1,12,12,1,إِنَّهُۥ,إنه,"Indeed, He is",indeed he is,ACC,ACC,ACC,0
+67:19:c3:p2,67:19:c3,19,2,13,15,3,بِكُلِّ شَيۡءِۭ بَصِيرٌ,بكل شيء بصير,All-Seeing over everything.,all-seeing over everything,P+N N N,N,N,0
+67:20:c1:p1,67:20:c1,20,1,1,3,3,أَمَّنۡ هَٰذَا ٱلَّذِي,أمن هذا الذي,Or who is this one who,or who is this one who,CONJ ATT+DEM REL,CONJ,REL,0
+67:20:c1:p2,67:20:c1,20,2,4,5,2,هُوَ جُندٞ,هو جند,is an army,is an army,PRON N,PRON,N,0
+67:20:c1:p3,67:20:c1,20,3,6,6,1,لَّكُمۡ,لكم,"for you,",for you,P+PRON,PRON,PRON,0
+67:20:c2:p1,67:20:c2,20,1,7,7,1,يَنصُرُكُم,ينصركم,to help you,to help you,V,V,V,0
+67:20:c2:p2,67:20:c2,20,2,8,10,3,مِّن دُونِ ٱلرَّحۡمَٰنِۚ,من دون الرحمن,besides the Most Merciful?,besides the most merciful,P N N,P,N,1
+67:20:c3:p1,67:20:c3,20,1,11,12,2,إِنِ ٱلۡكَٰفِرُونَ,إن الكفرون,The disbelievers are,the disbelievers are,NEG PCPL,NEG,PCPL,0
+67:20:c3:p2,67:20:c3,20,2,13,13,1,إِلَّا,إلا,only,only,RES,RES,RES,0
+67:20:c3:p3,67:20:c3,20,3,14,15,2,فِي غُرُورٍ,في غرور,in delusion.,in delusion,P N,P,N,0
+67:21:c1:p1,67:21:c1,21,1,1,3,3,أَمَّنۡ هَٰذَا ٱلَّذِي,أمن هذا الذي,Or who is this one who,or who is this one who,CONJ ATT+DEM REL,CONJ,REL,0
+67:21:c1:p2,67:21:c1,21,2,4,4,1,يَرۡزُقُكُمۡ,يرزقكم,could provide for you,could provide for you,V,V,V,0
+67:21:c2:p1,67:21:c2,21,1,5,5,1,إِنۡ,إن,if,if,COND,COND,COND,0
+67:21:c2:p2,67:21:c2,21,2,6,6,1,أَمۡسَكَ,أمسك,He withheld,he withheld,V,V,V,0
+67:21:c2:p3,67:21:c2,21,3,7,7,1,رِزۡقَهُۥۚ,رزقه,His provision?,his provision,N,N,N,1
+67:21:c3:p1,67:21:c3,21,1,8,9,2,بَل لَّجُّواْ,بل لجوا,"Rather, they persist",rather they persist,RET V,RET,V,0
+67:21:c3:p2,67:21:c3,21,2,10,11,2,فِي عُتُوّٖ,في عتو,in arrogance,in arrogance,P N,P,N,0
+67:21:c3:p3,67:21:c3,21,3,12,12,1,وَنُفُورٍ,ونفور,and aversion.,and aversion,CONJ+N,N,N,0
+67:22:c1:p1,67:22:c1,22,1,1,2,2,أَفَمَن يَمۡشِي,أفمن يمشي,Is the one who walks,is the one who walks,INTG+SUP+REL V,REL,V,0
+67:22:c1:p2,67:22:c1,22,2,3,5,3,مُكِبًّا عَلَىٰ وَجۡهِهِۦٓ,مكبا علي وجهه,bent over on his face,bent over on his face,PCPL P N,PCPL,N,0
+67:22:c2:p1,67:22:c2,22,1,6,6,1,أَهۡدَىٰٓ,أهدي,"better guided,",better guided,N,N,N,0
+67:22:c3:p1,67:22:c3,22,1,7,8,2,أَمَّن يَمۡشِي,أمن يمشي,or the one who walks,or the one who walks,CONJ V,CONJ,V,0
+67:22:c3:p2,67:22:c3,22,2,9,9,1,سَوِيًّا,سويا,upright,upright,N,N,N,0
+67:22:c3:p3,67:22:c3,22,3,10,12,3,عَلَىٰ صِرَٰطٖ مُّسۡتَقِيمٖ,علي صرط مستقيم,on a straight path?,on a straight path,P N ADJ,P,ADJ,0
+67:23:c1:p1,67:23:c1,23,1,1,1,1,قُلۡ,قل,"Say,",say,V,V,V,0
+67:23:c1:p2,67:23:c1,23,2,2,3,2,هُوَ ٱلَّذِيٓ,هو الذي,“He is the One who,he is the one who,PRON REL,PRON,REL,0
+67:23:c1:p3,67:23:c1,23,3,4,4,1,أَنشَأَكُمۡ,أنشأكم,created you,created you,V,V,V,0
+67:23:c2:p1,67:23:c2,23,1,5,5,1,وَجَعَلَ,وجعل,and made,and made,CONJ+V,V,V,0
+67:23:c2:p2,67:23:c2,23,2,6,6,1,لَكُمُ,لكم,for you,for you,P+PRON,PRON,PRON,0
+67:23:c2:p3,67:23:c2,23,3,7,7,1,ٱلسَّمۡعَ,السمع,"hearing,",hearing,N,N,N,0
+67:23:c2:p4,67:23:c2,23,4,8,8,1,وَٱلۡأَبۡصَٰرَ,والأبصر,"sight,",sight,CONJ+DET+N,N,N,0
+67:23:c2:p5,67:23:c2,23,5,9,9,1,وَٱلۡأَفۡـِٔدَةَۚ,والأفدة,and hearts;,and hearts,CONJ+DET+N,N,N,1
+67:23:c3:p1,67:23:c3,23,1,10,11,2,قَلِيلٗا مَّا,قليلا ما,how little,how little,ADJ REL,ADJ,REL,0
+67:23:c3:p2,67:23:c3,23,2,12,12,1,تَشۡكُرُونَ,تشكرون,you give thanks!”,you give thanks,V,V,V,0
+67:24:c1:p1,67:24:c1,24,1,1,1,1,قُلۡ,قل,"Say,",say,V,V,V,0
+67:24:c1:p2,67:24:c1,24,2,2,3,2,هُوَ ٱلَّذِي,هو الذي,“He is the One who,he is the one who,PRON REL,PRON,REL,0
+67:24:c1:p3,67:24:c1,24,3,4,4,1,ذَرَأَكُمۡ,ذرأكم,dispersed you,dispersed you,V,V,V,0
+67:24:c1:p4,67:24:c1,24,4,5,6,2,فِي ٱلۡأَرۡضِ,في الأرض,"throughout the earth,",throughout the earth,P N,P,N,0
+67:24:c2:p1,67:24:c2,24,1,7,7,1,وَإِلَيۡهِ,وإليه,and to Him,and to him,REM+P,P,P,0
+67:24:c2:p2,67:24:c2,24,2,8,8,1,تُحۡشَرُونَ,تحشرون,you will be gathered.”,you will be gathered,V,V,V,0
+67:25:c1:p1,67:25:c1,25,1,1,1,1,وَيَقُولُونَ,ويقولون,"And they say,",and they say,REM+V,V,V,0
+67:25:c1:p2,67:25:c1,25,2,2,2,1,مَتَىٰ,متي,“When,when,N,N,N,0
+67:25:c1:p3,67:25:c1,25,3,3,4,2,هَٰذَا ٱلۡوَعۡدُ,هذا الوعد,"is this promise,",is this promise,ATT+DEM N,DEM,N,0
+67:25:c2:p1,67:25:c2,25,1,5,6,2,إِن كُنتُمۡ,إن كنتم,if you are,if you are,COND V,COND,V,0
+67:25:c2:p2,67:25:c2,25,2,7,7,1,صَٰدِقِينَ,صدقين,truthful?”,truthful,PCPL,PCPL,PCPL,0
+67:26:c1:p1,67:26:c1,26,1,1,1,1,قُلۡ,قل,"Say,",say,V,V,V,0
+67:26:c1:p2,67:26:c1,26,2,2,3,2,إِنَّمَا ٱلۡعِلۡمُ,إنما العلم,“The knowledge is only,the knowledge is only,ACC N,ACC,N,0
+67:26:c1:p3,67:26:c1,26,3,4,5,2,عِندَ ٱللَّهِ,عند الله,"with Allah,",with allah,LOC PN,LOC,PN,0
+67:26:c2:p1,67:26:c2,26,1,6,7,2,وَإِنَّمَآ أَنَا۠,وإنما أنا,and I am only,and i am only,CONJ+ACC PRON,ACC,PRON,0
+67:26:c2:p2,67:26:c2,26,2,8,9,2,نَذِيرٞ مُّبِينٞ,نذير مبين,a clear warner.”,a clear warner,N ADJ,N,ADJ,0
+67:27:c1:p1,67:27:c1,27,1,1,1,1,فَلَمَّا,فلما,But when,but when,REM+T,T,T,0
+67:27:c1:p2,67:27:c1,27,2,2,2,1,رَأَوۡهُ,رأوه,they see it,they see it,V,V,V,0
+67:27:c1:p3,67:27:c1,27,3,3,3,1,زُلۡفَةٗ,زلفة,"close at hand,",close at hand,N,N,N,0
+67:27:c2:p1,67:27:c2,27,1,4,7,4,سِيٓـَٔتۡ وُجُوهُ ٱلَّذِينَ كَفَرُواْ,سيت وجوه الذين كفروا,"the faces of those who disbelieved will be distressed,",the faces of those who disbelieved will be distressed,V N REL V,V,V,0
+67:27:c3:p1,67:27:c3,27,1,8,8,1,وَقِيلَ,وقيل,"and it will be said,",and it will be said,CONJ+V,V,V,0
+67:27:c3:p2,67:27:c3,27,2,9,10,2,هَٰذَا ٱلَّذِي,هذا الذي,“This is what,this is what,ATT+DEM REL,DEM,REL,0
+67:27:c3:p3,67:27:c3,27,3,11,13,3,كُنتُم بِهِۦ تَدَّعُونَ,كنتم به تدعون,you used to call for.”,you used to call for,V P+PRON V,V,V,0
+67:28:c1:p1,67:28:c1,28,1,1,1,1,قُلۡ,قل,"Say,",say,V,V,V,0
+67:28:c1:p2,67:28:c1,28,2,2,2,1,أَرَءَيۡتُمۡ,أرءيتم,“Have you considered:,have you considered,INTG+V,V,V,0
+67:28:c2:p1,67:28:c2,28,1,3,3,1,إِنۡ,إن,if,if,COND,COND,COND,0
+67:28:c2:p2,67:28:c2,28,2,4,5,2,أَهۡلَكَنِيَ ٱللَّهُ,أهلكني الله,Allah were to destroy me,allah were to destroy me,V PN,V,PN,0
+67:28:c2:p3,67:28:c2,28,3,6,7,2,وَمَن مَّعِيَ,ومن معي,"and those with me,",and those with me,CONJ+REL LOC,REL,LOC,0
+67:28:c3:p1,67:28:c3,28,1,8,8,1,أَوۡ,أو,or,or,CONJ,CONJ,CONJ,0
+67:28:c3:p2,67:28:c3,28,2,9,9,1,رَحِمَنَا,رحمنا,"have mercy on us,",have mercy on us,V,V,V,0
+67:28:c4:p1,67:28:c4,28,1,10,10,1,فَمَن,فمن,who then,who then,RSLT+N,N,N,0
+67:28:c4:p2,67:28:c4,28,2,11,11,1,يُجِيرُ,يجير,can protect,can protect,V,V,V,0
+67:28:c4:p3,67:28:c4,28,3,12,12,1,ٱلۡكَٰفِرِينَ,الكفرين,the disbelievers,the disbelievers,PCPL,PCPL,PCPL,0
+67:28:c4:p4,67:28:c4,28,4,13,15,3,مِنۡ عَذَابٍ أَلِيمٖ,من عذاب أليم,from a painful punishment?”,from a painful punishment,P N ADJ,P,ADJ,0
+67:29:c1:p1,67:29:c1,29,1,1,1,1,قُلۡ,قل,"Say,",say,V,V,V,0
+67:29:c1:p2,67:29:c1,29,2,2,3,2,هُوَ ٱلرَّحۡمَٰنُ,هو الرحمن,“He is the Most Merciful;,he is the most merciful,PRON N,PRON,N,0
+67:29:c1:p3,67:29:c1,29,3,4,5,2,ءَامَنَّا بِهِۦ,ءامنا به,"we believe in Him,",we believe in him,V P+PRON,V,PRON,0
+67:29:c2:p1,67:29:c2,29,1,6,6,1,وَعَلَيۡهِ,وعليه,and upon Him,and upon him,CONJ+P,P,P,0
+67:29:c2:p2,67:29:c2,29,2,7,7,1,تَوَكَّلۡنَاۖ,توكلنا,we rely.,we rely,V,V,V,1
+67:29:c3:p1,67:29:c3,29,1,8,8,1,فَسَتَعۡلَمُونَ,فستعلمون,So you will soon know,so you will soon know,REM+FUT+V,V,V,0
+67:29:c3:p2,67:29:c3,29,2,9,10,2,مَنۡ هُوَ,من هو,who it is,who it is,REL PRON,REL,PRON,0
+67:29:c3:p3,67:29:c3,29,3,11,13,3,فِي ضَلَٰلٖ مُّبِينٖ,في ضلل مبين,that is in clear error.”,that is in clear error,P N ADJ,P,ADJ,0
+67:30:c1:p1,67:30:c1,30,1,1,1,1,قُلۡ,قل,"Say,",say,V,V,V,0
+67:30:c1:p2,67:30:c1,30,2,2,2,1,أَرَءَيۡتُمۡ,أرءيتم,“Have you considered:,have you considered,INTG+V,V,V,0
+67:30:c2:p1,67:30:c2,30,1,3,3,1,إِنۡ,إن,if,if,COND,COND,COND,0
+67:30:c2:p2,67:30:c2,30,2,4,6,3,أَصۡبَحَ مَآؤُكُمۡ غَوۡرٗا,أصبح ماؤكم غورا,"your water were to sink away,",your water were to sink away,V N N,V,N,0
+67:30:c3:p1,67:30:c3,30,1,7,7,1,فَمَن,فمن,who then,who then,RSLT+N,N,N,0
+67:30:c3:p2,67:30:c3,30,2,8,8,1,يَأۡتِيكُم,يأتيكم,could bring you,could bring you,V,V,V,0
+67:30:c3:p3,67:30:c3,30,3,9,10,2,بِمَآءٖ مَّعِينِۭ,بماء معين,flowing water?”,flowing water,P+N ADJ,N,ADJ,0

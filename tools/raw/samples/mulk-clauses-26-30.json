@@ -1,0 +1,261 @@
+{
+  "surah": 67,
+  "name": "Al-Mulk",
+  "ayahs": [
+    {
+      "verse_key": "67:26",
+      "surah": 67,
+      "ayah": 26,
+      "text_digital_khatt": "قُلْ إِنَّمَا ٱلْعِلْمُ عِندَ ٱللَّهِ وَإِنَّمَآ أَنَا۠ نَذِيرࣱ مُّبِينࣱ ۝٢٦",
+      "translation_sahih": "Say, \"The knowledge is only with Allāh, and I am only a clear warner.\"",
+      "clauses": [
+        {
+          "id": "67:26:c1",
+          "order": 1,
+          "word_start": 1,
+          "word_end": 5,
+          "text": "قُلۡ إِنَّمَا ٱلۡعِلۡمُ عِندَ ٱللَّهِ",
+          "translation": "Say, “The knowledge is only with Allah,”",
+          "words": [
+            "67:26:1",
+            "67:26:2",
+            "67:26:3",
+            "67:26:4",
+            "67:26:5"
+          ]
+        },
+        {
+          "id": "67:26:c2",
+          "order": 2,
+          "word_start": 6,
+          "word_end": 9,
+          "text": "وَإِنَّمَآ أَنَا۠ نَذِيرٞ مُّبِينٞ",
+          "translation": "and I am only a clear warner.",
+          "words": [
+            "67:26:6",
+            "67:26:7",
+            "67:26:8",
+            "67:26:9"
+          ]
+        }
+      ]
+    },
+    {
+      "verse_key": "67:27",
+      "surah": 67,
+      "ayah": 27,
+      "text_digital_khatt": "فَلَمَّا رَأَوْهُ زُلْفَةࣰ سِيٓـَٔتْ وُجُوهُ ٱلَّذِينَ كَفَرُوا۟ وَقِيلَ هَٰذَا ٱلَّذِي كُنتُم  بِهِۦ تَدَّعُونَ ۝٢٧",
+      "translation_sahih": "But when they see it approaching, the faces of those who disbelieve will be distressed, and it will be said, \"This is that for which you used to call.\"",
+      "clauses": [
+        {
+          "id": "67:27:c1",
+          "order": 1,
+          "word_start": 1,
+          "word_end": 3,
+          "text": "فَلَمَّا رَأَوۡهُ زُلۡفَةٗ",
+          "translation": "But when they see it close at hand,",
+          "words": [
+            "67:27:1",
+            "67:27:2",
+            "67:27:3"
+          ]
+        },
+        {
+          "id": "67:27:c2",
+          "order": 2,
+          "word_start": 4,
+          "word_end": 7,
+          "text": "سِيٓـَٔتۡ وُجُوهُ ٱلَّذِينَ كَفَرُواْ",
+          "translation": "the faces of those who disbelieve will be distressed,",
+          "words": [
+            "67:27:4",
+            "67:27:5",
+            "67:27:6",
+            "67:27:7"
+          ]
+        },
+        {
+          "id": "67:27:c3",
+          "order": 3,
+          "word_start": 8,
+          "word_end": 13,
+          "text": "وَقِيلَ هَٰذَا ٱلَّذِي كُنتُم بِهِۦ تَدَّعُونَ",
+          "translation": "and it will be said, “This is what you used to call for.”",
+          "words": [
+            "67:27:8",
+            "67:27:9",
+            "67:27:10",
+            "67:27:11",
+            "67:27:12",
+            "67:27:13"
+          ]
+        }
+      ]
+    },
+    {
+      "verse_key": "67:28",
+      "surah": 67,
+      "ayah": 28,
+      "text_digital_khatt": "قُلْ أَرَءَيْتُمْ إِنْ أَهْلَكَنِيَ ٱللَّهُ وَمَن مَّعِيَ أَوْ رَحِمَنَا فَمَن يُجِيرُ ٱلْكَٰفِرِينَ مِنْ عَذَابٍ أَلِيمࣲ ۝٢٨",
+      "translation_sahih": "Say, [O Muḥammad], \"Have you considered: whether Allāh should cause my death and those with me or have mercy upon us, who can protect the disbelievers from a painful punishment?\"",
+      "clauses": [
+        {
+          "id": "67:28:c1",
+          "order": 1,
+          "word_start": 1,
+          "word_end": 2,
+          "text": "قُلۡ أَرَءَيۡتُمۡ",
+          "translation": "Say, “Have you considered:",
+          "words": [
+            "67:28:1",
+            "67:28:2"
+          ]
+        },
+        {
+          "id": "67:28:c2",
+          "order": 2,
+          "word_start": 3,
+          "word_end": 7,
+          "text": "إِنۡ أَهۡلَكَنِيَ ٱللَّهُ وَمَن مَّعِيَ",
+          "translation": "if Allah were to destroy me and those with me,",
+          "words": [
+            "67:28:3",
+            "67:28:4",
+            "67:28:5",
+            "67:28:6",
+            "67:28:7"
+          ]
+        },
+        {
+          "id": "67:28:c3",
+          "order": 3,
+          "word_start": 8,
+          "word_end": 9,
+          "text": "أَوۡ رَحِمَنَا",
+          "translation": "or have mercy on us,",
+          "words": [
+            "67:28:8",
+            "67:28:9"
+          ]
+        },
+        {
+          "id": "67:28:c4",
+          "order": 4,
+          "word_start": 10,
+          "word_end": 15,
+          "text": "فَمَن يُجِيرُ ٱلۡكَٰفِرِينَ مِنۡ عَذَابٍ أَلِيمٖ",
+          "translation": "who can protect the disbelievers from a painful punishment?”",
+          "words": [
+            "67:28:10",
+            "67:28:11",
+            "67:28:12",
+            "67:28:13",
+            "67:28:14",
+            "67:28:15"
+          ]
+        }
+      ]
+    },
+    {
+      "verse_key": "67:29",
+      "surah": 67,
+      "ayah": 29,
+      "text_digital_khatt": "قُلْ هُوَ ٱلرَّحْمَٰنُ ءَامَنَّا بِهِۦ وَعَلَيْهِ تَوَكَّلْنَاۖ فَسَتَعْلَمُونَ مَنْ هُوَ فِي ضَلَٰلࣲ مُّبِينࣲ ۝٢٩",
+      "translation_sahih": "Say, \"He is the Most Merciful; we have believed in Him, and upon Him we have relied. And you will [come to] know who it is that is in clear error.\"",
+      "clauses": [
+        {
+          "id": "67:29:c1",
+          "order": 1,
+          "word_start": 1,
+          "word_end": 5,
+          "text": "قُلۡ هُوَ ٱلرَّحۡمَٰنُ ءَامَنَّا بِهِۦ",
+          "translation": "Say, “He is the Most Merciful; we believe in Him,",
+          "words": [
+            "67:29:1",
+            "67:29:2",
+            "67:29:3",
+            "67:29:4",
+            "67:29:5"
+          ]
+        },
+        {
+          "id": "67:29:c2",
+          "order": 2,
+          "word_start": 6,
+          "word_end": 7,
+          "text": "وَعَلَيۡهِ تَوَكَّلۡنَاۖ",
+          "translation": "and in Him we have put our trust.”",
+          "words": [
+            "67:29:6",
+            "67:29:7"
+          ]
+        },
+        {
+          "id": "67:29:c3",
+          "order": 3,
+          "word_start": 8,
+          "word_end": 13,
+          "text": "فَسَتَعۡلَمُونَ مَنۡ هُوَ فِي ضَلَٰلٖ مُّبِينٖ",
+          "translation": "So you will soon know who is in clear error.",
+          "words": [
+            "67:29:8",
+            "67:29:9",
+            "67:29:10",
+            "67:29:11",
+            "67:29:12",
+            "67:29:13"
+          ]
+        }
+      ]
+    },
+    {
+      "verse_key": "67:30",
+      "surah": 67,
+      "ayah": 30,
+      "text_digital_khatt": "قُلْ أَرَءَيْتُمْ إِنْ أَصْبَحَ مَآؤُكُمْ غَوْرࣰا فَمَن يَأْتِيكُم بِمَآءࣲ مَّعِينِۭ ۝٣٠",
+      "translation_sahih": "Say, \"Have you considered: if your water was to become sunken [into the earth], then who could bring you flowing water?\"",
+      "clauses": [
+        {
+          "id": "67:30:c1",
+          "order": 1,
+          "word_start": 1,
+          "word_end": 2,
+          "text": "قُلۡ أَرَءَيۡتُمۡ",
+          "translation": "Say, “Have you considered:",
+          "words": [
+            "67:30:1",
+            "67:30:2"
+          ]
+        },
+        {
+          "id": "67:30:c2",
+          "order": 2,
+          "word_start": 3,
+          "word_end": 6,
+          "text": "إِنۡ أَصۡبَحَ مَآؤُكُمۡ غَوۡرٗا",
+          "translation": "if your water were to sink into the earth,",
+          "words": [
+            "67:30:3",
+            "67:30:4",
+            "67:30:5",
+            "67:30:6"
+          ]
+        },
+        {
+          "id": "67:30:c3",
+          "order": 3,
+          "word_start": 7,
+          "word_end": 10,
+          "text": "فَمَن يَأۡتِيكُم بِمَآءٖ مَّعِينِۭ",
+          "translation": "who then could bring you flowing water?”",
+          "words": [
+            "67:30:7",
+            "67:30:8",
+            "67:30:9",
+            "67:30:10"
+          ]
+        }
+      ]
+    }
+  ]
+}

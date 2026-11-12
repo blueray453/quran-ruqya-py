@@ -1,0 +1,2870 @@
+{
+  "surah": 67,
+  "name": "Al-Mulk",
+  "ayahs": [
+    {
+      "verse_key": "67:1",
+      "surah": 67,
+      "ayah": 1,
+      "text_digital_khatt": "تَبَٰرَكَ ٱلَّذِي بِيَدِهِ ٱلْمُلْكُ وَهُوَ عَلَىٰ كُلِّ شَيْءࣲ قَدِيرٌ ۝١",
+      "translation_sahih": "Blessed is He in whose hand is dominion, and He is over all things competent -",
+      "translation_phrased": "Blessed is He in whose hand is the dominion, and He is capable of all things.",
+      "clauses": [
+        {
+          "id": "67:1:c1",
+          "order": 1,
+          "word_start": 1,
+          "word_end": 4,
+          "text": "تَبَٰرَكَ ٱلَّذِي بِيَدِهِ ٱلۡمُلۡكُ",
+          "translation": "Blessed is He in whose hand is the dominion,",
+          "phrases": [
+            {
+              "id": "67:1:c1:p1",
+              "order": 1,
+              "word_start": 1,
+              "word_end": 1,
+              "text": "تَبَٰرَكَ",
+              "translation": "Blessed is"
+            },
+            {
+              "id": "67:1:c1:p2",
+              "order": 2,
+              "word_start": 2,
+              "word_end": 3,
+              "text": "ٱلَّذِي بِيَدِهِ",
+              "translation": "He in whose hand"
+            },
+            {
+              "id": "67:1:c1:p3",
+              "order": 3,
+              "word_start": 4,
+              "word_end": 4,
+              "text": "ٱلۡمُلۡكُ",
+              "translation": "is the dominion,"
+            }
+          ]
+        },
+        {
+          "id": "67:1:c2",
+          "order": 2,
+          "word_start": 5,
+          "word_end": 9,
+          "text": "وَهُوَ عَلَىٰ كُلِّ شَيۡءٖ قَدِيرٌ",
+          "translation": "and He is capable of all things.",
+          "phrases": [
+            {
+              "id": "67:1:c2:p1",
+              "order": 1,
+              "word_start": 5,
+              "word_end": 5,
+              "text": "وَهُوَ",
+              "translation": "and He is"
+            },
+            {
+              "id": "67:1:c2:p2",
+              "order": 2,
+              "word_start": 6,
+              "word_end": 9,
+              "text": "عَلَىٰ كُلِّ شَيۡءٖ قَدِيرٌ",
+              "translation": "capable of all things."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "verse_key": "67:2",
+      "surah": 67,
+      "ayah": 2,
+      "text_digital_khatt": "ٱلَّذِي خَلَقَ ٱلْمَوْتَ وَٱلْحَيَوٰةَ لِيَبْلُوَكُمْ أَيُّكُمْ أَحْسَنُ عَمَلࣰاۚ وَهُوَ ٱلْعَزِيزُ ٱلْغَفُورُ ۝٢",
+      "translation_sahih": "[He] who created death and life to test you [as to] which of you is best in deed - and He is the Exalted in Might, the Forgiving -",
+      "translation_phrased": "The One who created death and life to test you as to which of you is best in deed, and He is the Almighty, the Forgiving.",
+      "clauses": [
+        {
+          "id": "67:2:c1",
+          "order": 1,
+          "word_start": 1,
+          "word_end": 4,
+          "text": "ٱلَّذِي خَلَقَ ٱلۡمَوۡتَ وَٱلۡحَيَوٰةَ",
+          "translation": "The One who created death and life",
+          "phrases": [
+            {
+              "id": "67:2:c1:p1",
+              "order": 1,
+              "word_start": 1,
+              "word_end": 1,
+              "text": "ٱلَّذِي",
+              "translation": "The One who"
+            },
+            {
+              "id": "67:2:c1:p2",
+              "order": 2,
+              "word_start": 2,
+              "word_end": 2,
+              "text": "خَلَقَ",
+              "translation": "created"
+            },
+            {
+              "id": "67:2:c1:p3",
+              "order": 3,
+              "word_start": 3,
+              "word_end": 3,
+              "text": "ٱلۡمَوۡتَ",
+              "translation": "death"
+            },
+            {
+              "id": "67:2:c1:p4",
+              "order": 4,
+              "word_start": 4,
+              "word_end": 4,
+              "text": "وَٱلۡحَيَوٰةَ",
+              "translation": "and life"
+            }
+          ]
+        },
+        {
+          "id": "67:2:c2",
+          "order": 2,
+          "word_start": 5,
+          "word_end": 8,
+          "text": "لِيَبۡلُوَكُمۡ أَيُّكُمۡ أَحۡسَنُ عَمَلٗاۚ",
+          "translation": "to test you as to which of you is best in deed,",
+          "phrases": [
+            {
+              "id": "67:2:c2:p1",
+              "order": 1,
+              "word_start": 5,
+              "word_end": 5,
+              "text": "لِيَبۡلُوَكُمۡ",
+              "translation": "to test you"
+            },
+            {
+              "id": "67:2:c2:p2",
+              "order": 2,
+              "word_start": 6,
+              "word_end": 6,
+              "text": "أَيُّكُمۡ",
+              "translation": "as to which of you"
+            },
+            {
+              "id": "67:2:c2:p3",
+              "order": 3,
+              "word_start": 7,
+              "word_end": 8,
+              "text": "أَحۡسَنُ عَمَلٗاۚ",
+              "translation": "is best in deed,"
+            }
+          ]
+        },
+        {
+          "id": "67:2:c3",
+          "order": 3,
+          "word_start": 9,
+          "word_end": 11,
+          "text": "وَهُوَ ٱلۡعَزِيزُ ٱلۡغَفُورُ",
+          "translation": "and He is the Almighty, the Forgiving.",
+          "phrases": [
+            {
+              "id": "67:2:c3:p1",
+              "order": 1,
+              "word_start": 9,
+              "word_end": 9,
+              "text": "وَهُوَ",
+              "translation": "and He is"
+            },
+            {
+              "id": "67:2:c3:p2",
+              "order": 2,
+              "word_start": 10,
+              "word_end": 10,
+              "text": "ٱلۡعَزِيزُ",
+              "translation": "the Almighty,"
+            },
+            {
+              "id": "67:2:c3:p3",
+              "order": 3,
+              "word_start": 11,
+              "word_end": 11,
+              "text": "ٱلۡغَفُورُ",
+              "translation": "the Forgiving."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "verse_key": "67:3",
+      "surah": 67,
+      "ayah": 3,
+      "text_digital_khatt": "ٱلَّذِي خَلَقَ سَبْعَ سَمَٰوَٰتࣲ طِبَاقࣰاۖ مَّا تَرَىٰ فِي خَلْقِ ٱلرَّحْمَٰنِ مِن  تَفَٰوُتࣲۖ فَٱرْجِعِ ٱلْبَصَرَ هَلْ تَرَىٰ مِن فُطُورࣲ ۝٣",
+      "translation_sahih": "[And] who created seven heavens in layers. You do not see in the creation of the Most Merciful any inconsistency. So return [your] vision [to the sky]; do you see any breaks?",
+      "translation_phrased": "The One who created seven heavens in layers. You do not see in the creation of the Most Merciful any inconsistency. So return your vision. Do you see any breaks?",
+      "clauses": [
+        {
+          "id": "67:3:c1",
+          "order": 1,
+          "word_start": 1,
+          "word_end": 5,
+          "text": "ٱلَّذِي خَلَقَ سَبۡعَ سَمَٰوَٰتٖ طِبَاقٗاۖ",
+          "translation": "The One who created seven heavens in layers.",
+          "phrases": [
+            {
+              "id": "67:3:c1:p1",
+              "order": 1,
+              "word_start": 1,
+              "word_end": 1,
+              "text": "ٱلَّذِي",
+              "translation": "The One who"
+            },
+            {
+              "id": "67:3:c1:p2",
+              "order": 2,
+              "word_start": 2,
+              "word_end": 2,
+              "text": "خَلَقَ",
+              "translation": "created"
+            },
+            {
+              "id": "67:3:c1:p3",
+              "order": 3,
+              "word_start": 3,
+              "word_end": 4,
+              "text": "سَبۡعَ سَمَٰوَٰتٖ",
+              "translation": "seven heavens"
+            },
+            {
+              "id": "67:3:c1:p4",
+              "order": 4,
+              "word_start": 5,
+              "word_end": 5,
+              "text": "طِبَاقٗاۖ",
+              "translation": "in layers."
+            }
+          ]
+        },
+        {
+          "id": "67:3:c2",
+          "order": 2,
+          "word_start": 6,
+          "word_end": 12,
+          "text": "مَّا تَرَىٰ فِي خَلۡقِ ٱلرَّحۡمَٰنِ مِن تَفَٰوُتٖۖ",
+          "translation": "You do not see in the creation of the Most Merciful any inconsistency.",
+          "phrases": [
+            {
+              "id": "67:3:c2:p1",
+              "order": 1,
+              "word_start": 6,
+              "word_end": 7,
+              "text": "مَّا تَرَىٰ",
+              "translation": "You do not see"
+            },
+            {
+              "id": "67:3:c2:p2",
+              "order": 2,
+              "word_start": 8,
+              "word_end": 10,
+              "text": "فِي خَلۡقِ ٱلرَّحۡمَٰنِ",
+              "translation": "in the creation of the Most Merciful"
+            },
+            {
+              "id": "67:3:c2:p3",
+              "order": 3,
+              "word_start": 11,
+              "word_end": 12,
+              "text": "مِن تَفَٰوُتٖۖ",
+              "translation": "any inconsistency."
+            }
+          ]
+        },
+        {
+          "id": "67:3:c3",
+          "order": 3,
+          "word_start": 13,
+          "word_end": 14,
+          "text": "فَٱرۡجِعِ ٱلۡبَصَرَ",
+          "translation": "So return your vision.",
+          "phrases": [
+            {
+              "id": "67:3:c3:p1",
+              "order": 1,
+              "word_start": 13,
+              "word_end": 13,
+              "text": "فَٱرۡجِعِ",
+              "translation": "So return"
+            },
+            {
+              "id": "67:3:c3:p2",
+              "order": 2,
+              "word_start": 14,
+              "word_end": 14,
+              "text": "ٱلۡبَصَرَ",
+              "translation": "your vision."
+            }
+          ]
+        },
+        {
+          "id": "67:3:c4",
+          "order": 4,
+          "word_start": 15,
+          "word_end": 18,
+          "text": "هَلۡ تَرَىٰ مِن فُطُورٖ",
+          "translation": "Do you see any breaks?",
+          "phrases": [
+            {
+              "id": "67:3:c4:p1",
+              "order": 1,
+              "word_start": 15,
+              "word_end": 16,
+              "text": "هَلۡ تَرَىٰ",
+              "translation": "Do you see"
+            },
+            {
+              "id": "67:3:c4:p2",
+              "order": 2,
+              "word_start": 17,
+              "word_end": 18,
+              "text": "مِن فُطُورٖ",
+              "translation": "any breaks?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "verse_key": "67:4",
+      "surah": 67,
+      "ayah": 4,
+      "text_digital_khatt": "ثُمَّ ٱرْجِعِ ٱلْبَصَرَ كَرَّتَيْنِ يَنقَلِبْ إِلَيْكَ ٱلْبَصَرُ خَاسِئࣰا وَهُوَ حَسِيرࣱ ۝٤",
+      "translation_sahih": "Then return [your] vision twice again. [Your] vision will return to you humbled while it is fatigued.",
+      "translation_phrased": "Then return your vision twice more. Your vision will return to you humbled, and it is exhausted.",
+      "clauses": [
+        {
+          "id": "67:4:c1",
+          "order": 1,
+          "word_start": 1,
+          "word_end": 4,
+          "text": "ثُمَّ ٱرۡجِعِ ٱلۡبَصَرَ كَرَّتَيۡنِ",
+          "translation": "Then return your vision twice more.",
+          "phrases": [
+            {
+              "id": "67:4:c1:p1",
+              "order": 1,
+              "word_start": 1,
+              "word_end": 1,
+              "text": "ثُمَّ",
+              "translation": "Then"
+            },
+            {
+              "id": "67:4:c1:p2",
+              "order": 2,
+              "word_start": 2,
+              "word_end": 3,
+              "text": "ٱرۡجِعِ ٱلۡبَصَرَ",
+              "translation": "return your vision"
+            },
+            {
+              "id": "67:4:c1:p3",
+              "order": 3,
+              "word_start": 4,
+              "word_end": 4,
+              "text": "كَرَّتَيۡنِ",
+              "translation": "twice more."
+            }
+          ]
+        },
+        {
+          "id": "67:4:c2",
+          "order": 2,
+          "word_start": 5,
+          "word_end": 10,
+          "text": "يَنقَلِبۡ إِلَيۡكَ ٱلۡبَصَرُ خَاسِئٗا وَهُوَ حَسِيرٞ",
+          "translation": "Your vision will return to you humbled, and it is exhausted.",
+          "phrases": [
+            {
+              "id": "67:4:c2:p1",
+              "order": 1,
+              "word_start": 5,
+              "word_end": 7,
+              "text": "يَنقَلِبۡ إِلَيۡكَ ٱلۡبَصَرُ",
+              "translation": "Your vision will return to you"
+            },
+            {
+              "id": "67:4:c2:p2",
+              "order": 2,
+              "word_start": 8,
+              "word_end": 8,
+              "text": "خَاسِئٗا",
+              "translation": "humbled,"
+            },
+            {
+              "id": "67:4:c2:p3",
+              "order": 3,
+              "word_start": 9,
+              "word_end": 9,
+              "text": "وَهُوَ",
+              "translation": "and it is"
+            },
+            {
+              "id": "67:4:c2:p4",
+              "order": 4,
+              "word_start": 10,
+              "word_end": 10,
+              "text": "حَسِيرٞ",
+              "translation": "exhausted."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "verse_key": "67:5",
+      "surah": 67,
+      "ayah": 5,
+      "text_digital_khatt": "وَلَقَدْ زَيَّنَّا ٱلسَّمَآءَ ٱلدُّنْيَا بِمَصَٰبِيحَ وَجَعَلْنَٰهَا رُجُومࣰا لِّلشَّيَٰطِينِۖ وَأَعْتَدْنَا لَهُمْ عَذَابَ  ٱلسَّعِيرِ ۝٥",
+      "translation_sahih": "And We have certainly beautified the nearest heaven with lamps [i.e., stars] and have made [from] them what is thrown at the devils and have prepared for them the punishment of the Blaze.",
+      "translation_phrased": "And indeed We adorned the lowest heaven with lamps and made them things to be thrown at the devils, and We have prepared for them the punishment of the Blaze.",
+      "clauses": [
+        {
+          "id": "67:5:c1",
+          "order": 1,
+          "word_start": 1,
+          "word_end": 5,
+          "text": "وَلَقَدۡ زَيَّنَّا ٱلسَّمَآءَ ٱلدُّنۡيَا بِمَصَٰبِيحَ",
+          "translation": "And indeed We adorned the lowest heaven with lamps",
+          "phrases": [
+            {
+              "id": "67:5:c1:p1",
+              "order": 1,
+              "word_start": 1,
+              "word_end": 1,
+              "text": "وَلَقَدۡ",
+              "translation": "And indeed"
+            },
+            {
+              "id": "67:5:c1:p2",
+              "order": 2,
+              "word_start": 2,
+              "word_end": 2,
+              "text": "زَيَّنَّا",
+              "translation": "We adorned"
+            },
+            {
+              "id": "67:5:c1:p3",
+              "order": 3,
+              "word_start": 3,
+              "word_end": 4,
+              "text": "ٱلسَّمَآءَ ٱلدُّنۡيَا",
+              "translation": "the lowest heaven"
+            },
+            {
+              "id": "67:5:c1:p4",
+              "order": 4,
+              "word_start": 5,
+              "word_end": 5,
+              "text": "بِمَصَٰبِيحَ",
+              "translation": "with lamps"
+            }
+          ]
+        },
+        {
+          "id": "67:5:c2",
+          "order": 2,
+          "word_start": 6,
+          "word_end": 8,
+          "text": "وَجَعَلۡنَٰهَا رُجُومٗا لِّلشَّيَٰطِينِۖ",
+          "translation": "and made them things to be thrown at the devils,",
+          "phrases": [
+            {
+              "id": "67:5:c2:p1",
+              "order": 1,
+              "word_start": 6,
+              "word_end": 6,
+              "text": "وَجَعَلۡنَٰهَا",
+              "translation": "and made them"
+            },
+            {
+              "id": "67:5:c2:p2",
+              "order": 2,
+              "word_start": 7,
+              "word_end": 7,
+              "text": "رُجُومٗا",
+              "translation": "things to be thrown"
+            },
+            {
+              "id": "67:5:c2:p3",
+              "order": 3,
+              "word_start": 8,
+              "word_end": 8,
+              "text": "لِّلشَّيَٰطِينِۖ",
+              "translation": "at the devils,"
+            }
+          ]
+        },
+        {
+          "id": "67:5:c3",
+          "order": 3,
+          "word_start": 9,
+          "word_end": 12,
+          "text": "وَأَعۡتَدۡنَا لَهُمۡ عَذَابَ ٱلسَّعِيرِ",
+          "translation": "and We have prepared for them the punishment of the Blaze.",
+          "phrases": [
+            {
+              "id": "67:5:c3:p1",
+              "order": 1,
+              "word_start": 9,
+              "word_end": 9,
+              "text": "وَأَعۡتَدۡنَا",
+              "translation": "and We have prepared"
+            },
+            {
+              "id": "67:5:c3:p2",
+              "order": 2,
+              "word_start": 10,
+              "word_end": 10,
+              "text": "لَهُمۡ",
+              "translation": "for them"
+            },
+            {
+              "id": "67:5:c3:p3",
+              "order": 3,
+              "word_start": 11,
+              "word_end": 12,
+              "text": "عَذَابَ ٱلسَّعِيرِ",
+              "translation": "the punishment of the Blaze."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "verse_key": "67:6",
+      "surah": 67,
+      "ayah": 6,
+      "text_digital_khatt": "وَلِلَّذِينَ كَفَرُوا۟ بِرَبِّهِمْ عَذَابُ جَهَنَّمَۖ وَبِئْسَ ٱلْمَصِيرُ ۝٦",
+      "translation_sahih": "And for those who disbelieved in their Lord is the punishment of Hell, and wretched is the destination.",
+      "translation_phrased": "And for those who disbelieved in their Lord is the punishment of Hell, and wretched is the destination.",
+      "clauses": [
+        {
+          "id": "67:6:c1",
+          "order": 1,
+          "word_start": 1,
+          "word_end": 5,
+          "text": "وَلِلَّذِينَ كَفَرُواْ بِرَبِّهِمۡ عَذَابُ جَهَنَّمَۖ",
+          "translation": "And for those who disbelieved in their Lord is the punishment of Hell,",
+          "phrases": [
+            {
+              "id": "67:6:c1:p1",
+              "order": 1,
+              "word_start": 1,
+              "word_end": 1,
+              "text": "وَلِلَّذِينَ",
+              "translation": "And for those who"
+            },
+            {
+              "id": "67:6:c1:p2",
+              "order": 2,
+              "word_start": 2,
+              "word_end": 2,
+              "text": "كَفَرُواْ",
+              "translation": "disbelieved"
+            },
+            {
+              "id": "67:6:c1:p3",
+              "order": 3,
+              "word_start": 3,
+              "word_end": 3,
+              "text": "بِرَبِّهِمۡ",
+              "translation": "in their Lord"
+            },
+            {
+              "id": "67:6:c1:p4",
+              "order": 4,
+              "word_start": 4,
+              "word_end": 5,
+              "text": "عَذَابُ جَهَنَّمَۖ",
+              "translation": "is the punishment of Hell,"
+            }
+          ]
+        },
+        {
+          "id": "67:6:c2",
+          "order": 2,
+          "word_start": 6,
+          "word_end": 7,
+          "text": "وَبِئۡسَ ٱلۡمَصِيرُ",
+          "translation": "and wretched is the destination.",
+          "phrases": [
+            {
+              "id": "67:6:c2:p1",
+              "order": 1,
+              "word_start": 6,
+              "word_end": 6,
+              "text": "وَبِئۡسَ",
+              "translation": "and wretched is"
+            },
+            {
+              "id": "67:6:c2:p2",
+              "order": 2,
+              "word_start": 7,
+              "word_end": 7,
+              "text": "ٱلۡمَصِيرُ",
+              "translation": "the destination."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "verse_key": "67:7",
+      "surah": 67,
+      "ayah": 7,
+      "text_digital_khatt": "إِذَآ أُلْقُوا۟ فِيهَا سَمِعُوا۟ لَهَا شَهِيقࣰا وَهِيَ تَفُورُ ۝٧",
+      "translation_sahih": "When they are thrown into it, they hear from it a [dreadful] inhaling while it boils up.",
+      "translation_phrased": "When they are thrown into it, they hear from it a harsh roar while it boils.",
+      "clauses": [
+        {
+          "id": "67:7:c1",
+          "order": 1,
+          "word_start": 1,
+          "word_end": 3,
+          "text": "إِذَآ أُلۡقُواْ فِيهَا",
+          "translation": "When they are thrown into it,",
+          "phrases": [
+            {
+              "id": "67:7:c1:p1",
+              "order": 1,
+              "word_start": 1,
+              "word_end": 1,
+              "text": "إِذَآ",
+              "translation": "When"
+            },
+            {
+              "id": "67:7:c1:p2",
+              "order": 2,
+              "word_start": 2,
+              "word_end": 2,
+              "text": "أُلۡقُواْ",
+              "translation": "they are thrown"
+            },
+            {
+              "id": "67:7:c1:p3",
+              "order": 3,
+              "word_start": 3,
+              "word_end": 3,
+              "text": "فِيهَا",
+              "translation": "into it,"
+            }
+          ]
+        },
+        {
+          "id": "67:7:c2",
+          "order": 2,
+          "word_start": 4,
+          "word_end": 6,
+          "text": "سَمِعُواْ لَهَا شَهِيقٗا",
+          "translation": "they hear from it a harsh roar",
+          "phrases": [
+            {
+              "id": "67:7:c2:p1",
+              "order": 1,
+              "word_start": 4,
+              "word_end": 4,
+              "text": "سَمِعُواْ",
+              "translation": "they hear"
+            },
+            {
+              "id": "67:7:c2:p2",
+              "order": 2,
+              "word_start": 5,
+              "word_end": 5,
+              "text": "لَهَا",
+              "translation": "from it"
+            },
+            {
+              "id": "67:7:c2:p3",
+              "order": 3,
+              "word_start": 6,
+              "word_end": 6,
+              "text": "شَهِيقٗا",
+              "translation": "a harsh roar"
+            }
+          ]
+        },
+        {
+          "id": "67:7:c3",
+          "order": 3,
+          "word_start": 7,
+          "word_end": 8,
+          "text": "وَهِيَ تَفُورُ",
+          "translation": "while it boils.",
+          "phrases": [
+            {
+              "id": "67:7:c3:p1",
+              "order": 1,
+              "word_start": 7,
+              "word_end": 7,
+              "text": "وَهِيَ",
+              "translation": "while it"
+            },
+            {
+              "id": "67:7:c3:p2",
+              "order": 2,
+              "word_start": 8,
+              "word_end": 8,
+              "text": "تَفُورُ",
+              "translation": "boils."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "verse_key": "67:8",
+      "surah": 67,
+      "ayah": 8,
+      "text_digital_khatt": "تَكَادُ تَمَيَّزُ مِنَ ٱلْغَيْظِۖ كُلَّمَآ أُلْقِيَ فِيهَا فَوْجࣱ سَأَلَهُمْ خَزَنَتُهَآ أَلَمْ يَأْتِكُمْ نَذِيرࣱ ۝٨",
+      "translation_sahih": "It almost bursts with rage. Every time a company is thrown into it, its keepers ask them, \"Did there not come to you a warner?\"",
+      "translation_phrased": "It almost bursts with rage. Every time a group is thrown into it, its keepers ask them, “Did there not come to you a warner?”",
+      "clauses": [
+        {
+          "id": "67:8:c1",
+          "order": 1,
+          "word_start": 1,
+          "word_end": 4,
+          "text": "تَكَادُ تَمَيَّزُ مِنَ ٱلۡغَيۡظِۖ",
+          "translation": "It almost bursts with rage.",
+          "phrases": [
+            {
+              "id": "67:8:c1:p1",
+              "order": 1,
+              "word_start": 1,
+              "word_end": 1,
+              "text": "تَكَادُ",
+              "translation": "It almost"
+            },
+            {
+              "id": "67:8:c1:p2",
+              "order": 2,
+              "word_start": 2,
+              "word_end": 2,
+              "text": "تَمَيَّزُ",
+              "translation": "bursts"
+            },
+            {
+              "id": "67:8:c1:p3",
+              "order": 3,
+              "word_start": 3,
+              "word_end": 4,
+              "text": "مِنَ ٱلۡغَيۡظِۖ",
+              "translation": "with rage."
+            }
+          ]
+        },
+        {
+          "id": "67:8:c2",
+          "order": 2,
+          "word_start": 5,
+          "word_end": 8,
+          "text": "كُلَّمَآ أُلۡقِيَ فِيهَا فَوۡجٞ",
+          "translation": "Every time a group is thrown into it,",
+          "phrases": [
+            {
+              "id": "67:8:c2:p1",
+              "order": 1,
+              "word_start": 5,
+              "word_end": 5,
+              "text": "كُلَّمَآ",
+              "translation": "Every time"
+            },
+            {
+              "id": "67:8:c2:p2",
+              "order": 2,
+              "word_start": 6,
+              "word_end": 8,
+              "text": "أُلۡقِيَ فِيهَا فَوۡجٞ",
+              "translation": "a group is thrown into it,"
+            }
+          ]
+        },
+        {
+          "id": "67:8:c3",
+          "order": 3,
+          "word_start": 9,
+          "word_end": 10,
+          "text": "سَأَلَهُمۡ خَزَنَتُهَآ",
+          "translation": "its keepers ask them,",
+          "phrases": [
+            {
+              "id": "67:8:c3:p1",
+              "order": 1,
+              "word_start": 9,
+              "word_end": 10,
+              "text": "سَأَلَهُمۡ خَزَنَتُهَآ",
+              "translation": "its keepers ask them,"
+            }
+          ]
+        },
+        {
+          "id": "67:8:c4",
+          "order": 4,
+          "word_start": 11,
+          "word_end": 13,
+          "text": "أَلَمۡ يَأۡتِكُمۡ نَذِيرٞ",
+          "translation": "“Did there not come to you a warner?”",
+          "phrases": [
+            {
+              "id": "67:8:c4:p1",
+              "order": 1,
+              "word_start": 11,
+              "word_end": 12,
+              "text": "أَلَمۡ يَأۡتِكُمۡ",
+              "translation": "“Did there not come to you"
+            },
+            {
+              "id": "67:8:c4:p2",
+              "order": 2,
+              "word_start": 13,
+              "word_end": 13,
+              "text": "نَذِيرٞ",
+              "translation": "a warner?”"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "verse_key": "67:9",
+      "surah": 67,
+      "ayah": 9,
+      "text_digital_khatt": "قَالُوا۟ بَلَىٰ قَدْ جَآءَنَا نَذِيرࣱ فَكَذَّبْنَا وَقُلْنَا مَا نَزَّلَ ٱللَّهُ مِن شَيْءٍ إِنْ أَنتُمْ  إِلَّا فِي ضَلَٰلࣲ كَبِيرࣲ ۝٩",
+      "translation_sahih": "They will say, \"Yes, a warner had come to us, but we denied and said, 'Allāh has not sent down anything. You are not but in great error.'\"",
+      "translation_phrased": "They will say, “Yes, a warner did come to us, but we denied and said, ‘Allah has not sent down anything. You are only in great error.’”",
+      "clauses": [
+        {
+          "id": "67:9:c1",
+          "order": 1,
+          "word_start": 1,
+          "word_end": 2,
+          "text": "قَالُواْ بَلَىٰ",
+          "translation": "They will say, “Yes,",
+          "phrases": [
+            {
+              "id": "67:9:c1:p1",
+              "order": 1,
+              "word_start": 1,
+              "word_end": 1,
+              "text": "قَالُواْ",
+              "translation": "They will say,"
+            },
+            {
+              "id": "67:9:c1:p2",
+              "order": 2,
+              "word_start": 2,
+              "word_end": 2,
+              "text": "بَلَىٰ",
+              "translation": "“Yes,"
+            }
+          ]
+        },
+        {
+          "id": "67:9:c2",
+          "order": 2,
+          "word_start": 3,
+          "word_end": 5,
+          "text": "قَدۡ جَآءَنَا نَذِيرٞ",
+          "translation": "a warner did come to us,",
+          "phrases": [
+            {
+              "id": "67:9:c2:p1",
+              "order": 1,
+              "word_start": 3,
+              "word_end": 5,
+              "text": "قَدۡ جَآءَنَا نَذِيرٞ",
+              "translation": "a warner did come to us,"
+            }
+          ]
+        },
+        {
+          "id": "67:9:c3",
+          "order": 3,
+          "word_start": 6,
+          "word_end": 7,
+          "text": "فَكَذَّبۡنَا وَقُلۡنَا",
+          "translation": "but we denied and said,",
+          "phrases": [
+            {
+              "id": "67:9:c3:p1",
+              "order": 1,
+              "word_start": 6,
+              "word_end": 6,
+              "text": "فَكَذَّبۡنَا",
+              "translation": "but we denied"
+            },
+            {
+              "id": "67:9:c3:p2",
+              "order": 2,
+              "word_start": 7,
+              "word_end": 7,
+              "text": "وَقُلۡنَا",
+              "translation": "and said,"
+            }
+          ]
+        },
+        {
+          "id": "67:9:c4",
+          "order": 4,
+          "word_start": 8,
+          "word_end": 12,
+          "text": "مَا نَزَّلَ ٱللَّهُ مِن شَيۡءٍ",
+          "translation": "‘Allah has not sent down anything.",
+          "phrases": [
+            {
+              "id": "67:9:c4:p1",
+              "order": 1,
+              "word_start": 8,
+              "word_end": 10,
+              "text": "مَا نَزَّلَ ٱللَّهُ",
+              "translation": "‘Allah has not sent down"
+            },
+            {
+              "id": "67:9:c4:p2",
+              "order": 2,
+              "word_start": 11,
+              "word_end": 12,
+              "text": "مِن شَيۡءٍ",
+              "translation": "anything."
+            }
+          ]
+        },
+        {
+          "id": "67:9:c5",
+          "order": 5,
+          "word_start": 13,
+          "word_end": 18,
+          "text": "إِنۡ أَنتُمۡ إِلَّا فِي ضَلَٰلٖ كَبِيرٖ",
+          "translation": "You are only in great error.’”",
+          "phrases": [
+            {
+              "id": "67:9:c5:p1",
+              "order": 1,
+              "word_start": 13,
+              "word_end": 15,
+              "text": "إِنۡ أَنتُمۡ إِلَّا",
+              "translation": "You are only"
+            },
+            {
+              "id": "67:9:c5:p2",
+              "order": 2,
+              "word_start": 16,
+              "word_end": 18,
+              "text": "فِي ضَلَٰلٖ كَبِيرٖ",
+              "translation": "in great error.’”"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "verse_key": "67:10",
+      "surah": 67,
+      "ayah": 10,
+      "text_digital_khatt": "وَقَالُوا۟ لَوْ كُنَّا نَسْمَعُ أَوْ نَعْقِلُ مَا كُنَّا فِيٓ أَصْحَٰبِ ٱلسَّعِيرِ ۝١٠",
+      "translation_sahih": "And they will say, \"If only we had been listening or reasoning, we would not be among the companions of the Blaze.\"",
+      "translation_phrased": "And they will say, “If only we had been listening or reasoning, we would not have been among the companions of the Blaze.”",
+      "clauses": [
+        {
+          "id": "67:10:c1",
+          "order": 1,
+          "word_start": 1,
+          "word_end": 1,
+          "text": "وَقَالُواْ",
+          "translation": "And they will say,",
+          "phrases": [
+            {
+              "id": "67:10:c1:p1",
+              "order": 1,
+              "word_start": 1,
+              "word_end": 1,
+              "text": "وَقَالُواْ",
+              "translation": "And they will say,"
+            }
+          ]
+        },
+        {
+          "id": "67:10:c2",
+          "order": 2,
+          "word_start": 2,
+          "word_end": 6,
+          "text": "لَوۡ كُنَّا نَسۡمَعُ أَوۡ نَعۡقِلُ",
+          "translation": "“If only we had been listening or reasoning,",
+          "phrases": [
+            {
+              "id": "67:10:c2:p1",
+              "order": 1,
+              "word_start": 2,
+              "word_end": 2,
+              "text": "لَوۡ",
+              "translation": "“If only"
+            },
+            {
+              "id": "67:10:c2:p2",
+              "order": 2,
+              "word_start": 3,
+              "word_end": 4,
+              "text": "كُنَّا نَسۡمَعُ",
+              "translation": "we had been listening"
+            },
+            {
+              "id": "67:10:c2:p3",
+              "order": 3,
+              "word_start": 5,
+              "word_end": 6,
+              "text": "أَوۡ نَعۡقِلُ",
+              "translation": "or reasoning,"
+            }
+          ]
+        },
+        {
+          "id": "67:10:c3",
+          "order": 3,
+          "word_start": 7,
+          "word_end": 11,
+          "text": "مَا كُنَّا فِيٓ أَصۡحَٰبِ ٱلسَّعِيرِ",
+          "translation": "we would not have been among the companions of the Blaze.”",
+          "phrases": [
+            {
+              "id": "67:10:c3:p1",
+              "order": 1,
+              "word_start": 7,
+              "word_end": 8,
+              "text": "مَا كُنَّا",
+              "translation": "we would not have been"
+            },
+            {
+              "id": "67:10:c3:p2",
+              "order": 2,
+              "word_start": 9,
+              "word_end": 11,
+              "text": "فِيٓ أَصۡحَٰبِ ٱلسَّعِيرِ",
+              "translation": "among the companions of the Blaze.”"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "verse_key": "67:11",
+      "surah": 67,
+      "ayah": 11,
+      "text_digital_khatt": "فَٱعْتَرَفُوا۟ بِذَنۢبِهِمْ فَسُحْقࣰا لِّأَصْحَٰبِ ٱلسَّعِيرِ ۝١١",
+      "translation_sahih": "And they will admit their sin, so [it is] alienation for the companions of the Blaze.",
+      "translation_phrased": "So they admit their sin; away with the companions of the Blaze!",
+      "clauses": [
+        {
+          "id": "67:11:c1",
+          "order": 1,
+          "word_start": 1,
+          "word_end": 2,
+          "text": "فَٱعۡتَرَفُواْ بِذَنۢبِهِمۡ",
+          "translation": "So they admit their sin;",
+          "phrases": [
+            {
+              "id": "67:11:c1:p1",
+              "order": 1,
+              "word_start": 1,
+              "word_end": 1,
+              "text": "فَٱعۡتَرَفُواْ",
+              "translation": "So they admit"
+            },
+            {
+              "id": "67:11:c1:p2",
+              "order": 2,
+              "word_start": 2,
+              "word_end": 2,
+              "text": "بِذَنۢبِهِمۡ",
+              "translation": "their sin;"
+            }
+          ]
+        },
+        {
+          "id": "67:11:c2",
+          "order": 2,
+          "word_start": 3,
+          "word_end": 5,
+          "text": "فَسُحۡقٗا لِّأَصۡحَٰبِ ٱلسَّعِيرِ",
+          "translation": "away with the companions of the Blaze!",
+          "phrases": [
+            {
+              "id": "67:11:c2:p1",
+              "order": 1,
+              "word_start": 3,
+              "word_end": 3,
+              "text": "فَسُحۡقٗا",
+              "translation": "away with"
+            },
+            {
+              "id": "67:11:c2:p2",
+              "order": 2,
+              "word_start": 4,
+              "word_end": 5,
+              "text": "لِّأَصۡحَٰبِ ٱلسَّعِيرِ",
+              "translation": "the companions of the Blaze!"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "verse_key": "67:12",
+      "surah": 67,
+      "ayah": 12,
+      "text_digital_khatt": "إِنَّ ٱلَّذِينَ يَخْشَوْنَ رَبَّهُم بِٱلْغَيْبِ لَهُم مَّغْفِرَةࣱ وَأَجْرࣱ كَبِيرࣱ ۝١٢",
+      "translation_sahih": "Indeed, those who fear their Lord unseen will have forgiveness and great reward.",
+      "translation_phrased": "Indeed, those who fear their Lord unseen will have forgiveness and a great reward.",
+      "clauses": [
+        {
+          "id": "67:12:c1",
+          "order": 1,
+          "word_start": 1,
+          "word_end": 5,
+          "text": "إِنَّ ٱلَّذِينَ يَخۡشَوۡنَ رَبَّهُم بِٱلۡغَيۡبِ",
+          "translation": "Indeed, those who fear their Lord unseen",
+          "phrases": [
+            {
+              "id": "67:12:c1:p1",
+              "order": 1,
+              "word_start": 1,
+              "word_end": 2,
+              "text": "إِنَّ ٱلَّذِينَ",
+              "translation": "Indeed, those who"
+            },
+            {
+              "id": "67:12:c1:p2",
+              "order": 2,
+              "word_start": 3,
+              "word_end": 4,
+              "text": "يَخۡشَوۡنَ رَبَّهُم",
+              "translation": "fear their Lord"
+            },
+            {
+              "id": "67:12:c1:p3",
+              "order": 3,
+              "word_start": 5,
+              "word_end": 5,
+              "text": "بِٱلۡغَيۡبِ",
+              "translation": "unseen"
+            }
+          ]
+        },
+        {
+          "id": "67:12:c2",
+          "order": 2,
+          "word_start": 6,
+          "word_end": 9,
+          "text": "لَهُم مَّغۡفِرَةٞ وَأَجۡرٞ كَبِيرٞ",
+          "translation": "will have forgiveness and a great reward.",
+          "phrases": [
+            {
+              "id": "67:12:c2:p1",
+              "order": 1,
+              "word_start": 6,
+              "word_end": 7,
+              "text": "لَهُم مَّغۡفِرَةٞ",
+              "translation": "will have forgiveness"
+            },
+            {
+              "id": "67:12:c2:p2",
+              "order": 2,
+              "word_start": 8,
+              "word_end": 9,
+              "text": "وَأَجۡرٞ كَبِيرٞ",
+              "translation": "and a great reward."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "verse_key": "67:13",
+      "surah": 67,
+      "ayah": 13,
+      "text_digital_khatt": "وَأَسِرُّوا۟ قَوْلَكُمْ أَوِ ٱجْهَرُوا۟ بِهِۦٓۖ إِنَّهُۥ عَلِيمُۢ بِذَاتِ ٱلصُّدُورِ ۝١٣",
+      "translation_sahih": "And conceal your speech or publicize it; indeed, He is Knowing of that within the breasts.",
+      "translation_phrased": "And conceal your speech or declare it openly; indeed, He is All-Knowing of what lies within the breasts.",
+      "clauses": [
+        {
+          "id": "67:13:c1",
+          "order": 1,
+          "word_start": 1,
+          "word_end": 5,
+          "text": "وَأَسِرُّواْ قَوۡلَكُمۡ أَوِ ٱجۡهَرُواْ بِهِۦٓۖ",
+          "translation": "And conceal your speech or declare it openly;",
+          "phrases": [
+            {
+              "id": "67:13:c1:p1",
+              "order": 1,
+              "word_start": 1,
+              "word_end": 2,
+              "text": "وَأَسِرُّواْ قَوۡلَكُمۡ",
+              "translation": "And conceal your speech"
+            },
+            {
+              "id": "67:13:c1:p2",
+              "order": 2,
+              "word_start": 3,
+              "word_end": 5,
+              "text": "أَوِ ٱجۡهَرُواْ بِهِۦٓۖ",
+              "translation": "or declare it openly;"
+            }
+          ]
+        },
+        {
+          "id": "67:13:c2",
+          "order": 2,
+          "word_start": 6,
+          "word_end": 9,
+          "text": "إِنَّهُۥ عَلِيمُۢ بِذَاتِ ٱلصُّدُورِ",
+          "translation": "indeed, He is All-Knowing of what lies within the breasts.",
+          "phrases": [
+            {
+              "id": "67:13:c2:p1",
+              "order": 1,
+              "word_start": 6,
+              "word_end": 6,
+              "text": "إِنَّهُۥ",
+              "translation": "indeed, He is"
+            },
+            {
+              "id": "67:13:c2:p2",
+              "order": 2,
+              "word_start": 7,
+              "word_end": 7,
+              "text": "عَلِيمُۢ",
+              "translation": "All-Knowing"
+            },
+            {
+              "id": "67:13:c2:p3",
+              "order": 3,
+              "word_start": 8,
+              "word_end": 9,
+              "text": "بِذَاتِ ٱلصُّدُورِ",
+              "translation": "of what lies within the breasts."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "verse_key": "67:14",
+      "surah": 67,
+      "ayah": 14,
+      "text_digital_khatt": "أَلَا يَعْلَمُ مَنْ خَلَقَ وَهُوَ ٱللَّطِيفُ ٱلْخَبِيرُ ۝١٤",
+      "translation_sahih": "Does He who created not know, while He is the Subtle, the Aware?",
+      "translation_phrased": "Would the One who created not know? And He is the Subtle, the All-Aware.",
+      "clauses": [
+        {
+          "id": "67:14:c1",
+          "order": 1,
+          "word_start": 1,
+          "word_end": 4,
+          "text": "أَلَا يَعۡلَمُ مَنۡ خَلَقَ",
+          "translation": "Would the One who created not know?",
+          "phrases": [
+            {
+              "id": "67:14:c1:p1",
+              "order": 1,
+              "word_start": 1,
+              "word_end": 4,
+              "text": "أَلَا يَعۡلَمُ مَنۡ خَلَقَ",
+              "translation": "Would the One who created not know?"
+            }
+          ]
+        },
+        {
+          "id": "67:14:c2",
+          "order": 2,
+          "word_start": 5,
+          "word_end": 7,
+          "text": "وَهُوَ ٱللَّطِيفُ ٱلۡخَبِيرُ",
+          "translation": "And He is the Subtle, the All-Aware.",
+          "phrases": [
+            {
+              "id": "67:14:c2:p1",
+              "order": 1,
+              "word_start": 5,
+              "word_end": 5,
+              "text": "وَهُوَ",
+              "translation": "And He is"
+            },
+            {
+              "id": "67:14:c2:p2",
+              "order": 2,
+              "word_start": 6,
+              "word_end": 6,
+              "text": "ٱللَّطِيفُ",
+              "translation": "the Subtle,"
+            },
+            {
+              "id": "67:14:c2:p3",
+              "order": 3,
+              "word_start": 7,
+              "word_end": 7,
+              "text": "ٱلۡخَبِيرُ",
+              "translation": "the All-Aware."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "verse_key": "67:15",
+      "surah": 67,
+      "ayah": 15,
+      "text_digital_khatt": "هُوَ ٱلَّذِي جَعَلَ لَكُمُ ٱلْأَرْضَ ذَلُولࣰا فَٱمْشُوا۟ فِي مَنَاكِبِهَا وَكُلُوا۟ مِن رِّزْقِهِۦۖ وَإِلَيْهِ ٱلنُّشُورُ ۝١٥",
+      "translation_sahih": "It is He who made the earth tame for you - so walk among its slopes and eat of His provision - and to Him is the resurrection.",
+      "translation_phrased": "He is the One who made the earth manageable for you, so walk through its regions and eat from His provision; and to Him is the resurrection.",
+      "clauses": [
+        {
+          "id": "67:15:c1",
+          "order": 1,
+          "word_start": 1,
+          "word_end": 2,
+          "text": "هُوَ ٱلَّذِي",
+          "translation": "He is the One who",
+          "phrases": [
+            {
+              "id": "67:15:c1:p1",
+              "order": 1,
+              "word_start": 1,
+              "word_end": 2,
+              "text": "هُوَ ٱلَّذِي",
+              "translation": "He is the One who"
+            }
+          ]
+        },
+        {
+          "id": "67:15:c2",
+          "order": 2,
+          "word_start": 3,
+          "word_end": 6,
+          "text": "جَعَلَ لَكُمُ ٱلۡأَرۡضَ ذَلُولٗا",
+          "translation": "made the earth manageable for you,",
+          "phrases": [
+            {
+              "id": "67:15:c2:p1",
+              "order": 1,
+              "word_start": 3,
+              "word_end": 3,
+              "text": "جَعَلَ",
+              "translation": "made"
+            },
+            {
+              "id": "67:15:c2:p2",
+              "order": 2,
+              "word_start": 4,
+              "word_end": 6,
+              "text": "لَكُمُ ٱلۡأَرۡضَ ذَلُولٗا",
+              "translation": "the earth manageable for you,"
+            }
+          ]
+        },
+        {
+          "id": "67:15:c3",
+          "order": 3,
+          "word_start": 7,
+          "word_end": 9,
+          "text": "فَٱمۡشُواْ فِي مَنَاكِبِهَا",
+          "translation": "so walk through its regions",
+          "phrases": [
+            {
+              "id": "67:15:c3:p1",
+              "order": 1,
+              "word_start": 7,
+              "word_end": 7,
+              "text": "فَٱمۡشُواْ",
+              "translation": "so walk"
+            },
+            {
+              "id": "67:15:c3:p2",
+              "order": 2,
+              "word_start": 8,
+              "word_end": 9,
+              "text": "فِي مَنَاكِبِهَا",
+              "translation": "through its regions"
+            }
+          ]
+        },
+        {
+          "id": "67:15:c4",
+          "order": 4,
+          "word_start": 10,
+          "word_end": 12,
+          "text": "وَكُلُواْ مِن رِّزۡقِهِۦۖ",
+          "translation": "and eat from His provision;",
+          "phrases": [
+            {
+              "id": "67:15:c4:p1",
+              "order": 1,
+              "word_start": 10,
+              "word_end": 10,
+              "text": "وَكُلُواْ",
+              "translation": "and eat"
+            },
+            {
+              "id": "67:15:c4:p2",
+              "order": 2,
+              "word_start": 11,
+              "word_end": 12,
+              "text": "مِن رِّزۡقِهِۦۖ",
+              "translation": "from His provision;"
+            }
+          ]
+        },
+        {
+          "id": "67:15:c5",
+          "order": 5,
+          "word_start": 13,
+          "word_end": 14,
+          "text": "وَإِلَيۡهِ ٱلنُّشُورُ",
+          "translation": "and to Him is the resurrection.",
+          "phrases": [
+            {
+              "id": "67:15:c5:p1",
+              "order": 1,
+              "word_start": 13,
+              "word_end": 13,
+              "text": "وَإِلَيۡهِ",
+              "translation": "and to Him"
+            },
+            {
+              "id": "67:15:c5:p2",
+              "order": 2,
+              "word_start": 14,
+              "word_end": 14,
+              "text": "ٱلنُّشُورُ",
+              "translation": "is the resurrection."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "verse_key": "67:16",
+      "surah": 67,
+      "ayah": 16,
+      "text_digital_khatt": "ءَأَمِنتُم مَّن فِي ٱلسَّمَآءِ أَن يَخْسِفَ بِكُمُ ٱلْأَرْضَ فَإِذَا هِيَ تَمُورُ ۝١٦",
+      "translation_sahih": "Do you feel secure that He who is above would not cause the earth to swallow you and suddenly it would sway?",
+      "translation_phrased": "Do you feel secure that He who is in the heaven would not cause the earth to swallow you, and suddenly it sways?",
+      "clauses": [
+        {
+          "id": "67:16:c1",
+          "order": 1,
+          "word_start": 1,
+          "word_end": 4,
+          "text": "ءَأَمِنتُم مَّن فِي ٱلسَّمَآءِ",
+          "translation": "Do you feel secure that He who is in the heaven",
+          "phrases": [
+            {
+              "id": "67:16:c1:p1",
+              "order": 1,
+              "word_start": 1,
+              "word_end": 1,
+              "text": "ءَأَمِنتُم",
+              "translation": "Do you feel secure"
+            },
+            {
+              "id": "67:16:c1:p2",
+              "order": 2,
+              "word_start": 2,
+              "word_end": 4,
+              "text": "مَّن فِي ٱلسَّمَآءِ",
+              "translation": "that He who is in the heaven"
+            }
+          ]
+        },
+        {
+          "id": "67:16:c2",
+          "order": 2,
+          "word_start": 5,
+          "word_end": 8,
+          "text": "أَن يَخۡسِفَ بِكُمُ ٱلۡأَرۡضَ",
+          "translation": "would not cause the earth to swallow you,",
+          "phrases": [
+            {
+              "id": "67:16:c2:p1",
+              "order": 1,
+              "word_start": 5,
+              "word_end": 8,
+              "text": "أَن يَخۡسِفَ بِكُمُ ٱلۡأَرۡضَ",
+              "translation": "would not cause the earth to swallow you,"
+            }
+          ]
+        },
+        {
+          "id": "67:16:c3",
+          "order": 3,
+          "word_start": 9,
+          "word_end": 11,
+          "text": "فَإِذَا هِيَ تَمُورُ",
+          "translation": "and suddenly it sways?",
+          "phrases": [
+            {
+              "id": "67:16:c3:p1",
+              "order": 1,
+              "word_start": 9,
+              "word_end": 10,
+              "text": "فَإِذَا هِيَ",
+              "translation": "and suddenly it"
+            },
+            {
+              "id": "67:16:c3:p2",
+              "order": 2,
+              "word_start": 11,
+              "word_end": 11,
+              "text": "تَمُورُ",
+              "translation": "sways?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "verse_key": "67:17",
+      "surah": 67,
+      "ayah": 17,
+      "text_digital_khatt": "أَمْ أَمِنتُم مَّن فِي ٱلسَّمَآءِ أَن يُرْسِلَ عَلَيْكُمْ حَاصِبࣰاۖ فَسَتَعْلَمُونَ  كَيْفَ نَذِيرِ ۝١٧",
+      "translation_sahih": "Or do you feel secure that He who is above would not send against you a storm of stones? Then you would know how [severe] was My warning.",
+      "translation_phrased": "Or do you feel secure that He who is in the heaven would not send against you a storm of stones? Then you will know how terrible My warning was.",
+      "clauses": [
+        {
+          "id": "67:17:c1",
+          "order": 1,
+          "word_start": 1,
+          "word_end": 5,
+          "text": "أَمۡ أَمِنتُم مَّن فِي ٱلسَّمَآءِ",
+          "translation": "Or do you feel secure that He who is in the heaven",
+          "phrases": [
+            {
+              "id": "67:17:c1:p1",
+              "order": 1,
+              "word_start": 1,
+              "word_end": 2,
+              "text": "أَمۡ أَمِنتُم",
+              "translation": "Or do you feel secure"
+            },
+            {
+              "id": "67:17:c1:p2",
+              "order": 2,
+              "word_start": 3,
+              "word_end": 5,
+              "text": "مَّن فِي ٱلسَّمَآءِ",
+              "translation": "that He who is in the heaven"
+            }
+          ]
+        },
+        {
+          "id": "67:17:c2",
+          "order": 2,
+          "word_start": 6,
+          "word_end": 9,
+          "text": "أَن يُرۡسِلَ عَلَيۡكُمۡ حَاصِبٗاۖ",
+          "translation": "would not send against you a storm of stones?",
+          "phrases": [
+            {
+              "id": "67:17:c2:p1",
+              "order": 1,
+              "word_start": 6,
+              "word_end": 7,
+              "text": "أَن يُرۡسِلَ",
+              "translation": "would not send"
+            },
+            {
+              "id": "67:17:c2:p2",
+              "order": 2,
+              "word_start": 8,
+              "word_end": 8,
+              "text": "عَلَيۡكُمۡ",
+              "translation": "against you"
+            },
+            {
+              "id": "67:17:c2:p3",
+              "order": 3,
+              "word_start": 9,
+              "word_end": 9,
+              "text": "حَاصِبٗاۖ",
+              "translation": "a storm of stones?"
+            }
+          ]
+        },
+        {
+          "id": "67:17:c3",
+          "order": 3,
+          "word_start": 10,
+          "word_end": 12,
+          "text": "فَسَتَعۡلَمُونَ كَيۡفَ نَذِيرِ",
+          "translation": "Then you will know how terrible My warning was.",
+          "phrases": [
+            {
+              "id": "67:17:c3:p1",
+              "order": 1,
+              "word_start": 10,
+              "word_end": 10,
+              "text": "فَسَتَعۡلَمُونَ",
+              "translation": "Then you will know"
+            },
+            {
+              "id": "67:17:c3:p2",
+              "order": 2,
+              "word_start": 11,
+              "word_end": 12,
+              "text": "كَيۡفَ نَذِيرِ",
+              "translation": "how terrible My warning was."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "verse_key": "67:18",
+      "surah": 67,
+      "ayah": 18,
+      "text_digital_khatt": "وَلَقَدْ كَذَّبَ ٱلَّذِينَ مِن قَبْلِهِمْ فَكَيْفَ كَانَ نَكِيرِ ۝١٨",
+      "translation_sahih": "And already had those before them denied, and how [terrible] was My reproach.",
+      "translation_phrased": "And indeed those who came before them denied, and how terrible My reproach was!",
+      "clauses": [
+        {
+          "id": "67:18:c1",
+          "order": 1,
+          "word_start": 1,
+          "word_end": 5,
+          "text": "وَلَقَدۡ كَذَّبَ ٱلَّذِينَ مِن قَبۡلِهِمۡ",
+          "translation": "And indeed those who came before them denied,",
+          "phrases": [
+            {
+              "id": "67:18:c1:p1",
+              "order": 1,
+              "word_start": 1,
+              "word_end": 1,
+              "text": "وَلَقَدۡ",
+              "translation": "And indeed"
+            },
+            {
+              "id": "67:18:c1:p2",
+              "order": 2,
+              "word_start": 2,
+              "word_end": 5,
+              "text": "كَذَّبَ ٱلَّذِينَ مِن قَبۡلِهِمۡ",
+              "translation": "those who came before them denied,"
+            }
+          ]
+        },
+        {
+          "id": "67:18:c2",
+          "order": 2,
+          "word_start": 6,
+          "word_end": 8,
+          "text": "فَكَيۡفَ كَانَ نَكِيرِ",
+          "translation": "and how terrible My reproach was!",
+          "phrases": [
+            {
+              "id": "67:18:c2:p1",
+              "order": 1,
+              "word_start": 6,
+              "word_end": 6,
+              "text": "فَكَيۡفَ",
+              "translation": "and how"
+            },
+            {
+              "id": "67:18:c2:p2",
+              "order": 2,
+              "word_start": 7,
+              "word_end": 8,
+              "text": "كَانَ نَكِيرِ",
+              "translation": "terrible My reproach was!"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "verse_key": "67:19",
+      "surah": 67,
+      "ayah": 19,
+      "text_digital_khatt": "أَوَلَمْ يَرَوْا۟ إِلَى ٱلطَّيْرِ فَوْقَهُمْ صَٰٓفَّٰتࣲ وَيَقْبِضْنَۚ مَا يُمْسِكُهُنَّ إِلَّا  ٱلرَّحْمَٰنُۚ إِنَّهُۥ بِكُلِّ شَيْءِۭ بَصِيرٌ ۝١٩",
+      "translation_sahih": "Do they not see the birds above them with wings outspread and [sometimes] folded in? None holds them [aloft] except the Most Merciful. Indeed He is, of all things, Seeing.",
+      "translation_phrased": "Have they not seen the birds above them, spreading their wings and folding them in? None holds them up except the Most Merciful. Indeed He sees everything.",
+      "clauses": [
+        {
+          "id": "67:19:c1",
+          "order": 1,
+          "word_start": 1,
+          "word_end": 7,
+          "text": "أَوَلَمۡ يَرَوۡاْ إِلَى ٱلطَّيۡرِ فَوۡقَهُمۡ صَٰٓفَّٰتٖ وَيَقۡبِضۡنَۚ",
+          "translation": "Have they not seen the birds above them, spreading their wings and folding them in?",
+          "phrases": [
+            {
+              "id": "67:19:c1:p1",
+              "order": 1,
+              "word_start": 1,
+              "word_end": 2,
+              "text": "أَوَلَمۡ يَرَوۡاْ",
+              "translation": "Have they not seen"
+            },
+            {
+              "id": "67:19:c1:p2",
+              "order": 2,
+              "word_start": 3,
+              "word_end": 4,
+              "text": "إِلَى ٱلطَّيۡرِ",
+              "translation": "the birds"
+            },
+            {
+              "id": "67:19:c1:p3",
+              "order": 3,
+              "word_start": 5,
+              "word_end": 5,
+              "text": "فَوۡقَهُمۡ",
+              "translation": "above them,"
+            },
+            {
+              "id": "67:19:c1:p4",
+              "order": 4,
+              "word_start": 6,
+              "word_end": 6,
+              "text": "صَٰٓفَّٰتٖ",
+              "translation": "spreading their wings"
+            },
+            {
+              "id": "67:19:c1:p5",
+              "order": 5,
+              "word_start": 7,
+              "word_end": 7,
+              "text": "وَيَقۡبِضۡنَۚ",
+              "translation": "and folding them in?"
+            }
+          ]
+        },
+        {
+          "id": "67:19:c2",
+          "order": 2,
+          "word_start": 8,
+          "word_end": 11,
+          "text": "مَا يُمۡسِكُهُنَّ إِلَّا ٱلرَّحۡمَٰنُۚ",
+          "translation": "None holds them up except the Most Merciful.",
+          "phrases": [
+            {
+              "id": "67:19:c2:p1",
+              "order": 1,
+              "word_start": 8,
+              "word_end": 9,
+              "text": "مَا يُمۡسِكُهُنَّ",
+              "translation": "None holds them up"
+            },
+            {
+              "id": "67:19:c2:p2",
+              "order": 2,
+              "word_start": 10,
+              "word_end": 11,
+              "text": "إِلَّا ٱلرَّحۡمَٰنُۚ",
+              "translation": "except the Most Merciful."
+            }
+          ]
+        },
+        {
+          "id": "67:19:c3",
+          "order": 3,
+          "word_start": 12,
+          "word_end": 15,
+          "text": "إِنَّهُۥ بِكُلِّ شَيۡءِۭ بَصِيرٌ",
+          "translation": "Indeed He sees everything.",
+          "phrases": [
+            {
+              "id": "67:19:c3:p1",
+              "order": 1,
+              "word_start": 12,
+              "word_end": 12,
+              "text": "إِنَّهُۥ",
+              "translation": "Indeed He"
+            },
+            {
+              "id": "67:19:c3:p2",
+              "order": 2,
+              "word_start": 13,
+              "word_end": 15,
+              "text": "بِكُلِّ شَيۡءِۭ بَصِيرٌ",
+              "translation": "sees everything."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "verse_key": "67:20",
+      "surah": 67,
+      "ayah": 20,
+      "text_digital_khatt": "أَمَّنْ هَٰذَا ٱلَّذِي هُوَ جُندࣱ لَّكُمْ يَنصُرُكُم مِّن دُونِ ٱلرَّحْمَٰنِۚ إِنِ ٱلْكَٰفِرُونَ إِلَّا فِي غُرُورٍ ۝٢٠",
+      "translation_sahih": "Or who is it that could be an army for you to aid you other than the Most Merciful? The disbelievers are not but in delusion.",
+      "translation_phrased": "Or who is this one who is an army for you, to help you besides the Most Merciful? The disbelievers are only in delusion.",
+      "clauses": [
+        {
+          "id": "67:20:c1",
+          "order": 1,
+          "word_start": 1,
+          "word_end": 6,
+          "text": "أَمَّنۡ هَٰذَا ٱلَّذِي هُوَ جُندٞ لَّكُمۡ",
+          "translation": "Or who is this one who is an army for you,",
+          "phrases": [
+            {
+              "id": "67:20:c1:p1",
+              "order": 1,
+              "word_start": 1,
+              "word_end": 3,
+              "text": "أَمَّنۡ هَٰذَا ٱلَّذِي",
+              "translation": "Or who is this one who"
+            },
+            {
+              "id": "67:20:c1:p2",
+              "order": 2,
+              "word_start": 4,
+              "word_end": 5,
+              "text": "هُوَ جُندٞ",
+              "translation": "is an army"
+            },
+            {
+              "id": "67:20:c1:p3",
+              "order": 3,
+              "word_start": 6,
+              "word_end": 6,
+              "text": "لَّكُمۡ",
+              "translation": "for you,"
+            }
+          ]
+        },
+        {
+          "id": "67:20:c2",
+          "order": 2,
+          "word_start": 7,
+          "word_end": 10,
+          "text": "يَنصُرُكُم مِّن دُونِ ٱلرَّحۡمَٰنِۚ",
+          "translation": "to help you besides the Most Merciful?",
+          "phrases": [
+            {
+              "id": "67:20:c2:p1",
+              "order": 1,
+              "word_start": 7,
+              "word_end": 7,
+              "text": "يَنصُرُكُم",
+              "translation": "to help you"
+            },
+            {
+              "id": "67:20:c2:p2",
+              "order": 2,
+              "word_start": 8,
+              "word_end": 10,
+              "text": "مِّن دُونِ ٱلرَّحۡمَٰنِۚ",
+              "translation": "besides the Most Merciful?"
+            }
+          ]
+        },
+        {
+          "id": "67:20:c3",
+          "order": 3,
+          "word_start": 11,
+          "word_end": 15,
+          "text": "إِنِ ٱلۡكَٰفِرُونَ إِلَّا فِي غُرُورٍ",
+          "translation": "The disbelievers are only in delusion.",
+          "phrases": [
+            {
+              "id": "67:20:c3:p1",
+              "order": 1,
+              "word_start": 11,
+              "word_end": 12,
+              "text": "إِنِ ٱلۡكَٰفِرُونَ",
+              "translation": "The disbelievers are"
+            },
+            {
+              "id": "67:20:c3:p2",
+              "order": 2,
+              "word_start": 13,
+              "word_end": 13,
+              "text": "إِلَّا",
+              "translation": "only"
+            },
+            {
+              "id": "67:20:c3:p3",
+              "order": 3,
+              "word_start": 14,
+              "word_end": 15,
+              "text": "فِي غُرُورٍ",
+              "translation": "in delusion."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "verse_key": "67:21",
+      "surah": 67,
+      "ayah": 21,
+      "text_digital_khatt": "أَمَّنْ هَٰذَا ٱلَّذِي يَرْزُقُكُمْ إِنْ أَمْسَكَ رِزْقَهُۥۚ بَل لَّجُّوا۟ فِي عُتُوࣲّ وَنُفُورٍ ۝٢١",
+      "translation_sahih": "Or who is it that could provide for you if He withheld His provision? But they have persisted in insolence and aversion.",
+      "translation_phrased": "Or who is this one who could provide for you if He withheld His provision? Rather, they persist in arrogance and aversion.",
+      "clauses": [
+        {
+          "id": "67:21:c1",
+          "order": 1,
+          "word_start": 1,
+          "word_end": 4,
+          "text": "أَمَّنۡ هَٰذَا ٱلَّذِي يَرۡزُقُكُمۡ",
+          "translation": "Or who is this one who could provide for you",
+          "phrases": [
+            {
+              "id": "67:21:c1:p1",
+              "order": 1,
+              "word_start": 1,
+              "word_end": 3,
+              "text": "أَمَّنۡ هَٰذَا ٱلَّذِي",
+              "translation": "Or who is this one who"
+            },
+            {
+              "id": "67:21:c1:p2",
+              "order": 2,
+              "word_start": 4,
+              "word_end": 4,
+              "text": "يَرۡزُقُكُمۡ",
+              "translation": "could provide for you"
+            }
+          ]
+        },
+        {
+          "id": "67:21:c2",
+          "order": 2,
+          "word_start": 5,
+          "word_end": 7,
+          "text": "إِنۡ أَمۡسَكَ رِزۡقَهُۥۚ",
+          "translation": "if He withheld His provision?",
+          "phrases": [
+            {
+              "id": "67:21:c2:p1",
+              "order": 1,
+              "word_start": 5,
+              "word_end": 5,
+              "text": "إِنۡ",
+              "translation": "if"
+            },
+            {
+              "id": "67:21:c2:p2",
+              "order": 2,
+              "word_start": 6,
+              "word_end": 6,
+              "text": "أَمۡسَكَ",
+              "translation": "He withheld"
+            },
+            {
+              "id": "67:21:c2:p3",
+              "order": 3,
+              "word_start": 7,
+              "word_end": 7,
+              "text": "رِزۡقَهُۥۚ",
+              "translation": "His provision?"
+            }
+          ]
+        },
+        {
+          "id": "67:21:c3",
+          "order": 3,
+          "word_start": 8,
+          "word_end": 12,
+          "text": "بَل لَّجُّواْ فِي عُتُوّٖ وَنُفُورٍ",
+          "translation": "Rather, they persist in arrogance and aversion.",
+          "phrases": [
+            {
+              "id": "67:21:c3:p1",
+              "order": 1,
+              "word_start": 8,
+              "word_end": 9,
+              "text": "بَل لَّجُّواْ",
+              "translation": "Rather, they persist"
+            },
+            {
+              "id": "67:21:c3:p2",
+              "order": 2,
+              "word_start": 10,
+              "word_end": 11,
+              "text": "فِي عُتُوّٖ",
+              "translation": "in arrogance"
+            },
+            {
+              "id": "67:21:c3:p3",
+              "order": 3,
+              "word_start": 12,
+              "word_end": 12,
+              "text": "وَنُفُورٍ",
+              "translation": "and aversion."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "verse_key": "67:22",
+      "surah": 67,
+      "ayah": 22,
+      "text_digital_khatt": "أَفَمَن يَمْشِي مُكِبًّا عَلَىٰ وَجْهِهِۦٓ أَهْدَىٰٓ أَمَّن يَمْشِي سَوِيًّا عَلَىٰ صِرَٰطࣲ  مُّسْتَقِيمࣲ ۝٢٢",
+      "translation_sahih": "Then is one who walks fallen on his face better guided or one who walks erect on a straight path?",
+      "translation_phrased": "Is the one who walks bent over on his face better guided, or the one who walks upright on a straight path?",
+      "clauses": [
+        {
+          "id": "67:22:c1",
+          "order": 1,
+          "word_start": 1,
+          "word_end": 5,
+          "text": "أَفَمَن يَمۡشِي مُكِبًّا عَلَىٰ وَجۡهِهِۦٓ",
+          "translation": "Is the one who walks bent over on his face",
+          "phrases": [
+            {
+              "id": "67:22:c1:p1",
+              "order": 1,
+              "word_start": 1,
+              "word_end": 2,
+              "text": "أَفَمَن يَمۡشِي",
+              "translation": "Is the one who walks"
+            },
+            {
+              "id": "67:22:c1:p2",
+              "order": 2,
+              "word_start": 3,
+              "word_end": 5,
+              "text": "مُكِبًّا عَلَىٰ وَجۡهِهِۦٓ",
+              "translation": "bent over on his face"
+            }
+          ]
+        },
+        {
+          "id": "67:22:c2",
+          "order": 2,
+          "word_start": 6,
+          "word_end": 6,
+          "text": "أَهۡدَىٰٓ",
+          "translation": "better guided,",
+          "phrases": [
+            {
+              "id": "67:22:c2:p1",
+              "order": 1,
+              "word_start": 6,
+              "word_end": 6,
+              "text": "أَهۡدَىٰٓ",
+              "translation": "better guided,"
+            }
+          ]
+        },
+        {
+          "id": "67:22:c3",
+          "order": 3,
+          "word_start": 7,
+          "word_end": 12,
+          "text": "أَمَّن يَمۡشِي سَوِيًّا عَلَىٰ صِرَٰطٖ مُّسۡتَقِيمٖ",
+          "translation": "or the one who walks upright on a straight path?",
+          "phrases": [
+            {
+              "id": "67:22:c3:p1",
+              "order": 1,
+              "word_start": 7,
+              "word_end": 8,
+              "text": "أَمَّن يَمۡشِي",
+              "translation": "or the one who walks"
+            },
+            {
+              "id": "67:22:c3:p2",
+              "order": 2,
+              "word_start": 9,
+              "word_end": 9,
+              "text": "سَوِيًّا",
+              "translation": "upright"
+            },
+            {
+              "id": "67:22:c3:p3",
+              "order": 3,
+              "word_start": 10,
+              "word_end": 12,
+              "text": "عَلَىٰ صِرَٰطٖ مُّسۡتَقِيمٖ",
+              "translation": "on a straight path?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "verse_key": "67:23",
+      "surah": 67,
+      "ayah": 23,
+      "text_digital_khatt": "قُلْ هُوَ ٱلَّذِيٓ أَنشَأَكُمْ وَجَعَلَ لَكُمُ ٱلسَّمْعَ وَٱلْأَبْصَٰرَ وَٱلْأَفْـِٔدَةَۚ قَلِيلࣰا مَّا تَشْكُرُونَ ۝٢٣",
+      "translation_sahih": "Say, \"It is He who has produced you and made for you hearing and vision and hearts [i.e., intellect]; little are you grateful.\"",
+      "translation_phrased": "Say, “He is the One who created you and made for you hearing, sight, and hearts; how little you give thanks!”",
+      "clauses": [
+        {
+          "id": "67:23:c1",
+          "order": 1,
+          "word_start": 1,
+          "word_end": 4,
+          "text": "قُلۡ هُوَ ٱلَّذِيٓ أَنشَأَكُمۡ",
+          "translation": "Say, “He is the One who created you",
+          "phrases": [
+            {
+              "id": "67:23:c1:p1",
+              "order": 1,
+              "word_start": 1,
+              "word_end": 1,
+              "text": "قُلۡ",
+              "translation": "Say,"
+            },
+            {
+              "id": "67:23:c1:p2",
+              "order": 2,
+              "word_start": 2,
+              "word_end": 3,
+              "text": "هُوَ ٱلَّذِيٓ",
+              "translation": "“He is the One who"
+            },
+            {
+              "id": "67:23:c1:p3",
+              "order": 3,
+              "word_start": 4,
+              "word_end": 4,
+              "text": "أَنشَأَكُمۡ",
+              "translation": "created you"
+            }
+          ]
+        },
+        {
+          "id": "67:23:c2",
+          "order": 2,
+          "word_start": 5,
+          "word_end": 9,
+          "text": "وَجَعَلَ لَكُمُ ٱلسَّمۡعَ وَٱلۡأَبۡصَٰرَ وَٱلۡأَفۡـِٔدَةَۚ",
+          "translation": "and made for you hearing, sight, and hearts;",
+          "phrases": [
+            {
+              "id": "67:23:c2:p1",
+              "order": 1,
+              "word_start": 5,
+              "word_end": 5,
+              "text": "وَجَعَلَ",
+              "translation": "and made"
+            },
+            {
+              "id": "67:23:c2:p2",
+              "order": 2,
+              "word_start": 6,
+              "word_end": 6,
+              "text": "لَكُمُ",
+              "translation": "for you"
+            },
+            {
+              "id": "67:23:c2:p3",
+              "order": 3,
+              "word_start": 7,
+              "word_end": 7,
+              "text": "ٱلسَّمۡعَ",
+              "translation": "hearing,"
+            },
+            {
+              "id": "67:23:c2:p4",
+              "order": 4,
+              "word_start": 8,
+              "word_end": 8,
+              "text": "وَٱلۡأَبۡصَٰرَ",
+              "translation": "sight,"
+            },
+            {
+              "id": "67:23:c2:p5",
+              "order": 5,
+              "word_start": 9,
+              "word_end": 9,
+              "text": "وَٱلۡأَفۡـِٔدَةَۚ",
+              "translation": "and hearts;"
+            }
+          ]
+        },
+        {
+          "id": "67:23:c3",
+          "order": 3,
+          "word_start": 10,
+          "word_end": 12,
+          "text": "قَلِيلٗا مَّا تَشۡكُرُونَ",
+          "translation": "how little you give thanks!”",
+          "phrases": [
+            {
+              "id": "67:23:c3:p1",
+              "order": 1,
+              "word_start": 10,
+              "word_end": 11,
+              "text": "قَلِيلٗا مَّا",
+              "translation": "how little"
+            },
+            {
+              "id": "67:23:c3:p2",
+              "order": 2,
+              "word_start": 12,
+              "word_end": 12,
+              "text": "تَشۡكُرُونَ",
+              "translation": "you give thanks!”"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "verse_key": "67:24",
+      "surah": 67,
+      "ayah": 24,
+      "text_digital_khatt": "قُلْ هُوَ ٱلَّذِي ذَرَأَكُمْ فِي ٱلْأَرْضِ وَإِلَيْهِ تُحْشَرُونَ ۝٢٤",
+      "translation_sahih": "Say, \"It is He who has multiplied you throughout the earth, and to Him you will be gathered.\"",
+      "translation_phrased": "Say, “He is the One who dispersed you throughout the earth, and to Him you will be gathered.”",
+      "clauses": [
+        {
+          "id": "67:24:c1",
+          "order": 1,
+          "word_start": 1,
+          "word_end": 6,
+          "text": "قُلۡ هُوَ ٱلَّذِي ذَرَأَكُمۡ فِي ٱلۡأَرۡضِ",
+          "translation": "Say, “He is the One who dispersed you throughout the earth,",
+          "phrases": [
+            {
+              "id": "67:24:c1:p1",
+              "order": 1,
+              "word_start": 1,
+              "word_end": 1,
+              "text": "قُلۡ",
+              "translation": "Say,"
+            },
+            {
+              "id": "67:24:c1:p2",
+              "order": 2,
+              "word_start": 2,
+              "word_end": 3,
+              "text": "هُوَ ٱلَّذِي",
+              "translation": "“He is the One who"
+            },
+            {
+              "id": "67:24:c1:p3",
+              "order": 3,
+              "word_start": 4,
+              "word_end": 4,
+              "text": "ذَرَأَكُمۡ",
+              "translation": "dispersed you"
+            },
+            {
+              "id": "67:24:c1:p4",
+              "order": 4,
+              "word_start": 5,
+              "word_end": 6,
+              "text": "فِي ٱلۡأَرۡضِ",
+              "translation": "throughout the earth,"
+            }
+          ]
+        },
+        {
+          "id": "67:24:c2",
+          "order": 2,
+          "word_start": 7,
+          "word_end": 8,
+          "text": "وَإِلَيۡهِ تُحۡشَرُونَ",
+          "translation": "and to Him you will be gathered.”",
+          "phrases": [
+            {
+              "id": "67:24:c2:p1",
+              "order": 1,
+              "word_start": 7,
+              "word_end": 7,
+              "text": "وَإِلَيۡهِ",
+              "translation": "and to Him"
+            },
+            {
+              "id": "67:24:c2:p2",
+              "order": 2,
+              "word_start": 8,
+              "word_end": 8,
+              "text": "تُحۡشَرُونَ",
+              "translation": "you will be gathered.”"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "verse_key": "67:25",
+      "surah": 67,
+      "ayah": 25,
+      "text_digital_khatt": "وَيَقُولُونَ مَتَىٰ هَٰذَا ٱلْوَعْدُ إِن كُنتُمْ صَٰدِقِينَ ۝٢٥",
+      "translation_sahih": "And they say, \"When is this promise, if you should be truthful?\"",
+      "translation_phrased": "And they say, “When is this promise, if you are truthful?”",
+      "clauses": [
+        {
+          "id": "67:25:c1",
+          "order": 1,
+          "word_start": 1,
+          "word_end": 4,
+          "text": "وَيَقُولُونَ مَتَىٰ هَٰذَا ٱلۡوَعۡدُ",
+          "translation": "And they say, “When is this promise,",
+          "phrases": [
+            {
+              "id": "67:25:c1:p1",
+              "order": 1,
+              "word_start": 1,
+              "word_end": 1,
+              "text": "وَيَقُولُونَ",
+              "translation": "And they say,"
+            },
+            {
+              "id": "67:25:c1:p2",
+              "order": 2,
+              "word_start": 2,
+              "word_end": 2,
+              "text": "مَتَىٰ",
+              "translation": "“When"
+            },
+            {
+              "id": "67:25:c1:p3",
+              "order": 3,
+              "word_start": 3,
+              "word_end": 4,
+              "text": "هَٰذَا ٱلۡوَعۡدُ",
+              "translation": "is this promise,"
+            }
+          ]
+        },
+        {
+          "id": "67:25:c2",
+          "order": 2,
+          "word_start": 5,
+          "word_end": 7,
+          "text": "إِن كُنتُمۡ صَٰدِقِينَ",
+          "translation": "if you are truthful?”",
+          "phrases": [
+            {
+              "id": "67:25:c2:p1",
+              "order": 1,
+              "word_start": 5,
+              "word_end": 6,
+              "text": "إِن كُنتُمۡ",
+              "translation": "if you are"
+            },
+            {
+              "id": "67:25:c2:p2",
+              "order": 2,
+              "word_start": 7,
+              "word_end": 7,
+              "text": "صَٰدِقِينَ",
+              "translation": "truthful?”"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "verse_key": "67:26",
+      "surah": 67,
+      "ayah": 26,
+      "text_digital_khatt": "قُلْ إِنَّمَا ٱلْعِلْمُ عِندَ ٱللَّهِ وَإِنَّمَآ أَنَا۠ نَذِيرࣱ مُّبِينࣱ ۝٢٦",
+      "translation_sahih": "Say, \"The knowledge is only with Allāh, and I am only a clear warner.\"",
+      "translation_phrased": "Say, “The knowledge is only with Allah, and I am only a clear warner.”",
+      "clauses": [
+        {
+          "id": "67:26:c1",
+          "order": 1,
+          "word_start": 1,
+          "word_end": 5,
+          "text": "قُلۡ إِنَّمَا ٱلۡعِلۡمُ عِندَ ٱللَّهِ",
+          "translation": "Say, “The knowledge is only with Allah,",
+          "phrases": [
+            {
+              "id": "67:26:c1:p1",
+              "order": 1,
+              "word_start": 1,
+              "word_end": 1,
+              "text": "قُلۡ",
+              "translation": "Say,"
+            },
+            {
+              "id": "67:26:c1:p2",
+              "order": 2,
+              "word_start": 2,
+              "word_end": 3,
+              "text": "إِنَّمَا ٱلۡعِلۡمُ",
+              "translation": "“The knowledge is only"
+            },
+            {
+              "id": "67:26:c1:p3",
+              "order": 3,
+              "word_start": 4,
+              "word_end": 5,
+              "text": "عِندَ ٱللَّهِ",
+              "translation": "with Allah,"
+            }
+          ]
+        },
+        {
+          "id": "67:26:c2",
+          "order": 2,
+          "word_start": 6,
+          "word_end": 9,
+          "text": "وَإِنَّمَآ أَنَا۠ نَذِيرٞ مُّبِينٞ",
+          "translation": "and I am only a clear warner.”",
+          "phrases": [
+            {
+              "id": "67:26:c2:p1",
+              "order": 1,
+              "word_start": 6,
+              "word_end": 7,
+              "text": "وَإِنَّمَآ أَنَا۠",
+              "translation": "and I am only"
+            },
+            {
+              "id": "67:26:c2:p2",
+              "order": 2,
+              "word_start": 8,
+              "word_end": 9,
+              "text": "نَذِيرٞ مُّبِينٞ",
+              "translation": "a clear warner.”"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "verse_key": "67:27",
+      "surah": 67,
+      "ayah": 27,
+      "text_digital_khatt": "فَلَمَّا رَأَوْهُ زُلْفَةࣰ سِيٓـَٔتْ وُجُوهُ ٱلَّذِينَ كَفَرُوا۟ وَقِيلَ هَٰذَا ٱلَّذِي كُنتُم  بِهِۦ تَدَّعُونَ ۝٢٧",
+      "translation_sahih": "But when they see it approaching, the faces of those who disbelieve will be distressed, and it will be said, \"This is that for which you used to call.\"",
+      "translation_phrased": "But when they see it close at hand, the faces of those who disbelieved will be distressed, and it will be said, “This is what you used to call for.”",
+      "clauses": [
+        {
+          "id": "67:27:c1",
+          "order": 1,
+          "word_start": 1,
+          "word_end": 3,
+          "text": "فَلَمَّا رَأَوۡهُ زُلۡفَةٗ",
+          "translation": "But when they see it close at hand,",
+          "phrases": [
+            {
+              "id": "67:27:c1:p1",
+              "order": 1,
+              "word_start": 1,
+              "word_end": 1,
+              "text": "فَلَمَّا",
+              "translation": "But when"
+            },
+            {
+              "id": "67:27:c1:p2",
+              "order": 2,
+              "word_start": 2,
+              "word_end": 2,
+              "text": "رَأَوۡهُ",
+              "translation": "they see it"
+            },
+            {
+              "id": "67:27:c1:p3",
+              "order": 3,
+              "word_start": 3,
+              "word_end": 3,
+              "text": "زُلۡفَةٗ",
+              "translation": "close at hand,"
+            }
+          ]
+        },
+        {
+          "id": "67:27:c2",
+          "order": 2,
+          "word_start": 4,
+          "word_end": 7,
+          "text": "سِيٓـَٔتۡ وُجُوهُ ٱلَّذِينَ كَفَرُواْ",
+          "translation": "the faces of those who disbelieved will be distressed,",
+          "phrases": [
+            {
+              "id": "67:27:c2:p1",
+              "order": 1,
+              "word_start": 4,
+              "word_end": 7,
+              "text": "سِيٓـَٔتۡ وُجُوهُ ٱلَّذِينَ كَفَرُواْ",
+              "translation": "the faces of those who disbelieved will be distressed,"
+            }
+          ]
+        },
+        {
+          "id": "67:27:c3",
+          "order": 3,
+          "word_start": 8,
+          "word_end": 13,
+          "text": "وَقِيلَ هَٰذَا ٱلَّذِي كُنتُم بِهِۦ تَدَّعُونَ",
+          "translation": "and it will be said, “This is what you used to call for.”",
+          "phrases": [
+            {
+              "id": "67:27:c3:p1",
+              "order": 1,
+              "word_start": 8,
+              "word_end": 8,
+              "text": "وَقِيلَ",
+              "translation": "and it will be said,"
+            },
+            {
+              "id": "67:27:c3:p2",
+              "order": 2,
+              "word_start": 9,
+              "word_end": 10,
+              "text": "هَٰذَا ٱلَّذِي",
+              "translation": "“This is what"
+            },
+            {
+              "id": "67:27:c3:p3",
+              "order": 3,
+              "word_start": 11,
+              "word_end": 13,
+              "text": "كُنتُم بِهِۦ تَدَّعُونَ",
+              "translation": "you used to call for.”"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "verse_key": "67:28",
+      "surah": 67,
+      "ayah": 28,
+      "text_digital_khatt": "قُلْ أَرَءَيْتُمْ إِنْ أَهْلَكَنِيَ ٱللَّهُ وَمَن مَّعِيَ أَوْ رَحِمَنَا فَمَن يُجِيرُ ٱلْكَٰفِرِينَ مِنْ عَذَابٍ أَلِيمࣲ ۝٢٨",
+      "translation_sahih": "Say, [O Muḥammad], \"Have you considered: whether Allāh should cause my death and those with me or have mercy upon us, who can protect the disbelievers from a painful punishment?\"",
+      "translation_phrased": "Say, “Have you considered: if Allah were to destroy me and those with me, or have mercy on us, who can protect the disbelievers from a painful punishment?”",
+      "clauses": [
+        {
+          "id": "67:28:c1",
+          "order": 1,
+          "word_start": 1,
+          "word_end": 2,
+          "text": "قُلۡ أَرَءَيۡتُمۡ",
+          "translation": "Say, “Have you considered:",
+          "phrases": [
+            {
+              "id": "67:28:c1:p1",
+              "order": 1,
+              "word_start": 1,
+              "word_end": 1,
+              "text": "قُلۡ",
+              "translation": "Say,"
+            },
+            {
+              "id": "67:28:c1:p2",
+              "order": 2,
+              "word_start": 2,
+              "word_end": 2,
+              "text": "أَرَءَيۡتُمۡ",
+              "translation": "“Have you considered:"
+            }
+          ]
+        },
+        {
+          "id": "67:28:c2",
+          "order": 2,
+          "word_start": 3,
+          "word_end": 7,
+          "text": "إِنۡ أَهۡلَكَنِيَ ٱللَّهُ وَمَن مَّعِيَ",
+          "translation": "if Allah were to destroy me and those with me,",
+          "phrases": [
+            {
+              "id": "67:28:c2:p1",
+              "order": 1,
+              "word_start": 3,
+              "word_end": 3,
+              "text": "إِنۡ",
+              "translation": "if"
+            },
+            {
+              "id": "67:28:c2:p2",
+              "order": 2,
+              "word_start": 4,
+              "word_end": 5,
+              "text": "أَهۡلَكَنِيَ ٱللَّهُ",
+              "translation": "Allah were to destroy me"
+            },
+            {
+              "id": "67:28:c2:p3",
+              "order": 3,
+              "word_start": 6,
+              "word_end": 7,
+              "text": "وَمَن مَّعِيَ",
+              "translation": "and those with me,"
+            }
+          ]
+        },
+        {
+          "id": "67:28:c3",
+          "order": 3,
+          "word_start": 8,
+          "word_end": 9,
+          "text": "أَوۡ رَحِمَنَا",
+          "translation": "or have mercy on us,",
+          "phrases": [
+            {
+              "id": "67:28:c3:p1",
+              "order": 1,
+              "word_start": 8,
+              "word_end": 8,
+              "text": "أَوۡ",
+              "translation": "or"
+            },
+            {
+              "id": "67:28:c3:p2",
+              "order": 2,
+              "word_start": 9,
+              "word_end": 9,
+              "text": "رَحِمَنَا",
+              "translation": "have mercy on us,"
+            }
+          ]
+        },
+        {
+          "id": "67:28:c4",
+          "order": 4,
+          "word_start": 10,
+          "word_end": 15,
+          "text": "فَمَن يُجِيرُ ٱلۡكَٰفِرِينَ مِنۡ عَذَابٍ أَلِيمٖ",
+          "translation": "who can protect the disbelievers from a painful punishment?”",
+          "phrases": [
+            {
+              "id": "67:28:c4:p1",
+              "order": 1,
+              "word_start": 10,
+              "word_end": 10,
+              "text": "فَمَن",
+              "translation": "who"
+            },
+            {
+              "id": "67:28:c4:p2",
+              "order": 2,
+              "word_start": 11,
+              "word_end": 11,
+              "text": "يُجِيرُ",
+              "translation": "can protect"
+            },
+            {
+              "id": "67:28:c4:p3",
+              "order": 3,
+              "word_start": 12,
+              "word_end": 12,
+              "text": "ٱلۡكَٰفِرِينَ",
+              "translation": "the disbelievers"
+            },
+            {
+              "id": "67:28:c4:p4",
+              "order": 4,
+              "word_start": 13,
+              "word_end": 15,
+              "text": "مِنۡ عَذَابٍ أَلِيمٖ",
+              "translation": "from a painful punishment?”"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "verse_key": "67:29",
+      "surah": 67,
+      "ayah": 29,
+      "text_digital_khatt": "قُلْ هُوَ ٱلرَّحْمَٰنُ ءَامَنَّا بِهِۦ وَعَلَيْهِ تَوَكَّلْنَاۖ فَسَتَعْلَمُونَ مَنْ هُوَ فِي ضَلَٰلࣲ مُّبِينࣲ ۝٢٩",
+      "translation_sahih": "Say, \"He is the Most Merciful; we have believed in Him, and upon Him we have relied. And you will [come to] know who it is that is in clear error.\"",
+      "translation_phrased": "Say, “He is the Most Merciful; we believe in Him, and upon Him we rely. So you will soon know who it is that is in clear error.”",
+      "clauses": [
+        {
+          "id": "67:29:c1",
+          "order": 1,
+          "word_start": 1,
+          "word_end": 5,
+          "text": "قُلۡ هُوَ ٱلرَّحۡمَٰنُ ءَامَنَّا بِهِۦ",
+          "translation": "Say, “He is the Most Merciful; we believe in Him,",
+          "phrases": [
+            {
+              "id": "67:29:c1:p1",
+              "order": 1,
+              "word_start": 1,
+              "word_end": 1,
+              "text": "قُلۡ",
+              "translation": "Say,"
+            },
+            {
+              "id": "67:29:c1:p2",
+              "order": 2,
+              "word_start": 2,
+              "word_end": 3,
+              "text": "هُوَ ٱلرَّحۡمَٰنُ",
+              "translation": "“He is the Most Merciful;"
+            },
+            {
+              "id": "67:29:c1:p3",
+              "order": 3,
+              "word_start": 4,
+              "word_end": 5,
+              "text": "ءَامَنَّا بِهِۦ",
+              "translation": "we believe in Him,"
+            }
+          ]
+        },
+        {
+          "id": "67:29:c2",
+          "order": 2,
+          "word_start": 6,
+          "word_end": 7,
+          "text": "وَعَلَيۡهِ تَوَكَّلۡنَاۖ",
+          "translation": "and upon Him we rely.",
+          "phrases": [
+            {
+              "id": "67:29:c2:p1",
+              "order": 1,
+              "word_start": 6,
+              "word_end": 6,
+              "text": "وَعَلَيۡهِ",
+              "translation": "and upon Him"
+            },
+            {
+              "id": "67:29:c2:p2",
+              "order": 2,
+              "word_start": 7,
+              "word_end": 7,
+              "text": "تَوَكَّلۡنَاۖ",
+              "translation": "we rely."
+            }
+          ]
+        },
+        {
+          "id": "67:29:c3",
+          "order": 3,
+          "word_start": 8,
+          "word_end": 13,
+          "text": "فَسَتَعۡلَمُونَ مَنۡ هُوَ فِي ضَلَٰلٖ مُّبِينٖ",
+          "translation": "So you will soon know who it is that is in clear error.”",
+          "phrases": [
+            {
+              "id": "67:29:c3:p1",
+              "order": 1,
+              "word_start": 8,
+              "word_end": 8,
+              "text": "فَسَتَعۡلَمُونَ",
+              "translation": "So you will soon know"
+            },
+            {
+              "id": "67:29:c3:p2",
+              "order": 2,
+              "word_start": 9,
+              "word_end": 10,
+              "text": "مَنۡ هُوَ",
+              "translation": "who it is"
+            },
+            {
+              "id": "67:29:c3:p3",
+              "order": 3,
+              "word_start": 11,
+              "word_end": 13,
+              "text": "فِي ضَلَٰلٖ مُّبِينٖ",
+              "translation": "that is in clear error.”"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "verse_key": "67:30",
+      "surah": 67,
+      "ayah": 30,
+      "text_digital_khatt": "قُلْ أَرَءَيْتُمْ إِنْ أَصْبَحَ مَآؤُكُمْ غَوْرࣰا فَمَن يَأْتِيكُم بِمَآءࣲ مَّعِينِۭ ۝٣٠",
+      "translation_sahih": "Say, \"Have you considered: if your water was to become sunken [into the earth], then who could bring you flowing water?\"",
+      "translation_phrased": "Say, “Have you considered: if your water were to sink away, who then could bring you flowing water?”",
+      "clauses": [
+        {
+          "id": "67:30:c1",
+          "order": 1,
+          "word_start": 1,
+          "word_end": 2,
+          "text": "قُلۡ أَرَءَيۡتُمۡ",
+          "translation": "Say, “Have you considered:",
+          "phrases": [
+            {
+              "id": "67:30:c1:p1",
+              "order": 1,
+              "word_start": 1,
+              "word_end": 1,
+              "text": "قُلۡ",
+              "translation": "Say,"
+            },
+            {
+              "id": "67:30:c1:p2",
+              "order": 2,
+              "word_start": 2,
+              "word_end": 2,
+              "text": "أَرَءَيۡتُمۡ",
+              "translation": "“Have you considered:"
+            }
+          ]
+        },
+        {
+          "id": "67:30:c2",
+          "order": 2,
+          "word_start": 3,
+          "word_end": 6,
+          "text": "إِنۡ أَصۡبَحَ مَآؤُكُمۡ غَوۡرٗا",
+          "translation": "if your water were to sink away,",
+          "phrases": [
+            {
+              "id": "67:30:c2:p1",
+              "order": 1,
+              "word_start": 3,
+              "word_end": 3,
+              "text": "إِنۡ",
+              "translation": "if"
+            },
+            {
+              "id": "67:30:c2:p2",
+              "order": 2,
+              "word_start": 4,
+              "word_end": 6,
+              "text": "أَصۡبَحَ مَآؤُكُمۡ غَوۡرٗا",
+              "translation": "your water were to sink away,"
+            }
+          ]
+        },
+        {
+          "id": "67:30:c3",
+          "order": 3,
+          "word_start": 7,
+          "word_end": 10,
+          "text": "فَمَن يَأۡتِيكُم بِمَآءٖ مَّعِينِۭ",
+          "translation": "who then could bring you flowing water?”",
+          "phrases": [
+            {
+              "id": "67:30:c3:p1",
+              "order": 1,
+              "word_start": 7,
+              "word_end": 7,
+              "text": "فَمَن",
+              "translation": "who then"
+            },
+            {
+              "id": "67:30:c3:p2",
+              "order": 2,
+              "word_start": 8,
+              "word_end": 8,
+              "text": "يَأۡتِيكُم",
+              "translation": "could bring you"
+            },
+            {
+              "id": "67:30:c3:p3",
+              "order": 3,
+              "word_start": 9,
+              "word_end": 10,
+              "text": "بِمَآءٖ مَّعِينِۭ",
+              "translation": "flowing water?”"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
