@@ -1,0 +1,39 @@
+# Replace version, license and checksum values with verified release metadata.
+sources:
+  EQTB:
+    display_name: Extended Quranic Treebank / NoorBayan Quranic
+    dataset_url: https://data.mendeley.com/datasets/rk96pn66m4/1
+    repository_url: https://github.com/NoorBayan/Quranic
+    version: "RECORD_EXACT_RELEASE_OR_COMMIT"
+    license: "VERIFY_CURRENT_DATA_LICENSE_AND_ATTRIBUTION"
+    artifacts:
+      main_tokens_syntax:
+        filename: Quranic.csv
+        encoding: UTF-16
+        delimiter: TAB
+        primary_token_locator: [sentence_id, token_id]
+        source_record_id_field: tid
+      relation_codebook:
+        filename: RelLabels.csv
+      pos_codebook:
+        filename: CAPoS.csv
+      constituent_codebook:
+        filename: ConstituentsTags.csv
+      morphology_codebooks:
+        filename: CAMorphFeatures.xlsx
+        sheets: 13
+      lemma_lexicon:
+        filename: CALemmaLexicon.csv
+      root_lexicon:
+        filename: CARootLexicon.csv
+  QAC_MORPH_04:
+    display_name: Quranic Arabic Corpus morphology 0.4
+    corpus_url: https://corpus.quran.com/
+    version: "0.4"
+    license: "VERIFY_QAC_DATA_USE_TERMS"
+    artifacts:
+      morphology:
+        filename: quranic-corpus-morphology-0.4.txt
+        encoding: UTF-8-SIG
+        delimiter: TAB
+        primary_locator: [surah, ayah, word, segment]

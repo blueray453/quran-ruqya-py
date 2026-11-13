@@ -69,3 +69,19 @@ NOTE: Can you do it in memory. How to do it using bartch models. how can i make 
 NOTE: make a html prototype that show the full capability of this dataset using mulk.json and what it can do. for example if highlifht all clause, phase amd word with different color and give their meaning in both english and bangla. Give the analysis. Maybe highlish the phrases everywhere is the text. maybe highlight same word everywhere in the text. Give analysis. I am not understanding the capabilities. So show and also explain what we can do
 
 NOTE: How can we make it better. for example, i think here the key is annotations. Should i make files for language seperate. Should we seperate mulk.json by language. What is the best format to represent the data. At this moment if something change, it is not clear. Should we use some other format so that `git diff` shows what changed. Think completely.
+
+NOTE: What about normalizing. CONVENTIONS.md does not seem to have anything about that
+
+NOTE: Ayah-by-Ayah and Word-by-Word formats already exist. Are we not just doing phrase by phrase and claude by clause.
+
+
+IT should be
+
+
+Surah: surah_id, names, revelation type, ayah count
+Ayah: surah_id, ayah_number, text, juz/hizb/manzil context
+Clause
+Phrase
+Word: surah_id, ayah_number, word_position, text, root/lemma/POS
+
+The two layers are missing. word layer will need modification.

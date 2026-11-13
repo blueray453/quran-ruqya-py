@@ -1,0 +1,17 @@
+Continue the Quranic Phrase & Clause Annotation project using this handoff package.
+
+First read:
+1. README.md
+2. docs/PROJECT_HANDOFF.md
+3. docs/ARCHITECTURE.md
+4. docs/SOURCE_INVENTORY.md
+5. docs/ANNOTATION_MODEL.md
+6. docs/ROADMAP.md
+
+Follow the central rule: EQTB, QAC and other existing datasets are immutable reference sources. Our new dataset must contain only genuinely new phrase/clause boundaries, relationships, classifications, provenance and review decisions. Do not copy existing text, tokens, morphology, roots, lemmas, POS, dependencies, codebooks or lexicons into the new annotation dataset.
+
+Immediate task: design and implement read-only source adapters and a reference resolver for EQTB and QAC. Then make a small Surah Al-Mulk phrase-level proof of concept. Reuse existing EQTB phrase/constituent records where they already provide the required entity. Create new annotations only for missing/incomplete information. Preserve nested and overlapping structures, and keep phrase and clause taxonomies separate.
+
+The six EQTB auxiliary files and the user's Surah 67 summary are in this package. The full EQTB Quranic.csv and QAC morphology export are not included; obtain their paths from the user if they are needed for execution.
+
+The scripts under prototype/ are exploratory legacy tools only. They are not the final reference-only architecture.

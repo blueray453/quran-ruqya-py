@@ -1,0 +1,67 @@
+# Initial scaffold only. Labels and definitions require linguistic review.
+# Keep independent dimensions separate. Do not infer a label solely from a POS tag.
+phrase:
+  structural_types:
+    - id: noun_phrase
+      arabic: ""
+      definition: "To be defined against the adopted Arabic grammar framework."
+    - id: prepositional_phrase
+      arabic: "شبه الجملة / جار ومجرور"
+      definition: "Reuse exact EQTB PP entities where applicable; do not duplicate."
+    - id: adjective_phrase
+      arabic: ""
+      definition: "Pending definition."
+    - id: adverbial_phrase
+      arabic: ""
+      definition: "Pending definition."
+    - id: verb_phrase
+      arabic: ""
+      definition: "Use only if supported by the adopted grammatical framework."
+
+clause:
+  structural_types:
+    - id: nominal_clause
+      arabic: "الجملة الاسمية"
+    - id: verbal_clause
+      arabic: "الجملة الفعلية"
+    - id: conditional_construction
+      arabic: "الشرط"
+    - id: relative_clause
+      arabic: "صلة الموصول"
+    - id: subordinate_clause
+      arabic: "الجملة التابعة / المصدر المؤول بحسب التحليل"
+  grammatical_functions:
+    - id: condition
+      arabic: "الشرط"
+    - id: conditional_result
+      arabic: "جواب الشرط"
+    - id: circumstantial
+      arabic: "الحال"
+    - id: causal
+      arabic: "التعليل"
+    - id: purpose
+      arabic: "الغاية"
+  speech_acts:
+    - id: declarative
+      arabic: "الخبر"
+    - id: imperative
+      arabic: "الأمر"
+    - id: prohibition
+      arabic: "النهي"
+    - id: interrogative
+      arabic: "الاستفهام"
+    - id: vocative
+      arabic: "النداء"
+  rhetorical_functions:
+    - id: emphasis
+      arabic: "التوكيد"
+    - id: oath
+      arabic: "القسم"
+    - id: warning
+      arabic: "الإنذار"
+    - id: threat
+      arabic: "الوعيد"
+    - id: promise
+      arabic: "الوعد"
+    - id: glad_tidings
+      arabic: "التبشير"

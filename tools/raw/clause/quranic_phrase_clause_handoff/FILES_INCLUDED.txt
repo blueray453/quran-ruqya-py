@@ -1,0 +1,10 @@
+Included:
+- Six EQTB auxiliary files supplied by the user.
+- Surah 67 dataset summary supplied by the user.
+- Latest exploratory EQTB+QAC pipeline script.
+- Earlier exploratory clause extraction script.
+- Project documentation, proposed schema, taxonomy scaffold and source registry template.
+
+Not included:
+- Main EQTB Quranic.csv (approximately 50 MB; not supplied as an accessible standalone file in this handoff session).
+- QAC morphology 0.4 export (not supplied as a file in this handoff session).
