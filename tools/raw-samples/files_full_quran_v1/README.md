@@ -57,3 +57,15 @@ It never sees tags, sentence ids or mined rules. Every reply is validated (tilin
 
 `--data-root` is your QUL folder (quran-script/wbw/..., english-translation/..., bangla-translation/...). Token usage per call is logged to `annotations/usage.jsonl`.
 After checking an ayah by hand, change its status to `reviewed` so it is never regenerated.
+
+To start the new chat
+
+Attach the zip and paste the starter prompt at the end of HANDOFF.md (section 11). Replace the bracket at the end with what you want first. I’d suggest step 1 of the next steps: run the generator on Surah 67 with your chosen model and compare it with the Al-Mulk annotation.
+
+One thing to do on your side: the converter output you generated went into your current folder, so move the surah-NNN.json files into quranic-treebank/data/.
+
+NOTE: Can you do it in memory. How to do it using bartch models. how can i make this cheap
+
+NOTE: make a html prototype that show the full capability of this dataset using mulk.json and what it can do. for example if highlifht all clause, phase amd word with different color and give their meaning in both english and bangla. Give the analysis. Maybe highlish the phrases everywhere is the text. maybe highlight same word everywhere in the text. Give analysis. I am not understanding the capabilities. So show and also explain what we can do
+
+NOTE: How can we make it better. for example, i think here the key is annotations. Should i make files for language seperate. Should we seperate mulk.json by language. What is the best format to represent the data. At this moment if something change, it is not clear. Should we use some other format so that `git diff` shows what changed. Think completely.
