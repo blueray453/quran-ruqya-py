@@ -103,3 +103,103 @@ You already have every dataset the whole-Quran pipeline needs. They are all in y
 3. **A spec file per surah**, as proposed earlier, since one file for the whole Quran would be too large to edit.
 
 I haven't made these changes yet. Do you want me to start with the build and the extraction, so you can check all 114 surahs align before any annotation work begins?
+
+Let me measure the real sizes first, so the batching numbers come from your data and not from guesses.
+
+My input measurement had a bug. It skipped the word lines and counted only the two reference translations. Let me fix and re-measure.
+
+You don't generate it in one go. You split the work into small independent batches, validate every batch with a script, and keep the model's output as the saved artifact. Context size is not a constraint for any single batch. The real constraint is keeping 195 or so separate batches consistent with each other, since none remembers the others.
+
+## How big the job is
+
+I measured Al-Mulk and scaled by word count, 77,432 words against its 333. These are rough estimates, with the token range assuming 2.5 to 3.5 characters per token:
+
+| | Per ayah (Al-Mulk) | Whole Quran |
+|---|---|---|
+| What the model reads (indexed Arabic words, both word glosses, both reference translations) | about 635 characters | about 1.3M to 1.8M tokens |
+| What it writes (the `[start, end, English, Bangla]` spec) | about 310 characters | about 0.6M to 0.9M tokens, roughly a 2 MB spec |
+
+On top of that, each batch repeats a fixed prompt of conventions and examples, which I'd guess at a few thousand tokens. The ayahs and words in Al-Mulk are shorter than average, so treat the totals as a floor.
+
+## Pipeline
+
+| Stage | Done by | What happens |
+|---|---|---|
+| 0. Pilot | you and me, interactively | Annotate about five varied surahs together: a short one, a long one, one with long ayahs, one with dialogue. This fixes the conventions file and gives the worked examples. |
+| 1. Make batches | script | Group consecutive ayahs by word count, about 300 to 400 words per batch. Never split an ayah, and give a very long ayah its own batch. That makes about 200 batches. |
+| 2. Generate | model, via API | Each call gets only the batch's Arabic words (indexed), the word glosses, the two reference translations, the conventions and a few fixed examples. It returns compact JSON. |
+| 3. Validate and retry | script | Reject output that breaks the tiling, isn't valid JSON, has Latin letters in the Bangla, or has unbalanced quotes. The error is sent back for up to two retries, and anything still failing is marked `needs_human`. |
+| 4. Flag | script | List disagreements with the treebank (sentence starts, split prepositional phrases) and the same Arabic with different English or Bangla. |
+| 5. Review | you | Check everything flagged, plus a sample of about 5%. The Bangla needs a Bangla reader. |
+| 6. Build | script | The normal build, per surah. |
+
+## Handling consistency and context
+
+- **No memory between batches.** The fix is fixed inputs: the same `CONVENTIONS.md` and the same few examples in every call. I'd also add a **terminology glossary** of Arabic term to fixed English and Bangla rendering, for example رَبّ, آمَنُوا, and the Bangla forms of Allah and Rahman. This makes terms consistent without influencing where boundaries go.
+- **Context across ayahs.** A quote or sentence can run across an ayah boundary, as with "Say, “…" in 67:23 and 24. The script passes the previous ayah's last clause and whether a quote is still open, which it computes by counting quote marks. The model never has to remember it.
+- **Keep the tags out of the prompt.** The model sees Arabic, glosses, reference translations and conventions only. If it saw tags, sentence ids or mined rules, the later rule statistics would partly measure the model following them.
+- **Keep the output.** The model won't split the same text identically on every run, so each ayah's result is saved with a status (`auto`, `needs_human` or `reviewed`), the model name and the prompt version. Re-running an ayah means bumping the prompt version on purpose.
+- **Resume.** Because each ayah has a status, an interrupted run skips everything already validated.
+
+## Where the files go
+
+One spec per surah, for example `annotations/surah-067.json`, with a meta block for model and prompt version and a status per ayah. This replaces the single `mulk_spec.json`, which has one phrase list for the whole surah and no per-ayah status.
+
+## Two ways to run it
+
+- **API script.** It runs unattended, resumes cleanly, and costs the tokens above. It needs an API key, and I can't test live calls from my sandbox, so I'd give you a tested prompt builder and validator and a `--dry-run` mode.
+- **With me, interactively.** This works for the pilot but not at scale, because 200 batches would be 200 turns.
+
+I'd do the pilot with you first, then the API run for the rest.
+
+Do you have API access you can use for the full run? That decides whether I write the generation script or build around interactive batches.
+
+You have OpenRouter, so I'm writing the generator around its API. I can't call it from my sandbox, because I have no key and no access to the service. So I'm building it with a `--dry-run` mode and a mock-response mode, and testing the whole pipeline offline, using Al-Mulk as the stand-in for a model reply.
+
+The happy path passes, but my test harness had a bug in how it broke the answers. I'm fixing it and re-running the failure and resume tests.
+
+I've written the OpenRouter generator. I tested everything except the live API calls, which I can't reach from my sandbox. The request follows OpenRouter's OpenAI-style chat-completions format, so the first real run is the actual test.
+
+## How to run it
+
+```bash
+export OPENROUTER_API_KEY=...
+cd mulk-dataset
+
+# 1. See exactly what the model would receive, with no API call
+python3 scripts/generate_spec.py --data-root /path/to/your/qul/folder --surah 67 --dry-run
+
+# 2. One surah for real (you choose the model slug)
+python3 scripts/generate_spec.py --data-root /path/to/your/qul/folder --surah 67 --model <openrouter-model-slug>
+
+# 3. Everything. It is safe to interrupt and re-run, because finished ayahs are skipped
+python3 scripts/generate_spec.py --data-root /path/to/your/qul/folder --surahs 1-114 --model <openrouter-model-slug>
+```
+
+`--data-root` is your QUL folder, so the script reads the full QPC, Sahih, Zakaria and word-gloss files directly from your tree. It refuses to run without a key and a model unless you use `--dry-run`. Use `--retry-failed` to re-ask the ayahs that failed.
+
+## What it does
+
+- **Batches** are consecutive ayahs of one surah, up to 350 words each, never splitting an ayah. Al-Mulk was 1 batch at the default, or 3 at 120 words. Each prompt was about 13,000 to 15,000 characters in my dry-run.
+- **What the model sees:** the indexed Arabic words, both word glosses, the two reference translations, `CONVENTIONS.md` with three worked examples, and a starter glossary. It sees no tags, sentence ids or mined rules.
+- **Quote state** carries across ayahs. The previous ayah's text and the count of still-open quotes go into the next prompt, which handles speech that runs across ayahs.
+- **Validation of every ayah:** valid JSON, exact word tiling, Bengali script only in the Bangla, Latin only in the English, and quote balance. An ayah that fails is sent back with the error, up to two times, and then marked `needs_human`. Other ayahs in the same batch are kept.
+- **Output** goes to `annotations/surah-NNN.json`, with the clauses in `ayahs` in the same shape the build already reads, plus a per-ayah status and the model and prompt hash. Token usage is logged in `annotations/usage.jsonl`.
+
+## What I tested offline
+
+I used the Al-Mulk annotation as the stand-in model reply:
+- The happy path gave 30 of 30 ayahs accepted, and the output matched the original spec exactly.
+- Four deliberately broken replies (a tiling gap, Latin letters in the Bangla, a malformed phrase, a missing ayah) were all caught and marked `needs_human`. The other ayahs in the batch were still saved.
+- A plain re-run skipped everything finished, and `--retry-failed` fixed only the failed ones.
+- A quote opened in one ayah was carried into the next and closed there.
+
+## What it can't do
+
+- **It can't judge translation quality.** Passing validation means the output is well-formed, not that it's good. The Bangla in particular needs a Bangla reader.
+- **The examples are my drafts.** The three in `CONVENTIONS.md` come from Al-Mulk, so replace them with ones you've reviewed after the pilot. The 10-entry glossary is only a starter.
+- **The build still reads the old file.** It reads `annotations/mulk_spec.json`. It needs a small change to loop over the `surah-NNN.json` files before it can build more than Al-Mulk.
+
+## Suggested first run
+
+Run Surah 67 through your chosen model. Al-Mulk already has an annotation, so you can compare where the model splits differently from mine, as a quick measure of how closely a model follows the conventions. I can write the comparison script, and it would tell you whether the conventions need tightening before you spend on the full run.

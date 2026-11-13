@@ -1,0 +1,562 @@
+[
+ {
+  "label": "gen",
+  "arabic": "مجرور"
+ },
+ {
+  "label": "Pred",
+  "arabic": "خبر"
+ },
+ {
+  "label": "Adj",
+  "arabic": "صفة"
+ },
+ {
+  "label": "cog",
+  "arabic": "مفعول مطلق"
+ },
+ {
+  "label": "cert",
+  "arabic": "تحقيق"
+ },
+ {
+  "label": "Pass",
+  "arabic": "نائب فاعل"
+ },
+ {
+  "label": "state",
+  "arabic": "بيان"
+ },
+ {
+  "label": "ans",
+  "arabic": "جواب"
+ },
+ {
+  "label": "neg",
+  "arabic": "نفي"
+ },
+ {
+  "label": "intg",
+  "arabic": "استفهام"
+ },
+ {
+  "label": "sub",
+  "arabic": "صلة"
+ },
+ {
+  "label": "voc",
+  "arabic": "منادى"
+ },
+ {
+  "label": "circ",
+  "arabic": "حال"
+ },
+ {
+  "label": "prp",
+  "arabic": "المفعول لأجله"
+ },
+ {
+  "label": "exp",
+  "arabic": "مستثني"
+ },
+ {
+  "label": "sup",
+  "arabic": "زائد"
+ },
+ {
+  "label": "caus",
+  "arabic": "سببية"
+ },
+ {
+  "label": "conj",
+  "arabic": "معطوف"
+ },
+ {
+  "label": "Spec",
+  "arabic": "تمييز"
+ },
+ {
+  "label": "fut",
+  "arabic": "استقبال"
+ },
+ {
+  "label": "res",
+  "arabic": "حصر"
+ },
+ {
+  "label": "amd",
+  "arabic": "استدراك"
+ },
+ {
+  "label": "link",
+  "arabic": "متعلق"
+ },
+ {
+  "label": "impv",
+  "arabic": "أمر"
+ },
+ {
+  "label": "exl",
+  "arabic": "تفصيل"
+ },
+ {
+  "label": "Poss",
+  "arabic": "مضاف إليه"
+ },
+ {
+  "label": "emph",
+  "arabic": "توكيد"
+ },
+ {
+  "label": "ret",
+  "arabic": "اضراب"
+ },
+ {
+  "label": "Cpnd",
+  "arabic": "مركب"
+ },
+ {
+  "label": "eq",
+  "arabic": "تسوية"
+ },
+ {
+  "label": "prev",
+  "arabic": "كاف"
+ },
+ {
+  "label": "sur",
+  "arabic": "فجاءة"
+ },
+ {
+  "label": "Subj",
+  "arabic": "فاعل"
+ },
+ {
+  "label": "avr",
+  "arabic": "ردع"
+ },
+ {
+  "label": "rslt",
+  "arabic": "جواب الشرط"
+ },
+ {
+  "label": "imrs",
+  "arabic": "جواب أمر"
+ },
+ {
+  "label": "int",
+  "arabic": "تفسير"
+ },
+ {
+  "label": "Pro",
+  "arabic": "نهي"
+ },
+ {
+  "label": "exh",
+  "arabic": "تحضيض"
+ },
+ {
+  "label": "inc",
+  "arabic": "ابتداء"
+ },
+ {
+  "label": "Obj",
+  "arabic": "مفعول به"
+ },
+ {
+  "label": "cond",
+  "arabic": "شرط"
+ },
+ {
+  "label": "App",
+  "arabic": "بدل"
+ },
+ {
+  "label": "subj <<kan>>",
+  "arabic": "اسم كان"
+ },
+ {
+  "label": "pred <<kan>>",
+  "arabic": "خبر كان"
+ },
+ {
+  "label": "subj <<tkon>>",
+  "arabic": "اسم تكون"
+ },
+ {
+  "label": "pred <<tkon>>",
+  "arabic": "خبر تكون"
+ },
+ {
+  "label": "subj <<yk>>",
+  "arabic": "اسم يك"
+ },
+ {
+  "label": "pred <<yk>>",
+  "arabic": "خبر يك"
+ },
+ {
+  "label": "subj <<tk>>",
+  "arabic": "اسم تك"
+ },
+ {
+  "label": "pred <<tk>>",
+  "arabic": "خبر تك"
+ },
+ {
+  "label": "subj <<lakun>>",
+  "arabic": "اسم لاكن"
+ },
+ {
+  "label": "pred <<lakun>>",
+  "arabic": "خبر لاكن"
+ },
+ {
+  "label": "subj <<akn>>",
+  "arabic": "اسم اكن"
+ },
+ {
+  "label": "pred <<akn>>",
+  "arabic": "خبر اكن"
+ },
+ {
+  "label": "subj <<nkon>>",
+  "arabic": "اسم نكون"
+ },
+ {
+  "label": "pred <<nkon>>",
+  "arabic": "خبر نكون"
+ },
+ {
+  "label": "subj <<nkn>>",
+  "arabic": "اسم نكن"
+ },
+ {
+  "label": "pred <<nkn>>",
+  "arabic": "خبر نكن"
+ },
+ {
+  "label": "subj <<kn>>",
+  "arabic": "اسم كن"
+ },
+ {
+  "label": "pred <<kn>>",
+  "arabic": "خبر كن"
+ },
+ {
+  "label": "subj <<tkn>>",
+  "arabic": "اسم تكن"
+ },
+ {
+  "label": "pred <<tkn>>",
+  "arabic": "خبر تكن"
+ },
+ {
+  "label": "subj <<tknm>>",
+  "arabic": "اسم تكنۢ"
+ },
+ {
+  "label": "pred <<tknm>>",
+  "arabic": "خبر تكنۢ"
+ },
+ {
+  "label": "subj <<kon>>",
+  "arabic": "اسم كون"
+ },
+ {
+  "label": "pred <<kon>>",
+  "arabic": "خبر كون"
+ },
+ {
+  "label": "subj <<ykon>>",
+  "arabic": "اسم يكون"
+ },
+ {
+  "label": "pred <<ykon>>",
+  "arabic": "خبر يكون"
+ },
+ {
+  "label": "subj <<akon>>",
+  "arabic": "اسم اكون"
+ },
+ {
+  "label": "pred <<akon>>",
+  "arabic": "خبر اكون"
+ },
+ {
+  "label": "subj <<kant>>",
+  "arabic": "اسم كانت"
+ },
+ {
+  "label": "pred <<kant>>",
+  "arabic": "خبر كانت"
+ },
+ {
+  "label": "subj <<ykn>>",
+  "arabic": "اسم يكن"
+ },
+ {
+  "label": "pred <<ykn>>",
+  "arabic": "خبر يكن"
+ },
+ {
+  "label": "subj <<nko>>",
+  "arabic": "اسم نك"
+ },
+ {
+  "label": "pred <<nko>>",
+  "arabic": "خبر نك"
+ },
+ {
+  "label": "subj <<ka>>",
+  "arabic": "اسم ك"
+ },
+ {
+  "label": "pred <<ka>>",
+  "arabic": "خبر ك"
+ },
+ {
+  "label": "subj <<zala>>",
+  "arabic": "اسم ظل"
+ },
+ {
+  "label": "pred <<zala>>",
+  "arabic": "خبر ظل"
+ },
+ {
+  "label": "subj <<yazal>>",
+  "arabic": "اسم يزال"
+ },
+ {
+  "label": "pred <<yazal>>",
+  "arabic": "خبر يزال"
+ },
+ {
+  "label": "subj <<lays>>",
+  "arabic": "اسم ليس"
+ },
+ {
+  "label": "pred <<lays>>",
+  "arabic": "خبر ليس"
+ },
+ {
+  "label": "subj <<layst>>",
+  "arabic": "اسم ليست"
+ },
+ {
+  "label": "pred <<layst>>",
+  "arabic": "خبر ليست"
+ },
+ {
+  "label": "subj <<tafta'>>",
+  "arabic": "اسم تفتاء"
+ },
+ {
+  "label": "pred <<tafta'>>",
+  "arabic": "خبر تفتاء"
+ },
+ {
+  "label": "subj <<ma>>",
+  "arabic": "اسم ما"
+ },
+ {
+  "label": "pred <<ma>>",
+  "arabic": "خبر ما"
+ },
+ {
+  "label": "subj <<asbah>>",
+  "arabic": "اسم أصبح"
+ },
+ {
+  "label": "pred <<asbah>>",
+  "arabic": "خبر أصبح"
+ },
+ {
+  "label": "subj <<asbaht>>",
+  "arabic": "اسم اصبحت"
+ },
+ {
+  "label": "pred <<asbaht>>",
+  "arabic": "خبر اصبحت"
+ },
+ {
+  "label": "subj <<tusbih>>",
+  "arabic": "اسم تصبح"
+ },
+ {
+  "label": "pred <<tusbih>>",
+  "arabic": "خبر تصبح"
+ },
+ {
+  "label": "subj <<ysbah>>",
+  "arabic": "اسم يصبح"
+ },
+ {
+  "label": "pred <<ysbah>>",
+  "arabic": "خبر يصبح"
+ },
+ {
+  "label": "subj <<barah>>",
+  "arabic": "اسم برح"
+ },
+ {
+  "label": "pred <<barah>>",
+  "arabic": "خبر برح"
+ },
+ {
+  "label": "subj <<dam>>",
+  "arabic": "اسم دام"
+ },
+ {
+  "label": "pred <<dam>>",
+  "arabic": "خبر دام"
+ },
+ {
+  "label": "subj <<dm>>",
+  "arabic": "اسم دم"
+ },
+ {
+  "label": "pred <<dm>>",
+  "arabic": "خبر دم"
+ },
+ {
+  "label": "subj <<las>>",
+  "arabic": "اسم لس"
+ },
+ {
+  "label": "pred <<las>>",
+  "arabic": "خبر لس"
+ },
+ {
+  "label": "subj<<in>>",
+  "arabic": "اسم إن"
+ },
+ {
+  "label": "pred<<in>>",
+  "arabic": "خبر إن"
+ },
+ {
+  "label": "subj<<an>>",
+  "arabic": "اسم أن"
+ },
+ {
+  "label": "pred<<an>>",
+  "arabic": "خبر أن"
+ },
+ {
+  "label": "subj<<en>>",
+  "arabic": "اسم ان"
+ },
+ {
+  "label": "pred<<en>>",
+  "arabic": "خبر ان"
+ },
+ {
+  "label": "subj<<'n>>",
+  "arabic": "اسم أن"
+ },
+ {
+  "label": "pred<<'n>>",
+  "arabic": "خبر أن"
+ },
+ {
+  "label": "subj<<yin>>",
+  "arabic": "اسم أن"
+ },
+ {
+  "label": "pred<<yin>>",
+  "arabic": "خبر أن"
+ },
+ {
+  "label": "subj <<ka'ana>>",
+  "arabic": "اسم كأن"
+ },
+ {
+  "label": "pred <<ka'ana>>",
+  "arabic": "خبر كأن"
+ },
+ {
+  "label": "subj <<lakin>>",
+  "arabic": "اسم لكن"
+ },
+ {
+  "label": "pred <<lakin>>",
+  "arabic": "خبر لكن"
+ },
+ {
+  "label": "subj <<layt>>",
+  "arabic": "اسم ليت"
+ },
+ {
+  "label": "pred <<layt>>",
+  "arabic": "خبر ليت"
+ },
+ {
+  "label": "subj <<la>>",
+  "arabic": "اسم لا"
+ },
+ {
+  "label": "pred <<la>>",
+  "arabic": "خبر لا"
+ },
+ {
+  "label": "subj <<lel>>",
+  "arabic": "اسم لعل"
+ },
+ {
+  "label": "pred <<lel>>",
+  "arabic": "خبر لعل"
+ },
+ {
+  "label": "subj <<kad>>",
+  "arabic": "اسم كاد"
+ },
+ {
+  "label": "pred <<kad>>",
+  "arabic": "خبر كاد"
+ },
+ {
+  "label": "subj <<akad>>",
+  "arabic": "اسم اكاد"
+ },
+ {
+  "label": "pred <<akad>>",
+  "arabic": "خبر اكاد"
+ },
+ {
+  "label": "subj <<ykad>>",
+  "arabic": "اسم يكاد"
+ },
+ {
+  "label": "pred <<ykad>>",
+  "arabic": "خبر يكاد"
+ },
+ {
+  "label": "subj <<tkad>>",
+  "arabic": "اسم تكاد"
+ },
+ {
+  "label": "pred <<tkad>>",
+  "arabic": "خبر تكاد"
+ },
+ {
+  "label": "subj <<easaa>>",
+  "arabic": "اسم عسى"
+ },
+ {
+  "label": "pred <<easaa>>",
+  "arabic": "خبر عسى"
+ },
+ {
+  "label": "root",
+  "arabic": "root"
+ },
+ {
+  "label": "NonRel",
+  "arabic": "NonRel"
+ },
+ {
+  "label": "_",
+  "arabic": "_"
+ }
+]
