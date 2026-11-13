@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Al-Mulk — Dataset Explorer (loads data/mulk.json)</title>
+<style>
+:root{--bg:#f6f8fa;--card:#fff;--border:#d0d7de;--text:#1f2328;--muted:#57606a;--accent:#0969da}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;line-height:1.5}
+header{background:#0d1117;color:#f0f6fc;padding:14px 0}
+header h1{margin:0 0 3px;font-size:19px;font-weight:700}
+header .sub{font-size:12px;opacity:.72}
+.container{max-width:1480px;margin:0 auto;padding:14px 20px}
+.toolbar{display:flex;gap:12px;flex-wrap:wrap;align-items:center;padding:10px 14px;background:var(--card);border:1px solid var(--border);border-radius:10px;margin-bottom:12px;position:sticky;top:0;z-index:100}
+.toolbar-group{display:flex;gap:5px;align-items:center;font-size:12px}
+.lbl{font-weight:700;color:var(--muted);text-transform:uppercase;font-size:10px;letter-spacing:.5px;margin-right:3px}
+button{padding:4px 9px;border:1px solid var(--border);background:var(--card);border-radius:6px;cursor:pointer;font-size:12px;font-family:inherit;transition:background .12s}
+button:hover{background:#f0f3f6}
+button.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+button:disabled{opacity:.4;cursor:not-allowed}
+input[type=search],input[type=text]{padding:5px 9px;border:1px solid var(--border);border-radius:6px;font-size:12px;font-family:inherit;width:200px}
+.main{display:grid;grid-template-columns:1fr 420px;gap:16px}
+@media(max-width:1100px){.main{grid-template-columns:1fr}.panel{position:static !important;height:auto !important}}
+#reader{display:flex;flex-direction:column;gap:10px}
+.ayah-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px}
+.ayah-card .head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px;gap:8px;flex-wrap:wrap}
+.ayah-card .key{font-family:'SF Mono',Consolas,monospace;font-size:12px;color:var(--accent);font-weight:700}
+.ayah-card .meta{font-size:11px;color:var(--muted)}
+.badge{display:inline-block;padding:1px 6px;border-radius:4px;background:#e6f0ff;color:#0969da;font-size:10px;font-weight:700;margin-left:4px;cursor:help}
+.badge.mut{background:#fff4e5;color:#a35c00}
+.arabic{direction:rtl;text-align:right;font-family:'Amiri','Scheherazade New','Traditional Arabic',serif;font-size:28px;line-height:2.3;padding:4px 0}
+.word{display:inline-block;padding:2px 5px;margin:1px;cursor:pointer;border-radius:4px;transition:background .15s,box-shadow .15s;vertical-align:top;position:relative}
+.word:hover{background:#ffe9a3 !important;z-index:2}
+.wq{font-size:11px;color:#c66a00;vertical-align:super;margin-left:1px}
+.cat-N{background:#e3f2fd}.cat-V{background:#ffebee}.cat-P{background:#e8f5e9}.cat-PRON{background:#f3e5f5}.cat-REL{background:#fffde7}
+.cat-NEG,.cat-COND,.cat-INTG{background:#fff3e0}.cat-CONJ,.cat-REM,.cat-CIRC,.cat-SUB,.cat-ACC,.cat-CERT,.cat-RES,.cat-ANS{background:#e0f2f1}
+.cat-ADJ,.cat-PCPL{background:#f1f8e9}.cat-PN{background:#eceff1}.cat-LOC,.cat-T{background:#efebe9}.cat-DEM{background:#fff8e1}
+.cat-RET,.cat-SUR,.cat-RSLT,.cat-FUT{background:#ede7f6}
+.word.hl{background:#ffe066 !important;font-weight:700;box-shadow:0 0 0 2px #f5b800 !important;z-index:3}
+.word.sel{box-shadow:0 0 0 2px #0969da !important;z-index:4;background:#dbeafe !important}
+.translations{margin-top:8px;padding-top:8px;border-top:1px dashed var(--border)}
+.translations .en,.translations .bn{font-size:13.5px;line-height:1.55;margin:3px 0}
+.translations .lbl{display:inline-block;min-width:26px;font-size:10px}
+.panel{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;position:sticky;top:12px;height:calc(100vh - 24px);overflow-y:auto}
+.panel h3{margin:0 0 6px;font-size:10px;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);font-weight:700}
+.panel h3:not(:first-child){margin-top:14px}
+.panel-tabs{display:flex;gap:3px;margin-bottom:10px;flex-wrap:wrap}
+.panel-tabs button{flex:1;font-size:11px;padding:5px 2px;min-width:60px}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:12px}
+.stat-card{background:#f6f8fa;border-radius:7px;padding:8px 6px;text-align:center}
+.stat-card .num{font-size:18px;font-weight:700;color:var(--accent);line-height:1.1}
+.stat-card .lbl{font-size:9px;color:var(--muted);text-transform:uppercase;font-weight:600;margin-top:1px;letter-spacing:.4px}
+.card{background:#f6f8fa;border-radius:7px;padding:9px 10px;margin-bottom:7px;font-size:13px}
+.card .k{font-size:9.5px;color:var(--muted);text-transform:uppercase;font-weight:700;letter-spacing:.3px;margin-top:6px}
+.card .k:first-child{margin-top:0}
+.card .v{margin-top:1px}
+.card .ar{direction:rtl;font-family:'Amiri',serif;font-size:20px;text-align:right;padding:3px 0;border-bottom:1px solid #e8ebef;margin-bottom:5px}
+.occ{list-style:none;padding:0;margin:5px 0 0;max-height:180px;overflow-y:auto}
+.occ li{padding:3px 7px;background:#fff;border:1px solid #e8ebef;border-radius:4px;margin:2px 0;cursor:pointer;font-size:11px;font-family:monospace;display:flex;justify-content:space-between;gap:6px}
+.occ li:hover{background:#e6f0ff;border-color:var(--accent)}
+.occ li .c{font-size:10px;color:var(--muted)}
+.bar-row{margin:5px 0;font-size:12px}
+.bar-row .head{display:flex;justify-content:space-between;margin-bottom:1px;gap:6px}
+.bar{height:5px;background:var(--accent);border-radius:3px;transition:width .3s}
+.tooltip{position:fixed;background:#0d1117;color:#f0f6fc;padding:9px 12px;border-radius:7px;font-size:12px;line-height:1.5;pointer-events:none;z-index:1000;max-width:380px;box-shadow:0 8px 24px rgba(0,0,0,.24);display:none}
+.tooltip .ar{font-family:'Amiri',serif;font-size:19px;direction:rtl;text-align:right;border-bottom:1px solid #30363d;padding-bottom:4px;margin-bottom:4px}
+.tooltip .row{margin:1px 0}
+.tooltip .label{color:#8b949e;font-weight:600;margin-right:3px;font-size:10.5px}
+.hint{color:var(--muted);font-size:12px;padding:10px 12px;background:#f6f8fa;border-radius:8px;margin-bottom:12px;border-left:3px solid var(--accent)}
+.hint strong{color:var(--text)}
+.err{color:#cf222e;font-weight:600}
+.section-title{margin:24px 0 8px;font-size:17px;font-weight:700}
+.cap-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:9px}
+.cap-card{background:var(--card);border:1px solid var(--border);border-radius:9px;padding:12px}
+.cap-card h4{margin:0 0 4px;font-size:13px;color:var(--accent)}
+.cap-card p{margin:2px 0;font-size:12px;color:#57606a;line-height:1.45}
+.cap-card code{background:#f0f3f6;padding:1px 3px;border-radius:3px;font-size:10.5px}
+.status{font-size:11px;color:var(--muted);padding:5px 9px;background:#f6f8fa;border-radius:5px;font-family:monospace}
+.status.ok{color:#1a7f37;background:#dafbe1}
+.status.err{color:#cf222e;background:#ffebe9}
+</style>
+</head>
+<body>
+<header><div class="container">
+  <h1>Al‑Mulk — Dataset Explorer</h1>
+  <div class="sub">Loads <code style="background:#30363d;padding:1px 5px;border-radius:3px">data/mulk.json</code> at runtime · no embedded data · 30 ayahs · 333 words · 213 phrases · 86 clauses</div>
+</div></header>
+<div class="container">
+  <div class="hint" id="statusHint">
+    <strong>Load status:</strong> <span id="loadStatus">not started</span>
+    <br><span style="font-size:11px">Serve over HTTP (<code>python3 -m http.server</code>) for auto-load, or click <em>Load mulk.json</em> to pick the file directly.</span>
+  </div>
+
+  <div class="toolbar">
+    <div class="toolbar-group">
+      <span class="lbl">Level</span>
+      <button data-level="none" class="active">None</button>
+      <button data-level="word">Word</button>
+      <button data-level="phrase">Phrase</button>
+      <button data-level="clause">Clause</button>
+    </div>
+    <div class="toolbar-group">
+      <span class="lbl">Search</span>
+      <input type="search" id="search" placeholder="root / Arabic / EN / BN" disabled>
+    </div>
+    <div class="toolbar-group">
+      <span class="lbl">Show</span>
+      <label><input type="checkbox" id="showEn" checked disabled> EN</label>
+      <label><input type="checkbox" id="showBn" checked disabled> BN</label>
+    </div>
+    <div class="toolbar-group">
+      <button id="pickFile" disabled>Load mulk.json</button>
+      <input type="file" id="fileInput" accept=".json,application/json" hidden>
+    </div>
+    <div class="toolbar-group">
+      <button id="clearHl" disabled>Clear</button>
+    </div>
+  </div>
+
+  <div class="main">
+    <div id="reader"><div class="hint">Loading…</div></div>
+    <aside class="panel">
+      <div class="panel-tabs">
+        <button data-tab="selection" class="active">Selection</button>
+        <button data-tab="overview">Overview</button>
+        <button data-tab="freq">Frequency</button>
+        <button data-tab="quality">Quality</button>
+        <button data-tab="refs">Refs</button>
+      </div>
+      <div id="panelContent"></div>
+    </aside>
+  </div>
+
+  <h2 class="section-title">What this prototype demonstrates</h2>
+  <div class="cap-grid">
+    <div class="cap-card"><h4>Loaded, not embedded</h4><p>Fetches <code>data/mulk.json</code> at runtime. The UI adapts to whatever schema the file has — no hand-maintained copy.</p></div>
+    <div class="cap-card"><h4>Multi-level view</h4><p>Toggle word / phrase / clause colouring. Word colours use the real <code>cat</code> field (V, N, P, PRON, REL, NEG, CONJ, REM, CIRC…).</p></div>
+    <div class="cap-card"><h4>Bilingual, from the file</h4><p>Per-phrase and per-word glosses come from <code>translations</code> and <code>gloss_en</code>/<code>gloss_bn</code>. Ayah-level <code>reference_translations</code> (Sahih + Zakaria) shown in the Refs tab.</p></div>
+    <div class="cap-card"><h4>Root highlighting</h4><p>Click any word → every word with the same <code>root</code> is highlighted across all 30 ayahs.</p></div>
+    <div class="cap-card"><h4>Phrase grouping</h4><p>Group by Arabic <code>text_norm</code> (repeated Arabic phrases) or by <code>translation_keys.en</code> (same English phrase). Both indexes are built at load.</p></div>
+    <div class="cap-card"><h4>Consistency</h4><p>Quality tab checks: same Arabic phrase → one translation key (0 conflicts in this file). Also verifies phrase and clause tiling.</p></div>
+    <div class="cap-card"><h4>Mutashabihat</h4><p>Each ayah's <code>mutashabihat</code> (phrase repetition across the Qur'an) and <code>matching_ayah</code> are surfaced as clickable references.</p></div>
+    <div class="cap-card"><h4>Morphology, complete</h4><p>Tooltip shows <code>root</code>, <code>lemma</code>, <code>stem</code>, <code>qac_lemma</code>, <code>pos</code>, <code>cat</code>, <code>prefix_tags</code>, <code>definite</code>, <code>suffix_pron</code>, <code>features</code>, and <code>waqf_mark</code>.</p></div>
+    <div class="cap-card"><h4>Waqf-aware</h4><p>Waqf marks displayed as superscript; phrases that end on a waqf are counted in the Quality tab.</p></div>
+    <div class="cap-card"><h4>Frequency</h4><p>Top roots, top phrase keys, top clause keys, and length histograms — all derived from the loaded data.</p></div>
+    <div class="cap-card"><h4>No build step</h4><p>Single HTML file. Point it at any directory containing <code>data/mulk.json</code>, or pick the file manually.</p></div>
+    <div class="cap-card"><h4>Scales</h4><p>Swap <code>data/mulk.json</code> for a combined surah dump and the same UI works — no code change.</p></div>
+  </div>
+</div>
+<div class="tooltip" id="tooltip"></div>
+
+<script>
+// ---- Global state ----
+const STATE = {
+  raw: null,
+  byAyah: {},        // ak -> {meta, words[], phrases[], clauses[]}
+  order: [],         // ['67:1', ...]
+  roots: {},         // root -> [{ak,n}]
+  phraseText: {},    // text_norm -> [{ak,s,e}]
+  phraseKey: {},     // keyEn -> [{ak,s,e}]
+  clauseKey: {},     // keyEn -> [{ak,s,e}]
+  stats: null,
+  level: 'none',
+  selected: null,
+  loadedFrom: '',
+};
+
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const PARTICLES = new Set(['P','NEG','COND','INTG','CONJ','REM','CIRC','SUB','ACC','CERT','RES','ANS','RET','SUR','RSLT','FUT','PREV','PRP','EMPH','CAUS','AMD','AVR','EQ','EXH','EXL','EXP','INC','INT','PRO','VOC','SUP','COM','INL','IMPN','DET','ATT']);
+const posOf = c => c === 'V' ? 'V' : PARTICLES.has(c) ? 'P' : 'N';
+const PHRASE_BG = ['#e3f2fd','#fff3e0','#e8f5e9','#f3e5f5','#fce4ec','#fffde7','#e0f7fa','#f5f5f5'];
+const PHRASE_BD = ['#1976d2','#f57c00','#388e3c','#7b1fa2','#c2185b','#f9a825','#00838f','#616161'];
+const CLAUSE_BD = ['#d32f2f','#1976d2','#388e3c','#f57c00','#7b1fa2','#00796b'];
+
+// ---- Load ----
+async function tryFetch(paths) {
+  for (const p of paths) {
+    try {
+      const r = await fetch(p);
+      if (r.ok) return { path: p, data: await r.json() };
+    } catch (e) { /* try next */ }
+  }
+  return null;
+}
+async function loadData() {
+  setStatus('loading', 'Trying data/mulk.json…');
+  const hit = await tryFetch(['data/mulk.json', 'mulk.json', '../data/mulk.json', './mulk.json']);
+  if (!hit) {
+    setStatus('err', 'fetch failed (CORS on file:// or wrong path). Click "Load mulk.json" to pick the file directly.');
+    return;
+  }
+  setStatus('ok', `Loaded from ${hit.path} (${(JSON.stringify(hit.data).length/1024).toFixed(0)} KB)`);
+  STATE.loadedFrom = hit.path;
+  ingest(hit.data);
+  bootUI();
+}
+function setStatus(kind, msg) {
+  const el = $('#loadStatus');
+  el.textContent = msg;
+  el.className = kind === 'ok' ? 'status ok' : kind === 'err' ? 'status err' : 'status';
+}
+$('#pickFile').addEventListener('click', () => $('#fileInput').click());
+$('#fileInput').addEventListener('change', async e => {
+  const f = e.target.files[0]; if (!f) return;
+  try {
+    const raw = JSON.parse(await f.text());
+    setStatus('ok', `Loaded from ${f.name} (${(f.size/1024).toFixed(0)} KB)`);
+    STATE.loadedFrom = f.name;
+    ingest(raw);
+    bootUI();
+  } catch (err) {
+    setStatus('err', 'Could not parse JSON: ' + err.message);
+  }
+});
+
+// ---- Ingest: map real mulk.json schema -> STATE ----
+function ingest(raw) {
+  STATE.raw = raw;
+  STATE.byAyah = {}; STATE.order = []; STATE.roots = {}; STATE.phraseText = {}; STATE.phraseKey = {}; STATE.clauseKey = {};
+  for (const a of raw.ayahs) {
+    const ak = a.verse_key;
+    STATE.order.push(ak);
+    const words = [];      // by word number
+    const phrases = [];
+    const clauses = [];
+    for (const cl of a.clauses) {
+      const cOut = {
+        start: cl.word_start, end: cl.word_end,
+        en: cl.translations.en, bn: cl.translations.bn,
+        keyEn: cl.translation_keys.en, keyBn: cl.translation_keys.bn,
+        text: cl.text, textNorm: cl.text_norm,
+        pattern: cl.pattern, firstCat: cl.first_cat, firstPrefix: cl.first_prefix,
+        endsWithWaqf: cl.ends_with_waqf, isAyahFinal: cl.is_ayah_final,
+        nWords: cl.n_words, nPhrases: cl.n_phrases,
+        phrases: []
+      };
+      for (const ph of cl.phrases) {
+        const pOut = {
+          start: ph.word_start, end: ph.word_end,
+          en: ph.translations.en, bn: ph.translations.bn,
+          keyEn: ph.translation_keys.en, keyBn: ph.translation_keys.bn,
+          text: ph.text, textNorm: ph.text_norm,
+          pattern: ph.pattern, firstCat: ph.first_cat, lastCat: ph.last_cat,
+          hasWaqf: ph.has_waqf, nWords: ph.n_words,
+          words: []
+        };
+        for (const w of ph.words) {
+          const wOut = {
+            n: w.word, text: w.text, textNorm: w.text_norm,
+            waqf: w.waqf_mark || '',
+            root: w.root || '', lemma: w.lemma || '', stem: w.stem || '',
+            glossEn: w.gloss_en || '', glossBn: w.gloss_bn || '',
+            qacLemma: w.qac_lemma || '',
+            pos: w.pos, cat: w.cat,
+            prefix: w.prefix_tags || '',
+            definite: !!w.definite, suffixPron: !!w.suffix_pron,
+            features: w.features || '',
+            boundaryBefore: w.boundary_before || '',
+            isClauseStart: !!w.is_clause_start,
+            isPhraseStart: !!w.is_phrase_start,
+            prevWaqf: !!w.prev_word_waqf
+          };
+          words[w.word] = wOut;
+          pOut.words.push(wOut);
+        }
+        phrases.push(pOut);
+        cOut.phrases.push(pOut);
+      }
+      clauses.push(cOut);
+    }
+    STATE.byAyah[ak] = {
+      meta: {
+        text: a.text_digital_khatt,
+        nWords: a.n_words,
+        endMarker: a.end_marker,
+        refEn: a.reference_translations.en_sahih,
+        refBn: a.reference_translations.bn_zakaria,
+        phrasedEn: a.translations_phrased.en,
+        phrasedBn: a.translations_phrased.bn,
+        mutashabihat: a.mutashabihat || [],
+        matchingAyah: a.matching_ayah || []
+      },
+      words, phrases, clauses
+    };
+  }
+  // indexes
+  for (const ak of STATE.order) {
+    const A = STATE.byAyah[ak];
+    for (let i = 1; i <= A.meta.nWords; i++) {
+      const w = A.words[i]; if (!w || !w.root) continue;
+      (STATE.roots[w.root] = STATE.roots[w.root] || []).push({ ak, n: i });
+    }
+    for (const p of A.phrases) {
+      (STATE.phraseText[p.textNorm] = STATE.phraseText[p.textNorm] || []).push({ ak, s: p.start, e: p.end });
+      (STATE.phraseKey[p.keyEn] = STATE.phraseKey[p.keyEn] || []).push({ ak, s: p.start, e: p.end });
+    }
+    for (const c of A.clauses) {
+      (STATE.clauseKey[c.keyEn] = STATE.clauseKey[c.keyEn] || []).push({ ak, s: c.start, e: c.end });
+    }
+  }
+  STATE.stats = computeStats();
+}
+
+function computeStats() {
+  let tw = 0, tp = 0, tc = 0, waqfPhraseEnd = 0, waqfTotal = 0;
+  const roots = {}, posDist = {}, pLen = {}, cLen = {};
+  for (const ak of STATE.order) {
+    const A = STATE.byAyah[ak];
+    tw += A.meta.nWords; tp += A.phrases.length; tc += A.clauses.length;
+    for (let i = 1; i <= A.meta.nWords; i++) {
+      const w = A.words[i]; if (!w) continue;
+      if (w.root) roots[w.root] = (roots[w.root] || 0) + 1;
+      posDist[w.cat] = (posDist[w.cat] || 0) + 1;
+      if (w.waqf) waqfTotal++;
+    }
+    for (const p of A.phrases) {
+      pLen[p.nWords] = (pLen[p.nWords] || 0) + 1;
+      if (p.hasWaqf) waqfPhraseEnd++;
+    }
+    for (const c of A.clauses) cLen[c.nWords] = (cLen[c.nWords] || 0) + 1;
+  }
+  return { tw, tp, tc, roots, posDist, pLen, cLen, waqfPhraseEnd, waqfTotal,
+           nUniqueRoots: Object.keys(roots).length,
+           nUniquePhraseKeys: Object.keys(STATE.phraseKey).length,
+           nUniqueClauseKeys: Object.keys(STATE.clauseKey).length };
+}
+
+// ---- UI boot ----
+function bootUI() {
+  ['#search', '#showEn', '#showBn', '#pickFile', '#clearHl'].forEach(s => $(s).disabled = false);
+  renderReader();
+  renderPanel('overview');
+  $$('button[data-level]').forEach(b => b.addEventListener('click', () => {
+    STATE.level = b.dataset.level;
+    $$('button[data-level]').forEach(x => x.classList.toggle('active', x.dataset.level === STATE.level));
+    applyLevel();
+  }));
+  $$('.panel-tabs button').forEach(b => b.addEventListener('click', () => renderPanel(b.dataset.tab)));
+  $('#search').addEventListener('input', onSearch);
+  $('#clearHl').addEventListener('click', clearHl);
+  $('#showEn').addEventListener('change', renderReader);
+  $('#showBn').addEventListener('change', renderReader);
+}
+
+function renderReader() {
+  const R = $('#reader');
+  const showEn = $('#showEn').checked, showBn = $('#showBn').checked;
+  R.innerHTML = STATE.order.map(ak => {
+    const A = STATE.byAyah[ak];
+    const words = [];
+    for (let i = 1; i <= A.meta.nWords; i++) {
+      const w = A.words[i]; if (!w) continue;
+      const wq = w.waqf ? `<span class="wq">${esc(w.waqf)}</span>` : '';
+      words.push(`<span class="word cat-${esc(w.cat)}" data-ak="${ak}" data-i="${i}">${esc(w.text)}${wq}</span>`);
+    }
+    const mut = A.meta.mutashabihat.map(m => `<span class="badge mut" title="Phrase repeats ${m.count}× in ${m.surahs} surahs">mut ${m.id}</span>`).join('');
+    const ma = A.meta.matchingAyah.map(m => `<span class="badge" title="Matches ${m.matched_ayah_key} (score ${m.score}, coverage ${m.coverage}%)">${esc(m.matched_ayah_key)}</span>`).join('');
+    return `<div class="ayah-card" id="card-${ak.replace(':','_')}">
+      <div class="head"><span class="key">${ak}</span><span class="meta">${A.meta.nWords}w · ${A.clauses.length}c · ${A.phrases.length}p ${mut}${ma}</span></div>
+      <div class="arabic">${words.join(' ')}</div>
+      <div class="translations">
+        ${showEn ? `<div class="en"><span class="lbl">EN</span>${esc(A.meta.phrasedEn)}</div>` : ''}
+        ${showBn ? `<div class="bn"><span class="lbl">BN</span>${esc(A.meta.phrasedBn)}</div>` : ''}
+      </div>
+    </div>`;
+  }).join('');
+  applyLevel();
+}
+
+// ---- Level coloring ----
+function applyLevel() {
+  $$('.word').forEach(el => { el.style.background = ''; el.style.boxShadow = ''; el.style.borderBottom = ''; });
+  if (STATE.level === 'none') return;
+  for (const ak of STATE.order) {
+    const A = STATE.byAyah[ak];
+    if (STATE.level === 'phrase') {
+      A.phrases.forEach((p, pi) => {
+        for (let i = p.start; i <= p.end; i++) {
+          const el = document.querySelector(`.word[data-ak="${ak}"][data-i="${i}"]`);
+          if (!el) continue;
+          el.style.background = PHRASE_BG[pi % PHRASE_BG.length];
+          el.style.boxShadow = `inset 3px 0 0 ${PHRASE_BD[pi % PHRASE_BD.length]}, inset -3px 0 0 ${PHRASE_BD[pi % PHRASE_BD.length]}`;
+        }
+      });
+    } else if (STATE.level === 'clause') {
+      A.clauses.forEach((c, ci) => {
+        for (let i = c.start; i <= c.end; i++) {
+          const el = document.querySelector(`.word[data-ak="${ak}"][data-i="${i}"]`);
+          if (el) el.style.borderBottom = `2px solid ${CLAUSE_BD[ci % CLAUSE_BD.length]}`;
+        }
+      });
+    }
+  }
+}
+
+// ---- Word / phrase / clause selection ----
+function clearHl() {
+  $$('.word.hl').forEach(e => e.classList.remove('hl'));
+  $$('.word.sel').forEach(e => e.classList.remove('sel'));
+  STATE.selected = null;
+  renderPanel('selection');
+}
+
+document.addEventListener('click', e => {
+  const w = e.target.closest('.word');
+  if (!w) return;
+  if (!STATE.raw) return;
+  const ak = w.dataset.ak, i = +w.dataset.i;
+  if (e.shiftKey || STATE.level === 'phrase') {
+    const p = STATE.byAyah[ak].phrases.find(x => i >= x.start && i <= x.end);
+    if (p) { e.preventDefault(); selectPhrase(ak, p.start, p.end); return; }
+  }
+  if (e.altKey || STATE.level === 'clause') {
+    const c = STATE.byAyah[ak].clauses.find(x => i >= x.start && i <= x.end);
+    if (c) { e.preventDefault(); selectClause(ak, c.start, c.end); return; }
+  }
+  selectWord(ak, i);
+});
+
+function selectWord(ak, i) {
+  const W = STATE.byAyah[ak].words[i];
+  const P = STATE.byAyah[ak].phrases.find(p => i >= p.start && i <= p.end);
+  const C = STATE.byAyah[ak].clauses.find(c => i >= c.start && i <= c.end);
+  STATE.selected = { type: 'word', ak, i, W, P, C };
+  clearHlVisual();
+  const el = document.querySelector(`.word[data-ak="${ak}"][data-i="${i}"]`);
+  if (el) el.classList.add('sel');
+  if (W.root && STATE.roots[W.root]) {
+    for (const o of STATE.roots[W.root]) {
+      const e = document.querySelector(`.word[data-ak="${o.ak}"][data-i="${o.n}"]`);
+      if (e) e.classList.add('hl');
+    }
+  }
+  renderPanel('selection');
+}
+
+function selectPhrase(ak, s, e) {
+  const P = STATE.byAyah[ak].phrases.find(p => p.start === s && p.end === e);
+  if (!P) return;
+  STATE.selected = { type: 'phrase', ak, s, e, P };
+  clearHlVisual();
+  for (const o of (STATE.phraseKey[P.keyEn] || [])) hlRange(o.ak, o.s, o.e);
+  renderPanel('selection');
+}
+
+function selectClause(ak, s, e) {
+  const C = STATE.byAyah[ak].clauses.find(c => c.start === s && c.end === e);
+  if (!C) return;
+  STATE.selected = { type: 'clause', ak, s, e, C };
+  clearHlVisual();
+  for (const o of (STATE.clauseKey[C.keyEn] || [])) hlRange(o.ak, o.s, o.e);
+  renderPanel('selection');
+}
+
+function hlRange(ak, s, e) {
+  for (let i = s; i <= e; i++) {
+    const el = document.querySelector(`.word[data-ak="${ak}"][data-i="${i}"]`);
+    if (el) el.classList.add('hl');
+  }
+}
+
+function clearHlVisual() {
+  $$('.word.hl').forEach(e => e.classList.remove('hl'));
+  $$('.word.sel').forEach(e => e.classList.remove('sel'));
+}
+
+// ---- Tooltip ----
+const tip = $('#tooltip');
+document.addEventListener('mousemove', e => {
+  const w = e.target.closest('.word');
+  if (!w || !STATE.raw) { tip.style.display = 'none'; return; }
+  const ak = w.dataset.ak, i = +w.dataset.i;
+  const W = STATE.byAyah[ak].words[i]; if (!W) return;
+  const P = STATE.byAyah[ak].phrases.find(p => i >= p.start && i <= p.end);
+  const C = STATE.byAyah[ak].clauses.find(c => i >= c.start && i <= c.end);
+  tip.innerHTML = `<div class="ar">${esc(W.text)}</div>
+    <div class="row"><span class="label">root</span>${esc(W.root || '—')} <span class="label" style="margin-left:8px">lemma</span>${esc(W.lemma || '—')}</div>
+    ${W.qacLemma && W.qacLemma !== W.lemma ? `<div class="row"><span class="label">qac_lemma</span>${esc(W.qacLemma)}</div>` : ''}
+    <div class="row"><span class="label">pos</span>${esc(W.pos)} <span class="label" style="margin-left:8px">cat</span>${esc(W.cat)}${W.prefix ? ' <span class="label" style="margin-left:8px">prefix</span>' + esc(W.prefix) : ''}</div>
+    <div class="row"><span class="label">features</span>${esc(W.features || '—')}</div>
+    ${W.waqf ? `<div class="row"><span class="label">waqf</span>${esc(W.waqf)}</div>` : ''}
+    <div class="row"><span class="label">EN</span>${esc(W.glossEn || '—')}</div>
+    <div class="row"><span class="label">BN</span>${esc(W.glossBn || '—')}</div>
+    ${P ? `<div class="row" style="margin-top:5px;padding-top:4px;border-top:1px solid #30363d"><span class="label">phrase</span>${esc(P.en)}</div>
+           <div class="row"><span class="label">phrase</span>${esc(P.bn)}</div>` : ''}
+    ${C ? `<div class="row"><span class="label">clause</span>${esc(C.en)}</div>` : ''}`;
+  tip.style.display = 'block';
+  const r = tip.getBoundingClientRect();
+  let x = e.clientX + 14, y = e.clientY + 14;
+  if (x + r.width > innerWidth - 8) x = e.clientX - r.width - 14;
+  if (y + r.height > innerHeight - 8) y = e.clientY - r.height - 14;
+  tip.style.left = x + 'px'; tip.style.top = y + 'px';
+});
+
+// ---- Panel ----
+function renderPanel(tab) {
+  $$('.panel-tabs button').forEach(b => b.classList.toggle('active', b.dataset.tab === tab));
+  const el = $('#panelContent');
+  if (!STATE.raw) { el.innerHTML = '<div class="hint">Load data/mulk.json to see the panel.</div>'; return; }
+  if (tab === 'selection') return renderSelection(el);
+  if (tab === 'overview') return renderOverview(el);
+  if (tab === 'freq') return renderFreq(el);
+  if (tab === 'quality') return renderQuality(el);
+  if (tab === 'refs') return renderRefs(el);
+}
+
+function renderSelection(el) {
+  const S = STATE.selected;
+  if (!S) {
+    el.innerHTML = `<h3>Selection</h3><div class="hint" style="text-align:left;font-size:12px">
+      Click any word to inspect it and highlight every word sharing its <code>root</code>.<br><br>
+      Shift-click (or <em>Level → Phrase</em> then click) to select that phrase; <em>Level → Clause</em> for clauses.</div>`;
+    return;
+  }
+  let h = '';
+  if (S.type === 'word') {
+    const W = S.W;
+    h += `<h3>Word ${esc(S.ak)}:${S.i}</h3>
+      <div class="card"><div class="ar">${esc(W.text)}</div>
+        <div class="k">root / lemma</div><div class="v">${esc(W.root || '—')} / ${esc(W.lemma || '—')}</div>
+        <div class="k">pos / cat</div><div class="v">${esc(W.pos)} / ${esc(W.cat)}${W.prefix ? ' · prefix ' + esc(W.prefix) : ''}</div>
+        <div class="k">features</div><div class="v">${esc(W.features || '—')}</div>
+        ${W.waqf ? `<div class="k">waqf</div><div class="v">${esc(W.waqf)}</div>` : ''}
+        <div class="k">English</div><div class="v">${esc(W.glossEn || '—')}</div>
+        <div class="k">বাংলা</div><div class="v">${esc(W.glossBn || '—')}</div>
+      </div>`;
+    if (S.P) h += `<div class="card"><div class="k">phrase (${S.P.start}–${S.P.end})</div>
+      <div class="v">EN: ${esc(S.P.en)}</div><div class="v">BN: ${esc(S.P.bn)}</div>
+      <div class="k">key</div><div class="v"><code>${esc(S.P.keyEn)}</code></div></div>`;
+    if (S.C) h += `<div class="card"><div class="k">clause (${S.C.start}–${S.C.end})</div>
+      <div class="v">EN: ${esc(S.C.en)}</div><div class="v">BN: ${esc(S.C.bn)}</div></div>`;
+    if (W.root && STATE.roots[W.root]) {
+      const occ = STATE.roots[W.root];
+      h += `<div class="card"><div class="k">root <code>${esc(W.root)}</code> — ${occ.length} occurrence${occ.length > 1 ? 's' : ''}</div>
+        <ul class="occ">${occ.map(o => `<li data-jump="${o.ak}:${o.n}"><span>${o.ak}:${o.n}</span><span class="c">${esc(STATE.byAyah[o.ak].words[o.n].text)}</span></li>`).join('')}</ul></div>`;
+    }
+  } else if (S.type === 'phrase') {
+    const P = S.P;
+    const occ = STATE.phraseKey[P.keyEn] || [];
+    h += `<h3>Phrase ${esc(S.ak)}:${S.s}–${S.e}</h3>
+      <div class="card">
+        <div class="k">Arabic</div><div class="v" style="direction:rtl;font-family:'Amiri',serif;font-size:18px">${esc(P.text)}</div>
+        <div class="k">English</div><div class="v">${esc(P.en)}</div>
+        <div class="k">বাংলা</div><div class="v">${esc(P.bn)}</div>
+        <div class="k">key (EN / BN)</div><div class="v"><code>${esc(P.keyEn)}</code> / <code>${esc(P.keyBn)}</code></div>
+        <div class="k">pattern</div><div class="v">${esc(P.pattern)}</div>
+        <div class="k">length</div><div class="v">${P.nWords} word${P.nWords > 1 ? 's' : ''}${P.hasWaqf ? ' · ends on waqf' : ''}</div>
+      </div>
+      <div class="card"><div class="k">same translation key — ${occ.length} occurrence${occ.length > 1 ? 's' : ''}</div>
+        <ul class="occ">${occ.map(o => `<li data-jump-range="${o.ak}:${o.s}:${o.e}"><span>${o.ak}:${o.s}–${o.e}</span></li>`).join('')}</ul></div>`;
+  } else if (S.type === 'clause') {
+    const C = S.C;
+    const occ = STATE.clauseKey[C.keyEn] || [];
+    h += `<h3>Clause ${esc(S.ak)}:${S.s}–${S.e}</h3>
+      <div class="card">
+        <div class="k">English</div><div class="v">${esc(C.en)}</div>
+        <div class="k">বাংলা</div><div class="v">${esc(C.bn)}</div>
+        <div class="k">key</div><div class="v"><code>${esc(C.keyEn)}</code></div>
+        <div class="k">pattern</div><div class="v">${esc(C.pattern)}</div>
+        <div class="k">length</div><div class="v">${C.nWords}w / ${C.nPhrases}p${C.endsWithWaqf ? ' · ends on waqf' : ''}</div>
+      </div>
+      <div class="card"><div class="k">same key — ${occ.length} occurrence${occ.length > 1 ? 's' : ''}</div>
+        <ul class="occ">${occ.map(o => `<li data-jump-range="${o.ak}:${o.s}:${o.e}"><span>${o.ak}:${o.s}–${o.e}</span></li>`).join('')}</ul></div>`;
+  }
+  el.innerHTML = h;
+  el.querySelectorAll('[data-jump]').forEach(li => li.addEventListener('click', () => {
+    const [a, i] = li.dataset.jump.split(':'); scrollFlash(a, +i);
+  }));
+  el.querySelectorAll('[data-jump-range]').forEach(li => li.addEventListener('click', () => {
+    const [a, s, e] = li.dataset.jumpRange.split(':').map((x, k) => k === 0 ? x : +x);
+    scrollFlashRange(a, s, e);
+  }));
+}
+
+function scrollFlash(ak, i) {
+  const el = document.querySelector(`.word[data-ak="${ak}"][data-i="${i}"]`); if (!el) return;
+  el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  el.style.transition = 'background .2s'; el.style.background = '#ffd54f';
+  setTimeout(() => el.style.background = '', 1100);
+}
+function scrollFlashRange(ak, s, e) {
+  const el = document.querySelector(`.word[data-ak="${ak}"][data-i="${s}"]`); if (!el) return;
+  el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  for (let i = s; i <= e; i++) {
+    const x = document.querySelector(`.word[data-ak="${ak}"][data-i="${i}"]`); if (!x) continue;
+    x.style.transition = 'background .2s'; x.style.background = '#ffd54f';
+    setTimeout(() => x.style.background = '', 1100);
+  }
+}
+
+function renderOverview(el) {
+  const s = STATE.stats;
+  const muts = STATE.order.reduce((n, ak) => n + STATE.byAyah[ak].meta.mutashabihat.length, 0);
+  const ma = STATE.order.reduce((n, ak) => n + STATE.byAyah[ak].meta.matchingAyah.length, 0);
+  el.innerHTML = `<h3>Overview</h3>
+    <div class="stat-grid">
+      <div class="stat-card"><div class="num">${s.tw}</div><div class="lbl">words</div></div>
+      <div class="stat-card"><div class="num">${s.tp}</div><div class="lbl">phrases</div></div>
+      <div class="stat-card"><div class="num">${s.tc}</div><div class="lbl">clauses</div></div>
+      <div class="stat-card"><div class="num">${STATE.order.length}</div><div class="lbl">ayahs</div></div>
+      <div class="stat-card"><div class="num">${s.nUniqueRoots}</div><div class="lbl">roots</div></div>
+      <div class="stat-card"><div class="num">${s.nUniquePhraseKeys}</div><div class="lbl">phrase keys</div></div>
+      <div class="stat-card"><div class="num">${s.nUniqueClauseKeys}</div><div class="lbl">clause keys</div></div>
+      <div class="stat-card"><div class="num">${muts + ma}</div><div class="lbl">refs</div></div>
+    </div>
+    <h3>Average length</h3>
+    <div class="card">
+      <div class="k">words / phrase</div><div class="v">${(s.tw / s.tp).toFixed(2)}</div>
+      <div class="k">phrases / clause</div><div class="v">${(s.tp / s.tc).toFixed(2)}</div>
+      <div class="k">words / clause</div><div class="v">${(s.tw / s.tc).toFixed(2)}</div>
+    </div>
+    <h3>Part-of-speech (cat) distribution</h3>
+    <div class="card">${barList(Object.entries(s.posDist).sort((a, b) => b[1] - a[1]), s.tw)}</div>
+    <h3>Waqf</h3>
+    <div class="card">
+      <div class="k">phrases ending on a waqf mark</div><div class="v">${s.waqfPhraseEnd} / ${s.tp} (${(100 * s.waqfPhraseEnd / s.tp).toFixed(1)}%)</div>
+      <div class="k">total waqf marks</div><div class="v">${s.waqfTotal}</div>
+    </div>`;
+}
+
+function renderFreq(el) {
+  const s = STATE.stats;
+  const topRoots = Object.entries(s.roots).sort((a, b) => b[1] - a[1]).slice(0, 12);
+  const topPhrases = Object.entries(STATE.phraseKey).sort((a, b) => b[1].length - a[1].length).slice(0, 12);
+  const topClauses = Object.entries(STATE.clauseKey).sort((a, b) => b[1].length - a[1].length).slice(0, 8);
+  el.innerHTML = `<h3>Top roots</h3>
+    <div class="card">${barList(topRoots, s.tw)}</div>
+    <h3>Top phrase translation keys</h3>
+    <div class="card">${barList(topPhrases.map(([k, v]) => [k, v.length]), s.tp)}</div>
+    <h3>Top clause translation keys</h3>
+    <div class="card">${barList(topClauses.map(([k, v]) => [k, v.length]), s.tc)}</div>
+    <h3>Phrase length distribution</h3>
+    <div class="card">${barList(Object.entries(s.pLen).sort((a, b) => +a[0] - +b[0]).map(([k, v]) => [k + 'w', v]), s.tp)}</div>
+    <h3>Clause length distribution</h3>
+    <div class="card">${barList(Object.entries(s.cLen).sort((a, b) => +a[0] - +b[0]).map(([k, v]) => [k + 'w', v]), s.tc)}</div>`;
+}
+
+function verifyTiling() {
+  const badP = [], badC = [];
+  for (const ak of STATE.order) {
+    const A = STATE.byAyah[ak];
+    const flatP = [], flatC = [];
+    for (const p of A.phrases) for (let i = p.start; i <= p.end; i++) flatP.push(i);
+    for (const c of A.clauses) for (let i = c.start; i <= c.end; i++) flatC.push(i);
+    const exp = []; for (let i = 1; i <= A.meta.nWords; i++) exp.push(i);
+    if (JSON.stringify(flatP) !== JSON.stringify(exp)) badP.push(ak);
+    if (JSON.stringify(flatC) !== JSON.stringify(exp)) badC.push(ak);
+  }
+  return { badP, badC };
+}
+function verifyConsistency() {
+  // same Arabic (text_norm) phrase should have one keyEn across the surah
+  const conflicts = [];
+  for (const [t, occ] of Object.entries(STATE.phraseText)) {
+    const keys = new Set(occ.map(o => {
+      const A = STATE.byAyah[o.ak];
+      const p = A.phrases.find(x => x.start === o.s && x.end === o.e);
+      return p ? p.keyEn : '';
+    }));
+    if (keys.size > 1) conflicts.push({ arabic: t, keys: [...keys], n: occ.length });
+  }
+  return conflicts;
+}
+
+function renderQuality(el) {
+  const t = verifyTiling();
+  const c = verifyConsistency();
+  const s = STATE.stats;
+  el.innerHTML = `<h3>Tiling</h3>
+    <div class="card">
+      <div class="k">phrases tile each ayah</div><div class="v">${t.badP.length === 0 ? '✓ all ' + STATE.order.length + ' ayahs' : '✗ ' + t.badP.join(', ')}</div>
+      <div class="k">clauses tile each ayah</div><div class="v">${t.badC.length === 0 ? '✓ all ' + STATE.order.length + ' ayahs' : '✗ ' + t.badC.join(', ')}</div>
+    </div>
+    <h3>Consistency</h3>
+    <div class="card">
+      <div class="k">same Arabic phrase → one translation key</div>
+      <div class="v">${c.length === 0 ? '✓ 0 conflicts' : '✗ ' + c.length + ' conflicts'}</div>
+      ${c.length ? `<ul class="occ">${c.map(x => `<li><span>${esc(x.arabic)}</span><span class="c">${x.keys.length} keys</span></li>`).join('')}</ul>` : ''}
+    </div>
+    <h3>Lengths</h3>
+    <div class="card">
+      <div class="k">phrases 1–3 words</div>
+      <div class="v">${Object.entries(s.pLen).filter(([k]) => +k <= 3).reduce((a, [, v]) => a + v, 0)} / ${s.tp}</div>
+      <div class="k">clauses 2–6 words</div>
+      <div class="v">${Object.entries(s.cLen).filter(([k]) => +k >= 2 && +k <= 6).reduce((a, [, v]) => a + v, 0)} / ${s.tc}</div>
+    </div>
+    <h3>Waqf</h3>
+    <div class="card">
+      <div class="k">phrases ending on waqf</div>
+      <div class="v">${s.waqfPhraseEnd} / ${s.tp} (${(100 * s.waqfPhraseEnd / s.tp).toFixed(1)}%)</div>
+    </div>`;
+}
+
+function renderRefs(el) {
+  el.innerHTML = `<h3>References (per ayah)</h3>` + STATE.order.map(ak => {
+    const A = STATE.byAyah[ak], M = A.meta;
+    return `<div class="card">
+      <div class="k">${ak}</div>
+      <div class="k">Sahih International</div><div class="v">${esc(M.refEn)}</div>
+      <div class="k">Zakaria (BN)</div><div class="v">${esc(M.refBn)}</div>
+      <div class="k">phrased EN</div><div class="v">${esc(M.phrasedEn)}</div>
+      <div class="k">phrased BN</div><div class="v">${esc(M.phrasedBn)}</div>
+      ${M.mutashabihat.length ? `<div class="k">mutashabihat</div><div class="v">${M.mutashabihat.map(m => `id ${m.id}: ${m.count}× in ${m.surahs} surahs`).join('; ')}</div>` : ''}
+      ${M.matchingAyah.length ? `<div class="k">matching ayahs</div><div class="v">${M.matchingAyah.map(m => `${esc(m.matched_ayah_key)} (score ${m.score}, ${m.coverage}%)`).join('; ')}</div>` : ''}
+    </div>`;
+  }).join('');
+}
+
+function barList(entries, total) {
+  if (!entries.length) return '<div style="color:#57606a;font-size:11px">none</div>';
+  const max = Math.max(...entries.map(e => e[1]));
+  return entries.map(([k, v]) => `<div class="bar-row">
+    <div class="head"><span style="font-family:monospace;font-size:11px">${esc(k)}</span><span style="color:#57606a">${v}</span></div>
+    <div class="bar" style="width:${(100 * v / max).toFixed(1)}%"></div>
+  </div>`).join('');
+}
+
+// ---- Search ----
+function onSearch(e) {
+  const q = e.target.value.trim().toLowerCase();
+  $$('.word.hl').forEach(x => x.classList.remove('hl'));
+  if (!q) return;
+  for (const ak of STATE.order) {
+    const A = STATE.byAyah[ak];
+    for (let i = 1; i <= A.meta.nWords; i++) {
+      const w = A.words[i]; if (!w) continue;
+      const match =
+        w.text.includes(q) ||
+        (w.root && w.root.toLowerCase().includes(q)) ||
+        (w.lemma && w.lemma.toLowerCase().includes(q)) ||
+        (w.glossEn && w.glossEn.toLowerCase().includes(q)) ||
+        (w.glossBn && w.glossBn.includes(q));
+      if (match) {
+        const el = document.querySelector(`.word[data-ak="${ak}"][data-i="${i}"]`);
+        if (el) el.classList.add('hl');
+      }
+    }
+  }
+}
+
+// ---- Init: try auto-load, then show selection hint ----
+loadData();
+</script>
+</body>
+</html>
