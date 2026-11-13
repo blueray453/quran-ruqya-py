@@ -1,0 +1,99 @@
+
+=== verb_mood ===
+'_': 577
+'MOOD:SUBJ': 3
+'MOOD:JUS': 3
+Mapping status: {'no': 583}
+
+=== special_group ===
+'_': 571
+'SP:kaAn': 6
+'SP:<in~': 5
+'SP:kaAd': 1
+Mapping status: {'no': 583}
+
+=== nominal_case ===
+'_': 461
+'GEN': 49
+'NOM': 37
+'ACC': 36
+Mapping status: {'no': 461, 'yes': 122}
+
+=== derived_nouns ===
+'_': 571
+'ACT_PCPL': 10
+'VN': 2
+Mapping status: {'no': 571, 'yes': 12}
+
+=== nominal_state ===
+'_': 537
+'INDEF': 46
+Mapping status: {'no': 537, 'yes': 46}
+
+=== number ===
+'_': 338
+'P': 123
+'S': 121
+'D': 1
+Mapping status: {'yes': 245, 'no': 338}
+
+=== verb_form ===
+'_': 556
+'(IV)': 15
+'(II)': 4
+'(VI)': 2
+'(V)': 2
+'(VIII)': 2
+'(VII)': 1
+'(X)': 1
+Mapping status: {'yes': 27, 'no': 556}
+
+=== verb_aspect ===
+'_': 496
+'PERF': 45
+'IMPF': 30
+'IMPV': 12
+Mapping status: {'yes': 87, 'no': 496}
+
+=== verb_voice ===
+'_': 578
+'PASS': 5
+Mapping status: {'no': 578, 'yes': 5}
+
+=== gender ===
+'_': 295
+'M': 257
+'F': 31
+Mapping status: {'yes': 288, 'no': 295}
+
+=== person ===
+'_': 395
+'3': 104
+'2': 57
+'1': 27
+Mapping status: {'yes': 188, 'no': 395}
+
+=== prefix ===
+'_': 469
+'Al+': 38
+'w:CONJ+': 17
+'bi+': 12
+'w:REM+': 9
+'l:P+': 9
+'f:REM+': 8
+'A:INTG+': 7
+'w:CIRC+': 3
+'l:EMPH+': 2
+'sa+': 2
+'f:RSLT+': 2
+'l:PRP+': 1
+'f:CAUS+': 1
+'f:CONJ+': 1
+'w:SUP+': 1
+'f:SUP+': 1
+Mapping status: {'no': 469, 'yes': 114}
+
+=== suffix ===
+'_': 506
+'PRON': 77
+Mapping status: {'no': 506, 'yes': 77}
