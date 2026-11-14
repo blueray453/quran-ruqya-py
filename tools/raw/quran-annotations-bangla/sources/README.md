@@ -9,7 +9,9 @@ integrity against `sources.lock.yaml` (sha256).
 | --- | --- | --- | --- |
 | `text/` | text_words | `indopak.json` (whole Quran), `mulk-qpc-words.json` (surah 67 reference instance) | Word positions + Arabic text (IndoPak script) |
 | `wbw/` | wbw_english | `english-wbw-translation.json` | Per-word English glosses; enters the annotation package |
+| `wbw/` | wbw_bangla | `bangla-wbw-translation.json` | Per-word Bangla glosses; sourced `wbw_bn` field in the Bangla data view; optional extra hint for the Bangla gloss pass |
 | `translation/` | translation_ayah | `mulk-en-sahih.json` | Whole-ayah English reference translation; enters the annotation package |
+| `translation/` | translation_bn | `quran-bn-dr-abu-bakr-muhammad-zakaria-simple.json` | Whole-ayah Bangla reference translation; enters the Bangla gloss pass package; sourced `translation_bn` field in the Bangla data view |
 | `audio/` | audio_timestamps | `ar.alafasy.json` | Per-ayah recitation segments `[word_no, start_ms, end_ms]`; joined at build time |
 | `chunker/` | chunker | `quranic-treebank-0.4-chunks.tsv` | QA cross-check signal only; never a build basis |
 | `eqtb/` | eqtb | `Quranic.csv` + tag lexicons | QA cross-check signal (clause starts, i'rab); never a build basis |
@@ -39,5 +41,9 @@ integrity against `sources.lock.yaml` (sha256).
 
 - wbw glosses are missing for exactly 3 real word positions: `2:181:4`, `8:6:5`,
   `13:37:9`. `build.py` renders them as `null`; `qa.py` asserts no other gaps.
+- The Bangla wbw source (`bangla-wbw-translation.json`) is missing exactly the
+  same 3 real word positions (rendered as `null` in `wbw_bn`, asserted via
+  `KNOWN_MISSING_WBW_BN`); for `2:181` it additionally lacks the ayah-end marker
+  key, which no join ever looks up.
 - The wbw gloss on the marker key (e.g. `67:1:10` = `(1)`) is discarded by the
   same "drop the last key" rule.

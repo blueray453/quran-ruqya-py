@@ -23,6 +23,14 @@ Runs on every annotated surah found in annotations/:
      identity with the English file (same ayah keys, same clause/phrase word spans —
      the bn pass is gloss-only and never re-segments), non-empty Bangla fragments,
      Bengali script in / Arabic script out, and the surah 67 bn baseline replay.
+  9. Bangla wbw coverage: for every overlaid ayah and every real word 1..N, the
+     Bangla wbw source must hold the gloss key — except the keys listed in
+     KNOWN_MISSING_WBW_BN (initialized from the whole-Quran coverage check; the
+     Bangla source is missing exactly the same 3 positions as the English one).
+  10. translation_bn completeness (WARN, not FAIL — the translation source may be
+     adopted incrementally): when the bn translation source is loaded, every
+     overlaid ayah must have its "s:a" key there; otherwise the overlay view's
+     translation_bn would be null.
 
 Planned fence (not implemented here): EQTB clause starts ~= annotation clause starts.
 See README.md.
@@ -34,6 +42,10 @@ from collections import Counter
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 KNOWN_MISSING_WBW = {('2', '181', '4'), ('8', '6', '5'), ('13', '37', '9')}
+# Whole-Quran coverage check against sources/wbw/bangla-wbw-translation.json:
+# the Bangla wbw source is missing exactly the same 3 real word positions as the
+# English source (plus the 2:181 ayah-end marker key, which is never looked up).
+KNOWN_MISSING_WBW_BN = {('2', '181', '4'), ('8', '6', '5'), ('13', '37', '9')}
 BASELINE_67 = (333, 213, 86)
 STATUS_ENUM = {'auto', 'needs_human', 'reviewed'}
 CONVENTIONS_VERSION = '2.1'
@@ -98,6 +110,17 @@ class Sources:
     def __init__(self):
         self.indopak = load_json(os.path.join(ROOT, 'sources/text/indopak.json'))
         self.wbw = load_json(os.path.join(ROOT, 'sources/wbw/english-wbw-translation.json'))
+        self.wbw_bn = load_json(os.path.join(ROOT, 'sources/wbw/bangla-wbw-translation.json'))
+        # bn translation source: detected by filename hint, same scheme as build.py's
+        # load_translations(); None when the family is not adopted yet.
+        self.translation_bn = None
+        for p in sorted(glob.glob(os.path.join(ROOT, 'sources/translation', '*.json'))):
+            name = os.path.basename(p)
+            if 'bn-' in name or '-bn-' in name:
+                data = load_json(p)
+                self.translation_bn = {k: (v.get('t') if isinstance(v, dict) else v)
+                                       for k, v in data.items()}
+                break
         ap = os.path.join(ROOT, 'sources/audio/ar.alafasy.json')
         self.audio = load_json(ap) if os.path.exists(ap) else {}
         # keyed counts per surah/ayah (indopak: includes the ayah-end marker as last key)
@@ -257,6 +280,7 @@ def qa_surah_bn(rep, s, bn_doc, en_doc, src):
                  f'no bn overlay yet (e.g. {missing[:8]})')
 
     tot_w = tot_p = tot_c = 0
+    miss_wbw_bn, miss_tr_bn = [], []
     for a in sorted(bn_ayahs & en_ayahs):
         bn_entry = bn_doc['ayahs'][str(a)]
         en_entry = en_doc['ayahs'][str(a)]
@@ -293,6 +317,31 @@ def qa_surah_bn(rep, s, bn_doc, en_doc, src):
             tot_p += len(bphs)
             tot_w += len(bcl['words'])
         tot_c += len(bn_cls)
+
+        N = src.n_words(s, a)
+        miss_gloss_bn = [w for w in range(1, N + 1)
+                         if f'{s}:{a}:{w}' not in src.wbw_bn
+                         and (str(s), str(a), str(w)) not in KNOWN_MISSING_WBW_BN]
+        if miss_gloss_bn:
+            miss_wbw_bn.extend(f'{s}:{a}:{w}' for w in miss_gloss_bn)
+        if src.translation_bn is not None and f'{s}:{a}' not in src.translation_bn:
+            miss_tr_bn.append(f'{s}:{a}')
+
+    if miss_wbw_bn:
+        rep.fail(f'bn surah {s}: wbw_bn gloss missing for word(s) {miss_wbw_bn[:8]}'
+                 f'{" ..." if len(miss_wbw_bn) > 8 else ""} (not in KNOWN_MISSING_WBW_BN)')
+    elif bn_ayahs & en_ayahs:
+        rep.ok(f'bn surah {s}: wbw_bn coverage complete for all {len(bn_ayahs & en_ayahs)} '
+               f'overlaid ayahs ({len(KNOWN_MISSING_WBW_BN)} known-missing keys excluded)')
+    if miss_tr_bn:
+        rep.warn(f'bn surah {s}: bn translation source lacks key(s) {miss_tr_bn[:8]}'
+                 f'{" ..." if len(miss_tr_bn) > 8 else ""} — translation_bn would be null '
+                 f'in the overlay view')
+    elif bn_ayahs & en_ayahs and src.translation_bn is not None:
+        rep.ok(f'bn surah {s}: bn translation source covers all {len(bn_ayahs & en_ayahs)} '
+               f'overlaid ayahs')
+    elif src.translation_bn is None:
+        rep.info(f'bn surah {s}: no bn translation source loaded; translation_bn joins skipped')
 
     if s == 67 and not missing:
         got = (tot_w, tot_p, tot_c)

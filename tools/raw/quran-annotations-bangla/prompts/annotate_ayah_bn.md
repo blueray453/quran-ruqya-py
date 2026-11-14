@@ -4,7 +4,7 @@ Second pass; runs only after the ayah's English annotation exists and passed
 `qa.py`. One LLM call per ayah — same discipline as the English pass, but the
 segmentation is **given, never re-decided**: Bangla is a separate overlay file
 (`annotations/bn/surah-NNN.json`), and this pass only fills one fragment per
-existing phrase. Fill the two blocks, attach `CONVENTIONS.md` (its "Bangla
+existing phrase. Fill the three blocks, attach `CONVENTIONS.md` (its "Bangla
 overlay pass" section governs style), and send the message below. Merge the reply
 with `tools/collect.py --lang bn`, then run `qa.py`.
 
@@ -25,6 +25,10 @@ Given phrase segmentation (word positions — English fragment), in Arabic order
 
 {SEGMENTATION_BLOCK}
 
+Whole-ayah reference translation (Bangla):
+
+"{BN_TRANSLATION}"
+
 Return only the JSON object defined in the conventions' Bangla output contract
 for ayah {SURAH}:{AYAH}. No prose, no code fences.
 ```
@@ -34,6 +38,11 @@ for ayah {SURAH}:{AYAH}. No prose, no code fences.
 - `{SEGMENTATION_BLOCK}` — one line per phrase, in phrase order:
   `words 1-2 — "He in whose hand"` (word positions from the English annotation,
   en fragment quoted for sense).
+- `{BN_TRANSLATION}` — the whole-ayah Bangla reference translation, taken from
+  the bn translation source (`sources/translation/quran-bn-*.json`). It is a
+  sense reference only — never a source of segmentation or of fragment text to
+  copy. Omit the whole block if the surah is not covered by the translation
+  source yet.
 
 ---
 

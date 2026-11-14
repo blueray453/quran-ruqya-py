@@ -6,13 +6,21 @@ surah this writes data/surah-NNN.json, joining:
 
   - word text + positions      (sources/text, real word numbers 1..N)
   - word-by-word English       (sources/wbw; null for the 3 known-missing keys)
-  - whole-ayah translation     (sources/translation)
+  - whole-ayah translation     (sources/translation, per language)
   - clause/phrase structure    (annotations/surah-NNN.json)
   - recitation windows         (optional reciter file; window = first start .. last end)
 
 Bangla overlay: for every annotations/bn/surah-NNN.json this additionally writes
-data/bn/surah-NNN.json — a separate overlay keyed by clause/phrase ids. The base
-view is unchanged; words, audio timings and English content are not duplicated.
+data/bn/surah-NNN.json — a separate overlay keyed by clause/phrase ids. Besides
+bn_assembled (the ayah's fragments joined in Arabic order) each ayah carries the
+two sourced Bangla joins: translation_bn (whole-ayah Bangla reference translation
+from sources/translation/) and words[].wbw_bn (per-word Bangla glosses from
+sources/wbw/). The base view is unchanged; words, audio timings and English
+content are not duplicated into the overlay.
+
+Translations are loaded per language: files under sources/translation/ are
+classified by filename hint ('bn-' / '-bn-' -> Bangla, 'en-' / '-en-' -> English),
+so the English and Bangla families never overwrite each other's ayah keys.
 
 Recitation fallback for the known extra-segment quirk: extras < 100 ms extend the
 nearest real word in time; longer extras are mapped onto unmatched words in time
@@ -64,13 +72,19 @@ def join_audio(segs, n):
 
 
 def load_translations():
-    """sources/translation/*.json -> {surah: {'s:a': text}}"""
+    """sources/translation/*.json -> {lang: {surah: {'s:a': text}}} — lang detected
+    per file from the filename hint, so the English and Bangla families stay
+    separate (a single flat dict would let one language overwrite the other's
+    ayah keys)."""
     out = {}
-    for p in glob.glob(os.path.join(ROOT, 'sources/translation', '*.json')):
+    lang_by_hint = [('bn', ('bn-', '-bn-')), ('en', ('en-', '-en-'))]
+    for p in sorted(glob.glob(os.path.join(ROOT, 'sources/translation', '*.json'))):
+        name = os.path.basename(p)
+        lang = next((l for l, hints in lang_by_hint if any(h in name for h in hints)), 'en')
         data = load_json(p)
         for k, v in data.items():
             s = int(k.split(':')[0])
-            out.setdefault(s, {})[k] = v.get('t') if isinstance(v, dict) else v
+            out.setdefault(lang, {}).setdefault(s, {})[k] = v.get('t') if isinstance(v, dict) else v
     return out
 
 
@@ -153,8 +167,11 @@ def build_view(s, doc, src, wbw, translations, audio_path, audio):
     return view
 
 
-def build_bn_view(s, bn_doc):
-    """Bangla overlay view: join bn fragments onto the ids of the base view."""
+def build_bn_view(s, bn_doc, tr_bn, wbw_bn):
+    """Bangla overlay view: join bn fragments onto the ids of the base view, plus
+    the two sourced Bangla joins: tr_bn ({'s:a': text} — whole-ayah reference
+    translation, may be absent for a surah) and wbw_bn ({'s:a:w': gloss} — per-word
+    glosses, real word numbers 1..N; the ayah-end marker key is never used)."""
     ayahs = {}
     tot_w = tot_p = tot_c = 0
     for a_str in sorted(bn_doc['ayahs'], key=int):
@@ -176,6 +193,8 @@ def build_bn_view(s, bn_doc):
             'status': entry['status'],
             'n_words': n,
             'bn_assembled': ' '.join(all_frags),
+            'translation_bn': tr_bn.get(f'{s}:{a}'),
+            'words': [{'pos': w, 'wbw_bn': wbw_bn.get(f'{s}:{a}:{w}')} for w in range(1, n + 1)],
             'clauses': clauses_out,
         }
         tot_c += len(clauses_out)
@@ -188,10 +207,15 @@ def build_bn_view(s, bn_doc):
         'provenance': {
             'annotations': f'annotations/bn/surah-{s:03d}.json',
             'base_view': f'data/surah-{s:03d}.json',
+            'translation_bn': 'sources/translation/quran-bn-dr-abu-bakr-muhammad-zakaria-simple.json',
+            'wbw_bn': 'sources/wbw/bangla-wbw-translation.json',
             'note': ('Bangla overlay: ids and word spans refer to the base view; words, '
                      'audio timings and English content are not duplicated here. '
                      'bn_assembled is the ayah\'s fragments joined in Arabic order '
-                     '(draft reading, not a sourced translation).'),
+                     '(draft reading, not a sourced translation). translation_bn is the '
+                     'sourced whole-ayah Bangla reference translation (null if the '
+                     'translation source does not cover the surah yet) and words[].wbw_bn '
+                     'are the sourced per-word Bangla glosses, both joined at build time.'),
         },
         'counts': {'ayahs': len(ayahs), 'words': tot_w, 'clauses': tot_c, 'phrases': tot_p},
         'ayahs': ayahs,
@@ -207,7 +231,9 @@ def main():
 
     indopak = load_json(os.path.join(ROOT, 'sources/text/indopak.json'))
     wbw = load_json(os.path.join(ROOT, 'sources/wbw/english-wbw-translation.json'))
-    translations = load_translations()
+    wbw_bn = load_json(os.path.join(ROOT, 'sources/wbw/bangla-wbw-translation.json'))
+    translations = load_translations()  # {lang: {surah: {'s:a': text}}}
+    tr_en, tr_bn = translations.get('en', {}), translations.get('bn', {})
     maxkey = {}
     for k in indopak:
         s, a, w = k.split(':')
@@ -228,7 +254,7 @@ def main():
         if args.surah and s not in args.surah:
             continue
         doc = load_json(path)
-        view = build_view(s, doc, src, wbw, translations, audio_path, audio)
+        view = build_view(s, doc, src, wbw, tr_en, audio_path, audio)
         out = os.path.join(ROOT, 'data', f'surah-{s:03d}.json')
         with open(out, 'w', encoding='utf-8') as f:
             json.dump(view, f, ensure_ascii=False, indent=2)
@@ -251,7 +277,7 @@ def main():
         if args.surah and s not in args.surah:
             continue
         bn_doc = load_json(path)
-        view = build_bn_view(s, bn_doc)
+        view = build_bn_view(s, bn_doc, tr_bn.get(s, {}), wbw_bn)
         out = os.path.join(ROOT, 'data', 'bn', f'surah-{s:03d}.json')
         with open(out, 'w', encoding='utf-8') as f:
             json.dump(view, f, ensure_ascii=False, indent=2)

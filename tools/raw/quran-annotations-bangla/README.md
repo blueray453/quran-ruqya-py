@@ -59,12 +59,13 @@ Both scripts are stdlib-only Python 3, offline and deterministic.
    chunker-boundary subset check, baseline replay for surah 67.
    Failures go back to re-annotation or `status: needs_human`.
 5. **Bangla overlay** — for each fenced ayah, fill the template in
-   `prompts/annotate_ayah_bn.md` (words + wbw + the existing phrase list) and send
-   it to the LLM. The model returns one Bangla fragment per phrase, in order —
-   it never re-segments. Merge with `python3 tools/collect.py --surah N --file
-   llm_output_bn.json --lang bn` (aborts on count mismatch or missing English
-   ayah), then `qa.py` re-checks: structural identity with the English file,
-   Bengali script required / Arabic script forbidden.
+   `prompts/annotate_ayah_bn.md` (words + wbw + the existing phrase list + the
+   whole-ayah Bangla reference translation) and send it to the LLM. The model
+   returns one Bangla fragment per phrase, in order — it never re-segments. Merge
+   with `python3 tools/collect.py --surah N --file llm_output_bn.json --lang bn`
+   (aborts on count mismatch or missing English ayah), then `qa.py` re-checks:
+   structural identity with the English file, Bengali script required / Arabic
+   script forbidden, bn wbw coverage, translation_bn completeness.
 6. **Review** — human review flips `auto` → `reviewed` (flagged ayahs + a sample),
    per language: the English file and the bn overlay carry independent statuses.
 7. **Build** — `python3 build.py --surah N` regenerates the reader view
@@ -89,7 +90,11 @@ Both scripts are stdlib-only Python 3, offline and deterministic.
   key, so `keyed_max == real_max + 1`; annotations and recitation timestamps use
   **real word numbers** (whole Quran: 83,668 keyed entries → 77,432 real words).
 - wbw glosses are missing for exactly 3 real word positions (`2:181:4`, `8:6:5`,
-  `13:37:9`) — rendered as `null`, asserted by `qa.py`.
+  `13:37:9`) — rendered as `null`, asserted by `qa.py`. The Bangla wbw source is
+  missing exactly the same 3 positions (`KNOWN_MISSING_WBW_BN`).
+- Bangla is fully sourced in the overlay view: `build.py` joins the whole-Quran
+  Bangla translation (`translation_bn`) and per-word Bangla glosses (`wbw_bn`)
+  into `data/bn/surah-NNN.json`; the base view stays English-only.
 - Recitation: 5,824/6,236 ayahs align 1:1 with segments; the rest carry extra
   short fragments (pauses / aligner artifacts). `build.py` applies the documented
   fallback (<100 ms → merge into nearest word; longer extras → time-order mapping;
@@ -106,7 +111,8 @@ Both scripts are stdlib-only Python 3, offline and deterministic.
 
 - EQTB clause starts ≈ annotation clause starts (`sources/eqtb/Quranic.csv`).
 - Waqf marks → clause starts (15/15 held on the prototype).
-- Translation family for the whole Quran (only surah 67 is pinned today).
+- Translation family for the whole Quran in **English** (only surah 67 is pinned
+  today; the Bangla translation family is whole-Quran already).
 
 ## License status
 
@@ -122,6 +128,8 @@ the hand-edited Surah 67 prototype (`sources/reference/mulk_spec.json`) into thi
 schema, verified against the recitation alignment. `annotations/bn/surah-067.json`
 replays the same prototype's hand-edited Bangla fragments into the overlay
 contract (separate file by design). In production, files are produced by the LLM
-steps (`status: auto`) and become `reviewed` only after human review. Word-level
-Bangla wbw is **not** part of the overlay — it needs a licensed Bangla wbw source
-added to `sources/` first (pending).
+steps (`status: auto`) and become `reviewed` only after human review. The
+overlay view additionally carries the sourced Bangla joins — `translation_bn`
+(whole-ayah translation, `sources/translation/quran-bn-dr-abu-bakr-muhammad-zakaria-simple.json`)
+and `words[].wbw_bn` (per-word glosses, `sources/wbw/bangla-wbw-translation.json`);
+`bn_assembled` remains the draft fragment reading.

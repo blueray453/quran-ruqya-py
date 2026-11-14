@@ -121,3 +121,25 @@ sources:
     files:
       - path: sources/reference/mulk_spec.json
         sha256: e4e79bf8de9246e9f1d36bce4ebd82fd5b7da1fb4178bdee9631a0d1f3c28d41
+
+  - id: translation_bn
+    role: annotation_package
+    description: >-
+      Whole-ayah Bangla reference translation. Enters the Bangla gloss pass package; sourced translation_bn field in the Bangla data view.
+    license: unverified-pending
+    license_note: >-
+      Dr. Abu Bakr Muhammad Zakaria (simplified whole-Quran Bangla translation); publisher/distribution terms not recorded with the file — resolve before publication
+    files:
+      - path: sources/translation/quran-bn-dr-abu-bakr-muhammad-zakaria-simple.json
+        sha256: e053a63f7e59d65b197041878b009e39ca4f53e1f72351c8e465fd1f4815bb59
+
+  - id: wbw_bangla
+    role: annotation_package
+    description: >-
+      Per-word Bangla glosses. Sourced wbw_bn field in the Bangla data view; optional extra hint for the Bangla gloss pass.
+    license: unverified-pending
+    license_note: >-
+      Community-distributed Bangla word-by-word (wbw) translation dataset; originating publisher not recorded with the file — resolve before publication
+    files:
+      - path: sources/wbw/bangla-wbw-translation.json
+        sha256: 766b52f0df09161a056f7c6ee7d8fc64635fd814e17b80d676329565b80e32fc

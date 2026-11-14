@@ -1,7 +1,7 @@
 {
   "surah": 67,
   "generated_by": "build.py",
-  "built_at": "2026-11-14T01:31:23",
+  "built_at": "2026-11-14T01:55:32",
   "provenance": {
     "annotations": "annotations/surah-067.json",
     "text": "sources/text/indopak.json",
