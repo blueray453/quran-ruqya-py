@@ -1,0 +1,7146 @@
+{
+  "surah": 67,
+  "generated_by": "build.py",
+  "built_at": "2026-11-14T01:55:32",
+  "provenance": {
+    "annotations": "annotations/surah-067.json",
+    "text": "sources/text/indopak.json",
+    "wbw": "sources/wbw/english-wbw-translation.json",
+    "translation": "sources/translation/ (per-surah files)",
+    "reciter": "sources/audio/ar.alafasy.json",
+    "reciter_fallback_notes": []
+  },
+  "counts": {
+    "ayahs": 30,
+    "words": 333,
+    "clauses": 86,
+    "phrases": 213
+  },
+  "ayahs": [
+    {
+      "ayah": 1,
+      "n_words": 9,
+      "status": "reviewed",
+      "translation_en": "Blessed is He in whose hand is dominion, and He is over all things competent -",
+      "words": [
+        {
+          "pos": 1,
+          "text": "تَبٰرَكَ",
+          "wbw_en": "Blessed is",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 920
+          }
+        },
+        {
+          "pos": 2,
+          "text": "الَّذِىۡ",
+          "wbw_en": "He",
+          "audio": {
+            "start_ms": 1210,
+            "end_ms": 1310
+          }
+        },
+        {
+          "pos": 3,
+          "text": "بِيَدِهِ",
+          "wbw_en": "in Whose Hand",
+          "audio": {
+            "start_ms": 1920,
+            "end_ms": 2640
+          }
+        },
+        {
+          "pos": 4,
+          "text": "الۡمُلۡكُ",
+          "wbw_en": "(is) the Dominion",
+          "audio": {
+            "start_ms": 2960,
+            "end_ms": 3520
+          }
+        },
+        {
+          "pos": 5,
+          "text": "وَهُوَ",
+          "wbw_en": "and He",
+          "audio": {
+            "start_ms": 3640,
+            "end_ms": 4120
+          }
+        },
+        {
+          "pos": 6,
+          "text": "عَلٰى",
+          "wbw_en": "(is) over",
+          "audio": {
+            "start_ms": 4280,
+            "end_ms": 4600
+          }
+        },
+        {
+          "pos": 7,
+          "text": "كُلِّ",
+          "wbw_en": "every",
+          "audio": {
+            "start_ms": 4850,
+            "end_ms": 4950
+          }
+        },
+        {
+          "pos": 8,
+          "text": "شَىۡءٍ",
+          "wbw_en": "thing",
+          "audio": {
+            "start_ms": 5600,
+            "end_ms": 6120
+          }
+        },
+        {
+          "pos": 9,
+          "text": "قَدِيۡرُۙ‏ ﻿﻿",
+          "wbw_en": "All-Powerful",
+          "audio": {
+            "start_ms": 10770,
+            "end_ms": 10810
+          }
+        }
+      ],
+      "clauses": [
+        {
+          "id": "67:1:1",
+          "words": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "en": "Blessed is He in whose hand is the dominion,",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 3520
+          },
+          "phrases": [
+            {
+              "id": "67:1:1.1",
+              "words": [
+                1
+              ],
+              "en": "Blessed is",
+              "audio": {
+                "start_ms": 0,
+                "end_ms": 920
+              }
+            },
+            {
+              "id": "67:1:1.2",
+              "words": [
+                2,
+                3
+              ],
+              "en": "He in whose hand",
+              "audio": {
+                "start_ms": 1210,
+                "end_ms": 2640
+              }
+            },
+            {
+              "id": "67:1:1.3",
+              "words": [
+                4
+              ],
+              "en": "is the dominion,",
+              "audio": {
+                "start_ms": 2960,
+                "end_ms": 3520
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:1:2",
+          "words": [
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "en": "and He is capable of all things.",
+          "audio": {
+            "start_ms": 3640,
+            "end_ms": 10810
+          },
+          "phrases": [
+            {
+              "id": "67:1:2.1",
+              "words": [
+                5
+              ],
+              "en": "and He is",
+              "audio": {
+                "start_ms": 3640,
+                "end_ms": 4120
+              }
+            },
+            {
+              "id": "67:1:2.2",
+              "words": [
+                6,
+                7,
+                8,
+                9
+              ],
+              "en": "capable of all things.",
+              "audio": {
+                "start_ms": 4280,
+                "end_ms": 10810
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 2,
+      "n_words": 11,
+      "status": "reviewed",
+      "translation_en": "[He] who created death and life to test you [as to] which of you is best in deed - and He is the Exalted in Might, the Forgiving -",
+      "words": [
+        {
+          "pos": 1,
+          "text": "اۨلَّذِىۡ",
+          "wbw_en": "The One Who",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 70
+          }
+        },
+        {
+          "pos": 2,
+          "text": "خَلَقَ",
+          "wbw_en": "created",
+          "audio": {
+            "start_ms": 930,
+            "end_ms": 1030
+          }
+        },
+        {
+          "pos": 3,
+          "text": "الۡمَوۡتَ",
+          "wbw_en": "death",
+          "audio": {
+            "start_ms": 1840,
+            "end_ms": 2280
+          }
+        },
+        {
+          "pos": 4,
+          "text": "وَالۡحَيٰوةَ",
+          "wbw_en": "and life",
+          "audio": {
+            "start_ms": 2440,
+            "end_ms": 3480
+          }
+        },
+        {
+          "pos": 5,
+          "text": "لِيَبۡلُوَكُمۡ",
+          "wbw_en": "that He may test you",
+          "audio": {
+            "start_ms": 3720,
+            "end_ms": 4800
+          }
+        },
+        {
+          "pos": 6,
+          "text": "اَيُّكُمۡ",
+          "wbw_en": "which of you",
+          "audio": {
+            "start_ms": 5080,
+            "end_ms": 5800
+          }
+        },
+        {
+          "pos": 7,
+          "text": "اَحۡسَنُ",
+          "wbw_en": "(is) best",
+          "audio": {
+            "start_ms": 6520,
+            "end_ms": 6840
+          }
+        },
+        {
+          "pos": 8,
+          "text": "عَمَلًا ؕ",
+          "wbw_en": "(in) deed",
+          "audio": {
+            "start_ms": 7200,
+            "end_ms": 7480
+          }
+        },
+        {
+          "pos": 9,
+          "text": "وَهُوَ",
+          "wbw_en": "And He",
+          "audio": {
+            "start_ms": 8280,
+            "end_ms": 8800
+          }
+        },
+        {
+          "pos": 10,
+          "text": "الۡعَزِيۡزُ",
+          "wbw_en": "(is) the All-Mighty",
+          "audio": {
+            "start_ms": 9370,
+            "end_ms": 9470
+          }
+        },
+        {
+          "pos": 11,
+          "text": "الۡغَفُوۡرُۙ‏",
+          "wbw_en": "the Oft-Forgiving",
+          "audio": {
+            "start_ms": 10200,
+            "end_ms": 13960
+          }
+        }
+      ],
+      "clauses": [
+        {
+          "id": "67:2:1",
+          "words": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "en": "The One who created death and life",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 3480
+          },
+          "phrases": [
+            {
+              "id": "67:2:1.1",
+              "words": [
+                1
+              ],
+              "en": "The One who",
+              "audio": {
+                "start_ms": 0,
+                "end_ms": 70
+              }
+            },
+            {
+              "id": "67:2:1.2",
+              "words": [
+                2
+              ],
+              "en": "created",
+              "audio": {
+                "start_ms": 930,
+                "end_ms": 1030
+              }
+            },
+            {
+              "id": "67:2:1.3",
+              "words": [
+                3
+              ],
+              "en": "death",
+              "audio": {
+                "start_ms": 1840,
+                "end_ms": 2280
+              }
+            },
+            {
+              "id": "67:2:1.4",
+              "words": [
+                4
+              ],
+              "en": "and life",
+              "audio": {
+                "start_ms": 2440,
+                "end_ms": 3480
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:2:2",
+          "words": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "en": "to test you as to which of you is best in deed,",
+          "audio": {
+            "start_ms": 3720,
+            "end_ms": 7480
+          },
+          "phrases": [
+            {
+              "id": "67:2:2.1",
+              "words": [
+                5
+              ],
+              "en": "to test you",
+              "audio": {
+                "start_ms": 3720,
+                "end_ms": 4800
+              }
+            },
+            {
+              "id": "67:2:2.2",
+              "words": [
+                6
+              ],
+              "en": "as to which of you",
+              "audio": {
+                "start_ms": 5080,
+                "end_ms": 5800
+              }
+            },
+            {
+              "id": "67:2:2.3",
+              "words": [
+                7,
+                8
+              ],
+              "en": "is best in deed,",
+              "audio": {
+                "start_ms": 6520,
+                "end_ms": 7480
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:2:3",
+          "words": [
+            9,
+            10,
+            11
+          ],
+          "en": "and He is the Almighty, the Forgiving.",
+          "audio": {
+            "start_ms": 8280,
+            "end_ms": 13960
+          },
+          "phrases": [
+            {
+              "id": "67:2:3.1",
+              "words": [
+                9
+              ],
+              "en": "and He is",
+              "audio": {
+                "start_ms": 8280,
+                "end_ms": 8800
+              }
+            },
+            {
+              "id": "67:2:3.2",
+              "words": [
+                10
+              ],
+              "en": "the Almighty,",
+              "audio": {
+                "start_ms": 9370,
+                "end_ms": 9470
+              }
+            },
+            {
+              "id": "67:2:3.3",
+              "words": [
+                11
+              ],
+              "en": "the Forgiving.",
+              "audio": {
+                "start_ms": 10200,
+                "end_ms": 13960
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 3,
+      "n_words": 18,
+      "status": "reviewed",
+      "translation_en": "[And] who created seven heavens in layers. You do not see in the creation of the Most Merciful any inconsistency. So return [your] vision [to the sky]; do you see any breaks?",
+      "words": [
+        {
+          "pos": 1,
+          "text": "الَّذِىۡ",
+          "wbw_en": "The One Who",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 70
+          }
+        },
+        {
+          "pos": 2,
+          "text": "خَلَقَ",
+          "wbw_en": "created",
+          "audio": {
+            "start_ms": 890,
+            "end_ms": 990
+          }
+        },
+        {
+          "pos": 3,
+          "text": "سَبۡعَ",
+          "wbw_en": "seven",
+          "audio": {
+            "start_ms": 1600,
+            "end_ms": 2080
+          }
+        },
+        {
+          "pos": 4,
+          "text": "سَمٰوٰتٍ",
+          "wbw_en": "heavens",
+          "audio": {
+            "start_ms": 2200,
+            "end_ms": 3240
+          }
+        },
+        {
+          "pos": 5,
+          "text": "طِبَاقًا​ ؕ",
+          "wbw_en": "one above another",
+          "audio": {
+            "start_ms": 4200,
+            "end_ms": 5080
+          }
+        },
+        {
+          "pos": 6,
+          "text": "مَا",
+          "wbw_en": "Not",
+          "audio": {
+            "start_ms": 6090,
+            "end_ms": 6190
+          }
+        },
+        {
+          "pos": 7,
+          "text": "تَرٰى",
+          "wbw_en": "you see",
+          "audio": {
+            "start_ms": 6440,
+            "end_ms": 6600
+          }
+        },
+        {
+          "pos": 8,
+          "text": "فِىۡ",
+          "wbw_en": "in",
+          "audio": {
+            "start_ms": 7170,
+            "end_ms": 7270
+          }
+        },
+        {
+          "pos": 9,
+          "text": "خَلۡقِ",
+          "wbw_en": "(the) creation",
+          "audio": {
+            "start_ms": 7600,
+            "end_ms": 8160
+          }
+        },
+        {
+          "pos": 10,
+          "text": "الرَّحۡمٰنِ",
+          "wbw_en": "(of) the Most Gracious",
+          "audio": {
+            "start_ms": 8960,
+            "end_ms": 9360
+          }
+        },
+        {
+          "pos": 11,
+          "text": "مِنۡ",
+          "wbw_en": "any",
+          "audio": {
+            "start_ms": 9530,
+            "end_ms": 9630
+          }
+        },
+        {
+          "pos": 12,
+          "text": "تَفٰوُتٍ​ ؕ",
+          "wbw_en": "fault",
+          "audio": {
+            "start_ms": 10360,
+            "end_ms": 11640
+          }
+        },
+        {
+          "pos": 13,
+          "text": "فَارۡجِعِ",
+          "wbw_en": "So return",
+          "audio": {
+            "start_ms": 12120,
+            "end_ms": 13000
+          }
+        },
+        {
+          "pos": 14,
+          "text": "الۡبَصَرَۙ",
+          "wbw_en": "the vision",
+          "audio": {
+            "start_ms": 13200,
+            "end_ms": 13720
+          }
+        },
+        {
+          "pos": 15,
+          "text": "هَلۡ",
+          "wbw_en": "can",
+          "audio": {
+            "start_ms": 13880,
+            "end_ms": 14200
+          }
+        },
+        {
+          "pos": 16,
+          "text": "تَرٰى",
+          "wbw_en": "you see",
+          "audio": {
+            "start_ms": 14200,
+            "end_ms": 14320
+          }
+        },
+        {
+          "pos": 17,
+          "text": "مِنۡ",
+          "wbw_en": "any",
+          "audio": {
+            "start_ms": 14890,
+            "end_ms": 14990
+          }
+        },
+        {
+          "pos": 18,
+          "text": "فُطُوۡرٍ‏",
+          "wbw_en": "flaw",
+          "audio": {
+            "start_ms": 15520,
+            "end_ms": 19080
+          }
+        }
+      ],
+      "clauses": [
+        {
+          "id": "67:3:1",
+          "words": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "en": "The One who created seven heavens in layers.",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 5080
+          },
+          "phrases": [
+            {
+              "id": "67:3:1.1",
+              "words": [
+                1
+              ],
+              "en": "The One who",
+              "audio": {
+                "start_ms": 0,
+                "end_ms": 70
+              }
+            },
+            {
+              "id": "67:3:1.2",
+              "words": [
+                2
+              ],
+              "en": "created",
+              "audio": {
+                "start_ms": 890,
+                "end_ms": 990
+              }
+            },
+            {
+              "id": "67:3:1.3",
+              "words": [
+                3,
+                4
+              ],
+              "en": "seven heavens",
+              "audio": {
+                "start_ms": 1600,
+                "end_ms": 3240
+              }
+            },
+            {
+              "id": "67:3:1.4",
+              "words": [
+                5
+              ],
+              "en": "in layers.",
+              "audio": {
+                "start_ms": 4200,
+                "end_ms": 5080
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:3:2",
+          "words": [
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "en": "You do not see in the creation of the Most Merciful any inconsistency.",
+          "audio": {
+            "start_ms": 6090,
+            "end_ms": 11640
+          },
+          "phrases": [
+            {
+              "id": "67:3:2.1",
+              "words": [
+                6,
+                7
+              ],
+              "en": "You do not see",
+              "audio": {
+                "start_ms": 6090,
+                "end_ms": 6600
+              }
+            },
+            {
+              "id": "67:3:2.2",
+              "words": [
+                8,
+                9,
+                10
+              ],
+              "en": "in the creation of the Most Merciful",
+              "audio": {
+                "start_ms": 7170,
+                "end_ms": 9360
+              }
+            },
+            {
+              "id": "67:3:2.3",
+              "words": [
+                11,
+                12
+              ],
+              "en": "any inconsistency.",
+              "audio": {
+                "start_ms": 9530,
+                "end_ms": 11640
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:3:3",
+          "words": [
+            13,
+            14
+          ],
+          "en": "So return your vision.",
+          "audio": {
+            "start_ms": 12120,
+            "end_ms": 13720
+          },
+          "phrases": [
+            {
+              "id": "67:3:3.1",
+              "words": [
+                13
+              ],
+              "en": "So return",
+              "audio": {
+                "start_ms": 12120,
+                "end_ms": 13000
+              }
+            },
+            {
+              "id": "67:3:3.2",
+              "words": [
+                14
+              ],
+              "en": "your vision.",
+              "audio": {
+                "start_ms": 13200,
+                "end_ms": 13720
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:3:4",
+          "words": [
+            15,
+            16,
+            17,
+            18
+          ],
+          "en": "Do you see any breaks?",
+          "audio": {
+            "start_ms": 13880,
+            "end_ms": 19080
+          },
+          "phrases": [
+            {
+              "id": "67:3:4.1",
+              "words": [
+                15,
+                16
+              ],
+              "en": "Do you see",
+              "audio": {
+                "start_ms": 13880,
+                "end_ms": 14320
+              }
+            },
+            {
+              "id": "67:3:4.2",
+              "words": [
+                17,
+                18
+              ],
+              "en": "any breaks?",
+              "audio": {
+                "start_ms": 14890,
+                "end_ms": 19080
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 4,
+      "n_words": 10,
+      "status": "reviewed",
+      "translation_en": "Then return [your] vision twice again. [Your] vision will return to you humbled while it is fatigued.",
+      "words": [
+        {
+          "pos": 1,
+          "text": "ثُمَّ",
+          "wbw_en": "Then",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 1160
+          }
+        },
+        {
+          "pos": 2,
+          "text": "ارۡجِعِ",
+          "wbw_en": "return",
+          "audio": {
+            "start_ms": 1360,
+            "end_ms": 2120
+          }
+        },
+        {
+          "pos": 3,
+          "text": "الۡبَصَرَ",
+          "wbw_en": "the vision",
+          "audio": {
+            "start_ms": 2360,
+            "end_ms": 2880
+          }
+        },
+        {
+          "pos": 4,
+          "text": "كَرَّتَيۡنِ",
+          "wbw_en": "twice (again)",
+          "audio": {
+            "start_ms": 3040,
+            "end_ms": 4080
+          }
+        },
+        {
+          "pos": 5,
+          "text": "يَنۡقَلِبۡ",
+          "wbw_en": "Will return",
+          "audio": {
+            "start_ms": 4280,
+            "end_ms": 6040
+          }
+        },
+        {
+          "pos": 6,
+          "text": "اِلَيۡكَ",
+          "wbw_en": "to you",
+          "audio": {
+            "start_ms": 6360,
+            "end_ms": 6720
+          }
+        },
+        {
+          "pos": 7,
+          "text": "الۡبَصَرُ",
+          "wbw_en": "the vision",
+          "audio": {
+            "start_ms": 7080,
+            "end_ms": 7600
+          }
+        },
+        {
+          "pos": 8,
+          "text": "خَاسِئًا",
+          "wbw_en": "humbled",
+          "audio": {
+            "start_ms": 7760,
+            "end_ms": 8520
+          }
+        },
+        {
+          "pos": 9,
+          "text": "وَّهُوَ",
+          "wbw_en": "while it",
+          "audio": {
+            "start_ms": 9280,
+            "end_ms": 9840
+          }
+        },
+        {
+          "pos": 10,
+          "text": "حَسِيۡرٌ‏",
+          "wbw_en": "(is) fatigued",
+          "audio": {
+            "start_ms": 10040,
+            "end_ms": 12960
+          }
+        }
+      ],
+      "clauses": [
+        {
+          "id": "67:4:1",
+          "words": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "en": "Then return your vision twice more.",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 4080
+          },
+          "phrases": [
+            {
+              "id": "67:4:1.1",
+              "words": [
+                1
+              ],
+              "en": "Then",
+              "audio": {
+                "start_ms": 0,
+                "end_ms": 1160
+              }
+            },
+            {
+              "id": "67:4:1.2",
+              "words": [
+                2,
+                3
+              ],
+              "en": "return your vision",
+              "audio": {
+                "start_ms": 1360,
+                "end_ms": 2880
+              }
+            },
+            {
+              "id": "67:4:1.3",
+              "words": [
+                4
+              ],
+              "en": "twice more.",
+              "audio": {
+                "start_ms": 3040,
+                "end_ms": 4080
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:4:2",
+          "words": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "en": "Your vision will return to you humbled, and it is exhausted.",
+          "audio": {
+            "start_ms": 4280,
+            "end_ms": 12960
+          },
+          "phrases": [
+            {
+              "id": "67:4:2.1",
+              "words": [
+                5,
+                6,
+                7
+              ],
+              "en": "Your vision will return to you",
+              "audio": {
+                "start_ms": 4280,
+                "end_ms": 7600
+              }
+            },
+            {
+              "id": "67:4:2.2",
+              "words": [
+                8
+              ],
+              "en": "humbled,",
+              "audio": {
+                "start_ms": 7760,
+                "end_ms": 8520
+              }
+            },
+            {
+              "id": "67:4:2.3",
+              "words": [
+                9
+              ],
+              "en": "and it is",
+              "audio": {
+                "start_ms": 9280,
+                "end_ms": 9840
+              }
+            },
+            {
+              "id": "67:4:2.4",
+              "words": [
+                10
+              ],
+              "en": "exhausted.",
+              "audio": {
+                "start_ms": 10040,
+                "end_ms": 12960
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 5,
+      "n_words": 12,
+      "status": "reviewed",
+      "translation_en": "And We have certainly beautified the nearest heaven with lamps [i.e., stars] and have made [from] them what is thrown at the devils and have prepared for them the punishment of the Blaze.",
+      "words": [
+        {
+          "pos": 1,
+          "text": "وَلَـقَدۡ",
+          "wbw_en": "And certainly",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 480
+          }
+        },
+        {
+          "pos": 2,
+          "text": "زَيَّـنَّا",
+          "wbw_en": "We have beautified",
+          "audio": {
+            "start_ms": 680,
+            "end_ms": 2160
+          }
+        },
+        {
+          "pos": 3,
+          "text": "السَّمَآءَ",
+          "wbw_en": "the heaven",
+          "audio": {
+            "start_ms": 2600,
+            "end_ms": 4880
+          }
+        },
+        {
+          "pos": 4,
+          "text": "الدُّنۡيَا",
+          "wbw_en": "nearest",
+          "audio": {
+            "start_ms": 5730,
+            "end_ms": 5830
+          }
+        },
+        {
+          "pos": 5,
+          "text": "بِمَصَابِيۡحَ",
+          "wbw_en": "with lamps",
+          "audio": {
+            "start_ms": 6080,
+            "end_ms": 7440
+          }
+        },
+        {
+          "pos": 6,
+          "text": "وَجَعَلۡنٰهَا",
+          "wbw_en": "and We have made them",
+          "audio": {
+            "start_ms": 7640,
+            "end_ms": 8840
+          }
+        },
+        {
+          "pos": 7,
+          "text": "رُجُوۡمًا",
+          "wbw_en": "(as) missiles",
+          "audio": {
+            "start_ms": 9120,
+            "end_ms": 9960
+          }
+        },
+        {
+          "pos": 8,
+          "text": "لِّلشَّيٰطِيۡنِ​",
+          "wbw_en": "for the devils",
+          "audio": {
+            "start_ms": 10280,
+            "end_ms": 13240
+          }
+        },
+        {
+          "pos": 9,
+          "text": "وَاَعۡتَدۡنَا",
+          "wbw_en": "and We have prepared",
+          "audio": {
+            "start_ms": 13800,
+            "end_ms": 14880
+          }
+        },
+        {
+          "pos": 10,
+          "text": "لَهُمۡ",
+          "wbw_en": "for them",
+          "audio": {
+            "start_ms": 15330,
+            "end_ms": 15430
+          }
+        },
+        {
+          "pos": 11,
+          "text": "عَذَابَ",
+          "wbw_en": "punishment",
+          "audio": {
+            "start_ms": 16040,
+            "end_ms": 16480
+          }
+        },
+        {
+          "pos": 12,
+          "text": "السَّعِيۡرِ‏",
+          "wbw_en": "(of) the Blaze",
+          "audio": {
+            "start_ms": 16800,
+            "end_ms": 19880
+          }
+        }
+      ],
+      "clauses": [
+        {
+          "id": "67:5:1",
+          "words": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "en": "And indeed We adorned the lowest heaven with lamps",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 7440
+          },
+          "phrases": [
+            {
+              "id": "67:5:1.1",
+              "words": [
+                1
+              ],
+              "en": "And indeed",
+              "audio": {
+                "start_ms": 0,
+                "end_ms": 480
+              }
+            },
+            {
+              "id": "67:5:1.2",
+              "words": [
+                2
+              ],
+              "en": "We adorned",
+              "audio": {
+                "start_ms": 680,
+                "end_ms": 2160
+              }
+            },
+            {
+              "id": "67:5:1.3",
+              "words": [
+                3,
+                4
+              ],
+              "en": "the lowest heaven",
+              "audio": {
+                "start_ms": 2600,
+                "end_ms": 5830
+              }
+            },
+            {
+              "id": "67:5:1.4",
+              "words": [
+                5
+              ],
+              "en": "with lamps",
+              "audio": {
+                "start_ms": 6080,
+                "end_ms": 7440
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:5:2",
+          "words": [
+            6,
+            7,
+            8
+          ],
+          "en": "and made them things to be thrown at the devils,",
+          "audio": {
+            "start_ms": 7640,
+            "end_ms": 13240
+          },
+          "phrases": [
+            {
+              "id": "67:5:2.1",
+              "words": [
+                6
+              ],
+              "en": "and made them",
+              "audio": {
+                "start_ms": 7640,
+                "end_ms": 8840
+              }
+            },
+            {
+              "id": "67:5:2.2",
+              "words": [
+                7
+              ],
+              "en": "things to be thrown",
+              "audio": {
+                "start_ms": 9120,
+                "end_ms": 9960
+              }
+            },
+            {
+              "id": "67:5:2.3",
+              "words": [
+                8
+              ],
+              "en": "at the devils,",
+              "audio": {
+                "start_ms": 10280,
+                "end_ms": 13240
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:5:3",
+          "words": [
+            9,
+            10,
+            11,
+            12
+          ],
+          "en": "and We have prepared for them the punishment of the Blaze.",
+          "audio": {
+            "start_ms": 13800,
+            "end_ms": 19880
+          },
+          "phrases": [
+            {
+              "id": "67:5:3.1",
+              "words": [
+                9
+              ],
+              "en": "and We have prepared",
+              "audio": {
+                "start_ms": 13800,
+                "end_ms": 14880
+              }
+            },
+            {
+              "id": "67:5:3.2",
+              "words": [
+                10
+              ],
+              "en": "for them",
+              "audio": {
+                "start_ms": 15330,
+                "end_ms": 15430
+              }
+            },
+            {
+              "id": "67:5:3.3",
+              "words": [
+                11,
+                12
+              ],
+              "en": "the punishment of the Blaze.",
+              "audio": {
+                "start_ms": 16040,
+                "end_ms": 19880
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 6,
+      "n_words": 7,
+      "status": "reviewed",
+      "translation_en": "And for those who disbelieved in their Lord is the punishment of Hell, and wretched is the destination.",
+      "words": [
+        {
+          "pos": 1,
+          "text": "وَلِلَّذِيۡنَ",
+          "wbw_en": "And for those who",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 1080
+          }
+        },
+        {
+          "pos": 2,
+          "text": "كَفَرُوۡا",
+          "wbw_en": "disbelieved",
+          "audio": {
+            "start_ms": 1400,
+            "end_ms": 1960
+          }
+        },
+        {
+          "pos": 3,
+          "text": "بِرَبِّهِمۡ",
+          "wbw_en": "in their Lord",
+          "audio": {
+            "start_ms": 2240,
+            "end_ms": 3320
+          }
+        },
+        {
+          "pos": 4,
+          "text": "عَذَابُ",
+          "wbw_en": "(is the) punishment",
+          "audio": {
+            "start_ms": 3640,
+            "end_ms": 4080
+          }
+        },
+        {
+          "pos": 5,
+          "text": "جَهَنَّمَ​ؕ",
+          "wbw_en": "(of) Hell",
+          "audio": {
+            "start_ms": 4560,
+            "end_ms": 5880
+          }
+        },
+        {
+          "pos": 6,
+          "text": "وَبِئۡسَ",
+          "wbw_en": "and wretched is",
+          "audio": {
+            "start_ms": 6040,
+            "end_ms": 6720
+          }
+        },
+        {
+          "pos": 7,
+          "text": "الۡمَصِيۡرُ‏ ﻿﻿",
+          "wbw_en": "the destination",
+          "audio": {
+            "start_ms": 7040,
+            "end_ms": 10480
+          }
+        }
+      ],
+      "clauses": [
+        {
+          "id": "67:6:1",
+          "words": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "en": "And for those who disbelieved in their Lord is the punishment of Hell,",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 5880
+          },
+          "phrases": [
+            {
+              "id": "67:6:1.1",
+              "words": [
+                1
+              ],
+              "en": "And for those who",
+              "audio": {
+                "start_ms": 0,
+                "end_ms": 1080
+              }
+            },
+            {
+              "id": "67:6:1.2",
+              "words": [
+                2
+              ],
+              "en": "disbelieved",
+              "audio": {
+                "start_ms": 1400,
+                "end_ms": 1960
+              }
+            },
+            {
+              "id": "67:6:1.3",
+              "words": [
+                3
+              ],
+              "en": "in their Lord",
+              "audio": {
+                "start_ms": 2240,
+                "end_ms": 3320
+              }
+            },
+            {
+              "id": "67:6:1.4",
+              "words": [
+                4,
+                5
+              ],
+              "en": "is the punishment of Hell,",
+              "audio": {
+                "start_ms": 3640,
+                "end_ms": 5880
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:6:2",
+          "words": [
+            6,
+            7
+          ],
+          "en": "and wretched is the destination.",
+          "audio": {
+            "start_ms": 6040,
+            "end_ms": 10480
+          },
+          "phrases": [
+            {
+              "id": "67:6:2.1",
+              "words": [
+                6
+              ],
+              "en": "and wretched is",
+              "audio": {
+                "start_ms": 6040,
+                "end_ms": 6720
+              }
+            },
+            {
+              "id": "67:6:2.2",
+              "words": [
+                7
+              ],
+              "en": "the destination.",
+              "audio": {
+                "start_ms": 7040,
+                "end_ms": 10480
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 7,
+      "n_words": 8,
+      "status": "reviewed",
+      "translation_en": "When they are thrown into it, they hear from it a [dreadful] inhaling while it boils up.",
+      "words": [
+        {
+          "pos": 1,
+          "text": "اِذَاۤ",
+          "wbw_en": "When",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 400
+          }
+        },
+        {
+          "pos": 2,
+          "text": "اُلۡقُوۡا",
+          "wbw_en": "they are thrown",
+          "audio": {
+            "start_ms": 1800,
+            "end_ms": 2600
+          }
+        },
+        {
+          "pos": 3,
+          "text": "فِيۡهَا",
+          "wbw_en": "therein",
+          "audio": {
+            "start_ms": 2800,
+            "end_ms": 3280
+          }
+        },
+        {
+          "pos": 4,
+          "text": "سَمِعُوۡا",
+          "wbw_en": "they will hear",
+          "audio": {
+            "start_ms": 3600,
+            "end_ms": 4360
+          }
+        },
+        {
+          "pos": 5,
+          "text": "لَهَا",
+          "wbw_en": "from it",
+          "audio": {
+            "start_ms": 4560,
+            "end_ms": 4800
+          }
+        },
+        {
+          "pos": 6,
+          "text": "شَهِيۡقًا",
+          "wbw_en": "an inhaling",
+          "audio": {
+            "start_ms": 5080,
+            "end_ms": 5880
+          }
+        },
+        {
+          "pos": 7,
+          "text": "وَّهِىَ",
+          "wbw_en": "while it",
+          "audio": {
+            "start_ms": 6880,
+            "end_ms": 7480
+          }
+        },
+        {
+          "pos": 8,
+          "text": "تَفُوۡرُۙ‏",
+          "wbw_en": "boils up",
+          "audio": {
+            "start_ms": 7640,
+            "end_ms": 10920
+          }
+        }
+      ],
+      "clauses": [
+        {
+          "id": "67:7:1",
+          "words": [
+            1,
+            2,
+            3
+          ],
+          "en": "When they are thrown into it,",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 3280
+          },
+          "phrases": [
+            {
+              "id": "67:7:1.1",
+              "words": [
+                1
+              ],
+              "en": "When",
+              "audio": {
+                "start_ms": 0,
+                "end_ms": 400
+              }
+            },
+            {
+              "id": "67:7:1.2",
+              "words": [
+                2
+              ],
+              "en": "they are thrown",
+              "audio": {
+                "start_ms": 1800,
+                "end_ms": 2600
+              }
+            },
+            {
+              "id": "67:7:1.3",
+              "words": [
+                3
+              ],
+              "en": "into it,",
+              "audio": {
+                "start_ms": 2800,
+                "end_ms": 3280
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:7:2",
+          "words": [
+            4,
+            5,
+            6
+          ],
+          "en": "they hear from it a harsh roar",
+          "audio": {
+            "start_ms": 3600,
+            "end_ms": 5880
+          },
+          "phrases": [
+            {
+              "id": "67:7:2.1",
+              "words": [
+                4
+              ],
+              "en": "they hear",
+              "audio": {
+                "start_ms": 3600,
+                "end_ms": 4360
+              }
+            },
+            {
+              "id": "67:7:2.2",
+              "words": [
+                5
+              ],
+              "en": "from it",
+              "audio": {
+                "start_ms": 4560,
+                "end_ms": 4800
+              }
+            },
+            {
+              "id": "67:7:2.3",
+              "words": [
+                6
+              ],
+              "en": "a harsh roar",
+              "audio": {
+                "start_ms": 5080,
+                "end_ms": 5880
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:7:3",
+          "words": [
+            7,
+            8
+          ],
+          "en": "while it boils.",
+          "audio": {
+            "start_ms": 6880,
+            "end_ms": 10920
+          },
+          "phrases": [
+            {
+              "id": "67:7:3.1",
+              "words": [
+                7
+              ],
+              "en": "while it",
+              "audio": {
+                "start_ms": 6880,
+                "end_ms": 7480
+              }
+            },
+            {
+              "id": "67:7:3.2",
+              "words": [
+                8
+              ],
+              "en": "boils.",
+              "audio": {
+                "start_ms": 7640,
+                "end_ms": 10920
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 8,
+      "n_words": 13,
+      "status": "reviewed",
+      "translation_en": "It almost bursts with rage. Every time a company is thrown into it, its keepers ask them, \"Did there not come to you a warner?\"",
+      "words": [
+        {
+          "pos": 1,
+          "text": "تَكَادُ",
+          "wbw_en": "It almost",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 760
+          }
+        },
+        {
+          "pos": 2,
+          "text": "تَمَيَّزُ",
+          "wbw_en": "bursts",
+          "audio": {
+            "start_ms": 840,
+            "end_ms": 1840
+          }
+        },
+        {
+          "pos": 3,
+          "text": "مِنَ",
+          "wbw_en": "from",
+          "audio": {
+            "start_ms": 1920,
+            "end_ms": 2200
+          }
+        },
+        {
+          "pos": 4,
+          "text": "الۡغَيۡظِ​ؕ",
+          "wbw_en": "rage",
+          "audio": {
+            "start_ms": 2480,
+            "end_ms": 4600
+          }
+        },
+        {
+          "pos": 5,
+          "text": "كُلَّمَاۤ",
+          "wbw_en": "Every time",
+          "audio": {
+            "start_ms": 5200,
+            "end_ms": 5960
+          }
+        },
+        {
+          "pos": 6,
+          "text": "اُلۡقِىَ",
+          "wbw_en": "is thrown",
+          "audio": {
+            "start_ms": 7360,
+            "end_ms": 8360
+          }
+        },
+        {
+          "pos": 7,
+          "text": "فِيۡهَا",
+          "wbw_en": "therein",
+          "audio": {
+            "start_ms": 8520,
+            "end_ms": 8960
+          }
+        },
+        {
+          "pos": 8,
+          "text": "فَوۡجٌ",
+          "wbw_en": "a group",
+          "audio": {
+            "start_ms": 9240,
+            "end_ms": 9840
+          }
+        },
+        {
+          "pos": 9,
+          "text": "سَاَلَهُمۡ",
+          "wbw_en": "(will) ask them",
+          "audio": {
+            "start_ms": 10600,
+            "end_ms": 11440
+          }
+        },
+        {
+          "pos": 10,
+          "text": "خَزَنَـتُهَاۤ",
+          "wbw_en": "its keepers",
+          "audio": {
+            "start_ms": 11720,
+            "end_ms": 12720
+          }
+        },
+        {
+          "pos": 11,
+          "text": "اَلَمۡ",
+          "wbw_en": "Did not",
+          "audio": {
+            "start_ms": 14120,
+            "end_ms": 14840
+          }
+        },
+        {
+          "pos": 12,
+          "text": "يَاۡتِكُمۡ",
+          "wbw_en": "come to you",
+          "audio": {
+            "start_ms": 14920,
+            "end_ms": 15600
+          }
+        },
+        {
+          "pos": 13,
+          "text": "نَذِيۡرٌ‏",
+          "wbw_en": "a warner",
+          "audio": {
+            "start_ms": 16170,
+            "end_ms": 16270
+          }
+        }
+      ],
+      "clauses": [
+        {
+          "id": "67:8:1",
+          "words": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "en": "It almost bursts with rage.",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 4600
+          },
+          "phrases": [
+            {
+              "id": "67:8:1.1",
+              "words": [
+                1
+              ],
+              "en": "It almost",
+              "audio": {
+                "start_ms": 0,
+                "end_ms": 760
+              }
+            },
+            {
+              "id": "67:8:1.2",
+              "words": [
+                2
+              ],
+              "en": "bursts",
+              "audio": {
+                "start_ms": 840,
+                "end_ms": 1840
+              }
+            },
+            {
+              "id": "67:8:1.3",
+              "words": [
+                3,
+                4
+              ],
+              "en": "with rage.",
+              "audio": {
+                "start_ms": 1920,
+                "end_ms": 4600
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:8:2",
+          "words": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "en": "Every time a group is thrown into it,",
+          "audio": {
+            "start_ms": 5200,
+            "end_ms": 9840
+          },
+          "phrases": [
+            {
+              "id": "67:8:2.1",
+              "words": [
+                5
+              ],
+              "en": "Every time",
+              "audio": {
+                "start_ms": 5200,
+                "end_ms": 5960
+              }
+            },
+            {
+              "id": "67:8:2.2",
+              "words": [
+                6,
+                7,
+                8
+              ],
+              "en": "a group is thrown into it,",
+              "audio": {
+                "start_ms": 7360,
+                "end_ms": 9840
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:8:3",
+          "words": [
+            9,
+            10
+          ],
+          "en": "its keepers ask them,",
+          "audio": {
+            "start_ms": 10600,
+            "end_ms": 12720
+          },
+          "phrases": [
+            {
+              "id": "67:8:3.1",
+              "words": [
+                9,
+                10
+              ],
+              "en": "its keepers ask them,",
+              "audio": {
+                "start_ms": 10600,
+                "end_ms": 12720
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:8:4",
+          "words": [
+            11,
+            12,
+            13
+          ],
+          "en": "“Did there not come to you a warner?”",
+          "audio": {
+            "start_ms": 14120,
+            "end_ms": 16270
+          },
+          "phrases": [
+            {
+              "id": "67:8:4.1",
+              "words": [
+                11,
+                12
+              ],
+              "en": "“Did there not come to you",
+              "audio": {
+                "start_ms": 14120,
+                "end_ms": 15600
+              }
+            },
+            {
+              "id": "67:8:4.2",
+              "words": [
+                13
+              ],
+              "en": "a warner?”",
+              "audio": {
+                "start_ms": 16170,
+                "end_ms": 16270
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 9,
+      "n_words": 18,
+      "status": "reviewed",
+      "translation_en": "They will say, \"Yes, a warner had come to us, but we denied and said, 'Allāh has not sent down anything. You are not but in great error.'\"",
+      "words": [
+        {
+          "pos": 1,
+          "text": "قَالُوۡا",
+          "wbw_en": "They will say",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 520
+          }
+        },
+        {
+          "pos": 2,
+          "text": "بَلٰى",
+          "wbw_en": "Yes",
+          "audio": {
+            "start_ms": 720,
+            "end_ms": 1080
+          }
+        },
+        {
+          "pos": 3,
+          "text": "قَدۡ",
+          "wbw_en": "indeed",
+          "audio": {
+            "start_ms": 1250,
+            "end_ms": 1350
+          }
+        },
+        {
+          "pos": 4,
+          "text": "جَآءَنَا",
+          "wbw_en": "came to us",
+          "audio": {
+            "start_ms": 1800,
+            "end_ms": 3880
+          }
+        },
+        {
+          "pos": 5,
+          "text": "نَذِيۡرٌ  ۙ",
+          "wbw_en": "a warner",
+          "audio": {
+            "start_ms": 4410,
+            "end_ms": 4510
+          }
+        },
+        {
+          "pos": 6,
+          "text": "فَكَذَّبۡنَا",
+          "wbw_en": "but we denied",
+          "audio": {
+            "start_ms": 5600,
+            "end_ms": 6920
+          }
+        },
+        {
+          "pos": 7,
+          "text": "وَقُلۡنَا",
+          "wbw_en": "and we said",
+          "audio": {
+            "start_ms": 7200,
+            "end_ms": 7960
+          }
+        },
+        {
+          "pos": 8,
+          "text": "مَا",
+          "wbw_en": "Not",
+          "audio": {
+            "start_ms": 8170,
+            "end_ms": 8270
+          }
+        },
+        {
+          "pos": 9,
+          "text": "نَزَّلَ",
+          "wbw_en": "has sent down",
+          "audio": {
+            "start_ms": 9050,
+            "end_ms": 9150
+          }
+        },
+        {
+          "pos": 10,
+          "text": "اللّٰهُ",
+          "wbw_en": "Allah",
+          "audio": {
+            "start_ms": 9570,
+            "end_ms": 9670
+          }
+        },
+        {
+          "pos": 11,
+          "text": "مِنۡ",
+          "wbw_en": "any",
+          "audio": {
+            "start_ms": 10330,
+            "end_ms": 10430
+          }
+        },
+        {
+          "pos": 12,
+          "text": "شَىۡءٍ ۖۚ",
+          "wbw_en": "thing",
+          "audio": {
+            "start_ms": 11400,
+            "end_ms": 12080
+          }
+        },
+        {
+          "pos": 13,
+          "text": "اِنۡ",
+          "wbw_en": "Not",
+          "audio": {
+            "start_ms": 12370,
+            "end_ms": 12470
+          }
+        },
+        {
+          "pos": 14,
+          "text": "اَنۡتُمۡ",
+          "wbw_en": "you (are)",
+          "audio": {
+            "start_ms": 12800,
+            "end_ms": 13760
+          }
+        },
+        {
+          "pos": 15,
+          "text": "اِلَّا",
+          "wbw_en": "but",
+          "audio": {
+            "start_ms": 14360,
+            "end_ms": 14760
+          }
+        },
+        {
+          "pos": 16,
+          "text": "فِىۡ",
+          "wbw_en": "in",
+          "audio": {
+            "start_ms": 15050,
+            "end_ms": 15150
+          }
+        },
+        {
+          "pos": 17,
+          "text": "ضَلٰلٍ",
+          "wbw_en": "error",
+          "audio": {
+            "start_ms": 15400,
+            "end_ms": 16240
+          }
+        },
+        {
+          "pos": 18,
+          "text": "كَبِيۡرٍ‏",
+          "wbw_en": "great",
+          "audio": {
+            "start_ms": 17040,
+            "end_ms": 20520
+          }
+        }
+      ],
+      "clauses": [
+        {
+          "id": "67:9:1",
+          "words": [
+            1,
+            2
+          ],
+          "en": "They will say, “Yes,",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 1080
+          },
+          "phrases": [
+            {
+              "id": "67:9:1.1",
+              "words": [
+                1
+              ],
+              "en": "They will say,",
+              "audio": {
+                "start_ms": 0,
+                "end_ms": 520
+              }
+            },
+            {
+              "id": "67:9:1.2",
+              "words": [
+                2
+              ],
+              "en": "“Yes,",
+              "audio": {
+                "start_ms": 720,
+                "end_ms": 1080
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:9:2",
+          "words": [
+            3,
+            4,
+            5
+          ],
+          "en": "a warner did come to us,",
+          "audio": {
+            "start_ms": 1250,
+            "end_ms": 4510
+          },
+          "phrases": [
+            {
+              "id": "67:9:2.1",
+              "words": [
+                3,
+                4,
+                5
+              ],
+              "en": "a warner did come to us,",
+              "audio": {
+                "start_ms": 1250,
+                "end_ms": 4510
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:9:3",
+          "words": [
+            6,
+            7
+          ],
+          "en": "but we denied and said,",
+          "audio": {
+            "start_ms": 5600,
+            "end_ms": 7960
+          },
+          "phrases": [
+            {
+              "id": "67:9:3.1",
+              "words": [
+                6
+              ],
+              "en": "but we denied",
+              "audio": {
+                "start_ms": 5600,
+                "end_ms": 6920
+              }
+            },
+            {
+              "id": "67:9:3.2",
+              "words": [
+                7
+              ],
+              "en": "and said,",
+              "audio": {
+                "start_ms": 7200,
+                "end_ms": 7960
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:9:4",
+          "words": [
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "en": "‘Allah has not sent down anything.",
+          "audio": {
+            "start_ms": 8170,
+            "end_ms": 12080
+          },
+          "phrases": [
+            {
+              "id": "67:9:4.1",
+              "words": [
+                8,
+                9,
+                10
+              ],
+              "en": "‘Allah has not sent down",
+              "audio": {
+                "start_ms": 8170,
+                "end_ms": 9670
+              }
+            },
+            {
+              "id": "67:9:4.2",
+              "words": [
+                11,
+                12
+              ],
+              "en": "anything.",
+              "audio": {
+                "start_ms": 10330,
+                "end_ms": 12080
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:9:5",
+          "words": [
+            13,
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "en": "You are only in great error.’”",
+          "audio": {
+            "start_ms": 12370,
+            "end_ms": 20520
+          },
+          "phrases": [
+            {
+              "id": "67:9:5.1",
+              "words": [
+                13,
+                14,
+                15
+              ],
+              "en": "You are only",
+              "audio": {
+                "start_ms": 12370,
+                "end_ms": 14760
+              }
+            },
+            {
+              "id": "67:9:5.2",
+              "words": [
+                16,
+                17,
+                18
+              ],
+              "en": "in great error.’”",
+              "audio": {
+                "start_ms": 15050,
+                "end_ms": 20520
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 10,
+      "n_words": 11,
+      "status": "reviewed",
+      "translation_en": "And they will say, \"If only we had been listening or reasoning, we would not be among the companions of the Blaze.\"",
+      "words": [
+        {
+          "pos": 1,
+          "text": "وَقَالُوۡا",
+          "wbw_en": "And they will say",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 800
+          }
+        },
+        {
+          "pos": 2,
+          "text": "لَوۡ",
+          "wbw_en": "If",
+          "audio": {
+            "start_ms": 1010,
+            "end_ms": 1110
+          }
+        },
+        {
+          "pos": 3,
+          "text": "كُنَّا",
+          "wbw_en": "we had",
+          "audio": {
+            "start_ms": 1440,
+            "end_ms": 2760
+          }
+        },
+        {
+          "pos": 4,
+          "text": "نَسۡمَعُ",
+          "wbw_en": "listened",
+          "audio": {
+            "start_ms": 3120,
+            "end_ms": 3880
+          }
+        },
+        {
+          "pos": 5,
+          "text": "اَوۡ",
+          "wbw_en": "or",
+          "audio": {
+            "start_ms": 4010,
+            "end_ms": 4110
+          }
+        },
+        {
+          "pos": 6,
+          "text": "نَعۡقِلُ",
+          "wbw_en": "reasoned",
+          "audio": {
+            "start_ms": 4400,
+            "end_ms": 5120
+          }
+        },
+        {
+          "pos": 7,
+          "text": "مَا",
+          "wbw_en": "not",
+          "audio": {
+            "start_ms": 5210,
+            "end_ms": 5310
+          }
+        },
+        {
+          "pos": 8,
+          "text": "كُنَّا",
+          "wbw_en": "we (would) have been",
+          "audio": {
+            "start_ms": 5560,
+            "end_ms": 6600
+          }
+        },
+        {
+          "pos": 9,
+          "text": "فِىۡۤ",
+          "wbw_en": "among",
+          "audio": {
+            "start_ms": 6970,
+            "end_ms": 7070
+          }
+        },
+        {
+          "pos": 10,
+          "text": "اَصۡحٰبِ",
+          "wbw_en": "(the) companions",
+          "audio": {
+            "start_ms": 9240,
+            "end_ms": 9640
+          }
+        },
+        {
+          "pos": 11,
+          "text": "السَّعِيۡرِ‏ ﻿﻿",
+          "wbw_en": "(of) the Blaze",
+          "audio": {
+            "start_ms": 9960,
+            "end_ms": 12880
+          }
+        }
+      ],
+      "clauses": [
+        {
+          "id": "67:10:1",
+          "words": [
+            1
+          ],
+          "en": "And they will say,",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 800
+          },
+          "phrases": [
+            {
+              "id": "67:10:1.1",
+              "words": [
+                1
+              ],
+              "en": "And they will say,",
+              "audio": {
+                "start_ms": 0,
+                "end_ms": 800
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:10:2",
+          "words": [
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "en": "“If only we had been listening or reasoning,",
+          "audio": {
+            "start_ms": 1010,
+            "end_ms": 5120
+          },
+          "phrases": [
+            {
+              "id": "67:10:2.1",
+              "words": [
+                2
+              ],
+              "en": "“If only",
+              "audio": {
+                "start_ms": 1010,
+                "end_ms": 1110
+              }
+            },
+            {
+              "id": "67:10:2.2",
+              "words": [
+                3,
+                4
+              ],
+              "en": "we had been listening",
+              "audio": {
+                "start_ms": 1440,
+                "end_ms": 3880
+              }
+            },
+            {
+              "id": "67:10:2.3",
+              "words": [
+                5,
+                6
+              ],
+              "en": "or reasoning,",
+              "audio": {
+                "start_ms": 4010,
+                "end_ms": 5120
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:10:3",
+          "words": [
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "en": "we would not have been among the companions of the Blaze.”",
+          "audio": {
+            "start_ms": 5210,
+            "end_ms": 12880
+          },
+          "phrases": [
+            {
+              "id": "67:10:3.1",
+              "words": [
+                7,
+                8
+              ],
+              "en": "we would not have been",
+              "audio": {
+                "start_ms": 5210,
+                "end_ms": 6600
+              }
+            },
+            {
+              "id": "67:10:3.2",
+              "words": [
+                9,
+                10,
+                11
+              ],
+              "en": "among the companions of the Blaze.”",
+              "audio": {
+                "start_ms": 6970,
+                "end_ms": 12880
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 11,
+      "n_words": 5,
+      "status": "reviewed",
+      "translation_en": "And they will admit their sin, so [it is] alienation for the companions of the Blaze.",
+      "words": [
+        {
+          "pos": 1,
+          "text": "فَاعۡتَرَفُوۡا",
+          "wbw_en": "Then they (will) confess",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 1040
+          }
+        },
+        {
+          "pos": 2,
+          "text": "بِذَنۡۢبِهِمۡ​ۚ",
+          "wbw_en": "their sins",
+          "audio": {
+            "start_ms": 1240,
+            "end_ms": 3120
+          }
+        },
+        {
+          "pos": 3,
+          "text": "فَسُحۡقًا",
+          "wbw_en": "so away with",
+          "audio": {
+            "start_ms": 3200,
+            "end_ms": 3920
+          }
+        },
+        {
+          "pos": 4,
+          "text": "لِّاَصۡحٰبِ",
+          "wbw_en": "(the) companions",
+          "audio": {
+            "start_ms": 4280,
+            "end_ms": 5360
+          }
+        },
+        {
+          "pos": 5,
+          "text": "السَّعِيۡرِ‏",
+          "wbw_en": "(of) the Blaze",
+          "audio": {
+            "start_ms": 5680,
+            "end_ms": 9000
+          }
+        }
+      ],
+      "clauses": [
+        {
+          "id": "67:11:1",
+          "words": [
+            1,
+            2
+          ],
+          "en": "So they admit their sin;",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 3120
+          },
+          "phrases": [
+            {
+              "id": "67:11:1.1",
+              "words": [
+                1
+              ],
+              "en": "So they admit",
+              "audio": {
+                "start_ms": 0,
+                "end_ms": 1040
+              }
+            },
+            {
+              "id": "67:11:1.2",
+              "words": [
+                2
+              ],
+              "en": "their sin;",
+              "audio": {
+                "start_ms": 1240,
+                "end_ms": 3120
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:11:2",
+          "words": [
+            3,
+            4,
+            5
+          ],
+          "en": "away with the companions of the Blaze!",
+          "audio": {
+            "start_ms": 3200,
+            "end_ms": 9000
+          },
+          "phrases": [
+            {
+              "id": "67:11:2.1",
+              "words": [
+                3
+              ],
+              "en": "away with",
+              "audio": {
+                "start_ms": 3200,
+                "end_ms": 3920
+              }
+            },
+            {
+              "id": "67:11:2.2",
+              "words": [
+                4,
+                5
+              ],
+              "en": "the companions of the Blaze!",
+              "audio": {
+                "start_ms": 4280,
+                "end_ms": 9000
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 12,
+      "n_words": 9,
+      "status": "reviewed",
+      "translation_en": "Indeed, those who fear their Lord unseen will have forgiveness and great reward.",
+      "words": [
+        {
+          "pos": 1,
+          "text": "اِنَّ",
+          "wbw_en": "Indeed",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 70
+          }
+        },
+        {
+          "pos": 2,
+          "text": "الَّذِيۡنَ",
+          "wbw_en": "those who",
+          "audio": {
+            "start_ms": 1360,
+            "end_ms": 1760
+          }
+        },
+        {
+          "pos": 3,
+          "text": "يَخۡشَوۡنَ",
+          "wbw_en": "fear",
+          "audio": {
+            "start_ms": 2200,
+            "end_ms": 2960
+          }
+        },
+        {
+          "pos": 4,
+          "text": "رَبَّهُمۡ",
+          "wbw_en": "their Lord",
+          "audio": {
+            "start_ms": 3640,
+            "end_ms": 3920
+          }
+        },
+        {
+          "pos": 5,
+          "text": "بِالۡغَيۡبِ",
+          "wbw_en": "unseen",
+          "audio": {
+            "start_ms": 4800,
+            "end_ms": 5360
+          }
+        },
+        {
+          "pos": 6,
+          "text": "لَهُمۡ",
+          "wbw_en": "for them",
+          "audio": {
+            "start_ms": 6090,
+            "end_ms": 6190
+          }
+        },
+        {
+          "pos": 7,
+          "text": "مَّغۡفِرَةٌ",
+          "wbw_en": "(is) forgiveness",
+          "audio": {
+            "start_ms": 7680,
+            "end_ms": 8240
+          }
+        },
+        {
+          "pos": 8,
+          "text": "وَّاَجۡرٌ",
+          "wbw_en": "and a reward",
+          "audio": {
+            "start_ms": 8960,
+            "end_ms": 9800
+          }
+        },
+        {
+          "pos": 9,
+          "text": "كَبِيۡرٌ‏",
+          "wbw_en": "great",
+          "audio": {
+            "start_ms": 10720,
+            "end_ms": 14120
+          }
+        }
+      ],
+      "clauses": [
+        {
+          "id": "67:12:1",
+          "words": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "en": "Indeed, those who fear their Lord unseen",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 5360
+          },
+          "phrases": [
+            {
+              "id": "67:12:1.1",
+              "words": [
+                1,
+                2
+              ],
+              "en": "Indeed, those who",
+              "audio": {
+                "start_ms": 0,
+                "end_ms": 1760
+              }
+            },
+            {
+              "id": "67:12:1.2",
+              "words": [
+                3,
+                4
+              ],
+              "en": "fear their Lord",
+              "audio": {
+                "start_ms": 2200,
+                "end_ms": 3920
+              }
+            },
+            {
+              "id": "67:12:1.3",
+              "words": [
+                5
+              ],
+              "en": "unseen",
+              "audio": {
+                "start_ms": 4800,
+                "end_ms": 5360
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:12:2",
+          "words": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "en": "will have forgiveness and a great reward.",
+          "audio": {
+            "start_ms": 6090,
+            "end_ms": 14120
+          },
+          "phrases": [
+            {
+              "id": "67:12:2.1",
+              "words": [
+                6,
+                7
+              ],
+              "en": "will have forgiveness",
+              "audio": {
+                "start_ms": 6090,
+                "end_ms": 8240
+              }
+            },
+            {
+              "id": "67:12:2.2",
+              "words": [
+                8,
+                9
+              ],
+              "en": "and a great reward.",
+              "audio": {
+                "start_ms": 8960,
+                "end_ms": 14120
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 13,
+      "n_words": 9,
+      "status": "reviewed",
+      "translation_en": "And conceal your speech or publicize it; indeed, He is Knowing of that within the breasts.",
+      "words": [
+        {
+          "pos": 1,
+          "text": "وَاَسِرُّوۡا",
+          "wbw_en": "And conceal",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 960
+          }
+        },
+        {
+          "pos": 2,
+          "text": "قَوۡلَـكُمۡ",
+          "wbw_en": "your speech",
+          "audio": {
+            "start_ms": 1160,
+            "end_ms": 1920
+          }
+        },
+        {
+          "pos": 3,
+          "text": "اَوِ",
+          "wbw_en": "or",
+          "audio": {
+            "start_ms": 2200,
+            "end_ms": 2520
+          }
+        },
+        {
+          "pos": 4,
+          "text": "اجۡهَرُوۡا",
+          "wbw_en": "proclaim",
+          "audio": {
+            "start_ms": 2520,
+            "end_ms": 3200
+          }
+        },
+        {
+          "pos": 5,
+          "text": "بِهٖؕ",
+          "wbw_en": "it",
+          "audio": {
+            "start_ms": 3650,
+            "end_ms": 3750
+          }
+        },
+        {
+          "pos": 6,
+          "text": "اِنَّهٗ",
+          "wbw_en": "Indeed, He",
+          "audio": {
+            "start_ms": 5450,
+            "end_ms": 5550
+          }
+        },
+        {
+          "pos": 7,
+          "text": "عَلِيۡمٌۢ",
+          "wbw_en": "(is the) All-Knower",
+          "audio": {
+            "start_ms": 7570,
+            "end_ms": 7670
+          }
+        },
+        {
+          "pos": 8,
+          "text": "بِذَاتِ",
+          "wbw_en": "of what (is in)",
+          "audio": {
+            "start_ms": 9040,
+            "end_ms": 9840
+          }
+        },
+        {
+          "pos": 9,
+          "text": "الصُّدُوۡرِ‏ ﻿﻿",
+          "wbw_en": "the breasts",
+          "audio": {
+            "start_ms": 13450,
+            "end_ms": 13510
+          }
+        }
+      ],
+      "clauses": [
+        {
+          "id": "67:13:1",
+          "words": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "en": "And conceal your speech or declare it openly;",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 3750
+          },
+          "phrases": [
+            {
+              "id": "67:13:1.1",
+              "words": [
+                1,
+                2
+              ],
+              "en": "And conceal your speech",
+              "audio": {
+                "start_ms": 0,
+                "end_ms": 1920
+              }
+            },
+            {
+              "id": "67:13:1.2",
+              "words": [
+                3,
+                4,
+                5
+              ],
+              "en": "or declare it openly;",
+              "audio": {
+                "start_ms": 2200,
+                "end_ms": 3750
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:13:2",
+          "words": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "en": "Indeed, He is All-Knowing of what lies within the breasts.",
+          "audio": {
+            "start_ms": 5450,
+            "end_ms": 13510
+          },
+          "phrases": [
+            {
+              "id": "67:13:2.1",
+              "words": [
+                6
+              ],
+              "en": "Indeed, He is",
+              "audio": {
+                "start_ms": 5450,
+                "end_ms": 5550
+              }
+            },
+            {
+              "id": "67:13:2.2",
+              "words": [
+                7
+              ],
+              "en": "All-Knowing",
+              "audio": {
+                "start_ms": 7570,
+                "end_ms": 7670
+              }
+            },
+            {
+              "id": "67:13:2.3",
+              "words": [
+                8,
+                9
+              ],
+              "en": "of what lies within the breasts.",
+              "audio": {
+                "start_ms": 9040,
+                "end_ms": 13510
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 14,
+      "n_words": 7,
+      "status": "reviewed",
+      "translation_en": "Does He who created not know, while He is the Subtle, the Aware?",
+      "words": [
+        {
+          "pos": 1,
+          "text": "اَلَا",
+          "wbw_en": "Does not",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 280
+          }
+        },
+        {
+          "pos": 2,
+          "text": "يَعۡلَمُ",
+          "wbw_en": "know",
+          "audio": {
+            "start_ms": 1050,
+            "end_ms": 1150
+          }
+        },
+        {
+          "pos": 3,
+          "text": "مَنۡ",
+          "wbw_en": "(the One) Who",
+          "audio": {
+            "start_ms": 1410,
+            "end_ms": 1510
+          }
+        },
+        {
+          "pos": 4,
+          "text": "خَلَقَؕ",
+          "wbw_en": "created",
+          "audio": {
+            "start_ms": 1770,
+            "end_ms": 1870
+          }
+        },
+        {
+          "pos": 5,
+          "text": "وَهُوَ",
+          "wbw_en": "And He",
+          "audio": {
+            "start_ms": 2480,
+            "end_ms": 2920
+          }
+        },
+        {
+          "pos": 6,
+          "text": "اللَّطِيۡفُ",
+          "wbw_en": "(is) the Subtle",
+          "audio": {
+            "start_ms": 3080,
+            "end_ms": 3920
+          }
+        },
+        {
+          "pos": 7,
+          "text": "الۡخَبِيۡرُ‏",
+          "wbw_en": "the All-Aware",
+          "audio": {
+            "start_ms": 4240,
+            "end_ms": 7320
+          }
+        }
+      ],
+      "clauses": [
+        {
+          "id": "67:14:1",
+          "words": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "en": "Would the One who created not know?",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 1870
+          },
+          "phrases": [
+            {
+              "id": "67:14:1.1",
+              "words": [
+                1,
+                2,
+                3,
+                4
+              ],
+              "en": "Would the One who created not know?",
+              "audio": {
+                "start_ms": 0,
+                "end_ms": 1870
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:14:2",
+          "words": [
+            5,
+            6,
+            7
+          ],
+          "en": "And He is the Subtle, the All-Aware.",
+          "audio": {
+            "start_ms": 2480,
+            "end_ms": 7320
+          },
+          "phrases": [
+            {
+              "id": "67:14:2.1",
+              "words": [
+                5
+              ],
+              "en": "And He is",
+              "audio": {
+                "start_ms": 2480,
+                "end_ms": 2920
+              }
+            },
+            {
+              "id": "67:14:2.2",
+              "words": [
+                6
+              ],
+              "en": "the Subtle,",
+              "audio": {
+                "start_ms": 3080,
+                "end_ms": 3920
+              }
+            },
+            {
+              "id": "67:14:2.3",
+              "words": [
+                7
+              ],
+              "en": "the All-Aware.",
+              "audio": {
+                "start_ms": 4240,
+                "end_ms": 7320
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 15,
+      "n_words": 14,
+      "status": "reviewed",
+      "translation_en": "It is He who made the earth tame for you - so walk among its slopes and eat of His provision - and to Him is the resurrection.",
+      "words": [
+        {
+          "pos": 1,
+          "text": "هُوَ",
+          "wbw_en": "He",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 280
+          }
+        },
+        {
+          "pos": 2,
+          "text": "الَّذِىۡ",
+          "wbw_en": "(is) the One Who",
+          "audio": {
+            "start_ms": 450,
+            "end_ms": 550
+          }
+        },
+        {
+          "pos": 3,
+          "text": "جَعَلَ",
+          "wbw_en": "made",
+          "audio": {
+            "start_ms": 1130,
+            "end_ms": 1230
+          }
+        },
+        {
+          "pos": 4,
+          "text": "لَـكُمُ",
+          "wbw_en": "for you",
+          "audio": {
+            "start_ms": 1840,
+            "end_ms": 2080
+          }
+        },
+        {
+          "pos": 5,
+          "text": "الۡاَرۡضَ",
+          "wbw_en": "the earth",
+          "audio": {
+            "start_ms": 2520,
+            "end_ms": 2960
+          }
+        },
+        {
+          "pos": 6,
+          "text": "ذَلُوۡلًا",
+          "wbw_en": "subservient",
+          "audio": {
+            "start_ms": 3040,
+            "end_ms": 3840
+          }
+        },
+        {
+          "pos": 7,
+          "text": "فَامۡشُوۡا",
+          "wbw_en": "so walk",
+          "audio": {
+            "start_ms": 4520,
+            "end_ms": 5400
+          }
+        },
+        {
+          "pos": 8,
+          "text": "فِىۡ",
+          "wbw_en": "in",
+          "audio": {
+            "start_ms": 5530,
+            "end_ms": 5630
+          }
+        },
+        {
+          "pos": 9,
+          "text": "مَنَاكِبِهَا",
+          "wbw_en": "(the) paths thereof",
+          "audio": {
+            "start_ms": 5920,
+            "end_ms": 7040
+          }
+        },
+        {
+          "pos": 10,
+          "text": "وَكُلُوۡا",
+          "wbw_en": "and eat",
+          "audio": {
+            "start_ms": 7320,
+            "end_ms": 8000
+          }
+        },
+        {
+          "pos": 11,
+          "text": "مِنۡ",
+          "wbw_en": "of",
+          "audio": {
+            "start_ms": 8170,
+            "end_ms": 8270
+          }
+        },
+        {
+          "pos": 12,
+          "text": "رِّزۡقِهٖ​ؕ",
+          "wbw_en": "His provision",
+          "audio": {
+            "start_ms": 8600,
+            "end_ms": 9360
+          }
+        },
+        {
+          "pos": 13,
+          "text": "وَاِلَيۡهِ",
+          "wbw_en": "and to Him",
+          "audio": {
+            "start_ms": 9880,
+            "end_ms": 10400
+          }
+        },
+        {
+          "pos": 14,
+          "text": "النُّشُوۡرُ‏",
+          "wbw_en": "(is) the Resurrection",
+          "audio": {
+            "start_ms": 11720,
+            "end_ms": 15400
+          }
+        }
+      ],
+      "clauses": [
+        {
+          "id": "67:15:1",
+          "words": [
+            1,
+            2
+          ],
+          "en": "He is the One who",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 550
+          },
+          "phrases": [
+            {
+              "id": "67:15:1.1",
+              "words": [
+                1,
+                2
+              ],
+              "en": "He is the One who",
+              "audio": {
+                "start_ms": 0,
+                "end_ms": 550
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:15:2",
+          "words": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "en": "made the earth manageable for you,",
+          "audio": {
+            "start_ms": 1130,
+            "end_ms": 3840
+          },
+          "phrases": [
+            {
+              "id": "67:15:2.1",
+              "words": [
+                3
+              ],
+              "en": "made",
+              "audio": {
+                "start_ms": 1130,
+                "end_ms": 1230
+              }
+            },
+            {
+              "id": "67:15:2.2",
+              "words": [
+                4,
+                5,
+                6
+              ],
+              "en": "the earth manageable for you,",
+              "audio": {
+                "start_ms": 1840,
+                "end_ms": 3840
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:15:3",
+          "words": [
+            7,
+            8,
+            9
+          ],
+          "en": "so walk through its regions",
+          "audio": {
+            "start_ms": 4520,
+            "end_ms": 7040
+          },
+          "phrases": [
+            {
+              "id": "67:15:3.1",
+              "words": [
+                7
+              ],
+              "en": "so walk",
+              "audio": {
+                "start_ms": 4520,
+                "end_ms": 5400
+              }
+            },
+            {
+              "id": "67:15:3.2",
+              "words": [
+                8,
+                9
+              ],
+              "en": "through its regions",
+              "audio": {
+                "start_ms": 5530,
+                "end_ms": 7040
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:15:4",
+          "words": [
+            10,
+            11,
+            12
+          ],
+          "en": "and eat from His provision;",
+          "audio": {
+            "start_ms": 7320,
+            "end_ms": 9360
+          },
+          "phrases": [
+            {
+              "id": "67:15:4.1",
+              "words": [
+                10
+              ],
+              "en": "and eat",
+              "audio": {
+                "start_ms": 7320,
+                "end_ms": 8000
+              }
+            },
+            {
+              "id": "67:15:4.2",
+              "words": [
+                11,
+                12
+              ],
+              "en": "from His provision;",
+              "audio": {
+                "start_ms": 8170,
+                "end_ms": 9360
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:15:5",
+          "words": [
+            13,
+            14
+          ],
+          "en": "and to Him is the resurrection.",
+          "audio": {
+            "start_ms": 9880,
+            "end_ms": 15400
+          },
+          "phrases": [
+            {
+              "id": "67:15:5.1",
+              "words": [
+                13
+              ],
+              "en": "and to Him",
+              "audio": {
+                "start_ms": 9880,
+                "end_ms": 10400
+              }
+            },
+            {
+              "id": "67:15:5.2",
+              "words": [
+                14
+              ],
+              "en": "is the resurrection.",
+              "audio": {
+                "start_ms": 11720,
+                "end_ms": 15400
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 16,
+      "n_words": 11,
+      "status": "reviewed",
+      "translation_en": "Do you feel secure that He who is above would not cause the earth to swallow you and suddenly it would sway?",
+      "words": [
+        {
+          "pos": 1,
+          "text": "ءَاَمِنۡتُمۡ",
+          "wbw_en": "Do you feel secure",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 1280
+          }
+        },
+        {
+          "pos": 2,
+          "text": "مَّنۡ",
+          "wbw_en": "(from Him) Who",
+          "audio": {
+            "start_ms": 2330,
+            "end_ms": 2430
+          }
+        },
+        {
+          "pos": 3,
+          "text": "فِىۡ",
+          "wbw_en": "(is) in",
+          "audio": {
+            "start_ms": 3330,
+            "end_ms": 3430
+          }
+        },
+        {
+          "pos": 4,
+          "text": "السَّمَآءِ",
+          "wbw_en": "the heaven",
+          "audio": {
+            "start_ms": 3890,
+            "end_ms": 3990
+          }
+        },
+        {
+          "pos": 5,
+          "text": "اَنۡ",
+          "wbw_en": "not",
+          "audio": {
+            "start_ms": 5970,
+            "end_ms": 6070
+          }
+        },
+        {
+          "pos": 6,
+          "text": "يَّخۡسِفَ",
+          "wbw_en": "He will cause to swallow",
+          "audio": {
+            "start_ms": 6920,
+            "end_ms": 7680
+          }
+        },
+        {
+          "pos": 7,
+          "text": "بِكُمُ",
+          "wbw_en": "you",
+          "audio": {
+            "start_ms": 7840,
+            "end_ms": 8080
+          }
+        },
+        {
+          "pos": 8,
+          "text": "الۡاَرۡضَ",
+          "wbw_en": "the earth",
+          "audio": {
+            "start_ms": 8560,
+            "end_ms": 9000
+          }
+        },
+        {
+          "pos": 9,
+          "text": "فَاِذَا",
+          "wbw_en": "when",
+          "audio": {
+            "start_ms": 9160,
+            "end_ms": 9680
+          }
+        },
+        {
+          "pos": 10,
+          "text": "هِىَ",
+          "wbw_en": "it",
+          "audio": {
+            "start_ms": 9890,
+            "end_ms": 9990
+          }
+        },
+        {
+          "pos": 11,
+          "text": "تَمُوۡرُۙ‏",
+          "wbw_en": "sways",
+          "audio": {
+            "start_ms": 10400,
+            "end_ms": 13840
+          }
+        }
+      ],
+      "clauses": [
+        {
+          "id": "67:16:1",
+          "words": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "en": "Do you feel secure that He who is in the heaven",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 3990
+          },
+          "phrases": [
+            {
+              "id": "67:16:1.1",
+              "words": [
+                1
+              ],
+              "en": "Do you feel secure",
+              "audio": {
+                "start_ms": 0,
+                "end_ms": 1280
+              }
+            },
+            {
+              "id": "67:16:1.2",
+              "words": [
+                2,
+                3,
+                4
+              ],
+              "en": "that He who is in the heaven",
+              "audio": {
+                "start_ms": 2330,
+                "end_ms": 3990
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:16:2",
+          "words": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "en": "would not cause the earth to swallow you,",
+          "audio": {
+            "start_ms": 5970,
+            "end_ms": 9000
+          },
+          "phrases": [
+            {
+              "id": "67:16:2.1",
+              "words": [
+                5,
+                6,
+                7,
+                8
+              ],
+              "en": "would not cause the earth to swallow you,",
+              "audio": {
+                "start_ms": 5970,
+                "end_ms": 9000
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:16:3",
+          "words": [
+            9,
+            10,
+            11
+          ],
+          "en": "and suddenly it sways?",
+          "audio": {
+            "start_ms": 9160,
+            "end_ms": 13840
+          },
+          "phrases": [
+            {
+              "id": "67:16:3.1",
+              "words": [
+                9,
+                10
+              ],
+              "en": "and suddenly it",
+              "audio": {
+                "start_ms": 9160,
+                "end_ms": 9990
+              }
+            },
+            {
+              "id": "67:16:3.2",
+              "words": [
+                11
+              ],
+              "en": "sways?",
+              "audio": {
+                "start_ms": 10400,
+                "end_ms": 13840
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 17,
+      "n_words": 12,
+      "status": "reviewed",
+      "translation_en": "Or do you feel secure that He who is above would not send against you a storm of stones? Then you would know how [severe] was My warning.",
+      "words": [
+        {
+          "pos": 1,
+          "text": "اَمۡ",
+          "wbw_en": "Or",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 70
+          }
+        },
+        {
+          "pos": 2,
+          "text": "اَمِنۡتُمۡ",
+          "wbw_en": "do you feel secure",
+          "audio": {
+            "start_ms": 400,
+            "end_ms": 1560
+          }
+        },
+        {
+          "pos": 3,
+          "text": "مَّنۡ",
+          "wbw_en": "(from Him) Who",
+          "audio": {
+            "start_ms": 2610,
+            "end_ms": 2710
+          }
+        },
+        {
+          "pos": 4,
+          "text": "فِى",
+          "wbw_en": "(is) in",
+          "audio": {
+            "start_ms": 3730,
+            "end_ms": 3830
+          }
+        },
+        {
+          "pos": 5,
+          "text": "السَّمَآءِ",
+          "wbw_en": "the heaven",
+          "audio": {
+            "start_ms": 4330,
+            "end_ms": 4430
+          }
+        },
+        {
+          "pos": 6,
+          "text": "اَنۡ",
+          "wbw_en": "that",
+          "audio": {
+            "start_ms": 6530,
+            "end_ms": 6630
+          }
+        },
+        {
+          "pos": 7,
+          "text": "يُّرۡسِلَ",
+          "wbw_en": "He will send",
+          "audio": {
+            "start_ms": 7320,
+            "end_ms": 8160
+          }
+        },
+        {
+          "pos": 8,
+          "text": "عَلَيۡكُمۡ",
+          "wbw_en": "against you",
+          "audio": {
+            "start_ms": 8480,
+            "end_ms": 8880
+          }
+        },
+        {
+          "pos": 9,
+          "text": "حَاصِبًا​ ؕ",
+          "wbw_en": "a storm of stones",
+          "audio": {
+            "start_ms": 9200,
+            "end_ms": 10040
+          }
+        },
+        {
+          "pos": 10,
+          "text": "فَسَتَعۡلَمُوۡنَ",
+          "wbw_en": "Then you would know",
+          "audio": {
+            "start_ms": 10920,
+            "end_ms": 12200
+          }
+        },
+        {
+          "pos": 11,
+          "text": "كَيۡفَ",
+          "wbw_en": "how",
+          "audio": {
+            "start_ms": 12600,
+            "end_ms": 13080
+          }
+        },
+        {
+          "pos": 12,
+          "text": "نَذِيۡرِ‏",
+          "wbw_en": "(was) My warning",
+          "audio": {
+            "start_ms": 13280,
+            "end_ms": 16360
+          }
+        }
+      ],
+      "clauses": [
+        {
+          "id": "67:17:1",
+          "words": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "en": "Or do you feel secure that He who is in the heaven",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 4430
+          },
+          "phrases": [
+            {
+              "id": "67:17:1.1",
+              "words": [
+                1,
+                2
+              ],
+              "en": "Or do you feel secure",
+              "audio": {
+                "start_ms": 0,
+                "end_ms": 1560
+              }
+            },
+            {
+              "id": "67:17:1.2",
+              "words": [
+                3,
+                4,
+                5
+              ],
+              "en": "that He who is in the heaven",
+              "audio": {
+                "start_ms": 2610,
+                "end_ms": 4430
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:17:2",
+          "words": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "en": "would not send against you a storm of stones?",
+          "audio": {
+            "start_ms": 6530,
+            "end_ms": 10040
+          },
+          "phrases": [
+            {
+              "id": "67:17:2.1",
+              "words": [
+                6,
+                7
+              ],
+              "en": "would not send",
+              "audio": {
+                "start_ms": 6530,
+                "end_ms": 8160
+              }
+            },
+            {
+              "id": "67:17:2.2",
+              "words": [
+                8
+              ],
+              "en": "against you",
+              "audio": {
+                "start_ms": 8480,
+                "end_ms": 8880
+              }
+            },
+            {
+              "id": "67:17:2.3",
+              "words": [
+                9
+              ],
+              "en": "a storm of stones?",
+              "audio": {
+                "start_ms": 9200,
+                "end_ms": 10040
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:17:3",
+          "words": [
+            10,
+            11,
+            12
+          ],
+          "en": "So you will soon know how terrible My warning was.",
+          "audio": {
+            "start_ms": 10920,
+            "end_ms": 16360
+          },
+          "phrases": [
+            {
+              "id": "67:17:3.1",
+              "words": [
+                10
+              ],
+              "en": "So you will soon know",
+              "audio": {
+                "start_ms": 10920,
+                "end_ms": 12200
+              }
+            },
+            {
+              "id": "67:17:3.2",
+              "words": [
+                11,
+                12
+              ],
+              "en": "how terrible My warning was.",
+              "audio": {
+                "start_ms": 12600,
+                "end_ms": 16360
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 18,
+      "n_words": 8,
+      "status": "reviewed",
+      "translation_en": "And already had those before them denied, and how [terrible] was My reproach.",
+      "words": [
+        {
+          "pos": 1,
+          "text": "وَلَـقَدۡ",
+          "wbw_en": "And indeed",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 480
+          }
+        },
+        {
+          "pos": 2,
+          "text": "كَذَّبَ",
+          "wbw_en": "denied",
+          "audio": {
+            "start_ms": 800,
+            "end_ms": 1480
+          }
+        },
+        {
+          "pos": 3,
+          "text": "الَّذِيۡنَ",
+          "wbw_en": "those",
+          "audio": {
+            "start_ms": 1720,
+            "end_ms": 2080
+          }
+        },
+        {
+          "pos": 4,
+          "text": "مِنۡ",
+          "wbw_en": "from",
+          "audio": {
+            "start_ms": 2530,
+            "end_ms": 2630
+          }
+        },
+        {
+          "pos": 5,
+          "text": "قَبۡلِهِمۡ",
+          "wbw_en": "before them",
+          "audio": {
+            "start_ms": 3400,
+            "end_ms": 4560
+          }
+        },
+        {
+          "pos": 6,
+          "text": "فَكَيۡفَ",
+          "wbw_en": "and how",
+          "audio": {
+            "start_ms": 4640,
+            "end_ms": 5320
+          }
+        },
+        {
+          "pos": 7,
+          "text": "كَانَ",
+          "wbw_en": "was",
+          "audio": {
+            "start_ms": 5490,
+            "end_ms": 5590
+          }
+        },
+        {
+          "pos": 8,
+          "text": "نَكِيۡرِ‏",
+          "wbw_en": "My rejection",
+          "audio": {
+            "start_ms": 6120,
+            "end_ms": 9520
+          }
+        }
+      ],
+      "clauses": [
+        {
+          "id": "67:18:1",
+          "words": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "en": "And indeed those who came before them denied,",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 4560
+          },
+          "phrases": [
+            {
+              "id": "67:18:1.1",
+              "words": [
+                1
+              ],
+              "en": "And indeed",
+              "audio": {
+                "start_ms": 0,
+                "end_ms": 480
+              }
+            },
+            {
+              "id": "67:18:1.2",
+              "words": [
+                2,
+                3,
+                4,
+                5
+              ],
+              "en": "those who came before them denied,",
+              "audio": {
+                "start_ms": 800,
+                "end_ms": 4560
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:18:2",
+          "words": [
+            6,
+            7,
+            8
+          ],
+          "en": "and how terrible My reproach was!",
+          "audio": {
+            "start_ms": 4640,
+            "end_ms": 9520
+          },
+          "phrases": [
+            {
+              "id": "67:18:2.1",
+              "words": [
+                6
+              ],
+              "en": "and how",
+              "audio": {
+                "start_ms": 4640,
+                "end_ms": 5320
+              }
+            },
+            {
+              "id": "67:18:2.2",
+              "words": [
+                7,
+                8
+              ],
+              "en": "terrible My reproach was!",
+              "audio": {
+                "start_ms": 5490,
+                "end_ms": 9520
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 19,
+      "n_words": 15,
+      "status": "reviewed",
+      "translation_en": "Do they not see the birds above them with wings outspread and [sometimes] folded in? None holds them [aloft] except the Most Merciful. Indeed He is, of all things, Seeing.",
+      "words": [
+        {
+          "pos": 1,
+          "text": "اَوَلَمۡ",
+          "wbw_en": "Do not",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 720
+          }
+        },
+        {
+          "pos": 2,
+          "text": "يَرَوۡا",
+          "wbw_en": "they see",
+          "audio": {
+            "start_ms": 800,
+            "end_ms": 1360
+          }
+        },
+        {
+          "pos": 3,
+          "text": "اِلَى",
+          "wbw_en": "[to]",
+          "audio": {
+            "start_ms": 1400,
+            "end_ms": 1680
+          }
+        },
+        {
+          "pos": 4,
+          "text": "الطَّيۡرِ",
+          "wbw_en": "the birds",
+          "audio": {
+            "start_ms": 1800,
+            "end_ms": 2520
+          }
+        },
+        {
+          "pos": 5,
+          "text": "فَوۡقَهُمۡ",
+          "wbw_en": "above them",
+          "audio": {
+            "start_ms": 2560,
+            "end_ms": 3280
+          }
+        },
+        {
+          "pos": 6,
+          "text": "صٰٓفّٰتٍ",
+          "wbw_en": "spreading (their wings)",
+          "audio": {
+            "start_ms": 3560,
+            "end_ms": 7720
+          }
+        },
+        {
+          "pos": 7,
+          "text": "وَّيَقۡبِضۡنَؕ ۘ",
+          "wbw_en": "and folding",
+          "audio": {
+            "start_ms": 8720,
+            "end_ms": 10080
+          }
+        },
+        {
+          "pos": 8,
+          "text": "مَا",
+          "wbw_en": "Not",
+          "audio": {
+            "start_ms": 10610,
+            "end_ms": 10710
+          }
+        },
+        {
+          "pos": 9,
+          "text": "يُمۡسِكُهُنَّ",
+          "wbw_en": "holds them",
+          "audio": {
+            "start_ms": 11040,
+            "end_ms": 13040
+          }
+        },
+        {
+          "pos": 10,
+          "text": "اِلَّا",
+          "wbw_en": "except",
+          "audio": {
+            "start_ms": 13320,
+            "end_ms": 13760
+          }
+        },
+        {
+          "pos": 11,
+          "text": "الرَّحۡمٰنُ​ؕ",
+          "wbw_en": "the Most Gracious",
+          "audio": {
+            "start_ms": 14600,
+            "end_ms": 17200
+          }
+        },
+        {
+          "pos": 12,
+          "text": "اِنَّهٗ",
+          "wbw_en": "Indeed, He",
+          "audio": {
+            "start_ms": 17570,
+            "end_ms": 17670
+          }
+        },
+        {
+          "pos": 13,
+          "text": "بِكُلِّ",
+          "wbw_en": "(is) of every",
+          "audio": {
+            "start_ms": 19520,
+            "end_ms": 19960
+          }
+        },
+        {
+          "pos": 14,
+          "text": "شَىۡءٍۢ",
+          "wbw_en": "thing",
+          "audio": {
+            "start_ms": 20160,
+            "end_ms": 20680
+          }
+        },
+        {
+          "pos": 15,
+          "text": "بَصِيۡرٌ‏",
+          "wbw_en": "All-Seer",
+          "audio": {
+            "start_ms": 25050,
+            "end_ms": 25100
+          }
+        }
+      ],
+      "clauses": [
+        {
+          "id": "67:19:1",
+          "words": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "en": "Have they not seen the birds above them, spreading their wings and folding them in?",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 10080
+          },
+          "phrases": [
+            {
+              "id": "67:19:1.1",
+              "words": [
+                1,
+                2
+              ],
+              "en": "Have they not seen",
+              "audio": {
+                "start_ms": 0,
+                "end_ms": 1360
+              }
+            },
+            {
+              "id": "67:19:1.2",
+              "words": [
+                3,
+                4
+              ],
+              "en": "the birds",
+              "audio": {
+                "start_ms": 1400,
+                "end_ms": 2520
+              }
+            },
+            {
+              "id": "67:19:1.3",
+              "words": [
+                5
+              ],
+              "en": "above them,",
+              "audio": {
+                "start_ms": 2560,
+                "end_ms": 3280
+              }
+            },
+            {
+              "id": "67:19:1.4",
+              "words": [
+                6
+              ],
+              "en": "spreading their wings",
+              "audio": {
+                "start_ms": 3560,
+                "end_ms": 7720
+              }
+            },
+            {
+              "id": "67:19:1.5",
+              "words": [
+                7
+              ],
+              "en": "and folding them in?",
+              "audio": {
+                "start_ms": 8720,
+                "end_ms": 10080
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:19:2",
+          "words": [
+            8,
+            9,
+            10,
+            11
+          ],
+          "en": "None holds them up except the Most Merciful.",
+          "audio": {
+            "start_ms": 10610,
+            "end_ms": 17200
+          },
+          "phrases": [
+            {
+              "id": "67:19:2.1",
+              "words": [
+                8,
+                9
+              ],
+              "en": "None holds them up",
+              "audio": {
+                "start_ms": 10610,
+                "end_ms": 13040
+              }
+            },
+            {
+              "id": "67:19:2.2",
+              "words": [
+                10,
+                11
+              ],
+              "en": "except the Most Merciful.",
+              "audio": {
+                "start_ms": 13320,
+                "end_ms": 17200
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:19:3",
+          "words": [
+            12,
+            13,
+            14,
+            15
+          ],
+          "en": "Indeed, He is All-Seeing over everything.",
+          "audio": {
+            "start_ms": 17570,
+            "end_ms": 25100
+          },
+          "phrases": [
+            {
+              "id": "67:19:3.1",
+              "words": [
+                12
+              ],
+              "en": "Indeed, He is",
+              "audio": {
+                "start_ms": 17570,
+                "end_ms": 17670
+              }
+            },
+            {
+              "id": "67:19:3.2",
+              "words": [
+                13,
+                14,
+                15
+              ],
+              "en": "All-Seeing over everything.",
+              "audio": {
+                "start_ms": 19520,
+                "end_ms": 25100
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 20,
+      "n_words": 15,
+      "status": "reviewed",
+      "translation_en": "Or who is it that could be an army for you to aid you other than the Most Merciful? The disbelievers are not but in delusion.",
+      "words": [
+        {
+          "pos": 1,
+          "text": "اَمَّنۡ",
+          "wbw_en": "Who is",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 1360
+          }
+        },
+        {
+          "pos": 2,
+          "text": "هٰذَا",
+          "wbw_en": "this",
+          "audio": {
+            "start_ms": 1410,
+            "end_ms": 1510
+          }
+        },
+        {
+          "pos": 3,
+          "text": "الَّذِىۡ",
+          "wbw_en": "the one",
+          "audio": {
+            "start_ms": 2210,
+            "end_ms": 2310
+          }
+        },
+        {
+          "pos": 4,
+          "text": "هُوَ",
+          "wbw_en": "he",
+          "audio": {
+            "start_ms": 2880,
+            "end_ms": 3200
+          }
+        },
+        {
+          "pos": 5,
+          "text": "جُنۡدٌ",
+          "wbw_en": "(is) an army",
+          "audio": {
+            "start_ms": 3400,
+            "end_ms": 4480
+          }
+        },
+        {
+          "pos": 6,
+          "text": "لَّكُمۡ",
+          "wbw_en": "for you",
+          "audio": {
+            "start_ms": 4880,
+            "end_ms": 5200
+          }
+        },
+        {
+          "pos": 7,
+          "text": "يَنۡصُرُكُمۡ",
+          "wbw_en": "to help you",
+          "audio": {
+            "start_ms": 6480,
+            "end_ms": 7200
+          }
+        },
+        {
+          "pos": 8,
+          "text": "مِّنۡ",
+          "wbw_en": "from",
+          "audio": {
+            "start_ms": 8090,
+            "end_ms": 8190
+          }
+        },
+        {
+          "pos": 9,
+          "text": "دُوۡنِ",
+          "wbw_en": "besides",
+          "audio": {
+            "start_ms": 9090,
+            "end_ms": 9190
+          }
+        },
+        {
+          "pos": 10,
+          "text": "الرَّحۡمٰنِ​ؕ",
+          "wbw_en": "the Most Gracious",
+          "audio": {
+            "start_ms": 10600,
+            "end_ms": 13120
+          }
+        },
+        {
+          "pos": 11,
+          "text": "اِنِ",
+          "wbw_en": "Not",
+          "audio": {
+            "start_ms": 13560,
+            "end_ms": 13880
+          }
+        },
+        {
+          "pos": 12,
+          "text": "الۡكٰفِرُوۡنَ",
+          "wbw_en": "(are) the disbelievers",
+          "audio": {
+            "start_ms": 14000,
+            "end_ms": 14960
+          }
+        },
+        {
+          "pos": 13,
+          "text": "اِلَّا",
+          "wbw_en": "but",
+          "audio": {
+            "start_ms": 15440,
+            "end_ms": 15840
+          }
+        },
+        {
+          "pos": 14,
+          "text": "فِىۡ",
+          "wbw_en": "in",
+          "audio": {
+            "start_ms": 16129,
+            "end_ms": 16229
+          }
+        },
+        {
+          "pos": 15,
+          "text": "غُرُوۡرٍ​ۚ‏",
+          "wbw_en": "delusion",
+          "audio": {
+            "start_ms": 16640,
+            "end_ms": 19880
+          }
+        }
+      ],
+      "clauses": [
+        {
+          "id": "67:20:1",
+          "words": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "en": "Or who is this one who is an army for you,",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 5200
+          },
+          "phrases": [
+            {
+              "id": "67:20:1.1",
+              "words": [
+                1,
+                2,
+                3
+              ],
+              "en": "Or who is this one who",
+              "audio": {
+                "start_ms": 0,
+                "end_ms": 2310
+              }
+            },
+            {
+              "id": "67:20:1.2",
+              "words": [
+                4,
+                5
+              ],
+              "en": "is an army",
+              "audio": {
+                "start_ms": 2880,
+                "end_ms": 4480
+              }
+            },
+            {
+              "id": "67:20:1.3",
+              "words": [
+                6
+              ],
+              "en": "for you,",
+              "audio": {
+                "start_ms": 4880,
+                "end_ms": 5200
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:20:2",
+          "words": [
+            7,
+            8,
+            9,
+            10
+          ],
+          "en": "to help you besides the Most Merciful?",
+          "audio": {
+            "start_ms": 6480,
+            "end_ms": 13120
+          },
+          "phrases": [
+            {
+              "id": "67:20:2.1",
+              "words": [
+                7
+              ],
+              "en": "to help you",
+              "audio": {
+                "start_ms": 6480,
+                "end_ms": 7200
+              }
+            },
+            {
+              "id": "67:20:2.2",
+              "words": [
+                8,
+                9,
+                10
+              ],
+              "en": "besides the Most Merciful?",
+              "audio": {
+                "start_ms": 8090,
+                "end_ms": 13120
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:20:3",
+          "words": [
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "en": "The disbelievers are only in delusion.",
+          "audio": {
+            "start_ms": 13560,
+            "end_ms": 19880
+          },
+          "phrases": [
+            {
+              "id": "67:20:3.1",
+              "words": [
+                11,
+                12
+              ],
+              "en": "The disbelievers are",
+              "audio": {
+                "start_ms": 13560,
+                "end_ms": 14960
+              }
+            },
+            {
+              "id": "67:20:3.2",
+              "words": [
+                13
+              ],
+              "en": "only",
+              "audio": {
+                "start_ms": 15440,
+                "end_ms": 15840
+              }
+            },
+            {
+              "id": "67:20:3.3",
+              "words": [
+                14,
+                15
+              ],
+              "en": "in delusion.",
+              "audio": {
+                "start_ms": 16129,
+                "end_ms": 19880
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 21,
+      "n_words": 12,
+      "status": "reviewed",
+      "translation_en": "Or who is it that could provide for you if He withheld His provision? But they have persisted in insolence and aversion.",
+      "words": [
+        {
+          "pos": 1,
+          "text": "اَمَّنۡ",
+          "wbw_en": "Who is",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 1640
+          }
+        },
+        {
+          "pos": 2,
+          "text": "هٰذَا",
+          "wbw_en": "this",
+          "audio": {
+            "start_ms": 1730,
+            "end_ms": 1830
+          }
+        },
+        {
+          "pos": 3,
+          "text": "الَّذِىۡ",
+          "wbw_en": "the one",
+          "audio": {
+            "start_ms": 2530,
+            "end_ms": 2630
+          }
+        },
+        {
+          "pos": 4,
+          "text": "يَرۡزُقُكُمۡ",
+          "wbw_en": "to provide you",
+          "audio": {
+            "start_ms": 3240,
+            "end_ms": 4200
+          }
+        },
+        {
+          "pos": 5,
+          "text": "اِنۡ",
+          "wbw_en": "if",
+          "audio": {
+            "start_ms": 4450,
+            "end_ms": 4550
+          }
+        },
+        {
+          "pos": 6,
+          "text": "اَمۡسَكَ",
+          "wbw_en": "He withheld",
+          "audio": {
+            "start_ms": 4880,
+            "end_ms": 5520
+          }
+        },
+        {
+          "pos": 7,
+          "text": "رِزۡقَهٗ​ ۚ",
+          "wbw_en": "His provision",
+          "audio": {
+            "start_ms": 5680,
+            "end_ms": 6440
+          }
+        },
+        {
+          "pos": 8,
+          "text": "بَلۡ",
+          "wbw_en": "Nay",
+          "audio": {
+            "start_ms": 6850,
+            "end_ms": 6950
+          }
+        },
+        {
+          "pos": 9,
+          "text": "لَّجُّوۡا",
+          "wbw_en": "they persist",
+          "audio": {
+            "start_ms": 7360,
+            "end_ms": 7960
+          }
+        },
+        {
+          "pos": 10,
+          "text": "فِىۡ",
+          "wbw_en": "in",
+          "audio": {
+            "start_ms": 8090,
+            "end_ms": 8190
+          }
+        },
+        {
+          "pos": 11,
+          "text": "عُتُوٍّ",
+          "wbw_en": "pride",
+          "audio": {
+            "start_ms": 8560,
+            "end_ms": 9320
+          }
+        },
+        {
+          "pos": 12,
+          "text": "وَّنُفُوۡرٍ‏",
+          "wbw_en": "and aversion",
+          "audio": {
+            "start_ms": 10120,
+            "end_ms": 14000
+          }
+        }
+      ],
+      "clauses": [
+        {
+          "id": "67:21:1",
+          "words": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "en": "Or who is this one who could provide for you",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 4200
+          },
+          "phrases": [
+            {
+              "id": "67:21:1.1",
+              "words": [
+                1,
+                2,
+                3
+              ],
+              "en": "Or who is this one who",
+              "audio": {
+                "start_ms": 0,
+                "end_ms": 2630
+              }
+            },
+            {
+              "id": "67:21:1.2",
+              "words": [
+                4
+              ],
+              "en": "could provide for you",
+              "audio": {
+                "start_ms": 3240,
+                "end_ms": 4200
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:21:2",
+          "words": [
+            5,
+            6,
+            7
+          ],
+          "en": "if He withheld His provision?",
+          "audio": {
+            "start_ms": 4450,
+            "end_ms": 6440
+          },
+          "phrases": [
+            {
+              "id": "67:21:2.1",
+              "words": [
+                5
+              ],
+              "en": "if",
+              "audio": {
+                "start_ms": 4450,
+                "end_ms": 4550
+              }
+            },
+            {
+              "id": "67:21:2.2",
+              "words": [
+                6
+              ],
+              "en": "He withheld",
+              "audio": {
+                "start_ms": 4880,
+                "end_ms": 5520
+              }
+            },
+            {
+              "id": "67:21:2.3",
+              "words": [
+                7
+              ],
+              "en": "His provision?",
+              "audio": {
+                "start_ms": 5680,
+                "end_ms": 6440
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:21:3",
+          "words": [
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "en": "Rather, they persist in arrogance and aversion.",
+          "audio": {
+            "start_ms": 6850,
+            "end_ms": 14000
+          },
+          "phrases": [
+            {
+              "id": "67:21:3.1",
+              "words": [
+                8,
+                9
+              ],
+              "en": "Rather, they persist",
+              "audio": {
+                "start_ms": 6850,
+                "end_ms": 7960
+              }
+            },
+            {
+              "id": "67:21:3.2",
+              "words": [
+                10,
+                11
+              ],
+              "en": "in arrogance",
+              "audio": {
+                "start_ms": 8090,
+                "end_ms": 9320
+              }
+            },
+            {
+              "id": "67:21:3.3",
+              "words": [
+                12
+              ],
+              "en": "and aversion.",
+              "audio": {
+                "start_ms": 10120,
+                "end_ms": 14000
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 22,
+      "n_words": 12,
+      "status": "reviewed",
+      "translation_en": "Then is one who walks fallen on his face better guided or one who walks erect on a straight path?",
+      "words": [
+        {
+          "pos": 1,
+          "text": "اَفَمَنۡ",
+          "wbw_en": "Then is he who",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 320
+          }
+        },
+        {
+          "pos": 2,
+          "text": "يَّمۡشِىۡ",
+          "wbw_en": "walks",
+          "audio": {
+            "start_ms": 1240,
+            "end_ms": 1880
+          }
+        },
+        {
+          "pos": 3,
+          "text": "مُكِبًّا",
+          "wbw_en": "fallen",
+          "audio": {
+            "start_ms": 2160,
+            "end_ms": 2880
+          }
+        },
+        {
+          "pos": 4,
+          "text": "عَلٰى",
+          "wbw_en": "on",
+          "audio": {
+            "start_ms": 3240,
+            "end_ms": 3520
+          }
+        },
+        {
+          "pos": 5,
+          "text": "وَجۡهِهٖۤ",
+          "wbw_en": "his face",
+          "audio": {
+            "start_ms": 3720,
+            "end_ms": 4560
+          }
+        },
+        {
+          "pos": 6,
+          "text": "اَهۡدٰٓى",
+          "wbw_en": "better guided",
+          "audio": {
+            "start_ms": 6120,
+            "end_ms": 6880
+          }
+        },
+        {
+          "pos": 7,
+          "text": "اَمَّنۡ",
+          "wbw_en": "or (he) who",
+          "audio": {
+            "start_ms": 8640,
+            "end_ms": 10240
+          }
+        },
+        {
+          "pos": 8,
+          "text": "يَّمۡشِىۡ",
+          "wbw_en": "walks",
+          "audio": {
+            "start_ms": 10680,
+            "end_ms": 11280
+          }
+        },
+        {
+          "pos": 9,
+          "text": "سَوِيًّا",
+          "wbw_en": "upright",
+          "audio": {
+            "start_ms": 11560,
+            "end_ms": 12280
+          }
+        },
+        {
+          "pos": 10,
+          "text": "عَلٰى",
+          "wbw_en": "on",
+          "audio": {
+            "start_ms": 12600,
+            "end_ms": 12880
+          }
+        },
+        {
+          "pos": 11,
+          "text": "صِرَاطٍ",
+          "wbw_en": "(the) Path",
+          "audio": {
+            "start_ms": 13120,
+            "end_ms": 13920
+          }
+        },
+        {
+          "pos": 12,
+          "text": "مُّسۡتَقِيۡمٍ‏",
+          "wbw_en": "Straight",
+          "audio": {
+            "start_ms": 15240,
+            "end_ms": 18680
+          }
+        }
+      ],
+      "clauses": [
+        {
+          "id": "67:22:1",
+          "words": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "en": "Is the one who walks bent over on his face",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 4560
+          },
+          "phrases": [
+            {
+              "id": "67:22:1.1",
+              "words": [
+                1,
+                2
+              ],
+              "en": "Is the one who walks",
+              "audio": {
+                "start_ms": 0,
+                "end_ms": 1880
+              }
+            },
+            {
+              "id": "67:22:1.2",
+              "words": [
+                3,
+                4,
+                5
+              ],
+              "en": "bent over on his face",
+              "audio": {
+                "start_ms": 2160,
+                "end_ms": 4560
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:22:2",
+          "words": [
+            6
+          ],
+          "en": "better guided,",
+          "audio": {
+            "start_ms": 6120,
+            "end_ms": 6880
+          },
+          "phrases": [
+            {
+              "id": "67:22:2.1",
+              "words": [
+                6
+              ],
+              "en": "better guided,",
+              "audio": {
+                "start_ms": 6120,
+                "end_ms": 6880
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:22:3",
+          "words": [
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "en": "or the one who walks upright on a straight path?",
+          "audio": {
+            "start_ms": 8640,
+            "end_ms": 18680
+          },
+          "phrases": [
+            {
+              "id": "67:22:3.1",
+              "words": [
+                7,
+                8
+              ],
+              "en": "or the one who walks",
+              "audio": {
+                "start_ms": 8640,
+                "end_ms": 11280
+              }
+            },
+            {
+              "id": "67:22:3.2",
+              "words": [
+                9
+              ],
+              "en": "upright",
+              "audio": {
+                "start_ms": 11560,
+                "end_ms": 12280
+              }
+            },
+            {
+              "id": "67:22:3.3",
+              "words": [
+                10,
+                11,
+                12
+              ],
+              "en": "on a straight path?",
+              "audio": {
+                "start_ms": 12600,
+                "end_ms": 18680
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 23,
+      "n_words": 12,
+      "status": "reviewed",
+      "translation_en": "Say, \"It is He who has produced you and made for you hearing and vision and hearts [i.e., intellect]; little are you grateful.\"",
+      "words": [
+        {
+          "pos": 1,
+          "text": "قُلۡ",
+          "wbw_en": "Say",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 70
+          }
+        },
+        {
+          "pos": 2,
+          "text": "هُوَ",
+          "wbw_en": "He",
+          "audio": {
+            "start_ms": 360,
+            "end_ms": 680
+          }
+        },
+        {
+          "pos": 3,
+          "text": "الَّذِىۡۤ",
+          "wbw_en": "(is) the One Who",
+          "audio": {
+            "start_ms": 890,
+            "end_ms": 990
+          }
+        },
+        {
+          "pos": 4,
+          "text": "اَنۡشَاَكُمۡ",
+          "wbw_en": "produced you",
+          "audio": {
+            "start_ms": 2720,
+            "end_ms": 4400
+          }
+        },
+        {
+          "pos": 5,
+          "text": "وَجَعَلَ",
+          "wbw_en": "and made",
+          "audio": {
+            "start_ms": 4720,
+            "end_ms": 5440
+          }
+        },
+        {
+          "pos": 6,
+          "text": "لَـكُمُ",
+          "wbw_en": "for you",
+          "audio": {
+            "start_ms": 5560,
+            "end_ms": 5800
+          }
+        },
+        {
+          "pos": 7,
+          "text": "السَّمۡعَ",
+          "wbw_en": "the hearing",
+          "audio": {
+            "start_ms": 6320,
+            "end_ms": 6800
+          }
+        },
+        {
+          "pos": 8,
+          "text": "وَالۡاَبۡصَارَ",
+          "wbw_en": "and the vision",
+          "audio": {
+            "start_ms": 6960,
+            "end_ms": 8200
+          }
+        },
+        {
+          "pos": 9,
+          "text": "وَ الۡاَفۡـــِٕدَةَ ​ ؕ",
+          "wbw_en": "and the feelings",
+          "audio": {
+            "start_ms": 8400,
+            "end_ms": 9600
+          }
+        },
+        {
+          "pos": 10,
+          "text": "قَلِيۡلًا",
+          "wbw_en": "Little",
+          "audio": {
+            "start_ms": 10370,
+            "end_ms": 10470
+          }
+        },
+        {
+          "pos": 11,
+          "text": "مَّا",
+          "wbw_en": "(is) what",
+          "audio": {
+            "start_ms": 11250,
+            "end_ms": 11350
+          }
+        },
+        {
+          "pos": 12,
+          "text": "تَشۡكُرُوۡنَ‏",
+          "wbw_en": "you give thanks",
+          "audio": {
+            "start_ms": 12360,
+            "end_ms": 15080
+          }
+        }
+      ],
+      "clauses": [
+        {
+          "id": "67:23:1",
+          "words": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "en": "Say, “He is the One who created you",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 4400
+          },
+          "phrases": [
+            {
+              "id": "67:23:1.1",
+              "words": [
+                1
+              ],
+              "en": "Say,",
+              "audio": {
+                "start_ms": 0,
+                "end_ms": 70
+              }
+            },
+            {
+              "id": "67:23:1.2",
+              "words": [
+                2,
+                3
+              ],
+              "en": "“He is the One who",
+              "audio": {
+                "start_ms": 360,
+                "end_ms": 990
+              }
+            },
+            {
+              "id": "67:23:1.3",
+              "words": [
+                4
+              ],
+              "en": "created you",
+              "audio": {
+                "start_ms": 2720,
+                "end_ms": 4400
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:23:2",
+          "words": [
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "en": "and made for you hearing, sight, and hearts;",
+          "audio": {
+            "start_ms": 4720,
+            "end_ms": 9600
+          },
+          "phrases": [
+            {
+              "id": "67:23:2.1",
+              "words": [
+                5
+              ],
+              "en": "and made",
+              "audio": {
+                "start_ms": 4720,
+                "end_ms": 5440
+              }
+            },
+            {
+              "id": "67:23:2.2",
+              "words": [
+                6
+              ],
+              "en": "for you",
+              "audio": {
+                "start_ms": 5560,
+                "end_ms": 5800
+              }
+            },
+            {
+              "id": "67:23:2.3",
+              "words": [
+                7
+              ],
+              "en": "hearing,",
+              "audio": {
+                "start_ms": 6320,
+                "end_ms": 6800
+              }
+            },
+            {
+              "id": "67:23:2.4",
+              "words": [
+                8
+              ],
+              "en": "sight,",
+              "audio": {
+                "start_ms": 6960,
+                "end_ms": 8200
+              }
+            },
+            {
+              "id": "67:23:2.5",
+              "words": [
+                9
+              ],
+              "en": "and hearts;",
+              "audio": {
+                "start_ms": 8400,
+                "end_ms": 9600
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:23:3",
+          "words": [
+            10,
+            11,
+            12
+          ],
+          "en": "how little you give thanks!”",
+          "audio": {
+            "start_ms": 10370,
+            "end_ms": 15080
+          },
+          "phrases": [
+            {
+              "id": "67:23:3.1",
+              "words": [
+                10,
+                11
+              ],
+              "en": "how little",
+              "audio": {
+                "start_ms": 10370,
+                "end_ms": 11350
+              }
+            },
+            {
+              "id": "67:23:3.2",
+              "words": [
+                12
+              ],
+              "en": "you give thanks!”",
+              "audio": {
+                "start_ms": 12360,
+                "end_ms": 15080
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 24,
+      "n_words": 8,
+      "status": "reviewed",
+      "translation_en": "Say, \"It is He who has multiplied you throughout the earth, and to Him you will be gathered.\"",
+      "words": [
+        {
+          "pos": 1,
+          "text": "قُلۡ",
+          "wbw_en": "Say",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 70
+          }
+        },
+        {
+          "pos": 2,
+          "text": "هُوَ",
+          "wbw_en": "He",
+          "audio": {
+            "start_ms": 360,
+            "end_ms": 640
+          }
+        },
+        {
+          "pos": 3,
+          "text": "الَّذِىۡ",
+          "wbw_en": "(is) the One Who",
+          "audio": {
+            "start_ms": 850,
+            "end_ms": 950
+          }
+        },
+        {
+          "pos": 4,
+          "text": "ذَرَاَكُمۡ",
+          "wbw_en": "multiplied you",
+          "audio": {
+            "start_ms": 1360,
+            "end_ms": 2240
+          }
+        },
+        {
+          "pos": 5,
+          "text": "فِى",
+          "wbw_en": "in",
+          "audio": {
+            "start_ms": 2530,
+            "end_ms": 2630
+          }
+        },
+        {
+          "pos": 6,
+          "text": "الۡاَرۡضِ",
+          "wbw_en": "the earth",
+          "audio": {
+            "start_ms": 2960,
+            "end_ms": 3360
+          }
+        },
+        {
+          "pos": 7,
+          "text": "وَاِلَيۡهِ",
+          "wbw_en": "and to Him",
+          "audio": {
+            "start_ms": 3560,
+            "end_ms": 4000
+          }
+        },
+        {
+          "pos": 8,
+          "text": "تُحۡشَرُوۡنَ‏",
+          "wbw_en": "you will be gathered",
+          "audio": {
+            "start_ms": 4480,
+            "end_ms": 7720
+          }
+        }
+      ],
+      "clauses": [
+        {
+          "id": "67:24:1",
+          "words": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "en": "Say, “He is the One who dispersed you throughout the earth,",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 3360
+          },
+          "phrases": [
+            {
+              "id": "67:24:1.1",
+              "words": [
+                1
+              ],
+              "en": "Say,",
+              "audio": {
+                "start_ms": 0,
+                "end_ms": 70
+              }
+            },
+            {
+              "id": "67:24:1.2",
+              "words": [
+                2,
+                3
+              ],
+              "en": "“He is the One who",
+              "audio": {
+                "start_ms": 360,
+                "end_ms": 950
+              }
+            },
+            {
+              "id": "67:24:1.3",
+              "words": [
+                4
+              ],
+              "en": "dispersed you",
+              "audio": {
+                "start_ms": 1360,
+                "end_ms": 2240
+              }
+            },
+            {
+              "id": "67:24:1.4",
+              "words": [
+                5,
+                6
+              ],
+              "en": "throughout the earth,",
+              "audio": {
+                "start_ms": 2530,
+                "end_ms": 3360
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:24:2",
+          "words": [
+            7,
+            8
+          ],
+          "en": "and to Him you will be gathered.”",
+          "audio": {
+            "start_ms": 3560,
+            "end_ms": 7720
+          },
+          "phrases": [
+            {
+              "id": "67:24:2.1",
+              "words": [
+                7
+              ],
+              "en": "and to Him",
+              "audio": {
+                "start_ms": 3560,
+                "end_ms": 4000
+              }
+            },
+            {
+              "id": "67:24:2.2",
+              "words": [
+                8
+              ],
+              "en": "you will be gathered.”",
+              "audio": {
+                "start_ms": 4480,
+                "end_ms": 7720
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 25,
+      "n_words": 7,
+      "status": "reviewed",
+      "translation_en": "And they say, \"When is this promise, if you should be truthful?\"",
+      "words": [
+        {
+          "pos": 1,
+          "text": "وَيَقُوۡلُوۡنَ",
+          "wbw_en": "And they say",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 1000
+          }
+        },
+        {
+          "pos": 2,
+          "text": "مَتٰى",
+          "wbw_en": "When",
+          "audio": {
+            "start_ms": 1400,
+            "end_ms": 1720
+          }
+        },
+        {
+          "pos": 3,
+          "text": "هٰذَا",
+          "wbw_en": "(is) this",
+          "audio": {
+            "start_ms": 1970,
+            "end_ms": 2070
+          }
+        },
+        {
+          "pos": 4,
+          "text": "الۡوَعۡدُ",
+          "wbw_en": "promise",
+          "audio": {
+            "start_ms": 2600,
+            "end_ms": 3360
+          }
+        },
+        {
+          "pos": 5,
+          "text": "اِنۡ",
+          "wbw_en": "if",
+          "audio": {
+            "start_ms": 3430,
+            "end_ms": 3530
+          }
+        },
+        {
+          "pos": 6,
+          "text": "كُنۡتُمۡ",
+          "wbw_en": "you are",
+          "audio": {
+            "start_ms": 4200,
+            "end_ms": 5520
+          }
+        },
+        {
+          "pos": 7,
+          "text": "صٰدِقِيۡنَ‏",
+          "wbw_en": "truthful",
+          "audio": {
+            "start_ms": 6720,
+            "end_ms": 9800
+          }
+        }
+      ],
+      "clauses": [
+        {
+          "id": "67:25:1",
+          "words": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "en": "And they say, “When is this promise,",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 3360
+          },
+          "phrases": [
+            {
+              "id": "67:25:1.1",
+              "words": [
+                1
+              ],
+              "en": "And they say,",
+              "audio": {
+                "start_ms": 0,
+                "end_ms": 1000
+              }
+            },
+            {
+              "id": "67:25:1.2",
+              "words": [
+                2
+              ],
+              "en": "“When",
+              "audio": {
+                "start_ms": 1400,
+                "end_ms": 1720
+              }
+            },
+            {
+              "id": "67:25:1.3",
+              "words": [
+                3,
+                4
+              ],
+              "en": "is this promise,",
+              "audio": {
+                "start_ms": 1970,
+                "end_ms": 3360
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:25:2",
+          "words": [
+            5,
+            6,
+            7
+          ],
+          "en": "if you are truthful?”",
+          "audio": {
+            "start_ms": 3430,
+            "end_ms": 9800
+          },
+          "phrases": [
+            {
+              "id": "67:25:2.1",
+              "words": [
+                5,
+                6
+              ],
+              "en": "if you are",
+              "audio": {
+                "start_ms": 3430,
+                "end_ms": 5520
+              }
+            },
+            {
+              "id": "67:25:2.2",
+              "words": [
+                7
+              ],
+              "en": "truthful?”",
+              "audio": {
+                "start_ms": 6720,
+                "end_ms": 9800
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 26,
+      "n_words": 9,
+      "status": "reviewed",
+      "translation_en": "Say, \"The knowledge is only with Allāh, and I am only a clear warner.\"",
+      "words": [
+        {
+          "pos": 1,
+          "text": "قُلۡ",
+          "wbw_en": "Say",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 70
+          }
+        },
+        {
+          "pos": 2,
+          "text": "اِنَّمَا",
+          "wbw_en": "Only",
+          "audio": {
+            "start_ms": 400,
+            "end_ms": 1920
+          }
+        },
+        {
+          "pos": 3,
+          "text": "الۡعِلۡمُ",
+          "wbw_en": "the knowledge",
+          "audio": {
+            "start_ms": 2320,
+            "end_ms": 2760
+          }
+        },
+        {
+          "pos": 4,
+          "text": "عِنۡدَ",
+          "wbw_en": "(is) with",
+          "audio": {
+            "start_ms": 3570,
+            "end_ms": 3670
+          }
+        },
+        {
+          "pos": 5,
+          "text": "اللّٰهِ",
+          "wbw_en": "Allah",
+          "audio": {
+            "start_ms": 4080,
+            "end_ms": 4560
+          }
+        },
+        {
+          "pos": 6,
+          "text": "وَاِنَّمَاۤ",
+          "wbw_en": "and only",
+          "audio": {
+            "start_ms": 4720,
+            "end_ms": 6240
+          }
+        },
+        {
+          "pos": 7,
+          "text": "اَنَا",
+          "wbw_en": "I am",
+          "audio": {
+            "start_ms": 8200,
+            "end_ms": 8600
+          }
+        },
+        {
+          "pos": 8,
+          "text": "نَذِيۡرٌ",
+          "wbw_en": "a warner",
+          "audio": {
+            "start_ms": 8930,
+            "end_ms": 9030
+          }
+        },
+        {
+          "pos": 9,
+          "text": "مُّبِيۡنٌ‏ ﻿﻿",
+          "wbw_en": "clear",
+          "audio": {
+            "start_ms": 10560,
+            "end_ms": 13520
+          }
+        }
+      ],
+      "clauses": [
+        {
+          "id": "67:26:1",
+          "words": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "en": "Say, “The knowledge is only with Allah,",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 4560
+          },
+          "phrases": [
+            {
+              "id": "67:26:1.1",
+              "words": [
+                1
+              ],
+              "en": "Say,",
+              "audio": {
+                "start_ms": 0,
+                "end_ms": 70
+              }
+            },
+            {
+              "id": "67:26:1.2",
+              "words": [
+                2,
+                3
+              ],
+              "en": "“The knowledge is only",
+              "audio": {
+                "start_ms": 400,
+                "end_ms": 2760
+              }
+            },
+            {
+              "id": "67:26:1.3",
+              "words": [
+                4,
+                5
+              ],
+              "en": "with Allah,",
+              "audio": {
+                "start_ms": 3570,
+                "end_ms": 4560
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:26:2",
+          "words": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "en": "and I am only a clear warner.”",
+          "audio": {
+            "start_ms": 4720,
+            "end_ms": 13520
+          },
+          "phrases": [
+            {
+              "id": "67:26:2.1",
+              "words": [
+                6,
+                7
+              ],
+              "en": "and I am only",
+              "audio": {
+                "start_ms": 4720,
+                "end_ms": 8600
+              }
+            },
+            {
+              "id": "67:26:2.2",
+              "words": [
+                8,
+                9
+              ],
+              "en": "a clear warner.”",
+              "audio": {
+                "start_ms": 8930,
+                "end_ms": 13520
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 27,
+      "n_words": 13,
+      "status": "reviewed",
+      "translation_en": "But when they see it approaching, the faces of those who disbelieve will be distressed, and it will be said, \"This is that for which you used to call.\"",
+      "words": [
+        {
+          "pos": 1,
+          "text": "فَلَمَّا",
+          "wbw_en": "But when",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 920
+          }
+        },
+        {
+          "pos": 2,
+          "text": "رَاَوۡهُ",
+          "wbw_en": "they (will) see it",
+          "audio": {
+            "start_ms": 1480,
+            "end_ms": 2120
+          }
+        },
+        {
+          "pos": 3,
+          "text": "زُلۡفَةً",
+          "wbw_en": "approaching",
+          "audio": {
+            "start_ms": 2200,
+            "end_ms": 2960
+          }
+        },
+        {
+          "pos": 4,
+          "text": "سِیْٓــَٔتۡ",
+          "wbw_en": "(will be) distressed",
+          "audio": {
+            "start_ms": 3720,
+            "end_ms": 6240
+          }
+        },
+        {
+          "pos": 5,
+          "text": "وُجُوۡهُ",
+          "wbw_en": "(the) faces",
+          "audio": {
+            "start_ms": 6640,
+            "end_ms": 7040
+          }
+        },
+        {
+          "pos": 6,
+          "text": "الَّذِيۡنَ",
+          "wbw_en": "(of) those who",
+          "audio": {
+            "start_ms": 7320,
+            "end_ms": 7720
+          }
+        },
+        {
+          "pos": 7,
+          "text": "كَفَرُوۡا",
+          "wbw_en": "disbelieved",
+          "audio": {
+            "start_ms": 8160,
+            "end_ms": 8720
+          }
+        },
+        {
+          "pos": 8,
+          "text": "وَقِيۡلَ",
+          "wbw_en": "and it will be said",
+          "audio": {
+            "start_ms": 8960,
+            "end_ms": 9640
+          }
+        },
+        {
+          "pos": 9,
+          "text": "هٰذَا",
+          "wbw_en": "This",
+          "audio": {
+            "start_ms": 9730,
+            "end_ms": 9830
+          }
+        },
+        {
+          "pos": 10,
+          "text": "الَّذِىۡ",
+          "wbw_en": "(is) that which",
+          "audio": {
+            "start_ms": 10450,
+            "end_ms": 10550
+          }
+        },
+        {
+          "pos": 11,
+          "text": "كُنۡتُمۡ",
+          "wbw_en": "you used to",
+          "audio": {
+            "start_ms": 11120,
+            "end_ms": 12200
+          }
+        },
+        {
+          "pos": 12,
+          "text": "بِهٖ",
+          "wbw_en": "for it",
+          "audio": {
+            "start_ms": 13530,
+            "end_ms": 13630
+          }
+        },
+        {
+          "pos": 13,
+          "text": "تَدَّعُوۡنَ‏",
+          "wbw_en": "call",
+          "audio": {
+            "start_ms": 13880,
+            "end_ms": 17520
+          }
+        }
+      ],
+      "clauses": [
+        {
+          "id": "67:27:1",
+          "words": [
+            1,
+            2,
+            3
+          ],
+          "en": "But when they see it close at hand,",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 2960
+          },
+          "phrases": [
+            {
+              "id": "67:27:1.1",
+              "words": [
+                1
+              ],
+              "en": "But when",
+              "audio": {
+                "start_ms": 0,
+                "end_ms": 920
+              }
+            },
+            {
+              "id": "67:27:1.2",
+              "words": [
+                2
+              ],
+              "en": "they see it",
+              "audio": {
+                "start_ms": 1480,
+                "end_ms": 2120
+              }
+            },
+            {
+              "id": "67:27:1.3",
+              "words": [
+                3
+              ],
+              "en": "close at hand,",
+              "audio": {
+                "start_ms": 2200,
+                "end_ms": 2960
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:27:2",
+          "words": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "en": "the faces of those who disbelieved will be distressed,",
+          "audio": {
+            "start_ms": 3720,
+            "end_ms": 8720
+          },
+          "phrases": [
+            {
+              "id": "67:27:2.1",
+              "words": [
+                4,
+                5,
+                6,
+                7
+              ],
+              "en": "the faces of those who disbelieved will be distressed,",
+              "audio": {
+                "start_ms": 3720,
+                "end_ms": 8720
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:27:3",
+          "words": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "en": "and it will be said, “This is what you used to call for.”",
+          "audio": {
+            "start_ms": 8960,
+            "end_ms": 17520
+          },
+          "phrases": [
+            {
+              "id": "67:27:3.1",
+              "words": [
+                8
+              ],
+              "en": "and it will be said,",
+              "audio": {
+                "start_ms": 8960,
+                "end_ms": 9640
+              }
+            },
+            {
+              "id": "67:27:3.2",
+              "words": [
+                9,
+                10
+              ],
+              "en": "“This is what",
+              "audio": {
+                "start_ms": 9730,
+                "end_ms": 10550
+              }
+            },
+            {
+              "id": "67:27:3.3",
+              "words": [
+                11,
+                12,
+                13
+              ],
+              "en": "you used to call for.”",
+              "audio": {
+                "start_ms": 11120,
+                "end_ms": 17520
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 28,
+      "n_words": 15,
+      "status": "reviewed",
+      "translation_en": "Say, [O Muḥammad], \"Have you considered: whether Allāh should cause my death and those with me or have mercy upon us, who can protect the disbelievers from a painful punishment?\"",
+      "words": [
+        {
+          "pos": 1,
+          "text": "قُلۡ",
+          "wbw_en": "Say",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 70
+          }
+        },
+        {
+          "pos": 2,
+          "text": "اَرَءَيۡتُمۡ",
+          "wbw_en": "Have you seen",
+          "audio": {
+            "start_ms": 720,
+            "end_ms": 1400
+          }
+        },
+        {
+          "pos": 3,
+          "text": "اِنۡ",
+          "wbw_en": "if",
+          "audio": {
+            "start_ms": 1410,
+            "end_ms": 1510
+          }
+        },
+        {
+          "pos": 4,
+          "text": "اَهۡلَـكَنِىَ",
+          "wbw_en": "destroys me",
+          "audio": {
+            "start_ms": 2200,
+            "end_ms": 2880
+          }
+        },
+        {
+          "pos": 5,
+          "text": "اللّٰهُ",
+          "wbw_en": "Allah",
+          "audio": {
+            "start_ms": 3090,
+            "end_ms": 3190
+          }
+        },
+        {
+          "pos": 6,
+          "text": "وَمَنۡ",
+          "wbw_en": "and whoever",
+          "audio": {
+            "start_ms": 3760,
+            "end_ms": 4040
+          }
+        },
+        {
+          "pos": 7,
+          "text": "مَّعِىَ",
+          "wbw_en": "(is) with me",
+          "audio": {
+            "start_ms": 4840,
+            "end_ms": 5560
+          }
+        },
+        {
+          "pos": 8,
+          "text": "اَوۡ",
+          "wbw_en": "or",
+          "audio": {
+            "start_ms": 5650,
+            "end_ms": 5750
+          }
+        },
+        {
+          "pos": 9,
+          "text": "رَحِمَنَا ۙ",
+          "wbw_en": "has mercy upon us",
+          "audio": {
+            "start_ms": 6040,
+            "end_ms": 6680
+          }
+        },
+        {
+          "pos": 10,
+          "text": "فَمَنۡ",
+          "wbw_en": "then who",
+          "audio": {
+            "start_ms": 6920,
+            "end_ms": 7240
+          }
+        },
+        {
+          "pos": 11,
+          "text": "يُّجِيۡرُ",
+          "wbw_en": "(can) protect",
+          "audio": {
+            "start_ms": 8080,
+            "end_ms": 8920
+          }
+        },
+        {
+          "pos": 12,
+          "text": "الۡكٰفِرِيۡنَ",
+          "wbw_en": "the disbelievers",
+          "audio": {
+            "start_ms": 9930,
+            "end_ms": 10030
+          }
+        },
+        {
+          "pos": 13,
+          "text": "مِنۡ",
+          "wbw_en": "from",
+          "audio": {
+            "start_ms": 15650,
+            "end_ms": 15750
+          }
+        },
+        {
+          "pos": 14,
+          "text": "عَذَابٍ",
+          "wbw_en": "a punishment",
+          "audio": {
+            "start_ms": 16280,
+            "end_ms": 16760
+          }
+        },
+        {
+          "pos": 15,
+          "text": "اَلِيۡمٍ‏",
+          "wbw_en": "painful",
+          "audio": {
+            "start_ms": 17320,
+            "end_ms": 20320
+          }
+        }
+      ],
+      "clauses": [
+        {
+          "id": "67:28:1",
+          "words": [
+            1,
+            2
+          ],
+          "en": "Say, “Have you considered:",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 1400
+          },
+          "phrases": [
+            {
+              "id": "67:28:1.1",
+              "words": [
+                1
+              ],
+              "en": "Say,",
+              "audio": {
+                "start_ms": 0,
+                "end_ms": 70
+              }
+            },
+            {
+              "id": "67:28:1.2",
+              "words": [
+                2
+              ],
+              "en": "“Have you considered:",
+              "audio": {
+                "start_ms": 720,
+                "end_ms": 1400
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:28:2",
+          "words": [
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "en": "if Allah were to destroy me and those with me,",
+          "audio": {
+            "start_ms": 1410,
+            "end_ms": 5560
+          },
+          "phrases": [
+            {
+              "id": "67:28:2.1",
+              "words": [
+                3
+              ],
+              "en": "if",
+              "audio": {
+                "start_ms": 1410,
+                "end_ms": 1510
+              }
+            },
+            {
+              "id": "67:28:2.2",
+              "words": [
+                4,
+                5
+              ],
+              "en": "Allah were to destroy me",
+              "audio": {
+                "start_ms": 2200,
+                "end_ms": 3190
+              }
+            },
+            {
+              "id": "67:28:2.3",
+              "words": [
+                6,
+                7
+              ],
+              "en": "and those with me,",
+              "audio": {
+                "start_ms": 3760,
+                "end_ms": 5560
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:28:3",
+          "words": [
+            8,
+            9
+          ],
+          "en": "or have mercy on us,",
+          "audio": {
+            "start_ms": 5650,
+            "end_ms": 6680
+          },
+          "phrases": [
+            {
+              "id": "67:28:3.1",
+              "words": [
+                8
+              ],
+              "en": "or",
+              "audio": {
+                "start_ms": 5650,
+                "end_ms": 5750
+              }
+            },
+            {
+              "id": "67:28:3.2",
+              "words": [
+                9
+              ],
+              "en": "have mercy on us,",
+              "audio": {
+                "start_ms": 6040,
+                "end_ms": 6680
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:28:4",
+          "words": [
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "en": "who then can protect the disbelievers from a painful punishment?”",
+          "audio": {
+            "start_ms": 6920,
+            "end_ms": 20320
+          },
+          "phrases": [
+            {
+              "id": "67:28:4.1",
+              "words": [
+                10
+              ],
+              "en": "who then",
+              "audio": {
+                "start_ms": 6920,
+                "end_ms": 7240
+              }
+            },
+            {
+              "id": "67:28:4.2",
+              "words": [
+                11
+              ],
+              "en": "can protect",
+              "audio": {
+                "start_ms": 8080,
+                "end_ms": 8920
+              }
+            },
+            {
+              "id": "67:28:4.3",
+              "words": [
+                12
+              ],
+              "en": "the disbelievers",
+              "audio": {
+                "start_ms": 9930,
+                "end_ms": 10030
+              }
+            },
+            {
+              "id": "67:28:4.4",
+              "words": [
+                13,
+                14,
+                15
+              ],
+              "en": "from a painful punishment?”",
+              "audio": {
+                "start_ms": 15650,
+                "end_ms": 20320
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 29,
+      "n_words": 13,
+      "status": "reviewed",
+      "translation_en": "Say, \"He is the Most Merciful; we have believed in Him, and upon Him we have relied. And you will [come to] know who it is that is in clear error.\"",
+      "words": [
+        {
+          "pos": 1,
+          "text": "قُلۡ",
+          "wbw_en": "Say",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 70
+          }
+        },
+        {
+          "pos": 2,
+          "text": "هُوَ",
+          "wbw_en": "He",
+          "audio": {
+            "start_ms": 400,
+            "end_ms": 680
+          }
+        },
+        {
+          "pos": 3,
+          "text": "الرَّحۡمٰنُ",
+          "wbw_en": "(is) the Most Gracious",
+          "audio": {
+            "start_ms": 1440,
+            "end_ms": 1840
+          }
+        },
+        {
+          "pos": 4,
+          "text": "اٰمَنَّا",
+          "wbw_en": "we believe",
+          "audio": {
+            "start_ms": 2400,
+            "end_ms": 3400
+          }
+        },
+        {
+          "pos": 5,
+          "text": "بِهٖ",
+          "wbw_en": "in Him",
+          "audio": {
+            "start_ms": 4130,
+            "end_ms": 4230
+          }
+        },
+        {
+          "pos": 6,
+          "text": "وَعَلَيۡهِ",
+          "wbw_en": "and upon Him",
+          "audio": {
+            "start_ms": 4480,
+            "end_ms": 5320
+          }
+        },
+        {
+          "pos": 7,
+          "text": "تَوَكَّلۡنَا​ۚ",
+          "wbw_en": "we put (our) trust",
+          "audio": {
+            "start_ms": 5520,
+            "end_ms": 6640
+          }
+        },
+        {
+          "pos": 8,
+          "text": "فَسَتَعۡلَمُوۡنَ",
+          "wbw_en": "So you will know",
+          "audio": {
+            "start_ms": 7440,
+            "end_ms": 8720
+          }
+        },
+        {
+          "pos": 9,
+          "text": "مَنۡ",
+          "wbw_en": "who",
+          "audio": {
+            "start_ms": 9050,
+            "end_ms": 9150
+          }
+        },
+        {
+          "pos": 10,
+          "text": "هُوَ",
+          "wbw_en": "(is) it",
+          "audio": {
+            "start_ms": 9480,
+            "end_ms": 9760
+          }
+        },
+        {
+          "pos": 11,
+          "text": "فِىۡ",
+          "wbw_en": "(that is) in",
+          "audio": {
+            "start_ms": 9890,
+            "end_ms": 9990
+          }
+        },
+        {
+          "pos": 12,
+          "text": "ضَلٰلٍ",
+          "wbw_en": "error",
+          "audio": {
+            "start_ms": 10160,
+            "end_ms": 10960
+          }
+        },
+        {
+          "pos": 13,
+          "text": "مُّبِيۡنٍ‏",
+          "wbw_en": "clear",
+          "audio": {
+            "start_ms": 12560,
+            "end_ms": 15680
+          }
+        }
+      ],
+      "clauses": [
+        {
+          "id": "67:29:1",
+          "words": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "en": "Say, “He is the Most Merciful; we believe in Him,",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 4230
+          },
+          "phrases": [
+            {
+              "id": "67:29:1.1",
+              "words": [
+                1
+              ],
+              "en": "Say,",
+              "audio": {
+                "start_ms": 0,
+                "end_ms": 70
+              }
+            },
+            {
+              "id": "67:29:1.2",
+              "words": [
+                2,
+                3
+              ],
+              "en": "“He is the Most Merciful;",
+              "audio": {
+                "start_ms": 400,
+                "end_ms": 1840
+              }
+            },
+            {
+              "id": "67:29:1.3",
+              "words": [
+                4,
+                5
+              ],
+              "en": "we believe in Him,",
+              "audio": {
+                "start_ms": 2400,
+                "end_ms": 4230
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:29:2",
+          "words": [
+            6,
+            7
+          ],
+          "en": "and upon Him we rely.",
+          "audio": {
+            "start_ms": 4480,
+            "end_ms": 6640
+          },
+          "phrases": [
+            {
+              "id": "67:29:2.1",
+              "words": [
+                6
+              ],
+              "en": "and upon Him",
+              "audio": {
+                "start_ms": 4480,
+                "end_ms": 5320
+              }
+            },
+            {
+              "id": "67:29:2.2",
+              "words": [
+                7
+              ],
+              "en": "we rely.",
+              "audio": {
+                "start_ms": 5520,
+                "end_ms": 6640
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:29:3",
+          "words": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "en": "So you will soon know who it is that is in clear error.”",
+          "audio": {
+            "start_ms": 7440,
+            "end_ms": 15680
+          },
+          "phrases": [
+            {
+              "id": "67:29:3.1",
+              "words": [
+                8
+              ],
+              "en": "So you will soon know",
+              "audio": {
+                "start_ms": 7440,
+                "end_ms": 8720
+              }
+            },
+            {
+              "id": "67:29:3.2",
+              "words": [
+                9,
+                10
+              ],
+              "en": "who it is",
+              "audio": {
+                "start_ms": 9050,
+                "end_ms": 9760
+              }
+            },
+            {
+              "id": "67:29:3.3",
+              "words": [
+                11,
+                12,
+                13
+              ],
+              "en": "that is in clear error.”",
+              "audio": {
+                "start_ms": 9890,
+                "end_ms": 15680
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 30,
+      "n_words": 10,
+      "status": "reviewed",
+      "translation_en": "Say, \"Have you considered: if your water was to become sunken [into the earth], then who could bring you flowing water?\"",
+      "words": [
+        {
+          "pos": 1,
+          "text": "قُلۡ",
+          "wbw_en": "Say",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 70
+          }
+        },
+        {
+          "pos": 2,
+          "text": "اَرَءَيۡتُمۡ",
+          "wbw_en": "Have you seen",
+          "audio": {
+            "start_ms": 800,
+            "end_ms": 1480
+          }
+        },
+        {
+          "pos": 3,
+          "text": "اِنۡ",
+          "wbw_en": "if",
+          "audio": {
+            "start_ms": 1490,
+            "end_ms": 1590
+          }
+        },
+        {
+          "pos": 4,
+          "text": "اَصۡبَحَ",
+          "wbw_en": "becomes",
+          "audio": {
+            "start_ms": 1880,
+            "end_ms": 2520
+          }
+        },
+        {
+          "pos": 5,
+          "text": "مَآؤُكُمۡ",
+          "wbw_en": "your water",
+          "audio": {
+            "start_ms": 2720,
+            "end_ms": 5000
+          }
+        },
+        {
+          "pos": 6,
+          "text": "غَوۡرًا",
+          "wbw_en": "sunken",
+          "audio": {
+            "start_ms": 5320,
+            "end_ms": 5840
+          }
+        },
+        {
+          "pos": 7,
+          "text": "فَمَنۡ",
+          "wbw_en": "then who",
+          "audio": {
+            "start_ms": 6520,
+            "end_ms": 7000
+          }
+        },
+        {
+          "pos": 8,
+          "text": "يَّاۡتِيۡكُمۡ",
+          "wbw_en": "could bring you",
+          "audio": {
+            "start_ms": 8440,
+            "end_ms": 8880
+          }
+        },
+        {
+          "pos": 9,
+          "text": "بِمَآءٍ",
+          "wbw_en": "water",
+          "audio": {
+            "start_ms": 10160,
+            "end_ms": 11920
+          }
+        },
+        {
+          "pos": 10,
+          "text": "مَّعِيۡنٍ‏",
+          "wbw_en": "flowing",
+          "audio": {
+            "start_ms": 12760,
+            "end_ms": 18520
+          }
+        }
+      ],
+      "clauses": [
+        {
+          "id": "67:30:1",
+          "words": [
+            1,
+            2
+          ],
+          "en": "Say, “Have you considered:",
+          "audio": {
+            "start_ms": 0,
+            "end_ms": 1480
+          },
+          "phrases": [
+            {
+              "id": "67:30:1.1",
+              "words": [
+                1
+              ],
+              "en": "Say,",
+              "audio": {
+                "start_ms": 0,
+                "end_ms": 70
+              }
+            },
+            {
+              "id": "67:30:1.2",
+              "words": [
+                2
+              ],
+              "en": "“Have you considered:",
+              "audio": {
+                "start_ms": 800,
+                "end_ms": 1480
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:30:2",
+          "words": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "en": "if your water were to sink away,",
+          "audio": {
+            "start_ms": 1490,
+            "end_ms": 5840
+          },
+          "phrases": [
+            {
+              "id": "67:30:2.1",
+              "words": [
+                3
+              ],
+              "en": "if",
+              "audio": {
+                "start_ms": 1490,
+                "end_ms": 1590
+              }
+            },
+            {
+              "id": "67:30:2.2",
+              "words": [
+                4,
+                5,
+                6
+              ],
+              "en": "your water were to sink away,",
+              "audio": {
+                "start_ms": 1880,
+                "end_ms": 5840
+              }
+            }
+          ]
+        },
+        {
+          "id": "67:30:3",
+          "words": [
+            7,
+            8,
+            9,
+            10
+          ],
+          "en": "who then could bring you flowing water?”",
+          "audio": {
+            "start_ms": 6520,
+            "end_ms": 18520
+          },
+          "phrases": [
+            {
+              "id": "67:30:3.1",
+              "words": [
+                7
+              ],
+              "en": "who then",
+              "audio": {
+                "start_ms": 6520,
+                "end_ms": 7000
+              }
+            },
+            {
+              "id": "67:30:3.2",
+              "words": [
+                8
+              ],
+              "en": "could bring you",
+              "audio": {
+                "start_ms": 8440,
+                "end_ms": 8880
+              }
+            },
+            {
+              "id": "67:30:3.3",
+              "words": [
+                9,
+                10
+              ],
+              "en": "flowing water?”",
+              "audio": {
+                "start_ms": 10160,
+                "end_ms": 18520
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
