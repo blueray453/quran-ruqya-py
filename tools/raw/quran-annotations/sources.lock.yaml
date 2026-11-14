@@ -1,0 +1,123 @@
+# sources.lock.yaml — pinned read-only source layer.
+#
+# Rules:
+#   - Files listed here are NEVER modified and NEVER copied into annotations/.
+#   - build.py joins them at read time; annotations reference them by word number only.
+#   - qa.py verifies every sha256 below before running any other check.
+#   - A source may be ADDED (new family) or its file RE-VERIFIED, but never silently replaced.
+lock_version: 1
+project: quran-annotations
+frozen_on: 2026-11-14
+
+sources:
+  - id: text_words
+    role: text_base
+    description: >-
+      Word positions + Arabic text (IndoPak script). Keys "s:a:w"; the ayah-end marker is the last key (keyed_max = real_max + 1).
+    license: unverified-pending
+    license_note: >-
+      check QUL / mulk-dataset terms before publication
+    files:
+      - path: sources/text/indopak.json
+        sha256: a02dcc0f60acc4979905b0df01b996d0dd6a283de57488da1cc21401cf6ab052
+      - path: sources/text/mulk-qpc-words.json
+        sha256: 36bef84d023bc7fea25fd5566c05429dd414d0a8564b6add17a9bf94e2f3dd07
+
+  - id: wbw_english
+    role: annotation_package
+    description: >-
+      Per-word English glosses. Enters the annotation package; doubles as the implicit consistency anchor (no glossary needed in-package).
+    license: unverified-pending
+    license_note: >-
+      check QUL terms before publication
+    files:
+      - path: sources/wbw/english-wbw-translation.json
+        sha256: 42992eec66ae5dd98659cda9bff9d350def46d953edb2622a8e3a444d56313b9
+
+  - id: translation_ayah
+    role: annotation_package
+    description: >-
+      Whole-ayah English reference translation. Surah 67 pinned; whole-Quran fetch (QUL) pending.
+    license: unverified-pending
+    license_note: >-
+      Sahih International attribution requirements to be checked
+    files:
+      - path: sources/translation/mulk-en-sahih.json
+        sha256: 28ba31482c8a02bb4a8e34a94a93852c3744188b71ce5af5f459da26ca7dc082
+
+  - id: audio_timestamps
+    role: runtime_join
+    description: >-
+      Recitation segments [word_no, start_ms, end_ms], real word numbers, 6,236 ayahs. Joined at build time; dataset stores milliseconds only.
+    license: unverified-pending
+    license_note: >-
+      verify redistribution terms for the Alafasy alignment with QUL
+    files:
+      - path: sources/audio/ar.alafasy.json
+        sha256: 85c7281d30be744cc8d4fb35792bea7ac1f202cf5550e450d7073e8048f917b2
+
+  - id: chunker
+    role: qa_crosscheck
+    description: >-
+      BiLSTM chunker output (Kais Dukes). 88% of chunk_end boundaries coincide with i'rab-anchored parse segments. Boundaries must be a subset of clause boundaries. NEVER a build basis.
+    license: unverified-pending
+    license_note: >-
+      license not stated in the file; resolve before publication
+    files:
+      - path: sources/chunker/chunks.tsv
+        sha256: 7dcf9cfcdf570b1684a2b4945db24d46a0687c738216ef0dba421262c6e4a0b2
+
+  - id: eqtb
+    role: qa_crosscheck
+    description: >-
+      Extended Quranic Arabic Treebank (main file utf-16 TSV) + tag lexicons. Planned fence: EQTB clause starts ~= annotation clause starts. NEVER a build basis.
+    license: unverified-pending
+    license_note: >-
+      QAC-derived; Quranic Arabic Corpus is GPL (see morphology header). Confirm for the treebank export.
+    files:
+      - path: sources/eqtb/Quranic.csv
+        sha256: a303c24cf51b90f6cd5eb0fb25d6c591977a7797743d16e0dedc76a5af5ae0b7
+      - path: sources/eqtb/RelLabels.csv
+        sha256: eaeb7976369331c23436c92a8ad64db3282fc773ec14b07aa16b0cb170090858
+      - path: sources/eqtb/CAPoS.csv
+        sha256: 329f080fc2d2f11968e7c9b676adbe48630683b365b6f9f9b03a3c42c9b7cd7d
+      - path: sources/eqtb/ConstituentsTags.csv
+        sha256: c0b24286c947fcdc49f4d33ffebcd9a51ffdca0fdf9c34642c64bbc8232588b4
+      - path: sources/eqtb/CAMorphFeatures.xlsx
+        sha256: 81229b195d1e50da64558a61bec429f79f9f6573df290b2c7177009ec2626731
+
+  - id: lexicon
+    role: glossary_project_input
+    description: >-
+      Lemma/root/stem assignments and lexicons (whole Quran). Not used by annotation; feeds the separate whole-Quran glossary project.
+    license: unverified-pending
+    license_note: >-
+      dbs are QUL-derived; CA lexicons are QAC-derived (GPL). Confirm before publication.
+    files:
+      - path: sources/lexicon/word-lemma.db
+        sha256: 9a210ac2e724f0009d2b04e8e2f79b66b232689af608c4e1b2c8dceb655d4ccc
+      - path: sources/lexicon/word-root.db
+        sha256: d2091e8bf69426be0cfae5caff70ed08ca4af691a41d70e7782395372a5b01b5
+      - path: sources/lexicon/word-stem.db
+        sha256: 90e9fb8ef0d08c5f53220df9c585deb001743797fd46475fb6279d80dd6ccc90
+      - path: sources/lexicon/ayah-lemma.db
+        sha256: 1e15b55442c773ad2ff7310e5f8f5f73b7afdc3c4dd6b1f9425dfd4f2e5561e7
+      - path: sources/lexicon/ayah-root.db
+        sha256: 2dc5b47e942fc68577b90da102be115dfdd3b7ae79b090879a0ff392ec163e50
+      - path: sources/lexicon/ayah-stem.db
+        sha256: 4473d1d061acd9d7e2e1dfa1288af638ad9fa93a5b54d85453496cb5466c3542
+      - path: sources/lexicon/CALemmaLexicon.csv
+        sha256: 83f6638f8bba68a85ea8c4b6dd5edaaa06da1538c232a57d126d6652abec8a74
+      - path: sources/lexicon/CARootLexicon.csv
+        sha256: e0382d8188a6049f098a995e9c214d7808f613e836221e3a4431175ee5b5ed0f
+
+  - id: reference
+    role: provenance
+    description: >-
+      Hand-edited Surah 67 prototype annotation (mulk_spec.json); source of the bundled annotations/surah-067.json sample.
+    license: unverified-pending
+    license_note: >-
+      internal prototype material
+    files:
+      - path: sources/reference/mulk_spec.json
+        sha256: e4e79bf8de9246e9f1d36bce4ebd82fd5b7da1fb4178bdee9631a0d1f3c28d41
