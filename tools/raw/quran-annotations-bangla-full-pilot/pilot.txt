@@ -1,0 +1,9 @@
+# Pilot 1 — every surah/ayah here is covered by the chunker file (check with tools/chunker_report.py)
+67         # Al-Mulk: hand-edited prototype exists (67:9, 67:15, 67:23 are in the few-shot examples)
+78         # An-Naba: questions, lists, descriptions
+81         # At-Takwir: long chain of conditional clauses (idha ...)
+91         # Ash-Shams: stacked oaths
+2:255      # Ayat al-Kursi: long ayah, many clauses
+2:282      # longest ayah in the Quran (128 words)
+2:284-286  # end of Al-Baqarah: supplication, quoted speech
+# Not chunker-covered (no automatic check): 36 (Yaseen)
