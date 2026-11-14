@@ -79,7 +79,8 @@ Both scripts are stdlib-only Python 3, offline and deterministic.
   fallback (<100 ms → merge into nearest word; longer extras → time-order mapping;
   leftovers reported). Timestamps stay in milliseconds — any reciter file with the
   same shape joins for free.
-- Chunker (`sources/chunker/`, role: QA cross-check only): on surah 67 its 56
+- Chunker (`sources/chunker/quranic-treebank-0.4-chunks.tsv` — the Quranic Arabic
+  Corpus treebank 0.4 chunks layer; role: QA cross-check only): on surah 67 its 56
   boundaries are a strict subset of the 86 clause boundaries — asserted per ayah
   by `qa.py` wherever the chunker has coverage.
 - Highlight windows are pure arithmetic: `window(phrase) = [first word start, last

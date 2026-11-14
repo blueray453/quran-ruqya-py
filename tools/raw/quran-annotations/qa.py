@@ -94,7 +94,7 @@ class Sources:
             self.ayahs_of.setdefault(int(s), set()).add(int(a))
         # chunker chunk_end boundaries: {(chapter, verse): [token numbers]}
         self.chunk_ends = {}
-        cpath = os.path.join(ROOT, 'sources/chunker/chunks.tsv')
+        cpath = os.path.join(ROOT, 'sources/chunker/quranic-treebank-0.4-chunks.tsv')
         if os.path.exists(cpath):
             with open(cpath, encoding='utf-8') as f:
                 next(f)

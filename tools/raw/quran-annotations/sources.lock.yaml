@@ -59,12 +59,12 @@ sources:
   - id: chunker
     role: qa_crosscheck
     description: >-
-      BiLSTM chunker output (Kais Dukes). 88% of chunk_end boundaries coincide with i'rab-anchored parse segments. Boundaries must be a subset of clause boundaries. NEVER a build basis.
+      Original file: quranic-treebank-0.4-chunks.tsv — the chunks layer of the Quranic Arabic Corpus treebank 0.4 download (corpus.quran.com, Kais Dukes). BiLSTM chunker over GloVe-Arabic embeddings; 88% of chunk_end boundaries coincide with i'rab-anchored parse segments. Boundaries must be a subset of clause boundaries. NEVER a build basis.
     license: unverified-pending
     license_note: >-
-      license not stated in the file; resolve before publication
+      file itself states no license; parent corpus is GPL — resolve before publication
     files:
-      - path: sources/chunker/chunks.tsv
+      - path: sources/chunker/quranic-treebank-0.4-chunks.tsv
         sha256: 7dcf9cfcdf570b1684a2b4945db24d46a0687c738216ef0dba421262c6e4a0b2
 
   - id: eqtb

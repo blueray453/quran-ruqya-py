@@ -11,7 +11,7 @@ integrity against `sources.lock.yaml` (sha256).
 | `wbw/` | wbw_english | `english-wbw-translation.json` | Per-word English glosses; enters the annotation package |
 | `translation/` | translation_ayah | `mulk-en-sahih.json` | Whole-ayah English reference translation; enters the annotation package |
 | `audio/` | audio_timestamps | `ar.alafasy.json` | Per-ayah recitation segments `[word_no, start_ms, end_ms]`; joined at build time |
-| `chunker/` | chunker | `chunks.tsv` | QA cross-check signal only; never a build basis |
+| `chunker/` | chunker | `quranic-treebank-0.4-chunks.tsv` | QA cross-check signal only; never a build basis |
 | `eqtb/` | eqtb | `Quranic.csv` + tag lexicons | QA cross-check signal (clause starts, i'rab); never a build basis |
 | `lexicon/` | lexicon | `word-*.db`, `ayah-*.db`, `CA*Lexicon.csv` | Lemma/root/stem inventories; inputs for the separate whole-Quran glossary project |
 | `reference/` | reference | `mulk_spec.json` | Hand-edited Surah 67 prototype annotation; provenance of the bundled `annotations/surah-067.json` sample |
@@ -27,6 +27,13 @@ integrity against `sources.lock.yaml` (sha256).
    artifacts). `build.py` applies the documented fallback: fragments < 100 ms extend
    the nearest real word in time; longer extras are mapped onto unmatched words in
    time order; anything left is reported and left null.
+
+## Provenance notes
+
+- `quranic-treebank-0.4-chunks.tsv` is the chunks layer of the Quranic Arabic
+  Corpus **treebank 0.4** download (corpus.quran.com, Kais Dukes, University of
+  Leeds) — same 0.4 release family as the morphology file and the tag lexicons.
+- `eqtb/Quranic.csv` is the extended treebank main file (UTF-16, tab-separated).
 
 ## Known gaps (handled, not hidden)
 
