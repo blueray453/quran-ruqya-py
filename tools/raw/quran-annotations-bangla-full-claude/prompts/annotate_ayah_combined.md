@@ -4,7 +4,7 @@ The default pipeline sends one or more consecutive ayahs per request. `CONVENTIO
 
 ## Prompt template
 
-```text
+```
 Annotate the following Quran ayah(s) according to the attached conventions.
 
 Your primary and most important task is to find the smallest VALID Arabic syntactic phrases / semantic chunks. Segmentation quality is the highest priority. Decide every boundary from Arabic syntax and local meaning alone. Do not segment clauses, subclauses, or whole sentences. Return one flat ordered list of chunks per ayah.
