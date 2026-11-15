@@ -136,6 +136,8 @@ is an object `{"ar": "...", "en": "...", "bn": "..."}`:
 - `ar` — the phrase's Arabic words, **copied exactly from the input words** (same spelling
   and marks, in the same order, separated by single spaces). Do not write word numbers.
 - `en` — the English fragment. `bn` — the Bangla fragment.
+- Both fragments are non-empty strings. Inside any text never use a straight double quote
+  (\"): write quotations with curly quotes “ ” and ‘ ’ so the JSON stays valid.
 
 Read in order, the `ar` copies of all phrases of an ayah reproduce the whole ayah exactly
 once: every word appears in exactly one phrase; none is skipped, repeated or reordered;

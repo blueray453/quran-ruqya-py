@@ -1108,6 +1108,693 @@
           ]
         }
       ]
+    },
+    "282": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2,
+                3
+              ],
+              "en": "O you who have believed,"
+            }
+          ]
+        },
+        {
+          "words": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "phrases": [
+            {
+              "words": [
+                4,
+                5
+              ],
+              "en": "when you contract"
+            },
+            {
+              "words": [
+                6
+              ],
+              "en": "a debt"
+            },
+            {
+              "words": [
+                7,
+                8,
+                9
+              ],
+              "en": "for a specified term,"
+            }
+          ]
+        },
+        {
+          "words": [
+            10
+          ],
+          "phrases": [
+            {
+              "words": [
+                10
+              ],
+              "en": "then write it down."
+            }
+          ]
+        },
+        {
+          "words": [
+            11,
+            12,
+            13,
+            14
+          ],
+          "phrases": [
+            {
+              "words": [
+                11
+              ],
+              "en": "And let write"
+            },
+            {
+              "words": [
+                12
+              ],
+              "en": "between you"
+            },
+            {
+              "words": [
+                13
+              ],
+              "en": "a scribe"
+            },
+            {
+              "words": [
+                14
+              ],
+              "en": "in justice."
+            }
+          ]
+        },
+        {
+          "words": [
+            15,
+            16,
+            17
+          ],
+          "phrases": [
+            {
+              "words": [
+                15,
+                16
+              ],
+              "en": "And let not refuse"
+            },
+            {
+              "words": [
+                17
+              ],
+              "en": "any scribe"
+            }
+          ]
+        },
+        {
+          "words": [
+            18,
+            19,
+            20,
+            21,
+            22
+          ],
+          "phrases": [
+            {
+              "words": [
+                18,
+                19
+              ],
+              "en": "to write"
+            },
+            {
+              "words": [
+                20,
+                21,
+                22
+              ],
+              "en": "as Allah has taught him."
+            }
+          ]
+        },
+        {
+          "words": [
+            23
+          ],
+          "phrases": [
+            {
+              "words": [
+                23
+              ],
+              "en": "So let him write,"
+            }
+          ]
+        },
+        {
+          "words": [
+            24,
+            25,
+            26,
+            27
+          ],
+          "phrases": [
+            {
+              "words": [
+                24,
+                25,
+                26,
+                27
+              ],
+              "en": "and let dictate the one upon whom is the obligation"
+            }
+          ]
+        },
+        {
+          "words": [
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34
+          ],
+          "phrases": [
+            {
+              "words": [
+                28,
+                29,
+                30
+              ],
+              "en": "and let him fear Allah, his Lord,"
+            },
+            {
+              "words": [
+                31,
+                32,
+                33,
+                34
+              ],
+              "en": "and not leave anything out of it."
+            }
+          ]
+        },
+        {
+          "words": [
+            35,
+            36,
+            37,
+            38,
+            39
+          ],
+          "phrases": [
+            {
+              "words": [
+                35,
+                36,
+                37,
+                38,
+                39
+              ],
+              "en": "But if the one upon whom is the obligation"
+            }
+          ]
+        },
+        {
+          "words": [
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48
+          ],
+          "phrases": [
+            {
+              "words": [
+                40
+              ],
+              "en": "is of limited understanding"
+            },
+            {
+              "words": [
+                41,
+                42
+              ],
+              "en": "or weak"
+            },
+            {
+              "words": [
+                43,
+                44,
+                45
+              ],
+              "en": "or unable"
+            },
+            {
+              "words": [
+                46,
+                47,
+                48
+              ],
+              "en": "to dictate himself,"
+            }
+          ]
+        },
+        {
+          "words": [
+            49,
+            50,
+            51
+          ],
+          "phrases": [
+            {
+              "words": [
+                49,
+                50,
+                51
+              ],
+              "en": "then let his guardian dictate in justice."
+            }
+          ]
+        },
+        {
+          "words": [
+            52,
+            53,
+            54,
+            55
+          ],
+          "phrases": [
+            {
+              "words": [
+                52,
+                53,
+                54,
+                55
+              ],
+              "en": "And call to witness two witnesses from your men."
+            }
+          ]
+        },
+        {
+          "words": [
+            56,
+            57,
+            58,
+            59
+          ],
+          "phrases": [
+            {
+              "words": [
+                56,
+                57,
+                58,
+                59
+              ],
+              "en": "And if there are not two men,"
+            }
+          ]
+        },
+        {
+          "words": [
+            60,
+            61
+          ],
+          "phrases": [
+            {
+              "words": [
+                60,
+                61
+              ],
+              "en": "then a man and two women"
+            }
+          ]
+        },
+        {
+          "words": [
+            62,
+            63,
+            64,
+            65
+          ],
+          "phrases": [
+            {
+              "words": [
+                62,
+                63,
+                64,
+                65
+              ],
+              "en": "from those whom you accept as witnesses,"
+            }
+          ]
+        },
+        {
+          "words": [
+            66,
+            67,
+            68
+          ],
+          "phrases": [
+            {
+              "words": [
+                66,
+                67,
+                68
+              ],
+              "en": "so that if one of them errs,"
+            }
+          ]
+        },
+        {
+          "words": [
+            69,
+            70,
+            71
+          ],
+          "phrases": [
+            {
+              "words": [
+                69,
+                70,
+                71
+              ],
+              "en": "then the other can remind her."
+            }
+          ]
+        },
+        {
+          "words": [
+            72,
+            73,
+            74,
+            75,
+            76,
+            77
+          ],
+          "phrases": [
+            {
+              "words": [
+                72,
+                73,
+                74,
+                75,
+                76,
+                77
+              ],
+              "en": "And let not the witnesses refuse when they are called upon."
+            }
+          ]
+        },
+        {
+          "words": [
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86
+          ],
+          "phrases": [
+            {
+              "words": [
+                78,
+                79,
+                80,
+                81
+              ],
+              "en": "And do not be weary of writing it,"
+            },
+            {
+              "words": [
+                82,
+                83,
+                84
+              ],
+              "en": "whether small or large,"
+            },
+            {
+              "words": [
+                85,
+                86
+              ],
+              "en": "until its term."
+            }
+          ]
+        },
+        {
+          "words": [
+            87,
+            88,
+            89,
+            90
+          ],
+          "phrases": [
+            {
+              "words": [
+                87,
+                88,
+                89,
+                90
+              ],
+              "en": "That is more just in the sight of Allah,"
+            }
+          ]
+        },
+        {
+          "words": [
+            91,
+            92
+          ],
+          "phrases": [
+            {
+              "words": [
+                91,
+                92
+              ],
+              "en": "and firmer as evidence,"
+            }
+          ]
+        },
+        {
+          "words": [
+            93,
+            94,
+            95
+          ],
+          "phrases": [
+            {
+              "words": [
+                93,
+                94,
+                95
+              ],
+              "en": "and more likely that you do not doubt."
+            }
+          ]
+        },
+        {
+          "words": [
+            96,
+            97,
+            98,
+            99,
+            100,
+            101,
+            102
+          ],
+          "phrases": [
+            {
+              "words": [
+                96,
+                97,
+                98,
+                99,
+                100
+              ],
+              "en": "Except when it is an immediate transaction"
+            },
+            {
+              "words": [
+                101,
+                102
+              ],
+              "en": "which you conduct among yourselves,"
+            }
+          ]
+        },
+        {
+          "words": [
+            103,
+            104,
+            105,
+            106,
+            107
+          ],
+          "phrases": [
+            {
+              "words": [
+                103,
+                104,
+                105
+              ],
+              "en": "then there is no blame upon you"
+            },
+            {
+              "words": [
+                106,
+                107
+              ],
+              "en": "if you do not write it."
+            }
+          ]
+        },
+        {
+          "words": [
+            108,
+            109,
+            110
+          ],
+          "phrases": [
+            {
+              "words": [
+                108,
+                109,
+                110
+              ],
+              "en": "And take witnesses when you conclude a contract."
+            }
+          ]
+        },
+        {
+          "words": [
+            111,
+            112,
+            113,
+            114,
+            115
+          ],
+          "phrases": [
+            {
+              "words": [
+                111,
+                112,
+                113
+              ],
+              "en": "Let no scribe be harmed"
+            },
+            {
+              "words": [
+                114,
+                115
+              ],
+              "en": "or any witness."
+            }
+          ]
+        },
+        {
+          "words": [
+            116,
+            117,
+            118,
+            119,
+            120
+          ],
+          "phrases": [
+            {
+              "words": [
+                116,
+                117
+              ],
+              "en": "For if you do so,"
+            },
+            {
+              "words": [
+                118,
+                119,
+                120
+              ],
+              "en": "indeed, it is [grave] disobedience in you."
+            }
+          ]
+        },
+        {
+          "words": [
+            121,
+            122
+          ],
+          "phrases": [
+            {
+              "words": [
+                121,
+                122
+              ],
+              "en": "And fear Allah."
+            }
+          ]
+        },
+        {
+          "words": [
+            123,
+            124
+          ],
+          "phrases": [
+            {
+              "words": [
+                123,
+                124
+              ],
+              "en": "And Allah teaches you."
+            }
+          ]
+        },
+        {
+          "words": [
+            125,
+            126,
+            127,
+            128
+          ],
+          "phrases": [
+            {
+              "words": [
+                125,
+                126,
+                127,
+                128
+              ],
+              "en": "And Allah is Knowing of all things."
+            }
+          ]
+        }
+      ]
     }
   }
 }

@@ -110,11 +110,29 @@ def coarse_hint(norm, reasons, clause_limit):
 
 
 # ------------------------------------------------------------------ model call
-def call_openrouter(args, system, user, temperature, model=None):
+def reasoning_param(mode):
+    """--reasoning / --long-reasoning / --escalate-reasoning value -> OpenRouter `reasoning` object (or None).
+    off | none | minimal | low | medium | high | default | max:N (thinking-token budget)"""
+    mode = (mode or 'default').strip().lower()
+    if mode == 'default':
+        return None
+    if mode == 'off':
+        return {'enabled': False}
+    if mode.startswith('max:'):
+        return {'max_tokens': int(mode[4:])}
+    if mode in ('none', 'minimal', 'low', 'medium', 'high'):
+        return {'effort': mode}
+    raise SystemExit(f'unknown reasoning mode {mode!r} (off|none|minimal|low|medium|high|default|max:N)')
+
+
+_warned = set()
+
+
+def call_openrouter(args, system, user, temperature, model=None, max_tokens=None, reasoning='off'):
     body = {
         'model': model or args.model,
         'temperature': temperature,
-        'max_tokens': args.max_tokens,
+        'max_tokens': max_tokens or args.max_tokens,
         'usage': {'include': True},
         'messages': [
             {'role': 'system', 'content': [dict({'type': 'text', 'text': system},
@@ -122,8 +140,9 @@ def call_openrouter(args, system, user, temperature, model=None):
             {'role': 'user', 'content': user},
         ],
     }
-    if args.reasoning == 'off':
-        body['reasoning'] = {'enabled': False}
+    rp = reasoning_param(reasoning)
+    if rp:
+        body['reasoning'] = rp
     data = json.dumps(body).encode('utf-8')
     hdr = {'Authorization': f'Bearer {os.environ["OPENROUTER_API_KEY"]}', 'Content-Type': 'application/json',
            'X-Title': 'quran-annotations'}
@@ -135,11 +154,21 @@ def call_openrouter(args, system, user, temperature, model=None):
                 resp = json.loads(r.read().decode('utf-8'))
             if 'error' in resp:
                 raise RuntimeError(json.dumps(resp['error'])[:300])
-            return resp['choices'][0]['message']['content'], resp.get('usage', {})
+            choice = resp['choices'][0]
+            text, fr = choice['message'].get('content'), choice.get('finish_reason')
+            if not text or not str(text).strip():
+                raise RuntimeError(f'empty reply (finish_reason={fr})')
+            if fr == 'length':
+                raise RuntimeError('reply cut off (finish_reason=length); raise --max-tokens / --long-max-tokens')
+            return text, dict(resp.get('usage', {}), finish_reason=fr)
         except urllib.error.HTTPError as e:
             last = f'HTTP {e.code}: {e.read().decode("utf-8", "replace")[:300]}'
-            if e.code == 400 and 'reasoning' in body:      # model rejects the reasoning switch
+            if e.code == 400 and 'reasoning' in body:      # model rejects the reasoning setting
                 body.pop('reasoning')
+                if model not in _warned:
+                    _warned.add(model)
+                    print(f'  warning: {model or args.model} rejected the reasoning setting; it may reason by default '
+                          f'(watch the "reasoning" column in the summary)')
                 data = json.dumps(body).encode('utf-8')
                 continue
             if e.code not in (408, 429, 500, 502, 503, 504):
@@ -187,9 +216,13 @@ def main():
     ap.add_argument('--max-phrase-words', type=int, default=0, help='optional: reject phrases longer than this (0 = no limit, default)')
     ap.add_argument('--retries', type=int, default=2, help='single-ayah retries for failed validation')
     ap.add_argument('--max-tokens', type=int, default=8000)
+    ap.add_argument('--long-max-tokens', type=int, default=16000, help='output budget for long ayahs')
+    ap.add_argument('--mock-flaky', action='store_true', help='self-test: model fails at temperature 0 on some batches')
     ap.add_argument('--no-bn-wbw', action='store_true', help='omit Bangla word glosses (saves input tokens)')
     ap.add_argument('--no-cache', action='store_true', help='do not mark CONVENTIONS as cacheable')
-    ap.add_argument('--reasoning', choices=['off', 'default'], default='off')
+    ap.add_argument('--reasoning', default='off', help='thinking for the Haiku passes: off|none|minimal|low|medium|high|default|max:N')
+    ap.add_argument('--long-reasoning', default='low', help='thinking for long ayahs (same values)')
+    ap.add_argument('--escalate-reasoning', default='low', help='thinking for escalated ayahs (same values)')
     ap.add_argument('--out-dir', help='annotation dir (default runs/<tag>/annotations)')
     ap.add_argument('--no-merge', action='store_true')
     ap.add_argument('--dry-run', action='store_true')
@@ -249,29 +282,55 @@ def main():
     log = open(os.path.join(run, 'calls.jsonl'), 'a', encoding='utf-8')
     usage = {'prompt_tokens': 0, 'completion_tokens': 0, 'cost': 0.0, 'calls': 0, 'words': 0}
 
-    def run_request(batch, temperature, hint=None, model=None):
+    by_cat = {}
+
+    def run_request(batch, temperature, hint=None, model=None, cat='main'):
         model = model or args.model
         user = build_user_prompt(template, src, batch, not args.no_bn_wbw, hint)
         t0 = time.time()
-        text, u = mock_call(batch, src, temperature, args.mock_coarse) if args.mock_replay else call_openrouter(args, system, user, temperature, model)
-        log.write(json.dumps({'keys': [f'{s}:{a}' for s, a in batch], 'model': model, 'temperature': temperature,
-                              'seconds': round(time.time() - t0, 1), 'usage': u, 'reply': text},
-                             ensure_ascii=False) + '\n')
+        rec = {'keys': [f'{s}:{a}' for s, a in batch], 'model': model, 'temperature': temperature, 'cat': cat,
+               'hint': hint}
+        try:
+            if args.mock_replay:
+                if args.mock_flaky and temperature == 0.0 and any(a % 5 == 0 for s, a in batch):
+                    raise RuntimeError('empty reply (finish_reason=length)')
+                text, u = mock_call(batch, src, temperature, args.mock_coarse)
+            else:
+                mode = {'long': args.long_reasoning, 'escalate': args.escalate_reasoning}.get(cat, args.reasoning)
+                text, u = call_openrouter(args, system, user, temperature, model,
+                                          args.long_max_tokens if cat == 'long' else args.max_tokens, mode)
+        except Exception as e:
+            rec.update(seconds=round(time.time() - t0, 1), error=str(e))
+            log.write(json.dumps(rec, ensure_ascii=False) + '\n')
+            log.flush()
+            raise
+        rec.update(seconds=round(time.time() - t0, 1), usage=u, reply=text)
+        log.write(json.dumps(rec, ensure_ascii=False) + '\n')
         log.flush()
+        c = by_cat.setdefault(cat, {'calls': 0, 'cost': 0.0, 'in': 0, 'out': 0, 'reason': 0})
+        c['reason'] += (u.get('completion_tokens_details') or {}).get('reasoning_tokens', 0) or 0
+        c['calls'] += 1
+        c['cost'] += u.get('cost') or 0
+        c['in'] += u.get('prompt_tokens', 0)
+        c['out'] += u.get('completion_tokens', 0)
         usage['prompt_tokens'] += u.get('prompt_tokens', 0)
         usage['completion_tokens'] += u.get('completion_tokens', 0)
         usage['cost'] += u.get('cost') or 0
         usage['calls'] += 1
         return parse_json_object(text)
 
-    def settle(batch, temperature, hint=None, model=None):
+    def settle(batch, temperature, hint=None, model=None, cat='main'):
         """Run one request; store validated ayahs; return [(ayah, errors)] that failed."""
         failed = []
         try:
-            reply = run_request(batch, temperature, hint, model)
+            reply = run_request(batch, temperature, hint, model, cat)
         except Exception as e:
             print(f'  request {batch[0]}..{batch[-1]} failed: {e}')
-            return [(ay, None) for ay in batch]
+            msg = f'your reply could not be used ({str(e)[:120]})'
+            if isinstance(e, json.JSONDecodeError) or 'Expecting' in str(e) or 'JSON' in str(e):
+                msg += ('; return strictly valid JSON: inside text fragments use only curly quotes “ ” ‘ ’, '
+                        'never a straight double quote, and no trailing commas')
+            return [(ay, [msg]) for ay in batch]
         for s, a in batch:
             key = f'{s}:{a}'
             errs, norm = (normalise(reply.get(key), src.n_words(s, a), max_phrase_words=args.max_phrase_words,
@@ -279,6 +338,9 @@ def main():
                           if key in reply else (['missing from reply'], []))
             if errs:
                 print(f'  {key}: invalid ({errs[0]}{" ..." if len(errs) > 1 else ""})')
+                log.write(json.dumps({'keys': [key], 'model': model or args.model, 'validation_errors': errs},
+                                     ensure_ascii=False) + '\n')
+                log.flush()
                 failed.append(((s, a), errs))
                 continue
             with open(raw_path(s, a), 'w', encoding='utf-8') as fh:
@@ -294,7 +356,7 @@ def main():
         for i, f in enumerate(ex.map(lambda b: settle(b, 0.0), batches), 1):
             failed += f
             print(f'batch {i}/{len(batches)} done ({len(f)} failed)')
-        for f in ex.map(lambda ay: settle([ay], 0.0, model=args.long_model), long_items):
+        for f in ex.map(lambda ay: settle([ay], 0.0, model=args.long_model, cat='long'), long_items):
             failed += f
         if long_items:
             print(f'long ayahs done ({len(long_items)})')
@@ -302,7 +364,7 @@ def main():
             if not failed:
                 break
             print(f'retry {attempt + 1}: {len(failed)} ayah(s) alone at temperature 0.3')
-            failed = [x for f in ex.map(lambda fe: settle([fe[0]], 0.3, fe[1], model_for(fe[0])), failed) for x in f]
+            failed = [x for f in ex.map(lambda fe: settle([fe[0]], 0.3, fe[1], model_for(fe[0]), 'long' if fe[0] in long_set else 'main'), failed) for x in f]
 
     # granularity pass: one finer re-run for ayahs the model segmented too coarsely
     def refine(ay):
@@ -310,7 +372,8 @@ def main():
         d = load_json(raw_path(s, a))
         r1, l1, m1 = assess(d['clauses'], args.coarse_mean, args.max_clause_words)
         try:
-            reply = run_request([ay], 0.3, coarse_hint(d['clauses'], r1, args.max_clause_words))
+            reply = run_request([ay], 0.3, coarse_hint(d['clauses'], r1, args.max_clause_words), model_for(ay),
+                                'long' if ay in long_set else 'main')
             errs, norm = normalise(reply.get(f'{s}:{a}'), src.n_words(s, a), max_phrase_words=args.max_phrase_words,
                                    src_words=src.align_words(s, a))
         except Exception as e:
@@ -320,7 +383,7 @@ def main():
             r2, l2, m2 = assess(norm, args.coarse_mean, args.max_clause_words)
             better = (l2, m2) < (l1, m1)            # fewer over-long clauses first, then finer phrases
         if better:
-            d.update(clauses=norm, coarse=bool(r2), reasons=r2)
+            d.update(clauses=norm, coarse=bool(r2), reasons=r2, model=model_for(ay))
         d['refined'] = True
         with open(raw_path(s, a), 'w', encoding='utf-8') as fh:
             json.dump(d, fh, ensure_ascii=False)
@@ -348,7 +411,7 @@ def main():
             hint.append('your earlier answer may have lost, moved or doubled meaning: ' + '; '.join(f1[:4])
                         + '. Each fragment must translate only its own Arabic words, and every word exactly once')
         try:
-            reply = run_request([ay], 0.0, hint, args.escalate_model)
+            reply = run_request([ay], 0.0, hint, args.escalate_model, 'escalate')
             errs, norm = normalise(reply.get(f'{s}:{a}'), src.n_words(s, a), max_phrase_words=args.max_phrase_words,
                                    src_words=src.align_words(s, a))
         except Exception as e:
@@ -356,7 +419,9 @@ def main():
         better = False
         if not errs:
             r2, l2, m2 = assess(norm, args.coarse_mean, args.max_clause_words)
-            better = (l2 + len(mflags(s, a, norm)), m2) < (l1 + len(f1), m1)
+            # fewer problems wins, but never by merging phrases into a much coarser segmentation
+            better = ((l2 + len(mflags(s, a, norm)), m2) < (l1 + len(f1), m1)
+                      and (m2 <= m1 + 0.3 or m2 <= args.coarse_mean))
         if better:
             d.update(clauses=norm, coarse=bool(r2), reasons=r2, model=args.escalate_model)
         d['escalated'] = True
@@ -364,6 +429,7 @@ def main():
             json.dump(d, fh, ensure_ascii=False)
         return better
 
+    n_esc = [0]
     if args.escalate_model:
         pend = []
         for ay in items:
@@ -372,6 +438,7 @@ def main():
                 if not d.get('escalated') and d.get('model') != args.escalate_model and (
                         d.get('coarse') or mflags(ay[0], ay[1], d['clauses'])):
                     pend.append(ay)
+        n_esc[0] = len(pend)
         if pend:
             print(f'escalation: {len(pend)} flagged ayah(s) re-run once on {args.escalate_model}')
             with cf.ThreadPoolExecutor(max_workers=args.workers) as ex:
@@ -401,11 +468,33 @@ def main():
     if usage['calls']:
         print(f'this run: {usage["calls"]} calls, {usage["prompt_tokens"]:,} in / {usage["completion_tokens"]:,} out tokens, '
               f'reported cost ${usage["cost"]:.4f}')
-        if usage['words']:
-            k = FULL_QURAN_WORDS / usage['words']
-            print(f'extrapolated to the whole Quran ({FULL_QURAN_WORDS:,} words): '
-                  f'~{usage["prompt_tokens"] * k / 1e6:.1f}M in / {usage["completion_tokens"] * k / 1e6:.1f}M out tokens, '
-                  f'~${usage["cost"] * k:.2f}  (retries inflate this run slightly)')
+        for cat, c in sorted(by_cat.items()):
+            share = c['reason'] / c['out'] if c['out'] else 0
+            print(f'  {cat:9s} {c["calls"]:4d} calls  {c["in"]:>9,} in  {c["out"]:>8,} out  '
+                  f'(reasoning {c["reason"]:,} = {share:.0%})  ${c["cost"]:.4f}')
+            if share > 0.25:
+                print(f'    ^ {cat}: more than a quarter of the output tokens went on hidden reasoning; '
+                      f'lower it with --{"" if cat == "main" else cat + "-"}reasoning minimal (or none)')
+        # whole-Quran estimate, step by step (valid for a fresh, uninterrupted run; escalation volume varies)
+        full_long = [k for k in src.maxkey if args.long_model and src.n_words(*k) > args.long_words]
+        fl_words = sum(src.n_words(*k) for k in full_long)
+        nl_words_run = sum(src.n_words(*ay) for ay in todo if ay not in long_set)
+        nl_ayahs_run = sum(1 for ay in todo if ay not in long_set)
+        lg_words_run = sum(src.n_words(*ay) for ay in long_items)
+        parts = []
+        if by_cat.get('main') and nl_words_run:
+            parts.append(('batched Haiku passes', by_cat['main']['cost'] / nl_words_run * (FULL_QURAN_WORDS - fl_words)))
+        if by_cat.get('long') and lg_words_run:
+            parts.append((f'{len(full_long)} long ayahs', by_cat['long']['cost'] / lg_words_run * fl_words))
+        if by_cat.get('escalate') and n_esc[0] and nl_ayahs_run:
+            rate = n_esc[0] / nl_ayahs_run
+            parts.append((f'escalation ({rate:.0%} of ayahs)', by_cat['escalate']['cost'] / n_esc[0] * rate
+                          * (len(src.maxkey) - len(full_long))))
+        if parts:
+            print('whole-Quran estimate from this run:')
+            for name, v in parts:
+                print(f'  {name:32s} ~${v:,.2f}')
+            print(f'  {"total":32s} ~${sum(v for _, v in parts):,.2f}')
 
     if args.no_merge:
         return
