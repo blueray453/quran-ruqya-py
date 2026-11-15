@@ -28,22 +28,49 @@ Python 3.10+; no Python packages are required (stdlib only).
 python3 --version
 ```
 
-For real model calls, configure an OpenRouter API key:
+For live model calls, create an API key in OpenRouter and configure it:
 
 ```bash
 export OPENROUTER_API_KEY="sk-or-..."
 ```
 
-## 2. Offline smoke test (no API key and no cost)
+The default model is `openai/gpt-6-luna`, called through OpenRouter's OpenAI-compatible
+Chat Completions endpoint. The script uses the OpenRouter model slug, not the bare `gpt-6-luna` name.
 
-The bundled Surah 67 reviewed prototype is replayed through the new flat-chunk pipeline.
-This checks parsing, Arabic-word alignment, storage, merge, and QA without calling an LLM.
+## 2. Live smoke test (OpenRouter API; low-cost model)
+
+The primary smoke test makes real model calls using `openai/gpt-6-luna` through OpenRouter.
+It includes these required ayahs:
+
+- Al-Baqarah: 2:255, 2:282, 2:286
+- An-Nisa: 4:176
+- Al-Ma'idah: 5:106–107
+
+It also selects up to two ayahs from each 10-word length band (1–10 through 121–130).
+The fixed examples count toward their own bands. The source corpus has only one ayah in
+81–90 words, none in 91–120, and only one in 121–130, so those bands cannot provide two
+distinct examples. The sample manifest records the actual selections and word counts.
 
 ```bash
-python3 tools/run_llm.py --surah 67 --tag smoke_chunks --mock-replay --workers 1
-python3 qa.py --surah 67 --annotations-dir runs/smoke_chunks/annotations
-python3 tools/chunker_report.py --surah 67 --annotations-dir runs/smoke_chunks/annotations
-python3 build.py --surah 67 --annotations-dir runs/smoke_chunks/annotations --out-dir runs/smoke_chunks/data
+export OPENROUTER_API_KEY="sk-or-..."
+./smoke_test.sh
+```
+
+The live test uses one ayah per request, `openai/gpt-6-luna` for every length, low reasoning, no premium-model escalation, and no automatic second-pass refinement. It then validates
+word coverage, Bangla overlay alignment, source hashes, review flags, chunker diagnostics,
+and generated reader data. OpenRouter reports actual token usage and cost in the runner output.
+
+Results are written to `runs/gpt6_luna_smoke/`. To use a different tag, set `TAG` before
+running the script. Re-running with the same tag deletes and recreates that generated run
+directory.
+
+## 2a. Offline pipeline test (no API key; no model calls)
+
+The offline test replays the bundled Al-Mulk prototype through the flat-chunk pipeline.
+It checks parsing, Arabic-word alignment, storage, merge, and QA without calling an LLM.
+
+```bash
+./smoke_test_offline.sh
 ```
 
 Expected: 30 ayahs and 333 Arabic words validate; the replay contains 213 chunks. The
@@ -96,8 +123,8 @@ python3 ayah_length_counter.py
 # Inspect a prompt
 python3 tools/run_llm.py --ayahs 2:282 --tag preview --dry-run
 
-# Sample ayahs by length, restricted to chunker-covered examples
-python3 tools/sample_ayahs.py --out band_sample.txt
+# Sample by word-length band, retaining fixed test cases
+python3 tools/sample_ayahs.py --include '2:255,2:282,2:286,4:176,5:106-107' --out band_sample.txt
 
 # Inspect chunker overlap (diagnostic only)
 python3 tools/chunker_report.py --annotations-dir runs/pilot_chunks/annotations --out report.md

@@ -1,21 +1,20 @@
-# Local validation performed for this package
+# Test status
 
-The following checks were run with Python 3 and no OpenRouter API key:
+## Offline pipeline replay
 
-- `python -m compileall -q qa.py build.py ayah_length_counter.py tools`
-- `python qa.py --surah 67`
-- `./smoke_test.sh`
+- `./smoke_test_offline.sh`
+- 30 Al-Mulk ayahs replayed from the bundled reviewed prototype
+- 333 Arabic words and 213 flat chunks
+- exact ordered source-word coverage
+- English/Bangla chunk spans match
+- QA: zero failures
+- chunker boundary comparison is diagnostic only
+- reader data build completes
 
-Smoke-test result:
+## Live OpenRouter model smoke test
 
-- 30 Al-Mulk ayahs replayed from the bundled reviewed sample.
-- 333 Arabic words aligned and covered exactly once.
-- 213 flat chunks produced.
-- English and Bangla chunk spans matched.
-- QA: 0 FAIL.
-- Chunker comparison generated as a diagnostic only.
-- English and Bangla reader data built successfully.
-- No model API calls and no API cost.
-
-This replay validates the software path and data contract. It does not benchmark the quality
-of a live LLM's segmentation decisions.
+- `./smoke_test.sh` uses `openai/gpt-6-luna` via OpenRouter
+- Includes 2:255, 2:282, 2:286, 4:176, 5:106–107 and stratified ayahs by 10-word length band
+- Requires the user's `OPENROUTER_API_KEY` and OpenRouter account credits
+- Not run in the packaging environment because no user API key is available
+- The script checks validated outputs, source coverage, overlays, QA, reports, and build output

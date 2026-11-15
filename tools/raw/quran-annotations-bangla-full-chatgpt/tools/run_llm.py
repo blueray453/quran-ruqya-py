@@ -154,14 +154,18 @@ def reasoning_param(mode):
 
 def call_openrouter(args, system, user, temperature, model=None, max_tokens=None, reasoning='off'):
     model = model or args.model
+    system_block = {'type': 'text', 'text': system}
+    # OpenRouter's explicit cache_control marker is documented for Anthropic;
+    # OpenAI models such as GPT-6 Luna use provider-managed automatic caching.
+    if not args.no_cache and model.startswith('anthropic/'):
+        system_block['cache_control'] = {'type': 'ephemeral'}
     body = {
         'model': model,
         'temperature': temperature,
         'max_tokens': max_tokens or args.max_tokens,
         'usage': {'include': True},
         'messages': [
-            {'role': 'system', 'content': [dict({'type': 'text', 'text': system},
-                                                **({} if args.no_cache else {'cache_control': {'type': 'ephemeral'}}))]},
+            {'role': 'system', 'content': [system_block]},
             {'role': 'user', 'content': user},
         ],
     }
@@ -252,12 +256,12 @@ def main():
     ap.add_argument('--pilot', help='spec file: lines like "67", "2:255", "2:282-286", # comments')
     ap.add_argument('--surah', type=int, action='append')
     ap.add_argument('--ayahs', help='comma list, e.g. "2:255,2:282-284"')
-    ap.add_argument('--model', default='anthropic/claude-haiku-5.5', help='model for normal-length/batched ayahs')
-    ap.add_argument('--long-model', default='anthropic/claude-sonnet-5.5',
-                    help='ayahs longer than --long-words go one by one (empty = disable)')
+    ap.add_argument('--model', default='openai/gpt-6-luna', help='OpenRouter model for all ayahs (default: openai/gpt-6-luna)')
+    ap.add_argument('--long-model', default='',
+                    help='optional separate model for ayahs longer than --long-words (empty = use --model for every length)')
     ap.add_argument('--long-words', type=int, default=40)
-    ap.add_argument('--escalate-model', default='anthropic/claude-sonnet-5.5',
-                    help='model for ayahs still flagged after initial/refinement pass (empty = disable)')
+    ap.add_argument('--escalate-model', default='',
+                    help='optional model for flagged ayahs (empty = disable additional model calls)')
     ap.add_argument('--max-words', type=int, default=220, help='source-word cap per batched request')
     ap.add_argument('--max-ayahs', type=int, default=8)
     ap.add_argument('--workers', type=int, default=4)
