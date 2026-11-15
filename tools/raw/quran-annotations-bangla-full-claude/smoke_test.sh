@@ -19,7 +19,7 @@ if [[ ! -f "runs/$TAG/pilot.txt" ]]; then
 fi
 
 # 2. annotate (resumes automatically; exits 1 and writes STOPPED.md on first error)
-python3 tools/annotate.py --tag "$TAG" --model "$MODEL" --pilot "runs/$TAG/pilot.txt" --workers 2
+python3 annotate.py --tag "$TAG" --model "$MODEL" --pilot "runs/$TAG/pilot.txt" --workers 2
 
 # 3. check
 python3 qa.py --annotations-dir "runs/$TAG/annotations" --no-baseline

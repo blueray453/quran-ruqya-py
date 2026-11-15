@@ -12,7 +12,8 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from ayahlib import Src  # noqa: E402
-from run_llm import parse_spec  # noqa: E402
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from annotate import parse_spec  # noqa: E402
 
 
 def parse_bands(spec):
