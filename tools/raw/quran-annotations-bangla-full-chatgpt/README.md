@@ -1,9 +1,15 @@
 # Quran Arabic phrase-chunk annotation (Bangla + English)
 
+**Conventions v4.0** — smallest valid Arabic syntactic-semantic chunks, with mandatory
+Allah / Rabb / ilah terminology.
+
 This project annotates Quran ayahs as **small, contiguous Arabic syntactic / semantic
 chunks**. The goal is not clause segmentation and not word-by-word glossing. A chunk should
 be the smallest meaningful unit that preserves its local Arabic grammatical relationship.
-The English and Bangla fragments are translations of exactly the same Arabic span.
+The English and Bangla fragments are translations of exactly the same Arabic span. A chunk
+must preserve the minimum local grammatical dependency needed for meaning; a small average
+word count is not enough. English outputs must use Allah / Rabb / ilah, never God / Lord / deity.
+Bangla outputs must use আল্লাহ / রব / ইলাহ, never ঈশ্বর / প্রভু / খোদা.
 
 New annotation shape:
 
@@ -62,10 +68,11 @@ The live test uses one ayah per request, `openai/gpt-6-luna` for every length, r
 no premium-model escalation, and no automatic granularity refinement. The model returns word
 positions instead of Arabic copies. If a Bangla fragment is blank, the runner requests only
 that missing translation while keeping all chunk boundaries fixed. It then validates word
-coverage, Bangla overlay alignment, source hashes, review flags, chunker diagnostics, and
-generated reader data. OpenRouter reports actual token usage and cost in the runner output.
+coverage, mandatory Allah/Rabb/ilah terminology, Bangla overlay alignment, source hashes,
+review candidates, chunker diagnostics, and generated reader data. OpenRouter reports actual
+token usage and cost in the runner output. Full attempts and retry resolutions are archived.
 
-Results are written to `runs/gpt6_luna_smoke/`. To use a different tag, set `TAG` before
+Results are written to `runs/gpt6_luna_v6_smoke/`. To use a different tag, set `TAG` before
 running the script. Re-running with the same tag deletes and recreates that generated run
 directory.
 
@@ -115,8 +122,10 @@ with the same tag skips completed ayahs. New output is written under `runs/<tag>
    used. No clause-size metric or clause boundary is optimized.
 5. **Merge** — `tools/collect.py` creates a flat English `chunks[]` file and a separate
    Bangla overlay with identical chunk spans.
-6. **QA/review** — `qa.py` verifies tiling, source integrity, Bangla scripts, and overlay
-   identity. Chunker reports are post-hoc diagnostics, not segmentation instructions.
+6. **QA/review** — `qa.py` verifies tiling, source integrity, Bangla scripts, mandatory
+   terminology and overlay identity. `tools/review_flags.py` uses conservative syntactic
+   boundary hints; the former word-overlap heuristic is retired because it produced false
+   positives for context-dependent fragments. Chunker reports remain post-hoc diagnostics.
 7. **Build** — `build.py` joins Arabic text, word glosses, translations, and recitation
    windows into reader JSON views.
 
@@ -147,14 +156,54 @@ units are acceptable where syntax requires them. Chunks longer than four words d
 but should not be split mechanically. Do not force one-word segmentation when it would break
 an Arabic dependency or create a meaningless fragment.
 
-## 7. Data and source integrity
+## 7. Semantic / syntactic second-pass audit (optional paid calls)
+
+After a smoke run, you can request an independent review of the fixed chunk spans:
+
+```bash
+python3 tools/semantic_audit.py \
+  --annotations-dir runs/gpt6_luna_v6_smoke/annotations \
+  --out-dir runs/gpt6_luna_v6_smoke/semantic_audit \
+  --model openai/gpt-6-luna
+```
+
+To audit only known difficult ayahs:
+
+```bash
+python3 tools/semantic_audit.py \
+  --annotations-dir runs/gpt6_luna_v6_smoke/annotations \
+  --out-dir runs/gpt6_luna_v6_smoke/semantic_audit \
+  --ayahs '2:196,2:282,4:12,4:176,33:53,67:7-11,67:16,67:27-30'
+```
+
+This audit does not change annotations. It returns high/medium/low review candidates for
+meaning omission, meaning borrowing/duplication, syntactic dependency splits, translation
+errors, Bangla alignment and terminology. Full prompts and raw audit responses are archived.
+It is a second opinion, not an infallible gold-standard validator.
+
+## 8. Exporting exact Arabic source traces
+
+Every validated raw result embeds its source words. For merged annotations from any run, you
+can also create line-oriented source/chunk evidence:
+
+```bash
+python3 tools/export_evidence.py \
+  --annotations-dir runs/gpt6_luna_v6_smoke/annotations \
+  --out-dir runs/gpt6_luna_v6_smoke/evidence
+```
+
+It writes exact numbered Arabic source words, English/Bangla word glosses, reference translations,
+and final chunk-to-source alignments. A merged annotation is not the same thing as the raw
+model response; original model text can only be preserved at generation time in `attempts/`.
+
+## 9. Data and source integrity
 
 Files under `sources/` are read-only and pinned in `sources.lock.yaml`. `qa.py` checks their
 SHA-256 hashes. The keyed text includes an ayah-end marker as the final key; annotations and
 audio positions use only real words. The three known-missing word-by-word gloss keys remain
 handled by QA as before.
 
-## 8. Legacy compatibility
+## 10. Legacy compatibility
 
 Bundled legacy `clauses[].phrases[]` annotations can still be read by `qa.py`, `build.py`,
 `tools/review_flags.py`, and `tools/chunker_report.py`. New work should use `chunks[]` only.

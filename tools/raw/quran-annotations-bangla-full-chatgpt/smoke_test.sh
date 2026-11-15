@@ -3,7 +3,7 @@ set -euo pipefail
 cd "$(dirname "$0")"
 
 MODEL="openai/gpt-6-luna"
-TAG="${TAG:-gpt6_luna_smoke}"
+TAG="${TAG:-gpt6_luna_v6_smoke}"
 SEED="${SEED:-2026}"
 
 if [[ -z "${OPENROUTER_API_KEY:-}" ]]; then
@@ -62,13 +62,26 @@ for line in (run / 'pilot.txt').read_text(encoding='utf-8').splitlines():
     if key:
         expected.append(key)
 failed = json.loads((run / 'failed.json').read_text(encoding='utf-8'))
-missing = [key for key in expected
-           if not (run / 'raw' / (f'{int(key.split(":")[0]):03d}-{int(key.split(":")[1]):03d}.json')).exists()]
-if failed or missing:
+missing, missing_source, missing_attempts = [], [], []
+for key in expected:
+    s, a = map(int, key.split(':'))
+    raw_path = run / 'raw' / f'{s:03d}-{a:03d}.json'
+    if not raw_path.exists():
+        missing.append(key)
+        continue
+    raw = json.loads(raw_path.read_text(encoding='utf-8'))
+    if not raw.get('source', {}).get('words') or raw['source'].get('word_count') != len(raw['source']['words']):
+        missing_source.append(key)
+    attempt_id = raw.get('final_attempt_id')
+    if not attempt_id or not (run / 'attempts' / f'{attempt_id}.json').exists():
+        missing_attempts.append(key)
+if failed or missing or missing_source or missing_attempts:
     print('FAIL: failed ayahs:', json.dumps(failed, ensure_ascii=False))
     print('FAIL: missing raw results:', missing)
+    print('FAIL: missing embedded source words:', missing_source)
+    print('FAIL: missing raw attempt archives:', missing_attempts)
     raise SystemExit(1)
-print(f'PASS: {len(expected)} selected ayahs have validated model responses')
+print(f'PASS: {len(expected)} selected ayahs have validated responses, exact Arabic source traces, and raw attempt archives')
 PY
 
 printf '\n=== 4. QA: Arabic coverage, English chunks, Bangla overlay, source integrity ===\n'
@@ -84,4 +97,10 @@ python3 build.py --annotations-dir "runs/${TAG}/annotations" --out-dir "runs/${T
 printf '\nLIVE SMOKE TEST PASSED\n'
 printf 'Model: %s\nSample manifest: runs/%s/pilot.txt\nResults: runs/%s/\n' "$MODEL" "$TAG" "$TAG"
 printf 'Review: runs/%s/review_flags.md\n' "$TAG"
+printf 'Raw attempts: runs/%s/attempts/\n' "$TAG"
+printf 'Retry resolution log: runs/%s/retry_events.jsonl\n' "$TAG"
 printf 'API usage/cost is reported by run_llm.py above.\n'
+if [[ "${RUN_SEMANTIC_AUDIT:-0}" == "1" ]]; then
+  python3 tools/semantic_audit.py --annotations-dir "runs/${TAG}/annotations" \
+    --out-dir "runs/${TAG}/semantic_audit" --model "${AUDIT_MODEL:-$MODEL}"
+fi

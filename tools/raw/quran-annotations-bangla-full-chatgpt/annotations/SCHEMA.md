@@ -9,7 +9,7 @@ The Arabic segmentation is the primary annotation. There is no clause layer.
 ```json
 {
   "schema_version": "2.0",
-  "conventions_version": "3.0",
+  "conventions_version": "4.0",
   "surah": 67,
   "language": "en",
   "provenance": {"generator": "llm-annotation", "model": "..."},

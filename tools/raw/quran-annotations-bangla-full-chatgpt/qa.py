@@ -12,6 +12,9 @@ import os
 import sys
 from collections import Counter
 
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'tools'))
+from ayahlib import terminology_flags  # noqa: E402
+
 ROOT = os.path.dirname(os.path.abspath(__file__))
 KNOWN_MISSING_WBW = {('2', '181', '4'), ('8', '6', '5'), ('13', '37', '9')}
 KNOWN_MISSING_WBW_BN = {('2', '181', '4'), ('8', '6', '5'), ('13', '37', '9')}
@@ -138,7 +141,7 @@ def validate_english_doc(rep, surah, doc, src):
         rep.fail(f'surah {surah}: file header says surah={doc.get("surah")}')
     schema = doc.get('schema_version')
     convention = doc.get('conventions_version')
-    if (schema, convention) not in {('1.0', '2.2'), ('2.0', '3.0')}:
+    if (schema, convention) not in {('1.0', '2.2'), ('2.0', '3.0'), ('2.0', '4.0') }:
         rep.fail(f'surah {surah}: unsupported schema/conventions versions {schema}/{convention}')
     if not isinstance(doc.get('provenance'), dict):
         rep.fail(f'surah {surah}: provenance block missing')
@@ -170,6 +173,9 @@ def validate_english_doc(rep, surah, doc, src):
                 size_dist[len(words)] += 1
             if not isinstance(chunk.get('en'), str) or not chunk['en'].strip():
                 rep.fail(f'{key} chunk {ci}: empty en fragment')
+            else:
+                for issue in terminology_flags(chunk.get('en'), None):
+                    rep.fail(f'{key} chunk {ci}: {issue}')
             if 'bn' in chunk:
                 rep.fail(f'{key} chunk {ci}: bn slot inside English annotation; Bangla must live in annotations/bn/')
         if covered != list(range(1, n + 1)):
@@ -235,7 +241,7 @@ def validate_bangla_doc(rep, surah, bn_doc, en_doc, src):
     if bn_doc.get('language') != 'bn':
         rep.fail(f'bn surah {surah}: language must be "bn", got {bn_doc.get("language")!r}')
     schema = bn_doc.get('schema_version')
-    if (schema, bn_doc.get('conventions_version')) not in {('1.0', '2.2'), ('2.0', '3.0')}:
+    if (schema, bn_doc.get('conventions_version')) not in {('1.0', '2.2'), ('2.0', '3.0'), ('2.0', '4.0')}:
         rep.fail(f'bn surah {surah}: unsupported schema/conventions version')
     if not isinstance(bn_doc.get('provenance'), dict):
         rep.fail(f'bn surah {surah}: provenance block missing')
@@ -273,6 +279,8 @@ def validate_bangla_doc(rep, surah, bn_doc, en_doc, src):
                 rep.fail(f'bn {key} chunk {i}: no Bengali script in {fragment!r}')
             if any(is_arabic_script(ch) for ch in fragment):
                 rep.fail(f'bn {key} chunk {i}: Arabic script in Bangla fragment {fragment!r}')
+            for issue in terminology_flags('', fragment):
+                rep.fail(f'bn {key} chunk {i}: {issue}')
             if any(ch.isascii() and ch.isalpha() for ch in fragment):
                 rep.warn(f'bn {key} chunk {i}: ASCII letters in Bangla fragment {fragment!r}')
         n = src.n_words(surah, ayah)

@@ -1,4 +1,4 @@
-# Arabic phrase-chunk annotation conventions (v3.0)
+# Arabic phrase-chunk annotation conventions (v4.0)
 
 ## Task
 
@@ -36,10 +36,22 @@ In practice:
   preposition-noun pair. Split them when the parts can be represented as distinct meaningful
   chunks without breaking the local syntax.
 - A chunk's English or Bangla fragment may be elliptical or context-dependent. It does not
-  need to read as a complete standalone sentence. Do not merge Arabic words just to make an
-  English or Bangla fragment sound more fluent.
-- Do not split merely to reach a one-word average. The target is the smallest *meaningful*
-  unit, not the smallest possible unit.
+  need to read as a complete standalone sentence. However, it must not be an arbitrary
+  fragment that breaks a necessary local Arabic dependency.
+- Do not strand a connector or function word when it has no useful independent meaning in
+  the local construction. In particular, review chunks consisting only of items such as
+  “if”, “when”, “and”, “of”, “to”, “from”, “for”, “then”, or an auxiliary such as “is”.
+  Keep such a word with the smallest adjacent Arabic span needed to express its function.
+- Keep a predicate with the argument needed to identify what is acting or being described
+  when separating them makes either fragment misleading (for example, a passive predicate
+  separated from its post-verbal subject, or a conditional particle separated from the
+  conditional clause it introduces).
+- Do not split a verb from an obligatory complement if the resulting fragment is misleading;
+  but do not automatically group every verb-object pair when both are independently
+  meaningful and the relation remains clear.
+- Do not split merely to reach a one-word average. The target is the smallest *valid*
+  syntactic-semantic unit, not the smallest possible unit. A chunk may be several words when
+  that is the minimum span that preserves its local Arabic relationship.
 
 The reviewed Al-Mulk prototype is a useful reference profile (average about 1.6 Arabic
 words per chunk; about 59% one-word and 29% two-word chunks), **not a quota or a hard
@@ -72,15 +84,33 @@ statistical target**. Other surahs and constructions can naturally differ.
 Chunks always follow Arabic word order. Inside one chunk, English or Bangla word order may
 be adjusted when required by that language. Never reorder chunks relative to one another.
 
+## Islamic terminology (mandatory)
+
+Do not use the English words **God**, **gods**, **Lord**, **lords**, **lordship**, **deity**,
+ or **deities** in annotation fragments. Do not copy these terms from a reference translation.
+Use the Islamic term that corresponds to the actual Arabic word:
+
+- الله / اللّٰه → **Allah**.
+- رَبّ (including attached pronouns) → **Rabb**: “my Rabb”, “our Rabb”, “their Rabb”, etc.
+- إِلٰه / آلِهَة → **ilah / ilahs** (or the appropriate transliteration of the actual form), not “god(s)” or “deity/deities”.
+- Other divine names/attributes should follow the Arabic wording and established Islamic names,
+  e.g. Ar-Rahman and Ar-Raheem where those names occur. Do not replace a specific Arabic name
+  with a generic English label.
+
+In Bangla, use **আল্লাহ** for الله, **রব** for رَبّ, and **ইলাহ** for إِلٰه / آلِهَة.
+Do not use ঈশ্বর, প্রভু, or খোদা in annotation fragments. Use the appropriate Islamic term
+based on the Arabic source, not on the wording of a reference translation.
+
 ## English style
 
 - Capitalise at the start of a sentence only. Put punctuation (, . ; : ? !) at the end of
   the chunk where it belongs.
 - Quotation marks: outer “ ” and inner ‘ ’. If speech opened in an earlier ayah is still
   open, do not re-open it; if speech continues past this ayah, leave it open.
-- Use "Allah" for الله; "the Most Merciful" for الرحمن; capitalise pronouns that refer to
-  Allah ("He", "His", "Him").
+- Capitalise pronouns that refer to Allah ("He", "His", "Him").
 - Use word glosses and the reference translation as hints only; do not copy them mechanically.
+  Reference translations may use generic English religious labels; the mandatory terminology
+  rules above override them.
 
 ## Bangla style
 
@@ -94,7 +124,8 @@ be adjusted when required by that language. Never reorder chunks relative to one
 - Address register: copy the register of the Bangla reference translation for that ayah.
   If it addresses the listener with আপনি / আপনার / আপনাকে, use those; if it uses তুমি /
   তোমার / তোমাকে, use those. Decide per ayah; never mix registers inside one ayah.
-- Use respectful honorific pronouns for Allah (তিনি, যিনি, তাঁর, তাঁকে) and “আল্লাহ” for الله.
+- Use respectful honorific pronouns for Allah (তিনি, যিনি, তাঁর, তাঁকে), “আল্লাহ” for الله,
+  “রব” for رَبّ, and “ইলাহ” for إِلٰه / آلِهَة. Do not use ঈশ্বর, প্রভু, or খোদা.
 - Use Bangla word glosses and the whole-ayah translation as hints, not text to copy mechanically.
 
 ## Quotation continuity

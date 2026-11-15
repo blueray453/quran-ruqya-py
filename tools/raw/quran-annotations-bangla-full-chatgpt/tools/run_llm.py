@@ -20,6 +20,8 @@ import re
 import subprocess
 import sys
 import time
+import uuid
+import threading
 import urllib.error
 import urllib.request
 
@@ -193,7 +195,7 @@ def call_openrouter(args, system, user, temperature, model=None, max_tokens=None
             if finish == 'length':
                 raise RuntimeError('reply cut off (finish_reason=length); raise --max-tokens / --long-max-tokens')
             usage = dict(resp.get('usage', {}), finish_reason=finish)
-            return content, usage
+            return content, usage, resp
         except urllib.error.HTTPError as exc:
             last = f'HTTP {exc.code}: {exc.read().decode("utf-8", "replace")[:400]}'
             if exc.code == 400 and 'reasoning' in body:
@@ -272,6 +274,7 @@ def main():
     ap.add_argument('--max-tokens', type=int, default=0, help='output cap per request (0 = automatic)')
     ap.add_argument('--long-max-tokens', type=int, default=0, help='output cap for long ayahs (0 = automatic)')
     ap.add_argument('--mock-flaky', action='store_true', help='self-test: make some mock requests fail once')
+    ap.add_argument('--mock-invalid-once', action='store_true', help='self-test: return one structurally invalid mock reply, then a valid retry')
     ap.add_argument('--no-bn-wbw', action='store_true', help='omit Bangla word glosses from the prompt')
     ap.add_argument('--no-cache', action='store_true', help='do not mark conventions as cacheable')
     ap.add_argument('--reasoning', default='off', help='normal pass: off|none|minimal|low|medium|high|default|max:N')
@@ -308,6 +311,78 @@ def main():
     def raw_path(s, a):
         return os.path.join(raw_dir, f'{s:03d}-{a:03d}.json')
 
+    attempts_dir = os.path.join(run, 'attempts')
+    os.makedirs(attempts_dir, exist_ok=True)
+    retry_events_path = os.path.join(run, 'retry_events.jsonl')
+    log_lock = threading.Lock()
+    retry_lock = threading.Lock()
+    pending_retry_events = {}
+    retry_attempt_counts = {}
+
+    def persist_attempt(record):
+        attempt_id = record.setdefault('attempt_id', uuid.uuid4().hex)
+        record.setdefault('recorded_at_unix', time.time())
+        path = os.path.join(attempts_dir, f'{attempt_id}.json')
+        tmp = path + '.tmp'
+        with open(tmp, 'w', encoding='utf-8') as fh:
+            json.dump(record, fh, ensure_ascii=False, indent=2)
+        os.replace(tmp, path)
+        return attempt_id, os.path.relpath(path, run)
+
+    def append_call_log(record):
+        with log_lock:
+            log.write(json.dumps(record, ensure_ascii=False) + '\n')
+            log.flush()
+
+    def append_retry_event(record):
+        with retry_lock:
+            with open(retry_events_path, 'a', encoding='utf-8') as fh:
+                fh.write(json.dumps(record, ensure_ascii=False) + '\n')
+                fh.flush()
+
+    def mark_invalid(key, attempt_id, attempt_path, errors, attempt_number, category):
+        event_id = uuid.uuid4().hex
+        raw_available = False
+        if attempt_path:
+            try:
+                saved = load_json(os.path.join(run, attempt_path))
+                raw_available = bool(saved.get('response_captured') and saved.get('raw_model_text'))
+            except Exception:
+                raw_available = False
+        event = {
+            'event_id': event_id,
+            'event': 'invalid_model_response',
+            'ayah': key,
+            'attempt_id': attempt_id,
+            'attempt_file': attempt_path,
+            'attempt_number': attempt_number,
+            'category': category,
+            'validation_errors': errors,
+            'resolved': False,
+            'raw_model_response_available': raw_available,
+            'note': 'The complete request and any returned raw model response are stored in the referenced attempts file.'
+        }
+        append_retry_event(event)
+        pending_retry_events.setdefault(key, []).append(event)
+
+    def resolve_invalid(key, resolving_attempt_id, resolving_attempt_file, attempt_number):
+        events = pending_retry_events.pop(key, [])
+        for original in events:
+            append_retry_event({
+                'event_id': uuid.uuid4().hex,
+                'event': 'invalid_response_resolved_by_retry',
+                'ayah': key,
+                'original_event_id': original['event_id'],
+                'original_attempt_id': original['attempt_id'],
+                'resolving_attempt_id': resolving_attempt_id,
+                'resolving_attempt_file': resolving_attempt_file,
+                'resolved_on_retry_number': attempt_number,
+                'status': 'resolved',
+                'validation_errors': original['validation_errors'],
+                'raw_original_response_available': original.get('raw_model_response_available', False),
+                'raw_resolution_response_available': True,
+            })
+
     todo = [(s, a) for s, a in items if not os.path.exists(raw_path(s, a))]
     words_total = sum(src.n_words(s, a) for s, a in items)
     print(f'{len(items)} ayahs / {words_total} words selected; {len(items) - len(todo)} already done, {len(todo)} to run')
@@ -335,31 +410,90 @@ def main():
     log = open(os.path.join(run, 'calls.jsonl'), 'a', encoding='utf-8')
     usage = {'prompt_tokens': 0, 'completion_tokens': 0, 'cost': 0.0, 'calls': 0, 'words': 0}
     by_cat = {}
+    mock_invalid_seen = set()
 
     def run_request(batch, temperature, hint=None, model=None, cat='main'):
         model = model or args.model
         user = build_user_prompt(template, src, batch, not args.no_bn_wbw, hint)
+        attempt_id = uuid.uuid4().hex
         started = time.time()
-        rec = {'keys': [f'{s}:{a}' for s, a in batch], 'model': model,
-               'temperature': temperature, 'category': cat, 'hint': hint}
+        words = sum(src.n_words(*ay) for ay in batch)
+        reasoning = {'long': args.long_reasoning, 'escalate': args.escalate_reasoning}.get(cat, args.reasoning)
+        budget = (args.long_max_tokens if cat == 'long' else args.max_tokens) or auto_budget(words)
+        attempt = {
+            'attempt_id': attempt_id,
+            'kind': 'annotation',
+            'keys': [f'{s}:{a}' for s, a in batch],
+            'model': model,
+            'category': cat,
+            'temperature': temperature,
+            'reasoning': reasoning,
+            'started_at_unix': started,
+            'request': {
+                'endpoint': API,
+                'max_tokens': budget,
+                'system_prompt': system,
+                'user_prompt': user,
+                'messages': [
+                    {'role': 'system', 'content': system},
+                    {'role': 'user', 'content': user},
+                ],
+            },
+        }
         try:
             if args.mock_replay:
                 if args.mock_flaky and temperature == 0.0 and any(a % 5 == 0 for s, a in batch):
                     raise RuntimeError('mock transient failure')
                 text, u = mock_call(batch, src, args.mock_coarse)
+                provider_response = {'mock': True}
+                if args.mock_invalid_once and temperature == 0.0:
+                    mock_key = f'{batch[0][0]}:{batch[0][1]}'
+                    if mock_key not in mock_invalid_seen:
+                        mock_invalid_seen.add(mock_key)
+                        malformed = parse_json_object(text)
+                        first = malformed[mock_key][0]
+                        first['words'] = [2]
+                        text = json.dumps(malformed, ensure_ascii=False)
             else:
-                reasoning = {'long': args.long_reasoning, 'escalate': args.escalate_reasoning}.get(cat, args.reasoning)
-                words = sum(src.n_words(*ay) for ay in batch)
-                budget = (args.long_max_tokens if cat == 'long' else args.max_tokens) or auto_budget(words)
-                text, u = call_openrouter(args, system, user, temperature, model, budget, reasoning)
+                text, u, provider_response = call_openrouter(
+                    args, system, user, temperature, model, budget, reasoning
+                )
+            attempt.update({
+                'duration_seconds': round(time.time() - started, 2),
+                'usage': u,
+                'raw_model_text': text,
+                'provider_response': provider_response,
+                'response_captured': True,
+            })
+            try:
+                parsed = parse_json_object(text, [f'{s}:{a}' for s, a in batch])
+                attempt['parse_status'] = 'valid_json_object'
+            except Exception as parse_exc:
+                attempt['parse_status'] = 'invalid'
+                attempt['parse_error'] = repr(parse_exc)
+                raise
+            attempt_id_saved, attempt_file = persist_attempt(attempt)
+            rec = {
+                'attempt_id': attempt_id_saved, 'attempt_file': attempt_file,
+                'keys': attempt['keys'], 'model': model, 'temperature': temperature,
+                'category': cat, 'hint': hint, 'seconds': attempt['duration_seconds'],
+                'usage': u, 'reply_available_in_attempt_file': True,
+            }
+            append_call_log(rec)
         except Exception as exc:
-            rec.update(seconds=round(time.time() - started, 1), error=str(exc))
-            log.write(json.dumps(rec, ensure_ascii=False) + '\n')
-            log.flush()
+            attempt.setdefault('duration_seconds', round(time.time() - started, 2))
+            attempt['error'] = str(exc)
+            attempt.setdefault('response_captured', False)
+            attempt_id_saved, attempt_file = persist_attempt(attempt)
+            append_call_log({
+                'attempt_id': attempt_id_saved, 'attempt_file': attempt_file,
+                'keys': attempt['keys'], 'model': model, 'temperature': temperature,
+                'category': cat, 'seconds': attempt['duration_seconds'], 'error': str(exc),
+            })
+            setattr(exc, 'attempt_id', attempt_id_saved)
+            setattr(exc, 'attempt_file', attempt_file)
             raise
-        rec.update(seconds=round(time.time() - started, 1), usage=u, reply=text)
-        log.write(json.dumps(rec, ensure_ascii=False) + '\n')
-        log.flush()
+
         cat_stats = by_cat.setdefault(cat, {'calls': 0, 'cost': 0.0, 'in': 0, 'out': 0, 'reason': 0})
         cat_stats['calls'] += 1
         cat_stats['cost'] += u.get('cost') or 0
@@ -370,7 +504,7 @@ def main():
         usage['completion_tokens'] += u.get('completion_tokens', 0)
         usage['cost'] += u.get('cost') or 0
         usage['calls'] += 1
-        return parse_json_object(text, [f'{s}:{a}' for s, a in batch])
+        return parsed, attempt_id_saved, attempt_file
 
     def repair_missing_bn(s, a, chunks, model, cat):
         """Fill only blank Bangla fragments; the model is forbidden to alter chunk spans."""
@@ -420,13 +554,17 @@ def main():
             'Missing fragments to fill:\n' + '\n\n'.join(requested)
         )
         started = time.time()
-        rec = {'keys': [key], 'model': model or args.model, 'category': 'bn_repair',
-               'missing_chunks': [x[0] for x in missing]}
+        repair_id = uuid.uuid4().hex
+        repair_system = ('You are a precise Quranic Bangla translation assistant. Translate only the given '
+                         'source spans. Use আল্লাহ / রব / ইলাহ according to the Arabic; never use ঈশ্বর, '
+                         'প্রভু, or খোদা. Return valid JSON only.')
+        rec = {'attempt_id': repair_id, 'kind': 'bangla_translation_repair', 'keys': [key],
+               'model': model or args.model, 'category': 'bn_repair',
+               'missing_chunks': [x[0] for x in missing],
+               'request': {'system_prompt': repair_system, 'user_prompt': user}}
         try:
-            text, u = call_openrouter(
-                args,
-                'You are a precise Quranic Bangla translation assistant. Translate only the given source spans. Return valid JSON only.',
-                user, 0.0, model or args.model,
+            text, u, provider_response = call_openrouter(
+                args, repair_system, user, 0.0, model or args.model,
                 max(1200, min(6000, 500 * len(missing))), 'off'
             )
             parsed = parse_json_object(text)
@@ -437,7 +575,10 @@ def main():
                 value = translations.get(str(idx), translations.get(idx))
                 if isinstance(value, str) and value.strip():
                     chunks[idx - 1]['bn'] = value.strip()
-            rec.update(seconds=round(time.time() - started, 1), usage=u, reply=text)
+            rec.update(duration_seconds=round(time.time() - started, 2), usage=u,
+                       raw_model_text=text, provider_response=provider_response,
+                       response_captured=True, parse_status='valid_json_object')
+            attempt_id_saved, attempt_file = persist_attempt(rec)
             cat_stats = by_cat.setdefault('bn_repair', {'calls': 0, 'cost': 0.0, 'in': 0, 'out': 0, 'reason': 0})
             cat_stats['calls'] += 1
             cat_stats['cost'] += u.get('cost') or 0
@@ -448,22 +589,36 @@ def main():
             usage['completion_tokens'] += u.get('completion_tokens', 0)
             usage['cost'] += u.get('cost') or 0
             usage['calls'] += 1
+            append_call_log({'attempt_id': attempt_id_saved, 'attempt_file': attempt_file,
+                             'keys': [key], 'model': model or args.model, 'category': 'bn_repair',
+                             'missing_chunks': [x[0] for x in missing], 'usage': u})
         except Exception as exc:
-            rec.update(seconds=round(time.time() - started, 1), error=str(exc))
+            rec.update(duration_seconds=round(time.time() - started, 2), error=str(exc),
+                       response_captured=bool('text' in locals()))
+            if 'text' in locals():
+                rec['raw_model_text'] = text
+            attempt_id_saved, attempt_file = persist_attempt(rec)
+            append_call_log({'attempt_id': attempt_id_saved, 'attempt_file': attempt_file,
+                             'keys': [key], 'model': model or args.model, 'category': 'bn_repair',
+                             'error': str(exc)})
             print(f'  {key}: Bangla-only repair failed: {exc}')
-        log.write(json.dumps(rec, ensure_ascii=False) + '\n')
-        log.flush()
 
-    def settle(batch, temperature, hint=None, model=None, cat='main'):
+    def settle(batch, temperature, hint=None, model=None, cat='main', retry_number=0):
         failed = []
         try:
-            reply = run_request(batch, temperature, hint, model, cat)
+            reply, attempt_id, attempt_file = run_request(batch, temperature, hint, model, cat)
         except Exception as exc:
+            attempt_id = getattr(exc, 'attempt_id', None)
+            attempt_file = getattr(exc, 'attempt_file', None)
             print(f'  request {batch[0]}..{batch[-1]} failed: {exc}')
             msg = f'reply could not be used ({str(exc)[:140]})'
             if isinstance(exc, json.JSONDecodeError) or 'JSON' in str(exc):
                 msg += '; return one valid JSON object with a flat list of {words,en,bn} objects per ayah'
-            return [(ay, [msg]) for ay in batch]
+            for ay in batch:
+                key = f'{ay[0]}:{ay[1]}'
+                mark_invalid(key, attempt_id, attempt_file, [msg], retry_number, cat)
+                failed.append((ay, [msg]))
+            return failed
         for s, a in batch:
             key = f'{s}:{a}'
             if key in reply and isinstance(reply.get(key), list):
@@ -474,17 +629,27 @@ def main():
                             if key in reply else (['missing from reply'], []))
             if errs:
                 print(f'  {key}: invalid ({errs[0]}{" ..." if len(errs) > 1 else ""})')
-                log.write(json.dumps({'keys': [key], 'model': model or args.model,
-                                      'validation_errors': errs}, ensure_ascii=False) + '\n')
-                log.flush()
+                mark_invalid(key, attempt_id, attempt_file, errs, retry_number, cat)
                 failed.append(((s, a), errs))
                 continue
+            resolve_invalid(key, attempt_id, attempt_file, retry_number)
             reasons, mean = assess(chunks, args.coarse_mean, args.review_chunk_words)
+            source_words = src.source_trace(s, a)
+            source_arabic = ' '.join(w['arabic'] for w in source_words)
+            refs = src.ayah_references(s, a)
             with open(raw_path(s, a), 'w', encoding='utf-8') as fh:
-                json.dump({'key': key, 'model': model or args.model, 'chunks': chunks,
-                           'mean_words_per_chunk': round(mean, 4), 'coarse': bool(reasons),
-                           'reasons': reasons, 'refined': False, 'escalated': False},
-                          fh, ensure_ascii=False, indent=2)
+                json.dump({
+                    'key': key, 'model': model or args.model,
+                    'final_attempt_id': attempt_id, 'final_attempt_file': attempt_file,
+                    'chunks': chunks, 'mean_words_per_chunk': round(mean, 4),
+                    'coarse': bool(reasons), 'reasons': reasons,
+                    'refined': False, 'escalated': False,
+                    'source': {
+                        'surah': s, 'ayah': a, 'word_count': len(source_words),
+                        'arabic_ayah': source_arabic, 'words': source_words,
+                        'references': refs,
+                    },
+                }, fh, ensure_ascii=False, indent=2)
             usage['words'] += src.n_words(s, a)
         return failed
 
@@ -502,10 +667,11 @@ def main():
                 break
             print(f'retry {attempt + 1}: {len(failed)} ayah(s) alone at temperature 0.3')
             retry_work = failed
+            retry_number = attempt + 1
             failed = [item for group in executor.map(
                 lambda fe: settle([fe[0]], 0.3, fe[1],
                                   args.long_model if fe[0] in long_set else args.model,
-                                  'long' if fe[0] in long_set else 'main'), retry_work) for item in group]
+                                  'long' if fe[0] in long_set else 'main', retry_number), retry_work) for item in group]
 
     def refine(ay):
         s, a = ay
@@ -514,7 +680,7 @@ def main():
         old_chunks = data['chunks']
         old_reasons, _ = assess(old_chunks, args.coarse_mean, args.review_chunk_words)
         try:
-            reply = run_request([ay], 0.3,
+            reply, attempt_id, attempt_file = run_request([ay], 0.3,
                                 coarse_hint(old_chunks, old_reasons, args.review_chunk_words),
                                 args.long_model if ay in long_set else args.model,
                                 'long' if ay in long_set else 'main')
@@ -562,7 +728,7 @@ def main():
             hint.append('possible moved/dropped/doubled gloss meaning: ' + '; '.join(old_flags[:4]) +
                         '. Each chunk must translate only its own Arabic words.')
         try:
-            reply = run_request([ay], 0.0, hint, args.escalate_model, 'escalate')
+            reply, attempt_id, attempt_file = run_request([ay], 0.0, hint, args.escalate_model, 'escalate')
             errs, new_chunks = normalise(reply.get(f'{s}:{a}'), src.n_words(s, a),
                                          max_phrase_words=args.max_phrase_words,
                                          src_words=src.align_words(s, a))
@@ -618,6 +784,18 @@ def main():
     if still:
         print(f'{len(still)} ayah(s) still have chunk-size review flags (runs/{args.tag}/coarse.json)')
 
+    for key, events in list(pending_retry_events.items()):
+        for event in events:
+            append_retry_event({
+                'event_id': uuid.uuid4().hex,
+                'event': 'invalid_response_unresolved',
+                'ayah': key,
+                'original_event_id': event['event_id'],
+                'original_attempt_id': event['attempt_id'],
+                'status': 'unresolved_after_configured_retries',
+                'validation_errors': event['validation_errors'],
+                'raw_original_response_available': bool(event.get('attempt_file')),
+            })
     log.close()
     done = [(s, a) for s, a in items if os.path.exists(raw_path(s, a))]
     failed_keys = {f'{s}:{a}': reasons for (s, a), reasons in failed}

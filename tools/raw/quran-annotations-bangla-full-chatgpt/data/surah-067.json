@@ -1102,7 +1102,7 @@
       "ayah": 6,
       "n_words": 7,
       "status": "reviewed",
-      "translation_en": "And for those who disbelieved in their Lord is the punishment of Hell, and wretched is the destination.",
+      "translation_en": "And for those who disbelieved in their Rabb is the punishment of Hell, and wretched is the destination.",
       "words": [
         {
           "pos": 1,
@@ -1125,7 +1125,7 @@
         {
           "pos": 3,
           "text": "بِرَبِّهِمۡ",
-          "wbw_en": "in their Lord",
+          "wbw_en": "in their Rabb",
           "audio": {
             "start_ms": 2240,
             "end_ms": 3320
@@ -1196,7 +1196,7 @@
           "words": [
             3
           ],
-          "en": "in their Lord",
+          "en": "in their Rabb",
           "audio": {
             "start_ms": 2240,
             "end_ms": 3320
@@ -2192,7 +2192,7 @@
       "ayah": 12,
       "n_words": 9,
       "status": "reviewed",
-      "translation_en": "Indeed, those who fear their Lord unseen will have forgiveness and great reward.",
+      "translation_en": "Indeed, those who fear their Rabb unseen will have forgiveness and great reward.",
       "words": [
         {
           "pos": 1,
@@ -2224,7 +2224,7 @@
         {
           "pos": 4,
           "text": "رَبَّهُمۡ",
-          "wbw_en": "their Lord",
+          "wbw_en": "their Rabb",
           "audio": {
             "start_ms": 3640,
             "end_ms": 3920
@@ -2295,7 +2295,7 @@
             3,
             4
           ],
-          "en": "fear their Lord",
+          "en": "fear their Rabb",
           "audio": {
             "start_ms": 2200,
             "end_ms": 3920

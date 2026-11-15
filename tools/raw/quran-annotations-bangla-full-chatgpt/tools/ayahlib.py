@@ -79,6 +79,20 @@ class Src:
                         self.wbw_en.get(k, '[no gloss]'), self.wbw_bn.get(k, '[no gloss]')))
         return out
 
+    def source_trace(self, s, a):
+        """Return the exact numbered Arabic source words and per-word glosses for an ayah."""
+        return [
+            {'position': w, 'arabic': ar, 'en_wbw': ge, 'bn_wbw': gb}
+            for w, ar, ge, gb in self.words(s, a)
+        ]
+
+    def ayah_references(self, s, a):
+        key = f'{s}:{a}'
+        return {
+            'en_reference': self.tr_en.get(key),
+            'bn_reference': self.tr_bn.get(key),
+        }
+
 
 # Bangla address register of a reference translation (singular addressee / imperatives)
 RESPECTFUL = re.compile(r'আপনি|আপনার|আপনাকে|বলুন|ফেরান|দেখুন')
@@ -155,6 +169,66 @@ def _has(rng, text):
 BENGALI = [('\u0980', '\u09FF')]
 ARABIC = [('\u0600', '\u06FF'), ('\u0750', '\u077F'), ('\u08A0', '\u08FF'),
           ('\uFB50', '\uFDFF'), ('\uFE70', '\uFEFF')]
+
+# The project's preferred English/Bangla religious terminology. These are hard output rules,
+# not style suggestions, because the user explicitly requires Islamic terms grounded in Arabic.
+FORBIDDEN_EN_TERMS = re.compile(r"\b(?:god|gods|lord|lords|lordship|deity|deities)\b", re.I)
+FORBIDDEN_BN_TERMS = re.compile(r"ঈশ্বর|প্রভু|খোদা")
+
+# High-confidence syntactic warning patterns only. These produce review hints, never hard QA
+# failures; Arabic word-position coverage remains the structural source of truth.
+_STANDALONE_DEPENDENTS = {
+    'if', 'when', 'and', 'or', 'then', 'of', 'to', 'from', 'for', 'with', 'in', 'on',
+    'at', 'by', 'that', 'who', 'which', 'because', 'although', 'unless', 'after', 'before',
+}
+_TRAILING_DEPENDENTS = {
+    'if', 'when', 'of', 'to', 'from', 'for', 'with', 'that', 'because', 'although',
+    'unless', 'and', 'or',
+}
+
+
+def terminology_flags(en, bn=None):
+    """Return user-preference terminology violations for translation fragments."""
+    out = []
+    if isinstance(en, str):
+        hits = sorted({m.group(0) for m in FORBIDDEN_EN_TERMS.finditer(en)}, key=str.lower)
+        if hits:
+            out.append('English uses prohibited generic religious term(s): ' + ', '.join(hits)
+                       + '; use Allah / Rabb / ilah according to the Arabic source')
+    if isinstance(bn, str):
+        hits = sorted(set(FORBIDDEN_BN_TERMS.findall(bn)))
+        if hits:
+            out.append('Bangla uses prohibited religious term(s): ' + ', '.join(hits)
+                       + '; use আল্লাহ / রব / ইলাহ according to the Arabic source')
+    return out
+
+
+def syntactic_review_flags(chunks):
+    """Conservative hints for potentially broken phrase fragments.
+
+    This intentionally avoids word-by-word gloss overlap: that older heuristic falsely marked
+    many context-dependent fragments as dropped meaning. Every item here is a review candidate,
+    not a claim of semantic error.
+    """
+    out = []
+    for i, chunk in enumerate(chunks):
+        text = re.sub(r"^[\W_]+|[\W_]+$", '', (chunk.get('en') or '').strip().lower())
+        tokens = re.findall(r"[a-z]+(?:['’][a-z]+)?", text)
+        span = chunk.get('words') or []
+        label = f"chunk {i + 1} words {span[0]}-{span[-1]}" if span else f'chunk {i + 1}'
+        standalone = len(tokens) == 1 and tokens[0] in _STANDALONE_DEPENDENTS
+        if standalone:
+            out.append(f'{label}: standalone dependent/function word {tokens[0]!r}; check whether it belongs with the smallest required neighbouring unit')
+        elif tokens and tokens[-1] in _TRAILING_DEPENDENTS:
+            out.append(f'{label}: fragment ends with dependent word {tokens[-1]!r}; check boundary with next chunk')
+        if re.search(r"\b(?:then )?if is\b|\bso that if (?:errs|is)\b", text):
+            out.append(f'{label}: likely broken conditional construction; review subject/predicate grouping')
+        # Only flag lexical linking verbs whose complement is predictably missing. Generic
+        # copular endings such as "Blessed is" can be valid in an Arabic-aligned fragment.
+        if re.search(r"\b(?:becomes?|became|seems?|remains?)\s*$", text):
+            out.append(f'{label}: fragment ends with a linking verb; check whether its required complement was split off')
+    return list(dict.fromkeys(out))
+
 
 
 def expand_words(w):
@@ -254,6 +328,9 @@ def normalise(chunks, n_words, need_bn=True, max_phrase_words=MAX_PHRASE_WORDS, 
                 errs.append(f'chunk {ci + 1}: bn lacks Bengali script')
             elif _has(ARABIC, bn):
                 errs.append(f'chunk {ci + 1}: bn contains Arabic script')
+        for term_issue in terminology_flags(en if isinstance(en, str) else '',
+                                            bn if need_bn and isinstance(bn, str) else None):
+            errs.append(f'chunk {ci + 1}: {term_issue}')
         out.append({'words': w, 'en': en, 'bn': bn})
     if expect != n_words + 1:
         errs.append(f'tiling ends at word {expect - 1}, ayah has {n_words} words')

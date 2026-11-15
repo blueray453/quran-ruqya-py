@@ -59,7 +59,7 @@ def load(path):
 def new_doc(lang):
     return {
         'schema_version': '2.0',
-        'conventions_version': '3.0',
+        'conventions_version': '4.0',
         'surah': args.surah,
         'language': lang,
         'provenance': {
