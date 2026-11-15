@@ -55,6 +55,9 @@ python3 tools/chunker_report.py --annotations-dir runs/pilot1/annotations --out 
 - Each output phrase carries `ar` (its Arabic words copied from the input). Word positions are derived by
   aligning the copies with the source, so the model never does index arithmetic; a copy that does not match
   is rejected and retried.
+- Granularity: an ayah whose phrases are too coarse (mean > 2.4 Arabic words per phrase, or one phrase per clause)
+  gets one finer re-run (`--coarse-retries 0` disables); the finer result is kept. Ayahs still coarse are listed in
+  `runs/<tag>/coarse.json`. This never blocks an ayah and sets no hard phrase-size limit.
 - The old two-pass prompts live in `prompts/two-pass/` as a fallback.
 
 ## Quickstart (sample)

@@ -69,6 +69,27 @@ def build_user_prompt(template, src, batch, bn_wbw, hint=None):
     return prompt
 
 
+# ------------------------------------------------------------------ granularity
+def granularity(norm):
+    n_w = sum(len(p['words']) for cl in norm for p in cl)
+    n_p = sum(len(cl) for cl in norm)
+    return n_w, n_p, len(norm), n_w / n_p
+
+
+def is_coarse(norm, mean_limit):
+    n_w, n_p, n_c, mean = granularity(norm)
+    return mean > mean_limit or (n_p == n_c and n_w >= 6)      # every clause a single phrase
+
+
+def coarse_hint(norm):
+    n_w, n_p, n_c, mean = granularity(norm)
+    big = sorted((p for cl in norm for p in cl), key=lambda p: -len(p['words']))[:3]
+    ex = '; '.join(f'"{p["en"]}" is one phrase of {len(p["words"])} Arabic words' for p in big)
+    return [f'your earlier segmentation was too coarse ({n_p} phrases for {n_w} words, {n_c} clauses; '
+            f'the reviewed standard is about 1.6 Arabic words per phrase and 2-3 phrases per clause). '
+            f'Split further, e.g. {ex}']
+
+
 # ------------------------------------------------------------------ model call
 def call_openrouter(args, system, user, temperature):
     body = {
@@ -110,7 +131,7 @@ def call_openrouter(args, system, user, temperature):
     raise RuntimeError(f'OpenRouter call failed: {last}')
 
 
-def mock_call(batch, src):
+def mock_call(batch, src, temperature=0.0, coarse=False):
     """Offline test double: replay the bundled Surah 67 hand-edited prototype."""
     a_doc = load_json(os.path.join(ROOT, 'annotations/surah-067.json'))
     b_doc = load_json(os.path.join(ROOT, 'annotations/bn/surah-067.json'))
@@ -122,6 +143,9 @@ def mock_call(batch, src):
                              'en': p['en'], 'bn': b_doc['ayahs'][str(a)]['clauses'][ci]['phrases'][pi]['bn']}
                             for pi, p in enumerate(c['phrases'])]
                            for ci, c in enumerate(a_doc['ayahs'][str(a)]['clauses'])]
+    if coarse and temperature == 0.0:       # test double for a model that writes one phrase per clause
+        out = {k: [[{'ar': ' '.join(p['ar'] for p in cl), 'en': ' '.join(p['en'] for p in cl),
+                     'bn': ' '.join(p['bn'] for p in cl)}] for cl in v] for k, v in out.items()}
     return json.dumps(out, ensure_ascii=False), {'prompt_tokens': 0, 'completion_tokens': 0, 'cost': 0}
 
 
@@ -145,6 +169,10 @@ def main():
     ap.add_argument('--out-dir', help='annotation dir (default runs/<tag>/annotations)')
     ap.add_argument('--no-merge', action='store_true')
     ap.add_argument('--dry-run', action='store_true')
+    ap.add_argument('--coarse-mean', type=float, default=2.4,
+                    help='ayahs above this mean Arabic words/phrase (or one phrase per clause) get one finer re-run')
+    ap.add_argument('--coarse-retries', type=int, default=1, help='0 disables the granularity re-run')
+    ap.add_argument('--mock-coarse', action='store_true', help='self-test: mock model answers coarsely first')
     ap.add_argument('--mock-replay', action='store_true', help='offline self-test (surah 67 only)')
     args = ap.parse_args()
 
@@ -190,7 +218,7 @@ def main():
     def run_request(batch, temperature, hint=None):
         user = build_user_prompt(template, src, batch, not args.no_bn_wbw, hint)
         t0 = time.time()
-        text, u = mock_call(batch, src) if args.mock_replay else call_openrouter(args, system, user, temperature)
+        text, u = mock_call(batch, src, temperature, args.mock_coarse) if args.mock_replay else call_openrouter(args, system, user, temperature)
         log.write(json.dumps({'keys': [f'{s}:{a}' for s, a in batch], 'model': args.model, 'temperature': temperature,
                               'seconds': round(time.time() - t0, 1), 'usage': u, 'reply': text},
                              ensure_ascii=False) + '\n')
@@ -219,7 +247,8 @@ def main():
                 failed.append(((s, a), errs))
                 continue
             with open(raw_path(s, a), 'w', encoding='utf-8') as fh:
-                json.dump({'key': key, 'model': args.model, 'clauses': norm}, fh, ensure_ascii=False)
+                json.dump({'key': key, 'model': args.model, 'clauses': norm,
+                           'coarse': is_coarse(norm, args.coarse_mean), 'refined': False}, fh, ensure_ascii=False)
             usage['words'] += src.n_words(s, a)
         return failed
 
@@ -233,6 +262,38 @@ def main():
                 break
             print(f'retry {attempt + 1}: {len(failed)} ayah(s) alone at temperature 0.3')
             failed = [x for f in ex.map(lambda fe: settle([fe[0]], 0.3, fe[1]), failed) for x in f]
+
+    # granularity pass: one finer re-run for ayahs the model segmented too coarsely
+    def refine(ay):
+        s, a = ay
+        d = load_json(raw_path(s, a))
+        try:
+            reply = run_request([ay], 0.3, coarse_hint(d['clauses']))
+            errs, norm = normalise(reply.get(f'{s}:{a}'), src.n_words(s, a), max_phrase_words=args.max_phrase_words,
+                                   src_words=src.align_words(s, a))
+        except Exception as e:
+            errs, norm = [str(e)], []
+        better = not errs and granularity(norm)[3] < granularity(d['clauses'])[3]
+        if better:
+            d.update(clauses=norm, coarse=is_coarse(norm, args.coarse_mean))
+        d['refined'] = True
+        with open(raw_path(s, a), 'w', encoding='utf-8') as fh:
+            json.dump(d, fh, ensure_ascii=False)
+        return better
+
+    if args.coarse_retries:
+        pend = [ay for ay in items if os.path.exists(raw_path(*ay))
+                and load_json(raw_path(*ay)).get('coarse') and not load_json(raw_path(*ay)).get('refined')]
+        if pend:
+            print(f'granularity: {len(pend)} ayah(s) segmented too coarsely; re-running once at temperature 0.3')
+            with cf.ThreadPoolExecutor(max_workers=args.workers) as ex:
+                gained = sum(ex.map(refine, pend))
+            print(f'granularity: {gained}/{len(pend)} came back finer')
+    still = [f'{s}:{a}' for s, a in items if os.path.exists(raw_path(s, a)) and load_json(raw_path(s, a)).get('coarse')]
+    json.dump(still, open(os.path.join(run, 'coarse.json'), 'w'))
+    if still:
+        print(f'{len(still)} ayah(s) coarse' + (' even after the re-run' if args.coarse_retries else '') +
+              f' (runs/{args.tag}/coarse.json) - review these first')
 
     log.close()
     done = [(s, a) for s, a in items if os.path.exists(raw_path(s, a))]

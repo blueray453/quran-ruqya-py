@@ -29,21 +29,25 @@ in one phrase.
 
 ## Phrase size (important)
 
-Phrases are SMALL. In the reviewed Al-Mulk prototype about 59% of phrases are a single
-Arabic word, 29% are two words, 10% are three, and 2% are four.
+Phrases are SMALL, and a clause is almost always made of several of them. Measured on the
+reviewed Al-Mulk prototype: on average 1.6 Arabic words per phrase (59% of phrases are a
+single word, 29% two, 10% three, 2% four) and 2.5 phrases per clause. Fewer than 1 clause
+in 10 consists of a single phrase.
 
+- NEVER write a whole clause as one phrase unless the clause itself is only one or two
+  words. A clause of 4-6 words normally has 2-4 phrases.
 - Default to 1-2 Arabic words per phrase. Use 3 for a tight unit (a preposition with its
   noun, an iḍāfa pair, a verb with its pronoun and object). Use 4 occasionally. Use 5 or
   more ONLY when the words cannot be split without the English fragments losing their
   meaning; if a split reads naturally, split.
 - Split wherever English can stand on its own: subject from predicate, verb from object,
   "and"+verb ("and made") from the noun group that follows, a prepositional phrase from
-  the verb before it, and every item of a list.
+  the verb before it, an adverb or condition from what it modifies, and every item of a list.
 - Think of the phrases as the pieces a learner reads one at a time: each piece is short,
   makes sense alone, and the pieces joined in order read as natural English.
 
-Example of the right granularity (67:2, words 5-8) — NOT one long phrase:
-"to test you" | "as to which of you" | "is best in deed,"
+Right granularity (67:19, first clause) — NOT one long phrase:
+"Have they not seen" | "the birds" | "above them," | "spreading their wings" | "and folding them in?"
 
 ## Faithfulness to the span
 
@@ -113,8 +117,8 @@ and no phrase crosses a clause. Positions are derived from your copies afterward
 
 ## Worked examples
 
-(Hand-edited Al-Mulk prototype. Ayahs 67:9, 67:15 and 67:23 appear here, so they are
-not independent test cases for a pilot on Surah 67.)
+(Hand-edited Al-Mulk prototype, ayahs 67:15, 19, 21, 23, 28 and 30. They are not independent
+test cases for a pilot on Surah 67; ayahs 67:1-14 are clean tests.)
 
 ### Example 1 — 67:15
 
@@ -148,7 +152,70 @@ Output:
 {"67:15":[[{"ar":"هُوَ الَّذِىۡ","en":"He is the One who","bn":"তিনিই যিনি"}],[{"ar":"جَعَلَ","en":"made","bn":"বানিয়েছেন"},{"ar":"لَـكُمُ الۡاَرۡضَ ذَلُوۡلًا","en":"the earth manageable for you,","bn":"তোমাদের জন্য যমীনকে সুগম,"}],[{"ar":"فَامۡشُوۡا","en":"so walk","bn":"অতএব তোমরা বিচরণ কর"},{"ar":"فِىۡ مَنَاكِبِهَا","en":"through its regions","bn":"এর দিক-দিগন্তে"}],[{"ar":"وَكُلُوۡا","en":"and eat","bn":"এবং তোমরা আহার কর"},{"ar":"مِنۡ رِّزۡقِهٖؕ","en":"from His provision;","bn":"তাঁর দেয়া রিযিক থেকে;"}],[{"ar":"وَاِلَيۡهِ","en":"and to Him","bn":"আর তাঁরই কাছে"},{"ar":"النُّشُوۡرُ","en":"is the resurrection.","bn":"পুনরুত্থান।"}]]}
 ```
 
-### Example 2 — 67:23
+### Example 2 — 67:19
+
+Input:
+
+```
+### Ayah 67:19
+Words (position, Arabic text, English word gloss, Bangla word gloss):
+1 اَوَلَمۡ — Do not — কি নাই
+2 يَرَوۡا — they see — তারা দেখে
+3 اِلَى — [to] — প্রতি
+4 الطَّيۡرِ — the birds — পাখিগুলির
+5 فَوۡقَهُمۡ — above them — তাদের উপরে
+6 صٰٓفّٰتٍ — spreading (their wings) — পাখা বিস্তার করে
+7 وَّيَقۡبِضۡنَؕ ۘ — and folding — ও গুটিয়ে নেয়
+8 مَا — Not — না
+9 يُمۡسِكُهُنَّ — holds them — তাদের ধরে ধরে (অন্য কেউ)
+10 اِلَّا — except — ছাড়া
+11 الرَّحۡمٰنُؕ — the Most Gracious — দয়াবান
+12 اِنَّهٗ — Indeed, He — তিনি নিশ্চয়
+13 بِكُلِّ — (is) of every — সব উপর
+14 شَىۡءٍۢ — thing — কিছুর
+15 بَصِيۡرٌ — All-Seer — দৃষ্টিবান
+
+English reference translation: "Do they not see the birds above them with wings outspread and [sometimes] folded in? None holds them [aloft] except the Most Merciful. Indeed He is, of all things, Seeing."
+Bangla reference translation: "তারা কি লক্ষ্য করে না তাদের উপরে পাখিদের প্রতি, যারা পাখা বিস্তার করে ও সংকুচিত করে? দয়াময় আল্লাহই তাদেরকে স্থির রাখেন। নিশ্চয় তিনি সবকিছুর সম্যক দ্রষ্টা।"
+```
+
+Output:
+
+```json
+{"67:19":[[{"ar":"اَوَلَمۡ يَرَوۡا","en":"Have they not seen","bn":"তারা কি লক্ষ্য করে না"},{"ar":"اِلَى الطَّيۡرِ","en":"the birds","bn":"পাখিদের প্রতি"},{"ar":"فَوۡقَهُمۡ","en":"above them,","bn":"তাদের উপরে,"},{"ar":"صٰٓفّٰتٍ","en":"spreading their wings","bn":"পাখা বিস্তার করে"},{"ar":"وَّيَقۡبِضۡنَؕ ۘ","en":"and folding them in?","bn":"ও গুটিয়ে নেয়?"}],[{"ar":"مَا يُمۡسِكُهُنَّ","en":"None holds them up","bn":"কেউ তাদেরকে ধরে রাখে না"},{"ar":"اِلَّا الرَّحۡمٰنُؕ","en":"except the Most Merciful.","bn":"রহমান ছাড়া।"}],[{"ar":"اِنَّهٗ","en":"Indeed, He is","bn":"নিশ্চয় তিনি"},{"ar":"بِكُلِّ شَىۡءٍۢ بَصِيۡرٌ","en":"All-Seeing over everything.","bn":"সবকিছুর সম্যক দ্রষ্টা।"}]]}
+```
+
+### Example 3 — 67:21
+
+Input:
+
+```
+### Ayah 67:21
+Words (position, Arabic text, English word gloss, Bangla word gloss):
+1 اَمَّنۡ — Who is — কে অথবা আছে
+2 هٰذَا — this — এমন
+3 الَّذِىۡ — the one — যে
+4 يَرۡزُقُكُمۡ — to provide you — তোমাদের রিযক দেবে
+5 اِنۡ — if — যদি
+6 اَمۡسَكَ — He withheld — তিনি বন্ধ করেন
+7 رِزۡقَهٗ ۚ — His provision — তার রিযক
+8 بَلۡ — Nay — বরং
+9 لَّجُّوۡا — they persist — তারা অবিচল
+10 فِىۡ — in — মধ্যে
+11 عُتُوٍّ — pride — খোদাদ্রোহিতার
+12 وَّنُفُوۡرٍ — and aversion — এবং সত্য পরিহারে
+
+English reference translation: "Or who is it that could provide for you if He withheld His provision? But they have persisted in insolence and aversion."
+Bangla reference translation: "এমন কে আছে, যে তোমাদেরকে রিযিক দান করবে, যদি তিনি তাঁর রিযিক বন্ধ করে দেন? বরং তারা অবাধ্যতা ও সত্য বিমুখতায় অবিচল রয়েছে।"
+```
+
+Output:
+
+```json
+{"67:21":[[{"ar":"اَمَّنۡ هٰذَا الَّذِىۡ","en":"Or who is this one who","bn":"অথবা এমন কে আছে"},{"ar":"يَرۡزُقُكُمۡ","en":"could provide for you","bn":"যে তোমাদেরকে রিযিক দান করবে"}],[{"ar":"اِنۡ","en":"if","bn":"যদি"},{"ar":"اَمۡسَكَ","en":"He withheld","bn":"তিনি বন্ধ করে দেন"},{"ar":"رِزۡقَهٗ ۚ","en":"His provision?","bn":"তাঁর রিযিক?"}],[{"ar":"بَلۡ لَّجُّوۡا","en":"Rather, they persist","bn":"বরং তারা অবিচল"},{"ar":"فِىۡ عُتُوٍّ","en":"in arrogance","bn":"অবাধ্যতায়"},{"ar":"وَّنُفُوۡرٍ","en":"and aversion.","bn":"ও সত্য বিমুখতায়।"}]]}
+```
+
+### Example 4 — 67:23
 
 Input:
 
@@ -178,38 +245,63 @@ Output:
 {"67:23":[[{"ar":"قُلۡ","en":"Say,","bn":"বলুন,"},{"ar":"هُوَ الَّذِىۡۤ","en":"“He is the One who","bn":"‘তিনিই যিনি"},{"ar":"اَنۡشَاَكُمۡ","en":"created you","bn":"তোমাদেরকে সৃষ্টি করেছেন"}],[{"ar":"وَجَعَلَ","en":"and made","bn":"এবং দিয়েছেন"},{"ar":"لَـكُمُ","en":"for you","bn":"তোমাদের জন্য"},{"ar":"السَّمۡعَ","en":"hearing,","bn":"শ্রবণশক্তি,"},{"ar":"وَالۡاَبۡصَارَ","en":"sight,","bn":"দৃষ্টিশক্তি"},{"ar":"وَ الۡاَفۡـــِٕدَةَ ؕ","en":"and hearts;","bn":"ও অন্তঃকরণ;"}],[{"ar":"قَلِيۡلًا مَّا","en":"how little","bn":"খুব অল্পই"},{"ar":"تَشۡكُرُوۡنَ","en":"you give thanks!”","bn":"তোমরা কৃতজ্ঞতা প্রকাশ কর।’"}]]}
 ```
 
-### Example 3 — 67:9
+### Example 5 — 67:28
 
 Input:
 
 ```
-### Ayah 67:9
+### Ayah 67:28
 Words (position, Arabic text, English word gloss, Bangla word gloss):
-1 قَالُوۡا — They will say — তারা বলবে
-2 بَلٰى — Yes — "হ্যাঁ
-3 قَدۡ — indeed — অবশ্যই
-4 جَآءَنَا — came to us — এসেছিল আমাদের (কাছে)
-5 نَذِيۡرٌ ۙ — a warner — সতর্ককারী
-6 فَكَذَّبۡنَا — but we denied — তবে আমরা মিথ্যারোপ করেছিলাম
-7 وَقُلۡنَا — and we said — এবং আমরা বলে ছিলাম
-8 مَا — Not — "নাই
-9 نَزَّلَ — has sent down — নাযিল করেন
-10 اللّٰهُ — Allah — আল্লাহ্‌
-11 مِنۡ — any — কোন
-12 شَىۡءٍ ۖۚ — thing — কিছু
-13 اِنۡ — Not — নও
-14 اَنۡتُمۡ — you (are) — তোমরা
-15 اِلَّا — but — এছাড়া
-16 فِىۡ — in — মধ্যে
-17 ضَلٰلٍ — error — গুমরাহীর
-18 كَبِيۡرٍ — great — বড়"
+1 قُلۡ — Say — বল
+2 اَرَءَيۡتُمۡ — Have you seen — "তোমরা চিন্তা কি করেছ
+3 اِنۡ — if — যদি
+4 اَهۡلَـكَنِىَ — destroys me — আমাকে ধ্বংস করেন
+5 اللّٰهُ — Allah — আল্লাহ
+6 وَمَنۡ — and whoever — এবং যারা
+7 مَّعِىَ — (is) with me — আমার সাথে
+8 اَوۡ — or — অথবা
+9 رَحِمَنَا ۙ — has mercy upon us — আমাদের প্রতি দয়া করেন
+10 فَمَنۡ — then who — কে কিন্তু
+11 يُّجِيۡرُ — (can) protect — আশ্রয় দেবে
+12 الۡكٰفِرِيۡنَ — the disbelievers — অস্বীকার কারীদের
+13 مِنۡ — from — থেকে
+14 عَذَابٍ — a punishment — আযাব
+15 اَلِيۡمٍ — painful — অত্যন্ত পীড়াদায়ক"
 
-English reference translation: "They will say, "Yes, a warner had come to us, but we denied and said, 'Allāh has not sent down anything. You are not but in great error.'""
-Bangla reference translation: "তারা বলবে, ‘হ্যাঁ, অবশ্যই আমাদের কাছে সতর্ককারী এসেছিল, তখন আমরা মিথ্যারোপ করেছিলাম এবং বলেছিলাম, ‘আল্লাহ কিছুই নাযিল করেননি, তোমরা তো মহাবিভ্রান্তিতে রয়েছ।’"
+English reference translation: "Say, [O Muḥammad], "Have you considered: whether Allāh should cause my death and those with me or have mercy upon us, who can protect the disbelievers from a painful punishment?""
+Bangla reference translation: "বলুন, ‘তোমরা আমাকে জানাও--- যদি আল্লাহ আমাকে ও আমার সঙ্গীদেরকে ধ্বংস করেন অথবা আমাদের প্রতি দয়া প্রদর্শন করেন, তবে কাফিরদেরকে কে রক্ষা করবে যন্ত্রণাদায়ক শাস্তি হতে?"
 ```
 
 Output:
 
 ```json
-{"67:9":[[{"ar":"قَالُوۡا","en":"They will say,","bn":"তারা বলবে,"},{"ar":"بَلٰى","en":"“Yes,","bn":"‘হ্যাঁ,"}],[{"ar":"قَدۡ جَآءَنَا نَذِيۡرٌ ۙ","en":"a warner did come to us,","bn":"অবশ্যই আমাদের কাছে সতর্ককারী এসেছিল,"}],[{"ar":"فَكَذَّبۡنَا","en":"but we denied","bn":"তখন আমরা মিথ্যারোপ করেছিলাম"},{"ar":"وَقُلۡنَا","en":"and said,","bn":"এবং বলেছিলাম,"}],[{"ar":"مَا نَزَّلَ اللّٰهُ","en":"‘Allah has not sent down","bn":"“আল্লাহ নাযিল করেননি"},{"ar":"مِنۡ شَىۡءٍ ۖۚ","en":"anything.","bn":"কিছুই,"}],[{"ar":"اِنۡ اَنۡتُمۡ اِلَّا","en":"You are only","bn":"তোমরা কেবল"},{"ar":"فِىۡ ضَلٰلٍ كَبِيۡرٍ","en":"in great error.’”","bn":"মহাবিভ্রান্তিতে রয়েছ।”’"}]]}
+{"67:28":[[{"ar":"قُلۡ","en":"Say,","bn":"বলুন,"},{"ar":"اَرَءَيۡتُمۡ","en":"“Have you considered:","bn":"‘তোমরা ভেবে দেখেছ কি:"}],[{"ar":"اِنۡ","en":"if","bn":"যদি"},{"ar":"اَهۡلَـكَنِىَ اللّٰهُ","en":"Allah were to destroy me","bn":"আল্লাহ আমাকে ধ্বংস করেন"},{"ar":"وَمَنۡ مَّعِىَ","en":"and those with me,","bn":"এবং আমার সঙ্গীদেরকে,"}],[{"ar":"اَوۡ","en":"or","bn":"অথবা"},{"ar":"رَحِمَنَا ۙ","en":"have mercy on us,","bn":"আমাদের প্রতি দয়া করেন,"}],[{"ar":"فَمَنۡ","en":"who then","bn":"তাহলে কে"},{"ar":"يُّجِيۡرُ","en":"can protect","bn":"রক্ষা করবে"},{"ar":"الۡكٰفِرِيۡنَ","en":"the disbelievers","bn":"কাফিরদেরকে"},{"ar":"مِنۡ عَذَابٍ اَلِيۡمٍ","en":"from a painful punishment?”","bn":"যন্ত্রণাদায়ক শাস্তি থেকে?’"}]]}
+```
+
+### Example 6 — 67:30
+
+Input:
+
+```
+### Ayah 67:30
+Words (position, Arabic text, English word gloss, Bangla word gloss):
+1 قُلۡ — Say — বলো
+2 اَرَءَيۡتُمۡ — Have you seen — "তোমরা ভেবে কি দেখেছ
+3 اِنۡ — if — যদি
+4 اَصۡبَحَ — becomes — হয়ে যায়
+5 مَآؤُكُمۡ — your water — তোমাদের পানি
+6 غَوۡرًا — sunken — ভূগর্ভস্থ
+7 فَمَنۡ — then who — কে তবে
+8 يَّاۡتِيۡكُمۡ — could bring you — তোমাদের কাছে আনবে
+9 بِمَآءٍ — water — পানি
+10 مَّعِيۡنٍ — flowing — প্রবহমান"
+
+English reference translation: "Say, "Have you considered: if your water was to become sunken [into the earth], then who could bring you flowing water?""
+Bangla reference translation: "বলুন, ‘তোমরা আমাকে জানাও, যদি পানি ভূগর্ভে তোমাদের নাগালের বাইরে চলে যায়, তখন কে তোমাদেরকে এনে দেবে প্ৰবাহমান পানি?’"
+```
+
+Output:
+
+```json
+{"67:30":[[{"ar":"قُلۡ","en":"Say,","bn":"বলুন,"},{"ar":"اَرَءَيۡتُمۡ","en":"“Have you considered:","bn":"‘তোমরা ভেবে দেখেছ কি:"}],[{"ar":"اِنۡ","en":"if","bn":"যদি"},{"ar":"اَصۡبَحَ مَآؤُكُمۡ غَوۡرًا","en":"your water were to sink away,","bn":"তোমাদের পানি ভূগর্ভে চলে যায়,"}],[{"ar":"فَمَنۡ","en":"who then","bn":"তাহলে কে"},{"ar":"يَّاۡتِيۡكُمۡ","en":"could bring you","bn":"এনে দেবে তোমাদেরকে"},{"ar":"بِمَآءٍ مَّعِيۡنٍ","en":"flowing water?”","bn":"প্রবাহমান পানি?’"}]]}
 ```

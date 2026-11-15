@@ -14,6 +14,9 @@ phrase write one English fragment and one Bangla fragment.
 
 {AYAH_BLOCKS}
 
+Granularity reminder: phrases are small. Most are 1-2 Arabic words (average about 1.6) and a
+clause usually has 2-4 phrases. Do not write a whole clause as one phrase.
+
 Return only the JSON object defined in the conventions' output contract for: {KEYS}.
 No prose, no code fences.
 ```
