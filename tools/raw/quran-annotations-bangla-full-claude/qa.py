@@ -12,8 +12,7 @@ import os
 import sys
 from collections import Counter
 
-sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'tools'))
-from ayahlib import terminology_flags  # noqa: E402
+from annotate import terminology_flags  # noqa: E402  (the rule lives in annotate.py)
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 KNOWN_MISSING_WBW = {('2', '181', '4'), ('8', '6', '5'), ('13', '37', '9')}

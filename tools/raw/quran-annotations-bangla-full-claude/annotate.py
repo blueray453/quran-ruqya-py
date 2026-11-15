@@ -3,7 +3,7 @@
 
     export OPENROUTER_API_KEY=sk-or-...
     python3 annotate.py --tag haiku_smoke --pilot runs/haiku_smoke/pilot.txt
-    python3 annotate.py --tag mulk --surah 67          # any ayahs: --ayahs "2:255,2:282-286"
+    python3 annotate.py --tag mulk --surah 67          # or --ayahs "2:255,2:282-286", or --all
 
 How it works, per ayah that has no runs/<tag>/raw/SSS-AAA.json yet:
   1. build prompt (CONVENTIONS.md + numbered Arabic words + glosses + reference translations)
@@ -96,6 +96,22 @@ BAD_BN = re.compile(r'ঈশ্বর|প্রভু(?!ত্ব)|খোদা(
 BAD_EN = re.compile(r'\b(?:god|gods|lord|lords|lordship|deity|deities)\b', re.I)
 RESPECTFUL = re.compile(r'আপনি|আপনার|আপনাকে|বলুন|ফেরান|দেখুন')
 PLAIN = re.compile(r'(?<![\u0980-\u09FF])(?:তুমি|তোমার|তোমাকে|বল|ফিরাও|দেখো)(?![\u0980-\u09FF])')
+
+
+def terminology_flags(en=None, bn=None):
+    """Allah / Rabb / ilah rule. Used by annotate.py (to reject) and qa.py (to re-check)."""
+    out = []
+    if isinstance(en, str):
+        hits = sorted({m.group(0) for m in BAD_EN.finditer(en)}, key=str.lower)
+        if hits:
+            out.append('English uses prohibited generic religious term(s): ' + ', '.join(hits)
+                       + '; use Allah / Rabb / ilah according to the Arabic source')
+    if isinstance(bn, str):
+        hits = sorted(set(BAD_BN.findall(bn)))
+        if hits:
+            out.append('Bangla uses prohibited religious term(s): ' + ', '.join(hits)
+                       + '; use আল্লাহ / রব / ইলাহ according to the Arabic source')
+    return out
 
 
 def ayah_block(src, s, a):
@@ -230,14 +246,11 @@ def validate(chunks, n):
             errs.append(f'chunk {i}: empty en')
         elif _AR.search(en) or _BN.search(en):
             errs.append(f'chunk {i}: en contains Arabic/Bengali script')
-        elif BAD_EN.search(en):
-            errs.append(f'chunk {i}: English uses God/Lord/deity; use Allah / Rabb / ilah')
         if not bn:
             errs.append(f'chunk {i}: empty bn')
         elif not _BN.search(bn) or _AR.search(bn):
             errs.append(f'chunk {i}: bn must be Bengali script only')
-        elif BAD_BN.search(bn):
-            errs.append(f'chunk {i}: Bangla uses ঈশ্বর/প্রভু/খোদা; use আল্লাহ / রব / ইলাহ')
+        errs += [f'chunk {i}: {issue}' for issue in terminology_flags(en, bn)]
         out.append({'words': w, 'en': en, 'bn': bn})
     if expect != n + 1:
         errs.append(f'tiling ends at word {expect - 1}, ayah has {n} words')
@@ -300,6 +313,7 @@ def main():
     ap.add_argument('--tag', required=True, help='run name -> runs/<tag>/')
     ap.add_argument('--pilot', help='file with lines like "67", "2:255", "2:282-286"')
     ap.add_argument('--surah', type=int, action='append')
+    ap.add_argument('--all', action='store_true', help='the whole Quran (114 surahs)')
     ap.add_argument('--ayahs', help='e.g. "2:255,2:282-284"')
     ap.add_argument('--model', default=os.environ.get('MODEL', 'anthropic/claude-haiku-5.5'))
     ap.add_argument('--workers', type=int, default=2)
@@ -311,10 +325,10 @@ def main():
 
     src = Src()
     spec = open(args.pilot, encoding='utf-8').read().splitlines() if args.pilot else []
-    spec += [str(s) for s in (args.surah or [])] + (args.ayahs.split(',') if args.ayahs else [])
+    spec += [str(s) for s in (range(1, 115) if args.all else (args.surah or []))] + (args.ayahs.split(',') if args.ayahs else [])
     items = parse_spec(spec, src)
     if not items:
-        sys.exit('nothing to do: give --pilot / --surah / --ayahs')
+        sys.exit('nothing to do: give --pilot / --surah / --ayahs / --all')
 
     run = os.path.join(ROOT, 'runs', args.tag)
     raw_dir, fail_dir = os.path.join(run, 'raw'), os.path.join(run, 'failures')
