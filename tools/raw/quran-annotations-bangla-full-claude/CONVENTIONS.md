@@ -1,4 +1,4 @@
-# Arabic phrase-chunk annotation conventions (v4.1)
+# Arabic phrase-chunk annotation conventions (v4.3)
 
 ## Task
 
@@ -76,6 +76,7 @@ In Bangla, use **আল্লাহ** for الله, **রব** for رَبّ, and
 - Do not use quotation marks of any kind in English fragments.
 - Capitalise pronouns that refer to Allah (He, His, Him).
 - Use word glosses and the reference translation as hints only; do not copy them mechanically. Reference translations may use generic English religious labels; the mandatory terminology rules above override them.
+- **Square brackets for supplied grammatical support:** Do not add grammatical support words merely to improve style or fluency. However, when an English fragment does include a word supplied for English grammar or basic comprehensibility that is not expressed by the Arabic span (for example, a copula such as [is] where Arabic has no expressed copula), enclose that supplied word in square brackets. Example: [is] powerful. Apply this only to genuinely supplied words. Do not bracket English words that translate an Arabic word, attached particle or pronoun, or a grammatical feature expressed by the Arabic span. Square brackets do not permit adding new semantic content, borrowing meaning from neighbouring chunks, or changing Arabic segmentation. Do not use square brackets for any other purpose.
 
 ## Bangla style
 
@@ -90,21 +91,52 @@ In Bangla, use **আল্লাহ** for الله, **রব** for رَبّ, and
 
 ## Output contract
 
-Return **only one JSON object**, with one key per requested ayah (`"surah:ayah"`). Each value is a flat, ordered list of chunk objects:
+Return **only one JSON object**, with one key per requested ayah (`"surah:ayah"`). Each value is a flat, ordered list of chunk objects. Do not include Arabic text, grammatical-unit labels, full-ayah translations, explanations, or any other fields in the JSON.
+
+The example below shows the intended level of detail for **both English and Bangla**. It uses the nine numbered Arabic words of 67:1. The word positions define the Arabic spans; the pipeline reconstructs the Arabic text from those positions.
 
 ```json
 {
   "67:1": [
-    {"words": [1], "en": "Blessed is", "bn": "বরকতময়"},
-    {"words": [2, 2], "en": "the One who", "bn": "যিনি"}
+    {
+      "words": [1],
+      "en": "Blessed [is]",
+      "bn": "বরকতময়"
+    },
+    {
+      "words": [2, 4],
+      "en": "the One in whose hand [is] the dominion,",
+      "bn": "যাঁর হাতে রাজত্ব,"
+    },
+    {
+      "words": [5],
+      "en": "and He",
+      "bn": "আর তিনি"
+    },
+    {
+      "words": [6, 8],
+      "en": "over everything",
+      "bn": "সব কিছুর ওপর"
+    },
+    {
+      "words": [9],
+      "en": "[is] powerful.",
+      "bn": "ক্ষমতাবান।"
+    }
   ]
 }
 ```
 
-Each chunk object has exactly these required fields:
+In this example, the English `[is]` words are supplied to make the English fragments understandable; they are not separately expressed by an Arabic word in those spans, so they are enclosed in square brackets. Do not put brackets around English words that translate an actual Arabic word, attached particle, pronoun, or grammatical feature. Bangla does not use this English square-bracket convention.
 
-- `words`: one-based source-word positions. Use `[n]` for a single word, or `[start, end]` for an inclusive contiguous range. Do not return non-contiguous positions.
-- `en`: non-empty English fragment translating only that span.
-- `bn`: non-empty Bangla fragment translating that same span.
+When the English fragments above are joined in their listed order, they produce: **Blessed [is] the One in whose hand [is] the dominion, and He over everything [is] powerful.** The wording is understandable, although it is not intended as polished literary English. The Bangla fragments joined in order produce: **বরকতময় যাঁর হাতে রাজত্ব, আর তিনি সব কিছুর ওপর ক্ষমতাবান।** The joined translations should make reasonable sense, but do not improve their flow by changing valid Arabic chunk boundaries or transferring meaning between chunks.
 
-Across the list, the `words` ranges must cover every source word exactly once, in original order, with no gap, overlap, omission, duplication, or reordering. Never return Arabic text, clauses, or nested arrays. Return valid JSON only. The JSON syntax must use standard double quotes around keys and string values; do not put quotation marks inside the English or Bangla translation fragments.
+Each chunk object has exactly these three required fields:
+
+- `words`: one-based source-word positions. Use `[n]` for a single word, or `[start, end]` for an inclusive contiguous range. The range includes every word from `start` through `end`; it cannot skip a word.
+- `en`: a non-empty English fragment translating only the Arabic span identified by `words`. It may be elliptical or context-dependent. Any genuinely supplied English grammatical-support word must be enclosed in square brackets, as described in **English style**.
+- `bn`: a non-empty Bangla fragment translating the same Arabic span as `en`. Use Bangla script only; do not put Arabic script or romanisation in the fragment.
+
+Across each ayah's list, the `words` ranges must cover every source word exactly once, in original Arabic order, with no gap, overlap, omission, duplication, or reordering. A chunk may contain one or several Arabic words, but it must be the **smallest valid meaningful syntactic or semantic unit** under the segmentation rules. Do not enlarge a chunk to make either translation smoother, and do not split a required Arabic dependency merely to make chunks shorter.
+
+The JSON syntax must use standard double quotes around keys and string values. Do not use quotation marks of any kind inside English or Bangla translation fragments. Return valid JSON only.
