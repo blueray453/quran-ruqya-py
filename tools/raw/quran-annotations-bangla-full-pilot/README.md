@@ -68,6 +68,10 @@ python3 tools/chunker_report.py --annotations-dir runs/pilot1/annotations --out 
   heuristic says meaning may be dropped / moved / doubled) get one run on `--escalate-model`; the better result is kept.
   Empty string disables either. Remaining flags: `runs/<tag>/flags.json`. The chunker is NOT used to choose these
   ayahs, so it stays an independent audit. Provenance records every model used.
+- Optional `tools/conform_chunker.py --annotations-dir runs/<tag>/annotations`: splits a clause wherever a chunker
+  boundary falls on a phrase end inside it (English and Bangla identically; nothing is re-translated) and lists the
+  boundaries that fall inside a phrase, which need a reviewer. It makes "clause ends also chunker ends" non-independent
+  for the ayahs it touches (`conformed: [...]` is recorded); the planned EQTB/waqf fences remain independent.
 - The old two-pass prompts live in `prompts/two-pass/` as a fallback.
 
 ## Quickstart (sample)

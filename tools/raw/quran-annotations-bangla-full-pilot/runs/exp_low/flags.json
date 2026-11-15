@@ -1,0 +1,16 @@
+{
+ "2:255": [
+  "clauses"
+ ],
+ "2:282": [
+  "clauses",
+  "dropped? words 1-2 \"O you who\" carries none of the meaning of its words",
+  "dropped? words 15-16 \"And let no\" carries none of the meaning of its words",
+  "moved/doubled? words 52-52 \"And call to witness\" contains meaning of the neighbouring phrase \"two witnesses\" (words 53-53)"
+ ],
+ "2:286": [
+  "clauses",
+  "moved/doubled? words 1-2 \"Allah does not burden\" contains meaning of the neighbouring phrase \"any soul\" (words 3-3)",
+  "moved/doubled? words 3-3 \"any soul\" contains meaning of the neighbouring phrase \"beyond\" (words 4-4)"
+ ]
+}
