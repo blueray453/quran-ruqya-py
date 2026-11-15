@@ -1,0 +1,1 @@
+{"key": "78:19", "model": "anthropic/claude-haiku-5.5", "clauses": [[{"words": [1, 2], "en": "And the heaven is opened,", "bn": "আর আকাশ উন্মুক্ত করা হবে,"}], [{"words": [3, 4], "en": "and it will become gateways.", "bn": "ফলে তা হবে বহু দ্বারবিশিষ্ট।"}]], "coarse": false, "reasons": [], "refined": false, "escalated": false}

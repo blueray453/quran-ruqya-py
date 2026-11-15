@@ -1,0 +1,1 @@
+{"key": "91:8", "model": "anthropic/claude-haiku-5.5", "clauses": [[{"words": [1], "en": "Then He inspired it", "bn": "অতঃপর তাকে জ্ঞান দিয়েছেন"}, {"words": [2], "en": "with (knowledge of) its wickedness", "bn": "তার মন্দকাজের"}, {"words": [3], "en": "and its righteousness.", "bn": "ও তার তাকওয়ার।"}]], "coarse": false, "reasons": [], "refined": false, "escalated": false}

@@ -1,0 +1,1 @@
+{"key": "81:13", "model": "anthropic/claude-haiku-5.5", "clauses": [[{"words": [1], "en": "And when", "bn": "আর যখন"}, {"words": [2], "en": "Paradise", "bn": "জান্নাত"}, {"words": [3], "en": "is brought near,", "bn": "নিকটবর্তী করা হবে,"}]], "coarse": false, "reasons": [], "refined": false, "escalated": false}

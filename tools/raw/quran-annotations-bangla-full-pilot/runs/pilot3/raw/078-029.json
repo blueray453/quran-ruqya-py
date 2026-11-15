@@ -1,0 +1,1 @@
+{"key": "78:29", "model": "anthropic/claude-haiku-5.5", "clauses": [[{"words": [1, 2], "en": "And all things", "bn": "আর সবকিছুই"}], [{"words": [3], "en": "We have enumerated", "bn": "আমরা সংরক্ষণ করেছি"}, {"words": [4], "en": "in writing.", "bn": "লিখিতভাবে।"}]], "coarse": false, "reasons": [], "refined": false, "escalated": false}

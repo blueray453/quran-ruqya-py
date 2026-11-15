@@ -1,0 +1,1 @@
+{"key": "78:35", "model": "anthropic/claude-haiku-5.5", "clauses": [[{"words": [1, 2], "en": "They will not hear", "bn": "তারা শুনবে না"}, {"words": [3, 4], "en": "therein any vain talk", "bn": "সেখানে কোনো অসার কথা"}], [{"words": [5, 6], "en": "or any falsehood.", "bn": "ও মিথ্যা বাক্য।"}]], "coarse": false, "reasons": [], "refined": false, "escalated": false}

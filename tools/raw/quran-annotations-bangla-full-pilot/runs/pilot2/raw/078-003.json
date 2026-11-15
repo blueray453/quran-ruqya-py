@@ -1,0 +1,1 @@
+{"key": "78:3", "model": "anthropic/claude-haiku-5.5", "clauses": [[{"words": [1, 2, 3], "en": "about which", "bn": "যে বিষয়ে"}, {"words": [4], "en": "they are in disagreement.", "bn": "তারা মতানৈক্য করছে।"}]], "coarse": false, "reasons": [], "refined": false}

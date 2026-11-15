@@ -1,0 +1,1 @@
+{"key": "78:15", "model": "anthropic/claude-haiku-5.5", "clauses": [[{"words": [1, 2], "en": "That We may bring forth thereby", "bn": "যাতে আমরা তা দিয়ে উৎপন্ন করি"}, {"words": [3, 4], "en": "grain and vegetation.", "bn": "শস্য ও উদ্ভিদ।"}]], "coarse": false, "reasons": [], "refined": false, "escalated": false}

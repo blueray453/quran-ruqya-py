@@ -1,0 +1,1 @@
+{"key": "81:27", "model": "anthropic/claude-haiku-5.5", "clauses": [[{"words": [1, 2], "en": "It is not", "bn": "এ তো নয়"}, {"words": [3, 4], "en": "except a reminder", "bn": "শুধু উপদেশ"}, {"words": [5], "en": "to the worlds,", "bn": "সৃষ্টিকুলের জন্য,"}]], "coarse": false, "reasons": [], "refined": false}

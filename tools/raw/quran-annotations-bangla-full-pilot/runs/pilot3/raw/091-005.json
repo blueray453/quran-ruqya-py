@@ -1,0 +1,1 @@
+{"key": "91:5", "model": "anthropic/claude-sonnet-5.5", "clauses": [[{"words": [1], "en": "And by the sky", "bn": "আর আকাশের শপথ"}, {"words": [2], "en": "and by Him who", "bn": "আর তাঁর শপথ যিনি"}, {"words": [3], "en": "constructed it,", "bn": "তা নির্মাণ করেছেন,"}]], "coarse": false, "reasons": [], "refined": false, "escalated": true}

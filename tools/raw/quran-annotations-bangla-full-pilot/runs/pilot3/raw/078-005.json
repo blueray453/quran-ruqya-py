@@ -1,0 +1,1 @@
+{"key": "78:5", "model": "anthropic/claude-haiku-5.5", "clauses": [[{"words": [1, 2], "en": "Then, no!", "bn": "তারপর, কখনো না!"}], [{"words": [3], "en": "They will soon know.", "bn": "তারা শীঘ্রই জানতে পারবে।"}]], "coarse": false, "reasons": [], "refined": false, "escalated": false}

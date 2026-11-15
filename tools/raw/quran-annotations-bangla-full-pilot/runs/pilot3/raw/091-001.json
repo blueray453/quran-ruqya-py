@@ -1,0 +1,1 @@
+{"key": "91:1", "model": "anthropic/claude-haiku-5.5", "clauses": [[{"words": [1], "en": "By the sun", "bn": "শপথ সূর্যের"}, {"words": [2], "en": "and its brightness,", "bn": "এবং তার কিরণের,"}]], "coarse": false, "reasons": [], "refined": false, "escalated": false}

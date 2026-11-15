@@ -1,0 +1,1 @@
+{"key": "78:24", "model": "anthropic/claude-haiku-5.5", "clauses": [[{"words": [1, 2, 3], "en": "They will not taste therein", "bn": "সেখানে তারা আস্বাদন করবে না"}, {"words": [4], "en": "any coolness", "bn": "কোনো শীতলতা"}], [{"words": [5, 6], "en": "or any drink.", "bn": "না কোনো পানীয়।"}]], "coarse": false, "reasons": [], "refined": false}

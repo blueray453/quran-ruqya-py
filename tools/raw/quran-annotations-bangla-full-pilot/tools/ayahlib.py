@@ -80,6 +80,22 @@ class Src:
         return out
 
 
+# Bangla address register of a reference translation (singular addressee / imperatives)
+RESPECTFUL = re.compile(r'আপনি|আপনার|আপনাকে|বলুন|ফেরান|দেখুন')
+PLAIN = re.compile(r'(?<![\u0980-\u09FF])(?:তুমি|তোমার|তোমাকে|বল|ফিরাও|দেখো)(?![\u0980-\u09FF])')
+
+
+def register_line(bn_reference):
+    resp, plain = bool(RESPECTFUL.search(bn_reference)), bool(PLAIN.search(bn_reference))
+    if resp and not plain:
+        return ('Bangla address register (taken from the reference): RESPECTFUL - use আপনি / আপনার / আপনাকে and '
+                'respectful imperatives (“বলুন” for “Say”, never “বল” or “তুমি”).')
+    if plain and not resp:
+        return ('Bangla address register (taken from the reference): PLAIN - use তুমি / তোমার / তোমাকে and plain '
+                'imperatives (“বল” for “Say”), never আপনি.')
+    return None
+
+
 def ayah_block(src, s, a, bn_wbw=True, prev_context=False):
     """The per-ayah input block (also used to render the few-shot examples)."""
     lines = []
@@ -95,7 +111,38 @@ def ayah_block(src, s, a, bn_wbw=True, prev_context=False):
     lines.append('')
     lines.append(f'English reference translation: "{src.tr_en[f"{s}:{a}"]}"')
     lines.append(f'Bangla reference translation: "{src.tr_bn[f"{s}:{a}"]}"')
+    reg = register_line(src.tr_bn[f'{s}:{a}'])
+    if reg:
+        lines.append(reg)
     return '\n'.join(lines)
+
+
+# ---------------------------------------------------------------- meaning heuristics
+_STOP = set('the and with from that this those these them they their there which what when where whom whose have '
+            'been being were will shall would could should your you his her him she its our not for upon into onto '
+            'over under than then also only very more most any all some such other another each every thing'.split())
+
+
+def _ctoks(text):
+    return {w[:4] for w in re.findall(r'[a-z]{4,}', text.lower()) if w not in _STOP}
+
+
+def meaning_flags(gloss, norm):
+    """Heuristic candidates for dropped / moved / doubled meaning (high recall, modest precision).
+    gloss: {word position: English word-by-word gloss}; norm: normalised clauses (phrases with words + en)."""
+    ph = [p for cl in norm for p in cl]
+    own = [set().union(*[_ctoks(gloss[w]) for w in p['words']]) for p in ph]
+    en = [_ctoks(p['en']) for p in ph]
+    out = []
+    for i, p in enumerate(ph):
+        span = f'words {p["words"][0]}-{p["words"][-1]}'
+        if own[i] and not en[i]:
+            out.append(f'dropped? {span} "{p["en"]}" carries none of the meaning of its words')
+        for j in (i - 1, i + 1):
+            if 0 <= j < len(ph) and (en[i] & own[j]) - own[i]:
+                out.append(f'moved/doubled? {span} "{p["en"]}" contains meaning of the neighbouring phrase '
+                           f'"{ph[j]["en"]}" (words {ph[j]["words"][0]}-{ph[j]["words"][-1]})')
+    return list(dict.fromkeys(out))
 
 
 # ---------------------------------------------------------------- validation

@@ -1,0 +1,1 @@
+{"key": "91:10", "model": "anthropic/claude-haiku-5.5", "clauses": [[{"words": [1, 2], "en": "And indeed, he fails", "bn": "আর নিশ্চয়ই ব্যর্থ হলো"}], [{"words": [3, 4], "en": "who corrupts it.", "bn": "যে নিজেকে কলুষিত করলো।"}]], "coarse": false, "reasons": [], "refined": false}

@@ -1,0 +1,1 @@
+{"key": "78:23", "model": "anthropic/claude-haiku-5.5", "clauses": [[{"words": [1, 2], "en": "They will remain therein", "bn": "তারা সেখানে অবস্থান করবে"}], [{"words": [3], "en": "for ages.", "bn": "যুগ যুগ ধরে।"}]], "coarse": false, "reasons": [], "refined": false}

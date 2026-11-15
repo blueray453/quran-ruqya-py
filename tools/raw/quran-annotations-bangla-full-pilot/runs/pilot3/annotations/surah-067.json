@@ -1,0 +1,2460 @@
+{
+  "schema_version": "1.0",
+  "conventions_version": "2.2",
+  "surah": 67,
+  "language": "en",
+  "provenance": {
+    "generator": "llm-annotation",
+    "model": "anthropic/claude-haiku-5.5 + anthropic/claude-sonnet-5.5",
+    "note": "Merged from raw LLM output by tools/collect.py."
+  },
+  "ayahs": {
+    "1": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "Blessed is He"
+            },
+            {
+              "words": [
+                3,
+                4
+              ],
+              "en": "in whose hand is the dominion,"
+            }
+          ]
+        },
+        {
+          "words": [
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "phrases": [
+            {
+              "words": [
+                5
+              ],
+              "en": "and He"
+            },
+            {
+              "words": [
+                6,
+                7,
+                8,
+                9
+              ],
+              "en": "is over all things competent."
+            }
+          ]
+        }
+      ]
+    },
+    "2": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "The One who"
+            }
+          ]
+        },
+        {
+          "words": [
+            2,
+            3,
+            4
+          ],
+          "phrases": [
+            {
+              "words": [
+                2
+              ],
+              "en": "created"
+            },
+            {
+              "words": [
+                3
+              ],
+              "en": "death"
+            },
+            {
+              "words": [
+                4
+              ],
+              "en": "and life,"
+            }
+          ]
+        },
+        {
+          "words": [
+            5
+          ],
+          "phrases": [
+            {
+              "words": [
+                5
+              ],
+              "en": "that He may test you:"
+            }
+          ]
+        },
+        {
+          "words": [
+            6,
+            7,
+            8
+          ],
+          "phrases": [
+            {
+              "words": [
+                6,
+                7,
+                8
+              ],
+              "en": "which of you is best in deed."
+            }
+          ]
+        },
+        {
+          "words": [
+            9,
+            10,
+            11
+          ],
+          "phrases": [
+            {
+              "words": [
+                9,
+                10
+              ],
+              "en": "And He is the All-Mighty,"
+            },
+            {
+              "words": [
+                11
+              ],
+              "en": "the Oft-Forgiving."
+            }
+          ]
+        }
+      ]
+    },
+    "3": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "The One who"
+            },
+            {
+              "words": [
+                2
+              ],
+              "en": "created"
+            },
+            {
+              "words": [
+                3,
+                4
+              ],
+              "en": "seven heavens"
+            },
+            {
+              "words": [
+                5
+              ],
+              "en": "one above another."
+            }
+          ]
+        },
+        {
+          "words": [
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "phrases": [
+            {
+              "words": [
+                6,
+                7
+              ],
+              "en": "You do not see"
+            },
+            {
+              "words": [
+                8,
+                9
+              ],
+              "en": "in the creation"
+            },
+            {
+              "words": [
+                10
+              ],
+              "en": "of the Most Merciful"
+            }
+          ]
+        },
+        {
+          "words": [
+            11,
+            12
+          ],
+          "phrases": [
+            {
+              "words": [
+                11,
+                12
+              ],
+              "en": "any flaw."
+            }
+          ]
+        },
+        {
+          "words": [
+            13,
+            14
+          ],
+          "phrases": [
+            {
+              "words": [
+                13
+              ],
+              "en": "So turn back"
+            },
+            {
+              "words": [
+                14
+              ],
+              "en": "your gaze;"
+            }
+          ]
+        },
+        {
+          "words": [
+            15,
+            16,
+            17,
+            18
+          ],
+          "phrases": [
+            {
+              "words": [
+                15,
+                16
+              ],
+              "en": "do you see"
+            },
+            {
+              "words": [
+                17,
+                18
+              ],
+              "en": "any cracks?"
+            }
+          ]
+        }
+      ]
+    },
+    "4": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "Then return"
+            },
+            {
+              "words": [
+                3
+              ],
+              "en": "the vision"
+            },
+            {
+              "words": [
+                4
+              ],
+              "en": "twice again."
+            }
+          ]
+        },
+        {
+          "words": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "phrases": [
+            {
+              "words": [
+                5
+              ],
+              "en": "Will return"
+            },
+            {
+              "words": [
+                6
+              ],
+              "en": "to you"
+            },
+            {
+              "words": [
+                7
+              ],
+              "en": "the vision"
+            },
+            {
+              "words": [
+                8
+              ],
+              "en": "humbled,"
+            }
+          ]
+        },
+        {
+          "words": [
+            9,
+            10
+          ],
+          "phrases": [
+            {
+              "words": [
+                9,
+                10
+              ],
+              "en": "while it is fatigued."
+            }
+          ]
+        }
+      ]
+    },
+    "5": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "And We have certainly adorned"
+            },
+            {
+              "words": [
+                3,
+                4
+              ],
+              "en": "the nearest heaven"
+            },
+            {
+              "words": [
+                5
+              ],
+              "en": "with lamps"
+            }
+          ]
+        },
+        {
+          "words": [
+            6,
+            7,
+            8
+          ],
+          "phrases": [
+            {
+              "words": [
+                6
+              ],
+              "en": "and We have made them"
+            },
+            {
+              "words": [
+                7
+              ],
+              "en": "missiles"
+            },
+            {
+              "words": [
+                8
+              ],
+              "en": "for the devils,"
+            }
+          ]
+        },
+        {
+          "words": [
+            9,
+            10,
+            11,
+            12
+          ],
+          "phrases": [
+            {
+              "words": [
+                9
+              ],
+              "en": "and We have prepared"
+            },
+            {
+              "words": [
+                10
+              ],
+              "en": "for them"
+            },
+            {
+              "words": [
+                11,
+                12
+              ],
+              "en": "the punishment of the Blaze."
+            }
+          ]
+        }
+      ]
+    },
+    "6": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2,
+                3
+              ],
+              "en": "And for those who disbelieve in their Lord"
+            },
+            {
+              "words": [
+                4,
+                5
+              ],
+              "en": "is the punishment of Hell,"
+            }
+          ]
+        },
+        {
+          "words": [
+            6,
+            7
+          ],
+          "phrases": [
+            {
+              "words": [
+                6,
+                7
+              ],
+              "en": "and wretched is the destination."
+            }
+          ]
+        }
+      ]
+    },
+    "7": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "When"
+            },
+            {
+              "words": [
+                2
+              ],
+              "en": "they are thrown"
+            },
+            {
+              "words": [
+                3
+              ],
+              "en": "into it,"
+            }
+          ]
+        },
+        {
+          "words": [
+            4,
+            5,
+            6
+          ],
+          "phrases": [
+            {
+              "words": [
+                4
+              ],
+              "en": "they hear"
+            },
+            {
+              "words": [
+                5
+              ],
+              "en": "from it"
+            },
+            {
+              "words": [
+                6
+              ],
+              "en": "a dreadful inhaling"
+            }
+          ]
+        },
+        {
+          "words": [
+            7,
+            8
+          ],
+          "phrases": [
+            {
+              "words": [
+                7
+              ],
+              "en": "while it"
+            },
+            {
+              "words": [
+                8
+              ],
+              "en": "boils up."
+            }
+          ]
+        }
+      ]
+    },
+    "8": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "It almost bursts"
+            },
+            {
+              "words": [
+                3,
+                4
+              ],
+              "en": "with rage."
+            }
+          ]
+        },
+        {
+          "words": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "phrases": [
+            {
+              "words": [
+                5
+              ],
+              "en": "Every time"
+            },
+            {
+              "words": [
+                6,
+                7
+              ],
+              "en": "is thrown into it"
+            },
+            {
+              "words": [
+                8
+              ],
+              "en": "a group,"
+            }
+          ]
+        },
+        {
+          "words": [
+            9,
+            10
+          ],
+          "phrases": [
+            {
+              "words": [
+                9,
+                10
+              ],
+              "en": "its keepers ask them,"
+            }
+          ]
+        },
+        {
+          "words": [
+            11,
+            12,
+            13
+          ],
+          "phrases": [
+            {
+              "words": [
+                11,
+                12
+              ],
+              "en": "“Did there not come to you"
+            },
+            {
+              "words": [
+                13
+              ],
+              "en": "a warner?”"
+            }
+          ]
+        }
+      ]
+    },
+    "9": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "They will say,"
+            },
+            {
+              "words": [
+                2
+              ],
+              "en": "“Yes,"
+            }
+          ]
+        },
+        {
+          "words": [
+            3,
+            4,
+            5
+          ],
+          "phrases": [
+            {
+              "words": [
+                3,
+                4
+              ],
+              "en": "indeed, there came to us"
+            },
+            {
+              "words": [
+                5
+              ],
+              "en": "a warner,"
+            }
+          ]
+        },
+        {
+          "words": [
+            6,
+            7
+          ],
+          "phrases": [
+            {
+              "words": [
+                6
+              ],
+              "en": "but we denied him"
+            },
+            {
+              "words": [
+                7
+              ],
+              "en": "and said,"
+            }
+          ]
+        },
+        {
+          "words": [
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "phrases": [
+            {
+              "words": [
+                8,
+                9,
+                10
+              ],
+              "en": "‘Allah has not sent down"
+            },
+            {
+              "words": [
+                11,
+                12
+              ],
+              "en": "anything."
+            }
+          ]
+        },
+        {
+          "words": [
+            13,
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "phrases": [
+            {
+              "words": [
+                13,
+                14,
+                15
+              ],
+              "en": "You are nothing but"
+            },
+            {
+              "words": [
+                16,
+                17,
+                18
+              ],
+              "en": "in great error.’”"
+            }
+          ]
+        }
+      ]
+    },
+    "10": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "And they will say,"
+            }
+          ]
+        },
+        {
+          "words": [
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "phrases": [
+            {
+              "words": [
+                2
+              ],
+              "en": "“If only"
+            },
+            {
+              "words": [
+                3,
+                4
+              ],
+              "en": "we had listened"
+            },
+            {
+              "words": [
+                5
+              ],
+              "en": "or"
+            },
+            {
+              "words": [
+                6
+              ],
+              "en": "reasoned,"
+            }
+          ]
+        },
+        {
+          "words": [
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "phrases": [
+            {
+              "words": [
+                7,
+                8
+              ],
+              "en": "we would not"
+            },
+            {
+              "words": [
+                9,
+                10
+              ],
+              "en": "be among the companions"
+            },
+            {
+              "words": [
+                11
+              ],
+              "en": "of the Blaze.”"
+            }
+          ]
+        }
+      ]
+    },
+    "11": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "So they will confess"
+            },
+            {
+              "words": [
+                2
+              ],
+              "en": "their sin."
+            }
+          ]
+        },
+        {
+          "words": [
+            3,
+            4,
+            5
+          ],
+          "phrases": [
+            {
+              "words": [
+                3
+              ],
+              "en": "So away"
+            },
+            {
+              "words": [
+                4,
+                5
+              ],
+              "en": "with the companions of the Blaze!"
+            }
+          ]
+        }
+      ]
+    },
+    "12": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "Indeed, those who"
+            },
+            {
+              "words": [
+                3,
+                4
+              ],
+              "en": "fear their Lord,"
+            },
+            {
+              "words": [
+                5
+              ],
+              "en": "unseen,"
+            }
+          ]
+        },
+        {
+          "words": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "phrases": [
+            {
+              "words": [
+                6,
+                7
+              ],
+              "en": "for them is forgiveness"
+            },
+            {
+              "words": [
+                8,
+                9
+              ],
+              "en": "and a great reward."
+            }
+          ]
+        }
+      ]
+    },
+    "13": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "And conceal your speech,"
+            }
+          ]
+        },
+        {
+          "words": [
+            3,
+            4,
+            5
+          ],
+          "phrases": [
+            {
+              "words": [
+                3,
+                4,
+                5
+              ],
+              "en": "or proclaim it;"
+            }
+          ]
+        },
+        {
+          "words": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "phrases": [
+            {
+              "words": [
+                6,
+                7
+              ],
+              "en": "indeed, He is All-Knowing"
+            },
+            {
+              "words": [
+                8,
+                9
+              ],
+              "en": "of what is within the breasts."
+            }
+          ]
+        }
+      ]
+    },
+    "14": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "Does He not know"
+            },
+            {
+              "words": [
+                3,
+                4
+              ],
+              "en": "—He who created?"
+            }
+          ]
+        },
+        {
+          "words": [
+            5,
+            6,
+            7
+          ],
+          "phrases": [
+            {
+              "words": [
+                5,
+                6
+              ],
+              "en": "Yet He is the Subtle,"
+            },
+            {
+              "words": [
+                7
+              ],
+              "en": "the All-Aware."
+            }
+          ]
+        }
+      ]
+    },
+    "15": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "It is He who"
+            },
+            {
+              "words": [
+                3,
+                4,
+                5
+              ],
+              "en": "made the earth"
+            },
+            {
+              "words": [
+                6
+              ],
+              "en": "tame for you,"
+            }
+          ]
+        },
+        {
+          "words": [
+            7,
+            8,
+            9
+          ],
+          "phrases": [
+            {
+              "words": [
+                7,
+                8,
+                9
+              ],
+              "en": "so walk among its slopes"
+            }
+          ]
+        },
+        {
+          "words": [
+            10,
+            11,
+            12
+          ],
+          "phrases": [
+            {
+              "words": [
+                10,
+                11,
+                12
+              ],
+              "en": "and eat of His provision;"
+            }
+          ]
+        },
+        {
+          "words": [
+            13,
+            14
+          ],
+          "phrases": [
+            {
+              "words": [
+                13,
+                14
+              ],
+              "en": "and to Him is the resurrection."
+            }
+          ]
+        }
+      ]
+    },
+    "16": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "Do you feel secure"
+            },
+            {
+              "words": [
+                2
+              ],
+              "en": "from Him who"
+            },
+            {
+              "words": [
+                3,
+                4
+              ],
+              "en": "is in the heaven,"
+            }
+          ]
+        },
+        {
+          "words": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "phrases": [
+            {
+              "words": [
+                5,
+                6
+              ],
+              "en": "that He will cause to swallow"
+            },
+            {
+              "words": [
+                7
+              ],
+              "en": "you"
+            },
+            {
+              "words": [
+                8
+              ],
+              "en": "in the earth,"
+            }
+          ]
+        },
+        {
+          "words": [
+            9,
+            10,
+            11
+          ],
+          "phrases": [
+            {
+              "words": [
+                9
+              ],
+              "en": "and then suddenly"
+            },
+            {
+              "words": [
+                10
+              ],
+              "en": "it"
+            },
+            {
+              "words": [
+                11
+              ],
+              "en": "sways?"
+            }
+          ]
+        }
+      ]
+    },
+    "17": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "Or do you feel secure"
+            }
+          ]
+        },
+        {
+          "words": [
+            3,
+            4,
+            5
+          ],
+          "phrases": [
+            {
+              "words": [
+                3,
+                4,
+                5
+              ],
+              "en": "from Him Who is in the heaven,"
+            }
+          ]
+        },
+        {
+          "words": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "phrases": [
+            {
+              "words": [
+                6,
+                7,
+                8
+              ],
+              "en": "that He will send against you"
+            },
+            {
+              "words": [
+                9
+              ],
+              "en": "a storm of stones?"
+            }
+          ]
+        },
+        {
+          "words": [
+            10,
+            11,
+            12
+          ],
+          "phrases": [
+            {
+              "words": [
+                10
+              ],
+              "en": "Then you will know"
+            },
+            {
+              "words": [
+                11,
+                12
+              ],
+              "en": "how was My warning."
+            }
+          ]
+        }
+      ]
+    },
+    "18": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "And indeed"
+            },
+            {
+              "words": [
+                2
+              ],
+              "en": "denied"
+            }
+          ]
+        },
+        {
+          "words": [
+            3,
+            4,
+            5
+          ],
+          "phrases": [
+            {
+              "words": [
+                3,
+                4,
+                5
+              ],
+              "en": "those before them."
+            }
+          ]
+        },
+        {
+          "words": [
+            6,
+            7,
+            8
+          ],
+          "phrases": [
+            {
+              "words": [
+                6,
+                7
+              ],
+              "en": "Then how was"
+            },
+            {
+              "words": [
+                8
+              ],
+              "en": "My rejection!"
+            }
+          ]
+        }
+      ]
+    },
+    "19": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "Have they not seen"
+            },
+            {
+              "words": [
+                3,
+                4
+              ],
+              "en": "the birds"
+            },
+            {
+              "words": [
+                5
+              ],
+              "en": "above them,"
+            }
+          ]
+        },
+        {
+          "words": [
+            6,
+            7
+          ],
+          "phrases": [
+            {
+              "words": [
+                6
+              ],
+              "en": "spreading their wings"
+            },
+            {
+              "words": [
+                7
+              ],
+              "en": "and folding them in?"
+            }
+          ]
+        },
+        {
+          "words": [
+            8,
+            9,
+            10,
+            11
+          ],
+          "phrases": [
+            {
+              "words": [
+                8,
+                9
+              ],
+              "en": "None holds them up"
+            },
+            {
+              "words": [
+                10,
+                11
+              ],
+              "en": "except the Most Merciful."
+            }
+          ]
+        },
+        {
+          "words": [
+            12,
+            13,
+            14,
+            15
+          ],
+          "phrases": [
+            {
+              "words": [
+                12
+              ],
+              "en": "Indeed, He is"
+            },
+            {
+              "words": [
+                13,
+                14,
+                15
+              ],
+              "en": "All-Seeing over everything."
+            }
+          ]
+        }
+      ]
+    },
+    "20": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "Or who"
+            },
+            {
+              "words": [
+                2,
+                3
+              ],
+              "en": "is this one"
+            },
+            {
+              "words": [
+                4,
+                5
+              ],
+              "en": "that is an army"
+            },
+            {
+              "words": [
+                6
+              ],
+              "en": "for you"
+            }
+          ]
+        },
+        {
+          "words": [
+            7,
+            8,
+            9,
+            10
+          ],
+          "phrases": [
+            {
+              "words": [
+                7
+              ],
+              "en": "to help you"
+            },
+            {
+              "words": [
+                8,
+                9,
+                10
+              ],
+              "en": "other than the Most Gracious?"
+            }
+          ]
+        },
+        {
+          "words": [
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "phrases": [
+            {
+              "words": [
+                11
+              ],
+              "en": "Not"
+            },
+            {
+              "words": [
+                12
+              ],
+              "en": "the disbelievers"
+            },
+            {
+              "words": [
+                13,
+                14,
+                15
+              ],
+              "en": "are but in delusion."
+            }
+          ]
+        }
+      ]
+    },
+    "21": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "Or who"
+            },
+            {
+              "words": [
+                2,
+                3
+              ],
+              "en": "is this one"
+            },
+            {
+              "words": [
+                4
+              ],
+              "en": "who could provide for you"
+            }
+          ]
+        },
+        {
+          "words": [
+            5,
+            6,
+            7
+          ],
+          "phrases": [
+            {
+              "words": [
+                5
+              ],
+              "en": "if"
+            },
+            {
+              "words": [
+                6,
+                7
+              ],
+              "en": "He withheld His provision?"
+            }
+          ]
+        },
+        {
+          "words": [
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "phrases": [
+            {
+              "words": [
+                8
+              ],
+              "en": "Rather,"
+            },
+            {
+              "words": [
+                9,
+                10,
+                11,
+                12
+              ],
+              "en": "they persist in arrogance and aversion."
+            }
+          ]
+        }
+      ]
+    },
+    "22": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "Then is he"
+            },
+            {
+              "words": [
+                2
+              ],
+              "en": "who walks"
+            },
+            {
+              "words": [
+                3
+              ],
+              "en": "fallen"
+            },
+            {
+              "words": [
+                4,
+                5
+              ],
+              "en": "on his face,"
+            },
+            {
+              "words": [
+                6
+              ],
+              "en": "better guided"
+            }
+          ]
+        },
+        {
+          "words": [
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "phrases": [
+            {
+              "words": [
+                7
+              ],
+              "en": "or"
+            },
+            {
+              "words": [
+                8
+              ],
+              "en": "he who walks"
+            },
+            {
+              "words": [
+                9
+              ],
+              "en": "upright"
+            },
+            {
+              "words": [
+                10,
+                11
+              ],
+              "en": "on a path"
+            },
+            {
+              "words": [
+                12
+              ],
+              "en": "straight?"
+            }
+          ]
+        }
+      ]
+    },
+    "23": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "Say,"
+            },
+            {
+              "words": [
+                2,
+                3
+              ],
+              "en": "“He is the One who"
+            },
+            {
+              "words": [
+                4
+              ],
+              "en": "produced you"
+            }
+          ]
+        },
+        {
+          "words": [
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "phrases": [
+            {
+              "words": [
+                5,
+                6
+              ],
+              "en": "and made for you"
+            },
+            {
+              "words": [
+                7
+              ],
+              "en": "hearing,"
+            },
+            {
+              "words": [
+                8
+              ],
+              "en": "sight,"
+            },
+            {
+              "words": [
+                9
+              ],
+              "en": "and hearts;"
+            }
+          ]
+        },
+        {
+          "words": [
+            10,
+            11,
+            12
+          ],
+          "phrases": [
+            {
+              "words": [
+                10,
+                11,
+                12
+              ],
+              "en": "how little you give thanks!”"
+            }
+          ]
+        }
+      ]
+    },
+    "24": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "Say,"
+            },
+            {
+              "words": [
+                2,
+                3
+              ],
+              "en": "“He is the One who"
+            },
+            {
+              "words": [
+                4,
+                5,
+                6
+              ],
+              "en": "multiplied you throughout the earth,"
+            }
+          ]
+        },
+        {
+          "words": [
+            7,
+            8
+          ],
+          "phrases": [
+            {
+              "words": [
+                7,
+                8
+              ],
+              "en": "and to Him you will be gathered.”"
+            }
+          ]
+        }
+      ]
+    },
+    "25": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "And they say,"
+            }
+          ]
+        },
+        {
+          "words": [
+            2,
+            3,
+            4
+          ],
+          "phrases": [
+            {
+              "words": [
+                2
+              ],
+              "en": "“When"
+            },
+            {
+              "words": [
+                3,
+                4
+              ],
+              "en": "is this promise"
+            }
+          ]
+        },
+        {
+          "words": [
+            5,
+            6,
+            7
+          ],
+          "phrases": [
+            {
+              "words": [
+                5
+              ],
+              "en": "if"
+            },
+            {
+              "words": [
+                6
+              ],
+              "en": "you are"
+            },
+            {
+              "words": [
+                7
+              ],
+              "en": "truthful?”"
+            }
+          ]
+        }
+      ]
+    },
+    "26": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "Say,"
+            },
+            {
+              "words": [
+                2
+              ],
+              "en": "“Only"
+            },
+            {
+              "words": [
+                3
+              ],
+              "en": "the knowledge"
+            },
+            {
+              "words": [
+                4,
+                5
+              ],
+              "en": "is with Allah,"
+            }
+          ]
+        },
+        {
+          "words": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "phrases": [
+            {
+              "words": [
+                6
+              ],
+              "en": "and only"
+            },
+            {
+              "words": [
+                7
+              ],
+              "en": "I am"
+            },
+            {
+              "words": [
+                8
+              ],
+              "en": "a warner"
+            },
+            {
+              "words": [
+                9
+              ],
+              "en": "clear.”"
+            }
+          ]
+        }
+      ]
+    },
+    "27": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "But when they see it"
+            },
+            {
+              "words": [
+                3
+              ],
+              "en": "approaching,"
+            }
+          ]
+        },
+        {
+          "words": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "phrases": [
+            {
+              "words": [
+                4,
+                5
+              ],
+              "en": "the faces"
+            },
+            {
+              "words": [
+                6,
+                7
+              ],
+              "en": "of those who disbelieved"
+            }
+          ]
+        },
+        {
+          "words": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "phrases": [
+            {
+              "words": [
+                8,
+                9
+              ],
+              "en": "and it will be said,"
+            },
+            {
+              "words": [
+                10,
+                11,
+                12,
+                13
+              ],
+              "en": "“This is that which you used to claim.”"
+            }
+          ]
+        }
+      ]
+    },
+    "28": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "Say,"
+            },
+            {
+              "words": [
+                2
+              ],
+              "en": "“Have you considered:"
+            }
+          ]
+        },
+        {
+          "words": [
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "phrases": [
+            {
+              "words": [
+                3
+              ],
+              "en": "if"
+            },
+            {
+              "words": [
+                4,
+                5
+              ],
+              "en": "Allah were to destroy me"
+            },
+            {
+              "words": [
+                6
+              ],
+              "en": "and whoever"
+            },
+            {
+              "words": [
+                7
+              ],
+              "en": "is with me,"
+            }
+          ]
+        },
+        {
+          "words": [
+            8,
+            9
+          ],
+          "phrases": [
+            {
+              "words": [
+                8
+              ],
+              "en": "or"
+            },
+            {
+              "words": [
+                9
+              ],
+              "en": "have mercy on us,"
+            }
+          ]
+        },
+        {
+          "words": [
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "phrases": [
+            {
+              "words": [
+                10
+              ],
+              "en": "who then"
+            },
+            {
+              "words": [
+                11
+              ],
+              "en": "can protect"
+            },
+            {
+              "words": [
+                12
+              ],
+              "en": "the disbelievers"
+            },
+            {
+              "words": [
+                13,
+                14,
+                15
+              ],
+              "en": "from a painful punishment?”"
+            }
+          ]
+        }
+      ]
+    },
+    "29": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "Say,"
+            }
+          ]
+        },
+        {
+          "words": [
+            2,
+            3
+          ],
+          "phrases": [
+            {
+              "words": [
+                2,
+                3
+              ],
+              "en": "“He is the Most Merciful;"
+            }
+          ]
+        },
+        {
+          "words": [
+            4,
+            5
+          ],
+          "phrases": [
+            {
+              "words": [
+                4,
+                5
+              ],
+              "en": "we believe in Him,"
+            }
+          ]
+        },
+        {
+          "words": [
+            6,
+            7
+          ],
+          "phrases": [
+            {
+              "words": [
+                6,
+                7
+              ],
+              "en": "and upon Him we rely."
+            }
+          ]
+        },
+        {
+          "words": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "phrases": [
+            {
+              "words": [
+                8
+              ],
+              "en": "And you will know"
+            },
+            {
+              "words": [
+                9,
+                10,
+                11,
+                12,
+                13
+              ],
+              "en": "who is in clear error.”"
+            }
+          ]
+        }
+      ]
+    },
+    "30": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "Say,"
+            }
+          ]
+        },
+        {
+          "words": [
+            2
+          ],
+          "phrases": [
+            {
+              "words": [
+                2
+              ],
+              "en": "“Have you considered:"
+            }
+          ]
+        },
+        {
+          "words": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "phrases": [
+            {
+              "words": [
+                3,
+                4,
+                5,
+                6
+              ],
+              "en": "if your water becomes sunken,"
+            }
+          ]
+        },
+        {
+          "words": [
+            7,
+            8,
+            9,
+            10
+          ],
+          "phrases": [
+            {
+              "words": [
+                7,
+                8
+              ],
+              "en": "then who could bring you"
+            },
+            {
+              "words": [
+                9,
+                10
+              ],
+              "en": "flowing water?”"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

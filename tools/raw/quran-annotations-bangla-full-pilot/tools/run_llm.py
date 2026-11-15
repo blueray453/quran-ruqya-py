@@ -13,7 +13,7 @@ Output goes to runs/<tag>/annotations/ (never to annotations/) unless --out-dir 
 import argparse, concurrent.futures as cf, json, os, re, subprocess, sys, time, urllib.error, urllib.request
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from ayahlib import ROOT, Src, ayah_block, load_json, normalise, parse_json_object  # noqa: E402
+from ayahlib import ROOT, Src, ayah_block, load_json, meaning_flags, normalise, parse_json_object  # noqa: E402
 
 API = 'https://openrouter.ai/api/v1/chat/completions'
 FULL_QURAN_WORDS = 77432
@@ -64,7 +64,7 @@ def build_user_prompt(template, src, batch, bn_wbw, hint=None):
     keys = ', '.join(f'{s}:{a}' for s, a in batch)
     prompt = template.replace('{AYAH_BLOCKS}', '\n\n'.join(blocks)).replace('{KEYS}', keys)
     if hint:   # structural problems only (tiling / size / script) - never linguistic or chunker feedback
-        prompt += ('\n\nNote: an earlier attempt at this ayah was rejected for structural reasons: '
+        prompt += ('\n\nNote: an earlier attempt at this ayah was not accepted: '
                    + '; '.join(hint[:4]) + '. Fix these.')
     return prompt
 
@@ -76,24 +76,43 @@ def granularity(norm):
     return n_w, n_p, len(norm), n_w / n_p
 
 
-def is_coarse(norm, mean_limit):
+def assess(norm, mean_limit, clause_limit):
+    """Why an ayah looks too coarse: 'phrases' (long phrases / one phrase per clause) and/or
+    'clauses' (a clause longer than clause_limit words). Returns (reasons, long_clauses, mean)."""
     n_w, n_p, n_c, mean = granularity(norm)
-    return mean > mean_limit or (n_p == n_c and n_w >= 6)      # every clause a single phrase
+    reasons = []
+    if mean > mean_limit or (n_p == n_c and n_w >= 6):
+        reasons.append('phrases')
+    long_cl = [cl for cl in norm if sum(len(p['words']) for p in cl) > clause_limit]
+    if long_cl:
+        reasons.append('clauses')
+    return reasons, len(long_cl), mean
 
 
-def coarse_hint(norm):
+def coarse_hint(norm, reasons, clause_limit):
     n_w, n_p, n_c, mean = granularity(norm)
-    big = sorted((p for cl in norm for p in cl), key=lambda p: -len(p['words']))[:3]
-    ex = '; '.join(f'"{p["en"]}" is one phrase of {len(p["words"])} Arabic words' for p in big)
-    return [f'your earlier segmentation was too coarse ({n_p} phrases for {n_w} words, {n_c} clauses; '
-            f'the reviewed standard is about 1.6 Arabic words per phrase and 2-3 phrases per clause). '
-            f'Split further, e.g. {ex}']
+    msgs = []
+    if 'phrases' in reasons:
+        big = sorted((p for cl in norm for p in cl), key=lambda p: -len(p['words']))[:3]
+        ex = '; '.join(f'"{p["en"]}" is one phrase of {len(p["words"])} Arabic words' for p in big)
+        msgs.append(f'your earlier segmentation was too coarse ({n_p} phrases for {n_w} words in {n_c} clauses; the '
+                    f'reviewed standard is about 1.6 Arabic words per phrase and 2-3 phrases per clause). '
+                    f'Split further INSIDE the existing clauses by adding phrases (keep the clause boundaries as they are; '
+                    f'do not create new clauses), e.g. {ex}')
+    if 'clauses' in reasons:
+        longest = sorted(norm, key=lambda cl: -sum(len(p['words']) for p in cl))[:3]
+        ex = '; '.join('"' + ' '.join(p['en'] for p in cl) + f'" is one clause of {sum(len(p["words"]) for p in cl)} words'
+                       for cl in longest if sum(len(p['words']) for p in cl) > clause_limit)
+        msgs.append(f'some clauses are too long (the reviewed standard is about 4 Arabic words per clause, rarely more than '
+                    f'{clause_limit}). Split them at natural boundaries (an exception, alternative, comparison, purpose, '
+                    f'condition, relative clause or new verb), e.g. {ex}')
+    return msgs
 
 
 # ------------------------------------------------------------------ model call
-def call_openrouter(args, system, user, temperature):
+def call_openrouter(args, system, user, temperature, model=None):
     body = {
-        'model': args.model,
+        'model': model or args.model,
         'temperature': temperature,
         'max_tokens': args.max_tokens,
         'usage': {'include': True},
@@ -157,6 +176,11 @@ def main():
     ap.add_argument('--surah', type=int, action='append')
     ap.add_argument('--ayahs', help='comma list, e.g. "2:255,2:282-284"')
     ap.add_argument('--model', default='anthropic/claude-haiku-5.5')
+    ap.add_argument('--long-model', default='anthropic/claude-sonnet-5.5',
+                    help='ayahs longer than --long-words go one by one to this model (empty = disable)')
+    ap.add_argument('--long-words', type=int, default=40)
+    ap.add_argument('--escalate-model', default='anthropic/claude-sonnet-5.5',
+                    help='ayahs still flagged after the Haiku passes get one run here (empty = disable)')
     ap.add_argument('--max-words', type=int, default=220, help='word cap per request')
     ap.add_argument('--max-ayahs', type=int, default=8)
     ap.add_argument('--workers', type=int, default=4)
@@ -171,6 +195,8 @@ def main():
     ap.add_argument('--dry-run', action='store_true')
     ap.add_argument('--coarse-mean', type=float, default=2.4,
                     help='ayahs above this mean Arabic words/phrase (or one phrase per clause) get one finer re-run')
+    ap.add_argument('--max-clause-words', type=int, default=6,
+                    help='clauses longer than this also trigger the finer re-run (prototype: max 7, 97%% <= 6)')
     ap.add_argument('--coarse-retries', type=int, default=1, help='0 disables the granularity re-run')
     ap.add_argument('--mock-coarse', action='store_true', help='self-test: mock model answers coarsely first')
     ap.add_argument('--mock-replay', action='store_true', help='offline self-test (surah 67 only)')
@@ -201,12 +227,20 @@ def main():
 
     system = open(os.path.join(ROOT, 'CONVENTIONS.md'), encoding='utf-8').read()
     template = load_template()
-    batches = make_batches(todo, src, args.max_words, args.max_ayahs)
+    long_set = {ay for ay in todo if args.long_model and src.n_words(*ay) > args.long_words}
+    long_items = sorted(long_set)
+    batches = make_batches([ay for ay in todo if ay not in long_set], src, args.max_words, args.max_ayahs)
+
+    def model_for(ay):
+        return args.long_model if ay in long_set else args.model
+
+    if long_items:
+        print(f'{len(long_items)} long ayah(s) (> {args.long_words} words) go one by one to {args.long_model}')
 
     if args.dry_run:
         if batches:
             u = build_user_prompt(template, src, batches[0], not args.no_bn_wbw)
-            print(f'--- {len(batches)} request(s); first request user prompt '
+            print(f'--- {len(batches)} batched request(s) + {len(long_items)} long ayah(s) for {args.long_model}; first request user prompt '
                   f'({len(u)} chars, ~{len(u) // 2} tokens; system {len(system)} chars) ---\n{u}')
         return
     if not args.mock_replay and not os.environ.get('OPENROUTER_API_KEY'):
@@ -215,11 +249,12 @@ def main():
     log = open(os.path.join(run, 'calls.jsonl'), 'a', encoding='utf-8')
     usage = {'prompt_tokens': 0, 'completion_tokens': 0, 'cost': 0.0, 'calls': 0, 'words': 0}
 
-    def run_request(batch, temperature, hint=None):
+    def run_request(batch, temperature, hint=None, model=None):
+        model = model or args.model
         user = build_user_prompt(template, src, batch, not args.no_bn_wbw, hint)
         t0 = time.time()
-        text, u = mock_call(batch, src, temperature, args.mock_coarse) if args.mock_replay else call_openrouter(args, system, user, temperature)
-        log.write(json.dumps({'keys': [f'{s}:{a}' for s, a in batch], 'model': args.model, 'temperature': temperature,
+        text, u = mock_call(batch, src, temperature, args.mock_coarse) if args.mock_replay else call_openrouter(args, system, user, temperature, model)
+        log.write(json.dumps({'keys': [f'{s}:{a}' for s, a in batch], 'model': model, 'temperature': temperature,
                               'seconds': round(time.time() - t0, 1), 'usage': u, 'reply': text},
                              ensure_ascii=False) + '\n')
         log.flush()
@@ -229,11 +264,11 @@ def main():
         usage['calls'] += 1
         return parse_json_object(text)
 
-    def settle(batch, temperature, hint=None):
+    def settle(batch, temperature, hint=None, model=None):
         """Run one request; store validated ayahs; return [(ayah, errors)] that failed."""
         failed = []
         try:
-            reply = run_request(batch, temperature, hint)
+            reply = run_request(batch, temperature, hint, model)
         except Exception as e:
             print(f'  request {batch[0]}..{batch[-1]} failed: {e}')
             return [(ay, None) for ay in batch]
@@ -247,8 +282,10 @@ def main():
                 failed.append(((s, a), errs))
                 continue
             with open(raw_path(s, a), 'w', encoding='utf-8') as fh:
-                json.dump({'key': key, 'model': args.model, 'clauses': norm,
-                           'coarse': is_coarse(norm, args.coarse_mean), 'refined': False}, fh, ensure_ascii=False)
+                json.dump({'key': key, 'model': model or args.model, 'clauses': norm,
+                           'coarse': bool(assess(norm, args.coarse_mean, args.max_clause_words)[0]),
+                           'reasons': assess(norm, args.coarse_mean, args.max_clause_words)[0],
+                           'refined': False, 'escalated': False}, fh, ensure_ascii=False)
             usage['words'] += src.n_words(s, a)
         return failed
 
@@ -257,25 +294,33 @@ def main():
         for i, f in enumerate(ex.map(lambda b: settle(b, 0.0), batches), 1):
             failed += f
             print(f'batch {i}/{len(batches)} done ({len(f)} failed)')
+        for f in ex.map(lambda ay: settle([ay], 0.0, model=args.long_model), long_items):
+            failed += f
+        if long_items:
+            print(f'long ayahs done ({len(long_items)})')
         for attempt in range(args.retries):
             if not failed:
                 break
             print(f'retry {attempt + 1}: {len(failed)} ayah(s) alone at temperature 0.3')
-            failed = [x for f in ex.map(lambda fe: settle([fe[0]], 0.3, fe[1]), failed) for x in f]
+            failed = [x for f in ex.map(lambda fe: settle([fe[0]], 0.3, fe[1], model_for(fe[0])), failed) for x in f]
 
     # granularity pass: one finer re-run for ayahs the model segmented too coarsely
     def refine(ay):
         s, a = ay
         d = load_json(raw_path(s, a))
+        r1, l1, m1 = assess(d['clauses'], args.coarse_mean, args.max_clause_words)
         try:
-            reply = run_request([ay], 0.3, coarse_hint(d['clauses']))
+            reply = run_request([ay], 0.3, coarse_hint(d['clauses'], r1, args.max_clause_words))
             errs, norm = normalise(reply.get(f'{s}:{a}'), src.n_words(s, a), max_phrase_words=args.max_phrase_words,
                                    src_words=src.align_words(s, a))
         except Exception as e:
             errs, norm = [str(e)], []
-        better = not errs and granularity(norm)[3] < granularity(d['clauses'])[3]
+        better = False
+        if not errs:
+            r2, l2, m2 = assess(norm, args.coarse_mean, args.max_clause_words)
+            better = (l2, m2) < (l1, m1)            # fewer over-long clauses first, then finer phrases
         if better:
-            d.update(clauses=norm, coarse=is_coarse(norm, args.coarse_mean))
+            d.update(clauses=norm, coarse=bool(r2), reasons=r2)
         d['refined'] = True
         with open(raw_path(s, a), 'w', encoding='utf-8') as fh:
             json.dump(d, fh, ensure_ascii=False)
@@ -289,8 +334,62 @@ def main():
             with cf.ThreadPoolExecutor(max_workers=args.workers) as ex:
                 gained = sum(ex.map(refine, pend))
             print(f'granularity: {gained}/{len(pend)} came back finer')
+    # escalation: ayahs still flagged (too coarse, or meaning possibly dropped/moved/doubled) get one run on a stronger model
+    def mflags(s, a, norm):
+        return meaning_flags({w: ge for w, ar, ge, gb in src.words(s, a)}, norm)
+
+    def escalate(ay):
+        s, a = ay
+        d = load_json(raw_path(s, a))
+        r1, l1, m1 = assess(d['clauses'], args.coarse_mean, args.max_clause_words)
+        f1 = mflags(s, a, d['clauses'])
+        hint = coarse_hint(d['clauses'], r1, args.max_clause_words) if r1 else []
+        if f1:
+            hint.append('your earlier answer may have lost, moved or doubled meaning: ' + '; '.join(f1[:4])
+                        + '. Each fragment must translate only its own Arabic words, and every word exactly once')
+        try:
+            reply = run_request([ay], 0.0, hint, args.escalate_model)
+            errs, norm = normalise(reply.get(f'{s}:{a}'), src.n_words(s, a), max_phrase_words=args.max_phrase_words,
+                                   src_words=src.align_words(s, a))
+        except Exception as e:
+            errs, norm = [str(e)], []
+        better = False
+        if not errs:
+            r2, l2, m2 = assess(norm, args.coarse_mean, args.max_clause_words)
+            better = (l2 + len(mflags(s, a, norm)), m2) < (l1 + len(f1), m1)
+        if better:
+            d.update(clauses=norm, coarse=bool(r2), reasons=r2, model=args.escalate_model)
+        d['escalated'] = True
+        with open(raw_path(s, a), 'w', encoding='utf-8') as fh:
+            json.dump(d, fh, ensure_ascii=False)
+        return better
+
+    if args.escalate_model:
+        pend = []
+        for ay in items:
+            if os.path.exists(raw_path(*ay)):
+                d = load_json(raw_path(*ay))
+                if not d.get('escalated') and d.get('model') != args.escalate_model and (
+                        d.get('coarse') or mflags(ay[0], ay[1], d['clauses'])):
+                    pend.append(ay)
+        if pend:
+            print(f'escalation: {len(pend)} flagged ayah(s) re-run once on {args.escalate_model}')
+            with cf.ThreadPoolExecutor(max_workers=args.workers) as ex:
+                gained = sum(ex.map(escalate, pend))
+            print(f'escalation: {gained}/{len(pend)} came back better')
+    left = {}
+    for s, a in items:
+        if os.path.exists(raw_path(s, a)):
+            d = load_json(raw_path(s, a))
+            why = list(d.get('reasons') or []) + mflags(s, a, d['clauses'])
+            if why:
+                left[f'{s}:{a}'] = why
+    json.dump(left, open(os.path.join(run, 'flags.json'), 'w'), ensure_ascii=False, indent=1)
+    if left:
+        print(f'{len(left)} ayah(s) still flagged (runs/{args.tag}/flags.json) - review these first')
     still = [f'{s}:{a}' for s, a in items if os.path.exists(raw_path(s, a)) and load_json(raw_path(s, a)).get('coarse')]
-    json.dump(still, open(os.path.join(run, 'coarse.json'), 'w'))
+    json.dump({k: load_json(raw_path(*map(int, k.split(':')))).get('reasons') for k in still},
+              open(os.path.join(run, 'coarse.json'), 'w'), indent=1)
     if still:
         print(f'{len(still)} ayah(s) coarse' + (' even after the re-run' if args.coarse_retries else '') +
               f' (runs/{args.tag}/coarse.json) - review these first')
@@ -317,8 +416,9 @@ def main():
     for s, d in sorted(by_surah.items()):
         mf = os.path.join(run, f'merge-{s:03d}.json')
         json.dump(d, open(mf, 'w', encoding='utf-8'), ensure_ascii=False)
+        models = sorted({load_json(raw_path(s, int(k.split(':')[1])))['model'] for k in d})
         subprocess.run([sys.executable, os.path.join(ROOT, 'tools/collect.py'), '--surah', str(s), '--file', mf,
-                        '--out-dir', out_dir, '--model', args.model], check=True)
+                        '--out-dir', out_dir, '--model', ' + '.join(models)], check=True)
 
 
 if __name__ == '__main__':

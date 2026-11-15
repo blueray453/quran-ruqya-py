@@ -1,0 +1,1 @@
+{"key": "78:25", "model": "anthropic/claude-haiku-5.5", "clauses": [[{"words": [1, 2], "en": "Except scalding water", "bn": "ফুটন্ত পানি ছাড়া"}], [{"words": [3], "en": "and [foul] purulence;", "bn": "ও পুঁজ;"}]], "coarse": false, "reasons": [], "refined": false, "escalated": false}

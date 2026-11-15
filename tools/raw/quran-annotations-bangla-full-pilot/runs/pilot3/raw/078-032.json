@@ -1,0 +1,1 @@
+{"key": "78:32", "model": "anthropic/claude-haiku-5.5", "clauses": [[{"words": [1], "en": "gardens", "bn": "উদ্যানসমূহ"}, {"words": [2], "en": "and grapevines,", "bn": "ও আঙ্গুরসমূহ,"}]], "coarse": false, "reasons": [], "refined": false, "escalated": false}

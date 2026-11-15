@@ -1,0 +1,1 @@
+{"key": "81:22", "model": "anthropic/claude-haiku-5.5", "clauses": [[{"words": [1, 2], "en": "And your companion", "bn": "আর তোমাদের সাথী"}], [{"words": [3], "en": "is not mad.", "bn": "উন্মাদ নন।"}]], "coarse": false, "reasons": [], "refined": false, "escalated": false}

@@ -1,0 +1,1 @@
+{"key": "78:6", "model": "anthropic/claude-haiku-5.5", "clauses": [[{"words": [1, 2], "en": "Have We not made", "bn": "আমরা কি বানাইনি"}, {"words": [3, 4], "en": "the earth a resting place?", "bn": "ভূমিকে বিছানা স্বরূপ?"}]], "coarse": false, "reasons": [], "refined": false, "escalated": false}

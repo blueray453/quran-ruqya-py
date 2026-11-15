@@ -1,0 +1,1 @@
+{"key": "81:15", "model": "anthropic/claude-haiku-5.5", "clauses": [[{"words": [1], "en": "So no!", "bn": "সুতরাং না,"}, {"words": [2], "en": "I swear", "bn": "আমি শপথ করছি"}, {"words": [3], "en": "by the retreating ones,", "bn": "পশ্চাদপসরণকারী নক্ষত্রের,"}]], "coarse": false, "reasons": [], "refined": false, "escalated": false}

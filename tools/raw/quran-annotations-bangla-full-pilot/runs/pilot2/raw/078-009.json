@@ -1,0 +1,1 @@
+{"key": "78:9", "model": "anthropic/claude-haiku-5.5", "clauses": [[{"words": [1, 2], "en": "And We made your sleep", "bn": "আর আমরা তোমাদের ঘুমকে বানিয়েছি"}, {"words": [3], "en": "a rest,", "bn": "বিশ্রাম,"}]], "coarse": false, "reasons": [], "refined": false}

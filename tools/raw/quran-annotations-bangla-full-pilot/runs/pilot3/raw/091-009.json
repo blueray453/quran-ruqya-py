@@ -1,0 +1,1 @@
+{"key": "91:9", "model": "anthropic/claude-haiku-5.5", "clauses": [[{"words": [1, 2], "en": "Indeed, he succeeds", "bn": "নিশ্চয়ই সফল হলো"}, {"words": [3, 4], "en": "who purifies it,", "bn": "যে তাকে পবিত্র করলো,"}]], "coarse": false, "reasons": [], "refined": false, "escalated": false}

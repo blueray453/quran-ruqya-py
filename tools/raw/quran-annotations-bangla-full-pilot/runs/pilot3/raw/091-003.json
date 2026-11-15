@@ -1,0 +1,1 @@
+{"key": "91:3", "model": "anthropic/claude-haiku-5.5", "clauses": [[{"words": [1], "en": "and by the day", "bn": "শপথ দিনের"}, {"words": [2, 3], "en": "when it displays it,", "bn": "যখন সে সূর্যকে প্রকাশ করে,"}]], "coarse": false, "reasons": [], "refined": false, "escalated": false}

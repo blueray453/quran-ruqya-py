@@ -1,0 +1,1 @@
+{"key": "78:27", "model": "anthropic/claude-haiku-5.5", "clauses": [[{"words": [1, 2], "en": "Indeed, they were", "bn": "নিশ্চয়ই তারা ছিল"}], [{"words": [3, 4], "en": "not expecting", "bn": "আশা করত না"}, {"words": [5], "en": "an account,", "bn": "হিসাবের,"}]], "coarse": false, "reasons": [], "refined": false}

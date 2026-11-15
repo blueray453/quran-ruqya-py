@@ -1,0 +1,1 @@
+{"key": "78:28", "model": "anthropic/claude-haiku-5.5", "clauses": [[{"words": [1], "en": "And they denied", "bn": "এবং তারা মিথ্যারোপ করত"}], [{"words": [2], "en": "Our verses", "bn": "আমাদের নিদর্শনাবলীতে"}, {"words": [3], "en": "with [emphatic] denial.", "bn": "কঠোরভাবে মিথ্যারোপ।"}]], "coarse": false, "reasons": [], "refined": false}

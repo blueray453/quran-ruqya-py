@@ -1,0 +1,1 @@
+{"key": "78:14", "model": "anthropic/claude-haiku-5.5", "clauses": [[{"words": [1], "en": "And We sent down", "bn": "এবং আমরা বর্ষণ করেছি"}, {"words": [2, 3], "en": "from the rain clouds", "bn": "মেঘমালা থেকে"}, {"words": [4, 5], "en": "pouring water abundantly.", "bn": "মুষলধারে পানি।"}]], "coarse": false, "reasons": [], "refined": false, "escalated": false}

@@ -27,6 +27,28 @@ English fragments of an ayah, joined with single spaces in Arabic order, must re
 as natural English. If a boundary cannot read naturally in English, the words belong
 in one phrase.
 
+## Clause size
+
+In the reviewed prototype a clause averages 3.9 Arabic words (range 1-7; 97% have 6 or
+fewer). A clause of 7 or more words almost always hides a boundary. Before keeping one,
+check whether it contains:
+
+- an exception ("except ...", illā), an alternative ("or ...", aw) or a comparison
+  ("as / like ...", kamā);
+- a purpose or result ("so that", "in order to", li-, an + subjunctive, ḥattā);
+- a condition and its answer, or a relative clause with its own verb;
+- a second verb with its own subject or object, a vocative, or a list of items.
+
+This is a check, not an automatic rule: split only where each part still reads as natural
+English on its own (and where it does, split: long ayahs such as 2:255 or 2:282 are
+made of many short clauses, not a few long ones).
+
+The opposite mistake is just as wrong: do NOT turn every phrase into its own clause. A
+clause groups the 2-4 phrases that make one statement, and fewer than 1 clause in 10 has
+only a single phrase. An introducer such as "Say," stays inside the clause that opens the
+quotation (see Examples 5 and 6). To make a segmentation finer, add phrases INSIDE clauses;
+add a clause only where a new statement, condition, exception or purpose begins.
+
 ## Phrase size (important)
 
 Phrases are SMALL, and a clause is almost always made of several of them. Measured on the
@@ -54,7 +76,11 @@ Right granularity (67:19, first clause) — NOT one long phrase:
 - A fragment translates ONLY the Arabic words in its own span. Never pull the meaning
   of a neighbouring phrase into it, and never say the same thing twice (e.g. do not put
   "any flaw" in one phrase and then "any fault" in the next for the same words).
-- Every Arabic word must be represented in exactly one fragment.
+- Every Arabic word must be represented in exactly one fragment, and every word must
+  contribute to its fragment: do not leave out particles or verbs (a phrase of two or more
+  Arabic words such as "except that" or "when ... was sent forth" needs the meaning of each
+  word, not a single English word). A pronoun attached to a word is translated once, in the
+  phrase that owns that word, not again in the next phrase.
 - A clause is never just an object or modifier that completes the previous clause;
   keep such words inside that clause.
 

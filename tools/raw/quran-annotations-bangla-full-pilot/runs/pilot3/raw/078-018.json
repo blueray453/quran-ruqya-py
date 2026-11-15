@@ -1,0 +1,1 @@
+{"key": "78:18", "model": "anthropic/claude-haiku-5.5", "clauses": [[{"words": [1, 2, 3, 4], "en": "The Day the trumpet is blown,", "bn": "সেদিন শিঙ্গায় ফুঁক দেওয়া হবে,"}], [{"words": [5], "en": "and you will come forth", "bn": "তখন তোমরা আসবে"}, {"words": [6], "en": "in crowds.", "bn": "দলে দলে।"}]], "coarse": false, "reasons": [], "refined": false, "escalated": false}

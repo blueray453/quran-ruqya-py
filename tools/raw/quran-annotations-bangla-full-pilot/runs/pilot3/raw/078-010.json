@@ -1,0 +1,1 @@
+{"key": "78:10", "model": "anthropic/claude-haiku-5.5", "clauses": [[{"words": [1, 2], "en": "And We made the night", "bn": "এবং আমরা রাতকে বানিয়েছি"}, {"words": [3], "en": "a covering.", "bn": "আবরণ স্বরূপ।"}]], "coarse": false, "reasons": [], "refined": false, "escalated": false}

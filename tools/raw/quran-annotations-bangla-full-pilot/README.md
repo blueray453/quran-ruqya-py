@@ -56,8 +56,18 @@ python3 tools/chunker_report.py --annotations-dir runs/pilot1/annotations --out 
   aligning the copies with the source, so the model never does index arithmetic; a copy that does not match
   is rejected and retried.
 - Granularity: an ayah whose phrases are too coarse (mean > 2.4 Arabic words per phrase, or one phrase per clause)
-  gets one finer re-run (`--coarse-retries 0` disables); the finer result is kept. Ayahs still coarse are listed in
+  or that has a clause longer than 6 words (`--max-clause-words`), gets one finer re-run (`--coarse-retries 0` disables); the better result is kept. Ayahs still coarse are listed in
   `runs/<tag>/coarse.json`. This never blocks an ayah and sets no hard phrase-size limit.
+- `python3 tools/review_flags.py --annotations-dir runs/<tag>/annotations --out runs/<tag>/review_flags.md` prints
+  granularity numbers per surah next to the Mulk prototype's, and lists ayahs to review first (Bangla address register
+  differs from the reference; a phrase that looks like it dropped a word). Heuristic, never blocks.
+- The prompt tells the model the Bangla address register (respectful আপনি/…ুন vs plain তুমি/বল), computed from the
+  Bangla reference translation of each ayah.
+- Model routing: ayahs longer than 40 words (99 in the Quran) go one by one to `--long-model` (default Claude Sonnet 5.5);
+  everything else is batched on `--model` (Haiku 5.5). After the Haiku passes, ayahs still flagged (too coarse, or the
+  heuristic says meaning may be dropped / moved / doubled) get one run on `--escalate-model`; the better result is kept.
+  Empty string disables either. Remaining flags: `runs/<tag>/flags.json`. The chunker is NOT used to choose these
+  ayahs, so it stays an independent audit. Provenance records every model used.
 - The old two-pass prompts live in `prompts/two-pass/` as a fallback.
 
 ## Quickstart (sample)

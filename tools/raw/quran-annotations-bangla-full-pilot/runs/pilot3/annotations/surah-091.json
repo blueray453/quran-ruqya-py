@@ -1,0 +1,510 @@
+{
+  "schema_version": "1.0",
+  "conventions_version": "2.2",
+  "surah": 91,
+  "language": "en",
+  "provenance": {
+    "generator": "llm-annotation",
+    "model": "anthropic/claude-haiku-5.5 + anthropic/claude-sonnet-5.5",
+    "note": "Merged from raw LLM output by tools/collect.py."
+  },
+  "ayahs": {
+    "1": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "By the sun"
+            },
+            {
+              "words": [
+                2
+              ],
+              "en": "and its brightness,"
+            }
+          ]
+        }
+      ]
+    },
+    "2": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "and by the moon"
+            },
+            {
+              "words": [
+                2,
+                3
+              ],
+              "en": "when it follows it,"
+            }
+          ]
+        }
+      ]
+    },
+    "3": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "and by the day"
+            },
+            {
+              "words": [
+                2,
+                3
+              ],
+              "en": "when it displays it,"
+            }
+          ]
+        }
+      ]
+    },
+    "4": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "and by the night"
+            },
+            {
+              "words": [
+                2,
+                3
+              ],
+              "en": "when it covers it,"
+            }
+          ]
+        }
+      ]
+    },
+    "5": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "And by the sky"
+            },
+            {
+              "words": [
+                2
+              ],
+              "en": "and by Him who"
+            },
+            {
+              "words": [
+                3
+              ],
+              "en": "constructed it,"
+            }
+          ]
+        }
+      ]
+    },
+    "6": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "and by the earth"
+            },
+            {
+              "words": [
+                2,
+                3
+              ],
+              "en": "and by He who spread it,"
+            }
+          ]
+        }
+      ]
+    },
+    "7": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "and by the soul"
+            },
+            {
+              "words": [
+                2,
+                3
+              ],
+              "en": "and by He who proportioned it,"
+            }
+          ]
+        }
+      ]
+    },
+    "8": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "Then He inspired it"
+            },
+            {
+              "words": [
+                2
+              ],
+              "en": "with (knowledge of) its wickedness"
+            },
+            {
+              "words": [
+                3
+              ],
+              "en": "and its righteousness."
+            }
+          ]
+        }
+      ]
+    },
+    "9": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "Indeed, he succeeds"
+            },
+            {
+              "words": [
+                3,
+                4
+              ],
+              "en": "who purifies it,"
+            }
+          ]
+        }
+      ]
+    },
+    "10": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "And indeed, he fails"
+            },
+            {
+              "words": [
+                3,
+                4
+              ],
+              "en": "who buries it."
+            }
+          ]
+        }
+      ]
+    },
+    "11": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "Thamud denied"
+            },
+            {
+              "words": [
+                3
+              ],
+              "en": "by their transgression,"
+            }
+          ]
+        }
+      ]
+    },
+    "12": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "when there was sent forth"
+            },
+            {
+              "words": [
+                3
+              ],
+              "en": "the most wretched of them."
+            }
+          ]
+        }
+      ]
+    },
+    "13": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "But said"
+            },
+            {
+              "words": [
+                2
+              ],
+              "en": "to them"
+            },
+            {
+              "words": [
+                3
+              ],
+              "en": "the Messenger"
+            },
+            {
+              "words": [
+                4
+              ],
+              "en": "of Allah"
+            }
+          ]
+        },
+        {
+          "words": [
+            5,
+            6
+          ],
+          "phrases": [
+            {
+              "words": [
+                5
+              ],
+              "en": "“(Beware of) the she-camel"
+            },
+            {
+              "words": [
+                6
+              ],
+              "en": "of Allah"
+            }
+          ]
+        },
+        {
+          "words": [
+            7
+          ],
+          "phrases": [
+            {
+              "words": [
+                7
+              ],
+              "en": "and her drink.”"
+            }
+          ]
+        }
+      ]
+    },
+    "14": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "But they denied him,"
+            }
+          ]
+        },
+        {
+          "words": [
+            2
+          ],
+          "phrases": [
+            {
+              "words": [
+                2
+              ],
+              "en": "and they hamstrung her."
+            }
+          ]
+        },
+        {
+          "words": [
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "phrases": [
+            {
+              "words": [
+                3,
+                4,
+                5
+              ],
+              "en": "So their Lord destroyed them"
+            },
+            {
+              "words": [
+                6
+              ],
+              "en": "for their sin,"
+            },
+            {
+              "words": [
+                7
+              ],
+              "en": "and leveled them."
+            }
+          ]
+        }
+      ]
+    },
+    "15": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "And He does not fear"
+            },
+            {
+              "words": [
+                3
+              ],
+              "en": "its consequence."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

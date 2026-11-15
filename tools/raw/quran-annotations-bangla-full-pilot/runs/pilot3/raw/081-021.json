@@ -1,0 +1,1 @@
+{"key": "81:21", "model": "anthropic/claude-haiku-5.5", "clauses": [[{"words": [1], "en": "obeyed", "bn": "মান্য করা হয়"}], [{"words": [2], "en": "there,", "bn": "সেখানে,"}], [{"words": [3], "en": "and trustworthy.", "bn": "এবং বিশ্বস্ত।"}]], "coarse": false, "reasons": [], "refined": false, "escalated": false}

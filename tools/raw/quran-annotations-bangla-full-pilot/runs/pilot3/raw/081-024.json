@@ -1,0 +1,1 @@
+{"key": "81:24", "model": "anthropic/claude-sonnet-5.5", "clauses": [[{"words": [1, 2], "en": "And he is not,", "bn": "এবং তিনি নন"}, {"words": [3, 4], "en": "regarding the unseen,", "bn": "অদৃশ্য বিষয়ে"}, {"words": [5], "en": "a withholder.", "bn": "কৃপণ।"}]], "coarse": false, "reasons": [], "refined": false, "escalated": true}

@@ -1,0 +1,1 @@
+{"key": "91:12", "model": "anthropic/claude-haiku-5.5", "clauses": [[{"words": [1, 2], "en": "when", "bn": "যখন"}, {"words": [3], "en": "the most wretched of them was sent forth.", "bn": "তাদের সবচেয়ে হতভাগা ব্যক্তি তৎপর হয়ে উঠলো।"}]], "coarse": false, "reasons": [], "refined": false}

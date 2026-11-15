@@ -1,0 +1,1 @@
+{"key": "78:13", "model": "anthropic/claude-haiku-5.5", "clauses": [[{"words": [1], "en": "And We made", "bn": "এবং আমরা বানিয়েছি"}, {"words": [2, 3], "en": "a burning lamp.", "bn": "উজ্জ্বল প্রদীপ।"}]], "coarse": false, "reasons": [], "refined": false, "escalated": false}
