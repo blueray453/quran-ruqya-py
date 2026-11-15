@@ -110,6 +110,12 @@ def coarse_hint(norm, reasons, clause_limit):
 
 
 # ------------------------------------------------------------------ model call
+def auto_budget(words):
+    """Output-token cap for a request of `words` Arabic words (measured: ~33 tokens/word incl. English, Bangla and
+    the Arabic copy; the cap is ~2x that and costs nothing unless used)."""
+    return max(4000, min(32000, 60 * words + 2000))
+
+
 def reasoning_param(mode):
     """--reasoning / --long-reasoning / --escalate-reasoning value -> OpenRouter `reasoning` object (or None).
     off | none | minimal | low | medium | high | default | max:N (thinking-token budget)"""
@@ -215,8 +221,8 @@ def main():
     ap.add_argument('--workers', type=int, default=4)
     ap.add_argument('--max-phrase-words', type=int, default=0, help='optional: reject phrases longer than this (0 = no limit, default)')
     ap.add_argument('--retries', type=int, default=2, help='single-ayah retries for failed validation')
-    ap.add_argument('--max-tokens', type=int, default=8000)
-    ap.add_argument('--long-max-tokens', type=int, default=16000, help='output budget for long ayahs')
+    ap.add_argument('--max-tokens', type=int, default=0, help='output cap per request (0 = automatic from word count)')
+    ap.add_argument('--long-max-tokens', type=int, default=0, help='same for long ayahs (0 = automatic)')
     ap.add_argument('--mock-flaky', action='store_true', help='self-test: model fails at temperature 0 on some batches')
     ap.add_argument('--no-bn-wbw', action='store_true', help='omit Bangla word glosses (saves input tokens)')
     ap.add_argument('--no-cache', action='store_true', help='do not mark CONVENTIONS as cacheable')
@@ -297,8 +303,9 @@ def main():
                 text, u = mock_call(batch, src, temperature, args.mock_coarse)
             else:
                 mode = {'long': args.long_reasoning, 'escalate': args.escalate_reasoning}.get(cat, args.reasoning)
-                text, u = call_openrouter(args, system, user, temperature, model,
-                                          args.long_max_tokens if cat == 'long' else args.max_tokens, mode)
+                words = sum(src.n_words(*ay) for ay in batch)
+                budget = (args.long_max_tokens if cat == 'long' else args.max_tokens) or auto_budget(words)
+                text, u = call_openrouter(args, system, user, temperature, model, budget, mode)
         except Exception as e:
             rec.update(seconds=round(time.time() - t0, 1), error=str(e))
             log.write(json.dumps(rec, ensure_ascii=False) + '\n')
@@ -317,7 +324,7 @@ def main():
         usage['completion_tokens'] += u.get('completion_tokens', 0)
         usage['cost'] += u.get('cost') or 0
         usage['calls'] += 1
-        return parse_json_object(text)
+        return parse_json_object(text, [f'{s}:{a}' for s, a in batch])
 
     def settle(batch, temperature, hint=None, model=None, cat='main'):
         """Run one request; store validated ayahs; return [(ayah, errors)] that failed."""

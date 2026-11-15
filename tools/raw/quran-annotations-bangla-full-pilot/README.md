@@ -72,6 +72,10 @@ python3 tools/chunker_report.py --annotations-dir runs/pilot1/annotations --out 
   boundary falls on a phrase end inside it (English and Bangla identically; nothing is re-translated) and lists the
   boundaries that fall inside a phrase, which need a reviewer. It makes "clause ends also chunker ends" non-independent
   for the ayahs it touches (`conformed: [...]` is recorded); the planned EQTB/waqf fences remain independent.
+- Choosing the long-ayah threshold from data: `tools/sample_ayahs.py --out band_sample.txt --exclude pilot.txt` draws
+  a stratified sample (by Arabic words per ayah) from chunker-covered ayahs; run it on a model with
+  `--long-model '' --escalate-model '' --coarse-retries 0` and read the "By ayah length" table of
+  `tools/chunker_report.py`. Output budgets are automatic (about 60 tokens per word, floor 4000).
 - The old two-pass prompts live in `prompts/two-pass/` as a fallback.
 
 ## Quickstart (sample)

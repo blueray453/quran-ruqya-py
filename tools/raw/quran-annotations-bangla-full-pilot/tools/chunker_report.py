@@ -19,6 +19,7 @@ import argparse, glob, os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from ayahlib import ROOT, Src, load_json  # noqa: E402
 
+BANDS = [(1, 10), (11, 20), (21, 30), (31, 40), (41, 60), (61, 80), (81, 9999)]
 FEWSHOT = {'67:9', '67:15', '67:23'}   # appear in CONVENTIONS.md examples
 
 
@@ -47,6 +48,7 @@ def main():
     src = Src()
     toks, ends = load_chunks()
     lines, rows = [], []
+    band_stats = {b: [0, 0, 0, 0] for b in BANDS}     # ayahs, failing ayahs, chunk ends, failing ends
     tot = dict(ayahs=0, nochunk=0, misaligned=0, bad_ayahs=0, ok=0, phrase_end=0, inside=0,
                clause_ends=0, clause_ends_agreed=0)
 
@@ -70,6 +72,9 @@ def main():
             clause_end = {max(c['words']) for c in ay['clauses']}
             phrase_end = {max(p['words']) for c in ay['clauses'] for p in c['phrases']}
             ce = set(ends.get((s, a), []))
+            bs = band_stats[next(b for b in BANDS if b[0] <= n <= b[1])]
+            bs[0] += 1
+            bs[2] += len(ce)
             sc['clause_ends'] += len(clause_end)
             sc['clause_ends_agreed'] += len(clause_end & ce)
             bad = []
@@ -83,6 +88,8 @@ def main():
                     sc['inside'] += 1
                     bad.append((e, 'INSIDE-PHRASE'))
             if bad:
+                bs[1] += 1
+                bs[3] += len(bad)
                 sc['bad_ayahs'] += 1
                 words = {w: ar for w, ar, _, _ in src.words(s, a)}
                 frag = {}
@@ -113,6 +120,12 @@ def main():
     checked = tot['ayahs'] - tot['nochunk'] - tot['misaligned']
     head += ['', f'**Total:** {checked} ayahs checked ({tot["nochunk"]} without chunker coverage, {tot["misaligned"]} misaligned); '
              f'{tot["ok"]}/{n_ends} chunk ends land on clause ends; {tot["bad_ayahs"]} ayah(s) violate the fence.', '']
+    head += ['## By ayah length (Arabic words)', '', '| words | ayahs | ayahs failing | chunk ends | chunk ends failing |', '| --- | --- | --- | --- | --- |']
+    for (lo, hi), (na, nf, ne, nfe) in band_stats.items():
+        if na:
+            head.append(f'| {lo}-{hi if hi < 9999 else "+"} | {na} | {nf} ({nf / na:.0%}) | {ne} | {nfe} ({nfe / ne:.0%}) |' if ne
+                        else f'| {lo}-{hi if hi < 9999 else "+"} | {na} | {nf} | 0 | 0 |')
+    head.append('')
     report = '\n'.join(head + (['## Violations', ''] + lines if lines else []))
     print(report)
     if args.out:

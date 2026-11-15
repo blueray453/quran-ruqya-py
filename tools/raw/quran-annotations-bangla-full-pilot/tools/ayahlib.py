@@ -244,10 +244,29 @@ def normalise(clauses, n_words, need_bn=True, max_phrase_words=MAX_PHRASE_WORDS,
     return errs, out
 
 
-def parse_json_object(text):
-    t = text.strip()
-    t = re.sub(r'^```(?:json)?\s*|\s*```$', '', t)
-    i, j = t.find('{'), t.rfind('}')
-    if i < 0 or j < i:
+def parse_json_object(text, keys=None):
+    """First/last top-level JSON object in a reply. Tolerates fences, text around it and several objects in a
+    row ("Extra data"): the last object containing all of `keys` wins. A truncated or broken object still
+    raises the original JSONDecodeError (so retry hints can mention it)."""
+    t = re.sub(r'^```(?:json)?\s*|\s*```$', '', text.strip())
+    dec, objs, i = json.JSONDecoder(), [], 0
+    while True:
+        i = t.find('{', i)
+        if i < 0:
+            break
+        try:
+            obj, end = dec.raw_decode(t, i)
+        except json.JSONDecodeError:
+            if not objs:
+                raise
+            break
+        if isinstance(obj, dict):
+            objs.append(obj)
+        i = end
+    if not objs:
         raise ValueError('no JSON object in reply')
-    return json.loads(t[i:j + 1])
+    if keys:
+        full = [o for o in objs if all(k in o for k in keys)]
+        if full:
+            return full[-1]
+    return max(objs, key=lambda o: len(json.dumps(o)))
