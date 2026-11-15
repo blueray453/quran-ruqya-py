@@ -10,10 +10,13 @@ Annotate the following Quran ayah(s) according to the attached conventions.
 Your only structural task is to find the smallest meaningful Arabic syntactic phrases /
 semantic chunks. Do not segment clauses. Return one flat ordered list of chunks per ayah.
 
-For each chunk, copy its exact Arabic words into `ar`, then provide the English fragment
-in `en` and Bangla fragment in `bn`. Decide all boundaries from Arabic grammar and local
-meaning. Do not merge words merely to make a translation fragment more fluent, and do not
-split a grammatical unit just to reach a one-word average.
+For each chunk, return the inclusive source-word positions as `words: [start, end]`
+(use `[n]` for a one-word chunk), then provide the English fragment in `en` and Bangla
+fragment in `bn`. The numbered words in the input are authoritative. Do not copy, rewrite,
+normalize, or reproduce the Arabic text: the pipeline reconstructs exact Arabic from the
+source by these positions. Decide all boundaries from Arabic grammar and local meaning. Do
+not merge words merely to make a translation fragment more fluent, and do not split a
+grammatical unit just to reach a one-word average.
 
 {AYAH_BLOCKS}
 

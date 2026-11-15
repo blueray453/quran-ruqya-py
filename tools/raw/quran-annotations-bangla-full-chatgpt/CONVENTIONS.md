@@ -63,8 +63,9 @@ statistical target**. Other surahs and constructions can naturally differ.
   meaning, repeat meaning in two chunks, or leave a particle/verb/pronoun untranslated.
 - Every source word contributes to exactly one chunk. Attached pronouns are translated once,
   in the chunk containing their host word.
-- Word positions are inferred later from the Arabic copies. Copy the Arabic words exactly
-  from the input, preserving spelling and marks, and separate them with single spaces.
+- Use the numbered source-word positions to define every chunk. Return `[n]` for one word
+  or `[start, end]` for a contiguous inclusive range. Never reproduce the Arabic text; the
+  pipeline reconstructs the exact source spelling and marks from these positions.
 
 ## Order
 
@@ -110,22 +111,20 @@ is a flat, ordered list of chunk objects:
 ```json
 {
   "67:1": [
-    {"ar": "تَبَارَكَ", "en": "Blessed is", "bn": "বরকতময়"},
-    {"ar": "الَّذِىۡ", "en": "the One who", "bn": "যিনি"}
+    {"words": [1], "en": "Blessed is", "bn": "বরকতময়"},
+    {"words": [2, 2], "en": "the One who", "bn": "যিনি"}
   ]
 }
 ```
 
 Each chunk object has exactly these required fields:
 
-- `ar`: one or more consecutive Arabic words, copied exactly from the input in the same
-  order, separated by single spaces. Do not include word numbers or punctuation not present
-  in the source text.
+- `words`: one-based source-word positions. Use `[n]` for a single word, or
+  `[start, end]` for an inclusive contiguous range. Do not return non-contiguous positions.
 - `en`: non-empty English fragment translating only that span.
 - `bn`: non-empty Bangla fragment translating that same span.
 
-Across the list, the `ar` fields must reproduce every input word exactly once, in original
-order, with no gap, overlap, omission, duplication, or reordering. Do not return `words`
-positions; the pipeline derives them by aligning each `ar` copy to the source. Do not return
-clauses or nested arrays. Return valid JSON only. Inside text fragments, use curly quotation
+Across the list, the `words` ranges must cover every source word exactly once, in original
+order, with no gap, overlap, omission, duplication, or reordering. Never return Arabic text,
+clauses, or nested arrays. Return valid JSON only. Inside text fragments, use curly quotation
 marks, never a straight double quote.

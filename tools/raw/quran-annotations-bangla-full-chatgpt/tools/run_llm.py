@@ -8,8 +8,8 @@ Live run:
   export OPENROUTER_API_KEY=sk-or-...
   python3 tools/run_llm.py --ayahs 67:1-3 --tag pilot_chunks
 
-The model returns one flat list of {ar,en,bn} chunks per ayah. This script aligns each
-Arabic copy against the source words, validates exact tiling, and stores flat chunks.
+The model returns one flat list of {words,en,bn} chunks per ayah. Source word positions
+are validated directly; exact Arabic spelling is reconstructed from the source text.
 No clause segmentation or clause-size scoring is performed.
 """
 import argparse
@@ -230,8 +230,7 @@ def _prototype_chunks(s, a, src):
     out = []
     for en, bn in zip(en_chunks, bn_chunks):
         positions = en['words']
-        arabic = ' '.join(source[w - 1][1] for w in positions)
-        out.append({'ar': arabic, 'en': en['en'], 'bn': bn['bn']})
+        out.append({'words': positions, 'en': en['en'], 'bn': bn['bn']})
     return out
 
 
@@ -241,7 +240,7 @@ def mock_call(batch, src, coarse=False):
         assert s == 67, 'mock replay only contains the bundled Surah 67 sample'
         chunks = _prototype_chunks(s, a, src)
         if coarse:
-            chunks = [{'ar': ' '.join(c['ar'] for c in chunks),
+            chunks = [{'words': [1, src.n_words(s, a)],
                        'en': ' '.join(c['en'] for c in chunks),
                        'bn': ' '.join(c['bn'] for c in chunks)}]
         out[f'{s}:{a}'] = chunks
@@ -373,6 +372,88 @@ def main():
         usage['calls'] += 1
         return parse_json_object(text, [f'{s}:{a}' for s, a in batch])
 
+    def repair_missing_bn(s, a, chunks, model, cat):
+        """Fill only blank Bangla fragments; the model is forbidden to alter chunk spans."""
+        from ayahlib import expand_words, register_line
+        key = f'{s}:{a}'
+        missing = []
+        src_words = src.words(s, a)
+        def valid_bn(value):
+            if not isinstance(value, str) or not value.strip():
+                return False
+            has_bn = any('\u0980' <= ch <= '\u09FF' for ch in value)
+            has_ar = any(('\u0600' <= ch <= '\u06FF' or '\u0750' <= ch <= '\u077F'
+                          or '\u08A0' <= ch <= '\u08FF' or '\uFB50' <= ch <= '\uFDFF'
+                          or '\uFE70' <= ch <= '\uFEFF') for ch in value)
+            return has_bn and not has_ar
+
+        for idx, chunk in enumerate(chunks, 1):
+            if not isinstance(chunk, dict) or valid_bn(chunk.get('bn')):
+                continue
+            try:
+                positions = expand_words(chunk.get('words'))
+            except Exception:
+                # Legacy `ar`-based replies are handled by normal validation/retry.
+                continue
+            span_lines = [f'{w}. {ar} — Bangla gloss: {gb}' for w, ar, ge, gb in src_words
+                          if w in positions]
+            missing.append((idx, positions, chunk.get('en', ''), span_lines))
+        if not missing or args.mock_replay:
+            return
+
+        ayah_text = '\n'.join(f'{w}. {ar} — {ge} — {gb}' for w, ar, ge, gb in src_words)
+        register = register_line(src.tr_bn[f'{s}:{a}']) or 'Follow the natural register of the supplied Bangla reference.'
+        requested = []
+        for idx, positions, en, span_lines in missing:
+            requested.append(
+                f'chunk {idx}, source positions {positions[0]}-{positions[-1]} (inclusive)\n'
+                f'English fragment: {en}\n' + '\n'.join(span_lines)
+            )
+        user = (
+            f'Fill ONLY the missing Bangla translation fragments for Quran ayah {key}.\n'
+            'Chunk boundaries and English fragments are already fixed. Do not segment, merge, '
+            'split, or reorder anything. Return a JSON object with this exact shape: '
+            f'{{"{key}": {{"<chunk-index>": "Bangla fragment"}}}}. Include every requested '
+            'chunk index exactly once. Use Bangla script only, no Arabic script or romanisation. '
+            'Each fragment must translate only its own numbered Arabic source span.\n\n'
+            f'Complete numbered ayah words:\n{ayah_text}\n\n{register}\n\n'
+            'Missing fragments to fill:\n' + '\n\n'.join(requested)
+        )
+        started = time.time()
+        rec = {'keys': [key], 'model': model or args.model, 'category': 'bn_repair',
+               'missing_chunks': [x[0] for x in missing]}
+        try:
+            text, u = call_openrouter(
+                args,
+                'You are a precise Quranic Bangla translation assistant. Translate only the given source spans. Return valid JSON only.',
+                user, 0.0, model or args.model,
+                max(1200, min(6000, 500 * len(missing))), 'off'
+            )
+            parsed = parse_json_object(text)
+            translations = parsed.get(key, {}) if isinstance(parsed, dict) else {}
+            if not isinstance(translations, dict):
+                raise ValueError('Bangla repair response must map chunk indices to strings')
+            for idx, _, _, _ in missing:
+                value = translations.get(str(idx), translations.get(idx))
+                if isinstance(value, str) and value.strip():
+                    chunks[idx - 1]['bn'] = value.strip()
+            rec.update(seconds=round(time.time() - started, 1), usage=u, reply=text)
+            cat_stats = by_cat.setdefault('bn_repair', {'calls': 0, 'cost': 0.0, 'in': 0, 'out': 0, 'reason': 0})
+            cat_stats['calls'] += 1
+            cat_stats['cost'] += u.get('cost') or 0
+            cat_stats['in'] += u.get('prompt_tokens', 0)
+            cat_stats['out'] += u.get('completion_tokens', 0)
+            cat_stats['reason'] += (u.get('completion_tokens_details') or {}).get('reasoning_tokens', 0) or 0
+            usage['prompt_tokens'] += u.get('prompt_tokens', 0)
+            usage['completion_tokens'] += u.get('completion_tokens', 0)
+            usage['cost'] += u.get('cost') or 0
+            usage['calls'] += 1
+        except Exception as exc:
+            rec.update(seconds=round(time.time() - started, 1), error=str(exc))
+            print(f'  {key}: Bangla-only repair failed: {exc}')
+        log.write(json.dumps(rec, ensure_ascii=False) + '\n')
+        log.flush()
+
     def settle(batch, temperature, hint=None, model=None, cat='main'):
         failed = []
         try:
@@ -381,10 +462,12 @@ def main():
             print(f'  request {batch[0]}..{batch[-1]} failed: {exc}')
             msg = f'reply could not be used ({str(exc)[:140]})'
             if isinstance(exc, json.JSONDecodeError) or 'JSON' in str(exc):
-                msg += '; return one valid JSON object with a flat list of {ar,en,bn} objects per ayah'
+                msg += '; return one valid JSON object with a flat list of {words,en,bn} objects per ayah'
             return [(ay, [msg]) for ay in batch]
         for s, a in batch:
             key = f'{s}:{a}'
+            if key in reply and isinstance(reply.get(key), list):
+                repair_missing_bn(s, a, reply[key], model or args.model, cat)
             errs, chunks = (normalise(reply.get(key), src.n_words(s, a),
                                       max_phrase_words=args.max_phrase_words,
                                       src_words=src.align_words(s, a))

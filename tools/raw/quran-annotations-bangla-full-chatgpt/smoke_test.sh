@@ -22,7 +22,7 @@ EOF
 fi
 
 # The required examples count toward the two-per-band target.
-INCLUDE='2:255,2:282,2:286,4:176,5:106-107'
+INCLUDE='67,2:255,2:282,2:286,4:176,5:106-107'
 BANDS='1-10:2,11-20:2,21-30:2,31-40:2,41-50:2,51-60:2,61-70:2,71-80:2,81-90:2,91-100:2,101-110:2,111-120:2,121-130:2'
 
 rm -rf "runs/${TAG}"
@@ -44,12 +44,12 @@ python3 tools/run_llm.py \
   --escalate-model '' \
   --max-ayahs 1 \
   --workers 2 \
-  --reasoning low \
-  --long-reasoning low \
-  --retries 1 \
+  --reasoning off \
+  --long-reasoning off \
+  --retries 2 \
   --coarse-retries 0
 
-printf '\n=== 3. Verify every selected ayah received a validated response ===\n'
+printf '\n=== 3. Verify every selected ayah (including all 30 of Surah Al-Mulk) received a validated response ===\n'
 python3 - "$TAG" <<'PY'
 import json, sys
 from pathlib import Path

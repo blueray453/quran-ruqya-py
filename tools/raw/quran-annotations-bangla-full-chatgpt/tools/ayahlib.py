@@ -203,9 +203,9 @@ MAX_PHRASE_WORDS = 0   # soft review guidance is preferred; do not hard-split va
 
 
 def normalise(chunks, n_words, need_bn=True, max_phrase_words=MAX_PHRASE_WORDS, src_words=None):
-    """Validate one ayah's flat list of {ar,en,bn} chunks.
+    """Validate one ayah's flat list of {words,en,bn} chunks (legacy {ar,en,bn} accepted).
 
-    Word positions are derived from each exact Arabic copy. Returns
+    New model output supplies 1-based source-word ranges. Returns
     (errors, [{words: [...], en: ..., bn: ...}, ...]). `max_phrase_words` remains as an
     optional strict fence for callers that explicitly request it; the normal pipeline uses 0.
     """
@@ -217,16 +217,23 @@ def normalise(chunks, n_words, need_bn=True, max_phrase_words=MAX_PHRASE_WORDS, 
             errs.append(f'chunk {ci + 1}: expected an object')
             return errs, out
         try:
-            if src_words is not None:
+            if isinstance(chunk.get('words'), list):
+                # New contract: model returns source positions, not a copied Arabic string.
+                # This avoids orthographic/diacritic transcription errors entirely.
+                w = expand_words(chunk['words'])
+            elif src_words is not None:
+                # Backward compatibility for older raw replies that used `ar` copies.
                 if not isinstance(chunk.get('ar'), str) or not chunk['ar'].strip():
-                    raise ValueError('missing exact Arabic copy in `ar`')
+                    raise ValueError('missing `words` positions (new contract) or legacy Arabic copy in `ar`')
                 w = align_phrase(chunk['ar'], src_words, expect)
                 exact_source = ' '.join(src_words[pos - 1][2] for pos in w)
                 if clean_ar(chunk['ar']) != exact_source:
-                    raise ValueError(f'Arabic copy is not exact for words {w[0]}-{w[-1]}; '
+                    raise ValueError(f'legacy Arabic copy is not exact for words {w[0]}-{w[-1]}; '
                                      f'copy source spelling and marks exactly: {exact_source!r}')
             else:
                 w = expand_words(chunk.get('words'))
+            if w[0] < 1 or w[-1] > n_words:
+                raise ValueError(f'word range {w[0]}-{w[-1]} is outside ayah bounds 1-{n_words}')
         except (ValueError, AttributeError) as e:
             errs.append(f'chunk {ci + 1}: {e}')
             return errs, out

@@ -10,15 +10,16 @@ New annotation shape:
 ```json
 {
   "67:1": [
-    {"ar": "تَبَارَكَ", "en": "Blessed is", "bn": "বরকতময়"},
-    {"ar": "الَّذِىۡ", "en": "the One who", "bn": "যিনি"}
+    {"words": [1], "en": "Blessed is", "bn": "বরকতময়"},
+    {"words": [2], "en": "the One who", "bn": "যিনি"}
   ]
 }
 ```
 
-The pipeline derives word positions from the Arabic copies, checks exact coverage, stores
-flat `chunks[]`, and creates separate English and Bangla files. Legacy `clauses[].phrases[]`
-files are still readable by QA and build tools, but all new model output is flat.
+The model returns one-based source-word positions, not copied Arabic text. The pipeline
+reconstructs the exact Arabic from the pinned source, checks full word coverage, stores flat
+`chunks[]`, and creates separate English and Bangla files. Legacy `clauses[].phrases[]`
+files remain readable by QA and build tools.
 
 ## 1. Setup
 
@@ -46,8 +47,9 @@ It includes these required ayahs:
 - An-Nisa: 4:176
 - Al-Ma'idah: 5:106–107
 
-It also selects up to two ayahs from each 10-word length band (1–10 through 121–130).
-The fixed examples count toward their own bands. The source corpus has only one ayah in
+It also includes **all 30 ayahs of Surah Al-Mulk** (the complete bundled prototype/reference
+surah) and selects at least two ayahs from each 10-word length band (1–10 through 121–130)
+where enough ayahs exist. All fixed ayahs and the Al-Mulk ayahs count toward their bands. The source corpus has only one ayah in
 81–90 words, none in 91–120, and only one in 121–130, so those bands cannot provide two
 distinct examples. The sample manifest records the actual selections and word counts.
 
@@ -56,9 +58,12 @@ export OPENROUTER_API_KEY="sk-or-..."
 ./smoke_test.sh
 ```
 
-The live test uses one ayah per request, `openai/gpt-6-luna` for every length, low reasoning, no premium-model escalation, and no automatic second-pass refinement. It then validates
-word coverage, Bangla overlay alignment, source hashes, review flags, chunker diagnostics,
-and generated reader data. OpenRouter reports actual token usage and cost in the runner output.
+The live test uses one ayah per request, `openai/gpt-6-luna` for every length, reasoning off,
+no premium-model escalation, and no automatic granularity refinement. The model returns word
+positions instead of Arabic copies. If a Bangla fragment is blank, the runner requests only
+that missing translation while keeping all chunk boundaries fixed. It then validates word
+coverage, Bangla overlay alignment, source hashes, review flags, chunker diagnostics, and
+generated reader data. OpenRouter reports actual token usage and cost in the runner output.
 
 Results are written to `runs/gpt6_luna_smoke/`. To use a different tag, set `TAG` before
 running the script. Re-running with the same tag deletes and recreates that generated run
@@ -102,9 +107,10 @@ with the same tag skips completed ayahs. New output is written under `runs/<tag>
 1. **Prompt** — the model sees Arabic words, English/Bangla word glosses, whole-ayah
    translations, and `CONVENTIONS.md`. It does not see chunker/treebank output or linguistic
    annotation labels.
-2. **Segment** — model returns a flat ordered list of `{ar, en, bn}` chunk objects.
-3. **Validate** — the pipeline aligns each Arabic copy to the original words and verifies
-   exact word coverage, order, non-empty translations, and script constraints.
+2. **Segment** — model returns a flat ordered list of `{words, en, bn}` chunk objects, with
+   one-based inclusive word-position ranges.
+3. **Validate** — the pipeline verifies exact word coverage, order, non-empty translations,
+   and script constraints. Arabic is reconstructed from the source, not copied from the model.
 4. **Refine/escalate** — only phrase-chunk granularity and meaning-preservation checks are
    used. No clause-size metric or clause boundary is optimized.
 5. **Merge** — `tools/collect.py` creates a flat English `chunks[]` file and a separate
@@ -124,7 +130,7 @@ python3 ayah_length_counter.py
 python3 tools/run_llm.py --ayahs 2:282 --tag preview --dry-run
 
 # Sample by word-length band, retaining fixed test cases
-python3 tools/sample_ayahs.py --include '2:255,2:282,2:286,4:176,5:106-107' --out band_sample.txt
+python3 tools/sample_ayahs.py --include '67,2:255,2:282,2:286,4:176,5:106-107' --out band_sample.txt
 
 # Inspect chunker overlap (diagnostic only)
 python3 tools/chunker_report.py --annotations-dir runs/pilot_chunks/annotations --out report.md
