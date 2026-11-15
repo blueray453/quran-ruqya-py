@@ -1,0 +1,1587 @@
+{
+  "schema_version": "1.0",
+  "conventions_version": "2.2",
+  "surah": 78,
+  "language": "en",
+  "provenance": {
+    "generator": "llm-annotation",
+    "model": "anthropic/claude-haiku-5.5",
+    "note": "Merged from raw LLM output by tools/collect.py."
+  },
+  "ayahs": {
+    "1": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "About what are they asking one another?"
+            }
+          ]
+        }
+      ]
+    },
+    "2": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "About the news"
+            },
+            {
+              "words": [
+                3
+              ],
+              "en": "—the great one—"
+            }
+          ]
+        }
+      ]
+    },
+    "3": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2,
+                3
+              ],
+              "en": "about which they"
+            },
+            {
+              "words": [
+                4
+              ],
+              "en": "are in disagreement."
+            }
+          ]
+        }
+      ]
+    },
+    "4": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "No!"
+            }
+          ]
+        },
+        {
+          "words": [
+            2
+          ],
+          "phrases": [
+            {
+              "words": [
+                2
+              ],
+              "en": "They will soon know."
+            }
+          ]
+        }
+      ]
+    },
+    "5": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "Then,"
+            }
+          ]
+        },
+        {
+          "words": [
+            2
+          ],
+          "phrases": [
+            {
+              "words": [
+                2
+              ],
+              "en": "no!"
+            }
+          ]
+        },
+        {
+          "words": [
+            3
+          ],
+          "phrases": [
+            {
+              "words": [
+                3
+              ],
+              "en": "They will soon know."
+            }
+          ]
+        }
+      ]
+    },
+    "6": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "Have We not made"
+            },
+            {
+              "words": [
+                3
+              ],
+              "en": "the earth"
+            },
+            {
+              "words": [
+                4
+              ],
+              "en": "a resting place?"
+            }
+          ]
+        }
+      ]
+    },
+    "7": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "And the mountains"
+            },
+            {
+              "words": [
+                2
+              ],
+              "en": "as stakes?"
+            }
+          ]
+        }
+      ]
+    },
+    "8": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "And We created you"
+            },
+            {
+              "words": [
+                2
+              ],
+              "en": "in pairs,"
+            }
+          ]
+        }
+      ]
+    },
+    "9": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "And We made your sleep"
+            }
+          ]
+        },
+        {
+          "words": [
+            3
+          ],
+          "phrases": [
+            {
+              "words": [
+                3
+              ],
+              "en": "a means of rest."
+            }
+          ]
+        }
+      ]
+    },
+    "10": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "And We made the night"
+            }
+          ]
+        },
+        {
+          "words": [
+            3
+          ],
+          "phrases": [
+            {
+              "words": [
+                3
+              ],
+              "en": "a covering."
+            }
+          ]
+        }
+      ]
+    },
+    "11": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "And We made the day"
+            }
+          ]
+        },
+        {
+          "words": [
+            3
+          ],
+          "phrases": [
+            {
+              "words": [
+                3
+              ],
+              "en": "a time for livelihood."
+            }
+          ]
+        }
+      ]
+    },
+    "12": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "And We constructed above you"
+            }
+          ]
+        },
+        {
+          "words": [
+            3,
+            4
+          ],
+          "phrases": [
+            {
+              "words": [
+                3,
+                4
+              ],
+              "en": "seven strong [heavens]."
+            }
+          ]
+        }
+      ]
+    },
+    "13": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "And We made a lamp"
+            }
+          ]
+        },
+        {
+          "words": [
+            3
+          ],
+          "phrases": [
+            {
+              "words": [
+                3
+              ],
+              "en": "burning brightly."
+            }
+          ]
+        }
+      ]
+    },
+    "14": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "And We sent down"
+            },
+            {
+              "words": [
+                2,
+                3
+              ],
+              "en": "from the rain clouds"
+            }
+          ]
+        },
+        {
+          "words": [
+            4,
+            5
+          ],
+          "phrases": [
+            {
+              "words": [
+                4
+              ],
+              "en": "water"
+            },
+            {
+              "words": [
+                5
+              ],
+              "en": "pouring abundantly,"
+            }
+          ]
+        }
+      ]
+    },
+    "15": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "That We may bring forth thereby"
+            }
+          ]
+        },
+        {
+          "words": [
+            3,
+            4
+          ],
+          "phrases": [
+            {
+              "words": [
+                3,
+                4
+              ],
+              "en": "grain and vegetation."
+            }
+          ]
+        }
+      ]
+    },
+    "16": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "And gardens of thick foliage."
+            }
+          ]
+        }
+      ]
+    },
+    "17": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "Indeed,"
+            },
+            {
+              "words": [
+                2
+              ],
+              "en": "the Day"
+            },
+            {
+              "words": [
+                3
+              ],
+              "en": "of Judgment"
+            }
+          ]
+        },
+        {
+          "words": [
+            4,
+            5
+          ],
+          "phrases": [
+            {
+              "words": [
+                4
+              ],
+              "en": "is"
+            },
+            {
+              "words": [
+                5
+              ],
+              "en": "an appointed time -"
+            }
+          ]
+        }
+      ]
+    },
+    "18": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "On the Day"
+            },
+            {
+              "words": [
+                2
+              ],
+              "en": "when the trumpet"
+            },
+            {
+              "words": [
+                3,
+                4
+              ],
+              "en": "is blown"
+            }
+          ]
+        },
+        {
+          "words": [
+            5,
+            6
+          ],
+          "phrases": [
+            {
+              "words": [
+                5
+              ],
+              "en": "and you will come"
+            },
+            {
+              "words": [
+                6
+              ],
+              "en": "forth in crowds,"
+            }
+          ]
+        }
+      ]
+    },
+    "19": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "And the heaven will be opened,"
+            }
+          ]
+        },
+        {
+          "words": [
+            3,
+            4
+          ],
+          "phrases": [
+            {
+              "words": [
+                3,
+                4
+              ],
+              "en": "and it will become gateways."
+            }
+          ]
+        }
+      ]
+    },
+    "20": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "And the mountains will be set in motion,"
+            }
+          ]
+        },
+        {
+          "words": [
+            3,
+            4
+          ],
+          "phrases": [
+            {
+              "words": [
+                3,
+                4
+              ],
+              "en": "and they will become a mirage."
+            }
+          ]
+        }
+      ]
+    },
+    "21": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "Indeed, Hell"
+            }
+          ]
+        },
+        {
+          "words": [
+            3,
+            4
+          ],
+          "phrases": [
+            {
+              "words": [
+                3,
+                4
+              ],
+              "en": "has been lying in wait,"
+            }
+          ]
+        }
+      ]
+    },
+    "22": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "for the transgressors"
+            }
+          ]
+        },
+        {
+          "words": [
+            2
+          ],
+          "phrases": [
+            {
+              "words": [
+                2
+              ],
+              "en": "a place of return."
+            }
+          ]
+        }
+      ]
+    },
+    "23": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "They will remain therein"
+            }
+          ]
+        },
+        {
+          "words": [
+            3
+          ],
+          "phrases": [
+            {
+              "words": [
+                3
+              ],
+              "en": "for ages."
+            }
+          ]
+        }
+      ]
+    },
+    "24": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "They will not taste"
+            },
+            {
+              "words": [
+                3
+              ],
+              "en": "therein"
+            },
+            {
+              "words": [
+                4
+              ],
+              "en": "any coolness,"
+            }
+          ]
+        },
+        {
+          "words": [
+            5,
+            6
+          ],
+          "phrases": [
+            {
+              "words": [
+                5,
+                6
+              ],
+              "en": "nor any drink."
+            }
+          ]
+        }
+      ]
+    },
+    "25": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "Except scalding water"
+            }
+          ]
+        },
+        {
+          "words": [
+            3
+          ],
+          "phrases": [
+            {
+              "words": [
+                3
+              ],
+              "en": "and [foul] purulence -"
+            }
+          ]
+        }
+      ]
+    },
+    "26": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "A recompense"
+            }
+          ]
+        },
+        {
+          "words": [
+            2
+          ],
+          "phrases": [
+            {
+              "words": [
+                2
+              ],
+              "en": "appropriate."
+            }
+          ]
+        }
+      ]
+    },
+    "27": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "Indeed, they were"
+            }
+          ]
+        },
+        {
+          "words": [
+            3,
+            4,
+            5
+          ],
+          "phrases": [
+            {
+              "words": [
+                3,
+                4
+              ],
+              "en": "not expecting"
+            },
+            {
+              "words": [
+                5
+              ],
+              "en": "an account,"
+            }
+          ]
+        }
+      ]
+    },
+    "28": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "And they denied"
+            },
+            {
+              "words": [
+                2
+              ],
+              "en": "Our Signs"
+            },
+            {
+              "words": [
+                3
+              ],
+              "en": "with [emphatic] denial."
+            }
+          ]
+        }
+      ]
+    },
+    "29": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "And all things,"
+            }
+          ]
+        },
+        {
+          "words": [
+            3,
+            4
+          ],
+          "phrases": [
+            {
+              "words": [
+                3
+              ],
+              "en": "We have enumerated"
+            },
+            {
+              "words": [
+                4
+              ],
+              "en": "in writing."
+            }
+          ]
+        }
+      ]
+    },
+    "30": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "So taste [the penalty],"
+            }
+          ]
+        },
+        {
+          "words": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "phrases": [
+            {
+              "words": [
+                2,
+                3
+              ],
+              "en": "and never will We increase you"
+            },
+            {
+              "words": [
+                4,
+                5
+              ],
+              "en": "except in torment."
+            }
+          ]
+        }
+      ]
+    },
+    "31": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "Indeed, for the righteous"
+            }
+          ]
+        },
+        {
+          "words": [
+            3
+          ],
+          "phrases": [
+            {
+              "words": [
+                3
+              ],
+              "en": "is attainment,"
+            }
+          ]
+        }
+      ]
+    },
+    "32": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "gardens"
+            }
+          ]
+        },
+        {
+          "words": [
+            2
+          ],
+          "phrases": [
+            {
+              "words": [
+                2
+              ],
+              "en": "and grapevines."
+            }
+          ]
+        }
+      ]
+    },
+    "33": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "And young women of equal age,"
+            }
+          ]
+        }
+      ]
+    },
+    "34": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "and a cup full (to the brim)."
+            }
+          ]
+        }
+      ]
+    },
+    "35": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2,
+                3
+              ],
+              "en": "They will not hear therein"
+            },
+            {
+              "words": [
+                4
+              ],
+              "en": "any vain talk"
+            }
+          ]
+        },
+        {
+          "words": [
+            5,
+            6
+          ],
+          "phrases": [
+            {
+              "words": [
+                5,
+                6
+              ],
+              "en": "or any falsehood,"
+            }
+          ]
+        }
+      ]
+    },
+    "36": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "As a reward"
+            },
+            {
+              "words": [
+                2,
+                3
+              ],
+              "en": "from your Lord,"
+            }
+          ]
+        },
+        {
+          "words": [
+            4,
+            5
+          ],
+          "phrases": [
+            {
+              "words": [
+                4
+              ],
+              "en": "a gift"
+            },
+            {
+              "words": [
+                5
+              ],
+              "en": "according to account,"
+            }
+          ]
+        }
+      ]
+    },
+    "37": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "Lord"
+            }
+          ]
+        },
+        {
+          "words": [
+            2,
+            3
+          ],
+          "phrases": [
+            {
+              "words": [
+                2
+              ],
+              "en": "of the heavens"
+            },
+            {
+              "words": [
+                3
+              ],
+              "en": "and the earth,"
+            }
+          ]
+        },
+        {
+          "words": [
+            4,
+            5
+          ],
+          "phrases": [
+            {
+              "words": [
+                4,
+                5
+              ],
+              "en": "and whatever is between them,"
+            }
+          ]
+        },
+        {
+          "words": [
+            6
+          ],
+          "phrases": [
+            {
+              "words": [
+                6
+              ],
+              "en": "the Most Gracious."
+            }
+          ]
+        },
+        {
+          "words": [
+            7,
+            8,
+            9,
+            10
+          ],
+          "phrases": [
+            {
+              "words": [
+                7,
+                8
+              ],
+              "en": "They will have no power"
+            },
+            {
+              "words": [
+                9,
+                10
+              ],
+              "en": "to address Him."
+            }
+          ]
+        }
+      ]
+    },
+    "38": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "en": "On the Day the Spirit and the angels will stand in rows,"
+            }
+          ]
+        },
+        {
+          "words": [
+            6,
+            7
+          ],
+          "phrases": [
+            {
+              "words": [
+                6,
+                7
+              ],
+              "en": "none will speak"
+            }
+          ]
+        },
+        {
+          "words": [
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "phrases": [
+            {
+              "words": [
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "en": "except one whom the Most Merciful permits,"
+            }
+          ]
+        },
+        {
+          "words": [
+            13,
+            14
+          ],
+          "phrases": [
+            {
+              "words": [
+                13,
+                14
+              ],
+              "en": "and he will say what is right."
+            }
+          ]
+        }
+      ]
+    },
+    "39": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "That"
+            },
+            {
+              "words": [
+                2
+              ],
+              "en": "is the Day"
+            },
+            {
+              "words": [
+                3
+              ],
+              "en": "the True."
+            }
+          ]
+        },
+        {
+          "words": [
+            4,
+            5
+          ],
+          "phrases": [
+            {
+              "words": [
+                4,
+                5
+              ],
+              "en": "So whoever wills,"
+            }
+          ]
+        },
+        {
+          "words": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "phrases": [
+            {
+              "words": [
+                6
+              ],
+              "en": "let him take"
+            },
+            {
+              "words": [
+                7,
+                8
+              ],
+              "en": "to his Lord"
+            },
+            {
+              "words": [
+                9
+              ],
+              "en": "a way of return."
+            }
+          ]
+        }
+      ]
+    },
+    "40": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "Indeed, We have warned you"
+            },
+            {
+              "words": [
+                3,
+                4
+              ],
+              "en": "of an impending punishment."
+            }
+          ]
+        },
+        {
+          "words": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "phrases": [
+            {
+              "words": [
+                5
+              ],
+              "en": "On the Day"
+            },
+            {
+              "words": [
+                6,
+                7
+              ],
+              "en": "a man will see"
+            },
+            {
+              "words": [
+                8,
+                9,
+                10
+              ],
+              "en": "what his hands have sent forth,"
+            }
+          ]
+        },
+        {
+          "words": [
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "phrases": [
+            {
+              "words": [
+                11,
+                12
+              ],
+              "en": "and the disbeliever will say,"
+            },
+            {
+              "words": [
+                13,
+                14,
+                15
+              ],
+              "en": "“Oh, I wish I were dust!”"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

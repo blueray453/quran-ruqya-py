@@ -1,0 +1,1 @@
+{"key": "67:25", "model": "anthropic/claude-haiku-5.5", "clauses": [[{"words": [1], "en": "And they say,", "bn": "আর তারা বলে,"}], [{"words": [2], "en": "“When", "bn": "‘কখন"}, {"words": [3, 4], "en": "is this promise", "bn": "এই প্রতিশ্রুতি"}, {"words": [5, 6, 7], "en": "if you are truthful?”", "bn": "তোমরা যদি সত্যবাদী হও?’"}]], "coarse": false, "refined": true}

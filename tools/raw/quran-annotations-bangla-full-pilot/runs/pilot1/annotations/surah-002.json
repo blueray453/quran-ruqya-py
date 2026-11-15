@@ -1,0 +1,1506 @@
+{
+  "schema_version": "1.0",
+  "conventions_version": "2.2",
+  "surah": 2,
+  "language": "en",
+  "provenance": {
+    "generator": "llm-annotation",
+    "model": "anthropic/claude-haiku-5.5",
+    "note": "Merged from raw LLM output by tools/collect.py."
+  },
+  "ayahs": {
+    "255": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "Allah"
+            }
+          ]
+        },
+        {
+          "words": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "phrases": [
+            {
+              "words": [
+                2,
+                3
+              ],
+              "en": "there is no deity"
+            },
+            {
+              "words": [
+                4,
+                5
+              ],
+              "en": "except Him,"
+            }
+          ]
+        },
+        {
+          "words": [
+            6,
+            7
+          ],
+          "phrases": [
+            {
+              "words": [
+                6,
+                7
+              ],
+              "en": "the Ever-Living, the Sustainer of all that exists."
+            }
+          ]
+        },
+        {
+          "words": [
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "phrases": [
+            {
+              "words": [
+                8,
+                9
+              ],
+              "en": "Neither overtakes Him"
+            },
+            {
+              "words": [
+                10,
+                11,
+                12
+              ],
+              "en": "drowsiness nor sleep."
+            }
+          ]
+        },
+        {
+          "words": [
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+          ],
+          "phrases": [
+            {
+              "words": [
+                13,
+                14,
+                15,
+                16
+              ],
+              "en": "To Him belongs whatever is in the heavens"
+            },
+            {
+              "words": [
+                17,
+                18,
+                19
+              ],
+              "en": "and whatever is on the earth."
+            }
+          ]
+        },
+        {
+          "words": [
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26
+          ],
+          "phrases": [
+            {
+              "words": [
+                20,
+                21,
+                22
+              ],
+              "en": "Who is it"
+            },
+            {
+              "words": [
+                23,
+                24
+              ],
+              "en": "that can intercede with Him"
+            },
+            {
+              "words": [
+                25,
+                26
+              ],
+              "en": "except by His permission?"
+            }
+          ]
+        },
+        {
+          "words": [
+            27,
+            28,
+            29,
+            30,
+            31,
+            32
+          ],
+          "phrases": [
+            {
+              "words": [
+                27,
+                28,
+                29,
+                30
+              ],
+              "en": "He knows what is before them"
+            },
+            {
+              "words": [
+                31,
+                32
+              ],
+              "en": "and what is behind them."
+            }
+          ]
+        },
+        {
+          "words": [
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40
+          ],
+          "phrases": [
+            {
+              "words": [
+                33,
+                34
+              ],
+              "en": "And they do not encompass"
+            },
+            {
+              "words": [
+                35,
+                36,
+                37
+              ],
+              "en": "anything of His knowledge"
+            },
+            {
+              "words": [
+                38,
+                39,
+                40
+              ],
+              "en": "except what He wills."
+            }
+          ]
+        },
+        {
+          "words": [
+            41,
+            42,
+            43,
+            44
+          ],
+          "phrases": [
+            {
+              "words": [
+                41,
+                42
+              ],
+              "en": "His Kursī extends"
+            },
+            {
+              "words": [
+                43,
+                44
+              ],
+              "en": "over the heavens and the earth,"
+            }
+          ]
+        },
+        {
+          "words": [
+            45,
+            46,
+            47
+          ],
+          "phrases": [
+            {
+              "words": [
+                45,
+                46
+              ],
+              "en": "and their preservation does not tire Him,"
+            },
+            {
+              "words": [
+                47
+              ],
+              "en": "the guarding of both of them."
+            }
+          ]
+        },
+        {
+          "words": [
+            48,
+            49,
+            50
+          ],
+          "phrases": [
+            {
+              "words": [
+                48,
+                49,
+                50
+              ],
+              "en": "And He is the Most High, the Most Great."
+            }
+          ]
+        }
+      ]
+    },
+    "282": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2,
+                3
+              ],
+              "en": "O you who have believed,"
+            }
+          ]
+        },
+        {
+          "words": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "phrases": [
+            {
+              "words": [
+                4,
+                5
+              ],
+              "en": "when you contract"
+            },
+            {
+              "words": [
+                6
+              ],
+              "en": "a debt"
+            },
+            {
+              "words": [
+                7,
+                8,
+                9
+              ],
+              "en": "for a specified term,"
+            }
+          ]
+        },
+        {
+          "words": [
+            10
+          ],
+          "phrases": [
+            {
+              "words": [
+                10
+              ],
+              "en": "then write it down."
+            }
+          ]
+        },
+        {
+          "words": [
+            11,
+            12,
+            13,
+            14
+          ],
+          "phrases": [
+            {
+              "words": [
+                11
+              ],
+              "en": "And let write"
+            },
+            {
+              "words": [
+                12
+              ],
+              "en": "between you"
+            },
+            {
+              "words": [
+                13
+              ],
+              "en": "a scribe"
+            },
+            {
+              "words": [
+                14
+              ],
+              "en": "in justice."
+            }
+          ]
+        },
+        {
+          "words": [
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22
+          ],
+          "phrases": [
+            {
+              "words": [
+                15,
+                16
+              ],
+              "en": "Let no"
+            },
+            {
+              "words": [
+                17
+              ],
+              "en": "scribe"
+            },
+            {
+              "words": [
+                18,
+                19
+              ],
+              "en": "refuse to write"
+            },
+            {
+              "words": [
+                20,
+                21,
+                22
+              ],
+              "en": "as Allah has taught him."
+            }
+          ]
+        },
+        {
+          "words": [
+            23
+          ],
+          "phrases": [
+            {
+              "words": [
+                23
+              ],
+              "en": "So let him write,"
+            }
+          ]
+        },
+        {
+          "words": [
+            24,
+            25,
+            26,
+            27
+          ],
+          "phrases": [
+            {
+              "words": [
+                24
+              ],
+              "en": "and let dictate"
+            },
+            {
+              "words": [
+                25,
+                26,
+                27
+              ],
+              "en": "the one who bears the obligation"
+            }
+          ]
+        },
+        {
+          "words": [
+            28,
+            29,
+            30
+          ],
+          "phrases": [
+            {
+              "words": [
+                28,
+                29,
+                30
+              ],
+              "en": "and let him fear Allah, his Lord,"
+            }
+          ]
+        },
+        {
+          "words": [
+            31,
+            32,
+            33,
+            34
+          ],
+          "phrases": [
+            {
+              "words": [
+                31,
+                32
+              ],
+              "en": "and not diminish"
+            },
+            {
+              "words": [
+                33,
+                34
+              ],
+              "en": "anything from it."
+            }
+          ]
+        },
+        {
+          "words": [
+            35,
+            36,
+            37,
+            38,
+            39
+          ],
+          "phrases": [
+            {
+              "words": [
+                35,
+                36,
+                37,
+                38,
+                39
+              ],
+              "en": "But if the one who bears the obligation"
+            }
+          ]
+        },
+        {
+          "words": [
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48
+          ],
+          "phrases": [
+            {
+              "words": [
+                40
+              ],
+              "en": "is of limited understanding,"
+            },
+            {
+              "words": [
+                41,
+                42
+              ],
+              "en": "or weak,"
+            },
+            {
+              "words": [
+                43,
+                44,
+                45,
+                46,
+                47,
+                48
+              ],
+              "en": "or unable to dictate himself,"
+            }
+          ]
+        },
+        {
+          "words": [
+            49,
+            50,
+            51
+          ],
+          "phrases": [
+            {
+              "words": [
+                49,
+                50,
+                51
+              ],
+              "en": "then let his guardian dictate in justice."
+            }
+          ]
+        },
+        {
+          "words": [
+            52,
+            53,
+            54,
+            55
+          ],
+          "phrases": [
+            {
+              "words": [
+                52,
+                53
+              ],
+              "en": "And call two witnesses"
+            },
+            {
+              "words": [
+                54,
+                55
+              ],
+              "en": "from among your men."
+            }
+          ]
+        },
+        {
+          "words": [
+            56,
+            57,
+            58,
+            59
+          ],
+          "phrases": [
+            {
+              "words": [
+                56,
+                57,
+                58,
+                59
+              ],
+              "en": "And if there are not two men,"
+            }
+          ]
+        },
+        {
+          "words": [
+            60,
+            61,
+            62,
+            63,
+            64,
+            65
+          ],
+          "phrases": [
+            {
+              "words": [
+                60,
+                61
+              ],
+              "en": "then a man and two women"
+            },
+            {
+              "words": [
+                62,
+                63,
+                64,
+                65
+              ],
+              "en": "from those whom you accept as witnesses,"
+            }
+          ]
+        },
+        {
+          "words": [
+            66,
+            67,
+            68,
+            69,
+            70,
+            71
+          ],
+          "phrases": [
+            {
+              "words": [
+                66,
+                67,
+                68
+              ],
+              "en": "so that if one of them errs,"
+            },
+            {
+              "words": [
+                69,
+                70,
+                71
+              ],
+              "en": "then the other can remind her."
+            }
+          ]
+        },
+        {
+          "words": [
+            72,
+            73,
+            74,
+            75,
+            76,
+            77
+          ],
+          "phrases": [
+            {
+              "words": [
+                72,
+                73,
+                74
+              ],
+              "en": "And let not the witnesses refuse"
+            },
+            {
+              "words": [
+                75,
+                76,
+                77
+              ],
+              "en": "when they are called."
+            }
+          ]
+        },
+        {
+          "words": [
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86
+          ],
+          "phrases": [
+            {
+              "words": [
+                78,
+                79
+              ],
+              "en": "And do not be weary"
+            },
+            {
+              "words": [
+                80,
+                81
+              ],
+              "en": "to write it,"
+            },
+            {
+              "words": [
+                82,
+                83,
+                84
+              ],
+              "en": "whether it is small or large,"
+            },
+            {
+              "words": [
+                85,
+                86
+              ],
+              "en": "for its term."
+            }
+          ]
+        },
+        {
+          "words": [
+            87,
+            88,
+            89,
+            90,
+            91,
+            92
+          ],
+          "phrases": [
+            {
+              "words": [
+                87,
+                88
+              ],
+              "en": "That is more just"
+            },
+            {
+              "words": [
+                89,
+                90
+              ],
+              "en": "in the sight of Allah"
+            },
+            {
+              "words": [
+                91,
+                92
+              ],
+              "en": "and stronger as evidence,"
+            }
+          ]
+        },
+        {
+          "words": [
+            93,
+            94,
+            95,
+            96,
+            97,
+            98,
+            99,
+            100,
+            101,
+            102
+          ],
+          "phrases": [
+            {
+              "words": [
+                93,
+                94,
+                95
+              ],
+              "en": "and more likely to prevent doubt"
+            },
+            {
+              "words": [
+                96,
+                97,
+                98,
+                99,
+                100
+              ],
+              "en": "except when it is an immediate transaction"
+            },
+            {
+              "words": [
+                101,
+                102
+              ],
+              "en": "which you conduct among yourselves,"
+            }
+          ]
+        },
+        {
+          "words": [
+            103,
+            104,
+            105,
+            106,
+            107
+          ],
+          "phrases": [
+            {
+              "words": [
+                103,
+                104,
+                105
+              ],
+              "en": "then there is no blame upon you"
+            },
+            {
+              "words": [
+                106,
+                107
+              ],
+              "en": "if you do not write it."
+            }
+          ]
+        },
+        {
+          "words": [
+            108,
+            109,
+            110
+          ],
+          "phrases": [
+            {
+              "words": [
+                108,
+                109,
+                110
+              ],
+              "en": "And take witnesses when you conclude a contract."
+            }
+          ]
+        },
+        {
+          "words": [
+            111,
+            112,
+            113,
+            114,
+            115
+          ],
+          "phrases": [
+            {
+              "words": [
+                111,
+                112,
+                113
+              ],
+              "en": "Let no scribe be harmed"
+            },
+            {
+              "words": [
+                114,
+                115
+              ],
+              "en": "or any witness."
+            }
+          ]
+        },
+        {
+          "words": [
+            116,
+            117,
+            118,
+            119,
+            120
+          ],
+          "phrases": [
+            {
+              "words": [
+                116,
+                117
+              ],
+              "en": "For if you do so,"
+            },
+            {
+              "words": [
+                118,
+                119,
+                120
+              ],
+              "en": "indeed, it is grave disobedience in you."
+            }
+          ]
+        },
+        {
+          "words": [
+            121,
+            122
+          ],
+          "phrases": [
+            {
+              "words": [
+                121,
+                122
+              ],
+              "en": "And fear Allah."
+            }
+          ]
+        },
+        {
+          "words": [
+            123,
+            124
+          ],
+          "phrases": [
+            {
+              "words": [
+                123,
+                124
+              ],
+              "en": "And Allah teaches you."
+            }
+          ]
+        },
+        {
+          "words": [
+            125,
+            126,
+            127,
+            128
+          ],
+          "phrases": [
+            {
+              "words": [
+                125,
+                126,
+                127,
+                128
+              ],
+              "en": "And Allah is Knowing of all things."
+            }
+          ]
+        }
+      ]
+    },
+    "284": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "To Allah belongs"
+            },
+            {
+              "words": [
+                2,
+                3,
+                4
+              ],
+              "en": "whatever is in the heavens"
+            }
+          ]
+        },
+        {
+          "words": [
+            5,
+            6,
+            7
+          ],
+          "phrases": [
+            {
+              "words": [
+                5,
+                6,
+                7
+              ],
+              "en": "and whatever is on the earth."
+            }
+          ]
+        },
+        {
+          "words": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "phrases": [
+            {
+              "words": [
+                8,
+                9
+              ],
+              "en": "Whether you disclose"
+            },
+            {
+              "words": [
+                10,
+                11,
+                12
+              ],
+              "en": "what is within yourselves"
+            },
+            {
+              "words": [
+                13,
+                14
+              ],
+              "en": "or conceal it,"
+            }
+          ]
+        },
+        {
+          "words": [
+            15,
+            16,
+            17
+          ],
+          "phrases": [
+            {
+              "words": [
+                15,
+                16,
+                17
+              ],
+              "en": "Allah will call you to account for it."
+            }
+          ]
+        },
+        {
+          "words": [
+            18,
+            19,
+            20
+          ],
+          "phrases": [
+            {
+              "words": [
+                18
+              ],
+              "en": "Then He will forgive"
+            },
+            {
+              "words": [
+                19,
+                20
+              ],
+              "en": "whom He wills"
+            }
+          ]
+        },
+        {
+          "words": [
+            21,
+            22,
+            23
+          ],
+          "phrases": [
+            {
+              "words": [
+                21,
+                22,
+                23
+              ],
+              "en": "and He will punish whom He wills,"
+            }
+          ]
+        },
+        {
+          "words": [
+            24,
+            25,
+            26,
+            27,
+            28
+          ],
+          "phrases": [
+            {
+              "words": [
+                24,
+                25,
+                26,
+                27,
+                28
+              ],
+              "en": "and Allah is over all things competent."
+            }
+          ]
+        }
+      ]
+    },
+    "285": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "The Messenger believed"
+            },
+            {
+              "words": [
+                3,
+                4,
+                5
+              ],
+              "en": "in what was revealed to him"
+            },
+            {
+              "words": [
+                6,
+                7
+              ],
+              "en": "from his Lord,"
+            }
+          ]
+        },
+        {
+          "words": [
+            8
+          ],
+          "phrases": [
+            {
+              "words": [
+                8
+              ],
+              "en": "and so did the believers."
+            }
+          ]
+        },
+        {
+          "words": [
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "phrases": [
+            {
+              "words": [
+                9,
+                10,
+                11
+              ],
+              "en": "All of them believed in Allah,"
+            },
+            {
+              "words": [
+                12
+              ],
+              "en": "His angels,"
+            },
+            {
+              "words": [
+                13
+              ],
+              "en": "His books,"
+            },
+            {
+              "words": [
+                14
+              ],
+              "en": "and His messengers,"
+            }
+          ]
+        },
+        {
+          "words": [
+            15,
+            16,
+            17,
+            18,
+            19,
+            20
+          ],
+          "phrases": [
+            {
+              "words": [
+                15,
+                16,
+                17,
+                18,
+                19,
+                20
+              ],
+              "en": "“We make no distinction between any of His messengers.”"
+            }
+          ]
+        },
+        {
+          "words": [
+            21,
+            22,
+            23
+          ],
+          "phrases": [
+            {
+              "words": [
+                21,
+                22,
+                23
+              ],
+              "en": "And they say, “We hear and we obey."
+            }
+          ]
+        },
+        {
+          "words": [
+            24,
+            25,
+            26,
+            27
+          ],
+          "phrases": [
+            {
+              "words": [
+                24,
+                25
+              ],
+              "en": "[We seek] Your forgiveness, our Lord,"
+            },
+            {
+              "words": [
+                26,
+                27
+              ],
+              "en": "and to You is the final destination.”"
+            }
+          ]
+        }
+      ]
+    },
+    "286": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2,
+                3,
+                4
+              ],
+              "en": "Allah does not burden any soul"
+            },
+            {
+              "words": [
+                5,
+                6
+              ],
+              "en": "beyond its capacity."
+            }
+          ]
+        },
+        {
+          "words": [
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "phrases": [
+            {
+              "words": [
+                7,
+                8,
+                9
+              ],
+              "en": "It has what it earned,"
+            },
+            {
+              "words": [
+                10,
+                11,
+                12
+              ],
+              "en": "and against it is what it earned."
+            }
+          ]
+        },
+        {
+          "words": [
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+          ],
+          "phrases": [
+            {
+              "words": [
+                13,
+                14,
+                15
+              ],
+              "en": "“Our Lord, do not take us to task"
+            },
+            {
+              "words": [
+                16,
+                17,
+                18,
+                19
+              ],
+              "en": "if we forget or err."
+            }
+          ]
+        },
+        {
+          "words": [
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30
+          ],
+          "phrases": [
+            {
+              "words": [
+                20,
+                21,
+                22,
+                23,
+                24
+              ],
+              "en": "Our Lord, and do not lay upon us a burden"
+            },
+            {
+              "words": [
+                25,
+                26,
+                27,
+                28,
+                29,
+                30
+              ],
+              "en": "like that which You laid upon those before us."
+            }
+          ]
+        },
+        {
+          "words": [
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38
+          ],
+          "phrases": [
+            {
+              "words": [
+                31,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38
+              ],
+              "en": "Our Lord, and burden us not with what we have no ability to bear."
+            }
+          ]
+        },
+        {
+          "words": [
+            39,
+            40,
+            41,
+            42,
+            43
+          ],
+          "phrases": [
+            {
+              "words": [
+                39,
+                40,
+                41,
+                42
+              ],
+              "en": "And pardon us, and forgive us,"
+            },
+            {
+              "words": [
+                43
+              ],
+              "en": "and have mercy upon us."
+            }
+          ]
+        },
+        {
+          "words": [
+            44,
+            45
+          ],
+          "phrases": [
+            {
+              "words": [
+                44,
+                45
+              ],
+              "en": "You are our protector."
+            }
+          ]
+        },
+        {
+          "words": [
+            46,
+            47,
+            48,
+            49
+          ],
+          "phrases": [
+            {
+              "words": [
+                46,
+                47,
+                48,
+                49
+              ],
+              "en": "So give us victory over the disbelieving people.”"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

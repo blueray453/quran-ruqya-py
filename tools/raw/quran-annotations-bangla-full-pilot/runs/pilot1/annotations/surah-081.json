@@ -1,0 +1,951 @@
+{
+  "schema_version": "1.0",
+  "conventions_version": "2.2",
+  "surah": 81,
+  "language": "en",
+  "provenance": {
+    "generator": "llm-annotation",
+    "model": "anthropic/claude-haiku-5.5",
+    "note": "Merged from raw LLM output by tools/collect.py."
+  },
+  "ayahs": {
+    "1": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "When"
+            },
+            {
+              "words": [
+                2
+              ],
+              "en": "the sun"
+            },
+            {
+              "words": [
+                3
+              ],
+              "en": "is wrapped up"
+            }
+          ]
+        }
+      ]
+    },
+    "2": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "And when"
+            },
+            {
+              "words": [
+                2
+              ],
+              "en": "the stars"
+            },
+            {
+              "words": [
+                3
+              ],
+              "en": "fall, losing their luster"
+            }
+          ]
+        }
+      ]
+    },
+    "3": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "And when"
+            },
+            {
+              "words": [
+                2
+              ],
+              "en": "the mountains"
+            },
+            {
+              "words": [
+                3
+              ],
+              "en": "are moved away"
+            }
+          ]
+        }
+      ]
+    },
+    "4": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "And when"
+            },
+            {
+              "words": [
+                2
+              ],
+              "en": "the full-term she-camels"
+            },
+            {
+              "words": [
+                3
+              ],
+              "en": "are left untended"
+            }
+          ]
+        }
+      ]
+    },
+    "5": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "And when"
+            },
+            {
+              "words": [
+                2
+              ],
+              "en": "the wild beasts"
+            },
+            {
+              "words": [
+                3
+              ],
+              "en": "are gathered"
+            }
+          ]
+        }
+      ]
+    },
+    "6": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "And when"
+            },
+            {
+              "words": [
+                2
+              ],
+              "en": "the seas"
+            },
+            {
+              "words": [
+                3
+              ],
+              "en": "are set ablaze"
+            }
+          ]
+        }
+      ]
+    },
+    "7": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "And when"
+            },
+            {
+              "words": [
+                2
+              ],
+              "en": "the souls"
+            },
+            {
+              "words": [
+                3
+              ],
+              "en": "are paired"
+            }
+          ]
+        }
+      ]
+    },
+    "8": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "And when"
+            },
+            {
+              "words": [
+                2
+              ],
+              "en": "the girl buried alive"
+            },
+            {
+              "words": [
+                3
+              ],
+              "en": "is asked"
+            }
+          ]
+        }
+      ]
+    },
+    "9": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "For what sin"
+            },
+            {
+              "words": [
+                3
+              ],
+              "en": "was she killed?"
+            }
+          ]
+        }
+      ]
+    },
+    "10": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "And when the pages"
+            },
+            {
+              "words": [
+                3
+              ],
+              "en": "are laid open,"
+            }
+          ]
+        }
+      ]
+    },
+    "11": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "And when the sky"
+            },
+            {
+              "words": [
+                3
+              ],
+              "en": "is stripped away,"
+            }
+          ]
+        }
+      ]
+    },
+    "12": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "And when Hellfire"
+            },
+            {
+              "words": [
+                3
+              ],
+              "en": "is set ablaze,"
+            }
+          ]
+        }
+      ]
+    },
+    "13": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "And when Paradise"
+            },
+            {
+              "words": [
+                3
+              ],
+              "en": "is brought near,"
+            }
+          ]
+        }
+      ]
+    },
+    "14": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "a soul will know"
+            },
+            {
+              "words": [
+                3,
+                4
+              ],
+              "en": "what it has brought."
+            }
+          ]
+        }
+      ]
+    },
+    "15": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "So I swear"
+            },
+            {
+              "words": [
+                3
+              ],
+              "en": "by the retreating planets,"
+            }
+          ]
+        }
+      ]
+    },
+    "16": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "that run"
+            },
+            {
+              "words": [
+                2
+              ],
+              "en": "and disappear."
+            }
+          ]
+        }
+      ]
+    },
+    "17": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "By the night"
+            },
+            {
+              "words": [
+                2,
+                3
+              ],
+              "en": "as it departs."
+            }
+          ]
+        }
+      ]
+    },
+    "18": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "And by the dawn"
+            },
+            {
+              "words": [
+                2,
+                3
+              ],
+              "en": "when it breathes."
+            }
+          ]
+        }
+      ]
+    },
+    "19": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "Indeed, it"
+            }
+          ]
+        },
+        {
+          "words": [
+            2,
+            3,
+            4
+          ],
+          "phrases": [
+            {
+              "words": [
+                2,
+                3,
+                4
+              ],
+              "en": "is the word of a noble Messenger."
+            }
+          ]
+        }
+      ]
+    },
+    "20": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "Possessed of power,"
+            }
+          ]
+        },
+        {
+          "words": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "phrases": [
+            {
+              "words": [
+                3,
+                4,
+                5
+              ],
+              "en": "with the Owner of the Throne"
+            },
+            {
+              "words": [
+                6
+              ],
+              "en": "secure in position."
+            }
+          ]
+        }
+      ]
+    },
+    "21": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "Obeyed"
+            },
+            {
+              "words": [
+                2
+              ],
+              "en": "there"
+            },
+            {
+              "words": [
+                3
+              ],
+              "en": "and trustworthy."
+            }
+          ]
+        }
+      ]
+    },
+    "22": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "And your companion"
+            }
+          ]
+        },
+        {
+          "words": [
+            3
+          ],
+          "phrases": [
+            {
+              "words": [
+                3
+              ],
+              "en": "is not mad."
+            }
+          ]
+        }
+      ]
+    },
+    "23": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "And he has certainly seen him"
+            },
+            {
+              "words": [
+                3,
+                4
+              ],
+              "en": "on the clear horizon."
+            }
+          ]
+        }
+      ]
+    },
+    "24": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "And he is not"
+            }
+          ]
+        },
+        {
+          "words": [
+            3,
+            4,
+            5
+          ],
+          "phrases": [
+            {
+              "words": [
+                3,
+                4
+              ],
+              "en": "concerning the unseen"
+            },
+            {
+              "words": [
+                5
+              ],
+              "en": "a withholder."
+            }
+          ]
+        }
+      ]
+    },
+    "25": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "And it is not"
+            }
+          ]
+        },
+        {
+          "words": [
+            3,
+            4,
+            5
+          ],
+          "phrases": [
+            {
+              "words": [
+                3,
+                4
+              ],
+              "en": "the word of a devil"
+            },
+            {
+              "words": [
+                5
+              ],
+              "en": "expelled [from the heavens]."
+            }
+          ]
+        }
+      ]
+    },
+    "26": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2
+          ],
+          "phrases": [
+            {
+              "words": [
+                1
+              ],
+              "en": "So where"
+            },
+            {
+              "words": [
+                2
+              ],
+              "en": "are you going?"
+            }
+          ]
+        }
+      ]
+    },
+    "27": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "It is not"
+            },
+            {
+              "words": [
+                3,
+                4
+              ],
+              "en": "except a reminder"
+            },
+            {
+              "words": [
+                5
+              ],
+              "en": "to the worlds,"
+            }
+          ]
+        }
+      ]
+    },
+    "28": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "for whoever wills"
+            },
+            {
+              "words": [
+                3
+              ],
+              "en": "among you"
+            },
+            {
+              "words": [
+                4,
+                5
+              ],
+              "en": "to take a straight way."
+            }
+          ]
+        }
+      ]
+    },
+    "29": {
+      "status": "auto",
+      "clauses": [
+        {
+          "words": [
+            1,
+            2
+          ],
+          "phrases": [
+            {
+              "words": [
+                1,
+                2
+              ],
+              "en": "And you do not will"
+            }
+          ]
+        },
+        {
+          "words": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "phrases": [
+            {
+              "words": [
+                3
+              ],
+              "en": "except"
+            },
+            {
+              "words": [
+                4,
+                5
+              ],
+              "en": "that"
+            },
+            {
+              "words": [
+                6
+              ],
+              "en": "Allah"
+            },
+            {
+              "words": [
+                7,
+                8
+              ],
+              "en": "wills — Lord of the worlds."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

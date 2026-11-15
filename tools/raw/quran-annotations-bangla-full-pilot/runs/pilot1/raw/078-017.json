@@ -1,0 +1,1 @@
+{"key": "78:17", "model": "anthropic/claude-haiku-5.5", "clauses": [[{"words": [1], "en": "Indeed,", "bn": "নিশ্চয়ই"}, {"words": [2], "en": "the Day", "bn": "দিন"}, {"words": [3], "en": "of Judgment", "bn": "বিচারের"}], [{"words": [4], "en": "is", "bn": "আছে"}, {"words": [5], "en": "an appointed time -", "bn": "নির্ধারিত"}]], "coarse": false, "refined": true}
