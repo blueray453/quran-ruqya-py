@@ -1,0 +1,60 @@
+{
+  "purpose": "Pilot-derived human-review regression examples for the minimum valid syntactic-semantic chunk objective. Suggested spans are review targets, not universal gold boundaries or forced templates.",
+  "cases": [
+    {
+      "ayah": "2:196",
+      "source_words": [61, 62, 63],
+      "arabic": "لَّمۡ يَكُنۡ اَهۡلُهٗ",
+      "issue": "misassigned / duplicated family meaning across adjacent spans",
+      "review_target": "Keep negation, verb, and subject aligned; do not translate words 61-62 as 'family' and word 63 as 'their family'."
+    },
+    {
+      "ayah": "2:282",
+      "source_words": [35, 36, 37, 38, 39, 40],
+      "issue": "broken conditional and copular construction",
+      "review_target": "Do not output a fragment like 'Then if is'; preserve the relation between the conditional particle, verb, subject and predicate."
+    },
+    {
+      "ayah": "2:282",
+      "source_words": [52, 53],
+      "issue": "verb-object dependency",
+      "review_target": "'And call to witness' followed by 'two witnesses' should be reconsidered as the smallest complete local verb-object unit."
+    },
+    {
+      "ayah": "2:282",
+      "source_words": [66, 67, 68, 69, 70, 71],
+      "issue": "conditional subject/predicate and reciprocal reminder relationship",
+      "review_target": "Do not leave 'so that if errs' separated from 'one of the two'; preserve who errs and who reminds."
+    },
+    {
+      "ayah": "4:12",
+      "source_words": [3, 4, 5],
+      "issue": "relative clause split across the complement",
+      "review_target": "Do not isolate 'of what' from the words that identify what was left and by whom."
+    },
+    {
+      "ayah": "67:8",
+      "source_words": [6, 7, 8],
+      "issue": "passive predicate and post-verbal subject ordering",
+      "review_target": "The Arabic order may differ from English order; keep the meaning 'a group is thrown into it' aligned to the full local span."
+    },
+    {
+      "ayah": "67:16",
+      "source_words": [9, 10, 11],
+      "issue": "incomplete predicate split",
+      "review_target": "Do not leave 'then it' without the verb 'sways' where the local construction requires the complete unit."
+    },
+    {
+      "ayah": "67:27",
+      "source_words": [4, 5, 6, 7],
+      "issue": "predicate separated from its post-verbal subject",
+      "review_target": "Check the verb 'will be distressed' with 'the faces of those who disbelieved'."
+    },
+    {
+      "ayah": "67:30",
+      "source_words": [3, 4, 5, 6],
+      "issue": "conditional particle / subject / predicate split",
+      "review_target": "Do not make 'if', 'your water becomes', and 'sunken' disconnected fragments when the conditional proposition is the minimum valid unit."
+    }
+  ]
+}

@@ -1,0 +1,585 @@
+{
+  "schema_version": "2.0",
+  "conventions_version": "3.0",
+  "surah": 4,
+  "language": "en",
+  "provenance": {
+    "generator": "llm-annotation",
+    "model": "openai/gpt-6-luna",
+    "note": "Merged flat Arabic chunks by tools/collect.py.",
+    "evidence_copy_note": "Evidence-copy normalization only: English generic divine labels were replaced with Rabb / ilah where supported by the Arabic source. The original uploaded v5 TAR is unchanged."
+  },
+  "ayahs": {
+    "64": {
+      "status": "auto",
+      "chunks": [
+        {
+          "words": [
+            1,
+            2
+          ],
+          "en": "And We did not send"
+        },
+        {
+          "words": [
+            3,
+            4,
+            5
+          ],
+          "en": "any messenger except"
+        },
+        {
+          "words": [
+            6
+          ],
+          "en": "to be obeyed"
+        },
+        {
+          "words": [
+            7,
+            8
+          ],
+          "en": "by Allah’s permission."
+        },
+        {
+          "words": [
+            9,
+            10
+          ],
+          "en": "And if they"
+        },
+        {
+          "words": [
+            11
+          ],
+          "en": "when"
+        },
+        {
+          "words": [
+            12,
+            13
+          ],
+          "en": "wronged themselves"
+        },
+        {
+          "words": [
+            14
+          ],
+          "en": "had come to you"
+        },
+        {
+          "words": [
+            15
+          ],
+          "en": "and asked forgiveness"
+        },
+        {
+          "words": [
+            16
+          ],
+          "en": "of Allah"
+        },
+        {
+          "words": [
+            17,
+            18
+          ],
+          "en": "and had asked forgiveness for them"
+        },
+        {
+          "words": [
+            19
+          ],
+          "en": "the Messenger"
+        },
+        {
+          "words": [
+            20
+          ],
+          "en": "they would surely have found"
+        },
+        {
+          "words": [
+            21
+          ],
+          "en": "Allah"
+        },
+        {
+          "words": [
+            22
+          ],
+          "en": "Accepting of repentance"
+        },
+        {
+          "words": [
+            23
+          ],
+          "en": "and Merciful."
+        }
+      ]
+    },
+    "176": {
+      "status": "auto",
+      "chunks": [
+        {
+          "words": [
+            1
+          ],
+          "en": "They seek your ruling."
+        },
+        {
+          "words": [
+            2
+          ],
+          "en": "Say,"
+        },
+        {
+          "words": [
+            3
+          ],
+          "en": "Allah"
+        },
+        {
+          "words": [
+            4,
+            5,
+            6
+          ],
+          "en": "gives you a ruling concerning the Kalālah."
+        },
+        {
+          "words": [
+            7
+          ],
+          "en": "If"
+        },
+        {
+          "words": [
+            8,
+            9
+          ],
+          "en": "a man dies"
+        },
+        {
+          "words": [
+            10,
+            11,
+            12
+          ],
+          "en": "he has no child"
+        },
+        {
+          "words": [
+            13,
+            14
+          ],
+          "en": "and he has a sister,"
+        },
+        {
+          "words": [
+            15,
+            16
+          ],
+          "en": "then for her is half"
+        },
+        {
+          "words": [
+            17,
+            18
+          ],
+          "en": "of what he left."
+        },
+        {
+          "words": [
+            19,
+            20
+          ],
+          "en": "And he will inherit from her"
+        },
+        {
+          "words": [
+            21,
+            22,
+            23,
+            24,
+            25
+          ],
+          "en": "if she has no child."
+        },
+        {
+          "words": [
+            26
+          ],
+          "en": "But if"
+        },
+        {
+          "words": [
+            27,
+            28
+          ],
+          "en": "they are two"
+        },
+        {
+          "words": [
+            29,
+            30
+          ],
+          "en": "then for them are two thirds"
+        },
+        {
+          "words": [
+            31,
+            32
+          ],
+          "en": "of what he left."
+        },
+        {
+          "words": [
+            33
+          ],
+          "en": "And if"
+        },
+        {
+          "words": [
+            34,
+            35,
+            36,
+            37
+          ],
+          "en": "they are brothers and sisters, men and women,"
+        },
+        {
+          "words": [
+            38,
+            39,
+            40,
+            41
+          ],
+          "en": "then the male has the share of two females."
+        },
+        {
+          "words": [
+            42,
+            43,
+            44
+          ],
+          "en": "Allah makes clear to you"
+        },
+        {
+          "words": [
+            45,
+            46
+          ],
+          "en": "lest you go astray."
+        },
+        {
+          "words": [
+            47
+          ],
+          "en": "And Allah"
+        },
+        {
+          "words": [
+            48,
+            49,
+            50
+          ],
+          "en": "is All-Knowing of everything."
+        }
+      ]
+    },
+    "12": {
+      "status": "auto",
+      "chunks": [
+        {
+          "words": [
+            1,
+            2
+          ],
+          "en": "And for you is half"
+        },
+        {
+          "words": [
+            3,
+            4
+          ],
+          "en": "of what"
+        },
+        {
+          "words": [
+            5
+          ],
+          "en": "your wives leave"
+        },
+        {
+          "words": [
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "en": "if they have no child."
+        },
+        {
+          "words": [
+            11
+          ],
+          "en": "But if"
+        },
+        {
+          "words": [
+            12,
+            13,
+            14
+          ],
+          "en": "they have a child"
+        },
+        {
+          "words": [
+            15,
+            16
+          ],
+          "en": "then for you is one fourth"
+        },
+        {
+          "words": [
+            17,
+            18
+          ],
+          "en": "of what they leave"
+        },
+        {
+          "words": [
+            19,
+            20
+          ],
+          "en": "after"
+        },
+        {
+          "words": [
+            21,
+            22,
+            23
+          ],
+          "en": "any bequest they have made"
+        },
+        {
+          "words": [
+            24,
+            25
+          ],
+          "en": "or debt."
+        },
+        {
+          "words": [
+            26
+          ],
+          "en": "And for them"
+        },
+        {
+          "words": [
+            27
+          ],
+          "en": "is one fourth"
+        },
+        {
+          "words": [
+            28,
+            29
+          ],
+          "en": "of what you leave"
+        },
+        {
+          "words": [
+            30,
+            31,
+            32,
+            33,
+            34
+          ],
+          "en": "if you have no child."
+        },
+        {
+          "words": [
+            35
+          ],
+          "en": "But if"
+        },
+        {
+          "words": [
+            36,
+            37,
+            38
+          ],
+          "en": "you have a child"
+        },
+        {
+          "words": [
+            39,
+            40
+          ],
+          "en": "then for them is one eighth"
+        },
+        {
+          "words": [
+            41,
+            42
+          ],
+          "en": "of what you leave"
+        },
+        {
+          "words": [
+            43,
+            44
+          ],
+          "en": "after"
+        },
+        {
+          "words": [
+            45,
+            46,
+            47
+          ],
+          "en": "any bequest you have made"
+        },
+        {
+          "words": [
+            48,
+            49
+          ],
+          "en": "or debt."
+        },
+        {
+          "words": [
+            50
+          ],
+          "en": "And if"
+        },
+        {
+          "words": [
+            51,
+            52,
+            53,
+            54
+          ],
+          "en": "a man leaves no parent or child"
+        },
+        {
+          "words": [
+            55,
+            56
+          ],
+          "en": "or a woman"
+        },
+        {
+          "words": [
+            57,
+            58,
+            59,
+            60
+          ],
+          "en": "and has a brother or a sister"
+        },
+        {
+          "words": [
+            61,
+            62,
+            63,
+            64
+          ],
+          "en": "then for each of the two is one sixth."
+        },
+        {
+          "words": [
+            65
+          ],
+          "en": "But if"
+        },
+        {
+          "words": [
+            66,
+            67,
+            68,
+            69
+          ],
+          "en": "they are more than that"
+        },
+        {
+          "words": [
+            70,
+            71
+          ],
+          "en": "then they are partners"
+        },
+        {
+          "words": [
+            72,
+            73
+          ],
+          "en": "in one third"
+        },
+        {
+          "words": [
+            74,
+            75
+          ],
+          "en": "after"
+        },
+        {
+          "words": [
+            76,
+            77,
+            78
+          ],
+          "en": "any bequest that was made"
+        },
+        {
+          "words": [
+            79,
+            80
+          ],
+          "en": "or debt"
+        },
+        {
+          "words": [
+            81,
+            82
+          ],
+          "en": "without causing harm."
+        },
+        {
+          "words": [
+            83
+          ],
+          "en": "An ordinance"
+        },
+        {
+          "words": [
+            84,
+            85
+          ],
+          "en": "from Allah."
+        },
+        {
+          "words": [
+            86
+          ],
+          "en": "And Allah"
+        },
+        {
+          "words": [
+            87
+          ],
+          "en": "is All-Knowing"
+        },
+        {
+          "words": [
+            88
+          ],
+          "en": "Forbearing."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "kind": "reconstructed_source_and_final_annotation_evidence",
+  "source": "pinned sources/text/indopak.json plus pinned English/Bangla WBW and full-ayah references",
+  "raw_model_responses_included": false,
+  "raw_model_response_note": "Merged annotations do not contain the original unparsed model response or exact request prompt. See RAW_RESPONSES_UNAVAILABLE.md.",
+  "ayah_count": 45,
+  "arabic_word_count": 1208,
+  "chunk_count": 656,
+  "surahs": [
+    2,
+    4,
+    5,
+    7,
+    24,
+    33,
+    60,
+    67
+  ],
+  "historical_raw_model_responses_included": false,
+  "historical_retry_events_included": true,
+  "historical_retry_event_count": 4,
+  "terminology_normalization_in_evidence_copy": true,
+  "terminology_normalization_note": "Evidence-copy normalization only: English generic divine labels were replaced with Rabb / ilah where supported by the Arabic source. The original uploaded v5 TAR is unchanged."
+}

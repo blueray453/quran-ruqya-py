@@ -1,0 +1,435 @@
+{
+  "schema_version": "2.0",
+  "conventions_version": "3.0",
+  "surah": 24,
+  "language": "en",
+  "provenance": {
+    "generator": "llm-annotation",
+    "model": "openai/gpt-6-luna",
+    "note": "Merged flat Arabic chunks by tools/collect.py.",
+    "evidence_copy_note": "Evidence-copy normalization only: English generic divine labels were replaced with Rabb / ilah where supported by the Arabic source. The original uploaded v5 TAR is unchanged."
+  },
+  "ayahs": {
+    "55": {
+      "status": "auto",
+      "chunks": [
+        {
+          "words": [
+            1,
+            2
+          ],
+          "en": "Allah has promised"
+        },
+        {
+          "words": [
+            3,
+            4
+          ],
+          "en": "those who believed"
+        },
+        {
+          "words": [
+            5
+          ],
+          "en": "among you"
+        },
+        {
+          "words": [
+            6,
+            7
+          ],
+          "en": "and did righteous deeds"
+        },
+        {
+          "words": [
+            8
+          ],
+          "en": "He will surely grant them succession"
+        },
+        {
+          "words": [
+            9,
+            10
+          ],
+          "en": "upon the earth"
+        },
+        {
+          "words": [
+            11
+          ],
+          "en": "just as"
+        },
+        {
+          "words": [
+            12
+          ],
+          "en": "He granted succession"
+        },
+        {
+          "words": [
+            13
+          ],
+          "en": "to those"
+        },
+        {
+          "words": [
+            14,
+            15
+          ],
+          "en": "before them"
+        },
+        {
+          "words": [
+            16
+          ],
+          "en": "and He will surely establish"
+        },
+        {
+          "words": [
+            17
+          ],
+          "en": "for them"
+        },
+        {
+          "words": [
+            18
+          ],
+          "en": "their religion"
+        },
+        {
+          "words": [
+            19
+          ],
+          "en": "which"
+        },
+        {
+          "words": [
+            20
+          ],
+          "en": "He has approved"
+        },
+        {
+          "words": [
+            21
+          ],
+          "en": "for them"
+        },
+        {
+          "words": [
+            22
+          ],
+          "en": "and He will surely change for them"
+        },
+        {
+          "words": [
+            23,
+            24
+          ],
+          "en": "after"
+        },
+        {
+          "words": [
+            25
+          ],
+          "en": "their fear"
+        },
+        {
+          "words": [
+            26
+          ],
+          "en": "security"
+        },
+        {
+          "words": [
+            27
+          ],
+          "en": "they worship Me"
+        },
+        {
+          "words": [
+            28
+          ],
+          "en": "not"
+        },
+        {
+          "words": [
+            29,
+            30
+          ],
+          "en": "associating with Me"
+        },
+        {
+          "words": [
+            31
+          ],
+          "en": "anything"
+        },
+        {
+          "words": [
+            32
+          ],
+          "en": "But whoever"
+        },
+        {
+          "words": [
+            33
+          ],
+          "en": "disbelieves"
+        },
+        {
+          "words": [
+            34,
+            35
+          ],
+          "en": "after that"
+        },
+        {
+          "words": [
+            36,
+            37,
+            38
+          ],
+          "en": "then those are the defiantly disobedient"
+        }
+      ]
+    },
+    "31": {
+      "status": "auto",
+      "chunks": [
+        {
+          "words": [
+            1
+          ],
+          "en": "And say"
+        },
+        {
+          "words": [
+            2
+          ],
+          "en": "to the believing women"
+        },
+        {
+          "words": [
+            3,
+            4,
+            5
+          ],
+          "en": "to lower some of their gaze"
+        },
+        {
+          "words": [
+            6
+          ],
+          "en": "and guard"
+        },
+        {
+          "words": [
+            7
+          ],
+          "en": "their private parts"
+        },
+        {
+          "words": [
+            8,
+            9,
+            10
+          ],
+          "en": "and not display their adornment"
+        },
+        {
+          "words": [
+            11,
+            12,
+            13,
+            14
+          ],
+          "en": "except what is apparent thereof"
+        },
+        {
+          "words": [
+            15,
+            16
+          ],
+          "en": "and let them draw their headcovers"
+        },
+        {
+          "words": [
+            17,
+            18
+          ],
+          "en": "over their chests"
+        },
+        {
+          "words": [
+            19,
+            20,
+            21
+          ],
+          "en": "and not display their adornment"
+        },
+        {
+          "words": [
+            22,
+            23
+          ],
+          "en": "except to their husbands"
+        },
+        {
+          "words": [
+            24,
+            25
+          ],
+          "en": "or their fathers"
+        },
+        {
+          "words": [
+            26,
+            27,
+            28
+          ],
+          "en": "or their husbands’ fathers"
+        },
+        {
+          "words": [
+            29,
+            30
+          ],
+          "en": "or their sons"
+        },
+        {
+          "words": [
+            31,
+            32,
+            33
+          ],
+          "en": "or their husbands’ sons"
+        },
+        {
+          "words": [
+            34,
+            35
+          ],
+          "en": "or their brothers"
+        },
+        {
+          "words": [
+            36,
+            37,
+            38
+          ],
+          "en": "or their brothers’ sons"
+        },
+        {
+          "words": [
+            39,
+            40,
+            41
+          ],
+          "en": "or their sisters’ sons"
+        },
+        {
+          "words": [
+            42,
+            43
+          ],
+          "en": "or their women"
+        },
+        {
+          "words": [
+            44,
+            45,
+            46,
+            47
+          ],
+          "en": "or those whom their right hands possess"
+        },
+        {
+          "words": [
+            48,
+            49
+          ],
+          "en": "or the attendants"
+        },
+        {
+          "words": [
+            50,
+            51,
+            52
+          ],
+          "en": "having no physical desire"
+        },
+        {
+          "words": [
+            53,
+            54
+          ],
+          "en": "among the men"
+        },
+        {
+          "words": [
+            55,
+            56
+          ],
+          "en": "or the children"
+        },
+        {
+          "words": [
+            57,
+            58,
+            59,
+            60,
+            61,
+            62
+          ],
+          "en": "who are not yet aware of the private aspects of women"
+        },
+        {
+          "words": [
+            63,
+            64,
+            65
+          ],
+          "en": "And let them not stamp their feet"
+        },
+        {
+          "words": [
+            66,
+            67,
+            68
+          ],
+          "en": "to make known what they conceal"
+        },
+        {
+          "words": [
+            69,
+            70
+          ],
+          "en": "of their adornment"
+        },
+        {
+          "words": [
+            71,
+            72,
+            73,
+            74
+          ],
+          "en": "And turn to Allah altogether"
+        },
+        {
+          "words": [
+            75,
+            76
+          ],
+          "en": "O believers"
+        },
+        {
+          "words": [
+            77,
+            78
+          ],
+          "en": "so that you may succeed."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "schema_version": "2.0",
+  "conventions_version": "3.0",
+  "surah": 7,
+  "language": "en",
+  "provenance": {
+    "generator": "llm-annotation",
+    "model": "openai/gpt-6-luna",
+    "note": "Merged flat Arabic chunks by tools/collect.py.",
+    "evidence_copy_note": "Evidence-copy normalization only: English generic divine labels were replaced with Rabb / ilah where supported by the Arabic source. The original uploaded v5 TAR is unchanged."
+  },
+  "ayahs": {
+    "146": {
+      "status": "auto",
+      "chunks": [
+        {
+          "words": [
+            1,
+            2,
+            3
+          ],
+          "en": "I will turn away from My signs"
+        },
+        {
+          "words": [
+            4,
+            5
+          ],
+          "en": "those who are arrogant"
+        },
+        {
+          "words": [
+            6,
+            7
+          ],
+          "en": "upon the earth"
+        },
+        {
+          "words": [
+            8,
+            9
+          ],
+          "en": "without right;"
+        },
+        {
+          "words": [
+            10,
+            11
+          ],
+          "en": "and if they see"
+        },
+        {
+          "words": [
+            12,
+            13
+          ],
+          "en": "every sign,"
+        },
+        {
+          "words": [
+            14,
+            15,
+            16
+          ],
+          "en": "they will not believe in it."
+        },
+        {
+          "words": [
+            17,
+            18
+          ],
+          "en": "And if they see"
+        },
+        {
+          "words": [
+            19,
+            20
+          ],
+          "en": "the way of righteousness,"
+        },
+        {
+          "words": [
+            21,
+            22,
+            23
+          ],
+          "en": "they will not adopt it as a way;"
+        },
+        {
+          "words": [
+            24,
+            25
+          ],
+          "en": "but if they see"
+        },
+        {
+          "words": [
+            26,
+            27
+          ],
+          "en": "the way of error,"
+        },
+        {
+          "words": [
+            28,
+            29
+          ],
+          "en": "they will adopt it as a way."
+        },
+        {
+          "words": [
+            30,
+            31,
+            32,
+            33
+          ],
+          "en": "That is because they denied Our signs"
+        },
+        {
+          "words": [
+            34,
+            35,
+            36
+          ],
+          "en": "and were heedless of them."
+        }
+      ]
+    }
+  }
+}

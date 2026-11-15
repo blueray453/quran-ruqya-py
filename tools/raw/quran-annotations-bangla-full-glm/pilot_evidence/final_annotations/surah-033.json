@@ -1,0 +1,243 @@
+{
+  "schema_version": "2.0",
+  "conventions_version": "3.0",
+  "surah": 33,
+  "language": "en",
+  "provenance": {
+    "generator": "llm-annotation",
+    "model": "openai/gpt-6-luna",
+    "note": "Merged flat Arabic chunks by tools/collect.py.",
+    "evidence_copy_note": "Evidence-copy normalization only: English generic divine labels were replaced with Rabb / ilah where supported by the Arabic source. The original uploaded v5 TAR is unchanged."
+  },
+  "ayahs": {
+    "53": {
+      "status": "auto",
+      "chunks": [
+        {
+          "words": [
+            1
+          ],
+          "en": "O you"
+        },
+        {
+          "words": [
+            2,
+            3
+          ],
+          "en": "who have believed,"
+        },
+        {
+          "words": [
+            4,
+            5
+          ],
+          "en": "do not enter"
+        },
+        {
+          "words": [
+            6,
+            7
+          ],
+          "en": "the houses of the Prophet"
+        },
+        {
+          "words": [
+            8,
+            9,
+            10,
+            11
+          ],
+          "en": "except when you are given permission"
+        },
+        {
+          "words": [
+            12,
+            13
+          ],
+          "en": "for a meal,"
+        },
+        {
+          "words": [
+            14,
+            15,
+            16
+          ],
+          "en": "without awaiting its preparation."
+        },
+        {
+          "words": [
+            17
+          ],
+          "en": "But"
+        },
+        {
+          "words": [
+            18,
+            19
+          ],
+          "en": "when you are invited,"
+        },
+        {
+          "words": [
+            20
+          ],
+          "en": "then enter;"
+        },
+        {
+          "words": [
+            21,
+            22
+          ],
+          "en": "and when you have eaten,"
+        },
+        {
+          "words": [
+            23
+          ],
+          "en": "then disperse"
+        },
+        {
+          "words": [
+            24,
+            25,
+            26
+          ],
+          "en": "and do not linger for conversation."
+        },
+        {
+          "words": [
+            27,
+            28,
+            29
+          ],
+          "en": "Indeed, that was"
+        },
+        {
+          "words": [
+            30,
+            31
+          ],
+          "en": "troubling the Prophet,"
+        },
+        {
+          "words": [
+            32,
+            33
+          ],
+          "en": "and he is shy of you."
+        },
+        {
+          "words": [
+            34
+          ],
+          "en": "But Allah"
+        },
+        {
+          "words": [
+            35,
+            36
+          ],
+          "en": "is not shy"
+        },
+        {
+          "words": [
+            37,
+            38
+          ],
+          "en": "of the truth."
+        },
+        {
+          "words": [
+            39
+          ],
+          "en": "And when"
+        },
+        {
+          "words": [
+            40,
+            41
+          ],
+          "en": "you ask them for something,"
+        },
+        {
+          "words": [
+            42
+          ],
+          "en": "then ask them"
+        },
+        {
+          "words": [
+            43,
+            44,
+            45
+          ],
+          "en": "from behind a screen."
+        },
+        {
+          "words": [
+            46,
+            47
+          ],
+          "en": "That is purer"
+        },
+        {
+          "words": [
+            48,
+            49
+          ],
+          "en": "for your hearts and their hearts."
+        },
+        {
+          "words": [
+            50,
+            51,
+            52
+          ],
+          "en": "And it is not for you"
+        },
+        {
+          "words": [
+            53,
+            54,
+            55,
+            56
+          ],
+          "en": "to harm the Messenger of Allah"
+        },
+        {
+          "words": [
+            57,
+            58,
+            59,
+            60
+          ],
+          "en": "nor to marry his wives"
+        },
+        {
+          "words": [
+            61,
+            62,
+            63
+          ],
+          "en": "after him, ever."
+        },
+        {
+          "words": [
+            64,
+            65,
+            66
+          ],
+          "en": "Indeed, that is"
+        },
+        {
+          "words": [
+            67,
+            68,
+            69
+          ],
+          "en": "an enormity in the sight of Allah."
+        }
+      ]
+    }
+  }
+}
