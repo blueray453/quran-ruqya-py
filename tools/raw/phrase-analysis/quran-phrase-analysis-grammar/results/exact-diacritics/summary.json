@@ -1,0 +1,181 @@
+{
+ "match_field": "exact",
+ "tokens": 77432,
+ "distinct_types": 19478,
+ "once_only_types": 12583,
+ "repeated_word_types": 6895,
+ "repeated_phrase_types": 23555,
+ "longest_unit_words": 24,
+ "phrases_never_stand_alone": 15853,
+ "token_share_by_word_frequency_pct": {
+  "20+": 49.7,
+  "5-19": 18.5,
+  "2-4": 15.5,
+  "once": 16.3
+ },
+ "covered_words_and_phrases": 64849,
+ "coverage_words_and_phrases_pct": 83.75,
+ "covered_phrases_only": 45804,
+ "coverage_phrases_only_pct": 59.15,
+ "uncovered_tokens": 12583,
+ "verses_fully_covered": 1520,
+ "verses_ge_90": 2339,
+ "verses_ge_75": 4665,
+ "verses_ge_50": 5938,
+ "surahs_most_covered_(>=20 words)": [
+  [
+   45,
+   90.2
+  ],
+  [
+   32,
+   90.1
+  ],
+  [
+   64,
+   89.6
+  ],
+  [
+   10,
+   89.4
+  ]
+ ],
+ "surahs_least_covered_(>=20 words)": [
+  [
+   93,
+   60.0
+  ],
+  [
+   86,
+   59.0
+  ],
+  [
+   105,
+   56.5
+  ],
+  [
+   111,
+   56.5
+  ]
+ ],
+ "greedy_words_and_phrases": {
+  "units_selected": 6751,
+  "phrases_selected": 130,
+  "first_phrase_rank": 299,
+  "top_units": [
+   "مِنْ",
+   "اللّٰهِ",
+   "الَّذِیْنَ",
+   "مَا",
+   "اللّٰهُ",
+   "لَا",
+   "اِنَّ",
+   "فِی",
+   "اللّٰهَ",
+   "اِلَّا"
+  ],
+  "checkpoints": [
+   {
+    "units": 10,
+    "words_to_learn": 10,
+    "covered": 7127,
+    "pct": 9.2
+   },
+   {
+    "units": 50,
+    "words_to_learn": 50,
+    "covered": 18218,
+    "pct": 23.53
+   },
+   {
+    "units": 100,
+    "words_to_learn": 100,
+    "covered": 23904,
+    "pct": 30.87
+   },
+   {
+    "units": 250,
+    "words_to_learn": 250,
+    "covered": 32183,
+    "pct": 41.56
+   },
+   {
+    "units": 500,
+    "words_to_learn": 501,
+    "covered": 38806,
+    "pct": 50.12
+   },
+   {
+    "units": 1000,
+    "words_to_learn": 1001,
+    "covered": 45366,
+    "pct": 58.59
+   },
+   {
+    "units": 2000,
+    "words_to_learn": 2006,
+    "covered": 52049,
+    "pct": 67.22
+   },
+   {
+    "units": 3000,
+    "words_to_learn": 3029,
+    "covered": 56126,
+    "pct": 72.48
+   },
+   {
+    "units": 5000,
+    "words_to_learn": 5144,
+    "covered": 61347,
+    "pct": 79.23
+   },
+   {
+    "units": 6751,
+    "words_to_learn": 6895,
+    "covered": 64849,
+    "pct": 83.75
+   }
+  ]
+ },
+ "greedy_phrases_only": {
+  "units_selected": 6661,
+  "checkpoints": [
+   {
+    "units": 10,
+    "words_to_learn": 20,
+    "covered": 2121,
+    "pct": 2.74
+   },
+   {
+    "units": 100,
+    "words_to_learn": 201,
+    "covered": 7966,
+    "pct": 10.29
+   },
+   {
+    "units": 1000,
+    "words_to_learn": 2025,
+    "covered": 22497,
+    "pct": 29.05
+   },
+   {
+    "units": 2500,
+    "words_to_learn": 5144,
+    "covered": 32299,
+    "pct": 41.71
+   },
+   {
+    "units": 5000,
+    "words_to_learn": 10748,
+    "covered": 42852,
+    "pct": 55.34
+   },
+   {
+    "units": 6661,
+    "words_to_learn": 14124,
+    "covered": 45804,
+    "pct": 59.15
+   }
+  ]
+ }
+}

@@ -1,2 +1,0 @@
-# No third-party packages are needed: the pipeline uses only the Python standard library.
-# Requires Python 3.9 or newer.

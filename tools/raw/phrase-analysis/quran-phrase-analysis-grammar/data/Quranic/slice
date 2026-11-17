@@ -1,0 +1,6 @@
+tid	sentence_id	sentence_word	token_id	location	chapter_id	verse_id	word_id	tok_id	uthmani_token	uthmani_unicode	imlaai_token	imlaai_unicode	phonetic	trans	pos	pos_ar	features	segment	lemma	lemma_ar	root	root_ar	verb_form	prefix	suffix	verb_aspect	nominal_state	verb_mood	special_group	nominal_case	derived_nouns	verb_voice	person	gender	number	rel_label	rel_label_ar	ref_token_id	is_constituent	constituents_loc	constituents	constituent_label
+130731	10846	3	2	(67:15:3:1)	67	15	3	1	جَعَلَ	jaEala	جعل	jEl	jaʿala	made	V	فعل	STEM|POS:V|PERF|LEM:jaEala|ROOT:jEl|3MS	STEM	jaEala	جَعَلَ	jEl	جعل	_	_	_	PERF	_	_	_	_	_	_	3	M	S	sub	صلة	1	1	[2-8]	جَعَلَ (هُوَ) لَكُمُ ٱلْأَرْضَ ذَلُولًا	VS
+130733	10846	4	4	(67:15:4:1)	67	15	4	1	لَ	la	ل	l	_	_	P	حرف جر	PREFIX|l:P+	PREFIX	_	ـ	_	ـ	_	l:P+	_	_	_	_	_	_	_	_	_	_	_	link	متعلق	2	1	[4-5]	لَكُمُ	PP
+130741	10847	2	3	(67:15:8:1)	67	15	8	1	فِى	fiY	فى	fY	fī	in	P	حرف جر	STEM|POS:P|LEM:fiY	STEM	fiY	فِى	_	ـ	_	_	_	_	_	_	_	_	_	_	_	_	_	link	متعلق	1	1	[3-4]	فِى مَنَاكِبِ	PP
+130747	10847	5	9	(67:15:11:1)	67	15	11	1	مِن	min	من	mn	min	of	P	حرف جر	STEM|POS:P|LEM:min	STEM	min	مِن	_	ـ	_	_	_	_	_	_	_	_	_	_	_	_	_	link	متعلق	7	1	[9-10]	مِن رِّزْقِ	PP
+130751	10848	1	1	(67:15:13:2)	67	15	13	2	إِلَيْ	<ilayo	إليْ	<lyo	wa-ilayhi	and to Him	P	حرف جر	STEM|POS:P|LEM:<ilaY`	STEM	<ilaY`	إِلَىٰ	_	ـ	_	_	_	_	_	_	_	_	_	_	_	_	_	link	متعلق	3	1	[1-2]	إِلَيْهِ	PP

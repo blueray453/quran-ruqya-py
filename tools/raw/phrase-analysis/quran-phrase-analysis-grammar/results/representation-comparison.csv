@@ -1,0 +1,7 @@
+﻿representation,tokens,distinct_types,once_only_types,pct_types_once,coverage_words_and_phrases_pct,coverage_phrases_only_pct,repeated_phrase_types,longest_phrase
+normalized spelling (before restoring the 2 glyph words),77430,14688,8593,58.5,88.9,64.65,25188,24
+normalized spelling (main analysis),77432,14690,8595,58.5,88.9,64.65,25188,24
+exact spelling with diacritics,77432,19478,12583,64.6,83.75,59.15,23555,24
+stem (database; spelling fallback),77432,12111,6537,54.0,91.56,69.52,26754,24
+lemma (database; spelling fallback),77432,5505,2433,44.2,96.86,81.56,28527,22
+root (database; spelling fallback for rootless words),77432,2287,584,25.5,99.25,83.82,29922,24
