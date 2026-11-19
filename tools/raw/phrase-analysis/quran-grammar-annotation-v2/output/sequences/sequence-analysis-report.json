@@ -1,0 +1,130 @@
+{
+ "parameters": {
+  "pos_projection": "pos_all_segments",
+  "function_projection": "function_without_NonRel",
+  "min_count": 2,
+  "greedy_min_len": 1
+ },
+ "input_sha256": {
+  "indopak-nastaleeq-wbw-grammar-normalized.json": "971b60cbe6a9dfb691103bbad2f7cc2d65887d61534fb9bb7ce0b849c605203e",
+  "indopak-nastaleeq-sentence-grammar-normalized.json": "a8b4feeaa1d9270d01e306d0dd6d4fee911f8da3fcc4e12a086dcc3e47b01255"
+ },
+ "analyses": {
+  "pos": {
+   "projection": "pos_all_segments",
+   "distinct_labels": 359,
+   "sentences_used": 11667,
+   "word_positions": 77429,
+   "repeated_units": 22689,
+   "longest_unit": 29,
+   "units_never_stand_alone": 9329,
+   "coverage_pct_by_min_length": {
+    "1": 99.91,
+    "2": 98.42,
+    "3": 89.99,
+    "4": 65.12,
+    "5": 34.15,
+    "6": 15.83,
+    "8": 5.32,
+    "10": 2.24
+   },
+   "greedy": {
+    "units_selected": 288,
+    "final_pct_of_quran": 99.9,
+    "checkpoints": [
+     {
+      "units": 10,
+      "words_to_learn": 10,
+      "pct_of_quran": 63.09
+     },
+     {
+      "units": 50,
+      "words_to_learn": 50,
+      "pct_of_quran": 91.62
+     },
+     {
+      "units": 100,
+      "words_to_learn": 100,
+      "pct_of_quran": 97.15
+     }
+    ]
+   }
+  },
+  "function": {
+   "projection": "function_without_NonRel",
+   "distinct_labels": 677,
+   "sentences_used": 11667,
+   "word_positions": 77429,
+   "repeated_units": 22478,
+   "longest_unit": 29,
+   "units_never_stand_alone": 9865,
+   "coverage_pct_by_min_length": {
+    "1": 99.71,
+    "2": 97.61,
+    "3": 87.13,
+    "4": 60.97,
+    "5": 31.88,
+    "6": 14.78,
+    "8": 4.36,
+    "10": 1.87
+   },
+   "greedy": {
+    "units_selected": 454,
+    "final_pct_of_quran": 99.71,
+    "checkpoints": [
+     {
+      "units": 10,
+      "words_to_learn": 10,
+      "pct_of_quran": 58.52
+     },
+     {
+      "units": 50,
+      "words_to_learn": 50,
+      "pct_of_quran": 87.05
+     },
+     {
+      "units": 100,
+      "words_to_learn": 100,
+      "pct_of_quran": 94.06
+     }
+    ]
+   }
+  }
+ },
+ "checks": [
+  {
+   "check": "pos: total = stand_alone + inside_longer, every unit occurs >= 2 times",
+   "ok": true
+  },
+  {
+   "check": "pos: CSV rows agree with the annotation JSON",
+   "ok": true
+  },
+  {
+   "check": "pos: 154 units re-counted by brute force (occurrences and stand-alone flags)",
+   "ok": true,
+   "detail": []
+  },
+  {
+   "check": "function: total = stand_alone + inside_longer, every unit occurs >= 2 times",
+   "ok": true
+  },
+  {
+   "check": "function: CSV rows agree with the annotation JSON",
+   "ok": true
+  },
+  {
+   "check": "function: 154 units re-counted by brute force (occurrences and stand-alone flags)",
+   "ok": true,
+   "detail": []
+  }
+ ],
+ "files": {
+  "quran-function-sequences-annotation.json": 11528677,
+  "quran-function-sequences.csv": 3160262,
+  "quran-greedy-order-function-sequences.csv": 31940,
+  "quran-greedy-order-pos-sequences.csv": 18826,
+  "quran-pos-sequences-annotation.json": 11629751,
+  "quran-pos-sequences.csv": 3142538
+ }
+}

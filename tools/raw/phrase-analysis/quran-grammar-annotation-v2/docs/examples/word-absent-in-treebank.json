@@ -1,0 +1,32 @@
+{
+ "note": "Word 2:181:14 exists in the WBW file but has no Treebank annotation; it keeps a record with no segments.",
+ "word": {
+  "wbw_id": 3487,
+  "text_indopak": "عَلِیْمٌ",
+  "text_normalized": "عليم",
+  "text_exact": "عَلِيْمٌ",
+  "annotation_status": "absent_in_treebank",
+  "sentence_id": null,
+  "segments": [],
+  "secondary_db": {
+   "stem": [
+    {
+     "id": 11297,
+     "text": "عَلِيمٌ"
+    }
+   ],
+   "lemma": [
+    {
+     "id": 524,
+     "text": "عَلِيم"
+    }
+   ],
+   "root": [
+    {
+     "id": 1572,
+     "text": "ع ل م"
+    }
+   ]
+  }
+ }
+}
