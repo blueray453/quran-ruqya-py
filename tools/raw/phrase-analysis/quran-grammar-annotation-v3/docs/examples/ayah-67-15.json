@@ -1,0 +1,730 @@
+{
+ "note": "Word records 67:15:1-6 and their sentence (10846).",
+ "words": {
+  "67:15:1": {
+   "wbw_id": 77866,
+   "text_indopak": "هُوَ",
+   "text_normalized": "هو",
+   "text_exact": "هُوَ",
+   "annotation_status": "annotated",
+   "sentence_id": 10846,
+   "segments": [
+    {
+     "treebank_tid": 130729,
+     "location": "67:15:1:1",
+     "type": "STEM",
+     "text_uthmani": "هُوَ",
+     "uthmani_bw": "huwa",
+     "text_imlaai": "هُو",
+     "imlaai_bw": "huw",
+     "phonetic": "huwa",
+     "gloss": "He",
+     "pos": "PRON",
+     "pos_ar": "ضمير",
+     "features_raw": "STEM|POS:PRON|3MS",
+     "person": "3",
+     "gender": "M",
+     "number": "S",
+     "syntax_ref": {
+      "sentence_id": 10846,
+      "token_id": 0
+     }
+    }
+   ],
+   "derived": {
+    "is_verb": false,
+    "verb_forms": [],
+    "nominal_form_annotations": [],
+    "derived_nouns": [],
+    "prefix_tags": [],
+    "suffix_tags": [],
+    "n_segments": 1,
+    "neighbors": {
+     "prev": null,
+     "next": "67:15:2"
+    },
+    "projections": {
+     "pos_stem": "PRON",
+     "pos_all_segments": "PRON",
+     "function_all": "root",
+     "function_without_NonRel": "root",
+     "function_stem": "root"
+    }
+   },
+   "secondary_db": {
+    "stem": [
+     {
+      "id": 2391,
+      "text": "هُوَ"
+     }
+    ]
+   }
+  },
+  "67:15:2": {
+   "wbw_id": 77867,
+   "text_indopak": "الَّذِیْ",
+   "text_normalized": "الذي",
+   "text_exact": "الَّذِيْ",
+   "annotation_status": "annotated",
+   "sentence_id": 10846,
+   "segments": [
+    {
+     "treebank_tid": 130730,
+     "location": "67:15:2:1",
+     "type": "STEM",
+     "text_uthmani": "ٱلَّذِى",
+     "uthmani_bw": "{l~a*iY",
+     "text_imlaai": "الذى",
+     "imlaai_bw": "Al*Y",
+     "phonetic": "alladhī",
+     "gloss": "(is) the One Who",
+     "pos": "REL",
+     "pos_ar": "اسم موصول",
+     "features_raw": "STEM|POS:REL|LEM:{l~a*iY|MS",
+     "gender": "M",
+     "number": "S",
+     "lemma": {
+      "bw": "{l~a*iY",
+      "ar": "ٱلَّذِى"
+     },
+     "syntax_ref": {
+      "sentence_id": 10846,
+      "token_id": 1
+     }
+    }
+   ],
+   "derived": {
+    "is_verb": false,
+    "verb_forms": [],
+    "nominal_form_annotations": [],
+    "derived_nouns": [],
+    "prefix_tags": [],
+    "suffix_tags": [],
+    "n_segments": 1,
+    "neighbors": {
+     "prev": "67:15:1",
+     "next": "67:15:3"
+    },
+    "projections": {
+     "pos_stem": "REL",
+     "pos_all_segments": "REL",
+     "function_all": "Pred",
+     "function_without_NonRel": "Pred",
+     "function_stem": "Pred"
+    }
+   },
+   "secondary_db": {
+    "stem": [
+     {
+      "id": 12109,
+      "text": "الَّذِى"
+     }
+    ],
+    "lemma": [
+     {
+      "id": 2297,
+      "text": "الَّذِى"
+     }
+    ]
+   }
+  },
+  "67:15:3": {
+   "wbw_id": 77868,
+   "text_indopak": "جَعَلَ",
+   "text_normalized": "جعل",
+   "text_exact": "جَعَلَ",
+   "annotation_status": "annotated",
+   "sentence_id": 10846,
+   "segments": [
+    {
+     "treebank_tid": 130731,
+     "location": "67:15:3:1",
+     "type": "STEM",
+     "text_uthmani": "جَعَلَ",
+     "uthmani_bw": "jaEala",
+     "text_imlaai": "جعل",
+     "imlaai_bw": "jEl",
+     "phonetic": "jaʿala",
+     "gloss": "made",
+     "pos": "V",
+     "pos_ar": "فعل",
+     "features_raw": "STEM|POS:V|PERF|LEM:jaEala|ROOT:jEl|3MS",
+     "aspect": "PERF",
+     "person": "3",
+     "gender": "M",
+     "number": "S",
+     "lemma": {
+      "bw": "jaEala",
+      "ar": "جَعَلَ"
+     },
+     "root": {
+      "bw": "jEl",
+      "ar": "جعل"
+     },
+     "syntax_ref": {
+      "sentence_id": 10846,
+      "token_id": 2
+     }
+    }
+   ],
+   "derived": {
+    "is_verb": true,
+    "verb_forms": [
+     {
+      "segment": "67:15:3:1",
+      "value": "I",
+      "basis": "inferred"
+     }
+    ],
+    "nominal_form_annotations": [],
+    "derived_nouns": [],
+    "prefix_tags": [],
+    "suffix_tags": [],
+    "n_segments": 1,
+    "neighbors": {
+     "prev": "67:15:2",
+     "next": "67:15:4"
+    },
+    "projections": {
+     "pos_stem": "V",
+     "pos_all_segments": "V",
+     "function_all": "sub",
+     "function_without_NonRel": "sub",
+     "function_stem": "sub"
+    }
+   },
+   "secondary_db": {
+    "stem": [
+     {
+      "id": 3266,
+      "text": "جَعَلَ"
+     }
+    ],
+    "lemma": [
+     {
+      "id": 2458,
+      "text": "جَعَلَ"
+     }
+    ],
+    "root": [
+     {
+      "id": 1123,
+      "text": "ج ع ل"
+     }
+    ]
+   }
+  },
+  "67:15:4": {
+   "wbw_id": 77869,
+   "text_indopak": "لَكُمُ",
+   "text_normalized": "لكم",
+   "text_exact": "لَكُمُ",
+   "annotation_status": "annotated",
+   "sentence_id": 10846,
+   "segments": [
+    {
+     "treebank_tid": 130733,
+     "location": "67:15:4:1",
+     "type": "PREFIX",
+     "text_uthmani": "لَ",
+     "uthmani_bw": "la",
+     "text_imlaai": "ل",
+     "imlaai_bw": "l",
+     "pos": "P",
+     "pos_ar": "حرف جر",
+     "features_raw": "PREFIX|l:P+",
+     "prefix": "l:P+",
+     "syntax_ref": {
+      "sentence_id": 10846,
+      "token_id": 4
+     }
+    },
+    {
+     "treebank_tid": 130734,
+     "location": "67:15:4:2",
+     "type": "STEM",
+     "text_uthmani": "كُمُ",
+     "uthmani_bw": "kumu",
+     "text_imlaai": "كُمُ",
+     "imlaai_bw": "kumu",
+     "phonetic": "lakumu",
+     "gloss": "for you",
+     "pos": "PRON",
+     "pos_ar": "ضمير",
+     "features_raw": "STEM|POS:PRON|2MP",
+     "person": "2",
+     "gender": "M",
+     "number": "P",
+     "syntax_ref": {
+      "sentence_id": 10846,
+      "token_id": 5
+     }
+    }
+   ],
+   "derived": {
+    "is_verb": false,
+    "verb_forms": [],
+    "nominal_form_annotations": [],
+    "derived_nouns": [],
+    "prefix_tags": [
+     "l:P+"
+    ],
+    "suffix_tags": [],
+    "n_segments": 2,
+    "neighbors": {
+     "prev": "67:15:3",
+     "next": "67:15:5"
+    },
+    "projections": {
+     "pos_stem": "PRON",
+     "pos_all_segments": "P+PRON",
+     "function_all": "link+gen",
+     "function_without_NonRel": "link+gen",
+     "function_stem": "gen"
+    }
+   },
+   "secondary_db": {
+    "stem": [
+     {
+      "id": 5672,
+      "text": "كُمُ"
+     }
+    ]
+   }
+  },
+  "67:15:5": {
+   "wbw_id": 77870,
+   "text_indopak": "الْاَرْضَ",
+   "text_normalized": "الارض",
+   "text_exact": "الْاَرْضَ",
+   "annotation_status": "annotated",
+   "sentence_id": 10846,
+   "segments": [
+    {
+     "treebank_tid": 130735,
+     "location": "67:15:5:1",
+     "type": "PREFIX",
+     "text_uthmani": "ٱلْ",
+     "uthmani_bw": "{lo",
+     "text_imlaai": "الْ",
+     "imlaai_bw": "Alo",
+     "pos": "DET",
+     "pos_ar": "ال التعريف",
+     "features_raw": "PREFIX|Al+",
+     "prefix": "Al+",
+     "syntax_ref": {
+      "sentence_id": 10846,
+      "token_id": 6
+     }
+    },
+    {
+     "treebank_tid": 130736,
+     "location": "67:15:5:2",
+     "type": "STEM",
+     "text_uthmani": "أَرْضَ",
+     "uthmani_bw": ">aroDa",
+     "text_imlaai": "أرْض",
+     "imlaai_bw": ">roD",
+     "phonetic": "l-arḍa",
+     "gloss": "the earth",
+     "pos": "N",
+     "pos_ar": "اسم",
+     "features_raw": "STEM|POS:N|LEM:>aroD|ROOT:ArD|F|ACC",
+     "case": "ACC",
+     "gender": "F",
+     "lemma": {
+      "bw": ">aroD",
+      "ar": "أَرْض"
+     },
+     "root": {
+      "bw": "ArD",
+      "ar": "ارض"
+     },
+     "syntax_ref": {
+      "sentence_id": 10846,
+      "token_id": 7
+     }
+    }
+   ],
+   "derived": {
+    "is_verb": false,
+    "verb_forms": [],
+    "nominal_form_annotations": [],
+    "derived_nouns": [],
+    "prefix_tags": [
+     "Al+"
+    ],
+    "suffix_tags": [],
+    "n_segments": 2,
+    "neighbors": {
+     "prev": "67:15:4",
+     "next": "67:15:6"
+    },
+    "projections": {
+     "pos_stem": "N",
+     "pos_all_segments": "DET+N",
+     "function_all": "NonRel+Obj",
+     "function_without_NonRel": "Obj",
+     "function_stem": "Obj"
+    }
+   },
+   "secondary_db": {
+    "stem": [
+     {
+      "id": 5846,
+      "text": "أَرْضَ"
+     }
+    ],
+    "lemma": [
+     {
+      "id": 3740,
+      "text": "أَرْض"
+     }
+    ],
+    "root": [
+     {
+      "id": 40,
+      "text": "ا   ر   ض"
+     }
+    ]
+   }
+  },
+  "67:15:6": {
+   "wbw_id": 77871,
+   "text_indopak": "ذَلُوْلًا",
+   "text_normalized": "ذلولا",
+   "text_exact": "ذَلُوْلًا",
+   "annotation_status": "annotated",
+   "sentence_id": 10846,
+   "segments": [
+    {
+     "treebank_tid": 130737,
+     "location": "67:15:6:1",
+     "type": "STEM",
+     "text_uthmani": "ذَلُولًا",
+     "uthmani_bw": "*aluwlFA",
+     "text_imlaai": "ذلُولًا",
+     "imlaai_bw": "*luwlFA",
+     "phonetic": "dhalūlan",
+     "gloss": "subservient,",
+     "pos": "N",
+     "pos_ar": "اسم",
+     "features_raw": "STEM|POS:N|LEM:*aluwl|ROOT:*ll|MS|INDEF|ACC",
+     "state": "INDEF",
+     "case": "ACC",
+     "gender": "M",
+     "number": "S",
+     "lemma": {
+      "bw": "*aluwl",
+      "ar": "ذَلُول"
+     },
+     "root": {
+      "bw": "*ll",
+      "ar": "ذلل"
+     },
+     "syntax_ref": {
+      "sentence_id": 10846,
+      "token_id": 8
+     }
+    }
+   ],
+   "derived": {
+    "is_verb": false,
+    "verb_forms": [],
+    "nominal_form_annotations": [],
+    "derived_nouns": [],
+    "prefix_tags": [],
+    "suffix_tags": [],
+    "n_segments": 1,
+    "neighbors": {
+     "prev": "67:15:5",
+     "next": "67:15:7"
+    },
+    "projections": {
+     "pos_stem": "N",
+     "pos_all_segments": "N",
+     "function_all": "Obj",
+     "function_without_NonRel": "Obj",
+     "function_stem": "Obj"
+    }
+   },
+   "secondary_db": {
+    "stem": [
+     {
+      "id": 706,
+      "text": "ذَلُولًا"
+     }
+    ],
+    "lemma": [
+     {
+      "id": 1281,
+      "text": "ذَلُول"
+     }
+    ],
+    "root": [
+     {
+      "id": 336,
+      "text": "ذ   ل   ل"
+     }
+    ]
+   }
+  }
+ },
+ "sentence": {
+  "sentence_id": 10846,
+  "span": {
+   "first_word": "67:15:1",
+   "last_word": "67:15:6",
+   "ayahs": [
+    "67:15"
+   ],
+   "crosses_ayah": false
+  },
+  "words": [
+   "67:15:1",
+   "67:15:2",
+   "67:15:3",
+   "67:15:4",
+   "67:15:5",
+   "67:15:6"
+  ],
+  "nodes": [
+   {
+    "token_id": 0,
+    "treebank_tid": 130729,
+    "sentence_word": 1,
+    "implicit": false,
+    "word": "67:15:1",
+    "segment": "67:15:1:1",
+    "pos": "PRON",
+    "head": 0,
+    "rel": "root",
+    "rel_ar": "root",
+    "is_constituent": "-1",
+    "constituent_label": "-"
+   },
+   {
+    "token_id": 1,
+    "treebank_tid": 130730,
+    "sentence_word": 2,
+    "implicit": false,
+    "word": "67:15:2",
+    "segment": "67:15:2:1",
+    "pos": "REL",
+    "head": 0,
+    "rel": "Pred",
+    "rel_ar": "خبر",
+    "is_constituent": "0",
+    "constituent_label": "-"
+   },
+   {
+    "token_id": 2,
+    "treebank_tid": 130731,
+    "sentence_word": 3,
+    "implicit": false,
+    "word": "67:15:3",
+    "segment": "67:15:3:1",
+    "pos": "V",
+    "head": 1,
+    "rel": "sub",
+    "rel_ar": "صلة",
+    "is_constituent": "1",
+    "constituents_loc": "[2-8]",
+    "constituents_text": "جَعَلَ (هُوَ) لَكُمُ ٱلْأَرْضَ ذَلُولًا",
+    "constituent_label": "VS"
+   },
+   {
+    "token_id": 3,
+    "treebank_tid": 130732,
+    "sentence_word": 0,
+    "implicit": true,
+    "word": null,
+    "chapter_id": "67",
+    "verse_id": "15",
+    "word_id": "0",
+    "tok_id": "1",
+    "anchor": {
+     "after_word": "67:15:3",
+     "before_word": "67:15:4"
+    },
+    "morphology": {
+     "type": "STEM",
+     "text_uthmani": "(هُوَ)",
+     "uthmani_bw": "(huwa)",
+     "text_imlaai": "(هُوَ)",
+     "imlaai_bw": "(huwa)",
+     "pos": "PRON",
+     "pos_ar": "ضمير"
+    },
+    "head": 2,
+    "rel": "Subj",
+    "rel_ar": "فاعل",
+    "is_constituent": "0",
+    "constituent_label": "-"
+   },
+   {
+    "token_id": 4,
+    "treebank_tid": 130733,
+    "sentence_word": 4,
+    "implicit": false,
+    "word": "67:15:4",
+    "segment": "67:15:4:1",
+    "pos": "P",
+    "head": 2,
+    "rel": "link",
+    "rel_ar": "متعلق",
+    "is_constituent": "1",
+    "constituents_loc": "[4-5]",
+    "constituents_text": "لَكُمُ",
+    "constituent_label": "PP"
+   },
+   {
+    "token_id": 5,
+    "treebank_tid": 130734,
+    "sentence_word": 4,
+    "implicit": false,
+    "word": "67:15:4",
+    "segment": "67:15:4:2",
+    "pos": "PRON",
+    "head": 4,
+    "rel": "gen",
+    "rel_ar": "مجرور",
+    "is_constituent": "0",
+    "constituent_label": "-"
+   },
+   {
+    "token_id": 6,
+    "treebank_tid": 130735,
+    "sentence_word": 5,
+    "implicit": false,
+    "word": "67:15:5",
+    "segment": "67:15:5:1",
+    "pos": "DET",
+    "head": 6,
+    "rel": "NonRel",
+    "rel_ar": "NonRel",
+    "is_constituent": "-1",
+    "constituent_label": "-"
+   },
+   {
+    "token_id": 7,
+    "treebank_tid": 130736,
+    "sentence_word": 5,
+    "implicit": false,
+    "word": "67:15:5",
+    "segment": "67:15:5:2",
+    "pos": "N",
+    "head": 2,
+    "rel": "Obj",
+    "rel_ar": "مفعول به",
+    "is_constituent": "0",
+    "constituent_label": "-"
+   },
+   {
+    "token_id": 8,
+    "treebank_tid": 130737,
+    "sentence_word": 6,
+    "implicit": false,
+    "word": "67:15:6",
+    "segment": "67:15:6:1",
+    "pos": "N",
+    "head": 2,
+    "rel": "Obj",
+    "rel_ar": "مفعول به",
+    "is_constituent": "0",
+    "constituent_label": "-"
+   }
+  ],
+  "constituents": [
+   {
+    "tag": "VS",
+    "token_span": [
+     2,
+     8
+    ],
+    "source_token_id": 2,
+    "first_word": "67:15:3",
+    "last_word": "67:15:6",
+    "words": [
+     "67:15:3",
+     "67:15:4",
+     "67:15:5",
+     "67:15:6"
+    ],
+    "text": "جَعَلَ (هُوَ) لَكُمُ ٱلْأَرْضَ ذَلُولًا"
+   },
+   {
+    "tag": "PP",
+    "token_span": [
+     4,
+     5
+    ],
+    "source_token_id": 4,
+    "first_word": "67:15:4",
+    "last_word": "67:15:4",
+    "words": [
+     "67:15:4"
+    ],
+    "text": "لَكُمُ"
+   }
+  ],
+  "derived": {
+   "word_count": 6,
+   "node_count": 9,
+   "implicit_node_count": 1,
+   "is_prefix_only_fragment": false,
+   "split_words": [],
+   "root_nodes": [
+    {
+     "token_id": 0,
+     "word": "67:15:1",
+     "pos": "PRON"
+    }
+   ],
+   "pos_sequence": {
+    "stem": [
+     "PRON",
+     "REL",
+     "V",
+     "PRON",
+     "N",
+     "N"
+    ],
+    "all_segments": [
+     "PRON",
+     "REL",
+     "V",
+     "P+PRON",
+     "DET+N",
+     "N"
+    ]
+   },
+   "function_sequence": {
+    "all": [
+     "root",
+     "Pred",
+     "sub",
+     "link+gen",
+     "NonRel+Obj",
+     "Obj"
+    ],
+    "without_NonRel": [
+     "root",
+     "Pred",
+     "sub",
+     "link+gen",
+     "Obj",
+     "Obj"
+    ],
+    "stem": [
+     "root",
+     "Pred",
+     "sub",
+     "gen",
+     "Obj",
+     "Obj"
+    ]
+   }
+  }
+ }
+}

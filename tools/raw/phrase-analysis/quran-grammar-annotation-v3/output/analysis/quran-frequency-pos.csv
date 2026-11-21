@@ -1,0 +1,46 @@
+﻿pos,pos_en,segments
+N,Noun,25136
+PRON,Personal pronoun,24685
+V,Verb,19356
+P,Preposition,13005
+CONJ,Coordinating conjunction,9399
+DET,Determiner,8377
+PN,Proper noun,3911
+REL,Relative pronoun,3569
+REM,Resumption particle,2953
+NEG,Negative particle,2688
+ACC,Accusative particle,2283
+ADJ,Adjective,1952
+EMPH,Emphatic lām prefix,1244
+T,Time adverb,1171
+DEM,Demonstrative pronoun,1059
+COND,Conditional particle,1049
+INTG,Interogative particle,947
+SUB,Subordinating conjunction,688
+LOC,Location adverb,672
+RES,Restriction particle,553
+CERT,Particle of certainty,414
+VOC,Vocative particle,376
+RSLT,Result particle,362
+PRO,Prohibition particle,333
+PRP,Purpose lām prefix,319
+CIRC,Circumstantial particle,295
+SUP,Supplemental particle,239
+PREV,Preventive particle,162
+FUT,Future particle,161
+RET,Retraction particle,122
+EXP,Exceptive particle,109
+CAUS,Particle of cause,93
+INC,Inceptive particle,91
+IMPV,Imperative lām prefix,78
+EXL,Explanation particle,66
+AMD,Amendment particle,65
+INT,Particle of interpretation,47
+ANS,Answer particle,40
+EXH,Exhortation particle,40
+SUR,Surprise particle,36
+AVR,Aversion particle,33
+INL,Quranic initials,30
+EQ,Equalization particle,6
+COM,Comitative particle,3
+IMPN,Imperative verbal noun,2
