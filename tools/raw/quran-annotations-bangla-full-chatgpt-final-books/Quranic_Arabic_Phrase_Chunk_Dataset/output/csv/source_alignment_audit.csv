@@ -1,0 +1,14 @@
+﻿topic,reference_basis,curriculum_decision,alignment_status
+Three word classes,ILMHUB 3-2-6 foundations; Bayyinah Nahw Ch.1,Retain as first formal classification,Direct
+Two sentence types,ILMHUB 3-2-6; Bayyinah Nahw Ch.5-6,Retain nominal and verbal; do not infer sentence type solely from outermost Treebank tag,Direct; corpus labels are constituent spans
+Six phrase constructions,ILMHUB Section D; Bayyinah Ch.2 and Ch.4,Retain exactly as core phrase taxonomy,Direct
+Tawsifi,ILMHUB Phrases; Bayyinah Ch.4.1,Require noun/adjective dependency evidence; agreement is teachable feature layer,Relation-derived; review edge cases
+Idafi,ILMHUB Phrases/Idafah; Bayyinah Ch.2.9,Use Poss dependency; expose chains and attached-pronoun Idafah,Relation-derived; segment-aware
+Jarri,ILMHUB Phrases/Harf Jarr; Bayyinah Ch.2.7,Use preposition-to-genitive dependency and explicit PP spans,Relation-derived; may be one written word when prefix attached
+Ishari,ILMHUB Phrases; Bayyinah Ch.4.2,Require demonstrative and a definite target; an indefinite target may form a complete sentence instead,Conservative filter; candidates flagged
+Atfi,ILMHUB Phrases; Bayyinah Ch.4.3,Use nominal coordination for core phrase; verbal/clause coordination stored separately,Relation-derived; connector may be attached
+Badali,ILMHUB Phrases; ILMHUB Badali explanation,"Store apposition candidates, not all App edges as confirmed Badal",Teacher review required
+Four properties of Ism,ILMHUB Four Properties (DiGNI); Bayyinah Ch.2-3,"Use definiteness, gender, number, I'rab as the course-facing labels",Direct crosswalk; Bayyinah Ch.3 'qism/type' wording must not silently replace ILMHUB definiteness
+Frequency-led vocabulary,85% guide Parts I-III,"Use frequency lists to sequence practice, not as a substitute for grammar; do not reproduce the book's lists",Method only; copyright restrictions
+Mudari' mood,Bayyinah Nahw Ch.7; QAC verb annotation,Teach Raf'/Nasb/Jazm only on imperfect verbs; Madi and Amr are Mabni,Traditional grammar safeguard
+Case system,Bayyinah Nahw Ch.2; ILMHUB I'raab,Ism: Raf'/Nasb/Jarr; Fi'l Mudari': Raf'/Nasb/Jazm,Traditional grammar safeguard

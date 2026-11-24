@@ -1,0 +1,38 @@
+﻿metric,value,unit,source
+whole_word_annotations,77432,written word positions,indopak-nastaleeq-wbw-grammar-normalized.json
+treebank_sentences,11693,sentence records,indopak-nastaleeq-sentence-grammar-normalized.json
+grammar_chunk_occurrences,95749,constituent + selected dependency occurrences,QAC sentence treebank
+grammar_chunk_members,207074,member rows,derived from sentence nodes
+dependency_edges_exported,88170,non-root dependency rows with overt endpoints,indopak-nastaleeq-sentence-grammar-normalized.json
+lexical_repeated_chunk_types_normalized,25188,repeated n-gram phrase types (2+ words),quran-phrases-annotation.json
+lexical_repeated_chunk_types_exact,23555,repeated n-gram phrase types (2+ words),quran-phrases-exact-diacritics-annotation.json
+lexical_repeated_chunk_occurrences,150935,positions across both matching modes,repeated lexical n-gram annotations
+distinct_curriculum_links,237006,chunk-to-concept links,curriculum crosswalk
+strict_chunk_containment_links,62901,nested span links,sentence word order and chunk boundaries
+teacher_review_candidates,2790,candidate rows requiring review,conservative construction mapping
+grammar_chunk_family:source_constituent,26463,occurrences,QAC sentence treebank
+grammar_chunk_family:jarri,12952,occurrences,QAC sentence treebank
+grammar_chunk_family:fa_il,10492,occurrences,QAC sentence treebank
+grammar_chunk_family:maf_ul_bih,10387,occurrences,QAC sentence treebank
+grammar_chunk_family:idafi,9149,occurrences,QAC sentence treebank
+grammar_chunk_family:relative_clause_link,4038,occurrences,QAC sentence treebank
+grammar_chunk_family:predicate,2720,occurrences,QAC sentence treebank
+grammar_chunk_family:clause_or_verb_coordination,2608,occurrences,QAC sentence treebank
+grammar_chunk_family:atfi,2573,occurrences,QAC sentence treebank
+grammar_chunk_family:negation,2109,occurrences,QAC sentence treebank
+grammar_chunk_family:tawsifi,1542,occurrences,QAC sentence treebank
+grammar_chunk_family:inna_subject,1542,occurrences,QAC sentence treebank
+grammar_chunk_family:conditional,1434,occurrences,QAC sentence treebank
+grammar_chunk_family:modifier_candidate,1359,occurrences,QAC sentence treebank
+grammar_chunk_family:inna_predicate,1304,occurrences,QAC sentence treebank
+grammar_chunk_family:conditional_result,1224,occurrences,QAC sentence treebank
+grammar_chunk_family:kana_predicate,819,occurrences,QAC sentence treebank
+grammar_chunk_family:na_ib_fa_il,816,occurrences,QAC sentence treebank
+grammar_chunk_family:kana_subject,716,occurrences,QAC sentence treebank
+grammar_chunk_family:construct_dependency_candidate,650,occurrences,QAC sentence treebank
+grammar_chunk_family:badali_candidate,457,occurrences,QAC sentence treebank
+grammar_chunk_family:specification_candidate,219,occurrences,QAC sentence treebank
+grammar_chunk_family:apposition_or_specification_candidate,94,occurrences,QAC sentence treebank
+grammar_chunk_family:ishari,71,occurrences,QAC sentence treebank
+grammar_chunk_family:ishari_candidate,8,occurrences,QAC sentence treebank
+grammar_chunk_family:coordination_candidate,3,occurrences,QAC sentence treebank

@@ -1,0 +1,5 @@
+﻿source_key,file_name,sha256,bytes
+words,indopak-nastaleeq-wbw-grammar-normalized.json,bd5328f0fe0900cdad1e77e5723b7440cae9cfab31e737cc8d9622db5c435635,99653604
+sentences,indopak-nastaleeq-sentence-grammar-normalized.json,50d4c6475b024ef0a21d1ba57a78e6695ab298be635d197a91348afa1f8ec896,46405051
+lex,quran-phrases-annotation.json,fd94c6dc8a2f2345ce30c586ef6e9f0199e692dfa7c7f95d4cd1f601833111ca,19863614
+lex_exact,quran-phrases-exact-diacritics-annotation.json,856ea494c1ae9ea11747e8cca19d468085fdfbb3a6bc568740dc70e9e60d2bdd,19479872

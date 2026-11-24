@@ -1,0 +1,12 @@
+﻿file,row_unit,interpretation
+quran_chunk_occurrences.csv,one row per source constituent or selected dependency-derived teaching chunk,"Source constituent, dependency or conservative mapped phrase/role occurrence"
+quran_chunk_members.csv,one row per written-word member within each chunk,Morphology and relation remain source-backed; multiple segments may belong to one written word
+quran_dependency_edges.csv,one row per overt source dependency edge,"Full dependency audit layer, not a list of phrases"
+quran_chunk_curriculum_links.csv,many-to-many chunk-to-curriculum concepts,Concept mapping supports multiple lessons; it does not claim the chunk exemplifies all rules equally
+quran_chunk_hierarchy.csv,strict span-containment parent/child relations,Location hierarchy only; does not infer grammar from containment
+quran_chunk_type_frequency.csv,aggregated chunk family/construction/source counts,Counts source-annotated occurrences; not total actual occurrence of all possible phrases
+grammatical_chunk_pattern_frequency.csv,repeated exact text patterns within a grammar-derived family,Frequency index for retrieval and lesson-example selection; family labels retain their evidence status
+six_core_phrase_pattern_summary.csv,one summary row per ILMHUB core phrase construction,Badali is explicitly a candidate pending teacher review
+repeated_lexical_chunk_types.csv,"one row per repeated contiguous lexical phrase type, n>=2",Pure repetition inventory; not syntax or semantic classification
+repeated_lexical_chunk_occurrences.csv,one row per location of a repeated lexical phrase,Normalized and exact-diacritic modes intentionally separate
+teacher_review_queue.csv,heuristically identified disputed/candidate structures,Not release-ready answer-key annotations

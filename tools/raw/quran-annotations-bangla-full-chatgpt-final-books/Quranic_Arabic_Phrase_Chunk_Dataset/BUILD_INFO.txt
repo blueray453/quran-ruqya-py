@@ -1,0 +1,13 @@
+Quran-wide Phrase & Chunk Dataset
+Release: 1.0
+Build pipeline: run_pipeline.py
+Python: 3.10+
+Source inputs: four frozen normalized JSON files in data_sources/
+CSV outputs: output/csv/
+Reports: output/reports/
+Validation: scripts/validate_outputs.py
+Source hashes: output/csv/source_manifest.csv
+Curriculum crosswalk: SOURCES_AND_ALIGNMENT.md
+Schema notes: docs/CHUNK_SCHEMA.md
+
+This package uses frozen normalized QAC-derived source inputs and repeated n-gram annotation files. It does not call remote services. The builder recreates the phrase/chunk CSVs from those bundled inputs. The report builder reads only the generated CSVs.

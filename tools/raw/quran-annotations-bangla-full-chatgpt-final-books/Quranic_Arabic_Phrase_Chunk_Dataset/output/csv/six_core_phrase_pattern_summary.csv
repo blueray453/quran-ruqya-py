@@ -1,0 +1,7 @@
+﻿ilmhub_construction,chunk_family,observed_count,unique_ayah_count,unique_surah_count,interpretation_and_qualification
+Murakkab Tawsifi,tawsifi,1542,1347,98,Relation-derived direct noun-to-ADJ pairs; not manually checked for every edge.
+Murakkab Idafi,idafi,9149,4171,112,QAC Poss relation; a chain may appear as nested pairs.
+Murakkab Jarri,jarri,12952,4984,114,QAC gen relation governed by a P node; includes morpheme-only attached prepositions.
+Murakkab Ishari,ishari,71,70,39,DEM to definite N/PN relation only; candidates to indefinite targets excluded.
+Murakkab Atfi,atfi,2573,1796,101,Nominal conj relation with an explicit CONJ node within the span.
+Murakkab Badali (candidate),badali_candidate,457,504,90,App relation between nominal endpoints; all records require qualified review before being taught as confirmed Badal.

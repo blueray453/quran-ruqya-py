@@ -1,0 +1,35 @@
+﻿curriculum_concept_id,module,concept,learning_use,reference_alignment
+F01,Foundations,Kalimah / meaningful word,"Recognise Ism, Fi'l, Harf",ILMHUB Foundations; Bayyinah Nahw Ch.1
+F02,Foundations,Murakkab,Distinguish Murakkab Tamm (sentence) and Murakkab Naqis (phrase),ILMHUB Foundations
+F03,Foundations,Three word classes,"Ism, Fi'l, Harf",ILMHUB Sections B; Bayyinah Nahw Ch.1
+F04,Foundations,Two sentence types,Jumlah Ismiyyah and Jumlah Fi'liyyah,ILMHUB Section C; Bayyinah Nahw Ch.5-6
+F05,Foundations,Six core phrase constructions,"Tawsifi, Idafi, Jarri, Ishari, Atfi, Badali",ILMHUB Section D; Bayyinah Nahw Ch.2 and Ch.4
+I01,Ism,Definiteness,Ma'rifah and Nakirah; definite categories; definiteness inheritance in Idafah,ILMHUB Four Properties / The Ism; Bayyinah Nahw Ch.3 Type section (terminology to reconcile)
+I02,Ism,Gender,Mudhakkar and Mu'annath; agreement,ILMHUB Four Properties; Bayyinah Nahw Ch.3
+I03,Ism,Number,"Mufrad, Muthanna, Jam' (sound and broken plurals)",ILMHUB Four Properties; Bayyinah Nahw Ch.3; Bayyinah Sarf Ch.13
+I04,Ism,I'rab,"Raf', Nasb, Jarr; primary and secondary signs; Mabni vs Mu'rab",ILMHUB Four Properties / I'raab; Bayyinah Nahw Ch.2
+I05,Ism,Pronouns,Independent and attached pronouns; pronoun as Mudaf Ilayhi / object,Bayyinah Nahw Ch.2.5; Ch.6; ILMHUB Ism and Book 2
+P01,Phrase,Murakkab Tawsifi,Described noun + adjective; four-property agreement,ILMHUB Phrases; Bayyinah Nahw Ch.4.1
+P02,Phrase,Murakkab Idafi,Mudaf + Mudaf Ilayhi; chains; pronoun/adverb as second member,ILMHUB Phrases / Idafah; Bayyinah Nahw Ch.2.9
+P03,Phrase,Murakkab Jarri,Harf Jarr + Majrur; Shibh al-Jumlah; attached prepositions,ILMHUB Phrases / Harf Jarr; Bayyinah Nahw Ch.2.7
+P04,Phrase,Murakkab Ishari,Demonstrative + definite noun; contrast phrase vs complete sentence,ILMHUB Phrases; Bayyinah Nahw Ch.4.2
+P05,Phrase,Murakkab Atfi,Conjunctive coordination and case inheritance,ILMHUB Phrases; Bayyinah Nahw Ch.4.3
+P06,Phrase,Murakkab Badali,Substitution/apposition candidate; second naming follows first in I'rab,ILMHUB Phrases; Bayyinah source map (apposition to teacher review)
+S01,Sentence,Nominal sentence,Mubtada and Khabar; predicate order; Shibh al-Jumlah as Khabar,ILMHUB Sentence section; Bayyinah Nahw Ch.5
+S02,Sentence,Verbal sentence,"Fi'l, Fa'il, Maf'ul Bih; embedded doer pronoun",ILMHUB Book 2 Essential Parts; Bayyinah Nahw Ch.6-7
+S03,Sentence,Subject / Fa'il,Explicit noun or embedded pronoun; phrase as sentence slot,ILMHUB Book 2 Fa'il; Bayyinah Nahw Ch.6
+S04,Sentence,Object / Maf'ul Bih,Noun or attached pronoun in Nasb; word-order variation,ILMHUB Book 2; Bayyinah Nahw Ch.6
+S05,Sentence,Passive voice,Na'ib al-Fa'il and passive sentence structure,Bayyinah Nahw Ch.8
+S06,Sentence,Inna and sisters,Ism Inna and Khabar Inna,Bayyinah Nahw Ch.2.8; Ch.11
+S07,Sentence,Kana and sisters,Ism Kana and Khabar Kana; change in case,Bayyinah Nahw Ch.10
+S08,Sentence,Negation,Negation of verbal and nominal sentences,Bayyinah Nahw Ch.9
+S09,Sentence,Relative clauses,"Ism Mawصول, connector and subordinate clause",Bayyinah Nahw Ch.5-7; source SC/REL relations
+S10,Sentence,Conditional clauses,Shart and Jawab al-Shart,Bayyinah Nahw complex sentence sections; source CS/cond/rslt
+V01,Verb,Madi / Mudari' / Amr,Three main verbal forms and recognition,ILMHUB Book 2 Essential Parts; Bayyinah Nahw Ch.6-7
+V02,Verb,Mudari' mood,"Raf', Nasb, Jazm applies to Mudari'; particles governing it",Bayyinah Nahw Ch.7; QAC morphology
+V03,Verb,Verb forms and derived nouns,"Common forms, participles and verbal nouns","ILMHUB Book 2 Morphology; Bayyinah Sarf Ch.1-3, 12"
+H01,Harf,Prepositions,"Harf Jarr, governed Ism and attached pronouns",85% guide Part I (reference method only); ILMHUB; Bayyinah Nahw Ch.2.7
+H02,Harf,Connectors,Conjunctions and clause links,85% guide Part I (reference method only); ILMHUB Atfi; Bayyinah Nahw Ch.4.3
+H03,Harf,Nasb/Jazm particles,Particles with Mudari'; not to be confused with Ism case,Bayyinah Nahw Ch.7
+H04,Harf,Negation / exception / question particles,High-frequency function words in context,"85% guide Part I (reference method only); Bayyinah Nahw Ch.6, 9"
+X01,Comprehension,Repeated lexical chunks,Memorisable contiguous Quranic strings; no grammatical label implied,85% guide frequency strategy (do not copy its protected lists); lexical n-gram corpus
