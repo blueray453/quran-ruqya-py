@@ -1,0 +1,12 @@
+﻿property,value_code,value_label,rank_within_property,frequency,percentage_within_property,cumulative_frequency,cumulative_percentage,frequency_status,denominator_definition
+Gender,M,Mudhakkar / masculine,,,,,,RAW_MASAQ_OCCURRENCE_ROWS_REQUIRED,One Quranic Ism occurrence after segment-to-word reconstruction; pronoun treatment and ambiguous tags must be specified.
+Gender,F,Mu’annath / feminine,,,,,,RAW_MASAQ_OCCURRENCE_ROWS_REQUIRED,One Quranic Ism occurrence after segment-to-word reconstruction; pronoun treatment and ambiguous tags must be specified.
+Gender,UNKNOWN,Unclear / unresolved,,,,,,RAW_MASAQ_OCCURRENCE_ROWS_REQUIRED,One Quranic Ism occurrence after segment-to-word reconstruction; pronoun treatment and ambiguous tags must be specified.
+Number,S,Mufrad / singular,,,,,,RAW_MASAQ_OCCURRENCE_ROWS_REQUIRED,One Quranic Ism occurrence after segment-to-word reconstruction; pronoun treatment and ambiguous tags must be specified.
+Number,D,Muthanna / dual,,,,,,RAW_MASAQ_OCCURRENCE_ROWS_REQUIRED,One Quranic Ism occurrence after segment-to-word reconstruction; pronoun treatment and ambiguous tags must be specified.
+Number,P,Jam‘ / plural,,,,,,RAW_MASAQ_OCCURRENCE_ROWS_REQUIRED,One Quranic Ism occurrence after segment-to-word reconstruction; pronoun treatment and ambiguous tags must be specified.
+Definiteness,DEF,Ma‘rifah / definite,,,,,,RAW_MASAQ_OCCURRENCE_ROWS_REQUIRED,One Quranic Ism occurrence after segment-to-word reconstruction; pronoun treatment and ambiguous tags must be specified.
+Definiteness,INDEF,Nakirah / indefinite,,,,,,RAW_MASAQ_OCCURRENCE_ROWS_REQUIRED,One Quranic Ism occurrence after segment-to-word reconstruction; pronoun treatment and ambiguous tags must be specified.
+Case,NOM,Marfu‘ / nominative,,,,,,RAW_MASAQ_OCCURRENCE_ROWS_REQUIRED,One Quranic Ism occurrence after segment-to-word reconstruction; pronoun treatment and ambiguous tags must be specified.
+Case,ACC,Mansub / accusative,,,,,,RAW_MASAQ_OCCURRENCE_ROWS_REQUIRED,One Quranic Ism occurrence after segment-to-word reconstruction; pronoun treatment and ambiguous tags must be specified.
+Case,GEN,Majrur / genitive,,,,,,RAW_MASAQ_OCCURRENCE_ROWS_REQUIRED,One Quranic Ism occurrence after segment-to-word reconstruction; pronoun treatment and ambiguous tags must be specified.

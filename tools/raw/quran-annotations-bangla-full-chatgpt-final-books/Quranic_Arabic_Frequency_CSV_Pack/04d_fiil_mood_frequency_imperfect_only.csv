@@ -1,0 +1,4 @@
+﻿rank,mood_code,mood_label,frequency,percentage_of_imperfect_verbs,cumulative_frequency,cumulative_percentage,denominator_imperfect_verbs,source,scope
+1,INDICATIVE (default),Indicative / Marfu‘ (defaulted when unmarked),5582,67.010804,5582,67.010804,8330,QAC-derived feature-bundle aggregation,Imperfect (Mudari‘) verbs only. Mood is not applied to perfect or imperative verbs.
+2,JUS,Jussive / Majzum,1418,17.022809,7000,84.033613,8330,QAC-derived feature-bundle aggregation,Imperfect (Mudari‘) verbs only. Mood is not applied to perfect or imperative verbs.
+3,SUBJ,Subjunctive / Mansub,1330,15.966387,8330,100.0,8330,QAC-derived feature-bundle aggregation,Imperfect (Mudari‘) verbs only. Mood is not applied to perfect or imperative verbs.

@@ -1,0 +1,7 @@
+﻿teaching_pattern_rank_order,phrase_pattern,arabic_term,basic_structure,example_quranic,frequency_rank,frequency,frequency_status,counting_unit_needed,note
+1,Descriptive / adjective phrase,النعت والمنعوت,Ism + adjective (Na‘t),الرَّحْمَٰنِ الرَّحِيمِ,,,NOT_COMPUTABLE_FROM_CURRENT_EXPORTS,"Unique phrase spans, not token annotations",Both adjectives describe Allah in the Basmalah; confirm attachment in the full parsed context.
+2,Possessive / genitive construction,الإضافة,Mudaf + Mudaf Ilayh,بِسْمِ اللَّهِ,,,NOT_COMPUTABLE_FROM_CURRENT_EXPORTS,Unique Idafah spans,Can be nested inside a prepositional phrase.
+3,Prepositional phrase,الجار والمجرور,Preposition + Majrur complement,بِسْمِ اللَّهِ,,,NOT_COMPUTABLE_FROM_CURRENT_EXPORTS,Unique Jar-Majrur spans,A single span may contain an Idafah internally.
+4,Demonstrative phrase,اسم الإشارة والمشار إليه,Demonstrative + indicated noun,ذَٰلِكَ الْكِتَابُ,,,NOT_COMPUTABLE_FROM_CURRENT_EXPORTS,Unique demonstrative constructions,Example phrase occurs at Quran 2:2.
+5,Conjunctive phrase,العطف,Conjunction + coordinated item,وَإِيَّاكَ,,,NOT_COMPUTABLE_FROM_CURRENT_EXPORTS,Unique coordination spans,"Conjunction can coordinate words, phrases or clauses."
+6,Substitution / apposition,البدل,Badal + Mubdal Minhu,,,,NOT_COMPUTABLE_FROM_CURRENT_EXPORTS,Unique Badal spans,No example inserted here to avoid using a disputed or unverified example.

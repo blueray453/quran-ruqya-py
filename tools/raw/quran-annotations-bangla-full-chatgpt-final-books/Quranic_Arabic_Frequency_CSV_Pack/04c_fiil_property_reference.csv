@@ -1,0 +1,9 @@
+﻿property_order,property,arabic_term,values,frequency_available,scope_note
+1,Aspect / tense,الزمن / الصيغة,Madi (ماضٍ); Mudari‘ (مضارع); Amr (أمر),YES,Frequency in 04a.
+2,Person,الشخص,Mutakallim (متكلم); Mukhatab (مخاطب); Ghaib (غائب),YES,First / second / third person.
+3,Gender,الجنس,Mudhakkar (مذكر); Mu’annath (مؤنث); unmarked/not annotated,YES_WITH_UNMARKED_CATEGORY,Do not silently drop unmarked/default values.
+4,Number,العدد,Mufrad (مفرد); Muthanna (مثنى); Jam‘ (جمع),YES,Singular / dual / plural.
+5,Voice,البناء للفاعل أو للمجهول,Active (معلوم); Passive (مجهول),YES,Passive is a verb property; active is source default when unmarked.
+6,Mood (Mudari‘ only),حالة الفعل المضارع,Marfu‘ (مرفوع); Mansub (منصوب); Majzum (مجزوم),YES_RECOMPUTED_IMPF_ONLY,Do not apply Raf‘/Nasb/Jazm mood to perfect or imperative verbs.
+7,Form / pattern,الوزن / الباب,Forms I-X plus attested rare forms in the export,YES,"Wazn is a derivational pattern dimension, not a substitute for the inflectional properties above."
+8,Regularity / weak-strong class,الصحيح والمعتل,Sahih; Mithal; Ajwaf; Naqis; Lafif; Mahmuz; Muda‘‘af,NO_IN_CURRENT_FREQUENCY_EXPORT,Needs a dedicated root-class table / raw morphology mapping.

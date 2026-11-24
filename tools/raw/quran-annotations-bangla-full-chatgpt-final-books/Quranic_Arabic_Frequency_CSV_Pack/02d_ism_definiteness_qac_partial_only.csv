@@ -1,0 +1,2 @@
+﻿rank,nominal_state_code,frequency,percentage,coverage_status,source,source_url,warning
+1,INDEF,8672,100.0,INCOMPLETE_SINGLE_CATEGORY_ONLY,QAC prior export,https://corpus.quran.com/documentation/morphologicalfeatures.jsp,Only INDEF appears in the supplied export; this cannot rank definite vs indefinite nouns and must not be presented as a complete definiteness distribution.
