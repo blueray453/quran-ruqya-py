@@ -1,0 +1,7 @@
+﻿rank,source_label_code,source_label_arabic,source_label_english,source_span_count,pct_of_annotated_constituent_spans,cumulative_frequency,cumulative_percentage,unique_ayahs,ayah_incidence_pct,unique_surahs,unit_warning
+1,PP,جار ومجرور,Prepositional phrase,12870,48.633942,12870,48.633942,4968,79.666453,114,QAC.csv constituent annotation rows; not MASAQ phrase-instance counts
+2,VS,جملة فعلية,Verbal sentence,10858,41.030873,23728,89.664815,4403,70.606158,114,QAC.csv constituent annotation rows; not MASAQ phrase-instance counts
+3,NS,جملة اسمية,Nominal sentence,1838,6.945547,25566,96.610362,1462,23.444516,96,QAC.csv constituent annotation rows; not MASAQ phrase-instance counts
+4,SC,مصدر مؤول,Subordinate clause,564,2.131278,26130,98.741639,500,8.01796,72,QAC.csv constituent annotation rows; not MASAQ phrase-instance counts
+5,S,جملة,Sentence,183,0.691532,26313,99.433171,182,2.918538,41,QAC.csv constituent annotation rows; not MASAQ phrase-instance counts
+6,CS,جملة شرط,Conditional sentence,150,0.566829,26463,100.0,142,2.277101,55,QAC.csv constituent annotation rows; not MASAQ phrase-instance counts

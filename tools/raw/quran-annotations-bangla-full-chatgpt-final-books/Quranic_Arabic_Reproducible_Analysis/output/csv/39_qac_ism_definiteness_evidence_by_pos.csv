@@ -1,0 +1,9 @@
+﻿QAC_POS,stem_rows,unique_word_positions,INDEF_state_word_positions,Al_article_word_positions,attached_PRON_suffix_word_positions,intrinsically_definite_pronoun_POS_word_positions,proper_noun_POS_word_positions
+ADJ,1961,1961,1254,575,1,0,0
+DEM,1059,1059,0,0,0,1059,0
+LOC,669,669,0,0,370,2,0
+N,25136,25135,7320,7488,5128,0,0
+PN,3911,3911,46,289,0,0,3911
+PRON,3301,3301,0,0,0,3301,0
+REL,3575,3575,0,0,0,3575,0
+T,1166,1166,52,25,30,2,0

@@ -1,0 +1,23 @@
+﻿dimension,feature_value,frequency,denominator,percentage,interpretation_note
+Form,I (default),12347,19356,63.789006,Dimensions overlap; do not sum across dimensions
+Form,IV,3487,19356,18.015086,Dimensions overlap; do not sum across dimensions
+Form,II,1300,19356,6.716264,Dimensions overlap; do not sum across dimensions
+Form,VIII,963,19356,4.975201,Dimensions overlap; do not sum across dimensions
+Form,V,414,19356,2.138872,Dimensions overlap; do not sum across dimensions
+Form,X,369,19356,1.906386,Dimensions overlap; do not sum across dimensions
+Form,III,334,19356,1.725563,Dimensions overlap; do not sum across dimensions
+Form,VI,77,19356,0.397809,Dimensions overlap; do not sum across dimensions
+Form,VII,51,19356,0.263484,Dimensions overlap; do not sum across dimensions
+Form,XII,9,19356,0.046497,Dimensions overlap; do not sum across dimensions
+Form,IX,5,19356,0.025832,Dimensions overlap; do not sum across dimensions
+Aspect,PERF,9150,19356,47.272164,Dimensions overlap; do not sum across dimensions
+Aspect,IMPF,8330,19356,43.035751,Dimensions overlap; do not sum across dimensions
+Aspect,IMPV,1876,19356,9.692085,Dimensions overlap; do not sum across dimensions
+Voice,ACTIVE (default),18216,19356,94.110353,Dimensions overlap; do not sum across dimensions
+Voice,PASS,1140,19356,5.889647,Dimensions overlap; do not sum across dimensions
+Person,UNMARKED_OR_DEFAULT,19356,19356,100.0,Dimensions overlap; do not sum across dimensions
+Gender,UNMARKED_OR_DEFAULT,19356,19356,100.0,Dimensions overlap; do not sum across dimensions
+Number,UNMARKED_OR_DEFAULT,19356,19356,100.0,Dimensions overlap; do not sum across dimensions
+Imperfect mood,INDICATIVE (default),5582,8330,67.010804,Mood denominator is imperfect verbs only
+Imperfect mood,JUS,1418,8330,17.022809,Mood denominator is imperfect verbs only
+Imperfect mood,SUBJ,1330,8330,15.966387,Mood denominator is imperfect verbs only

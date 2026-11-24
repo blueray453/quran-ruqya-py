@@ -1,0 +1,5 @@
+﻿property,rows_with_explicit_feature,rows_unmarked_or_unresolved,coverage_pct,denominator
+Gender,32116,8662,78.7582,40778
+Number,16554,24224,40.5954,40778
+I'rab case,31882,8896,78.1843,40778
+Definiteness state,8672,32106,21.2664,40778

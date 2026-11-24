@@ -1,0 +1,14 @@
+﻿property,value_label,frequency,percentage_of_broad_Ism_STEM_rows,denominator,source,status,interpretation
+Gender,Masculine,26090,63.9806,40778,QAC morphology v0.4,MEASURED,Unmarked is not a grammatical value; percentages use the broad QAC Ism STEM denominator.
+Gender,Unmarked,8662,21.2418,40778,QAC morphology v0.4,AVAILABLE_WITH_UNMARKED_GAPS,Unmarked is not a grammatical value; percentages use the broad QAC Ism STEM denominator.
+Gender,Feminine,6026,14.7776,40778,QAC morphology v0.4,MEASURED,Unmarked is not a grammatical value; percentages use the broad QAC Ism STEM denominator.
+Number,Unmarked,24224,59.4046,40778,QAC morphology v0.4,AVAILABLE_WITH_UNMARKED_GAPS,Unmarked is not a grammatical value; percentages use the broad QAC Ism STEM denominator.
+Number,Plural,9692,23.7677,40778,QAC morphology v0.4,MEASURED,Unmarked is not a grammatical value; percentages use the broad QAC Ism STEM denominator.
+Number,Singular,6593,16.168,40778,QAC morphology v0.4,MEASURED,Unmarked is not a grammatical value; percentages use the broad QAC Ism STEM denominator.
+Number,Dual,269,0.6597,40778,QAC morphology v0.4,MEASURED,Unmarked is not a grammatical value; percentages use the broad QAC Ism STEM denominator.
+Definiteness,State not explicit,32106,78.7336,40778,QAC morphology v0.4,AVAILABLE_WITH_UNMARKED_GAPS,Unmarked is not a grammatical value; percentages use the broad QAC Ism STEM denominator.
+Definiteness,Explicit indefinite,8672,21.2664,40778,QAC morphology v0.4,MEASURED,Unmarked is not a grammatical value; percentages use the broad QAC Ism STEM denominator.
+I‘rab / case,Marfuʿ,8941,21.926,40778,QAC morphology v0.4,AVAILABLE_WITH_UNMARKED_GAPS,"Only Rafʿ, Nasb and Jarr are noun cases; unmarked retained."
+I‘rab / case,Mansub,10331,25.3347,40778,QAC morphology v0.4,AVAILABLE_WITH_UNMARKED_GAPS,"Only Rafʿ, Nasb and Jarr are noun cases; unmarked retained."
+I‘rab / case,Majrur,12610,30.9235,40778,QAC morphology v0.4,AVAILABLE_WITH_UNMARKED_GAPS,"Only Rafʿ, Nasb and Jarr are noun cases; unmarked retained."
+I‘rab / case,No explicit case,8896,21.8157,40778,QAC morphology v0.4,AVAILABLE_WITH_UNMARKED_GAPS,"Only Rafʿ, Nasb and Jarr are noun cases; unmarked retained."

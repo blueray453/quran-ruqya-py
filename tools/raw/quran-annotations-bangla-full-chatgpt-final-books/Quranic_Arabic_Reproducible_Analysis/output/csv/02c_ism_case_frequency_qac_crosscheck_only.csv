@@ -1,0 +1,4 @@
+﻿rank,case_state,arabic_term,english_label,frequency,percentage_of_case_marked_subset,denominator,source,warning
+1,GEN,جر,Genitive / Majrur,12610,39.552098,31882,QAC morphology v0.4 raw text,Denominator includes only case-marked Ism STEM annotations; separate from MASAQ.
+2,ACC,نصب,Accusative / Mansub,10331,32.403864,31882,QAC morphology v0.4 raw text,Denominator includes only case-marked Ism STEM annotations; separate from MASAQ.
+3,NOM,رفع,Nominative / Marfuʿ,8941,28.044037,31882,QAC morphology v0.4 raw text,Denominator includes only case-marked Ism STEM annotations; separate from MASAQ.

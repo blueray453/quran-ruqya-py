@@ -1,0 +1,141 @@
+{
+  "qac_v0_4": {
+    "all_stem_rows": 77915,
+    "broad_ism_stem_rows": 40778,
+    "broad_ism_unique_words": 40773,
+    "pos_counts": {
+      "N": 25136,
+      "PN": 3911,
+      "ADJ": 1961,
+      "PRON": 3301,
+      "REL": 3575,
+      "DEM": 1059,
+      "T": 1166,
+      "LOC": 669
+    },
+    "gender": {
+      "M": 26090,
+      "UNMARKED": 8662,
+      "F": 6026
+    },
+    "number": {
+      "UNMARKED": 24224,
+      "S": 6593,
+      "P": 9692,
+      "D": 269
+    },
+    "case": {
+      "GEN": 12610,
+      "NOM": 8941,
+      "UNMARKED": 8896,
+      "ACC": 10331
+    },
+    "state": {
+      "UNMARKED": 32106,
+      "INDEF": 8672
+    },
+    "definiteness_evidence": {
+      "Definiteness not determined by available marker": 6684,
+      "Pronoun / relative / demonstrative (inherently definite)": 7935,
+      "Attached pronoun suffix (possessive/annexed)": 5529,
+      "Al- article prefix": 8377,
+      "Explicit INDEF state": 8672,
+      "Proper noun (inherently definite)": 3576
+    },
+    "definiteness_overlaps": [
+      [
+        "Al- prefix ∩ INDEF",
+        0
+      ],
+      [
+        "Al- prefix ∩ proper noun",
+        289
+      ],
+      [
+        "INDEF ∩ proper noun",
+        46
+      ],
+      [
+        "INDEF ∩ PRON/REL/DEM",
+        0
+      ],
+      [
+        "Attached PRON suffix ∩ INDEF",
+        0
+      ],
+      [
+        "Attached PRON suffix ∩ Al- prefix",
+        0
+      ],
+      [
+        "Attached PRON suffix ∩ intrinsic definite pronoun",
+        0
+      ],
+      [
+        "Attached PRON suffix ∩ proper noun",
+        0
+      ]
+    ],
+    "case_marked_denominator": 31882
+  },
+  "masaq_archive_csv": {
+    "all_stem_rows": 77797,
+    "ism_stem_rows": 39237,
+    "ism_unique_words": 39234,
+    "family_counts": {
+      "Lexical nouns (common/proper/derived noun tags)": 23425,
+      "Verbal nouns / gerunds": 4465,
+      "Pronouns / demonstratives / relative / interrogative": 6387,
+      "Adjectives": 2748,
+      "Adverbial nouns": 2212
+    },
+    "declinability": {
+      "DECLN": 31113,
+      "DISJ_INV_PRON": 1091,
+      "REL_PRON": 2918,
+      "DEM_NOUN": 1071,
+      "INVAR": 1585,
+      "COND_NOUN": 548,
+      "JONT_PRON": 529,
+      "DISJ_PRON": 120,
+      "INTROG_NOUN": 252,
+      "UNMARKED": 4,
+      "DEF_ART": 6
+    },
+    "case_mood": {
+      "GENITIVE": 13843,
+      "NOMINATIVE": 11277,
+      "ACCUSATIVE": 13313,
+      "UNMARKED": 10,
+      "INVARIABLE": 788,
+      "JUSSIVE": 6
+    },
+    "case_markers": {
+      "KASRA": 10980,
+      "DHAMMA": 7444,
+      "YAA": 1856,
+      "FATHA": 11555,
+      "IMP_DHAMMA": 478,
+      "UNMARKED": 19,
+      "SUKUN": 4732,
+      "IMP_KASRA": 458,
+      "WAW": 723,
+      "FATHA_DIPTOTE": 356,
+      "IMP_FATHA": 522,
+      "ALIF": 102,
+      "DEL_NUN": 12
+    },
+    "possessive_construct": {
+      "CONSTRUCT": 10122,
+      "NOT_CONSTRUCT": 29102,
+      "UNMARKED": 13
+    },
+    "definiteness_marker_coverage": {
+      "article_al_prefix_unique_words": 10913,
+      "attached_poss_pron_unique_words": 4876,
+      "case_def_suffix_unique_words": 3500,
+      "case_indef_suffix_unique_words": 3950,
+      "construct_head_unique_words": 10121
+    }
+  }
+}

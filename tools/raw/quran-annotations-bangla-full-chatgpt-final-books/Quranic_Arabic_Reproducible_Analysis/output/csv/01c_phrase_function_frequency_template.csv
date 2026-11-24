@@ -1,0 +1,9 @@
+﻿teaching_display_order,phrase_function,arabic_label,frequency_rank,phrase_count,percentage_of_phrase_functions,unique_ayahs,frequency_status,note,dataset_source,source_url
+1,Predicate / Khabar,خبر,,,,,REQUIRES_RAW_MASAQ_V6,Includes predicate functions and predicate forms associated with copular / negative constructions.,MASAQ V6,https://data.mendeley.com/datasets/9yvrzxktmr/6
+2,Agent / subject,فاعل,,,,,REQUIRES_RAW_MASAQ_V6,Function of the agent/doer in a verbal clause.,MASAQ V6,https://data.mendeley.com/datasets/9yvrzxktmr/6
+3,Passive subject,نائب الفاعل,,,,,REQUIRES_RAW_MASAQ_V6,Subject-like role in passive construction.,MASAQ V6,https://data.mendeley.com/datasets/9yvrzxktmr/6
+4,Circumstantial accusative,حال,,,,,REQUIRES_RAW_MASAQ_V6,Circumstantial phrase or state.,MASAQ V6,https://data.mendeley.com/datasets/9yvrzxktmr/6
+5,Adjective / modifier,صفة / نعت,,,,,REQUIRES_RAW_MASAQ_V6,Modifier function of a phrase or clause.,MASAQ V6,https://data.mendeley.com/datasets/9yvrzxktmr/6
+6,Genitive construct,مضاف إليه,,,,,REQUIRES_RAW_MASAQ_V6,Genitive/Idafah-related function.,MASAQ V6,https://data.mendeley.com/datasets/9yvrzxktmr/6
+7,Conditional apodosis,جواب الشرط,,,,,REQUIRES_RAW_MASAQ_V6,Result clause/function of a conditional construction.,MASAQ V6,https://data.mendeley.com/datasets/9yvrzxktmr/6
+8,Dependency / related function,تابع / متعلق,,,,,REQUIRES_RAW_MASAQ_V6,"Broad dependency group including coordination, apposition, emphasis and exception in the source's descriptive grouping.",MASAQ V6,https://data.mendeley.com/datasets/9yvrzxktmr/6

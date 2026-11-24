@@ -1,0 +1,26 @@
+﻿Ism_family,Case_Mood,frequency,pct_within_family,family_denominator
+Lexical nouns (common/proper/derived noun tags),GENITIVE,9864,42.1089,23425
+Lexical nouns (common/proper/derived noun tags),ACCUSATIVE,7282,31.0864,23425
+Lexical nouns (common/proper/derived noun tags),NOMINATIVE,6059,25.8655,23425
+Lexical nouns (common/proper/derived noun tags),INVARIABLE,212,0.905,23425
+Lexical nouns (common/proper/derived noun tags),UNMARKED,7,0.0299,23425
+Lexical nouns (common/proper/derived noun tags),JUSSIVE,1,0.0043,23425
+Verbal nouns / gerunds,ACCUSATIVE,1849,41.411,4465
+Verbal nouns / gerunds,GENITIVE,1504,33.6842,4465
+Verbal nouns / gerunds,NOMINATIVE,1076,24.0985,4465
+Verbal nouns / gerunds,INVARIABLE,34,0.7615,4465
+Verbal nouns / gerunds,UNMARKED,2,0.0448,4465
+Adjectives,NOMINATIVE,1371,49.8908,2748
+Adjectives,ACCUSATIVE,906,32.9694,2748
+Adjectives,GENITIVE,444,16.1572,2748
+Adjectives,INVARIABLE,22,0.8006,2748
+Adjectives,JUSSIVE,5,0.182,2748
+Pronouns / demonstratives / relative / interrogative,NOMINATIVE,2761,43.2284,6387
+Pronouns / demonstratives / relative / interrogative,GENITIVE,1847,28.9181,6387
+Pronouns / demonstratives / relative / interrogative,ACCUSATIVE,1462,22.8902,6387
+Pronouns / demonstratives / relative / interrogative,INVARIABLE,316,4.9475,6387
+Pronouns / demonstratives / relative / interrogative,UNMARKED,1,0.0157,6387
+Adverbial nouns,ACCUSATIVE,1814,82.0072,2212
+Adverbial nouns,INVARIABLE,204,9.2224,2212
+Adverbial nouns,GENITIVE,184,8.3183,2212
+Adverbial nouns,NOMINATIVE,10,0.4521,2212

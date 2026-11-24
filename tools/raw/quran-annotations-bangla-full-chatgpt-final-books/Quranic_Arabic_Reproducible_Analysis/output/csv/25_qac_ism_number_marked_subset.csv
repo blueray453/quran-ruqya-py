@@ -1,0 +1,5 @@
+﻿feature_value,frequency,percentage,denominator,interpretation
+UNMARKED,24224,59.4046,40778,Coverage / missingness against all Ism rows
+P,9692,58.5478,16554,Marked-feature subset only
+S,6593,39.8272,16554,Marked-feature subset only
+D,269,1.625,16554,Marked-feature subset only

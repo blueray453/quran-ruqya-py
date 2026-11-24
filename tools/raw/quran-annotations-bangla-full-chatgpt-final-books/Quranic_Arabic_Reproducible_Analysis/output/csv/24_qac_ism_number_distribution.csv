@@ -1,0 +1,33 @@
+﻿QAC_POS_or_ALL,feature_value,frequency,pct_within_denominator,label,denominator
+ALL_ISM,UNMARKED,24224,59.4046,No explicit number feature,40778
+ALL_ISM,P,9692,23.7677,Plural,40778
+ALL_ISM,S,6593,16.168,Singular,40778
+ALL_ISM,D,269,0.6597,Dual,40778
+ADJ,S,1430,72.922,Singular,1961
+ADJ,UNMARKED,290,14.7884,No explicit number feature,1961
+ADJ,P,233,11.8817,Plural,1961
+ADJ,D,8,0.408,Dual,1961
+DEM,S,750,70.8215,Singular,1059
+DEM,P,299,28.2342,Plural,1059
+DEM,UNMARKED,5,0.4721,No explicit number feature,1059
+DEM,D,5,0.4721,Dual,1059
+LOC,UNMARKED,665,99.4021,No explicit number feature,669
+LOC,S,4,0.5979,Singular,669
+N,UNMARKED,16135,64.1908,No explicit number feature,25136
+N,P,6374,25.3581,Plural,25136
+N,S,2398,9.5401,Singular,25136
+N,D,229,0.911,Dual,25136
+PN,UNMARKED,3848,98.3892,No explicit number feature,3911
+PN,P,59,1.5086,Plural,3911
+PN,S,4,0.1023,Singular,3911
+PRON,P,1646,49.8637,Plural,3301
+PRON,S,1631,49.4093,Singular,3301
+PRON,D,24,0.7271,Dual,3301
+REL,UNMARKED,2126,59.4685,No explicit number feature,3575
+REL,P,1075,30.0699,Plural,3575
+REL,S,372,10.4056,Singular,3575
+REL,D,2,0.0559,Dual,3575
+T,UNMARKED,1155,99.0566,No explicit number feature,1166
+T,P,6,0.5146,Plural,1166
+T,S,4,0.3431,Singular,1166
+T,D,1,0.0858,Dual,1166

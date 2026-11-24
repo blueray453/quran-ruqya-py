@@ -1,0 +1,9 @@
+﻿overlap_pair,unique_word_positions
+Al- prefix ∩ INDEF,0
+Al- prefix ∩ proper noun,289
+INDEF ∩ proper noun,46
+INDEF ∩ PRON/REL/DEM,0
+Attached PRON suffix ∩ INDEF,0
+Attached PRON suffix ∩ Al- prefix,0
+Attached PRON suffix ∩ intrinsic definite pronoun,0
+Attached PRON suffix ∩ proper noun,0

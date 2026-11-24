@@ -1,0 +1,9 @@
+﻿QAC_POS,frequency,pct_of_QAC_Ism_stem_rows,interpretation
+N,25136,61.6411,Common noun
+PN,3911,9.591,Proper noun
+REL,3575,8.767,Relative pronoun
+PRON,3301,8.0951,Personal pronoun
+ADJ,1961,4.809,Adjective
+T,1166,2.8594,Time adverb (nominal)
+DEM,1059,2.597,Demonstrative
+LOC,669,1.6406,Locative adverb (nominal)

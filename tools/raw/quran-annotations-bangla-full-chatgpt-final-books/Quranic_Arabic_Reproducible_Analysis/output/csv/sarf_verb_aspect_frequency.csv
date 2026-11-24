@@ -1,0 +1,4 @@
+﻿rank,verb_aspect,frequency,percentage_of_verb_occurrences,cumulative_frequency,cumulative_percentage,unique_word_positions,unique_ayahs,unique_surahs
+1,PERF,9150,47.272164,9150,47.272164,9150,4184,112
+2,IMPF,8330,43.035751,17480,90.307915,8330,3917,112
+3,IMPV,1876,9.692085,19356,100.0,1876,1276,93

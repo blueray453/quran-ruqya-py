@@ -1,0 +1,49 @@
+﻿Ism_family,Case_Mood_Marker,frequency,pct_within_family,family_denominator
+Lexical nouns (common/proper/derived noun tags),KASRA,8763,37.4088,23425
+Lexical nouns (common/proper/derived noun tags),FATHA,5541,23.6542,23425
+Lexical nouns (common/proper/derived noun tags),DHAMMA,4951,21.1355,23425
+Lexical nouns (common/proper/derived noun tags),YAA,1788,7.6329,23425
+Lexical nouns (common/proper/derived noun tags),WAW,688,2.937,23425
+Lexical nouns (common/proper/derived noun tags),IMP_FATHA,364,1.5539,23425
+Lexical nouns (common/proper/derived noun tags),IMP_KASRA,354,1.5112,23425
+Lexical nouns (common/proper/derived noun tags),FATHA_DIPTOTE,337,1.4386,23425
+Lexical nouns (common/proper/derived noun tags),IMP_DHAMMA,326,1.3917,23425
+Lexical nouns (common/proper/derived noun tags),SUKUN,191,0.8154,23425
+Lexical nouns (common/proper/derived noun tags),ALIF,94,0.4013,23425
+Lexical nouns (common/proper/derived noun tags),UNMARKED,16,0.0683,23425
+Lexical nouns (common/proper/derived noun tags),DEL_NUN,12,0.0512,23425
+Verbal nouns / gerunds,FATHA,1754,39.2833,4465
+Verbal nouns / gerunds,KASRA,1507,33.7514,4465
+Verbal nouns / gerunds,DHAMMA,978,21.9037,4465
+Verbal nouns / gerunds,IMP_FATHA,82,1.8365,4465
+Verbal nouns / gerunds,IMP_DHAMMA,71,1.5901,4465
+Verbal nouns / gerunds,IMP_KASRA,54,1.2094,4465
+Verbal nouns / gerunds,SUKUN,8,0.1792,4465
+Verbal nouns / gerunds,YAA,7,0.1568,4465
+Verbal nouns / gerunds,ALIF,2,0.0448,4465
+Verbal nouns / gerunds,UNMARKED,2,0.0448,4465
+Adjectives,DHAMMA,1222,44.4687,2748
+Adjectives,FATHA,812,29.5488,2748
+Adjectives,KASRA,411,14.9563,2748
+Adjectives,IMP_DHAMMA,81,2.9476,2748
+Adjectives,IMP_FATHA,54,1.9651,2748
+Adjectives,IMP_KASRA,50,1.8195,2748
+Adjectives,YAA,50,1.8195,2748
+Adjectives,WAW,35,1.2737,2748
+Adjectives,FATHA_DIPTOTE,19,0.6914,2748
+Adjectives,SUKUN,10,0.3639,2748
+Adjectives,ALIF,4,0.1456,2748
+Pronouns / demonstratives / relative / interrogative,SUKUN,3561,55.7539,6387
+Pronouns / demonstratives / relative / interrogative,FATHA,2454,38.4218,6387
+Pronouns / demonstratives / relative / interrogative,DHAMMA,251,3.9299,6387
+Pronouns / demonstratives / relative / interrogative,KASRA,107,1.6753,6387
+Pronouns / demonstratives / relative / interrogative,YAA,6,0.0939,6387
+Pronouns / demonstratives / relative / interrogative,IMP_FATHA,5,0.0783,6387
+Pronouns / demonstratives / relative / interrogative,ALIF,2,0.0313,6387
+Pronouns / demonstratives / relative / interrogative,UNMARKED,1,0.0157,6387
+Adverbial nouns,FATHA,994,44.9367,2212
+Adverbial nouns,SUKUN,962,43.4901,2212
+Adverbial nouns,KASRA,192,8.6799,2212
+Adverbial nouns,DHAMMA,42,1.8987,2212
+Adverbial nouns,IMP_FATHA,17,0.7685,2212
+Adverbial nouns,YAA,5,0.226,2212

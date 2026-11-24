@@ -1,0 +1,35 @@
+﻿rank,pos,pos_arabic,pos_english,frequency,percentage,cumulative_frequency,cumulative_percentage
+1,N,اسم,Noun,25136,32.260797,25136,32.260797
+2,V,فعل,Verb,19356,24.842457,44492,57.103254
+3,P,حرف جر,Preposition,7679,9.855612,52171,66.958865
+4,PN,اسم علم,Proper noun,3911,5.019573,56082,71.978438
+5,REL,اسم موصول,Relative pronoun,3575,4.588333,59657,76.566771
+6,PRON,ضمير,Personal pronoun,3301,4.236668,62958,80.80344
+7,NEG,حرف نفي,Negative particle,2688,3.449913,65646,84.253353
+8,ACC,حرف نصب,Accusative particle,2283,2.930116,67929,87.183469
+9,ADJ,صفة,Adjective,1961,2.516845,69890,89.700314
+10,T,ظرف زمان,Time adverb,1166,1.496503,71056,91.196817
+11,DEM,اسم اشارة,Demonstrative pronoun,1059,1.359173,72115,92.555991
+12,COND,حرف شرط,Conditional particle,1049,1.346339,73164,93.902329
+13,CONJ,حرف عطف,Coordinating conjunction,756,0.970288,73920,94.872618
+14,SUB,حرف مصدري,Subordinating conjunction,684,0.87788,74604,95.750497
+15,LOC,ظرف مكان,Location adverb,669,0.858628,75273,96.609125
+16,RES,أداة حصر,Restriction particle,558,0.716165,75831,97.32529
+17,INTG,حرف استفهام,Interogative particle,439,0.563435,76270,97.888725
+18,CERT,حرف تحقيق,Particle of certainty,414,0.531348,76684,98.420073
+19,PRO,حرف نهي,Prohibition particle,332,0.426105,77016,98.846179
+20,PREV,حرف كاف,Preventive particle,162,0.207919,77178,99.054097
+21,RET,حرف اضراب,Retraction particle,122,0.156581,77300,99.210678
+22,EXP,أداة استثناء,Exceptive particle,104,0.133479,77404,99.344157
+23,INC,حرف ابتداء,Inceptive particle,90,0.11551,77494,99.459668
+24,EXL,حرف تفصيل,Explanation particle,66,0.084708,77560,99.544375
+25,AMD,حرف استدراك,Amendment particle,65,0.083424,77625,99.6278
+26,INT,حرف تفسير,Particle of interpretation,47,0.060322,77672,99.688122
+27,FUT,حرف استقبال,Future particle,42,0.053905,77714,99.742027
+28,ANS,حرف جواب,Answer particle,40,0.051338,77754,99.793365
+29,EXH,حرف تحضيض,Exhortation particle,40,0.051338,77794,99.844703
+30,SUR,حرف فجاءة,Surprise particle,35,0.044921,77829,99.889623
+31,AVR,حرف ردع,Aversion particle,33,0.042354,77862,99.931977
+32,INL,حروف مقطعة,Quranic initials,30,0.038503,77892,99.970481
+33,SUP,حرف زائد,Supplemental particle,21,0.026952,77913,99.997433
+34,IMPN,اسم فعل أمر,Imperative verbal noun,2,0.002567,77915,100.0

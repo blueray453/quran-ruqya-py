@@ -1,0 +1,15 @@
+﻿QAC_POS_or_ALL,feature_value,frequency,pct_within_denominator,label,denominator
+ALL_ISM,UNMARKED,32106,78.7336,No explicit state tag,40778
+ALL_ISM,INDEF,8672,21.2664,Explicit INDEF tag,40778
+ADJ,INDEF,1254,63.947,Explicit INDEF tag,1961
+ADJ,UNMARKED,707,36.053,No explicit state tag,1961
+DEM,UNMARKED,1059,100.0,No explicit state tag,1059
+LOC,UNMARKED,669,100.0,No explicit state tag,669
+N,UNMARKED,17816,70.8784,No explicit state tag,25136
+N,INDEF,7320,29.1216,Explicit INDEF tag,25136
+PN,UNMARKED,3865,98.8238,No explicit state tag,3911
+PN,INDEF,46,1.1762,Explicit INDEF tag,3911
+PRON,UNMARKED,3301,100.0,No explicit state tag,3301
+REL,UNMARKED,3575,100.0,No explicit state tag,3575
+T,UNMARKED,1114,95.5403,No explicit state tag,1166
+T,INDEF,52,4.4597,Explicit INDEF tag,1166

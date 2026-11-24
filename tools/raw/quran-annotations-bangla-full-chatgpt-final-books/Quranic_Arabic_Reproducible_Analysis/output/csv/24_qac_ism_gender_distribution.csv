@@ -1,0 +1,28 @@
+﻿QAC_POS_or_ALL,feature_value,frequency,pct_within_denominator,label,denominator
+ALL_ISM,M,26090,63.9806,Masculine,40778
+ALL_ISM,UNMARKED,8662,21.2418,No explicit gender feature,40778
+ALL_ISM,F,6026,14.7776,Feminine,40778
+ADJ,M,1667,85.0076,Masculine,1961
+ADJ,F,279,14.2274,Feminine,1961
+ADJ,UNMARKED,15,0.7649,No explicit gender feature,1961
+DEM,M,712,67.2332,Masculine,1059
+DEM,UNMARKED,255,24.0793,No explicit gender feature,1059
+DEM,F,92,8.6874,Feminine,1059
+LOC,UNMARKED,630,94.1704,No explicit gender feature,669
+LOC,M,37,5.5306,Masculine,669
+LOC,F,2,0.299,Feminine,669
+N,M,18804,74.809,Masculine,25136
+N,F,5246,20.8705,Feminine,25136
+N,UNMARKED,1086,4.3205,No explicit gender feature,25136
+PN,UNMARKED,3182,81.3603,No explicit gender feature,3911
+PN,M,632,16.1595,Masculine,3911
+PN,F,97,2.4802,Feminine,3911
+PRON,M,2732,82.7628,Masculine,3301
+PRON,UNMARKED,351,10.6331,No explicit gender feature,3301
+PRON,F,218,6.6041,Feminine,3301
+REL,UNMARKED,2127,59.4965,No explicit gender feature,3575
+REL,M,1367,38.2378,Masculine,3575
+REL,F,81,2.2657,Feminine,3575
+T,UNMARKED,1016,87.1355,No explicit gender feature,1166
+T,M,139,11.9211,Masculine,1166
+T,F,11,0.9434,Feminine,1166

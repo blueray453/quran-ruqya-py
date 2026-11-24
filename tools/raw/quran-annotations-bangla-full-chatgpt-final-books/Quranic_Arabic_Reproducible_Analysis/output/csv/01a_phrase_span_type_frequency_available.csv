@@ -1,0 +1,7 @@
+﻿rank,source_label_code,source_label_english,frequency,percentage,unique_ayahs,unique_surahs,interpretation_note
+1,PP,Prepositional phrase,12870,48.633942,4968,114,QAC constituent annotation count; not the six teaching-pattern or MASAQ Phrasal_Function taxonomy
+2,VS,Verbal sentence,10858,41.030873,4403,114,QAC constituent annotation count; not the six teaching-pattern or MASAQ Phrasal_Function taxonomy
+3,NS,Nominal sentence,1838,6.945547,1462,96,QAC constituent annotation count; not the six teaching-pattern or MASAQ Phrasal_Function taxonomy
+4,SC,Subordinate clause,564,2.131278,500,72,QAC constituent annotation count; not the six teaching-pattern or MASAQ Phrasal_Function taxonomy
+5,S,Sentence,183,0.691532,182,41,QAC constituent annotation count; not the six teaching-pattern or MASAQ Phrasal_Function taxonomy
+6,CS,Conditional sentence,150,0.566829,142,55,QAC constituent annotation count; not the six teaching-pattern or MASAQ Phrasal_Function taxonomy

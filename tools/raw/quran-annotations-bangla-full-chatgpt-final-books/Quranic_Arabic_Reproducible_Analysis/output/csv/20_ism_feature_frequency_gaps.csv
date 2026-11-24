@@ -1,0 +1,5 @@
+﻿property,required_values,source_fields_expected,frequency_status,available_count,available_denominator,notes
+Gender,Mudhakkar / Mu’annath,Gender,Measured with explicit M/F plus unmarked,32116,40778,Keep unmarked separate; do not infer masculine.
+Number,Mufrad / Muthanna / Jamʿ,Number,Measured with S/D/P plus unmarked,16554,40778,"Plural subtype (sound masculine, sound feminine, broken plural) is not fully resolved by the aggregate code."
+Definiteness,Maʿrifah / Nakirah,INDEF plus Al- / PN / PRON / REL / DEM / suffix evidence,Evidence classes; not a complete source DEF/INDEF pair,8672,40778,Positive evidence and explicit INDEF are retained; residual records are unresolved.
+Iʿrab / case,Rafʿ / Nasb / Jarr,NOM / ACC / GEN,Measured with unmarked state,31882,40778,Visible signs and estimated case are separate from syntactic case state.

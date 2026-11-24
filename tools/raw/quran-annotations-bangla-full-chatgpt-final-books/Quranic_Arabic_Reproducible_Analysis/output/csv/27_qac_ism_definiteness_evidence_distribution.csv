@@ -1,0 +1,7 @@
+﻿evidence_class,unique_word_positions,pct_of_unique_Ism_word_positions,assignment_rule
+Explicit INDEF state,8672,21.269,QAC feature INDEF; takes priority over POS-based definite classification where labels conflict
+Al- article prefix,8377,20.5455,"Word has a DET/PREFIX segment with Al+; may overlap PN in source, assigned once here"
+Pronoun / relative / demonstrative (inherently definite),7935,19.4614,"STEM POS is PRON, REL, or DEM"
+Definiteness not determined by available marker,6684,16.3932,"No explicit state, article, pronoun/PN class, or attached-pronoun cue in these exports"
+Attached pronoun suffix (possessive/annexed),5529,13.5604,Word has PRON/SUFFIX and Ism STEM; only when no higher-priority marker exists
+Proper noun (inherently definite),3576,8.7705,"STEM POS is PN, excluding article-bearing and explicitly INDEF-marked cases"

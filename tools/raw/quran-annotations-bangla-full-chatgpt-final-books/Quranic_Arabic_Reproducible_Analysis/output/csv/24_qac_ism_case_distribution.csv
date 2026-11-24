@@ -1,0 +1,21 @@
+﻿QAC_POS_or_ALL,feature_value,frequency,pct_within_denominator,label,denominator
+ALL_ISM,GEN,12610,30.9235,Genitive / Jarr,40778
+ALL_ISM,ACC,10331,25.3347,Accusative / Naṣb,40778
+ALL_ISM,NOM,8941,21.926,Nominative / Rafʿ,40778
+ALL_ISM,UNMARKED,8896,21.8157,No explicit case feature,40778
+ADJ,NOM,843,42.9883,Nominative / Rafʿ,1961
+ADJ,ACC,590,30.0867,Accusative / Naṣb,1961
+ADJ,GEN,528,26.925,Genitive / Jarr,1961
+DEM,UNMARKED,1059,100.0,No explicit case feature,1059
+LOC,ACC,610,91.1809,Accusative / Naṣb,669
+LOC,UNMARKED,59,8.8191,No explicit case feature,669
+N,GEN,10404,41.3908,Genitive / Jarr,25136
+N,ACC,7955,31.6478,Accusative / Naṣb,25136
+N,NOM,6777,26.9613,Nominative / Rafʿ,25136
+PN,GEN,1678,42.9046,Genitive / Jarr,3911
+PN,NOM,1321,33.7765,Nominative / Rafʿ,3911
+PN,ACC,912,23.3188,Accusative / Naṣb,3911
+PRON,UNMARKED,3301,100.0,No explicit case feature,3301
+REL,UNMARKED,3575,100.0,No explicit case feature,3575
+T,UNMARKED,902,77.3585,No explicit case feature,1166
+T,ACC,264,22.6415,Accusative / Naṣb,1166

@@ -1,0 +1,9 @@
+﻿source,population,count,unit,scope_or_note
+QAC morphology 0.4,All STEM rows,77915,stem annotation rows,Official QAC download; coordinates preserved
+QAC morphology 0.4,Broad Ism POS set,40778,stem annotation rows,"N, PN, ADJ, T, LOC, PRON, REL, DEM"
+QAC morphology 0.4,Broad Ism POS set,40773,unique word positions,5 word positions contain two Ism STEM analyses; feature-distribution denominators use STEM rows unless noted
+MASAQ CSV (supplied archive),All annotation rows,157676,CSV data rows,Exact data-row count in the supplied MASAQ.csv file; not claimed to match the article profile
+MASAQ CSV (supplied archive),All Stem rows,77797,stem segment rows,Segment-level MASAQ CSV
+MASAQ CSV (supplied archive),Broad Ism stem set,39237,stem segment rows,Derived from Morph_Tag family taxonomy; 5 disjoint learner-facing families
+MASAQ CSV (supplied archive),Broad Ism stem set,39234,unique word positions,A word can have more than one segment; rows are the morphology unit
+QAC vs MASAQ,Broad Ism count difference,1541,stem rows,Different tagsets/definitions/version profiles; do not pool or sum across sources

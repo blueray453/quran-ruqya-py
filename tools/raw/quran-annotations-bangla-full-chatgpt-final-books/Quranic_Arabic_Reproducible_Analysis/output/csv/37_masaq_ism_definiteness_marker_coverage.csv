@@ -1,0 +1,6 @@
+﻿marker_or_feature,unique_Ism_word_positions,source_segment_or_field,interpretation
+Al- article prefix,10913,Prefix Morph_Tag=DET and Segmented_Word=ال,Explicit al- prefix; source CSV has additional DET rows not equal to the Arabic definite article
+Attached POSS_PRON suffix,4876,Suffix Morph_Tag=POSS_PRON,Attached pronoun suffix on a word with an Ism stem; indicates annexed/possessive relationship but host can be a prep or other type depending alignment
+CASE_DEF_* suffix,3500,Suffix Morph_Tag=CASE_DEF_NOM/ACC/GEN,"Definite case-ending suffix labels; subset only, not full definiteness coverage"
+CASE_INDEF_* suffix,3950,Suffix Morph_Tag=CASE_INDEF_*,"Indefinite case-ending suffix labels; subset only, not full definiteness coverage"
+Construct / Mudaf head,10121,Stem Possessive_Construct=CONSTRUCT,Idafa-head marker; does not by itself tell whether the Mudaf is definite

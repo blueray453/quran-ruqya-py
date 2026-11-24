@@ -1,0 +1,6 @@
+﻿analysis_area,status,generated_outputs,limitations
+Traditional grammar architecture,GENERATED,10_traditional_grammar_architecture.csv; 11_ism_four_properties_complete_taxonomy.csv,"Teaching taxonomy is comprehensive, but expert review of disputed analyses remains required."
+Vocabulary frequency,GENERATED_FROM_RAW_SOURCE,vocabulary_surface_frequency.csv; vocabulary_lemma_frequency.csv; vocabulary_stem_frequency.csv; vocabulary_root_frequency.csv; coverage tables,QUL source positions do not perfectly align to QAC/MASAQ.
+Verb feature frequency,GENERATED_FROM_QAC_V0_4,sarf_verb_*_frequency.csv; 04d_fiil_mood_frequency_imperfect_only.csv,Mood is calculated only over imperfect verbs.
+Ism feature distributions,GENERATED_WITH_ANNOTATION_GAPS,22-42 QAC/MASAQ Ism CSVs; 12_ism_property_frequency_status.csv,Unmarked feature values are retained; full definiteness binary cannot be inferred from source tags alone.
+Phrase construction and function,TAXONOMY_COMPLETE_FREQUENCY_PARTIAL,"01a-01c and 13-15, 19 CSVs",QAC constituent counts and MASAQ word roles are not MASAQ phrase-span/function frequencies.

@@ -1,0 +1,14 @@
+﻿Ism_family,Possessive_Construct,frequency,pct_within_family,family_denominator
+Lexical nouns (common/proper/derived noun tags),NOT_CONSTRUCT,16572,70.7449,23425
+Lexical nouns (common/proper/derived noun tags),CONSTRUCT,6844,29.2166,23425
+Lexical nouns (common/proper/derived noun tags),UNMARKED,9,0.0384,23425
+Verbal nouns / gerunds,NOT_CONSTRUCT,3233,72.4076,4465
+Verbal nouns / gerunds,CONSTRUCT,1229,27.5252,4465
+Verbal nouns / gerunds,UNMARKED,3,0.0672,4465
+Adjectives,NOT_CONSTRUCT,2525,91.885,2748
+Adjectives,CONSTRUCT,223,8.115,2748
+Pronouns / demonstratives / relative / interrogative,NOT_CONSTRUCT,6373,99.7808,6387
+Pronouns / demonstratives / relative / interrogative,CONSTRUCT,13,0.2035,6387
+Pronouns / demonstratives / relative / interrogative,UNMARKED,1,0.0157,6387
+Adverbial nouns,CONSTRUCT,1813,81.962,2212
+Adverbial nouns,NOT_CONSTRUCT,399,18.038,2212

@@ -1,0 +1,4 @@
+﻿QAC_POS,frequency,note
+COND,1049,Mixed conditional tag: includes conditional particles and conditional nouns; context-sensitive review required
+INTG,439,Mixed interrogative tag: includes interrogative particles and interrogative nouns; context-sensitive review required
+TOTAL,1488,Excluded from strict Ism denominator until token-level word-class review

@@ -1,0 +1,4 @@
+﻿rank,verb_mood,frequency,percentage_of_imperfect_verb_occurrences,cumulative_frequency,cumulative_percentage,unique_word_positions,unique_ayahs,unique_surahs
+1,INDICATIVE (default),5582,67.010804,5582,67.010804,5582,3216,109
+2,JUS,1418,17.022809,7000,84.033613,1418,973,90
+3,SUBJ,1330,15.966387,8330,100.0,1330,955,83

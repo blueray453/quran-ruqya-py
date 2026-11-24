@@ -1,0 +1,24 @@
+﻿Ism_family,Invariable_Declinable,frequency,pct_within_family,family_denominator
+Lexical nouns (common/proper/derived noun tags),DECLN,23007,98.2156,23425
+Lexical nouns (common/proper/derived noun tags),INVAR,394,1.682,23425
+Lexical nouns (common/proper/derived noun tags),COND_NOUN,16,0.0683,23425
+Lexical nouns (common/proper/derived noun tags),DEF_ART,6,0.0256,23425
+Lexical nouns (common/proper/derived noun tags),INTROG_NOUN,2,0.0085,23425
+Verbal nouns / gerunds,DECLN,4388,98.2755,4465
+Verbal nouns / gerunds,INVAR,77,1.7245,4465
+Adjectives,DECLN,2722,99.0539,2748
+Adjectives,INVAR,25,0.9098,2748
+Adjectives,JONT_PRON,1,0.0364,2748
+Pronouns / demonstratives / relative / interrogative,REL_PRON,2918,45.6866,6387
+Pronouns / demonstratives / relative / interrogative,DISJ_INV_PRON,1091,17.0816,6387
+Pronouns / demonstratives / relative / interrogative,DEM_NOUN,1067,16.7058,6387
+Pronouns / demonstratives / relative / interrogative,JONT_PRON,528,8.2668,6387
+Pronouns / demonstratives / relative / interrogative,INVAR,370,5.793,6387
+Pronouns / demonstratives / relative / interrogative,INTROG_NOUN,250,3.9142,6387
+Pronouns / demonstratives / relative / interrogative,DISJ_PRON,120,1.8788,6387
+Pronouns / demonstratives / relative / interrogative,COND_NOUN,39,0.6106,6387
+Pronouns / demonstratives / relative / interrogative,UNMARKED,4,0.0626,6387
+Adverbial nouns,DECLN,996,45.0271,2212
+Adverbial nouns,INVAR,719,32.5045,2212
+Adverbial nouns,COND_NOUN,493,22.2875,2212
+Adverbial nouns,DEM_NOUN,4,0.1808,2212
