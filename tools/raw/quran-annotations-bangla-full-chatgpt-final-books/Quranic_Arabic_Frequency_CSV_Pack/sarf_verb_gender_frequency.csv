@@ -1,0 +1,4 @@
+﻿rank,gender,frequency,percentage_of_verb_occurrences,cumulative_frequency,cumulative_percentage,unique_word_positions,unique_ayahs,unique_surahs
+1,M,15633,80.76565406075635,15633,80.76565406075635,15633,5004,114
+2,UNMARKED_OR_DEFAULT,2487,12.848729076255424,18120,93.61438313701179,2487,1652,93
+3,F,1236,6.385616862988221,19356,100.0,1236,935,96

@@ -1,0 +1,35 @@
+QURANIC ARABIC FREQUENCY ANALYSIS — VERIFIED SUMMARY
+
+Vocabulary surface forms (QUL Uthmani word-by-word)
+- 77,432 orthographic word entries after numeric Ayah marker records are excluded.
+- 21,294 distinct surface-form types.
+- Cumulative surface-token coverage: 618 forms for 50%; 1,421 for 60%; 3,124 for 70%; 6,493 for 80%; 9,680 for 85%; 13,551 for 90%; 17,423 for 95%.
+
+QUL lexical mappings
+- Stem: 77,427 word-location mappings; 12,108 distinct occurring stems; 99.9935% of the 77,432 word entries.
+- Lemma: 72,510 word-location mappings; 4,793 distinct occurring lemmas; 93.6435% of word entries.
+- Root: 50,298 word-location mappings; 1,642 distinct occurring roots; 64.9576% of word entries. Root coverage is not expected to include all particles and pronouns.
+
+QAC morphology
+- 77,429 word_id groups; 128,219 located segment rows; additional virtual/unlocated syntactic nodes.
+- 19,356 actual verb-stem occurrences used for verb-form and feature distributions.
+- QAC documented defaults applied: Form I if no form tag, active voice if no passive tag, indicative mood if mood is unmarked.
+- Verb forms by frequency: Form I 12,347 (63.79%); IV 3,487 (18.02%); II 1,300 (6.72%); VIII 963 (4.98%); V 414 (2.14%); X 369 (1.91%); III 334 (1.73%); VI 77 (0.40%); VII 51 (0.26%); XII 9 (0.05%); IX 5 (0.03%).
+
+QAC syntax
+- 103,781 syntactic dependency instances after excluding `root` and `NonRel` tree metadata and retaining `link` as a genuine PP-attachment relation.
+- 138 defined relationship labels in the complete report; 127 observed, 11 with zero frequency.
+
+MASAQ syntax
+- 157,676 raw rows; 77,411 unique word positions.
+- 110,886 observed syntactic-role annotations; 73 role codes defined, 59 observed and 14 zero-frequency.
+
+Cross-source reconciliation
+- QUL has 77,432 word entries, QAC has 77,429 word_id groups, MASAQ has 77,411 unique word positions.
+- These differences have not been fully reconciled. Do not claim a token-perfect merged dataset.
+- Raw Tanzil Uthmani whitespace splitting is not a valid token denominator due to prefatory basmalas, standalone marks and orthographic spacing. Tanzil remains a text integrity reference pending a dedicated token-level alignment pass.
+
+Interpretation
+- Vocabulary, Sarf and Nahw percentages have different denominators and must not be added together.
+- Surface-form coverage is lexical exposure, not independent comprehension.
+- Actual comprehension must be tested using unfamiliar Quranic passages.
