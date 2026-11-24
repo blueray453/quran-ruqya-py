@@ -1,0 +1,323 @@
+{
+ "ok": true,
+ "checks": [
+  {
+   "group": "reports",
+   "check": "every table named in a stage report exists with the stated number of rows",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "group": "analysis",
+   "check": "lemma table: one row per lemma, counts add up to every lemma-bearing segment",
+   "ok": true,
+   "detail": "4832 vs 4832"
+  },
+  {
+   "group": "analysis",
+   "check": "lemma table is sorted by count (descending) and each count equals the JSON count",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "analysis",
+   "check": "lemma table: word type exists in reference data, surah spread 1..114, first word exists",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "analysis",
+   "check": "root table: one row per root, counts add up to every root-bearing segment",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "analysis",
+   "check": "root table: n_lemmas >= 1 and word-type mix adds up to the count",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "analysis",
+   "check": "verb tables agree: summary, words, occurrences and root-form tables all total the verbs in the JSON",
+   "ok": true,
+   "detail": "19356 19356 19356 19356"
+  },
+  {
+   "group": "analysis",
+   "check": "verb-form explicit / inferred counts agree between the summary and the word table",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "analysis",
+   "check": "Form I is entirely inferred; no verb is counted twice (each verb in one form)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "analysis",
+   "check": "derived-noun word list adds up to the derived-noun summary for every type, with no verbs",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "analysis",
+   "check": "word-type table adds up to every segment; sentence-role table adds up to every written word",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "analysis",
+   "check": "particle table equals the word-type table without content types",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "lexicon",
+   "check": "root families: one row per root + lemma; counts add up to segments with both root and lemma, and agree with the root table",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "lexicon",
+   "check": "surface forms add up to every lemma-bearing segment",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "lexicon",
+   "check": "verb paradigms add up to every verb",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "lexicon",
+   "check": "noun features add up to every noun, adjective and proper-noun segment",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "lexicon",
+   "check": "pronoun tables add up to every pronoun and agree with each other",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "lexicon",
+   "check": "affix table adds up to every prefix and suffix that carries a tag",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "lexicon",
+   "check": "function words are lemmas of the lemma table and carry its counts",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "lexicon",
+   "check": "hapax lists contain exactly the lemmas / roots occurring once",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "lexicon",
+   "check": "proper nouns are all of type PN and carry the lemma-table counts",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "lexicon",
+   "check": "special groups add up to every segment that has a special group",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "syntax",
+   "check": "case by function adds up to every segment with a case; shares add up to 100% per case",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "syntax",
+   "check": "verb valency covers every verb; no category exceeds the occurrences",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "syntax",
+   "check": "verb-preposition pairs refer to verbs of the valency table",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "syntax",
+   "check": "possessive pairs add up to every possessor relation",
+   "ok": true,
+   "detail": "9804 vs 9804"
+  },
+  {
+   "group": "syntax",
+   "check": "noun-adjective pairs add up to every adjective relation with written head and dependent",
+   "ok": true,
+   "detail": "2901 vs 2901"
+  },
+  {
+   "group": "syntax",
+   "check": "preposition usage adds up to every preposition segment",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "syntax",
+   "check": "particle government: counts positive; lam is followed by the jussive and lan by the subjunctive in most uses",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "syntax",
+   "check": "implicit elements: 11,157 rows and the summary adds up",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "syntax",
+   "check": "constituents: every constituent of every sentence, summary adds up",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "syntax",
+   "check": "sentence length distribution covers 11,693 sentences and 77,432 words",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "reading",
+   "check": "surah profile: 114 surahs; words, ayahs, sentences and vocabulary add up",
+   "ok": true,
+   "detail": "11667"
+  },
+  {
+   "group": "reading",
+   "check": "surah profile: sentences = 11,693 minus the 26 fragments",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "reading",
+   "check": "ayah vocabulary load: 6,236 ayahs; words and new vocabulary add up",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "memorization-order",
+   "check": "quran-greedy-order-function-labels-and-sequences.csv: ranks consecutive, cumulative = running sum of new words, no unit covers nothing",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "memorization-order",
+   "check": "quran-greedy-order-function-sequences-3plus.csv: ranks consecutive, cumulative = running sum of new words, no unit covers nothing",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "memorization-order",
+   "check": "quran-greedy-order-function-sequences-5plus.csv: ranks consecutive, cumulative = running sum of new words, no unit covers nothing",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "memorization-order",
+   "check": "quran-greedy-order-function-sequences-only.csv: ranks consecutive, cumulative = running sum of new words, no unit covers nothing",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "memorization-order",
+   "check": "quran-greedy-order-pos-labels-and-sequences.csv: ranks consecutive, cumulative = running sum of new words, no unit covers nothing",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "memorization-order",
+   "check": "quran-greedy-order-pos-sequences-3plus.csv: ranks consecutive, cumulative = running sum of new words, no unit covers nothing",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "memorization-order",
+   "check": "quran-greedy-order-pos-sequences-5plus.csv: ranks consecutive, cumulative = running sum of new words, no unit covers nothing",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "memorization-order",
+   "check": "quran-greedy-order-pos-sequences-only.csv: ranks consecutive, cumulative = running sum of new words, no unit covers nothing",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "memorization-order",
+   "check": "sequence memorization orders agree with the sequence report (units, final coverage)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "memorization-order",
+   "check": "lemma order: every lemma once, descending counts, ends at 100% of lemma occurrences",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "memorization-order",
+   "check": "content-word order contains only nouns, verbs, adjectives and proper nouns",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "memorization-order",
+   "check": "root order: every root once, efficiency (occurrences per word) non-increasing, ends at 100%",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "memorization-order",
+   "check": "verb order: every verb once, descending, ends at all verbs",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "memorization-order",
+   "check": "ayah order: every step adds new vocabulary; ends covering every dictionary word",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "memorization-order",
+   "check": "surah order: every step adds new vocabulary; ends covering every dictionary word",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "regression",
+   "check": "phrase analysis reproduces the original project exactly (tokens, repeated words, phrases, longest phrase, coverage, verse coverage)",
+   "ok": true,
+   "detail": "{}"
+  },
+  {
+   "group": "regression",
+   "check": "phrase table: total = stand-alone + inside-longer is implied; ids ordered by frequency then length; 31,283 units",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "regression",
+   "check": "original memorization order: 6,001 units reaching 88.9% of the Quran",
+   "ok": true,
+   "detail": ""
+  }
+ ]
+}

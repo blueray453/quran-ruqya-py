@@ -1,0 +1,339 @@
+{
+ "parameters": {
+  "pos_projection": "pos_all_segments",
+  "function_projection": "function_without_NonRel",
+  "min_count": 2,
+  "greedy_min_lens": "1,2,3,5"
+ },
+ "input_sha256": {
+  "indopak-nastaleeq-wbw-grammar-normalized.json": "bd5328f0fe0900cdad1e77e5723b7440cae9cfab31e737cc8d9622db5c435635",
+  "indopak-nastaleeq-sentence-grammar-normalized.json": "50d4c6475b024ef0a21d1ba57a78e6695ab298be635d197a91348afa1f8ec896"
+ },
+ "analyses": {
+  "pos": {
+   "projection": "pos_all_segments",
+   "distinct_labels": 358,
+   "sentences_used": 11667,
+   "word_positions": 77432,
+   "repeated_units": 22734,
+   "longest_unit": 29,
+   "units_never_stand_alone": 9373,
+   "coverage_pct_by_min_length": {
+    "1": 99.91,
+    "2": 98.42,
+    "3": 90.0,
+    "4": 65.14,
+    "5": 34.16,
+    "6": 15.84,
+    "8": 5.34,
+    "10": 2.25
+   },
+   "greedy": {
+    "quran-greedy-order-pos-labels-and-sequences.csv": {
+     "min_unit_length": 1,
+     "units_selected": 286,
+     "final_pct_of_quran": 99.91,
+     "checkpoints": [
+      {
+       "units": 10,
+       "words_to_learn": 10,
+       "pct_of_quran": 63.09
+      },
+      {
+       "units": 50,
+       "words_to_learn": 50,
+       "pct_of_quran": 91.63
+      },
+      {
+       "units": 100,
+       "words_to_learn": 100,
+       "pct_of_quran": 97.15
+      }
+     ]
+    },
+    "quran-greedy-order-pos-sequences-only.csv": {
+     "min_unit_length": 2,
+     "units_selected": 1870,
+     "final_pct_of_quran": 98.42,
+     "checkpoints": [
+      {
+       "units": 10,
+       "words_to_learn": 20,
+       "pct_of_quran": 26.94
+      },
+      {
+       "units": 50,
+       "words_to_learn": 100,
+       "pct_of_quran": 55.92
+      },
+      {
+       "units": 100,
+       "words_to_learn": 200,
+       "pct_of_quran": 67.67
+      },
+      {
+       "units": 500,
+       "words_to_learn": 1000,
+       "pct_of_quran": 90.54
+      },
+      {
+       "units": 1000,
+       "words_to_learn": 2000,
+       "pct_of_quran": 95.83
+      }
+     ]
+    },
+    "quran-greedy-order-pos-sequences-3plus.csv": {
+     "min_unit_length": 3,
+     "units_selected": 4902,
+     "final_pct_of_quran": 90.0,
+     "checkpoints": [
+      {
+       "units": 10,
+       "words_to_learn": 30,
+       "pct_of_quran": 7.92
+      },
+      {
+       "units": 50,
+       "words_to_learn": 150,
+       "pct_of_quran": 22.1
+      },
+      {
+       "units": 100,
+       "words_to_learn": 300,
+       "pct_of_quran": 31.18
+      },
+      {
+       "units": 500,
+       "words_to_learn": 1500,
+       "pct_of_quran": 56.45
+      },
+      {
+       "units": 1000,
+       "words_to_learn": 3000,
+       "pct_of_quran": 68.6
+      }
+     ]
+    },
+    "quran-greedy-order-pos-sequences-5plus.csv": {
+     "min_unit_length": 5,
+     "units_selected": 2520,
+     "final_pct_of_quran": 34.16,
+     "checkpoints": [
+      {
+       "units": 10,
+       "words_to_learn": 51,
+       "pct_of_quran": 1.38
+      },
+      {
+       "units": 50,
+       "words_to_learn": 253,
+       "pct_of_quran": 3.83
+      },
+      {
+       "units": 100,
+       "words_to_learn": 504,
+       "pct_of_quran": 5.83
+      },
+      {
+       "units": 500,
+       "words_to_learn": 2575,
+       "pct_of_quran": 15.29
+      },
+      {
+       "units": 1000,
+       "words_to_learn": 5381,
+       "pct_of_quran": 22.81
+      }
+     ]
+    }
+   }
+  },
+  "function": {
+   "projection": "function_without_NonRel",
+   "distinct_labels": 677,
+   "sentences_used": 11667,
+   "word_positions": 77432,
+   "repeated_units": 22509,
+   "longest_unit": 29,
+   "units_never_stand_alone": 9900,
+   "coverage_pct_by_min_length": {
+    "1": 99.71,
+    "2": 97.61,
+    "3": 87.14,
+    "4": 60.99,
+    "5": 31.89,
+    "6": 14.79,
+    "8": 4.39,
+    "10": 1.9
+   },
+   "greedy": {
+    "quran-greedy-order-function-labels-and-sequences.csv": {
+     "min_unit_length": 1,
+     "units_selected": 454,
+     "final_pct_of_quran": 99.71,
+     "checkpoints": [
+      {
+       "units": 10,
+       "words_to_learn": 10,
+       "pct_of_quran": 58.53
+      },
+      {
+       "units": 50,
+       "words_to_learn": 50,
+       "pct_of_quran": 87.05
+      },
+      {
+       "units": 100,
+       "words_to_learn": 100,
+       "pct_of_quran": 94.07
+      }
+     ]
+    },
+    "quran-greedy-order-function-sequences-only.csv": {
+     "min_unit_length": 2,
+     "units_selected": 2454,
+     "final_pct_of_quran": 97.61,
+     "checkpoints": [
+      {
+       "units": 10,
+       "words_to_learn": 20,
+       "pct_of_quran": 24.61
+      },
+      {
+       "units": 50,
+       "words_to_learn": 100,
+       "pct_of_quran": 49.11
+      },
+      {
+       "units": 100,
+       "words_to_learn": 200,
+       "pct_of_quran": 60.78
+      },
+      {
+       "units": 500,
+       "words_to_learn": 1000,
+       "pct_of_quran": 85.44
+      },
+      {
+       "units": 1000,
+       "words_to_learn": 2001,
+       "pct_of_quran": 92.51
+      }
+     ]
+    },
+    "quran-greedy-order-function-sequences-3plus.csv": {
+     "min_unit_length": 3,
+     "units_selected": 5110,
+     "final_pct_of_quran": 87.14,
+     "checkpoints": [
+      {
+       "units": 10,
+       "words_to_learn": 30,
+       "pct_of_quran": 10.06
+      },
+      {
+       "units": 50,
+       "words_to_learn": 150,
+       "pct_of_quran": 22.01
+      },
+      {
+       "units": 100,
+       "words_to_learn": 300,
+       "pct_of_quran": 29.71
+      },
+      {
+       "units": 500,
+       "words_to_learn": 1500,
+       "pct_of_quran": 52.96
+      },
+      {
+       "units": 1000,
+       "words_to_learn": 3005,
+       "pct_of_quran": 64.26
+      },
+      {
+       "units": 5000,
+       "words_to_learn": 15069,
+       "pct_of_quran": 87.0
+      }
+     ]
+    },
+    "quran-greedy-order-function-sequences-5plus.csv": {
+     "min_unit_length": 5,
+     "units_selected": 2268,
+     "final_pct_of_quran": 31.89,
+     "checkpoints": [
+      {
+       "units": 10,
+       "words_to_learn": 50,
+       "pct_of_quran": 1.49
+      },
+      {
+       "units": 50,
+       "words_to_learn": 251,
+       "pct_of_quran": 4.02
+      },
+      {
+       "units": 100,
+       "words_to_learn": 504,
+       "pct_of_quran": 6.09
+      },
+      {
+       "units": 500,
+       "words_to_learn": 2571,
+       "pct_of_quran": 15.45
+      },
+      {
+       "units": 1000,
+       "words_to_learn": 5383,
+       "pct_of_quran": 22.85
+      }
+     ]
+    }
+   }
+  }
+ },
+ "checks": [
+  {
+   "check": "pos: total = stand_alone + inside_longer, every unit occurs >= 2 times",
+   "ok": true
+  },
+  {
+   "check": "pos: CSV rows agree with the annotation JSON",
+   "ok": true
+  },
+  {
+   "check": "pos: 154 units re-counted by brute force (occurrences and stand-alone flags)",
+   "ok": true,
+   "detail": []
+  },
+  {
+   "check": "function: total = stand_alone + inside_longer, every unit occurs >= 2 times",
+   "ok": true
+  },
+  {
+   "check": "function: CSV rows agree with the annotation JSON",
+   "ok": true
+  },
+  {
+   "check": "function: 154 units re-counted by brute force (occurrences and stand-alone flags)",
+   "ok": true,
+   "detail": []
+  }
+ ],
+ "files": {
+  "sequences/quran-function-sequences-annotation.json": 11543874,
+  "sequences/quran-function-sequences.csv": 3166866,
+  "sequences/quran-pos-sequences-annotation.json": 11651481,
+  "sequences/quran-pos-sequences.csv": 3151774,
+  "memorization-order/quran-greedy-order-function-labels-and-sequences.csv": 31919,
+  "memorization-order/quran-greedy-order-function-sequences-3plus.csv": 572706,
+  "memorization-order/quran-greedy-order-function-sequences-5plus.csv": 353040,
+  "memorization-order/quran-greedy-order-function-sequences-only.csv": 224307,
+  "memorization-order/quran-greedy-order-pos-labels-and-sequences.csv": 18725,
+  "memorization-order/quran-greedy-order-pos-sequences-3plus.csv": 527505,
+  "memorization-order/quran-greedy-order-pos-sequences-5plus.csv": 373404,
+  "memorization-order/quran-greedy-order-pos-sequences-only.csv": 164037
+ }
+}

@@ -1,0 +1,678 @@
+﻿function_without_NonRel,words
+root,9042
+link+gen,6846
+link,6002
+Obj,5487
+gen,3906
+Poss,3528
+conj,3342
+Adj,2711
+Pred,2390
+Subj,2065
+sub,1477
+sub+Subj,1441
+root+Subj,1259
+gen+Poss,1236
+circ,1059
+neg,1036
+Obj+Poss,977
+pred<<in>>,817
+conj+Subj,781
+NonRel,776
+neg+Subj,671
+cond,668
+rslt,601
+subj<<in>>,594
+root+subj<<in>>,579
+App,578
+pred <<kan>>,515
+link+gen+Poss,509
+Subj+Poss,471
+Poss+Poss,461
+conj+Poss,434
+res,413
+link+Poss,387
+root+Obj,381
+cond+Subj,350
+cog,298
+root+Subj+Obj,293
+emph,287
+sub+Obj,276
+pred <<kan>>+Subj,270
+Pass,265
+conj+Obj,259
+emph+root,254
+rslt+Subj,232
+Spec,223
+emph+pred<<in>>,202
+root+voc,195
+root+Poss,192
+Pred+Subj,186
+Obj+Subj,184
+neg+Obj,182
+pred<<an>>,178
+Pro+Subj,177
+exp,177
+conj+Subj+Obj,173
+sub+subj <<kan>>,169
+subj <<kan>>,166
+cert,158
+cert+Subj,154
+sub+Subj+Obj,144
+cond+Obj,139
+root+intg,138
+subj<<an>>,136
+subj <<la>>,135
+root+sup+intg,132
+root+subj <<lel>>,125
+Adj+Subj,122
+Pred+Poss,122
+Obj+subj<<in>>,120
+sub+Pass,120
+Pred+Obj,116
+Poss+Subj,115
+voc+Poss,114
+subj<<in>>+Poss,112
+Pro,105
+link+sub,103
+pred <<lel>>+Subj,102
+pred<<in>>+Subj,98
+root+prev,95
+root+subj<<an>>,92
+rslt+Obj,91
+neg+Subj+Obj,88
+cond+subj <<kan>>,85
+Poss+Obj,83
+cond+Subj+Obj,83
+prp,82
+root+Pass,80
+root+gen,77
+circ+Subj,72
+pred <<ma>>+gen,66
+link+sub+Subj,65
+root+sub,62
+root+subj <<kan>>,62
+Obj+voc+Poss,61
+emph+link,61
+emph+subj<<in>>,61
+Obj+voc,60
+subj <<lays>>,58
+subj <<ma>>,58
+cond+subj <<kn>>,57
+Obj+intg,55
+cert+Obj,54
+Pass+Poss,53
+subj <<kan>>+Poss,53
+Adj+Obj,52
+inc,52
+sup,52
+exl,51
+rslt+Subj+Obj,51
+pred<<an>>+Subj,48
+App+Poss,47
+Obj+subj<<an>>,47
+imrs,46
+intg,46
+emph+root+emph,45
+neg+Pass,45
+neg+subj <<kan>>,45
+pred <<kn>>,44
+Adj+Subj+Obj,43
+link+sub+Obj,42
+emph+rslt,40
+sur,40
+Obj+Obj,39
+Poss+Subj+Obj,39
+caus+root,38
+conj+gen,38
+emph+rslt+Subj,38
+Pred+gen,37
+cert+Subj+Obj,37
+emph+rslt+emph,37
+ret,37
+Obj+prev,36
+emph+root+emph+Obj,36
+pred<<in>>+subj <<kan>>,36
+Adj+Poss,35
+Pred+Subj+Obj,35
+Pro+Subj+Obj,35
+Pred+Pass,34
+fut,34
+root+intg+Subj,34
+pred<<in>>+Subj+Obj,33
+amd,32
+circ+Obj,32
+pred <<lakin>>,32
+fut+root,31
+intg+Subj,31
+impv+root,30
+link+gen+subj<<an>>,30
+pred <<ykon>>,30
+pred<<in>>+Obj,30
+cog+Poss,29
+circ+Poss,28
+sub+subj <<kn>>,28
+Obj+intg+Subj,27
+Pro+Obj,27
+conj+Pass,27
+gen+Subj,27
+rslt+prev,27
+root+voc+Poss,26
+Obj+Subj+Obj,25
+Poss+Pass,25
+pred<<in>>+Poss,25
+state,25
+Pass+Subj,24
+fut+root+Obj,24
+subj <<ykon>>,24
+Obj+gen,22
+caus+root+Obj,22
+emph+Obj,22
+exh,22
+int,22
+pred <<tkon>>,22
+subj <<ykn>>,22
+subj <<lakin>>,21
+pred <<ka'ana>>,20
+pred <<lakun>>,20
+pred <<lays>>+gen,20
+ret+Subj,20
+cond+Pass,19
+conj+subj <<kan>>,19
+intg+Obj,19
+rslt+subj<<in>>,19
+subj <<lakun>>,19
+caus+root+Subj,18
+root+subj <<ka'ana>>,18
+emph+conj+emph+Obj,17
+pred<<an>>+subj <<kan>>,17
+root+sub+Subj,17
+avr,16
+circ+gen,16
+conj+subj<<in>>,16
+fut+root+Subj,16
+int+Subj,16
+pred <<asbah>>,16
+root+sup+intg+Subj,16
+voc,16
+Pro+emph,15
+conj+gen+Poss,15
+emph+conj+emph,15
+emph+rslt+Obj,15
+emph+subj<<an>>,15
+pred <<easaa>>,15
+pred <<ka>>,15
+pred <<ma>>,15
+Subj+gen,14
+circ+subj <<kan>>,14
+emph+Poss,14
+exp+Poss,14
+pred <<lel>>,14
+root+intg+subj<<in>>,14
+sup+root,14
+Obj+intg+Subj+Obj,13
+Pro+emph+Obj,13
+ans,13
+emph+pred<<in>>+Subj,13
+circ+Pass,12
+circ+Subj+Obj,12
+emph+conj,12
+emph+pred<<in>>+Obj,12
+emph+rslt+Subj+Obj,12
+impv+root+Subj,12
+intg+Pass,12
+link+sub+Subj+Obj,12
+neg+emph,12
+pred <<ykn>>,12
+App+gen,11
+Obj+sub,11
+impv+rslt,11
+imrs+Obj,11
+Pass+gen,10
+caus+root+Subj+Obj,10
+pred <<kan>>+Pass,10
+pred <<kant>>,10
+pred <<lel>>+Pass,10
+pred<<in>>+Pass,10
+rslt+Poss,10
+subj <<tkon>>,10
+amd+subj <<kan>>,9
+cert+subj <<kan>>,9
+cond+subj<<an>>,9
+exh+Subj,9
+impv+conj+Subj,9
+pred <<kan>>+Poss,9
+pred <<kon>>,9
+pred <<lays>>,9
+root+sub+Obj,9
+root+sup,9
+conj+sub+Subj,8
+emph+pred<<in>>+Poss,8
+fut+Obj,8
+gen+Obj,8
+gen+Subj+Obj,8
+pred <<ma>>+Poss,8
+Obj+sup+intg,7
+Poss+subj <<kan>>,7
+avr+subj<<in>>,7
+cert+Pass,7
+cond+subj <<ka>>,7
+emph+rslt+emph+Obj,7
+fut+Pred+Obj,7
+imrs+Subj,7
+neg+subj <<ykon>>,7
+pred <<tkn>>,7
+ret+Obj,7
+root+subj <<asbah>>,7
+root+subj <<kn>>,7
+root+subj <<lakin>>,7
+subj <<lakin>>+Poss,7
+Pro+subj <<tkon>>,6
+amd+Obj,6
+amd+Subj,6
+cond+emph+Obj,6
+emph+pred <<kan>>,6
+imrs+Subj+Obj,6
+inc+subj<<in>>,6
+neg+Poss,6
+pred <<yk>>,6
+pred<<an>>+Obj,6
+pred<<an>>+Poss,6
+pred<<an>>+Subj+Obj,6
+root+subj <<ka>>,6
+subj <<easaa>>,6
+Cpnd,5
+Obj+subj <<kon>>,5
+Obj+sup+intg+Subj,5
+Pred+subj <<kan>>,5
+Subj+gen+Poss,5
+conj+emph+Obj,5
+conj+subj <<asbah>>,5
+emph+pred<<an>>+Subj,5
+exh+Obj,5
+fut+rslt+Obj,5
+pred <<akon>>,5
+pred <<tkon>>+gen,5
+pred <<ykad>>,5
+pred <<zala>>,5
+ret+subj <<kan>>,5
+root+emph+Obj,5
+root+int,5
+root+intg+Obj,5
+root+root+subj <<layt>>,5
+rslt+Pass,5
+subj<<an>>+Poss,5
+Adj+Pass,4
+App+Subj,4
+Obj+Pass,4
+Pro+Pass,4
+Pro+subj <<kan>>,4
+ans+subj<<in>>,4
+cog+gen,4
+conj+sub,4
+conj+subj<<an>>,4
+emph+Obj+emph,4
+emph+Pred+emph+Obj,4
+emph+conj+Subj+Obj,4
+emph+link+gen,4
+emph+pred<<an>>,4
+emph+rslt+subj <<kan>>,4
+fut+pred<<in>>+Obj,4
+impv+conj,4
+impv+root+Obj,4
+inc+Subj,4
+neg+subj <<ka>>,4
+pred <<kan>>+Obj,4
+pred <<lakun>>+Subj,4
+pred <<layt>>,4
+pred <<layt>>+Subj,4
+pred <<ma>>+Obj,4
+pred<<an>>+Pass,4
+pred<<in>>+gen,4
+pred<<in>>+subj <<ka>>,4
+ret+Subj+Obj,4
+root+Pass+Obj,4
+root+intg+Subj+Obj,4
+root+subj <<kon>>,4
+root+subj <<lakun>>,4
+root+sup+link+gen,4
+sub+Pass+Obj,4
+sub+Poss,4
+sub+subj <<ykon>>,4
+subj <<lakun>>+Poss,4
+subj <<ma>>+Poss,4
+subj <<tkn>>,4
+sup+link+gen,4
+voc+Obj,4
+Adj+gen,3
+App+subj<<an>>,3
+Obj+intg+subj<<in>>,3
+Obj+root+subj <<layt>>,3
+Pass+voc,3
+Pred+intg,3
+avr+Subj,3
+circ+subj <<ka'ana>>,3
+cond+emph,3
+cond+subj <<kad>>,3
+emph+ans+Subj+Obj,3
+emph+conj+Subj,3
+emph+fut,3
+exh+Subj+Obj,3
+fut+avr+Subj,3
+fut+root+Pass,3
+int+Obj,3
+link+sub+subj <<ykon>>,3
+neg+emph+Obj,3
+neg+subj <<tkon>>,3
+pred <<akn>>,3
+pred <<kant>>+Obj,3
+pred <<ma>>+gen+Poss,3
+pred <<tusbih>>,3
+pred <<ykad>>+Subj,3
+pred <<ysbah>>,3
+pred <<zala>>+Subj,3
+ret+Poss,3
+root+emph,3
+root+eq+Subj,3
+root+intg+Poss,3
+root+link,3
+root+sup+Obj,3
+subj <<kant>>,3
+subj <<layst>>,3
+subj <<ykad>>,3
+subj <<ykn>>+Poss,3
+sup+Obj,3
+sup+Pred,3
+Adj+subj <<kan>>,2
+App+Subj+Obj,2
+App+gen+Poss,2
+Obj+intg+Obj,2
+Obj+subj <<las>>,2
+Pass+Subj+Obj,2
+Pass+subj<<an>>,2
+Poss+Obj+Obj,2
+Poss+subj <<kn>>,2
+Pred+sub,2
+amd+Subj+Obj,2
+caus+root+subj <<tkon>>,2
+circ+gen+Poss,2
+conj+prev,2
+conj+sub+Obj,2
+conj+sub+Pass,2
+conj+subj <<kn>>,2
+conj+subj <<tkon>>,2
+conj+voc+Poss,2
+emph+Obj+emph+Obj,2
+emph+ans,2
+emph+imrs+emph+Obj,2
+emph+pred <<kad>>+Obj,2
+emph+pred <<kad>>+Subj+Obj,2
+exp+gen,2
+fut+Obj+Obj,2
+fut+Obj+Pass,2
+fut+rslt+Subj,2
+inc+Obj,2
+intg+Subj+Obj,2
+link+sup,2
+link+voc,2
+neg+Pass+Obj,2
+neg+subj <<kad>>,2
+neg+subj <<kn>>,2
+pred <<dm>>,2
+pred <<kan>>+gen,2
+pred <<la>>+Subj,2
+pred <<lakin>>+Obj,2
+pred <<lakin>>+Subj,2
+pred <<lays>>+gen+Poss,2
+pred <<layt>>+subj <<kn>>,2
+pred <<lel>>+Obj,2
+pred <<nkon>>,2
+pred <<tkad>>+Subj,2
+pred <<yazal>>,2
+pred <<ykad>>+Obj,2
+pred<<in>>+prev,2
+prp+sub,2
+root+eq+Subj+Obj,2
+root+link+gen,2
+root+root,2
+root+sub+Subj+Obj,2
+root+subj <<las>>,2
+root+subj <<lays>>,2
+root+sup+intg+Obj,2
+root+sup+link+gen+Poss,2
+rslt+Pass+Obj,2
+sub+subj <<dam>>,2
+sub+subj <<dm>>,2
+subj <<asbah>>,2
+subj <<easaa>>+Obj,2
+subj <<ka'ana>>,2
+subj <<layt>>,2
+subj <<tkad>>,2
+subj <<tkn>>+Poss,2
+sup+Obj+Subj,2
+sup+emph+root+emph,2
+sup+impv+root,2
+sup+root+Subj,2
+sur+Poss,2
+Adj+Pass+Obj,1
+Adj+sub,1
+Adj+subj <<ka'ana>>,1
+Adj+subj <<lays>>,1
+App+intg,1
+App+intg+Subj,1
+App+voc,1
+Obj+Obj+Obj,1
+Obj+intg+Pass+Obj,1
+Obj+intg+Poss,1
+Obj+link,1
+Obj+link+gen,1
+Obj+neg,1
+Obj+subj <<ka'ana>>,1
+Obj+subj <<ka>>,1
+Obj+subj <<kn>>,1
+Obj+subj <<lays>>,1
+Obj+subj <<layt>>,1
+Obj+sup+intg+Obj,1
+Obj+voc+Poss+Poss,1
+Pass+Obj,1
+Pass+intg,1
+Pass+intg+Subj,1
+Pass+sup+intg,1
+Pass+voc+Poss,1
+Poss+Pass+Obj,1
+Poss+subj<<an>>,1
+Pred+Pass+Obj,1
+Pred+eq+Subj+Obj,1
+Pred+gen+subj<<an>>,1
+Pred+subj <<kn>>,1
+Pred+subj<<in>>,1
+Pro+Pass+Obj,1
+amd+Poss,1
+amd+root,1
+amd+sub,1
+amd+subj <<kon>>,1
+ans+Subj,1
+caus+ans+Subj,1
+caus+conj+Subj,1
+caus+root+subj <<asbah>>,1
+cert+sub+Subj,1
+cert+subj <<kad>>,1
+cert+subj <<kn>>,1
+cert+subj<<in>>,1
+circ+intg+subj <<las>>,1
+circ+sub,1
+circ+subj <<kad>>,1
+circ+subj <<kn>>,1
+circ+subj <<las>>,1
+circ+sup+intg,1
+cond+Obj+Obj,1
+cond+Poss,1
+cond+subj <<tkon>>,1
+cond+subj <<ykon>>,1
+conj+Subj+Obj+Obj,1
+conj+subj <<kad>>,1
+conj+subj <<ysbah>>,1
+conj+sup,1
+conj+sup+intg,1
+conj+sup+intg+Poss,1
+conj+voc,1
+emph+App+emph,1
+emph+Obj+Poss,1
+emph+Pred,1
+emph+Pred+emph,1
+emph+Subj+Obj,1
+emph+ans+Subj,1
+emph+avr,1
+emph+avr+emph,1
+emph+conj+Obj,1
+emph+conj+Pass,1
+emph+imrs+emph,1
+emph+link+Poss,1
+emph+pred <<ka>>,1
+emph+pred <<kad>>,1
+emph+pred <<kan>>+Subj,1
+emph+pred <<kant>>,1
+emph+pred <<ykad>>+Subj+Obj,1
+emph+pred<<an>>+Subj+Obj,1
+emph+root+Poss,1
+emph+root+Subj,1
+emph+rslt+Subj+Obj+Obj,1
+emph+rslt+subj <<ka>>,1
+emph+rslt+subj <<kn>>,1
+emph+sub+emph,1
+exl+Obj,1
+fut+Obj+Subj,1
+fut+Pred+Subj,1
+fut+avr,1
+fut+circ+Subj,1
+fut+pred<<an>>+Subj+Obj,1
+fut+pred<<in>>,1
+fut+pred<<in>>+Pass,1
+fut+pred<<in>>+Subj,1
+fut+root+Subj+Obj,1
+fut+rslt,1
+fut+rslt+Obj+Obj,1
+fut+sub,1
+gen+sub,1
+gen+subj <<ykon>>,1
+gen+subj<<an>>,1
+impv,1
+impv+imrs,1
+impv+imrs+Subj,1
+impv+root+Subj+Obj,1
+impv+rslt+Obj,1
+impv+rslt+Subj,1
+impv+rslt+subj <<ykon>>,1
+inc+prev,1
+int+Subj+Obj,1
+int+sub,1
+int+voc,1
+intg+emph,1
+intg+subj <<easaa>>,1
+intg+subj <<kan>>,1
+intg+subj <<kn>>,1
+link+gen+subj<<in>>,1
+link+intg,1
+link+sub+Pass,1
+link+subj <<lel>>,1
+neg+Obj+Obj,1
+neg+gen,1
+neg+subj <<ykad>>,1
+pred <<akad>>+Obj,1
+pred <<asbah>>+Subj,1
+pred <<asbaht>>+gen,1
+pred <<barah>>,1
+pred <<easaa>>+sub,1
+pred <<ka'ana>>+Obj,1
+pred <<ka'ana>>+Subj,1
+pred <<ka>>+Subj,1
+pred <<kad>>,1
+pred <<kad>>+Subj,1
+pred <<kad>>+Subj+Obj,1
+pred <<kad>>+subj <<ykon>>,1
+pred <<kan>>+Subj+Obj,1
+pred <<kan>>+sub+Obj,1
+pred <<kn>>+Subj,1
+pred <<kn>>+Subj+Obj,1
+pred <<la>>,1
+pred <<la>>+Obj,1
+pred <<la>>+gen+Poss,1
+pred <<lakin>>+Pass,1
+pred <<lakin>>+subj <<kan>>,1
+pred <<lakun>>+Obj,1
+pred <<las>>,1
+pred <<las>>+gen,1
+pred <<lel>>+Subj+Obj,1
+pred <<nkn>>,1
+pred <<nko>>,1
+pred <<tafta'>>,1
+pred <<tk>>,1
+pred <<tkad>>,1
+pred <<tkn>>+Subj+Obj,1
+pred <<tkon>>+Poss,1
+pred <<tkon>>+Subj,1
+pred <<yk>>+Obj,1
+pred <<ykn>>+gen,1
+pred <<ykon>>+Poss,1
+pred <<ykon>>+Subj,1
+pred <<ykon>>+Subj+Obj,1
+pred <<ykon>>+gen,1
+pred<<an>>+gen,1
+pred<<an>>+subj <<ka>>,1
+pred<<an>>+subj <<kn>>,1
+pred<<in>>+subj <<kn>>,1
+pred<<in>>+subj <<las>>,1
+pred<<in>>+subj<<in>>,1
+res+prev,1
+root+Obj+subj <<layt>>,1
+root+cond,1
+root+conj+Poss,1
+root+gen+Poss,1
+root+intg+Obj+Obj,1
+root+intg+Pass,1
+root+link+Poss,1
+root+link+gen+Poss,1
+root+sub+sub,1
+root+sub+subj <<kan>>,1
+root+sub+subj <<tkon>>,1
+root+subj <<layt>>,1
+root+subj <<ykon>>,1
+root+sup+Pred,1
+root+sup+intg+Pass+Obj,1
+root+sup+intg+Poss,1
+root+sup+intg+Subj+Obj,1
+root+sup+link,1
+rslt+Subj+Obj+Obj,1
+rslt+subj <<kad>>,1
+rslt+subj <<kan>>,1
+rslt+subj <<kn>>,1
+rslt+subj <<ykon>>,1
+rslt+subj<<an>>,1
+state+Subj+Obj,1
+sub+emph+Obj,1
+sub+subj <<ka>>,1
+sub+subj <<lays>>,1
+sub+subj <<tkon>>,1
+sub+subj <<yk>>,1
+subj <<asbah>>+Poss,1
+subj <<dam>>,1
+subj <<kan>>+subj<<an>>,1
+subj <<lays>>+Poss,1
+subj <<lel>>,1
+subj <<nkon>>,1
+subj <<tknm>>,1
+subj <<yazal>>,1
+subj <<yazal>>+Poss,1
+subj <<ykad>>+Poss,1
+subj <<ysbah>>,1
+subj <<ysbah>>+Poss,1
+subj <<zala>>+Poss,1
+subj<<en>>,1
+subj<<in>>+subj<<in>>,1
+sup+Obj+subj<<in>>,1
+sup+Pred+Subj,1
+sup+Pred+Subj+Obj,1
+sup+root+sub,1
+sup+rslt+Subj,1
+sup+sub,1
+voc+root,1

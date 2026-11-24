@@ -1,0 +1,1103 @@
+{
+ "ok": true,
+ "checks": [
+  {
+   "group": "inputs",
+   "check": "data/ files match CHECKSUMS.sha256 (supplied files unchanged)",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "group": "inputs",
+   "check": "both layers were built from the current input files",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "inputs",
+   "check": "text authority hashes recorded for the two Quran files",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "alignment",
+   "check": "word layer keys == written words of the WBW file (verse-end markers excluded)",
+   "ok": true,
+   "detail": "0 differ"
+  },
+  {
+   "group": "alignment",
+   "check": "word count 77,432 and marker count 6,236",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "alignment",
+   "check": "text_indopak and wbw_id equal the WBW file for every word",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "alignment",
+   "check": "word keys are in Quranic text order",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "alignment",
+   "check": "WBW words joined == indopak-nastaleeq.json verse text for all 6,236 ayahs",
+   "ok": true,
+   "detail": "0"
+  },
+  {
+   "group": "lossless",
+   "check": "no Treebank row appears twice in either layer",
+   "ok": true,
+   "detail": "0"
+  },
+  {
+   "group": "lossless",
+   "check": "every row is a node of exactly one sentence (139,376)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "lossless",
+   "check": "rows with a word location are word segments; implicit rows are not",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "lossless",
+   "check": "sentence order and node order reproduce the original file order",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "lossless",
+   "check": "all 43 columns of all 139,376 rows re-created exactly from the two JSON files",
+   "ok": true,
+   "detail": "{}"
+  },
+  {
+   "group": "structure",
+   "check": "sentence ids are exactly 1..11693",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "structure",
+   "check": "token_id == index in sentence; every head points to a node of the same sentence",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "group": "structure",
+   "check": "constituent spans lie inside their sentence",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "group": "structure",
+   "check": "every annotated word is in exactly one sentence \"words\" list",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "structure",
+   "check": "word.sentence_id agrees with the sentence that lists the word",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "structure",
+   "check": "sentence words are in text order and span fields are correct",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "structure",
+   "check": "every one of the 77,432 WBW words is annotated (none absent)",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "group": "alignment",
+   "check": "Treebank word numbers run in order over the WBW words (steps of 0 or 1)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "alignment",
+   "check": "the Treebank has 77,429 words covering all 77,432 WBW words; exactly 3 are merged (two WBW words each)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "alignment",
+   "check": "merged Treebank words: each WBW word holds its own segments",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "alignment",
+   "check": "every aligned word pair has matching Arabic letters (similarity >= 0.5) except the documented glyph words",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "group": "structure",
+   "check": "41 words span two sentence ids; each is assigned to its stem sentence",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "structure",
+   "check": "implicit nodes (11,157) have no word, have an anchor and are outside \"words\"",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "derived",
+   "check": "word projections recomputed from sentence nodes + segment types",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "group": "derived",
+   "check": "sentence POS / function sequences equal the word projections",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "group": "derived",
+   "check": "verb forms: one per verb stem; explicit/inferred counts match the source",
+   "ok": true,
+   "detail": "19356 vs 19356"
+  },
+  {
+   "group": "derived",
+   "check": "Form I is never explicit in the source (so always inferred); non-verb form annotations are kept apart",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "reference",
+   "check": "every POS, relation, constituent tag, form, case, mood, number, gender, root, lemma value is defined",
+   "ok": true,
+   "detail": "{}"
+  },
+  {
+   "group": "reference",
+   "check": "feature-guide corrections are recorded (verb-form ordinals, mood descriptions)",
+   "ok": true,
+   "detail": "7"
+  },
+  {
+   "group": "cross-check",
+   "check": "morphology v0.4 has the same 128,219 segments and identical feature strings as the Treebank",
+   "ok": true,
+   "detail": "0 differ"
+  },
+  {
+   "group": "cross-check",
+   "check": "the Treebank POS re-taggings vs v0.4 are exactly those listed in metadata.source_issues",
+   "ok": true,
+   "detail": "132"
+  }
+ ],
+ "info": {
+  "text_alignment_outliers_listed": 16,
+  "verb_form_counts": {
+   "I": {
+    "explicit": 0,
+    "inferred": 12347
+   },
+   "II": {
+    "explicit": 1300,
+    "inferred": 0
+   },
+   "III": {
+    "explicit": 334,
+    "inferred": 0
+   },
+   "IV": {
+    "explicit": 3487,
+    "inferred": 0
+   },
+   "V": {
+    "explicit": 414,
+    "inferred": 0
+   },
+   "VI": {
+    "explicit": 77,
+    "inferred": 0
+   },
+   "VII": {
+    "explicit": 51,
+    "inferred": 0
+   },
+   "VIII": {
+    "explicit": 963,
+    "inferred": 0
+   },
+   "IX": {
+    "explicit": 5,
+    "inferred": 0
+   },
+   "X": {
+    "explicit": 369,
+    "inferred": 0
+   },
+   "XI": {
+    "explicit": 0,
+    "inferred": 0
+   },
+   "XII": {
+    "explicit": 9,
+    "inferred": 0
+   }
+  },
+  "non_verb_segments_with_form_annotation": 1968,
+  "segments_pos_differs_from_morphology_v04": 132,
+  "feature_string_vs_columns": {
+   "lemma_mismatch_segments": 0,
+   "root_mismatch_segments": 0
+  },
+  "secondary_db_vs_treebank_words": {
+   "lemma_db_agrees_with_treebank": 65470,
+   "lemma_db_differs_or_treebank_has_none": 7037,
+   "root_db_agrees_with_treebank": 49967,
+   "root_db_differs_or_treebank_has_none": 331
+  },
+  "source_issues": {
+   "rows_rel_label_ar_differs_from_RelLabels": 666,
+   "rows_pos_ar_differs_from_CAPoS": 10021,
+   "rel_labels_missing_from_RelLabels": [],
+   "pos_missing_from_CAPoS": [],
+   "roots_missing_from_CARootLexicon": [],
+   "lemmas_missing_from_CALemmaLexicon": [],
+   "feature_guide_corrections": 7,
+   "segments_pos_differs_from_morphology_v04": {
+    "count": 132,
+    "note": "features_raw still carries the v0.4 POS; the Treebank pos column re-tags these segments (e.g. N -> T). The Treebank pos is the value stored in \"pos\".",
+    "transitions": {
+     "N->T": 5,
+     "ADJ->N": 17,
+     "REM->RSLT": 12,
+     "RES->EXP": 5,
+     "N->LOC": 3,
+     "REM->SUP": 2,
+     "CONJ->REM": 47,
+     "CONJ->CIRC": 6,
+     "CIRC->CONJ": 1,
+     "N->ADJ": 9,
+     "REL->COND": 2,
+     "REM->CONJ": 3,
+     "NEG->PRO": 1,
+     "COND->SUB": 2,
+     "REM->CAUS": 5,
+     "REL->INTG": 1,
+     "REL->NEG": 1,
+     "CONJ->SUP": 2,
+     "P->INC": 1,
+     "CIRC->REM": 3,
+     "T->SUR": 1,
+     "REL->SUB": 2,
+     "ADJ->T": 1
+    },
+    "segments": [
+     {
+      "segment": "9:2:4:1",
+      "morphology_v04": "N",
+      "treebank": "T"
+     },
+     {
+      "segment": "9:3:7:1",
+      "morphology_v04": "N",
+      "treebank": "T"
+     },
+     {
+      "segment": "9:3:12:1",
+      "morphology_v04": "ADJ",
+      "treebank": "N"
+     },
+     {
+      "segment": "9:3:18:1",
+      "morphology_v04": "REM",
+      "treebank": "RSLT"
+     },
+     {
+      "segment": "9:3:23:1",
+      "morphology_v04": "REM",
+      "treebank": "RSLT"
+     },
+     {
+      "segment": "9:4:1:1",
+      "morphology_v04": "RES",
+      "treebank": "EXP"
+     },
+     {
+      "segment": "9:5:5:1",
+      "morphology_v04": "REM",
+      "treebank": "RSLT"
+     },
+     {
+      "segment": "9:5:13:1",
+      "morphology_v04": "N",
+      "treebank": "LOC"
+     },
+     {
+      "segment": "9:5:21:1",
+      "morphology_v04": "REM",
+      "treebank": "RSLT"
+     },
+     {
+      "segment": "9:5:25:1",
+      "morphology_v04": "ADJ",
+      "treebank": "N"
+     },
+     {
+      "segment": "9:6:6:1",
+      "morphology_v04": "REM",
+      "treebank": "RSLT"
+     },
+     {
+      "segment": "9:7:9:1",
+      "morphology_v04": "RES",
+      "treebank": "EXP"
+     },
+     {
+      "segment": "9:7:18:1",
+      "morphology_v04": "REM",
+      "treebank": "SUP"
+     },
+     {
+      "segment": "9:10:8:1",
+      "morphology_v04": "CONJ",
+      "treebank": "REM"
+     },
+     {
+      "segment": "9:11:7:1",
+      "morphology_v04": "REM",
+      "treebank": "RSLT"
+     },
+     {
+      "segment": "9:11:10:1",
+      "morphology_v04": "CONJ",
+      "treebank": "REM"
+     },
+     {
+      "segment": "9:12:10:1",
+      "morphology_v04": "REM",
+      "treebank": "RSLT"
+     },
+     {
+      "segment": "9:13:9:1",
+      "morphology_v04": "CONJ",
+      "treebank": "CIRC"
+     },
+     {
+      "segment": "9:13:11:1",
+      "morphology_v04": "N",
+      "treebank": "T"
+     },
+     {
+      "segment": "9:13:15:1",
+      "morphology_v04": "ADJ",
+      "treebank": "N"
+     },
+     {
+      "segment": "9:15:4:1",
+      "morphology_v04": "CONJ",
+      "treebank": "REM"
+     },
+     {
+      "segment": "9:15:9:1",
+      "morphology_v04": "CONJ",
+      "treebank": "REM"
+     },
+     {
+      "segment": "9:15:10:1",
+      "morphology_v04": "ADJ",
+      "treebank": "N"
+     },
+     {
+      "segment": "9:16:5:1",
+      "morphology_v04": "CIRC",
+      "treebank": "CONJ"
+     },
+     {
+      "segment": "9:16:21:1",
+      "morphology_v04": "CONJ",
+      "treebank": "REM"
+     },
+     {
+      "segment": "9:16:22:1",
+      "morphology_v04": "ADJ",
+      "treebank": "N"
+     },
+     {
+      "segment": "9:18:9:2",
+      "morphology_v04": "N",
+      "treebank": "ADJ"
+     },
+     {
+      "segment": "9:19:6:2",
+      "morphology_v04": "N",
+      "treebank": "ADJ"
+     },
+     {
+      "segment": "9:19:11:2",
+      "morphology_v04": "N",
+      "treebank": "ADJ"
+     },
+     {
+      "segment": "9:19:20:1",
+      "morphology_v04": "CONJ",
+      "treebank": "REM"
+     },
+     {
+      "segment": "9:20:10:1",
+      "morphology_v04": "ADJ",
+      "treebank": "N"
+     },
+     {
+      "segment": "9:21:10:1",
+      "morphology_v04": "N",
+      "treebank": "ADJ"
+     },
+     {
+      "segment": "9:23:14:1",
+      "morphology_v04": "CONJ",
+      "treebank": "REM"
+     },
+     {
+      "segment": "9:23:14:2",
+      "morphology_v04": "REL",
+      "treebank": "COND"
+     },
+     {
+      "segment": "9:23:17:1",
+      "morphology_v04": "REM",
+      "treebank": "RSLT"
+     },
+     {
+      "segment": "9:24:24:1",
+      "morphology_v04": "REM",
+      "treebank": "RSLT"
+     },
+     {
+      "segment": "9:24:29:1",
+      "morphology_v04": "CONJ",
+      "treebank": "REM"
+     },
+     {
+      "segment": "9:24:33:2",
+      "morphology_v04": "N",
+      "treebank": "ADJ"
+     },
+     {
+      "segment": "9:25:7:2",
+      "morphology_v04": "N",
+      "treebank": "T"
+     },
+     {
+      "segment": "9:25:12:1",
+      "morphology_v04": "REM",
+      "treebank": "CONJ"
+     },
+     {
+      "segment": "9:26:16:1",
+      "morphology_v04": "CONJ",
+      "treebank": "REM"
+     },
+     {
+      "segment": "9:27:10:1",
+      "morphology_v04": "CONJ",
+      "treebank": "REM"
+     },
+     {
+      "segment": "9:27:11:1",
+      "morphology_v04": "ADJ",
+      "treebank": "N"
+     },
+     {
+      "segment": "9:28:7:1",
+      "morphology_v04": "REM",
+      "treebank": "CONJ"
+     },
+     {
+      "segment": "9:28:7:2",
+      "morphology_v04": "NEG",
+      "treebank": "PRO"
+     },
+     {
+      "segment": "9:28:10:2",
+      "morphology_v04": "N",
+      "treebank": "ADJ"
+     },
+     {
+      "segment": "9:28:14:1",
+      "morphology_v04": "CONJ",
+      "treebank": "REM"
+     },
+     {
+      "segment": "9:28:17:1",
+      "morphology_v04": "REM",
+      "treebank": "RSLT"
+     },
+     {
+      "segment": "9:28:26:1",
+      "morphology_v04": "ADJ",
+      "treebank": "N"
+     },
+     {
+      "segment": "9:29:8:2",
+      "morphology_v04": "N",
+      "treebank": "ADJ"
+     },
+     {
+      "segment": "9:30:1:1",
+      "morphology_v04": "CONJ",
+      "treebank": "REM"
+     },
+     {
+      "segment": "9:31:11:1",
+      "morphology_v04": "CONJ",
+      "treebank": "REM"
+     },
+     {
+      "segment": "9:31:19:1",
+      "morphology_v04": "RES",
+      "treebank": "EXP"
+     },
+     {
+      "segment": "9:32:13:1",
+      "morphology_v04": "CONJ",
+      "treebank": "CIRC"
+     },
+     {
+      "segment": "9:32:13:2",
+      "morphology_v04": "COND",
+      "treebank": "SUB"
+     },
+     {
+      "segment": "9:33:12:1",
+      "morphology_v04": "CONJ",
+      "treebank": "CIRC"
+     },
+     {
+      "segment": "9:33:12:2",
+      "morphology_v04": "COND",
+      "treebank": "SUB"
+     },
+     {
+      "segment": "9:34:17:1",
+      "morphology_v04": "CONJ",
+      "treebank": "REM"
+     },
+     {
+      "segment": "9:34:17:2",
+      "morphology_v04": "REL",
+      "treebank": "COND"
+     },
+     {
+      "segment": "9:34:26:1",
+      "morphology_v04": "REM",
+      "treebank": "RSLT"
+     },
+     {
+      "segment": "9:35:1:1",
+      "morphology_v04": "N",
+      "treebank": "T"
+     },
+     {
+      "segment": "9:35:16:1",
+      "morphology_v04": "REM",
+      "treebank": "CAUS"
+     },
+     {
+      "segment": "9:36:26:1",
+      "morphology_v04": "CONJ",
+      "treebank": "REM"
+     },
+     {
+      "segment": "9:37:27:1",
+      "morphology_v04": "CONJ",
+      "treebank": "REM"
+     },
+     {
+      "segment": "9:38:4:1",
+      "morphology_v04": "REL",
+      "treebank": "INTG"
+     },
+     {
+      "segment": "9:38:21:2",
+      "morphology_v04": "REL",
+      "treebank": "NEG"
+     },
+     {
+      "segment": "9:42:6:1",
+      "morphology_v04": "N",
+      "treebank": "ADJ"
+     },
+     {
+      "segment": "9:42:8:1",
+      "morphology_v04": "CONJ",
+      "treebank": "REM"
+     },
+     {
+      "segment": "9:42:12:1",
+      "morphology_v04": "CONJ",
+      "treebank": "CIRC"
+     },
+     {
+      "segment": "9:42:20:1",
+      "morphology_v04": "CONJ",
+      "treebank": "REM"
+     },
+     {
+      "segment": "9:44:12:1",
+      "morphology_v04": "CONJ",
+      "treebank": "REM"
+     },
+     {
+      "segment": "9:44:13:1",
+      "morphology_v04": "ADJ",
+      "treebank": "N"
+     },
+     {
+      "segment": "9:46:1:1",
+      "morphology_v04": "CONJ",
+      "treebank": "REM"
+     },
+     {
+      "segment": "9:46:7:1",
+      "morphology_v04": "CONJ",
+      "treebank": "SUP"
+     },
+     {
+      "segment": "9:46:11:1",
+      "morphology_v04": "REM",
+      "treebank": "CAUS"
+     },
+     {
+      "segment": "9:46:12:1",
+      "morphology_v04": "CONJ",
+      "treebank": "REM"
+     },
+     {
+      "segment": "9:47:6:1",
+      "morphology_v04": "RES",
+      "treebank": "EXP"
+     },
+     {
+      "segment": "9:47:9:1",
+      "morphology_v04": "N",
+      "treebank": "LOC"
+     },
+     {
+      "segment": "9:47:12:1",
+      "morphology_v04": "CONJ",
+      "treebank": "CIRC"
+     },
+     {
+      "segment": "9:47:15:1",
+      "morphology_v04": "CONJ",
+      "treebank": "REM"
+     },
+     {
+      "segment": "9:47:16:1",
+      "morphology_v04": "ADJ",
+      "treebank": "N"
+     },
+     {
+      "segment": "9:48:9:1",
+      "morphology_v04": "P",
+      "treebank": "INC"
+     },
+     {
+      "segment": "9:49:1:1",
+      "morphology_v04": "CONJ",
+      "treebank": "REM"
+     },
+     {
+      "segment": "9:49:12:1",
+      "morphology_v04": "CONJ",
+      "treebank": "REM"
+     },
+     {
+      "segment": "9:51:11:1",
+      "morphology_v04": "CONJ",
+      "treebank": "REM"
+     },
+     {
+      "segment": "9:51:13:1",
+      "morphology_v04": "REM",
+      "treebank": "SUP"
+     },
+     {
+      "segment": "9:52:7:2",
+      "morphology_v04": "ADJ",
+      "treebank": "N"
+     },
+     {
+      "segment": "9:52:8:1",
+      "morphology_v04": "CIRC",
+      "treebank": "REM"
+     },
+     {
+      "segment": "9:54:1:1",
+      "morphology_v04": "CONJ",
+      "treebank": "REM"
+     },
+     {
+      "segment": "9:56:1:1",
+      "morphology_v04": "CONJ",
+      "treebank": "REM"
+     },
+     {
+      "segment": "9:56:5:1",
+      "morphology_v04": "CIRC",
+      "treebank": "REM"
+     },
+     {
+      "segment": "9:56:8:1",
+      "morphology_v04": "CONJ",
+      "treebank": "REM"
+     },
+     {
+      "segment": "9:57:10:1",
+      "morphology_v04": "CONJ",
+      "treebank": "CIRC"
+     },
+     {
+      "segment": "9:58:1:1",
+      "morphology_v04": "CONJ",
+      "treebank": "REM"
+     },
+     {
+      "segment": "9:58:14:1",
+      "morphology_v04": "T",
+      "treebank": "SUR"
+     },
+     {
+      "segment": "9:60:20:1",
+      "morphology_v04": "CONJ",
+      "treebank": "REM"
+     },
+     {
+      "segment": "9:60:21:1",
+      "morphology_v04": "ADJ",
+      "treebank": "N"
+     },
+     {
+      "segment": "9:61:20:1",
+      "morphology_v04": "CONJ",
+      "treebank": "REM"
+     },
+     {
+      "segment": "9:62:5:1",
+      "morphology_v04": "CONJ",
+      "treebank": "REM"
+     },
+     {
+      "segment": "9:62:7:1",
+      "morphology_v04": "ADJ",
+      "treebank": "N"
+     },
+     {
+      "segment": "9:67:15:1",
+      "morphology_v04": "REM",
+      "treebank": "CAUS"
+     },
+     {
+      "segment": "9:68:14:1",
+      "morphology_v04": "CONJ",
+      "treebank": "REM"
+     },
+     {
+      "segment": "9:68:16:1",
+      "morphology_v04": "N",
+      "treebank": "ADJ"
+     },
+     {
+      "segment": "9:70:19:1",
+      "morphology_v04": "CONJ",
+      "treebank": "REM"
+     },
+     {
+      "segment": "9:70:23:1",
+      "morphology_v04": "CONJ",
+      "treebank": "SUP"
+     },
+     {
+      "segment": "9:71:23:1",
+      "morphology_v04": "ADJ",
+      "treebank": "N"
+     },
+     {
+      "segment": "9:72:17:1",
+      "morphology_v04": "CONJ",
+      "treebank": "REM"
+     },
+     {
+      "segment": "9:72:20:1",
+      "morphology_v04": "ADJ",
+      "treebank": "N"
+     },
+     {
+      "segment": "9:73:8:1",
+      "morphology_v04": "CONJ",
+      "treebank": "REM"
+     },
+     {
+      "segment": "9:73:10:1",
+      "morphology_v04": "CONJ",
+      "treebank": "REM"
+     },
+     {
+      "segment": "9:74:5:1",
+      "morphology_v04": "CIRC",
+      "treebank": "REM"
+     },
+     {
+      "segment": "9:74:16:1",
+      "morphology_v04": "CONJ",
+      "treebank": "REM"
+     },
+     {
+      "segment": "9:74:18:1",
+      "morphology_v04": "RES",
+      "treebank": "EXP"
+     },
+     {
+      "segment": "9:74:39:1",
+      "morphology_v04": "CONJ",
+      "treebank": "REM"
+     },
+     {
+      "segment": "9:77:1:1",
+      "morphology_v04": "REM",
+      "treebank": "CAUS"
+     },
+     {
+      "segment": "9:77:8:2",
+      "morphology_v04": "REL",
+      "treebank": "SUB"
+     },
+     {
+      "segment": "9:77:13:3",
+      "morphology_v04": "REL",
+      "treebank": "SUB"
+     },
+     {
+      "segment": "9:78:10:1",
+      "morphology_v04": "ADJ",
+      "treebank": "N"
+     },
+     {
+      "segment": "9:79:13:1",
+      "morphology_v04": "REM",
+      "treebank": "CONJ"
+     },
+     {
+      "segment": "9:79:18:1",
+      "morphology_v04": "CONJ",
+      "treebank": "REM"
+     },
+     {
+      "segment": "9:80:12:1",
+      "morphology_v04": "REM",
+      "treebank": "RSLT"
+     },
+     {
+      "segment": "9:80:21:1",
+      "morphology_v04": "CONJ",
+      "treebank": "REM"
+     },
+     {
+      "segment": "9:81:4:1",
+      "morphology_v04": "N",
+      "treebank": "LOC"
+     },
+     {
+      "segment": "9:81:23:1",
+      "morphology_v04": "ADJ",
+      "treebank": "N"
+     },
+     {
+      "segment": "9:83:21:1",
+      "morphology_v04": "ADJ",
+      "treebank": "T"
+     },
+     {
+      "segment": "9:83:23:1",
+      "morphology_v04": "REM",
+      "treebank": "CAUS"
+     },
+     {
+      "segment": "9:84:1:1",
+      "morphology_v04": "CONJ",
+      "treebank": "REM"
+     },
+     {
+      "segment": "9:86:1:1",
+      "morphology_v04": "CONJ",
+      "treebank": "REM"
+     },
+     {
+      "segment": "9:87:6:1",
+      "morphology_v04": "CONJ",
+      "treebank": "REM"
+     },
+     {
+      "segment": "9:88:9:1",
+      "morphology_v04": "CONJ",
+      "treebank": "REM"
+     },
+     {
+      "segment": "9:90:1:1",
+      "morphology_v04": "CONJ",
+      "treebank": "REM"
+     },
+     {
+      "segment": "9:91:24:1",
+      "morphology_v04": "CONJ",
+      "treebank": "REM"
+     }
+    ]
+   },
+   "text_normalized_incomplete": {
+    "note": "The IndoPak font stores some letter clusters as one private-use glyph, which the supplied normalized text drops. These words are aligned correctly; only text_normalized is short. The Treebank spelling is listed for reference.",
+    "words": [
+     {
+      "word": "3:36:7",
+      "text_indopak": "اُ ؕ",
+      "text_normalized": "ا",
+      "treebank_text": "أُنثَىٰ",
+      "similarity": 0.4
+     },
+     {
+      "word": "3:195:13",
+      "text_indopak": "اُ ۚ",
+      "text_normalized": "ا",
+      "treebank_text": "أُنثَىٰ",
+      "similarity": 0.4
+     },
+     {
+      "word": "4:124:8",
+      "text_indopak": "اُ",
+      "text_normalized": "ا",
+      "treebank_text": "أُنثَىٰ",
+      "similarity": 0.4
+     },
+     {
+      "word": "12:101:14",
+      "text_indopak": "وَلِیّٖ",
+      "text_normalized": "ولي",
+      "treebank_text": "ولىوليّي",
+      "similarity": 0.6
+     },
+     {
+      "word": "13:8:6",
+      "text_indopak": "اُ",
+      "text_normalized": "ا",
+      "treebank_text": "أُنثى",
+      "similarity": 0.4
+     },
+     {
+      "word": "16:97:7",
+      "text_indopak": "اُ",
+      "text_normalized": "ا",
+      "treebank_text": "أُنثى",
+      "similarity": 0.4
+     },
+     {
+      "word": "35:11:14",
+      "text_indopak": "اُ",
+      "text_normalized": "ا",
+      "treebank_text": "أُنثى",
+      "similarity": 0.4
+     },
+     {
+      "word": "40:40:14",
+      "text_indopak": "اُ",
+      "text_normalized": "ا",
+      "treebank_text": "أُنثى",
+      "similarity": 0.4
+     },
+     {
+      "word": "41:47:14",
+      "text_indopak": "اُ",
+      "text_normalized": "ا",
+      "treebank_text": "أُنثى",
+      "similarity": 0.4
+     },
+     {
+      "word": "49:13:7",
+      "text_indopak": "وَّاُ",
+      "text_normalized": "وا",
+      "treebank_text": "وأُنثى",
+      "similarity": 0.57
+     },
+     {
+      "word": "53:21:4",
+      "text_indopak": "الْاُ",
+      "text_normalized": "الا",
+      "treebank_text": "الْأُنثى",
+      "similarity": 0.67
+     },
+     {
+      "word": "53:27:9",
+      "text_indopak": "الْاُ",
+      "text_normalized": "الا",
+      "treebank_text": "الْأُنثى",
+      "similarity": 0.67
+     },
+     {
+      "word": "53:37:3",
+      "text_indopak": "وَ",
+      "text_normalized": "و",
+      "treebank_text": "وفى",
+      "similarity": 0.5
+     },
+     {
+      "word": "65:4:1",
+      "text_indopak": "وَا",
+      "text_normalized": "وا",
+      "treebank_text": "وَٱلَّٰٓـِٔى",
+      "similarity": 0.67
+     },
+     {
+      "word": "65:4:12",
+      "text_indopak": "وَّا",
+      "text_normalized": "وا",
+      "treebank_text": "وَٱلَّٰٓـِٔى",
+      "similarity": 0.67
+     },
+     {
+      "word": "80:3:4",
+      "text_indopak": "یَزَّ",
+      "text_normalized": "يز",
+      "treebank_text": "يَزَّكَّىٰٓ",
+      "similarity": 0.67
+     }
+    ]
+   }
+  },
+  "prefix_only_fragment_sentences": 26,
+  "sentences_crossing_ayah": 836
+ },
+ "files": {
+  "indopak-nastaleeq-wbw-grammar-normalized.json": {
+   "bytes": 99653604,
+   "sha256": "bd5328f0fe0900cdad1e77e5723b7440cae9cfab31e737cc8d9622db5c435635"
+  },
+  "indopak-nastaleeq-sentence-grammar-normalized.json": {
+   "bytes": 46405051,
+   "sha256": "50d4c6475b024ef0a21d1ba57a78e6695ab298be635d197a91348afa1f8ec896"
+  }
+ }
+}

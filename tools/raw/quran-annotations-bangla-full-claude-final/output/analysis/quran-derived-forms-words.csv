@@ -1,0 +1,1001 @@
+﻿type,lemma_bw,lemma_ar,pos,root_bw,root_ar,count,top_glosses,n_surahs,first_word,example_text_indopak
+ACT_PCPL,mu&omin,مُؤْمِن,N,Amn,امن,202,the believers (67) | believers (37) | for the believers (11),47,2:8:11,بِمُؤْمِنِیْنَ
+ACT_PCPL,ZaAlim,ظَالِم,N,Zlm,ظلم,129,the wrongdoers (62) | (are) the wrongdoers (9) | wrongdoers (9),44,2:35:18,الظّٰلِمِیْنَ
+ACT_PCPL,ka`firuwn,كَٰفِرُون,N,kfr,كفر,129,the disbelievers (47) | for the disbelievers (16) | (are) disbelievers (14),52,2:19:19,بِالْكٰفِرِیْنَ
+ACT_PCPL,m~ubiyn,مُّبِين,N,byn,بين,119,clear (82) | manifest (12) | open (6),43,2:168:16,مُّبِیْنٌ
+ACT_PCPL,xa`lid,خَٰلِد,N,xld,خلد,74,(will) abide forever (22) | will abide forever (12) | abiding forever (9),33,2:25:34,خٰلِدُوْنَ
+ACT_PCPL,Sa`liH,صَٰلِح,N,SlH,صلح,65,the righteous (19) | righteous (deeds) (12) | righteous (11),38,2:62:14,صَالِحًا
+ACT_PCPL,S~a`liHa`t,صَّٰلِحَٰت,N,SlH,صلح,62,righteous deeds (31) | [the] righteous deeds (8) | the righteous deeds (7),36,2:25:5,الصّٰلِحٰتِ
+ACT_PCPL,SaAdiq,صَادِق,N,Sdq,صدق,59,truthful (31) | the truthful (16) | (are) the truthful (2),34,2:23:20,صٰدِقِیْنَ
+ACT_PCPL,mujorim,مُجْرِم,N,jrm,جرم,52,the criminals (22) | criminals (7) | (of) the criminals (6),32,6:55:6,الْمُجْرِمِیْنَ
+ACT_PCPL,mut~aqiyn,مُتَّقِين,N,wqy,وقي,49,the righteous (14) | for the righteous (6) | (to) the righteous (4),30,2:2:7,لِّلْمُتَّقِیْنَ
+ACT_PCPL,mu$orik,مُشْرِك,N,$rk,شرك,44,the polytheists (22) | for the polytheists (3) | and the polytheist men (2),19,2:105:9,الْمُشْرِكِیْنَ
+ACT_PCPL,musolim,مُسْلِم,N,slm,سلم,39,Muslims (6) | (are) Muslims (5) | the Muslims (5),24,2:128:3,مُسْلِمَیْنِ
+ACT_PCPL,muHosin,مُحْسِن,N,Hsn,حسن,38,the good-doers (21) | (of) the good-doers (7) | (is) a good-doer (3),19,2:58:20,الْمُحْسِنِیْنَ
+ACT_PCPL,faAsiq,فَاسِق,N,fsq,فسق,37,the defiantly disobedient (12) | defiantly disobedient (8) | (are) defiantly disobedient (6),18,2:26:39,الْفٰسِقِیْنَ
+ACT_PCPL,m~usotaqiym,مُّسْتَقِيم,N,qwm,قوم,37,straight (15) | Straight (12) | the straight (3),24,1:6:3,الْمُسْتَقِیْمَ
+ACT_PCPL,ka`*ib,كَٰذِب,N,k*b,كذب,32,the liars (10) | (are) surely liars (6) | (are) the liars (3),21,3:61:25,الْكٰذِبِیْنَ
+ACT_PCPL,xa`siriyn,خَٰسِرِين,N,xsr,خسر,32,the losers (13) | (are) the losers (9) | (as) losers (2),18,2:27:20,الْخٰسِرُوْنَ
+ACT_PCPL,ga`fil,غَٰفِل,N,gfl,غفل,27,unaware (10) | (are) unaware (3) | heedless (3),14,2:74:35,بِغَافِلٍ
+ACT_PCPL,muna`fiquwn,مُنَٰفِقُون,N,nfq,نفق,27,the hypocrites (15) | the hypocrite men (4) | and the hypocrites (4),9,4:61:12,الْمُنٰفِقِیْنَ
+ACT_PCPL,ba`Til,بَٰطِل,N,bTl,بطل,26,the falsehood (6) | wrongfully (2) | with [the] falsehood (1),21,2:42:4,بِالْبَاطِلِ
+ACT_PCPL,saAjid,سَاجِد,N,sjd,سجد,23,prostrating (12) | those who prostrated (3) | prostrate (3),16,2:58:13,سُجَّدًا
+ACT_PCPL,m~u&omina`t,مُّؤْمِنَٰت,N,Amn,امن,22,and the believing women (11) | the believing women (2) | [the] believing women (1),12,4:25:9,الْمُؤْمِنٰتِ
+ACT_PCPL,sa`Hir,سَٰحِر,N,sHr,سحر,22,the magicians (9) | A magician (3) | magician (2),8,7:109:8,لَسٰحِرٌ
+ACT_PCPL,$aAhid,شَاهِد,N,$hd,شهد,21,the witnesses (8) | a witness (3) | (as) a witness (3),16,3:53:9,الشّٰهِدِیْنَ
+ACT_PCPL,mufosid,مُفْسِد,N,fsd,فسد,21,the corrupters (5) | (of) the corrupters (5) | spreading corruption (4),12,2:12:4,الْمُفْسِدُوْنَ
+ACT_PCPL,m~uka*~ibiyn,مُّكَذِّبِين,N,k*b,كذب,21,to the deniers (12) | (of) the deniers (3) | the deniers (3),11,3:137:13,الْمُكَذِّبِیْنَ
+ACT_PCPL,SaAbir,صَابِر,N,Sbr,صبر,20,the patient ones (7) | (to) the patient ones (2) | and those who are patient (2),13,2:153:10,الصّٰبِرِیْنَ
+ACT_PCPL,muSad~iq,مُصَدِّق,N,Sdq,صدق,19,confirming (16) | And confirming (1) | and confirming (1),9,2:41:4,مُصَدِّقًا
+ACT_PCPL,m~uEoriDuwn,مُّعْرِضُون,N,ErD,عرض,19,turn away (6) | turning away (3) | (were) averse (2),15,2:83:29,مُّعْرِضُوْنَ
+ACT_PCPL,Ea`lim,عَٰلِم,N,Elm,علم,18,Knower (3) | (the) Knower (2) | (is the) Knower (2),16,6:73:19,عٰلِمُ
+ACT_PCPL,m~uhotaduwn,مُّهْتَدُون,N,hdy,هدي,17,guided-ones (2) | (are) rightly guided (2) | the guided ones (2),10,2:16:11,مُهْتَدِیْنَ
+ACT_PCPL,qaA^}im,قَآئِم,N,qwm,قوم,17,standing (6) | and standing (2) | (was) standing - (1),12,3:18:11,قَآىِٕمًا
+ACT_PCPL,mun*ir,مُنذِر,N,n*r,نذر,15,and (as) warners (3) | a warner (3) | (are) a warner (2),13,2:213:9,وَمُنْذِرِیْنَ ۪
+ACT_PCPL,musorif,مُسْرِف,N,srf,سرف,15,the transgressors (2) | transgressing (2) | (is) a transgressor (2),11,5:32:40,لَمُسْرِفُوْنَ
+ACT_PCPL,$aAkir,شَاكِر,N,$kr,شكر,14,the grateful ones (3) | the thankful (2) | (is) All-Appreciative (1),10,2:158:23,شَاكِرٌ
+ACT_PCPL,DaA^l~,ضَآلّ,N,Dll,ضلل,14,those who are astray (2) | astray (2) | (of) those who go astray (1),12,1:7:9,الضَّآلِّیْنَ
+ACT_PCPL,m~uhiyn,مُّهِين,ADJ,hwn,هون,14,humiliating (13) | the humiliating (1),10,2:90:27,مُّهِیْنٌ
+ACT_PCPL,qaAdir,قَادِر,N,qdr,قدر,14,(is) Able (3) | (is) All-Capable (1) | have the power (1),11,6:37:11,قَادِرٌ
+ACT_PCPL,xaA$iE,خَاشِع,N,x$E,خشع,14,humbled (3) | humbly submissive (2) | Humbled (2),13,2:45:8,الْخٰشِعِیْنَ
+ACT_PCPL,Ha`fiZ,حَٰفِظ,N,HfZ,حفظ,13,(will) surely (be) guardians (2) | (are) guardians (2) | and those who observe (1),10,9:112:12,وَالْحٰفِظُوْنَ
+ACT_PCPL,gaAlib,غَالِب,N,glb,غلب,13,(can) overcome (2) | (are) the victorious (2) | the victors (2),9,3:160:5,غَالِبَ
+ACT_PCPL,mufoliHuwn,مُفْلِحُون,N,flH,فلح,13,(are) the successful ones (7) | (are) the successful (3) | the successful ones (2),12,2:5:8,الْمُفْلِحُوْنَ
+ACT_PCPL,Ea`mil,عَٰمِل,N,Eml,عمل,12,working (2) | (of) the workers (2) | (for) the (righteous) workers (1),9,3:136:15,الْعٰمِلِیْنَ
+ACT_PCPL,HafiyZ,حَفِيظ,N,HfZ,حفظ,12,a guardian (3) | (as) a guardian (2) | (is) a Guardian (2),7,4:80:12,حَفِیْظًا
+ACT_PCPL,muEojiz,مُعْجِز,N,Ejz,عجز,12,escape (2) | will be able to escape (2) | (can) escape (2),10,6:134:7,بِمُعْجِزِیْنَ
+ACT_PCPL,taw~aAb,تَوَّاب,N,twb,توب,12,Oft-Forgiving (2) | (is) the Acceptor of repentance (2) | (is) the Oft-returning (to mercy) (1),6,2:37:10,التَّوَّابُ
+ACT_PCPL,xa`liq,خَٰلِق,N,xlq,خلق,12,(the) Creator (2) | (is) the Creator (1) | (will) create (1),12,6:102:8,خَالِقُ
+ACT_PCPL,EaAbid,عَابِد,N,Ebd,عبد,11,(are) worshippers (3) | worshippers (3) | those who worship (1),6,2:138:10,عٰبِدُوْنَ
+ACT_PCPL,muxoliS,مُخْلِص,N,xlS,خلص,11,(being) sincere (9) | (are) sincere (1) | sincerely (1),8,2:139:14,مُخْلِصُوْنَ
+ACT_PCPL,naASir,نَاصِر,N,nSr,نصر,11,helpers (7) | (of) the Helpers (1) | helper (1),8,3:22:11,نّٰصِرِیْنَ
+ACT_PCPL,'aAminiyn,ءَامِنِين,N,Amn,امن,10,secure (6) | safe (1) | (will be) safe (1),8,12:99:14,اٰمِنِیْنَ
+ACT_PCPL,jaAhil,جَاهِل,N,jhl,جهل,10,the ignorant (6) | the ignorant one (1) | ignorant (1),8,2:67:20,الْجٰهِلِیْنَ
+ACT_PCPL,m~uSiybap,مُّصِيبَة,N,Swb,صوب,10,disaster (4) | a disaster (2) | a misfortune (1),9,2:156:4,مُّصِیْبَةٌ ۙ
+ACT_PCPL,m~uqiym,مُّقِيم,N,qwm,قوم,10,lasting (3) | enduring (2) | And the ones who establish (1),9,4:162:15,وَالْمُقِیْمِیْنَ
+ACT_PCPL,m~uxotalif,مُّخْتَلِف,N,xlf,خلف,10,(of) varying (2) | (of) various (2) | diverse (1),7,6:141:10,مُخْتَلِفًا
+ACT_PCPL,rawa`siY,رَوَٰسِى,N,rsw,رسو,10,firm mountains (5) | firmly set mountains (3) | fixed (1),10,13:3:7,رَوَاسِیَ
+ACT_PCPL,A^tiy,آتِي,N,Aty,اتي,9,(is) surely coming (3) | (is) sure to come (1) | (will) come (for) them (1),8,6:134:4,لَاٰتٍ ۙ
+ACT_PCPL,faAEil,فَاعِل,N,fEl,فعل,9,doers (3) | doing (1) | surely will do (1),5,12:10:16,فٰعِلِیْنَ
+ACT_PCPL,jaAnib,جَانِب,N,jnb,جنب,9,side (2) | on (the) side (2) | on his side (1),6,17:68:5,جَانِبَ
+ACT_PCPL,muHiyT,مُحِيط,N,HwT,حوط,9,(is) All-Encompassing (3) | All-Encompassing (2) | (is) [the One Who] encompasses (1),7,2:19:18,مُحِیْطٌ
+ACT_PCPL,muba$~ir,مُبَشِّر,N,b$r,بشر,9,(as) bearers of glad tidings (2) | (as) a bearer of glad tidings (2) | bearers of glad tidings (1),9,2:213:8,مُبَشِّرِیْنَ
+ACT_PCPL,wa`siE,وَٰسِع,N,wsE,وسع,9,(is) All-Encompassing (7) | All-Encompassing (1) | (is) vast (1),6,2:115:11,وَاسِعٌ
+ACT_PCPL,Za`hir,ظَٰهِر,N,Zhr,ظهر,8,dominant (2) | open (1) | of the apparent (1),7,6:120:2,ظَاهِرَ
+ACT_PCPL,mu$ofiquwn,مُشْفِقُون,N,$fq,شفق,8,fearful (3) | stand in awe (1) | (are) afraid (1),6,18:49:5,مُشْفِقِیْنَ
+ACT_PCPL,mudobir,مُدْبِر,N,dbr,دبر,8,fleeing (2) | (in) flight (2) | retreating (2),7,9:25:23,مُّدْبِرِیْنَ
+ACT_PCPL,mut~aki_#iyn,مُتَّكِـِٔين,N,wkA,وكا,8,Reclining (6) | reclining (2),7,18:31:21,مُّتَّكِـِٕیْنَ
+ACT_PCPL,qaAnit,قَانِت,N,qnt,قنت,8,(are) humbly obedient (1) | devoutly obedient (1) | and the obedient (1),7,2:116:14,قٰنِتُوْنَ
+ACT_PCPL,raAkiE,رَاكِع,N,rkE,ركع,8,those who bow down (3) | bowing (2) | and those who bow down (1),7,2:43:7,الرّٰكِعِیْنَ
+ACT_PCPL,EaAkif,عَاكِف,N,Ekf,عكف,7,devoted (2) | and those who seclude themselves for devotion and prayer (1) | (are) secluded (1),5,2:125:20,وَالْعٰكِفِیْنَ
+ACT_PCPL,ga`biriyn,غَٰبِرِين,N,gbr,غبر,7,those who remain behind (3) | those who remained behind (3) | those who stayed behind (1),6,7:83:7,الْغٰبِرِیْنَ
+ACT_PCPL,haAd,هَاد,N,hdy,هدي,7,guide (4) | (is) a guide (1) | (is) surely (the) Guide (1),5,13:7:15,هَادٍ
+ACT_PCPL,jaA^n~,جَآنّ,N,jnn,جنن,7,any jinn (3) | (were) a snake (2) | And the jinn (1),4,15:27:1,وَالْجَآنَّ
+ACT_PCPL,ka`rihuwn,كَٰرِهُون,N,krh,كره,7,(are) averse (2) | (the) ones who hate (it) (1) | certainly disliked (1),6,7:88:21,كٰرِهِیْنَ
+ACT_PCPL,muhaAjir,مُهَاجِر,N,hjr,هجر,7,and the emigrants (3) | (as) an emigrant (1) | the emigrants (1),6,4:100:16,مُهَاجِرًا
+ACT_PCPL,muriyb,مُرِيب,N,ryb,ريب,7,suspicious (3) | disquieting (3) | doubter (1),6,11:62:21,مُرِیْبٍ
+ACT_PCPL,mutakab~ir,مُتَكَبِّر,N,kbr,كبر,7,(of) the arrogant (3) | for the arrogant (1) | arrogant one (1),4,16:29:8,الْمُتَكَبِّرِیْنَ
+ACT_PCPL,m~uniyb,مُّنِيب,N,nwb,نوب,7,turning (2) | and oft-returning (1) | Turning (1),5,11:75:5,مُّنِیْبٌ
+ACT_PCPL,qaAEid,قَاعِد,N,qEd,قعد,7,the ones who sit (3) | sitting (2) | those who sit (2),4,4:95:3,الْقٰعِدُوْنَ
+ACT_PCPL,saA^}il,سَآئِل,N,sAl,سال,7,for those who ask (2) | and those who ask (1) | (of) those who asked (1),6,2:177:29,وَالسَّآىِٕلِیْنَ
+ACT_PCPL,saAbiq,سَابِق,N,sbq,سبق,7,And the forerunners (1) | (are) foremost (1) | outstrip Us (1),6,9:100:1,وَالسّٰبِقُوْنَ
+ACT_PCPL,waAriv,وَارِث,N,wrv,ورث,7,(are) the inheritors (2) | the (father's) heir (1) | (are) the Inheritors (1),6,2:233:31,الْوَارِثِ
+ACT_PCPL,'aAmin,ءَامِن,N,Amn,امن,6,secure (4) | safe (2),6,2:126:8,اٰمِنًا
+ACT_PCPL,EaAd,عَاد,N,Edw,عدو,6,transgressing (2) | transgressor (1) | a transgressor - (1),6,2:173:18,عَادٍ
+ACT_PCPL,Ta`giyn,طَٰغِين,N,Tgy,طغي,6,transgressing (3) | for the transgressors (1) | transgressors (1),6,37:30:10,طٰغِیْنَ
+ACT_PCPL,ba`lig,بَٰلِغ,N,blg,بلغ,6,reaching (1) | were to reach [it] (1) | reaches it (1),6,5:95:25,بٰلِغَ
+ACT_PCPL,faATir,فَاطِر,N,fTr,فطر,6,Creator (3) | (the) Creator (1) | Originator (1),6,6:14:6,فَاطِرِ
+ACT_PCPL,ga`wiyn,غَٰوِين,N,gwy,غوي,6,those gone astray (1) | the ones who go astray (1) | to the deviators (1),4,7:175:13,الْغٰوِیْنَ
+ACT_PCPL,jaAEil,جَاعِل,N,jEl,جعل,6,going to place (1) | (am) the One to make you (1) | and I will make (1),5,2:30:6,جَاعِلٌ
+ACT_PCPL,kaAtib,كَاتِب,N,ktb,كتب,6,a scribe (3) | (the) scribe (1) | (are) Recorders (1),3,2:282:13,كَاتِبٌ
+ACT_PCPL,muntaZiruwn,مُنتَظِرُون,N,nZr,نظر,6,the ones who wait (3) | (are) those who wait (1) | (are) ones who wait (1),5,6:158:37,مُنْتَظِرُوْنَ
+ACT_PCPL,musotakobir,مُسْتَكْبِر,N,kbr,كبر,6,(are) arrogant (2) | arrogantly (2) | the arrogant ones (1),5,16:22:11,مُّسْتَكْبِرُوْنَ
+ACT_PCPL,muta$a`bih,مُتَشَٰبِه,N,$bh,شبه,6,similar (2) | (things) in resemblance (1) | (are) allegorical (1),4,2:25:27,مُتَشَابِهًا ؕ
+ACT_PCPL,m~u&ominap,مُّؤْمِنَة,ADJ,Amn,امن,6,#NAME (3) | (who is) believing (1) | (for) a believing woman (1),3,2:221:7,مُّؤْمِنَةٌ
+ACT_PCPL,m~ud~akir,مُّدَّكِر,N,*kr,ذكر,6,who will receive admonition (6),1,54:15:6,مُّدَّكِرٍ
+ACT_PCPL,m~uniyr,مُّنِير,N,nwr,نور,6,enlightening (2) | [the] Enlightening (1) | shining (1),6,3:184:12,الْمُنِیْرِ
+ACT_PCPL,naASiH,نَاصِح,N,nSH,نصح,6,the sincere advisors (2) | an adviser - (1) | the advisers (1),3,7:21:5,النّٰصِحِیْنَ
+ACT_PCPL,r~a`Himiyn,رَّٰحِمِين,N,rHm,رحم,6,(of) those who show mercy (3) | (of) the merciful (2) | (of) the Merciful (1),4,7:151:11,الرّٰحِمِیْنَ
+ACT_PCPL,r~a`ziqiyn,رَّٰزِقِين,N,rzq,رزق,6,(of) the Providers (4) | (of) the providers (1) | providers (1),6,5:114:22,الرّٰزِقِیْنَ
+ACT_PCPL,waAqiE,وَاقِع,N,wqE,وقع,6,(would) fall (1) | (will) befall (1) | (is) surely to occur (1),6,7:171:9,وَاقِعٌ
+ACT_PCPL,$~a`ribiyn,شَّٰرِبِين,N,$rb,شرب,5,to the drinkers (1) | for the drinkers (1) | for (the) drinkers (1),4,16:66:17,لِّلشّٰرِبِیْنَ
+ACT_PCPL,Ha`kimiyn,حَٰكِمِين,N,Hkm,حكم,5,(of) the Judges (2) | (of) the judges (2) | (of) [the] Judges (1),5,7:87:19,الْحٰكِمِیْنَ
+ACT_PCPL,Sa`giruwn,صَٰغِرُون,N,Sgr,صغر,5,the disgraced ones (1) | humiliated (1) | (are) subdued (1),4,7:13:13,الصّٰغِرِیْنَ
+ACT_PCPL,Ta`^}ir,طَٰٓئِر,N,Tyr,طير,5,a bird (1) | their evil omens (1) | his fate (1),5,6:38:7,طٰٓىِٕرٍ
+ACT_PCPL,ja`vimiyn,جَٰثِمِين,N,jvm,جثم,5,fallen prone (5),3,7:78:6,جٰثِمِیْنَ
+ACT_PCPL,muSobiHiyn,مُصْبِحِين,N,SbH,صبح,5,(in the) morning (2) | (by) early morning (1) | (at) early morning (1),3,15:66:9,مُّصْبِحِیْنَ
+ACT_PCPL,muSoliH,مُصْلِح,N,SlH,صلح,5,(are) reformers (1) | the amender (1) | (of) the reformers (1),4,2:11:11,مُصْلِحُوْنَ
+ACT_PCPL,muboTiluwn,مُبْطِلُون,N,bTl,بطل,5,the falsifiers (4) | falsifiers (1),5,7:173:15,الْمُبْطِلُوْنَ
+ACT_PCPL,muholik,مُهْلِك,N,hlk,هلك,5,one who destroys (1) | (is going to) destroy them (1) | (will) destroy it (1),5,6:131:6,مُهْلِكَ
+ACT_PCPL,muna`fiqa`t,مُنَٰفِقَٰت,N,nfq,نفق,5,and the hypocrite women (5),4,9:67:2,وَالْمُنٰفِقٰتُ
+ACT_PCPL,munziliyn,مُنزِلِين,N,nzl,نزل,5,(of) the hosts (1) | (of) those who cause to land.' (1) | (will) bring down (1),5,12:59:17,الْمُنْزِلِیْنَ
+ACT_PCPL,m~uwqiniyn,مُّوقِنِين,N,yqn,يقن,5,the ones who are certain (1) | convinced (1) | (are now) certain (1),5,6:75:9,الْمُوْقِنِیْنَ
+ACT_PCPL,na`Ziriyn,نَٰظِرِين,N,nZr,نظر,5,for the observers (3) | (to) those who see (it).' (1) | awaiting (1),5,2:69:18,النّٰظِرِیْنَ
+ACT_PCPL,na`dimiyn,نَٰدِمِين,N,ndm,ندم,5,regretful (4) | the regretful (1),4,5:31:25,النّٰدِمِیْنَ
+ACT_PCPL,qaA^}il,قَآئِل,N,qwl,قول,5,a speaker (3) | speaks it (1) | and those who say (1),5,12:10:2,قَآىِٕلٌ
+ACT_PCPL,qaA^}imap,قَآئِمَة,N,qwm,قوم,5,standing (2) | (was) standing (1) | will occur (1),5,3:113:7,قَآىِٕمَةٌ
+ACT_PCPL,waAzirap,وَازِرَة,N,wzr,وزر,5,bearer of burdens (2) | any bearer of burden (1) | a bearer of burden (1),5,6:164:18,وَازِرَةٌ
+ACT_PCPL,xaAliSap,خَالِصَة,N,xlS,خلص,5,exclusively (1) | (is) exclusively (1) | exclusively (for them) (1),5,2:94:9,خَالِصَةً
+ACT_PCPL,xaAwiyap,خَاوِيَة,N,xwy,خوي,5,(had) overturned (1) | collapsed (1) | fell (1),5,2:259:7,خَاوِیَةٌ
+ACT_PCPL,xa`Ti_#iyn,خَٰطِـِٔين,N,xTA,خطا,5,sinners (3) | the sinful (1) | the sinners (1),3,12:29:10,الْخٰطِـِٕیْنَ
+ACT_PCPL,EaAliy,عَالِي,N,Elw,علو,4,its upside (1) | its highest (part) (1) | arrogant (1),4,11:82:5,عَالِیَهَا
+ACT_PCPL,HaASib,حَاصِب,N,HSb,حصب,4,a storm of stones (3) | a violent storm (1),4,17:68:10,حَاصِبًا
+ACT_PCPL,TaA^}if,طَآئِف,N,Twf,طوف,4,for those who circumambulate (2) | an evil thought (1) | a visitation (1),4,2:125:19,لِلطَّآىِٕفِیْنَ
+ACT_PCPL,ZaAlimap,ظَالِمَة,N,Zlm,ظلم,4,(are) doing wrong (1) | unjust (1) | was doing wrong (1),3,11:102:8,ظَالِمَةٌ ؕ
+ACT_PCPL,ba`siT,بَٰسِط,N,bsT,بسط,4,stretch (1) | (are) stretching out (1) | like one who stretches (1),4,5:28:8,بِبَاسِطٍ
+ACT_PCPL,daAEiY,دَاعِى,N,dEw,دعو,4,(to the) caller (2) | the caller (1) | And as one who invites (1),3,20:108:3,الدَّاعِیَ
+ACT_PCPL,da`xiruwn,دَٰخِرُون,N,dxr,دخر,4,(are) humble (1) | humbled (1) | (will be) humiliated (1),4,16:48:17,دٰخِرُوْنَ
+ACT_PCPL,faA^}izuwn,فَآئِزُون,N,fwz,فوز,4,(are) the successful ones (2) | (are) the successful (1) | (are) the achievers (1),4,9:20:16,الْفَآىِٕزُوْنَ
+ACT_PCPL,fuj~aAr,فُجَّار,N,fjr,فجر,4,like the wicked (1) | the wicked ones (1) | the wicked (1),4,38:28:13,كَالْفُجَّارِ
+ACT_PCPL,muEa*~ib,مُعَذِّب,N,E*b,عذب,4,punish them (1) | the One Who punishes them (1) | are to punish (1),3,7:164:11,مُعَذِّبُهُمْ
+ACT_PCPL,muboSir,مُبْصِر,N,bSr,بصر,4,giving visibility (3) | (are) those who see (aright) (1),4,7:201:12,مُّبْصِرُوْنَ
+ACT_PCPL,mubolisuwn,مُبْلِسُون,N,bls,بلس,4,(were) dumbfounded (1) | (will be in) despair (1) | surely in despair (1),4,6:44:20,مُّبْلِسُوْنَ
+ACT_PCPL,muja`hidiyn,مُجَٰهِدِين,N,jhd,جهد,4,the ones who strive (2) | and the ones who strive (1) | those who strive (1),2,4:95:9,وَالْمُجٰهِدُوْنَ
+ACT_PCPL,mumotariyn,مُمْتَرِين,N,mry,مري,4,the doubters (3) | the ones who doubt (1),4,2:147:7,الْمُمْتَرِیْنَ
+ACT_PCPL,murosil,مُرْسِل,N,rsl,رسل,4,the Senders (1) | (can) release (1) | (ever) sending (1),4,28:45:18,مُرْسِلِیْنَ
+ACT_PCPL,mutawak~iluwn,مُتَوَكِّلُون,N,wkl,وكل,4,the ones who put trust (in Him) (1) | the ones who put trust (1) | the ones who put (their) trust (1),4,3:159:30,الْمُتَوَكِّلِیْنَ
+ACT_PCPL,m~ula`quwA,مُّلَٰقُوا,N,lqy,لقي,4,will meet (1) | (will) meet Him (1) | (would) meet (1),2,2:46:4,مُّلٰقُوْا
+ACT_PCPL,m~untaSir,مُّنتَصِر,N,nSr,نصر,4,(he) supported (1) | those who (could) defend themselves (1) | help themselves (1),4,18:43:11,مُنْتَصِرًا
+ACT_PCPL,m~uqotadir,مُّقْتَدِر,N,qdr,قدر,4,(is) All Able (1) | have full power (1) | (the) Powerful One (1),3,18:45:23,مُّقْتَدِرًا
+ACT_PCPL,m~utaqa`biliyn,مُّتَقَٰبِلِين,N,qbl,قبل,4,facing each other (4),4,15:47:10,مُّتَقٰبِلِیْنَ
+ACT_PCPL,raADiyap,رَاضِيَة,ADJ,rDw,رضو,4,pleasant (2) | satisfied (1) | well pleased (1),4,69:21:4,رَّاضِیَةٍ
+ACT_PCPL,ra`jiEuwn,رَٰجِعُون,N,rjE,رجع,4,will return (2) | (will) return (2),3,2:46:8,رٰجِعُوْنَ
+ACT_PCPL,wa`siEap,وَٰسِعَة,N,wsE,وسع,4,(is) spacious (2) | spacious (enough) (1) | Vast (1),4,4:97:20,وَاسِعَةً
+ACT_PCPL,'aAkiluwn,ءَاكِلُون,N,Akl,اكل,3,for those who eat (1) | (will) surely eat (1) | Will surely eat (1),3,23:20:9,لِّلْاٰكِلِیْنَ
+ACT_PCPL,*aA^}iqap,ذَآئِقَة,N,*wq,ذوق,3,(will) taste (3),3,3:185:3,ذَآىِٕقَةُ
+ACT_PCPL,A^vim,آثِم,N,Avm,اثم,3,(is) sinful - (1) | the sinners (1) | any sinner (1),3,2:283:27,اٰثِمٌ
+ACT_PCPL,A^xi*,آخِذ,N,Ax*,اخذ,3,take it (1) | has grasp (1) | Taking (1),3,2:267:20,بِاٰخِذِیْهِ
+ACT_PCPL,EaASim,عَاصِم,N,ESm,عصم,3,protector (2) | defender (1),3,10:27:14,عَاصِمٍۚ
+ACT_PCPL,EaAjilapN,عَاجِلَةٌ,N,Ejl,عجل,3,the immediate (3),3,17:18:4,الْعَاجِلَةَ
+ACT_PCPL,EaAqir,عَاقِر,N,Eqr,عقر,3,barren (2) | (is) [a] barren (1),2,3:40:11,عَاقِرٌ ؕ
+ACT_PCPL,HaA^q~ap,حَآقَّة,N,Hqq,حقق,3,(is) the Inevitable Reality (2) | The Inevitable Reality (1),1,69:1:1,اَلْحَآقَّةُ
+ACT_PCPL,Ha`$iriyn,حَٰشِرِين,N,H$r,حشر,3,gatherers (2) | gatherers - (1),2,7:111:7,حٰشِرِیْنَ
+ACT_PCPL,Sa`^f~a`t,صَٰٓفَّٰت,N,Sff,صفف,3,(with) wings outspread (1) | By those lined (1) | spreading (their wings) (1),3,24:41:12,صٰٓفّٰتٍ ؕ
+ACT_PCPL,S~a`bi_#iyn,صَّٰبِـِٔين,PN,SbA,صبا,3,and the Sabians (2) | and the Sabians - (1),3,2:62:7,وَالصّٰبِـِٕیْنَ
+ACT_PCPL,baATin,بَاطِن,N,bTn,بطن,3,and the secret (1) | and the Unapparent (1) | its interior (1),2,6:120:4,وَبَاطِنَهٗ ؕ
+ACT_PCPL,baAg,بَاغ,N,bgy,بغي,3,(being) disobedient (1) | desiring (1) | disobedient (1),3,2:173:16,بَاغٍ
+ACT_PCPL,baAri},بَارِئ,N,brA,برا,3,your Creator (2) | the Inventor (1),2,2:54:13,بَارِىِٕكُمْ
+ACT_PCPL,ba`ligap,بَٰلِغَة,ADJ,blg,بلغ,3,the conclusive (1) | perfect (1) | reaching (1),3,6:149:4,الْبَالِغَةُ ۚ
+ACT_PCPL,daAniyap,دَانِيَة,N,dnw,دنو,3,hanging low (1) | hanging near (1) | And near (1),3,6:99:24,دَانِیَةٌ
+ACT_PCPL,d~aAE,دَّاع,N,dEw,دعو,3,the caller (2) | (of) the supplicant (1),2,2:186:9,الدَّاعِ
+ACT_PCPL,fa`kihiyn,فَٰكِهِين,N,fkh,فكه,3,(in) amusement (1) | take delight (1) | Enjoying (1),3,36:55:7,فٰكِهُوْنَ
+ACT_PCPL,gaA^}ibiyn,غَآئِبِين,N,gyb,غيب,3,absent (1) | the absent (1) | (will be) absent (1),3,7:7:6,غَآىِٕبِیْنَ
+ACT_PCPL,ga`$iyap,غَٰشِيَة,N,g$w,غشو,3,coverings (1) | an overwhelming (1) | (of) the Overwhelming (1),3,7:41:7,غَوَاشٍ ؕ
+ACT_PCPL,jaAmiE,جَامِع,N,jmE,جمع,3,will gather (2) | (of) collective action (1),3,3:9:3,جَامِعُ
+ACT_PCPL,jawaAr,جَوَار,ADJ,jry,جري,3,(are) the ships (2) | Those that run (1),3,42:32:3,الْجَوَارِ
+ACT_PCPL,kaA$if,كَاشِف,N,k$f,كشف,3,remover (2) | (will) remove (1),3,6:17:6,كَاشِفَ
+ACT_PCPL,la`Eibiyn,لَٰعِبِين,N,lEb,لعب,3,(for) playing (1) | those who play (1) | (in) play (1),2,21:16:7,لٰعِبِیْنَ
+ACT_PCPL,ma`lik,مَٰلِك,N,mlk,ملك,3,(The) Master (1) | Owner (1) | (are the) owners (1),3,1:4:1,مٰلِكِ
+ACT_PCPL,mu$orika`t,مُشْرِكَٰت,N,$rk,شرك,3,and the polytheist women (2) | [the] polytheistic women (1),3,2:221:3,الْمُشْرِكٰتِ
+ACT_PCPL,mu&otafikap,مُؤْتَفِكَة,N,Afk,افك,3,and the towns overturned (1) | And the overturned cities (1) | and the overturned cities (1),3,9:70:15,وَالْمُؤْتَفِكٰتِ ؕ
+ACT_PCPL,muEa`jiziyn,مُعَٰجِزِين,N,Ejz,عجز,3,(to) cause failure (2) | (to) cause failure - (1),2,22:51:5,مُعٰجِزِیْنَ
+ACT_PCPL,muEotad,مُعْتَد,N,Edw,عدو,3,transgressor (3),3,50:25:3,مُعْتَدٍ
+ACT_PCPL,muSal~iyn,مُصَلِّين,N,Slw,صلو,3,those who pray - (1) | those who prayed (1) | to those who pray (1),3,70:22:2,الْمُصَلِّیْنَ
+ACT_PCPL,muSofar~,مُصْفَرّ,N,Sfr,صفر,3,turn yellow (2) | turning yellow (1),3,30:51:5,مُصْفَرًّا
+ACT_PCPL,mubad~il,مُبَدِّل,N,bdl,بدل,3,one (can) alter (1) | one can change (1) | can change (1),2,6:34:15,مُبَدِّلَ
+ACT_PCPL,muboSirap,مُبْصِرَة,N,bSr,بصر,3,visible (2) | (as) a visible sign (1),2,17:12:11,مُبْصِرَةً
+ACT_PCPL,muhoTiEiyn,مُهْطِعِين,N,hTE,هطع,3,Racing ahead (2) | (they) hasten (1),3,14:43:1,مُهْطِعِیْنَ
+ACT_PCPL,munkiruwn,مُنكِرُون,N,nkr,نكر,3,knew him not (1) | rejecters (1) | (are) rejecting him (1),3,12:58:9,مُنْكِرُوْنَ
+ACT_PCPL,munqalibuwn,مُنقَلِبُون,N,qlb,قلب,3,(will) return (2) | will surely return (1),3,7:125:5,مُنْقَلِبُوْنَ
+ACT_PCPL,muntaqimuwn,مُنتَقِمُون,N,nqm,نقم,3,(will) take retribution (3),3,32:22:13,مُنْتَقِمُوْنَ
+ACT_PCPL,muqosiTiyn,مُقْسِطِين,N,qsT,قسط,3,those who act justly (2) | the ones who are just (1),3,5:42:26,الْمُقْسِطِیْنَ
+ACT_PCPL,mut~axi*,مُتَّخِذ,N,Ax*,اخذ,3,those who take (1) | ones (who are) taking (1) | the One to take (1),3,4:25:33,مُتَّخِذٰتِ
+ACT_PCPL,muxorij,مُخْرِج,N,xrj,خرج,3,(is) the One Who brought forth (1) | and brings forth (1) | (will) bring forth (1),3,2:72:7,مُخْرِجٌ
+ACT_PCPL,m~uDil~,مُّضِلّ,N,Dll,ضلل,3,the misleaders (1) | one who misleads (1) | misleader (1),3,18:51:12,الْمُضِلِّیْنَ
+ACT_PCPL,m~ubay~inap,مُّبَيِّنَة,ADJ,byn,بين,3,clear (2) | open (1),3,4:19:21,مُّبَیِّنَةٍ ۚ
+ACT_PCPL,m~uhotad,مُّهْتَد,N,hdy,هدي,3,the guided one (1) | (is) the guided one (1) | (is) a guided one (1),3,17:97:5,الْمُهْتَدِ ۚ
+ACT_PCPL,m~uloquwn,مُّلْقُون,N,lqy,لقي,3,the ones to throw (1) | (wish to) throw (1) | (are) going to throw (1),3,7:115:10,الْمُلْقِیْنَ
+ACT_PCPL,m~usotaqir~,مُّسْتَقِرّ,N,qrr,قرر,3,placed (1) | (will be a) settlement (1) | abiding (1),2,27:40:17,مُسْتَقِرًّا
+ACT_PCPL,m~utarab~iS,مُّتَرَبِّص,N,rbS,ربص,3,(are) waiting (1) | (is) waiting (1) | those who wait (1),3,9:52:22,مُّتَرَبِّصُوْنَ
+ACT_PCPL,qaAhir,قَاهِر,N,qhr,قهر,3,(is) the Subjugator (2) | (are) subjugators (1),2,6:18:2,الْقَاهِرُ
+ACT_PCPL,qa`Sira`t,قَٰصِرَٰت,N,qSr,قصر,3,(will be) companions of modest gaze (3),3,37:48:2,قٰصِرٰتُ
+ACT_PCPL,qa`nita`t,قَٰنِتَٰت,N,qnt,قنت,3,(are) obedient (1) | and the obedient women (1) | obedient (1),3,4:34:16,قٰنِتٰتٌ
+ACT_PCPL,qa`siyap,قَٰسِيَة,N,qsw,قسو,3,hard (1) | and (are) hardened (1) | to (those are) hardened (1),3,5:13:7,قٰسِیَةً ۚ
+ACT_PCPL,raA^d~,رَآدّ,N,rdd,ردد,3,repeller (1) | (will) restore him (1) | (will) surely take you back (1),2,10:107:14,رَآدَّ
+ACT_PCPL,raAgib,رَاغِب,N,rgb,رغب,3,turn our hopes (1) | Do you hate (1) | turn devoutly (1),3,9:59:19,رٰغِبُوْنَ
+ACT_PCPL,saAfil,سَافِل,N,sfl,سفل,3,its downside (1) | its lowest (1) | (of the) low (1),3,11:82:6,سَافِلَهَا
+ACT_PCPL,s~aAriq,سَّارِق,N,srq,سرق,3,And (for) the male thief (1) | surely (are) thieves (1) | thieves (1),2,5:38:1,وَالسَّارِقُ
+ACT_PCPL,taAbiE,تَابِع,N,tbE,تبع,3,a follower (1) | (are) followers (1) | the attendants (1),2,2:145:13,بِتَابِعٍ
+ACT_PCPL,taArik,تَارِك,N,trk,ترك,3,(may) give up (1) | (will) leave (1) | to leave (1),2,11:12:2,تَارِكٌ
+ACT_PCPL,waAq,وَاق,N,wqy,وقي,3,defender (2) | protector (1),2,13:34:14,وَّاقٍ
+ACT_PCPL,waArid,وَارِد,N,wrd,ورد,3,their water drawer (1) | (will be) passing over it (1) | will come (1),3,12:19:4,وَارِدَهُمْ
+ACT_PCPL,xaA^}if,خَآئِف,N,xwf,خوف,3,(like) those in fear (1) | fearful (1) | fearing (1),2,2:114:21,خَآىِٕفِیْنَ ؕ۬
+ACT_PCPL,xaA^}iniyn,خَآئِنِين,N,xwn,خون,3,for the deceitful (1) | the traitors (1) | (of) the betrayers (1),3,4:105:14,لِّلْخَآىِٕنِیْنَ
+ACT_PCPL,xaArij,خَارِج,N,xrj,خرج,3,will come out (2) | he comes out (1),3,2:167:21,بِخٰرِجِیْنَ
+ACT_PCPL,xaAsi},خَاسِئ,ADJ,xsA,خسا,3,despised (2) | humbled (1),3,2:65:12,خٰسِـِٕیْنَ
+ACT_PCPL,zaAn,زَان,N,zny,زني,3,and the fornicator (1) | The fornicator (1) | a fornicator (1),1,24:2:2,وَالزَّانِیْ
+ACT_PCPL,zaAniyap,زَانِيَة,N,zny,زني,3,The fornicatress (1) | a fornicatress (1) | and the fornicatress - (1),1,24:2:1,اَلزَّانِیَةُ
+ACT_PCPL,$a`fiEiyn,شَٰفِعِين,N,$fE,شفع,2,intercessors (1) | (of) the intercessors (1),2,26:100:4,شَافِعِیْنَ
+ACT_PCPL,'aAniyap,ءَانِيَة,ADJ,Any,اني,2,vessels (1) | boiling (1),2,76:15:3,بِاٰنِیَةٍ
+ACT_PCPL,'aAzifap,ءَازِفَة,N,Azf,ازف,2,the Approaching (1) | the Approaching Day (1),2,40:18:3,الْاٰزِفَةِ
+ACT_PCPL,*aA^}iquwA,ذَآئِقُوا,N,*wq,ذوق,2,(will) certainly taste (1) | (will) surely taste (1),1,37:31:6,لَذَآىِٕقُوْنَ
+ACT_PCPL,*~a`kiriyn,ذَّٰكِرِين,N,*kr,ذكر,2,for those who remember (1) | and the men who remember (1),2,11:114:14,لِلذّٰكِرِیْنَ
+ACT_PCPL,>af~aAk,أَفَّاك,N,Afk,افك,2,liar (2),2,26:222:4,اَفَّاكٍ
+ACT_PCPL,DaA^r~,ضَآرّ,N,Drr,ضرر,2,at all [be those who] harm (1) | he (can) harm them (1),2,2:102:45,بِضَآرِّیْنَ
+ACT_PCPL,EaASif,عَاصِف,ADJ,ESf,عصف,2,stormy (2),2,10:22:20,عَاصِفٌ
+ACT_PCPL,EaAliyap,عَالِيَة,ADJ,Elw,علو,2,elevated (2),2,69:22:3,عَالِیَةٍ
+ACT_PCPL,EaAliyn,عَالِين,ADJ,Elw,علو,2,haughty (1) | the exalted ones (1),2,23:46:7,عَالِیْنَ
+ACT_PCPL,EaAriD,عَارِض,N,ErD,عرض,2,(as) a cloud (1) | (is) a cloud (1),1,46:24:3,عَارِضًا
+ACT_PCPL,HaADirap,حَاضِرَة,ADJ,HDr,حضر,2,present (1) | situated (1),2,2:282:100,حَاضِرَةً
+ACT_PCPL,HaAmiyap,حَامِيَة,ADJ,Hmy,حمي,2,intensely hot (2),2,88:4:3,حَامِیَةً
+ACT_PCPL,Ha`fiZa`t,حَٰفِظَٰت,N,HfZ,حفظ,2,guarding (1) | and the women who guard (it) (1),2,4:34:17,حٰفِظٰتٌ
+ACT_PCPL,Ha`sibiyn,حَٰسِبِين,N,Hsb,حسب,2,(of) the Reckoners (1) | (as) Reckoners (1),2,6:62:12,الْحٰسِبِیْنَ
+ACT_PCPL,SaAluwA,صَالُوا,N,Sly,صلي,2,(will) burn (1) | (surely) will burn (1),2,38:59:9,صَالُوا
+ACT_PCPL,TaArid,طَارِد,N,Trd,طرد,2,going to drive away (1) | the one to drive away (1),2,11:29:13,بِطَارِدِ
+ACT_PCPL,T~aAriq,طَّارِق,N,Trq,طرق,2,and the night comer (1) | the night comer (is) (1),1,86:1:2,وَالطَّارِقِ
+ACT_PCPL,Za`hirap,ظَٰهِرَة,N,Zhr,ظهر,2,apparent (1) | visible (1),2,31:20:16,ظَاهِرَةً
+ACT_PCPL,baAqiyap,بَاقِيَة,N,bqy,بقي,2,lasting (1) | remains (1),2,43:28:3,بَاقِیَةً
+ACT_PCPL,baAqiyn,بَاقِين,N,bqy,بقي,2,the remaining ones (1) | the survivors (1),2,26:120:4,الْبٰقِیْنَ
+ACT_PCPL,baArid,بَارِد,N,brd,برد,2,cool (2),2,38:42:5,بَارِدٌ
+ACT_PCPL,ba`qiya`t,بَٰقِيَٰت,N,bqy,بقي,2,But the enduring (1) | And the everlasting (1),2,18:46:6,وَالْبٰقِیٰتُ
+ACT_PCPL,ba`xiE,بَٰخِع,N,bxE,بخع,2,the one who kills (1) | (would) kill (1),2,18:6:2,بَاخِعٌ
+ACT_PCPL,daA^}im,دَآئِم,N,dwm,دوم,2,(is) everlasting (1) | (are) constant (1),2,13:35:11,دَآىِٕمٌ
+ACT_PCPL,daAfiE,دَافِع,N,dfE,دفع,2,preventer (1) | any preventer (1),2,52:8:4,دَافِعٍ
+ACT_PCPL,da`xiluwn,دَٰخِلُون,N,dxl,دخل,2,enter (it) (1) | those who enter (1),2,5:22:17,دٰخِلُوْنَ
+ACT_PCPL,faAliq,فَالِق,N,flq,فلق,2,(is the) Cleaver (1) | (He is the) Cleaver (1),1,6:95:3,فَالِقُ
+ACT_PCPL,faE~aAl,فَعَّال,N,fEl,فعل,2,(is) All-Accomplisher (1) | Doer (1),2,11:107:13,فَعَّالٌ
+ACT_PCPL,gaAfir,غَافِر,N,gfr,غفر,2,(of) Forgivers (1) | (The) Forgiver (1),2,7:155:41,الْغٰفِرِیْنَ
+ACT_PCPL,haAdiy,هَادِي,N,hdy,هدي,2,guide (1) | (as) a Guide (1),2,7:186:5,هَادِیَ
+ACT_PCPL,haAlik,هَالِك,N,hlk,هلك,2,those who perish (1) | (will be) destroyed (1),2,12:85:12,الْهٰلِكِیْنَ
+ACT_PCPL,jaAriyap,جَارِيَة,ADJ,jry,جري,2,the sailing (ship) (1) | flowing (1),2,69:11:7,الْجَارِیَةِ
+ACT_PCPL,kaAmilap,كَامِلَة,ADJ,kml,كمل,2,in all (1) | (in) full (1),2,2:196:58,كَامِلَةٌ ؕ
+ACT_PCPL,ka`Zimiyn,كَٰظِمِين,N,kZm,كظم,2,and those who restrain (1) | choked (1),2,3:134:6,وَالْكٰظِمِیْنَ
+ACT_PCPL,maAli_#uwn,مَالِـُٔون,N,mlA,ملا,2,and fill (1) | Then will fill (1),2,37:66:4,فَمَالِـُٔوْنَ
+ACT_PCPL,ma`kiriyn,مَٰكِرِين,N,mkr,مكر,2,(of) the planners (1) | (of) the Planners (1),2,3:54:6,الْمٰكِرِیْنَ
+ACT_PCPL,mu$orikap,مُشْرِكَة,N,$rk,شرك,2,a polytheistic woman (1) | a polytheist woman (1),2,2:221:10,مُّشْرِكَةٍ
+ACT_PCPL,mu$otarikuwn,مُشْتَرِكُون,N,$rk,شرك,2,(will be) sharers (1) | sharing (1),2,37:33:5,مُشْتَرِكُوْنَ
+ACT_PCPL,mu&a*~in,مُؤَذِّن,N,A*n,اذن,2,an announcer (2),2,7:44:22,مُؤَذِّنٌ
+ACT_PCPL,muHiyTap,مُحِيطَة,N,HwT,حوط,2,"(will) surely surround (1) | will surely, encompass (1)",2,9:49:14,لَمُحِیْطَةٌ
+ACT_PCPL,muHoY,مُحْى,N,Hyy,حيي,2,surely He (will) give life (1) | (is) surely the Giver of life (1),2,30:50:13,لَمُحْیِ
+ACT_PCPL,muSayoTir,مُصَيْطِر,N,sTr,سطر,2,the controllers (1) | a controller (1),2,52:37:7,الْمُصَۜیْطِرُوْنَ
+ACT_PCPL,muSorix,مُصْرِخ,N,Srx,صرخ,2,(be) your helper (1) | (be) my helper (1),1,14:22:30,بِمُصْرِخِكُمْ
+ACT_PCPL,muToma}in~,مُطْمَئِنّ,N,Tmn,طمن,2,(is) content (1) | securely (1),2,16:106:11,مُطْمَىِٕنٌّۢ
+ACT_PCPL,muZolim,مُظْلِم,N,Zlm,ظلم,2,the darkness (of) night (1) | (are) those in darkness (1),2,10:27:21,مُظْلِمًا ؕ
+ACT_PCPL,mubotaliy,مُبْتَلِي,N,blw,بلو,2,will test you (1) | surely testing (1),2,2:249:8,مُبْتَلِیْكُمْ
+ACT_PCPL,mufotaruwn,مُفْتَرُون,N,fry,فري,2,the ones who invent (falsehood) (1) | inventors (1),2,7:152:15,الْمُفْتَرِیْنَ
+ACT_PCPL,muhayomin,مُهَيْمِن,ADJ,hmn,همن,2,and a guardian (1) | the Guardian (1),2,5:48:11,وَمُهَیْمِنًا
+ACT_PCPL,mula`qiy,مُلَٰقِي,N,lqy,لقي,2,(will) meet you (1) | and you (will) meet Him (1),2,62:8:8,مُلٰقِیْكُمْ
+ACT_PCPL,muliym,مُلِيم,N,lwm,لوم,2,(was) blameworthy (2),2,37:142:4,مُلِیْمٌ
+ACT_PCPL,munaj~uw,مُنَجُّو,N,njw,نجو,2,surely will save them (1) | (will) save you (1),2,15:59:5,لَمُنَجُّوْهُمْ
+ACT_PCPL,musa`fiHiyn,مُسَٰفِحِين,N,sfH,سفح,2,(to be) lustful (1) | being lewd (1),2,4:24:21,مُسٰفِحِیْنَ ؕ
+ACT_PCPL,musab~iHuwn,مُسَبِّحُون,N,sbH,سبح,2,those who glorify (1) | glorify (Allah) (1),1,37:143:5,الْمُسَبِّحِیْنَ
+ACT_PCPL,musolima`t,مُسْلِمَٰت,ADJ,slm,سلم,2,and the Muslim women (1) | submissive (1),2,33:35:3,وَالْمُسْلِمٰتِ
+ACT_PCPL,musotahozi'uwn,مُسْتَهْزِءُون,N,hzA,هزا,2,(are) mockers (1) | (against) the mockers (1),2,2:14:16,مُسْتَهْزِءُوْنَ
+ACT_PCPL,musotamiE,مُسْتَمِع,N,smE,سمع,2,listening (1) | their listener (1),2,26:15:7,مُّسْتَمِعُوْنَ
+ACT_PCPL,musowad~,مُسْوَدّ,N,swd,سود,2,dark (2),2,16:58:7,مُسْوَدًّا
+ACT_PCPL,mutaSad~iqiyn,مُتَصَدِّقِين,N,Sdq,صدق,2,the charitable (1) | and the men who give charity (1),2,12:88:21,الْمُتَصَدِّقِیْنَ
+ACT_PCPL,mutataAbiEayon,مُتَتَابِعَيْن,ADJ,tbE,تبع,2,consecutively (2),2,4:92:53,مُتَتَابِعَیْنِ ؗ
+ACT_PCPL,muwsiE,مُوسِع,N,wsE,وسع,2,the wealthy (1) | (are) surely (its) Expanders (1),2,2:236:16,الْمُوْسِعِ
+ACT_PCPL,m~a`kiviyn,مَّٰكِثِين,N,mkv,مكث,2,(They will) abide (1) | (will) remain (1),2,18:3:1,مَّاكِثِیْنَ
+ACT_PCPL,m~u$oriqiyn,مُّشْرِقِين,N,$rq,شرق,2,at sunrise (1) | (at) sunrise (1),2,15:73:3,مُشْرِقِیْنَ
+ACT_PCPL,m~uHoSiniyn,مُّحْصِنِين,N,HSn,حصن,2,desiring to be chaste (1) | being chaste (1),2,4:24:19,مُّحْصِنِیْنَ
+ACT_PCPL,m~uToma}in~ap,مُّطْمَئِنَّة,ADJ,Tmn,طمن,2,and content (1) | who is satisfied (1),2,16:112:7,مُّطْمَىِٕنَّةً
+ACT_PCPL,m~ugonuwn,مُّغْنُون,N,gny,غني,2,the one who avails (1) | avert (1),2,14:21:14,مُّغْنُوْنَ
+ACT_PCPL,m~ujiyb,مُّجِيب,N,jwb,جوب,2,All-Responsive (1) | (are We as) Responders (1),2,11:61:27,مُّجِیْبٌ
+ACT_PCPL,m~uqotaSid,مُّقْتَصِد,N,qSd,قصد,2,(some are) moderate (1) | (is he who is) moderate (1),2,31:32:15,مُّقْتَصِدٌ ؕ
+ACT_PCPL,m~usotamir~,مُّسْتَمِرّ,N,mrr,مرر,2,continuing (1) | continuous (1),1,54:2:7,مُّسْتَمِرٌّ
+ACT_PCPL,m~utaEam~id,مُّتَعَمِّد,N,Emd,عمد,2,intentionally (2),2,4:93:4,مُّتَعَمِّدًا
+ACT_PCPL,naAZirap,نَاظِرَة,N,nZr,نظر,2,and see (1) | looking (1),2,27:35:5,فَنٰظِرَةٌ
+ACT_PCPL,naA^}imuwn,نَآئِمُون,N,nwm,نوم,2,(were) asleep (1) | were asleep (1),2,7:97:9,نَآىِٕمُوْنَ
+ACT_PCPL,naAdiy,نَادِي,N,ndw,ندو,2,your meetings (1) | his associates (1),2,29:29:8,نَادِیْكُمُ
+ACT_PCPL,qa`siTuwn,قَٰسِطُون,N,qsT,قسط,2,(are) unjust (1) | the unjust (1),1,72:14:5,الْقٰسِطُوْنَ ؕ
+ACT_PCPL,ra`Euwn,رَٰعُون,N,rEy,رعي,2,(are) observers (2),2,23:8:5,رٰعُوْنَ
+ACT_PCPL,r~a`sixuwn,رَّٰسِخُون,N,rsx,رسخ,2,And those firm (1) | the ones who are firm (1),2,3:7:32,وَالرّٰسِخُوْنَ
+ACT_PCPL,saA^}ig,سَآئِغ,N,swg,سوغ,2,palatable (1) | pleasant (1),2,16:66:16,سَآىِٕغًا
+ACT_PCPL,saAhuwn,سَاهُون,N,shw,سهو,2,(of) heedlessness (1) | (are) neglectful (1),2,51:11:5,سَاهُوْنَ
+ACT_PCPL,vaAbit,ثَابِت,N,vbt,ثبت,2,(is) firm (1) | with the firm word (1),1,14:24:12,ثَابِتٌ
+ACT_PCPL,vaAqib,ثَاقِب,ADJ,vqb,ثقب,2,piercing (1) | the piercing (1),2,37:10:7,ثَاقِبٌ
+ACT_PCPL,waASib,وَاصِب,N,wSb,وصب,2,constantly (1) | perpetual (1),2,16:52:8,وَاصِبًا ؕ
+ACT_PCPL,waAqiEap,وَاقِعَة,N,wqE,وقع,2,the Event (1) | the Occurrence (1),2,56:1:3,الْوَاقِعَةُ
+ACT_PCPL,wa`lidap,وَٰلِدَة,N,wld,ولد,2,(the) mother (1) | your mother (1),2,2:233:24,وَالِدَةٌ
+ACT_PCPL,xaATi}ap,خَاطِئَة,ADJ,xTA,خطا,2,with sin (1) | sinful (1),2,69:9:6,بِالْخَاطِئَةِ
+ACT_PCPL,xaA^}inap,خَآئِنَة,N,xwn,خون,2,treachery (1) | (the) stealthy glance (1),2,5:13:21,خَآىِٕنَةٍ
+ACT_PCPL,xaAliS,خَالِص,N,xlS,خلص,2,pure (1) | the pure (1),2,16:66:15,خَالِصًا
+ACT_PCPL,xa`midiyn,خَٰمِدِين,N,xmd,خمد,2,extinct (1) | (were) extinguished (1),2,21:15:8,خٰمِدِیْنَ
+ACT_PCPL,$aAni},شَانِئ,N,$nA,شنا,1,your enemy - (1),1,108:3:2,شَانِئَكَ
+ACT_PCPL,$a`xiSap,شَٰخِصَة,N,$xS,شخص,1,(are) staring (1),1,21:97:6,شَاخِصَةٌ
+ACT_PCPL,'aAfiliyn,ءَافِلِين,N,Afl,افل,1,the ones that set (1),1,6:76:15,الْاٰفِلِیْنَ
+ACT_PCPL,'aAminap,ءَامِنَة,N,Amn,امن,1,secure (1),1,16:112:6,اٰمِنَةً
+ACT_PCPL,'aAmiruwn,ءَامِرُون,N,Amr,امر,1,those who enjoin (1),1,9:112:7,الْاٰمِرُوْنَ
+ACT_PCPL,'aAn,ءَان,N,Any,اني,1,heated (1),1,55:44:5,اٰنٍ
+ACT_PCPL,'aAsin,ءَاسِن,N,Asn,اسن,1,polluted (1),1,47:15:11,اٰسِنٍ ۚ
+ACT_PCPL,*aAhib,ذَاهِب,N,*hb,ذهب,1,going (1),1,37:99:3,ذَاهِبٌ
+ACT_PCPL,*~a`kira`t,ذَّٰكِرَٰت,N,*kr,ذكر,1,and the women who remember (1),1,33:35:24,وَّالذّٰكِرٰتِ ۙ
+ACT_PCPL,*~a`riya`t,ذَّٰرِيَٰت,N,*rw,ذرو,1,By those scattering (1),1,51:1:1,وَالذّٰرِیٰتِ
+ACT_PCPL,A^m~iyn,آمِّين,N,Amm,امم,1,(those) coming (1),1,5:2:16,آٰمِّیْنَ
+ACT_PCPL,DaAHik,ضَاحِك,N,DHk,ضحك,1,laughing (1),1,27:19:2,ضَاحِكًا
+ACT_PCPL,DaAHikap,ضَاحِكَة,N,DHk,ضحك,1,Laughing (1),1,80:39:1,ضَاحِكَةٌ
+ACT_PCPL,DaA^}iq,ضَآئِق,N,Dyq,ضيق,1,and straitened (1),1,11:12:7,وَضَآىِٕقٌ
+ACT_PCPL,DaAmir,ضَامِر,N,Dmr,ضمر,1,lean camel (1),1,22:27:9,ضَامِرٍ
+ACT_PCPL,EaA^d~iyn,عَآدِّين,N,Edd,عدد,1,those who keep count (1),1,23:113:8,الْعَآدِّیْنَ
+ACT_PCPL,EaA^}iduwn,عَآئِدُون,N,Ewd,عود,1,(will) return (1),1,44:15:6,عَآىِٕدُوْنَ
+ACT_PCPL,EaA^}il,عَآئِل,N,Eyl,عيل,1,in need (1),1,93:8:2,عَآىِٕلًا
+ACT_PCPL,EaAfiyn,عَافِين,N,Efw,عفو,1,and those who pardon (1),1,3:134:8,وَالْعَافِیْنَ
+ACT_PCPL,EaAl,عَال,N,Elw,علو,1,(was) a tyrant (1),1,10:83:17,لَعَالٍ
+ACT_PCPL,EaAmilap,عَامِلَة,ADJ,Eml,عمل,1,Laboring (1),1,88:3:1,عَامِلَةٌ
+ACT_PCPL,EaAtiyap,عَاتِيَة,ADJ,Etw,عتو,1,violent (1),1,69:6:6,عَاتِیَةٍ
+ACT_PCPL,Ea`Sifa`t,عَٰصِفَٰت,N,ESf,عصف,1,And the winds that blow (1),1,77:2:1,فَالْعٰصِفٰتِ
+ACT_PCPL,Ea`diya`t,عَٰدِيَٰت,N,Edw,عدو,1,By the racers (1),1,100:1:1,وَالْعٰدِیٰتِ
+ACT_PCPL,HaADir,حَاضِر,N,HDr,حضر,1,presented (1),1,18:49:23,حَاضِرًا ؕ
+ACT_PCPL,HaA^f~iyn,حَآفِّين,N,Hff,حفف,1,surrounding (1),1,39:75:3,حَآفِّیْنَ
+ACT_PCPL,HaA^j~,حَآجّ,N,Hjj,حجج,1,(to) the pilgrims (1),1,9:19:3,الْحَآجِّ
+ACT_PCPL,HaAsid,حَاسِد,N,Hsd,حسد,1,(of) an envier (1),1,113:5:3,حَاسِدٍ
+ACT_PCPL,Ha`*iruwn,حَٰذِرُون,N,H*r,حذر,1,forewarned (1),1,26:56:3,حٰذِرُوْنَ
+ACT_PCPL,Ha`jiziyn,حَٰجِزِين,ADJ,Hjz,حجز,1,(who could) prevent (it) (1),1,69:47:6,حٰجِزِیْنَ
+ACT_PCPL,Ha`miduwn,حَٰمِدُون,N,Hmd,حمد,1,those who praise (1),1,9:112:3,الْحٰمِدُوْنَ
+ACT_PCPL,Ha`mila`t,حَٰمِلَٰت,N,Hml,حمل,1,And those carrying (1),1,51:2:1,فَالْحٰمِلٰتِ
+ACT_PCPL,Ha`miliyn,حَٰمِلِين,N,Hml,حمل,1,(are) going to carry (1),1,29:12:12,بِحٰمِلِیْنَ
+ACT_PCPL,Ham~aAlap,حَمَّالَة,N,Hml,حمل,1,(the) carrier (1),1,111:4:2,حَمَّالَةَ
+ACT_PCPL,Huk~aAm,حُكَّام,N,Hkm,حكم,1,the authorities (1),1,2:188:9,الْحُكَّامِ
+ACT_PCPL,SaAbirap,صَابِرَة,ADJ,Sbr,صبر,1,steadfast (1),1,8:66:13,صَابِرَةٌ
+ACT_PCPL,SaAl,صَال,N,Sly,صلي,1,(is) to burn (1),1,37:163:4,صَالِ
+ACT_PCPL,Sa`mituwn,صَٰمِتُون,N,Smt,صمت,1,remain silent (1),1,7:193:12,صَامِتُوْنَ
+ACT_PCPL,Sa`rimiyn,صَٰرِمِين,N,Srm,صرم,1,pluck (the) fruit (1),1,68:22:7,صٰرِمِیْنَ
+ACT_PCPL,S~aA^f~uwn,صَّآفُّون,N,Sff,صفف,1,stand in rows (1),1,37:165:3,الصَّآفُّوْنَ
+ACT_PCPL,S~aA^x~ap,صَّآخَّة,N,Sxx,صخخ,1,the Deafening Blast (1),1,80:33:3,الصَّآخَّةُ
+ACT_PCPL,S~a`^}ima`t,صَّٰٓئِمَٰت,N,Swm,صوم,1,and the women who fast (1),1,33:35:17,وَالصّٰٓىِٕمٰتِ
+ACT_PCPL,S~a`^}imiyn,صَّٰٓئِمِين,N,Swm,صوم,1,and the men who fast (1),1,33:35:16,وَالصَّآىِٕمِیْنَ
+ACT_PCPL,S~a`bira`t,صَّٰبِرَٰت,N,Sbr,صبر,1,and the patient women (1),1,33:35:11,وَالصّٰبِرٰتِ
+ACT_PCPL,S~a`diqa`t,صَّٰدِقَٰت,N,Sdq,صدق,1,and the truthful women (1),1,33:35:9,وَالصّٰدِقٰتِ
+ACT_PCPL,S~a`fina`t,صَّٰفِنَٰت,N,Sfn,صفن,1,excellent bred steeds (1),1,38:31:5,الصّٰفِنٰتُ
+ACT_PCPL,TaAEim,طَاعِم,N,TEm,طعم,1,an eater (1),1,6:145:10,طَاعِمٍ
+ACT_PCPL,TaA^}iEiyn,طَآئِعِين,N,TwE,طوع,1,willingly (1),1,41:11:16,طَآىِٕعِیْنَ
+ACT_PCPL,T~aAgiyap,طَّاغِيَة,N,Tgy,طغي,1,by the overpowering (blast) (1),1,69:5:4,بِالطَّاغِیَةِ
+ACT_PCPL,T~aAlib,طَّالِب,N,Tlb,طلب,1,(are) the seeker (1),1,22:73:27,الطَّالِبُ
+ACT_PCPL,Z~aA^n~iyn,ظَّآنِّين,ADJ,Znn,ظنن,1,who assume (1),1,48:6:6,الظَّآنِّیْنَ
+ACT_PCPL,baATinap,بَاطِنَة,N,bTn,بطن,1,and hidden (1),1,31:20:17,وَّبَاطِنَةً ؕ
+ACT_PCPL,baA^}is,بَآئِس,N,bAs,باس,1,the miserable (1),1,22:28:19,الْبَآىِٕسَ
+ACT_PCPL,baAd,بَاد,N,bdw,بدو,1,and the visitor (1),1,22:25:16,وَالْبَادِ ؕ
+ACT_PCPL,baAdiY,بَادِى,N,bdw,بدو,1,immature in opinion (1),1,11:27:19,بَادِیَ
+ACT_PCPL,baAduwn,بَادُون,N,bdw,بدو,1,living in (the) desert (1),1,33:20:11,بَادُوْنَ
+ACT_PCPL,baAq,بَاق,N,bqy,بقي,1,(will) be remaining (1),1,16:96:7,بَاقٍ ؕ
+ACT_PCPL,baArizap,بَارِزَة,N,brz,برز,1,(as) a leveled plain (1),1,18:47:6,بَارِزَةً ۙ
+ACT_PCPL,baAsirap,بَاسِرَة,N,bsr,بسر,1,(will be) distorted (1),1,75:24:3,بَاسِرَةٌ
+ACT_PCPL,baAzig,بَازِغ,N,bzg,بزغ,1,rising (1),1,6:77:4,بَازِغًا
+ACT_PCPL,baAzigap,بَازِغَة,N,bzg,بزغ,1,rising (1),1,6:78:4,بَازِغَةً
+ACT_PCPL,ba`rizuwn,بَٰرِزُون,N,brz,برز,1,come forth (1),1,40:16:3,بٰرِزُوْنَ ۚ۬
+ACT_PCPL,daAHiDap,دَاحِضَة,N,dHD,دحض,1,(is) invalid (1),1,42:16:11,دَاحِضَةٌ
+ACT_PCPL,daA^}ibayon,دَآئِبَيْن,N,dAb,داب,1,both constantly pursuing their courses (1),1,14:33:5,دَآىِٕبَیْنِ ۚ
+ACT_PCPL,daAfiq,دَافِق,ADJ,dfq,دفق,1,ejected (1),1,86:6:4,دَافِقٍ
+ACT_PCPL,daAn,دَان,N,dnw,دنو,1,(is) near (1),1,55:54:9,دَانٍ
+ACT_PCPL,faAjir,فَاجِر,N,fjr,فجر,1,a wicked (1),1,71:27:9,فَاجِرًا
+ACT_PCPL,faAn,فَان,N,fny,فني,1,(will) perish (1),1,55:26:4,فَانٍ
+ACT_PCPL,faAqiE,فَاقِع,ADJ,fqE,فقع,1,bright (1),1,2:69:15,فَاقِعٌ
+ACT_PCPL,faAqirap,فَاقِرَة,N,fqr,فقر,1,backbreaking (1),1,75:25:5,فَاقِرَةٌ
+ACT_PCPL,faAriD,فَارِض,ADJ,frD,فرض,1,old (1),1,2:68:15,فَارِضٌ
+ACT_PCPL,fa`Siliyn,فَٰصِلِين,N,fSl,فصل,1,(of) the Deciders (1),1,6:57:22,الْفٰصِلِیْنَ
+ACT_PCPL,fa`rig,فَٰرِغ,N,frg,فرغ,1,empty (1),1,28:10:5,فٰرِغًا ؕ
+ACT_PCPL,fa`rihiyn,فَٰرِهِين,N,frh,فره,1,skillfully (1),1,26:149:5,فٰرِهِیْنَ
+ACT_PCPL,fa`riqa`t,فَٰرِقَٰت,N,frq,فرق,1,And those who separate (1),1,77:4:1,فَالْفٰرِقٰتِ
+ACT_PCPL,fa`tiHiyn,فَٰتِحِين,N,ftH,فتح,1,(of) those who Decide (1),1,7:89:42,الْفٰتِحِیْنَ
+ACT_PCPL,fa`tiniyn,فَٰتِنِين,N,ftn,فتن,1,can tempt away (anyone) (1),1,37:162:4,بِفٰتِنِیْنَ
+ACT_PCPL,gaA^}iZuwn,غَآئِظُون,N,gyZ,غيظ,1,(are) surely enraging (1),1,26:55:3,لَغَآىِٕظُوْنَ
+ACT_PCPL,gaA^}ibap,غَآئِبَة,N,gyb,غيب,1,hidden (1),1,27:75:3,غَآىِٕبَةٍ
+ACT_PCPL,gaAsiq,غَاسِق,N,gsq,غسق,1,(of) darkness (1),1,113:3:3,غَاسِقٍ
+ACT_PCPL,ga`fila`t,غَٰفِلَٰت,ADJ,gfl,غفل,1,the unaware women (1),1,24:23:5,الْغٰفِلٰتِ
+ACT_PCPL,ga`rimiyn,غَٰرِمِين,N,grm,غرم,1,and for those in debt (1),1,9:60:11,وَالْغٰرِمِیْنَ
+ACT_PCPL,haAmidap,هَامِدَة,N,hmd,همد,1,barren (1),1,22:5:58,هَامِدَةً
+ACT_PCPL,haAwiyap,هَاوِيَة,N,hwy,هوي,1,(will be the) Pit (1),1,101:9:2,هَاوِیَةٌ
+ACT_PCPL,ha`diY,هَٰدِى,N,hdy,هدي,1,guide (1),1,27:81:3,بِهٰدِی
+ACT_PCPL,jaA^}ir,جَآئِر,N,jwr,جور,1,(are) crooked (1),1,16:9:6,جَآىِٕرٌ ؕ
+ACT_PCPL,jaAmidap,جَامِدَة,N,jmd,جمد,1,firmly fixed (1),1,27:88:4,جَامِدَةً
+ACT_PCPL,jaAviyap,جَاثِيَة,N,jvw,جثو,1,kneeling (1),1,45:28:4,جَاثِیَةً ۫
+ACT_PCPL,jaAz,جَاز,N,jzy,جزي,1,(can) avail (1),1,31:33:15,جَازٍ
+ACT_PCPL,ja`riya`t,جَٰرِيَٰت,N,jry,جري,1,And those sailing (1),1,51:3:1,فَالْجٰرِیٰتِ
+ACT_PCPL,kaA$ifap,كَاشِفَة,N,k$f,كشف,1,any remover (1),1,53:58:6,كَاشِفَةٌ
+ACT_PCPL,kaAdiH,كَادِح,N,kdH,كدح,1,(are) laboring (1),1,84:6:4,كَادِحٌ
+ACT_PCPL,kaAf,كَاف,N,kfy,كفي,1,sufficient (1),1,39:36:3,بِكَافٍ
+ACT_PCPL,kaAfirap,كَافِرَة,ADJ,kfr,كفر,1,disbelievers (1),1,3:13:14,كَافِرَةٌ
+ACT_PCPL,kaAmilayon,كَامِلَيْن,ADJ,kml,كمل,1,complete (1),1,2:233:5,كَامِلَیْنِ
+ACT_PCPL,ka`$ifa`t,كَٰشِفَٰت,N,k$f,كشف,1,removers (1),1,39:38:22,كٰشِفٰتُ
+ACT_PCPL,ka`liHuwn,كَٰلِحُون,N,klH,كلح,1,(will) grin with displaced lips (1),1,23:104:6,كٰلِحُوْنَ
+ACT_PCPL,laA^}im,لَآئِم,N,lwm,لوم,1,(of) a critic (1),1,5:54:28,لَآىِٕمٍ ؕ
+ACT_PCPL,laAhiyap,لَاهِيَة,N,lhw,لهو,1,Distracted (1),1,21:3:1,لَاهِیَةً
+ACT_PCPL,la`giyap,لَٰغِيَة,N,lgw,لغو,1,vain talk (1),1,88:11:4,لَاغِیَةً
+ACT_PCPL,la`qiy,لَٰقِي,N,lqy,لقي,1,(will) meet it (1),1,28:61:6,لَاقِیْهِ
+ACT_PCPL,l~aAzib,لَّازِب,N,lzb,لزب,1,sticky (1),1,37:11:12,لَّازِبٍ
+ACT_PCPL,l~a`Einuwn,لَّٰعِنُون,N,lEn,لعن,1,the ones who curse (1),1,2:159:20,اللّٰعِنُوْنَ
+ACT_PCPL,l~a`biviyn,لَّٰبِثِين,N,lbv,لبث,1,(They will) be remaining (1),1,78:23:1,لّٰبِثِیْنَ
+ACT_PCPL,ma`hiduwn,مَٰهِدُون,N,mhd,مهد,1,(are) the Spreaders (1),1,51:48:4,الْمٰهِدُوْنَ
+ACT_PCPL,mu$otabih,مُشْتَبِه,N,$bh,شبه,1,resembling (1),1,6:99:30,مُشْتَبِهًا
+ACT_PCPL,mu&otuwn,مُؤْتُون,N,Aty,اتي,1,and the ones who give (1),1,4:162:17,وَالْمُؤْتُوْنَ
+ACT_PCPL,mu*ak~ir,مُذَكِّر,N,*kr,ذكر,1,(are) a reminder (1),1,88:21:4,مُذَكِّرٌ
+ACT_PCPL,mu*oEiniyn,مُذْعِنِين,N,*En,ذعن,1,(as) promptly obedient (1),1,24:49:7,مُذْعِنِیْنَ
+ACT_PCPL,muDaA^r~,مُضَآرّ,N,Drr,ضرر,1,(being) harmful (1),1,4:12:82,مُضَآرٍّ ۚ
+ACT_PCPL,muDoEifuwn,مُضْعِفُون,N,DEf,ضعف,1,(will) get manifold (1),1,30:39:22,الْمُضْعِفُوْنَ
+ACT_PCPL,muEa*~iruwn,مُعَذِّرُون,N,E*r,عذر,1,the ones who make excuses (1),1,9:90:2,الْمُعَذِّرُوْنَ
+ACT_PCPL,muEaq~ib,مُعَقِّب,N,Eqb,عقب,1,adjuster (1),1,13:41:12,مُعَقِّبَ
+ACT_PCPL,muEaq~iba`t,مُعَقِّبَٰت,N,Eqb,عقب,1,(are) successive (Angels) (1),1,13:11:2,مُعَقِّبٰتٌ
+ACT_PCPL,muEaw~iqiyn,مُعَوِّقِين,N,Ewq,عوق,1,those who hinder (1),1,33:18:4,الْمُعَوِّقِیْنَ
+ACT_PCPL,muEoSira`t,مُعْصِرَٰت,N,ESr,عصر,1,the rain clouds (1),1,78:14:3,الْمُعْصِرٰتِ
+ACT_PCPL,muHal~iqiyn,مُحَلِّقِين,N,Hlq,حلق,1,having shaved (1),1,48:27:14,مُحَلِّقِیْنَ
+ACT_PCPL,muHil~iY,مُحِلِّى,N,Hll,حلل,1,being permitted (1),1,5:1:15,مُحِلِّی
+ACT_PCPL,muHosina`t,مُحْسِنَٰت,N,Hsn,حسن,1,for the good-doers (1),1,33:29:11,لِلْمُحْسِنٰتِ
+ACT_PCPL,muHotaZir,مُحْتَظِر,N,HZr,حظر,1,(used by) a fence builder (1),1,54:31:8,الْمُحْتَظِرِ
+ACT_PCPL,muSaw~ir,مُصَوِّر,ADJ,Swr,صور,1,the Fashioner (1),1,59:24:5,الْمُصَوِّرُ
+ACT_PCPL,muSiyb,مُصِيب,N,Swb,صوب,1,will strike her (1),1,11:81:21,مُصِیْبُهَا
+ACT_PCPL,muS~ad~iqa`t,مُصَّدِّقَٰت,N,Sdq,صدق,1,and the women who give charity (1),1,57:18:3,وَالْمُصَّدِّقٰتِ
+ACT_PCPL,muS~ad~iqiyn,مُصَّدِّقِين,N,Sdq,صدق,1,the men who give charity (1),1,57:18:2,الْمُصَّدِّقِیْنَ
+ACT_PCPL,muTaf~ifiyn,مُطَفِّفِين,N,Tff,طفف,1,to those who give less (1),1,83:1:2,لِّلْمُطَفِّفِیْنَ
+ACT_PCPL,muTah~ir,مُطَهِّر,N,Thr,طهر,1,and purify you (1),1,3:55:9,وَمُطَهِّرُكَ
+ACT_PCPL,muT~ah~iriyn,مُطَّهِّرِين,N,Thr,طهر,1,the ones who purify themselves (1),1,9:108:23,الْمُطَّهِّرِیْنَ
+ACT_PCPL,muT~aw~iEiyn,مُطَّوِّعِين,N,TwE,طوع,1,the ones who give willingly (1),1,9:79:3,الْمُطَّوِّعِیْنَ
+ACT_PCPL,muba*~iriyn,مُبَذِّرِين,N,b*r,بذر,1,the spendthrifts (1),1,17:27:2,الْمُبَذِّرِیْنَ
+ACT_PCPL,mubodiy,مُبْدِي,N,bdw,بدو,1,(was to) disclose (1),1,33:37:19,مُبْدِیْهِ
+ACT_PCPL,muborimuwn,مُبْرِمُون,N,brm,برم,1,(are) determined (1),1,43:79:5,مُبْرِمُوْنَ
+ACT_PCPL,mudab~ira`t,مُدَبِّرَٰت,N,dbr,دبر,1,And those who arrange (1),1,79:5:1,فَالْمُدَبِّرٰتِ
+ACT_PCPL,mudohaA^m~ataAn,مُدْهَآمَّتَان,N,dhm,دهم,1,Dark green (1),1,55:64:1,مُدْهَآمَّتٰنِ
+ACT_PCPL,mud~av~ir,مُدَّثِّر,N,dvr,دثر,1,who covers himself (1),1,74:1:2,الْمُدَّثِّرُ
+ACT_PCPL,mufotar,مُفْتَر,N,fry,فري,1,(are) an inventor (1),1,16:101:13,مُفْتَرٍ ؕ
+ACT_PCPL,muga`Dib,مُغَٰضِب,N,gDb,غضب,1,(while) angry (1),1,21:87:5,مُغَاضِبًا
+ACT_PCPL,mugay~ir,مُغَيِّر,N,gyr,غير,1,One Who changes (1),1,8:53:6,مُغَیِّرًا
+ACT_PCPL,mugiyra`t,مُغِيرَٰت,N,gyr,غير,1,And the chargers (1),1,100:3:1,فَالْمُغِیْرٰتِ
+ACT_PCPL,muhotadiY,مُهْتَدِى,N,hdy,هدي,1,(is) the guided one (1),1,7:178:5,الْمُهْتَدِیْ ۚ
+ACT_PCPL,mukal~ibiyn,مُكَلِّبِين,N,klb,كلب,1,ones who train animals to hunt (1),1,5:4:13,مُكَلِّبِیْنَ
+ACT_PCPL,mukib~,مُكِبّ,N,kbb,كبب,1,fallen (1),1,67:22:3,مُكِبًّا
+ACT_PCPL,mula`q,مُلَٰق,N,lqy,لقي,1,(will) meet (1),1,69:20:4,مُلٰقٍ
+ACT_PCPL,muloqiya`t,مُلْقِيَٰت,N,lqy,لقي,1,And those who bring down (1),1,77:5:1,فَالْمُلْقِیٰتِ
+ACT_PCPL,mumid~,مُمِدّ,N,mdd,مدد,1,going to reinforce you (1),1,8:9:7,مُمِدُّكُمْ
+ACT_PCPL,mumosik,مُمْسِك,N,msk,مسك,1,(can) withhold (1),1,35:2:8,مُمْسِكَ
+ACT_PCPL,mumosika`t,مُمْسِكَٰت,N,msk,مسك,1,withholders (1),1,39:38:29,مُمْسِكٰتُ
+ACT_PCPL,mun$i_#uwn,مُنشِـُٔون,N,n$A,نشا,1,(are) the Producers (1),1,56:72:6,الْمُنْشِـُٔوْنَ
+ACT_PCPL,munaAd,مُنَاد,N,ndw,ندو,1,the caller (1),1,50:41:4,الْمُنَادِ
+ACT_PCPL,munaAdiy,مُنَادِي,N,ndw,ندو,1,a caller (1),1,3:193:4,مُنَادِیًا
+ACT_PCPL,munaz~il,مُنَزِّل,N,nzl,نزل,1,(will) send it down (1),1,5:115:4,مُنَزِّلُهَا
+ACT_PCPL,munfaTir,مُنفَطِر,N,fTr,فطر,1,(will) break apart (1),1,73:18:2,مُنْفَطِرٌ
+ACT_PCPL,munfak~iyn,مُنفَكِّين,N,fkk,فكك,1,to be abandoned (1),1,98:1:9,مُنْفَكِّیْنَ
+ACT_PCPL,munfiqiyn,مُنفِقِين,N,nfq,نفق,1,and those who spend (1),1,3:17:4,وَالْمُنْفِقِیْنَ
+ACT_PCPL,munoxaniqap,مُنْخَنِقَة,N,xnq,خنق,1,and that which is strangled (to death) (1),1,5:3:12,وَالْمُنْخَنِقَةُ
+ACT_PCPL,muqaS~iriyn,مُقَصِّرِين,N,qSr,قصر,1,and shortened (1),1,48:27:16,وَمُقَصِّرِیْنَ ۙ
+ACT_PCPL,muqas~ima`t,مُقَسِّمَٰت,N,qsm,قسم,1,And those distributing (1),1,51:4:1,فَالْمُقَسِّمٰتِ
+ACT_PCPL,muqoriniyn,مُقْرِنِين,N,qrn,قرن,1,capable (1),1,43:13:20,مُقْرِنِیْنَ
+ACT_PCPL,muqotariniyn,مُقْتَرِنِين,N,qrn,قرن,1,accompanying (him) (1),1,43:53:11,مُقْتَرِنِیْنَ
+ACT_PCPL,muqotasimiyn,مُقْتَسِمِين,N,qsm,قسم,1,those who divided (1),1,15:90:4,الْمُقْتَسِمِیْنَ
+ACT_PCPL,muqotir,مُقْتِر,N,qtr,قتر,1,the poor (1),1,2:236:19,الْمُقْتِرِ
+ACT_PCPL,muqowiyn,مُقْوِين,N,qwy,قوي,1,for the wayfarers in the desert (1),1,56:73:5,لِّلْمُقْوِیْنَ
+ACT_PCPL,muroDiEap,مُرْضِعَة,N,rDE,رضع,1,nursing mother (1),1,22:2:5,مُرْضِعَةٍ
+ACT_PCPL,murodifiyn,مُرْدِفِين,N,rdf,ردف,1,one after another (1),1,8:9:11,مُرْدِفِیْنَ
+ACT_PCPL,murojifuwn,مُرْجِفُون,N,rjf,رجف,1,and those who spread rumors (1),1,33:60:9,وَّالْمُرْجِفُوْنَ
+ACT_PCPL,murosilap,مُرْسِلَة,N,rsl,رسل,1,going to send (1),1,27:35:2,مُرْسِلَةٌ
+ACT_PCPL,musa`fiHa`t,مُسَٰفِحَٰت,N,sfH,سفح,1,those who commit immorality (1),1,4:25:31,مُسٰفِحٰتٍ
+ACT_PCPL,musaw~imiyn,مُسَوِّمِين,N,swm,سوم,1,[the ones] having marks (1),1,3:125:15,مُسَوِّمِیْنَ
+ACT_PCPL,musiY^',مُسِىٓء,N,swA,سوا,1,the evildoer (1),1,40:58:10,الْمُسِیْٓءُ ؕ
+ACT_PCPL,musomiE,مُسْمِع,N,smE,سمع,1,can make hear (1),1,35:22:13,بِمُسْمِعٍ
+ACT_PCPL,musotaTiyr,مُسْتَطِير,N,Tyr,طير,1,widespread (1),1,76:7:7,مُسْتَطِیْرًا
+ACT_PCPL,musota_#onisiyn,مُسْتَـْٔنِسِين,N,Ans,انس,1,seeking to remain (1),1,33:53:25,مُسْتَاْنِسِیْنَ
+ACT_PCPL,musota_#oxiriyn,مُسْتَـْٔخِرِين,N,Axr,اخر,1,the later ones (1),1,15:24:7,الْمُسْتَاْخِرِیْنَ
+ACT_PCPL,musotabiyn,مُسْتَبِين,ADJ,byn,بين,1,the clear (1),1,37:117:3,الْمُسْتَبِیْنَ
+ACT_PCPL,musotaboSiriyn,مُسْتَبْصِرِين,N,bSr,بصر,1,endowed with insight (1),1,29:38:16,مُسْتَبْصِرِیْنَ
+ACT_PCPL,musotagofiriyn,مُسْتَغْفِرِين,N,gfr,غفر,1,and those who seek forgiveness (1),1,3:17:5,وَالْمُسْتَغْفِرِیْنَ
+ACT_PCPL,musotamosikuwn,مُسْتَمْسِكُون,N,msk,مسك,1,(are) holding fast (1),1,43:21:8,مُسْتَمْسِكُوْنَ
+ACT_PCPL,musotaqodimiyn,مُسْتَقْدِمِين,N,qdm,قدم,1,the preceding ones (1),1,15:24:3,الْمُسْتَقْدِمِیْنَ
+ACT_PCPL,musotasolimuwn,مُسْتَسْلِمُون,N,slm,سلم,1,(will) surrender (1),1,37:26:4,مُسْتَسْلِمُوْنَ
+ACT_PCPL,musotaxof,مُسْتَخْف,N,xfy,خفي,1,(is) hidden (1),1,13:10:11,مُسْتَخْفٍ
+ACT_PCPL,musotayoqiniyn,مُسْتَيْقِنِين,N,yqn,يقن,1,(are) convinced (1),1,45:32:22,بِمُسْتَیْقِنِیْنَ
+ACT_PCPL,muta$a`kisuwn,مُتَشَٰكِسُون,N,$ks,شكس,1,quarreling (1),1,39:29:7,مُتَشٰكِسُوْنَ
+ACT_PCPL,mutaEaAl,مُتَعَال,N,Elw,علو,1,the Most High (1),1,13:9:5,الْمُتَعَالِ
+ACT_PCPL,mutaHar~if,مُتَحَرِّف,N,Hrf,حرف,1,(as) a strategy (1),1,8:16:6,مُتَحَرِّفًا
+ACT_PCPL,mutaHay~iz,مُتَحَيِّز,N,Hwz,حوز,1,(to) join (1),1,8:16:9,مُتَحَیِّزًا
+ACT_PCPL,mutaSad~iqa`t,مُتَصَدِّقَٰت,N,Sdq,صدق,1,and the women who give charity (1),1,33:35:15,وَالْمُتَصَدِّقٰتِ
+ACT_PCPL,mutaTah~iriyn,مُتَطَهِّرِين,N,Thr,طهر,1,those who purify themselves (1),1,2:222:27,الْمُتَطَهِّرِیْنَ
+ACT_PCPL,mutabar~ija`t,مُتَبَرِّجَٰت,N,brj,برج,1,displaying (1),1,24:60:15,مُتَبَرِّجٰتٍ
+ACT_PCPL,mutajaAnif,مُتَجَانِف,N,jnf,جنف,1,inclining (1),1,5:3:56,مُتَجَانِفٍ
+ACT_PCPL,mutakal~ifiyn,مُتَكَلِّفِين,N,klf,كلف,1,the ones who pretend (1),1,38:86:10,الْمُتَكَلِّفِیْنَ
+ACT_PCPL,mutalaq~iyaAn,مُتَلَقِّيَان,N,lqy,لقي,1,the two receivers (1),1,50:17:3,الْمُتَلَقِّیٰنِ
+ACT_PCPL,mutana`fisuwn,مُتَنَٰفِسُون,N,nfs,نفس,1,the aspirers (1),1,83:26:6,الْمُتَنَافِسُوْنَ
+ACT_PCPL,mutarad~iyap,مُتَرَدِّيَة,N,rdy,ردي,1,and that which has a fatal fall (1),1,5:3:14,وَالْمُتَرَدِّیَةُ
+ACT_PCPL,mutawaf~iy,مُتَوَفِّي,N,wfy,وفي,1,(will) take you (1),1,3:55:6,مُتَوَفِّیْكَ
+ACT_PCPL,mutawas~imiyn,مُتَوَسِّمِين,N,wsm,وسم,1,for those who discern (1),1,15:75:5,لِّلْمُتَوَسِّمِیْنَ
+ACT_PCPL,mutim~,مُتِمّ,N,tmm,تمم,1,will perfect (1),1,61:8:7,مُتِمُّ
+ACT_PCPL,muwaf~uw,مُوَفُّو,N,wfy,وفي,1,will surely pay them in full (1),1,11:109:17,لَمُوَفُّوْهُمْ
+ACT_PCPL,muwal~iy,مُوَلِّي,N,wly,ولي,1,turns towards it (1),1,2:148:4,مُوَلِّیْهَا
+ACT_PCPL,muwfuwn,مُوفُون,N,wfy,وفي,1,and those who fulfill (1),1,2:177:36,وَالْمُوْفُوْنَ
+ACT_PCPL,muwhin,مُوهِن,N,whn,وهن,1,one who makes weak (1),1,8:18:4,مُوْهِنُ
+ACT_PCPL,muwriya`t,مُورِيَٰت,N,wry,وري,1,And the producers of sparks (1),1,100:2:1,فَالْمُوْرِیٰتِ
+ACT_PCPL,muxoDar~ap,مُخْضَرَّة,N,xDr,خضر,1,green (1),1,22:63:11,مُخْضَرَّةً ؕ
+ACT_PCPL,muxobitiyn,مُخْبِتِين,N,xbt,خبت,1,(to) the humble ones (1),1,22:34:20,الْمُخْبِتِیْنَ
+ACT_PCPL,muxolif,مُخْلِف,N,xlf,خلف,1,will fail (1),1,14:47:4,مُخْلِفَ
+ACT_PCPL,muxosiriyn,مُخْسِرِين,N,xsr,خسر,1,those who cause loss (1),1,26:181:6,الْمُخْسِرِیْنَ
+ACT_PCPL,muxoziY,مُخْزِى,N,xzy,خزي,1,(is) the One Who (will) disgrace (1),1,9:2:13,مُخْزِی
+ACT_PCPL,muzaHoziH,مُزَحْزِح,N,zHzH,زحزح,1,(will) remove him (1),1,2:96:17,بِمُزَحْزِحِهٖ
+ACT_PCPL,muz~am~il,مُزَّمِّل,N,zml,زمل,1,who wraps himself (1),1,73:1:2,الْمُزَّمِّلُ
+ACT_PCPL,m~aAniEat,مَّانِعَت,N,mnE,منع,1,would defend them (1),1,59:2:19,مَّانِعَتُهُمْ
+ACT_PCPL,m~aArid,مَّارِد,N,mrd,مرد,1,rebellious (1),1,37:7:5,مَّارِدٍ
+ACT_PCPL,m~aArij,مَّارِج,N,mrj,مرج,1,a smokeless flame (1),1,55:15:4,مَّارِجٍ
+ACT_PCPL,m~uT~aliEuwn,مُّطَّلِعُون,N,TlE,طلع,1,be looking (1),1,37:54:4,مُّطَّلِعُوْنَ
+ACT_PCPL,m~udohinuwn,مُّدْهِنُون,N,dhn,دهن,1,(are) indifferent (1),1,56:81:4,مُّدْهِنُوْنَ
+ACT_PCPL,m~ujotamiEuwn,مُّجْتَمِعُون,N,jmE,جمع,1,assemble (1),1,26:39:5,مُّجْتَمِعُوْنَ
+ACT_PCPL,m~ukorim,مُّكْرِم,N,krm,كرم,1,bestower of honor (1),1,22:18:32,مُّكْرِمٍ ؕ
+ACT_PCPL,m~umoTir,مُّمْطِر,N,mTr,مطر,1,bringing us rain (1),1,46:24:9,مُّمْطِرُنَا ؕ
+ACT_PCPL,m~unkirap,مُّنكِرَة,N,nkr,نكر,1,refuse (1),1,16:22:9,مُّنْكِرَةٌ
+ACT_PCPL,m~unohamir,مُّنْهَمِر,N,hmr,همر,1,pouring down (1),1,54:11:5,مُّنْهَمِرٍ
+ACT_PCPL,m~unqaEir,مُّنقَعِر,N,qEr,قعر,1,uprooted (1),1,54:20:6,مُّنْقَعِرٍ
+ACT_PCPL,m~unta$ir,مُّنتَشِر,ADJ,n$r,نشر,1,spreading (1),1,54:7:8,مُّنْتَشِرٌ
+ACT_PCPL,m~untahuwn,مُّنتَهُون,N,nhy,نهي,1,(be) the ones who abstain (1),1,5:91:20,مُّنْتَهُوْنَ
+ACT_PCPL,m~uqiyt,مُّقِيت,N,qwt,قوت,1,a Keeper (1),1,4:85:22,مُّقِیْتًا
+ACT_PCPL,m~uqotaHim,مُّقْتَحِم,N,qHm,قحم,1,bursting (1),1,38:59:3,مُّقْتَحِمٌ
+ACT_PCPL,m~uqotaSidap,مُّقْتَصِدَة,ADJ,qSd,قصد,1,moderate (1),1,5:66:19,مُّقْتَصِدَةٌ ؕ
+ACT_PCPL,m~uqotaduwn,مُّقْتَدُون,N,qdw,قدو,1,(are) following (1),1,43:23:21,مُّقْتَدُوْنَ
+ACT_PCPL,m~uqotarifuwn,مُّقْتَرِفُون,N,qrf,قرف,1,(are) committing (1),1,6:113:12,مُّقْتَرِفُوْنَ
+ACT_PCPL,m~uro$id,مُّرْشِد,ADJ,r$d,رشد,1,a guide (1),1,18:17:34,مُّرْشِدًا
+ACT_PCPL,m~urotaqibuwn,مُّرْتَقِبُون,N,rqb,رقب,1,(too are) watching (1),1,44:59:3,مُّرْتَقِبُوْنَ
+ACT_PCPL,m~usofirap,مُّسْفِرَة,N,sfr,سفر,1,(will be) bright (1),1,80:38:3,مُّسْفِرَةٌ
+ACT_PCPL,m~usolimap,مُّسْلِمَة,ADJ,slm,سلم,1,submissive (1),1,2:128:8,مُّسْلِمَةً
+ACT_PCPL,m~usotabo$irap,مُّسْتَبْشِرَة,N,b$r,بشر,1,rejoicing at good news (1),1,80:39:2,مُّسْتَبْشِرَةٌ
+ACT_PCPL,m~usotanfirap,مُّسْتَنفِرَة,ADJ,nfr,نفر,1,frightened (1),1,74:50:3,مُّسْتَنْفِرَةٌ
+ACT_PCPL,m~usotaqobil,مُّسْتَقْبِل,N,qbl,قبل,1,approaching (1),1,46:24:4,مُّسْتَقْبِلَ
+ACT_PCPL,m~utaSad~iE,مُّتَصَدِّع,N,SdE,صدع,1,breaking asunder (1),1,59:21:9,مُّتَصَدِّعًا
+ACT_PCPL,m~utafar~iqap,مُّتَفَرِّقَة,N,frq,فرق,1,different (1),1,12:67:11,مُّتَفَرِّقَةٍ ؕ
+ACT_PCPL,m~utafar~iquwn,مُّتَفَرِّقُون,N,frq,فرق,1,separate (1),1,12:39:4,مُّتَفَرِّقُوْنَ
+ACT_PCPL,m~utaraAkib,مُّتَرَاكِب,ADJ,rkb,ركب,1,thick clustered (1),1,6:99:18,مُّتَرَاكِبًا ۚ
+ACT_PCPL,m~uwS,مُّوص,N,wSy,وصي,1,(the) testator (1),1,2:182:4,مُّوْصٍ
+ACT_PCPL,m~uwaAqiEuw,مُّوَاقِعُو,N,wqE,وقع,1,are to fall in it (1),1,18:53:6,مُّوَاقِعُوْهَا
+ACT_PCPL,naA$i}ap,نَاشِئَة,N,n$A,نشا,1,(the) rising (1),1,73:6:2,نَاشِئَةَ
+ACT_PCPL,naAj,نَاج,N,njw,نجو,1,(would be) saved (1),1,12:42:5,نَاجٍ
+ACT_PCPL,naAkisuwA,نَاكِسُوا,N,nks,نكس,1,(will) hang (1),1,32:12:5,نَاكِسُوْا
+ACT_PCPL,naAsikuw,نَاسِكُو,N,nsk,نسك,1,perform it (1),1,22:67:6,نَاسِكُوْهُ
+ACT_PCPL,na`kibuwn,نَٰكِبُون,N,nkb,نكب,1,surely (are) deviating (1),1,23:74:8,لَنٰكِبُوْنَ
+ACT_PCPL,n~aADirap,نَّاضِرَة,N,nDr,نضر,1,(will be) radiant (1),1,75:22:3,نَّاضِرَةٌ
+ACT_PCPL,n~aAEimap,نَّاعِمَة,N,nEm,نعم,1,(will be) joyful (1),1,88:8:3,نَّاعِمَةٌ
+ACT_PCPL,n~aASibap,نَّاصِبَة,ADJ,nSb,نصب,1,exhausted (1),1,88:3:2,نَّاصِبَةٌ
+ACT_PCPL,n~aAhuwn,نَّاهُون,N,nhy,نهي,1,and those who forbid (1),1,9:112:9,وَالنَّاهُوْنَ
+ACT_PCPL,n~a`$iTa`t,نَّٰشِطَٰت,N,n$T,نشط,1,And those who draw out (1),1,79:2:1,وَّالنّٰشِطٰتِ
+ACT_PCPL,n~a`$ira`t,نَّٰشِرَٰت,N,n$r,نشر,1,And the ones that scatter (1),1,77:3:1,وَّالنّٰشِرٰتِ
+ACT_PCPL,n~a`ziEa`t,نَّٰزِعَٰت,N,nzE,نزع,1,By those who extract (1),1,79:1:1,وَالنّٰزِعٰتِ
+ACT_PCPL,qaAD,قَاض,N,qDy,قضي,1,(are) decreeing (1),1,20:72:14,قَاضٍ ؕ
+ACT_PCPL,qaADiyap,قَاضِيَة,N,qDy,قضي,1,the end (1),1,69:27:3,الْقَاضِیَةَ
+ACT_PCPL,qaASid,قَاصِد,ADJ,qSd,قصد,1,easy (1),1,9:42:6,قَاصِدًا
+ACT_PCPL,qaASif,قَاصِف,N,qSf,قصف,1,a hurricane (1),1,17:69:10,قَاصِفًا
+ACT_PCPL,qaATiEap,قَاطِعَة,N,qTE,قطع,1,the one to decide (1),1,27:32:9,قَاطِعَةً
+ACT_PCPL,qaA^}iluwn,قَآئِلُون,N,qyl,قيل,1,were sleeping at noon (1),1,7:4:10,قَآىِٕلُوْنَ
+ACT_PCPL,qaAbil,قَابِل,N,qbl,قبل,1,and (the) Acceptor (1),1,40:3:3,وَقَابِلِ
+ACT_PCPL,qaAliyn,قَالِين,N,qly,قلي,1,those who detest (1),1,26:168:5,الْقَالِیْنَ
+ACT_PCPL,qaAniE,قَانِع,N,qnE,قنع,1,the needy who do not ask (1),1,22:36:21,الْقَانِعَ
+ACT_PCPL,qa`niTiyn,قَٰنِطِين,N,qnT,قنط,1,the despairing (1),1,15:55:7,الْقٰنِطِیْنَ
+ACT_PCPL,raAfiE,رَافِع,N,rfE,رفع,1,and raise you (1),1,3:55:7,وَرَافِعُكَ
+ACT_PCPL,raAq,رَاق,N,rqy,رقي,1,(will) cure (1),1,75:27:3,رَاقٍ
+ACT_PCPL,r~aAbiy,رَّابِي,N,rbw,ربو,1,rising (1),1,13:17:11,رَّابِیًا ؕ
+ACT_PCPL,r~aAbiyap,رَّابِيَة,ADJ,rbw,ربو,1,exceeding (1),1,69:10:6,رَّابِیَةً
+ACT_PCPL,r~aAdifap,رَّادِفَة,N,rdf,ردف,1,the subsequent (1),1,79:7:2,الرَّادِفَةُ
+ACT_PCPL,r~aAfiEap,رَّافِعَة,N,rfE,رفع,1,raising up (1),1,56:3:2,رَّافِعَةٌ
+ACT_PCPL,r~aAjifap,رَّاجِفَة,N,rjf,رجف,1,the quaking one (1),1,79:6:3,الرَّاجِفَةُ
+ACT_PCPL,r~a`$iduwn,رَّٰشِدُون,N,r$d,رشد,1,the guided ones (1),1,49:7:28,الرّٰشِدُوْنَ
+ACT_PCPL,saA^}ibap,سَآئِبَة,N,syb,سيب,1,a Saibah (1),1,5:103:7,سَآىِٕبَةٍ
+ACT_PCPL,saA^}iq,سَآئِق,N,swq,سوق,1,a driver (1),1,50:21:5,سَآىِٕقٌ
+ACT_PCPL,saAkin,سَاكِن,N,skn,سكن,1,stationary (1),1,25:45:11,سَاكِنًا ۚ
+ACT_PCPL,saAqiT,سَاقِط,N,sqT,سقط,1,falling (1),1,52:44:6,سَاقِطًا
+ACT_PCPL,saArib,سَارِب,N,srb,سرب,1,or goes freely (1),1,13:10:13,وَسَارِبٌ
+ACT_PCPL,sa`limuwn,سَٰلِمُون,N,slm,سلم,1,(were) sound (1),1,68:43:11,سٰلِمُوْنَ
+ACT_PCPL,sa`miduwn,سَٰمِدُون,N,smd,سمد,1,amuse (yourselves) (1),1,53:61:2,سٰمِدُوْنَ
+ACT_PCPL,s~aAriqap,سَّارِقَة,N,srq,سرق,1,and the female thief - (1),1,5:38:2,وَالسَّارِقَةُ
+ACT_PCPL,s~a`^}iHuwn,سَّٰٓئِحُون,N,syH,سيح,1,those who go out (1),1,9:112:4,السَّآىِٕحُوْنَ
+ACT_PCPL,s~a`biHa`t,سَّٰبِحَٰت,N,sbH,سبح,1,And those who glide (1),1,79:3:1,وَّالسّٰبِحٰتِ
+ACT_PCPL,s~a`biqa`t,سَّٰبِقَٰت,N,sbq,سبق,1,And those who race each other (1),1,79:4:1,فَالسّٰبِقٰتِ
+ACT_PCPL,s~a`xiriyn,سَّٰخِرِين,N,sxr,سخر,1,the mockers (1),1,39:56:14,السّٰخِرِیْنَ
+ACT_PCPL,t~a`^}ibuwn,تَّٰٓئِبُون,N,twb,توب,1,Those who turn in repentance (1),1,9:112:1,اَلتَّآىِٕبُوْنَ
+ACT_PCPL,t~a`liya`t,تَّٰلِيَٰت,N,tlw,تلو,1,And those who recite (1),1,37:3:1,فَالتّٰلِیٰتِ
+ACT_PCPL,vaAwiy,ثَاوِي,N,vwy,ثوي,1,a dweller (1),1,28:45:9,ثَاوِیًا
+ACT_PCPL,waAhiyap,وَاهِيَة,N,why,وهي,1,frail (1),1,69:16:5,وَّاهِیَةٌ
+ACT_PCPL,waAjifap,وَاجِفَة,ADJ,wjf,وجف,1,will palpitate (1),1,79:8:3,وَّاجِفَةٌ
+ACT_PCPL,waAl,وَال,N,wly,ولي,1,protector (1),1,13:11:35,وَّالٍ
+ACT_PCPL,wa`EiZiyn,وَٰعِظِين,N,wEZ,وعظ,1,the advisors (1),1,26:136:9,الْوٰعِظِیْنَ
+ACT_PCPL,wa`Eiyap,وَٰعِيَة,ADJ,wEy,وعي,1,conscious (1),1,69:12:6,وَّاعِیَةٌ
+ACT_PCPL,wa`lida`t,وَٰلِدَٰت,N,wld,ولد,1,And the mothers (1),1,2:233:1,وَالْوَالِدٰتُ
+ACT_PCPL,xaA^}iDiyn,خَآئِضِين,N,xwD,خوض,1,the vain talkers (1),1,74:45:4,الْخَآىِٕضِیْنَ
+ACT_PCPL,xaA^}ibiyn,خَآئِبِين,N,xyb,خيب,1,disappointed (1),1,3:127:9,خَآىِٕبِیْنَ
+ACT_PCPL,xaAfiDap,خَافِضَة,N,xfD,خفض,1,Bringing down (1),1,56:3:1,خَافِضَةٌ
+ACT_PCPL,xaAfiyap,خَافِيَة,N,xfy,خفي,1,any secret (1),1,69:18:6,خَافِیَةٌ
+ACT_PCPL,xaAliyap,خَالِيَة,ADJ,xlw,خلو,1,past (1),1,69:24:8,الْخَالِیَةِ
+ACT_PCPL,xaAsirap,خَاسِرَة,ADJ,xsr,خسر,1,losing (1),1,79:12:5,خَاسِرَةٌ
+ACT_PCPL,xa`DiEiyn,خَٰضِعِين,N,xDE,خضع,1,(in) humility (1),1,26:4:11,خٰضِعِیْنَ
+ACT_PCPL,xa`diE,خَٰدِع,N,xdE,خدع,1,who deceives them (1),1,4:142:6,خَادِعُهُمْ ۚ
+ACT_PCPL,xa`lifiyn,خَٰلِفِين,N,xlf,خلف,1,those who stay behind (1),1,9:83:25,الْخٰلِفِیْنَ
+ACT_PCPL,xa`ziniyn,خَٰزِنِين,N,xzn,خزن,1,(are) retainers (1),1,15:22:12,بِخٰزِنِیْنَ
+ACT_PCPL,yaAbis,يَابِس,N,ybs,يبس,1,dry (1),1,6:59:27,یَابِسٍ
+ACT_PCPL,zaAhiq,زَاهِق,N,zhq,زهق,1,vanishing (1),1,21:18:9,زَاهِقٌ ؕ
+ACT_PCPL,z~a`hidiyn,زَّٰهِدِين,N,zhd,زهد,1,those keen to give up (1),1,12:20:9,الزَّاهِدِیْنَ
+ACT_PCPL,z~a`jira`t,زَّٰجِرَٰت,N,zjr,زجر,1,And those who drive (1),1,37:2:1,فَالزّٰجِرٰتِ
+ACT_PCPL,z~a`riEuwn,زَّٰرِعُون,N,zrE,زرع,1,the Ones Who grow (1),1,56:64:5,الزّٰرِعُوْنَ
+VN,qawol,قَوْل,N,qwl,قول,92,the word (11) | a word (9) | the Word (8),43,2:59:4,قَوْلًا
+VN,*ikor,ذِكْر,N,*kr,ذكر,76,(the) remembrance (8) | the Reminder (6) | a reminder (5),36,2:200:6,كَذِكْرِكُمْ
+VN,<iyma`n,إِيمَٰن,N,Amn,امن,45,(in) faith (7) | their belief (4) | the faith (4),21,2:93:24,اِیْمَانُكُمْ
+VN,HisaAb,حِسَاب,N,Hsb,حسب,39,measure (4) | their account (4) | (in taking) account (3),20,2:202:8,الْحِسَابِ
+VN,liqaA^',لِقَآء,N,lqy,لقي,24,(the) meeting (5) | in (the) meeting (4) | (of the) meeting (2),13,6:31:5,بِلِقَآءِ
+VN,ta>owiyl,تَأْوِيل,N,Awl,اول,17,its interpretation (3) | of its interpretation (3) | (is the) interpretation (2),7,3:7:26,تَاْوِیْلِهٖ ؔۚ
+VN,tanziyl,تَنزِيل,N,nzl,نزل,15,(The) revelation (5) | A revelation (3) | A Revelation (2),14,17:106:9,تَنْزِیْلًا
+VN,{botigaA^',ٱبْتِغَآء,N,bgy,بغي,14,seeking (9) | and seeking (1) | pursuit (1),9,2:207:6,ابْتِغَآءَ
+VN,<iHosa`n,إِحْسَٰن,N,Hsn,حسن,12,(be) good (3) | with kindness (2) | good (2),8,2:83:11,اِحْسَانًا
+VN,qatol,قَتْل,N,qtl,قتل,10,[the] killing (2) | and their killing (2) | [the] death (1),7,2:191:11,الْقَتْلِ ۚ
+VN,Tugoya`n,طُغْيَٰن,N,Tgy,طغي,9,their transgression (5) | (in) rebellion (2) | (in) transgression (1),8,2:15:6,طُغْیَانِهِمْ
+VN,ta*okirap,تَذْكِرَة,N,*kr,ذكر,9,a reminder (2) | (is) a Reminder (2) | (is) a reminder (2),7,20:3:2,تَذْكِرَةً
+VN,<isola`m,إِسْلَٰم,PN,slm,سلم,8,[the] Islam (2) | (is) Islam (1) | to Islam (1),7,3:19:5,الْاِسْلَامُ ۫
+VN,$iqaAq,شِقَاق,N,$qq,شقق,7,schism (2) | dissension (1) | a dissension (1),6,2:137:14,شِقَاقٍ ۚ
+VN,<iSola`H,إِصْلَٰح,N,SlH,صلح,7,its reformation (2) | Setting right (their affairs) (1) | (for) reconciliation (1),4,2:220:8,اِصْلَاحٌ
+VN,Saf~,صَفّ,N,Sff,صفف,7,(in) rows (3) | (in) a line (1) | (in) a row (1),6,18:48:4,صَفًّا ؕ
+VN,tabodiyl,تَبْدِيل,N,bdl,بدل,7,any change (3) | change (2) | (by) any alteration - (1),6,10:64:9,تَبْدِیْلَ
+VN,{xotila`f,ٱخْتِلَٰف,N,xlf,خلف,7,and alternation (1) | and (in the) alternation (1) | contradiction (1),7,2:164:6,وَاخْتِلَافِ
+VN,<ixoraAj,إِخْرَاج,N,xrj,خرج,6,their eviction (1) | and driving out (1) | driving (them) out (1),4,2:85:22,اِخْرَاجُهُمْ ؕ
+VN,>axo*,أَخْذ,N,Ax*,اخذ,6,(with) a seizure (3) | And for their taking (1) | (is) the seizure (of) your Lord (1),5,4:161:1,وَّاَخْذِهِمُ
+VN,taHiy~ap,تَحِيَّة,N,Hyy,حيي,6,with a greeting (1) | And their greeting (1) | their greetings (1),6,4:86:3,بِتَحِیَّةٍ
+VN,jahod,جَهْد,N,jhd,جهد,5,strongest (3) | strong (1) | (the) strongest (1),5,5:53:8,جَهْدَ
+VN,maroDaAt,مَرْضَات,N,rDw,رضو,5,pleasure (2) | (the) pleasure (1) | My Pleasure (1),4,2:207:7,مَرْضَاتِ
+VN,m~aHiyS,مَّحِيص,N,HyS,حيص,5,place of escape (3) | any escape (1) | place of refuge (1),5,4:121:7,مَحِیْصًا
+VN,taHoriyr,تَحْرِير,N,Hrr,حرر,5,then freeing (3) | and freeing (1) | freeing (1),3,4:92:13,فَتَحْرِیْرُ
+VN,tafoSiyl,تَفْصِيل,N,fSl,فصل,5,and a detailed explanation (2) | and an explanation (1) | and explanation (1),5,6:154:9,وَتَفْصِیْلًا
+VN,taqal~ub,تَقَلُّب,N,qlb,قلب,5,(the) turning (1) | (the) movement (1) | their going to and fro (1),5,2:144:3,تَقَلُّبَ
+VN,taqodiyr,تَقْدِير,N,qdr,قدر,5,(is the) Decree (2) | (is the) ordaining (1) | (with) determination (1),5,6:96:10,تَقْدِیْرُ
+VN,>akol,أَكْل,N,Akl,اكل,4,and (for) their consuming (1) | and eating (1) | and their eating (1),3,4:161:6,وَاَكْلِهِمْ
+VN,quEuwd,قُعُود,N,qEd,قعد,4,and sitting (2) | with sitting (1) | (were) sitting (1),4,3:191:5,وَّقُعُوْدًا
+VN,{ntiqaAm,ٱنتِقَام,N,nqm,نقم,4,(of) retribution (1) | (of) Retribution (1) | Owner (of) Retribution (1),4,3:4:18,انْتِقَامٍ
+VN,<iToEa`m,إِطْعَٰم,N,TEm,طعم,3,(is) feeding (1) | then (the) feeding (1) | feeding (1),3,5:89:13,اِطْعَامُ
+VN,<iytaA'N,إِيتَاءٌ,N,Aty,اتي,3,and giving (3),3,16:90:6,وَاِیْتَآئِ
+VN,Hi*or,حِذْر,N,H*r,حذر,3,your precautions (2) | their precautions (1),1,4:71:5,حِذْرَكُمْ
+VN,baTo$,بَطْش,N,bT$,بطش,3,(in) power (2) | (the) Grip (1),3,43:8:4,بَطْشًا
+VN,dak~,دَكّ,N,dkk,دكك,3,crumbled to dust (1) | pounded (1) | (and) crushed (1),2,7:143:29,دَكًّا
+VN,nifaAq,نِفَاق,N,nfq,نفق,3,(with) hypocrisy (1) | and hypocrisy (1) | the hypocrisy (1),1,9:77:2,نِفَاقًا
+VN,ri}aA^',رِئَآء,N,rAy,راي,3,(to) be seen (1) | to be seen (1) | and showing off (1),3,2:264:12,رِئَآءَ
+VN,taDar~uE,تَضَرُّع,N,DrE,ضرع,3,humbly (3),2,6:63:9,تَضَرُّعًا
+VN,taHowiyl,تَحْوِيل,N,Hwl,حول,3,any alteration (2) | (to) transfer (it) (1),2,17:56:13,تَحْوِیْلًا
+VN,tasoliym,تَسْلِيم,N,slm,سلم,3,(in full) submission (1) | and submission (1) | (with) greetings (1),2,4:65:19,تَسْلِیْمًا
+VN,<iEoraAD,إِعْرَاض,N,ErD,عرض,2,desertion (1) | their aversion (1),2,4:128:8,اِعْرَاضًا
+VN,<ikoraAh,إِكْرَاه,N,krh,كره,2,compulsion (1) | their compulsion (1),2,2:256:2,اِكْرَاهَ
+VN,<ikoraAm,إِكْرَام,N,krm,كرم,2,and Honor (2),1,55:27:6,وَالْاِكْرَامِ
+VN,<ila`f,إِلَٰف,N,Alf,الف,2,For (the) familiarity (1) | Their familiarity (1),1,106:1:1,لِاِیْلٰفِ
+VN,<imola`q,إِمْلَٰق,N,mlq,ملق,2,poverty (1) | (of) poverty (1),2,6:151:18,اِمْلَاقٍ ؕ
+VN,<iqaAm,إِقَام,N,qwm,قوم,2,and establishment (1) | and (from) establishing (1),2,21:73:9,وَاِقَامَ
+VN,<isoraAf,إِسْرَاف,N,srf,سرف,2,and our excesses (1) | extravagantly (1),2,3:147:11,وَاِسْرَافَنَا
+VN,<isoraAr,إِسْرَار,N,srr,سرر,2,their secrets (1) | secretly (1),2,47:26:15,اِسْرَارَهُمْ
+VN,DiraAr,ضِرَار,N,Drr,ضرر,2,(to) hurt (1) | (for causing) harm (1),2,2:231:13,ضِرَارًا
+VN,Ha*ar,حَذَر,N,H*r,حذر,2,(in) fear (of) (1) | (in) fear (1),1,2:19:15,حَذَرَ
+VN,Sad~,صَدّ,N,Sdd,صدد,2,but hindering (people) (1) | and for their hindering (1),2,2:217:11,وَصَدٌّ
+VN,dafoE,دَفْع,N,dfE,دفع,2,(for the) repelling (1) | Allah checks (1),2,2:251:15,دَفْعُ
+VN,firaAq,فِرَاق,N,frq,فرق,2,(is) parting (1) | (is) the parting (1),2,18:78:3,فِرَاقُ
+VN,jiviy~,جِثِيّ,N,jvw,جثو,2,bent (on) knees (2),1,19:68:8,جِثِیًّا
+VN,ki*~aAb,كِذَّاب,N,k*b,كذب,2,(with) denial (1) | any falsehood (1),1,78:28:3,كِذَّابًا
+VN,mad~,مَدّ,N,mdd,مدد,2,an extension (1) | extensively (1),1,19:75:9,مَدًّا ۚ۬
+VN,mavuwbap,مَثُوبَة,N,vwb,ثوب,2,surely (the) reward (1) | (as) recompense (1),2,2:103:5,لَمَثُوْبَةٌ
+VN,naqoD,نَقْض,N,nqD,نقض,2,their breaking (2),2,4:155:2,نَقْضِهِمْ
+VN,nidaA^',نِدَآء,N,ndw,ندو,2,and cries - (1) | a call - (1),2,2:171:12,وَّنِدَآءً ؕ
+VN,siraAE,سِرَاع,N,srE,سرع,2,hurrying (1) | rapidly (1),2,50:44:5,سِرَاعًا ؕ
+VN,ta>oviym,تَأْثِيم,N,Avm,اثم,2,sin (1) | sinful (speech) (1),2,52:23:8,تَاْثِیْمٌ
+VN,taSodiyq,تَصْدِيق,N,Sdq,صدق,2,(it is) a confirmation (1) | a confirmation (1),2,10:37:11,تَصْدِیْقَ
+VN,taSoriyf,تَصْرِيف,N,Srf,صرف,2,and directing (1) | and (in) directing (1),2,2:164:34,وَّتَصْرِیْفِ
+VN,tadomiyr,تَدْمِير,N,dmr,دمر,2,(with) destruction (2),2,17:16:14,تَدْمِیْرًا
+VN,tafoDiyl,تَفْضِيل,N,fDl,فضل,2,(in) excellence (1) | (with) preference (1),1,17:21:11,تَفْضِیْلًا
+VN,tafojiyr,تَفْجِير,N,fjr,فجر,2,abundantly (2),2,17:91:11,تَفْجِیْرًا
+VN,taraAD,تَرَاض,N,rDw,رضو,2,mutual consent (2),2,2:233:38,تَرَاضٍ
+VN,tarotiyl,تَرْتِيل,N,rtl,رتل,2,(with distinct) recitation (1) | (with) measured rhythmic recitation (1),2,25:32:15,تَرْتِیْلًا
+VN,tasobiyH,تَسْبِيح,N,sbH,سبح,2,their glorification (1) | and its glorification (1),2,17:44:17,تَسْبِیْحَهُمْ ؕ
+VN,tatobiyr,تَتْبِير,N,tbr,تبر,2,(with) destruction (2),2,17:7:23,تَتْبِیْرًا
+VN,tavobiyt,تَثْبِيت,N,vbt,ثبت,2,and certainty (1) | strengthen(ing) (1),2,2:265:8,وَتَثْبِیْتًا
+VN,tawofiyq,تَوْفِيق,N,wfq,وفق,2,and reconciliation (1) | (is) my success (1),2,4:62:16,وَّتَوْفِیْقًا
+VN,t~akaAvur,تَّكَاثُر,N,kvr,كثر,2,and competition in increase (1) | the competition to increase (1),2,57:20:10,وَتَكَاثُرٌ
+VN,xawoD,خَوْض,N,xwD,خوض,2,their discourse - (1) | (vain) discourse (1),2,6:91:43,خَوْضِهِمْ
+VN,xuwaAr,خُوَار,N,xwr,خور,2,(had) a lowing sound (1) | a lowing sound (1),2,7:148:11,خُوَارٌ ؕ
+VN,{fotiraA^',ٱفْتِرَآء,N,fry,فري,2,(as) an invention (1) | inventing (lies) (1),1,6:138:21,افْتِرَآءً
+VN,{sotikobaAr,ٱسْتِكْبَار,N,kbr,كبر,2,(Due to) arrogance (1) | (with) pride (1),2,35:43:1,سْتِكْبَارًا
+VN,{t~ibaAE,ٱتِّبَاع,N,tbE,تبع,2,then follows up (1) | (the) following (1),2,2:178:21,فَاتِّبَاعٌ
+VN,*ahaAb,ذَهَاب,N,*hb,ذهب,1,taking it away (1),1,23:18:11,ذَهَابٍ
+VN,<i$oraAq,إِشْرَاق,N,$rq,شرق,1,and [the] sunrise (1),1,38:18:7,وَالْاِشْرَاقِ
+VN,<iEoSaAr,إِعْصَار,N,ESr,عصر,1,whirlwind (1),1,2:266:25,اِعْصَارٌ
+VN,<iSobaAH,إِصْبَاح,N,SbH,صبح,1,(of) the daybreak (1),1,6:96:2,الْاِصْبَاحِ ۚ
+VN,<idoba`r,إِدْبَٰر,N,dbr,دبر,1,and after (1),1,52:49:4,وَاِدْبَارَ
+VN,<ijoraAm,إِجْرَام,N,jrm,جرم,1,(is) my crime (1),1,11:35:8,اِجْرَامِیْ
+VN,<iloHaAd,إِلْحَاد,N,lHd,لحد,1,of deviation (1),1,22:25:20,بِاِلْحَادٍ
+VN,<iloHaAf,إِلْحَاف,N,lHf,لحف,1,with importunity (1),1,2:273:22,اِلْحَافًا ؕ
+VN,<imosaAk,إِمْسَاك,N,msk,مسك,1,Then to retain (1),1,2:229:3,فَاِمْسَاكٌ
+VN,<in$aA^',إِنشَآء,N,n$A,نشا,1,(into) a creation (1),1,56:35:3,اِنْشَآءً
+VN,<infaAq,إِنفَاق,N,nfq,نفق,1,(of) spending (1),1,17:100:11,الْاِنْفَاقِ ؕ
+VN,<iqaAmat,إِقَامَت,N,qwm,قوم,1,(of) your encampment (1),1,16:80:17,اِقَامَتِكُمْ ۙ
+VN,<iroSaAd,إِرْصَاد,N,rSd,رصد,1,and (as) a station (1),1,9:107:9,وَاِرْصَادًا
+VN,>adaA^',أَدَآء,N,Ady,ادي,1,[and] payment (1),1,2:178:23,وَاَدَآءٌ
+VN,>avaAm,أَثَام,N,Avm,اثم,1,a penalty (1),1,25:68:22,اَثَامًا
+VN,>ava`rap,أَثَٰرَة,N,Avr,اثر,1,a trace (1),1,46:4:24,اَثٰرَةٍ
+VN,DiEa`f,ضِعَٰف,ADJ,DEf,ضعف,1,weak (1),1,4:9:8,ضِعٰفًا
+VN,EaSof2,عَصْف2,N,ESf,عصف,1,violently (1),1,77:2:2,عَصْفًا
+VN,HidaAd,حِدَاد,N,Hdd,حدد,1,sharp (1),1,33:19:21,حِدَادٍ
+VN,Sab~,صَبّ,N,Sbb,صبب,1,(in) abundance (1),1,80:25:4,صَبًّا
+VN,Suduwd,صُدُود,N,Sdd,صدد,1,(in) aversion (1),1,4:61:15,صُدُوْدًا
+VN,TuwbaY`,طُوبَىٰ,N,Tyb,طيب,1,blessedness (1),1,13:29:5,طُوْبٰی
+VN,basoT,بَسْط,N,bsT,بسط,1,reach (1),1,17:29:10,الْبَسْطِ
+VN,bidaAr,بِدَار,N,bdr,بدر,1,and hastily (1),1,4:6:17,وَّبِدَارًا
+VN,bigaA^',بِغَآء,N,bgy,بغي,1,[the] prostitution (1),1,24:33:32,الْبِغَآءِ
+VN,daE~,دَعّ,N,dEE,دعع,1,(with) a thrust (1),1,52:13:6,دَعًّا
+VN,duHuwr,دُحُور,N,dHr,دحر,1,Repelled (1),1,37:9:1,دُحُوْرًا
+VN,duluwk,دُلُوك,N,dlk,دلك,1,at the decline (1),1,17:78:3,لِدُلُوْكِ
+VN,faEolat,فَعْلَت,N,fEl,فعل,1,your deed (1),1,26:19:2,فَعْلَتَكَ
+VN,fiEol,فِعْل,N,fEl,فعل,1,(the) doing (1),1,21:73:7,فِعْلَ
+VN,kifaAt,كِفَات,N,kft,كفت,1,a receptacle (1),1,77:25:4,كِفَاتًا
+VN,lay~,لَيّ,N,lwy,لوي,1,twisting (1),1,4:46:15,لَیًّا
+VN,l~am~,لَّمّ,ADJ,lmm,لمم,1,altogether (1),1,89:19:4,لَّمًّا
+VN,mar~,مَرّ,N,mrr,مرر,1,(as the) passing (1),1,27:88:7,مَرَّ
+VN,miHaAl,مِحَال,N,mHl,محل,1,(in) Strength (1),1,13:13:19,الْمِحَالِ
+VN,mukaA^',مُكَآء,N,mkw,مكو,1,whistling (1),1,8:35:7,مُكَآءً
+VN,raj~,رَجّ,N,rjj,رجج,1,(with) a shaking (1),1,56:4:4,رَجًّا
+VN,ramoz,رَمْز,N,rmz,رمز,1,(with) gestures (1),1,3:41:14,رَمْزًا ؕ
+VN,riEaAyat,رِعَايَت,N,rEy,رعي,1,observance (1),1,57:27:31,رِعَایَتِهَا ۚ
+VN,r~iEaA^',رِّعَآء,N,rEy,رعي,1,the shepherds (1),1,28:23:24,الرِّعَآءُ ٚ
+VN,saboq,سَبْق,N,sbq,سبق,1,(in) a race (1),1,79:4:2,سَبْقًا
+VN,ta$aAwur,تَشَاوُر,N,$wr,شور,1,and consultation (1),1,2:233:40,وَتَشَاوُرٍ
+VN,ta*oliyl,تَذْلِيل,N,*ll,ذلل,1,dangling low (1),1,76:14:6,تَذْلِیْلًا
+VN,taDoliyl,تَضْلِيل,N,Dll,ضلل,1,astray (1),1,105:2:5,تَضْلِیْلٍ
+VN,taHaAwur,تَحَاوُر,N,Hwr,حور,1,(the) dialogue of both of you (1),1,58:1:14,تَحَاوُرَكُمَا ؕ
+VN,taHaS~un,تَحَصُّن,N,HSn,حصن,1,chastity (1),1,24:33:35,تَحَصُّنًا
+VN,taHil~ap,تَحِلَّة,N,Hll,حلل,1,(the) dissolution (1),1,66:2:5,تَحِلَّةَ
+VN,taSodiyap,تَصْدِيَة,N,Sdy,صدي,1,and clapping (1),1,8:35:8,وَّتَصْدِیَةً ؕ
+VN,taSoliyap,تَصْلِيَة,N,Sly,صلي,1,And burning (1),1,56:94:1,وَّتَصْلِیَةُ
+VN,taTohiyr,تَطْهِير,N,Thr,طهر,1,(with thorough) purification (1),1,33:33:25,تَطْهِیْرًا
+VN,tabar~uj,تَبَرُّج,N,brj,برج,1,(as was the) display (1),1,33:33:6,تَبَرُّجَ
+VN,tabo*iyr,تَبْذِير,N,b*r,بذر,1,wastefully (1),1,17:26:10,تَبْذِیْرًا
+VN,taboSirap,تَبْصِرَة,N,bSr,بصر,1,Giving insight (1),1,50:8:1,تَبْصِرَةً
+VN,tabotiyl,تَبْتِيل,N,btl,بتل,1,(with) devotion (1),1,73:8:6,تَبْتِیْلًا
+VN,tafaAxur,تَفَاخُر,N,fxr,فخر,1,and boasting (1),1,57:20:8,وَّتَفَاخُرٌ
+VN,tafa`wut,تَفَٰوُت,N,fwt,فوت,1,fault (1),1,67:3:12,تَفٰوُتٍ ؕ
+VN,taforiyq,تَفْرِيق,N,frq,فرق,1,and (for) division (1),1,9:107:6,وَّتَفْرِیْقًا
+VN,tafosiyr,تَفْسِير,N,fsr,فسر,1,explanation (1),1,25:33:8,تَفْسِیْرًا
+VN,tagay~uZ,تَغَيُّظ,N,gyZ,غيظ,1,raging (1),1,25:12:8,تَغَیُّظًا
+VN,tako*iyb,تَكْذِيب,N,k*b,كذب,1,denial (1),1,85:19:5,تَكْذِیْبٍ
+VN,takobiyr,تَكْبِير,N,kbr,كبر,1,(with all) magnificence (1),1,17:111:21,تَكْبِیْرًا
+VN,takoliym,تَكْلِيم,N,klm,كلم,1,(in a) conversation (1),1,4:164:14,تَكْلِیْمًا
+VN,tamohiyd,تَمْهِيد,N,mhd,مهد,1,ease (1),1,74:14:3,تَمْهِیْدًا
+VN,tankiyl,تَنكِيل,N,nkl,نكل,1,(in) punishment (1),1,4:84:22,تَنْكِیْلًا
+VN,taqotiyl,تَقْتِيل,N,qtl,قتل,1,and massacred completely (1),1,33:61:6,تَقْتِیْلًا
+VN,taqowiym,تَقْوِيم,N,qwm,قوم,1,mould (1),1,95:4:6,تَقْوِیْمٍ
+VN,tarab~uS,تَرَبُّص,N,rbS,ربص,1,(is a) waiting (of) (1),1,2:226:5,تَرَبُّصُ
+VN,tasomiyap,تَسْمِيَة,N,smw,سمو,1,name(s) (1),1,53:27:8,تَسْمِیَةَ
+VN,tasoriyH,تَسْرِيح,N,srH,سرح,1,to release (her) (1),1,2:229:6,تَسْرِیْحٌ
+VN,tatobiyb,تَتْبِيب,N,tbb,تبب,1,ruin (1),1,11:101:24,تَتْبِیْبٍ
+VN,tavoriyb,تَثْرِيب,N,vrb,ثرب,1,blame (1),1,12:92:3,تَثْرِیْبَ
+VN,tawoSiyap,تَوْصِيَة,N,wSy,وصي,1,(to) make a will (1),1,36:50:3,تَوْصِیَةً
+VN,tawokiyd,تَوْكِيد,N,wkd,وكد,1,their confirmation (1),1,16:91:10,تَوْكِیْدِهَا
+VN,taxaASum,تَخَاصُم,N,xSm,خصم,1,(the) quarreling (1),1,38:64:4,تَخَاصُمُ
+VN,taxaw~uf,تَخَوُّف,N,xwf,خوف,1,a gradual wasting (1),1,16:47:4,تَخَوُّفٍ ؕ
+VN,taxofiyf,تَخْفِيف,N,xff,خفف,1,a concession (1),1,2:178:27,تَخْفِیْفٌ
+VN,taxosiyr,تَخْسِير,N,xsr,خسر,1,(in) loss (1),1,11:63:22,تَخْسِیْرٍ
+VN,taxowiyf,تَخْوِيف,N,xwf,خوف,1,(as) a warning (1),1,17:59:21,تَخْوِیْفًا
+VN,tuqaY`p,تُقَىٰة,N,wqy,وقي,1,(as) a precaution (1),1,3:28:21,تُقٰىةً ؕ
+VN,t~aEaf~uf,تَّعَفُّف,N,Eff,عفف,1,(their) restraint (1),1,2:273:16,التَّعَفُّفِ ۚ
+VN,t~agaAbun,تَّغَابُن,N,gbn,غبن,1,(of) mutual loss and gain (1),1,64:9:7,التَّغَابُنِ ؕ
+VN,t~alaAq,تَّلَاق,N,lqy,لقي,1,(of) the Meeting (1),1,40:15:16,التَّلَاقِ
+VN,t~anaAd,تَّنَاد,N,ndw,ندو,1,(of) Calling (1),1,40:32:6,التَّنَادِ
+VN,t~anaAwu$,تَّنَاوُش,N,nw$,نوش,1,(will be) the receiving (1),1,34:52:6,التَّنَاوُشُ
+VN,t~araAqiY,تَّرَاقِى,N,trq,ترق,1,the collar bones (1),1,75:26:4,التَّرَاقِیَ
+VN,wafod,وَفْد,N,wfd,وفد,1,(as) a delegation (1),1,19:85:6,وَفْدًا
+VN,wifaAq,وِفَاق,ADJ,wfq,وفق,1,appropriate (1),1,78:26:2,وِّفَاقًا
+VN,xu$uwE,خُشُوع,N,x$E,خشع,1,(in) humility (1),1,17:109:5,خُشُوْعًا
+VN,zajor,زَجْر,N,zjr,زجر,1,strongly (1),1,37:2:2,زَجْرًا
+VN,z~inaY`^,زِّنَىٰٓ,N,zny,زني,1,adultery (1),1,17:32:3,الزِّنٰۤی
+VN,{nbiEaAv,ٱنبِعَاث,N,bEv,بعث,1,their being sent (1),1,9:46:10,انْۢبِعَاثَهُمْ
+VN,{nfiSaAm,ٱنفِصَام,N,fSm,فصم,1,(will) break (1),1,2:256:20,انْفِصَامَ
+VN,{sotiEojaAl,ٱسْتِعْجَال,N,Ejl,عجل,1,(as) He hastens for them (1),1,10:11:6,اسْتِعْجَالَهُمْ
+VN,{sotiHoyaA^',ٱسْتِحْيَآء,N,Hyy,حيي,1,shyness (1),1,28:25:5,اسْتِحْیَآءٍ ؗ
+VN,{sotibodaAl,ٱسْتِبْدَال,N,bdl,بدل,1,replacing (1),1,4:20:3,اسْتِبْدَالَ
+VN,{sotigofaAr,ٱسْتِغْفَار,N,gfr,غفر,1,(the) asking of forgiveness (1),1,9:114:3,اسْتِغْفَارُ
+VN,{t~ixaA*,ٱتِّخَاذ,N,Ax*,اخذ,1,by your taking (1),1,2:54:9,بِاتِّخَاذِكُمُ
+VN,{xotila`q,ٱخْتِلَٰق,N,xlq,خلق,1,a fabrication (1),1,38:7:10,اخْتِلَاقٌ
+PASS_PCPL,m~aEoruwf,مَّعْرُوف,N,Erf,عرف,38,in a fair manner (9) | the right (5) | with kindness (3),11,2:178:22,بِالْمَعْرُوْفِ
+PASS_PCPL,m~urosal,مُّرْسَل,N,rsl,رسل,35,the Messengers (25) | O messengers (2) | the messengers (2),13,2:252:9,الْمُرْسَلِیْنَ
+PASS_PCPL,m~usam~FY,مُّسَمًّى,N,smw,سمو,21,appointed (12) | specified (7) | fixed (1),17,2:282:9,مُّسَمًّی
+PASS_PCPL,munkar,مُنكَر,N,nkr,نكر,18,the wrong (9) | unknown (2) | wrongdoing (1),12,3:104:11,الْمُنْكَرِ ؕ
+PASS_PCPL,majonuwn,مَجْنُون,N,jnn,جنن,11,a madman (4) | (is) surely mad (2) | mad (2),9,15:6:8,لَمَجْنُوْنٌ
+PASS_PCPL,m~aEoluwm,مَّعْلُوم,N,Elm,علم,11,known (6) | well-known (4) | determined (1),7,15:4:8,مَّعْلُوْمٌ
+PASS_PCPL,musotaqar~,مُسْتَقَرّ,N,qrr,قرر,10,(is) a dwelling place (2) | abode (2) | (is) a fixed time (1),7,2:36:16,مُسْتَقَرٌّ
+PASS_PCPL,m~uHoDar,مُّحْضَر,N,HDr,حضر,10,(will be) brought (3) | (will) surely be brought (2) | presented (1),6,3:30:9,مُّحْضَرًا ۛۖۚ
+PASS_PCPL,muxolaS,مُخْلَص,ADJ,xlS,خلص,9,the chosen ones (4) | the chosen (2) | the sincere (1),5,12:24:19,الْمُخْلَصِیْنَ
+PASS_PCPL,m~aboEuwvuwn,مَّبْعُوثُون,N,bEv,بعث,9,(will be) resurrected (4) | surely (be) resurrected (2) | surely be resurrected (2),7,6:29:9,بِمَبْعُوْثِیْنَ
+PASS_PCPL,muHoSana`t,مُحْصَنَٰت,N,HSn,حصن,8,the chaste women (2) | And (prohibited are) the ones who are married (1) | the free chaste (1),3,4:24:1,وَّالْمُحْصَنٰتُ
+PASS_PCPL,mubaArak,مُبَارَك,N,brk,برك,8,blessed (8),7,3:96:8,مُبٰرَكًا
+PASS_PCPL,muqar~abuwn,مُقَرَّبُون,N,qrb,قرب,8,those brought near (3) | those brought near (to Allah) (1) | the ones who are near (to Allah) (1),6,3:45:20,الْمُقَرَّبِیْنَ
+PASS_PCPL,mafoEuwl,مَفْعُول,N,fEl,فعل,7,(always) executed (1) | destined (1) | (already) destined (1),5,4:47:28,مَفْعُوْلًا
+PASS_PCPL,munZaruwn,مُنظَرُون,N,nZr,نظر,6,the ones given respite (2) | given respite (2) | (to be) reprieved (1),5,7:15:4,الْمُنْظَرِیْنَ
+PASS_PCPL,m~aEoduwdap,مَّعْدُودَة,ADJ,Edd,عدد,6,numbered (4) | determined (1) | few (1),4,2:80:7,مَّعْدُوْدَةً ؕ
+PASS_PCPL,maluwm,مَلُوم,N,lwm,لوم,5,blameworthy (4) | (are) to be blamed (1),4,17:29:12,مَلُوْمًا
+PASS_PCPL,maso_#uwl,مَسْـُٔول,N,sAl,سال,5,questioned (2) | requested (1) | to be questioned (1),4,17:34:17,مَسْـُٔوْلًا
+PASS_PCPL,mun*ariyn,مُنذَرِين,N,n*r,نذر,5,(of) those who were warned (2) | (on) those who were warned (2) | (for) those who were warned (1),4,10:73:17,الْمُنْذَرِیْنَ
+PASS_PCPL,mutorafiyn,مُتْرَفِين,N,trf,ترف,5,its wealthy people (1) | their affluent ones (1) | its wealthy ones (1),5,17:16:7,مُتْرَفِیْهَا
+PASS_PCPL,muxoraj,مُخْرَج,N,xrj,خرج,5,will be removed (1) | an exit (1) | (will be) brought forth (1),5,15:48:8,بِمُخْرَجِیْنَ
+PASS_PCPL,m~uTah~arap,مُّطَهَّرَة,ADJ,Thr,طهر,5,purified (3) | pure (2),5,2:25:31,مُّطَهَّرَةٌ ۙۗ
+PASS_PCPL,m~ukoramuwn,مُّكْرَمُون,N,krm,كرم,5,honored (2) | the honored ones (1) | (will) be honored (1),5,21:26:8,مُّكْرَمُوْنَ
+PASS_PCPL,m~usotaDoEafuwn,مُّسْتَضْعَفُون,N,DEf,ضعف,5,and (for) those who are weak (1) | oppressed (1) | the oppressed (1),2,4:75:8,وَالْمُسْتَضْعَفِیْنَ
+PASS_PCPL,maHoruwm,مَحْرُوم,N,Hrm,حرم,4,and the deprived (2) | (are) deprived (2),4,51:19:5,وَالْمَحْرُوْمِ
+PASS_PCPL,mamonuwn,مَمْنُون,N,mnn,منن,4,ending (2) | never ending (1) | end (1),4,41:8:9,مَمْنُوْنٍ
+PASS_PCPL,muEa*~abiyn,مُعَذَّبِين,N,E*b,عذب,4,will be punished (2) | (are) the ones to be punished (1) | those punished (1),3,26:138:3,بِمُعَذَّبِیْنَ
+PASS_PCPL,muHar~am,مُحَرَّم,N,Hrm,حرم,4,(was) forbidden (1) | and forbidden (1) | (anything) forbidden (1),3,2:85:20,مُحَرَّمٌ
+PASS_PCPL,muxal~afuwn,مُخَلَّفُون,N,xlf,خلف,4,those who remained behind (3) | to those who remained behind (1),2,9:81:2,الْمُخَلَّفُوْنَ
+PASS_PCPL,m~akonuwn,مَّكْنُون,N,knn,كنن,4,well-protected (2) | well protected (1) | well-guarded (1),3,37:49:3,مَّكْنُوْنٌ
+PASS_PCPL,m~asoHuwr,مَّسْحُور,N,sHr,سحر,4,bewitched (3) | (you are) bewitched (1),3,15:15:8,مَّسْحُوْرُوْنَ
+PASS_PCPL,m~ugoraquwn,مُّغْرَقُون,N,grq,غرق,4,the ones (to be) drowned (1) | the drowned (1) | (are) the ones to be drowned (1),3,11:37:11,مُّغْرَقُوْنَ
+PASS_PCPL,ma$oHuwn,مَشْحُون,N,$Hn,شحن,3,laden (3),3,26:119:6,الْمَشْحُوْنِ
+PASS_PCPL,ma$ohuwd,مَشْهُود,N,$hd,شهد,3,witnessed (1) | ever witnessed (1) | and what is witnessed (1),3,11:103:16,مَّشْهُوْدٌ
+PASS_PCPL,ma*omuwm,مَذْمُوم,N,*mm,ذمم,3,disgraced (2) | (was) blamed (1),2,17:18:17,مَذْمُوْمًا
+PASS_PCPL,maHiyD,مَحِيض,N,HyD,حيض,3,[the] menstruation (1) | (their) [the] menstruation (1) | the menstruation (1),2,2:222:3,الْمَحِیْضِ ؕ
+PASS_PCPL,masoTuwr,مَسْطُور,N,sTr,سطر,3,written (3),3,17:58:18,مَسْطُوْرًا
+PASS_PCPL,mawoluwd,مَوْلُود,N,wld,ولد,3,the father (1) | (the) father (1) | a son (1),2,2:233:12,الْمَوْلُوْدِ
+PASS_PCPL,muntahaY`,مُنتَهَىٰ,N,nhy,نهي,3,(of) the utmost boundary (1) | (is) the final goal (1) | (is) its finality (1),2,53:14:3,الْمُنْتَهٰی
+PASS_PCPL,muqaAm,مُقَام,N,qwm,قوم,3,and resting place (1) | and a resting place (1) | stand (1),2,25:66:4,وَّمُقَامًا
+PASS_PCPL,murosaY`,مُرْسَىٰ,N,rsw,رسو,3,its appointed time (1) | and its anchorage (1) | (is) its arrival (1),3,7:187:5,مُرْسٰىهَا ؕ
+PASS_PCPL,musax~ara`t,مُسَخَّرَٰت,N,sxr,سخر,3,subjected (1) | (are) subjected (1) | controlled (1),2,7:54:23,مُسَخَّرٰتٍۭ
+PASS_PCPL,m~adoHuwr,مَّدْحُور,N,dHr,دحر,3,and expelled (1) | rejected (1) | abandoned (1),2,7:18:5,مَّدْحُوْرًا ؕ
+PASS_PCPL,m~arofuwEap,مَّرْفُوعَة,ADJ,rfE,رفع,3,raised (1) | Exalted (1) | raised high (1),3,56:34:2,مَّرْفُوْعَةٍ
+PASS_PCPL,m~asonuwn,مَّسْنُون,N,snn,سنن,3,altered (3),1,15:26:8,مَّسْنُوْنٍ
+PASS_PCPL,m~udoxal,مُّدْخَل,N,dxl,دخل,3,(to) an entrance (2) | an entrance (1),3,4:31:11,مُّدْخَلًا
+PASS_PCPL,m~uqar~aniyn,مُّقَرَّنِين,N,qrn,قرن,3,bound together (1) | bound in chains (1) | bound (1),3,14:49:4,مُّقَرَّنِیْنَ
+PASS_PCPL,m~usal~amap,مُّسَلَّمَة,ADJ,slm,سلم,3,(is to be) paid (2) | sound (1),2,2:71:13,مُسَلَّمَةٌ
+PASS_PCPL,m~usaw~amap,مُّسَوَّمَة,N,swm,سوم,3,Marked (2) | [the] branded (1),3,3:14:14,الْمُسَوَّمَةِ
+PASS_PCPL,maSofuwfap,مَصْفُوفَة,ADJ,Sff,صفف,2,lined up (2),2,52:20:4,مَّصْفُوْفَةٍ ۚ
+PASS_PCPL,madiyniyn,مَدِينِين,N,dyn,دين,2,surely be brought to Judgment (1) | to be recompensed (1),2,37:53:7,لَمَدِیْنُوْنَ
+PASS_PCPL,magoluwlap,مَغْلُولَة,N,gll,غلل,2,(is) chained (1) | chained (1),2,5:64:5,مَغْلُوْلَةٌ ؕ
+PASS_PCPL,man$uwr,مَنشُور,N,n$r,نشر,2,wide open (1) | unrolled (1),2,17:13:13,مَنْشُوْرًا
+PASS_PCPL,manSuwr,مَنصُور,N,nSr,نصر,2,helped (1) | (would be) the victorious (1),2,17:33:22,مَنْصُوْرًا
+PASS_PCPL,maroduwd,مَرْدُود,N,rdd,ردد,2,(be) repelled (1) | indeed be returned (1),2,11:76:14,مَرْدُوْدٍ
+PASS_PCPL,masobuwqiyn,مَسْبُوقِين,N,sbq,سبق,2,(are) outrun (1) | (are) to be outrun (1),2,56:60:7,بِمَسْبُوْقِیْنَ
+PASS_PCPL,masoruwr,مَسْرُور,N,srr,سرر,2,happily (1) | happy (1),1,84:9:4,مَسْرُوْرًا
+PASS_PCPL,muHodav,مُحْدَث,N,Hdv,حدث,2,anew (1) | new (1),2,21:2:7,مُّحْدَثٍ
+PASS_PCPL,muTal~aqa`t,مُطَلَّقَٰت,N,Tlq,طلق,2,And the women who are divorced (1) | And for the divorced women (1),1,2:228:1,وَالْمُطَلَّقٰتُ
+PASS_PCPL,mulotaHad,مُلْتَحَد,N,lHd,لحد,2,a refuge (1) | any refuge (1),2,18:27:15,مُلْتَحَدًا
+PASS_PCPL,mumaz~aq,مُمَزَّق,N,mzq,مزق,2,disintegration (1) | dispersion (1),1,34:7:12,مُمَزَّقٍ ۙ
+PASS_PCPL,munqalab,مُنقَلَب,N,qlb,قلب,2,(as) a return (1) | return (1),2,18:36:12,مُنْقَلَبًا
+PASS_PCPL,munzal,مُنزَل,N,nzl,نزل,2,[the ones] sent down (1) | (at) a landing place (1),2,3:124:13,مُنْزَلِیْنَ
+PASS_PCPL,muqad~as,مُقَدَّس,ADJ,qds,قدس,2,the sacred (2),2,20:12:8,الْمُقَدَّسِ
+PASS_PCPL,murotafaq,مُرْتَفَق,N,rfq,رفق,2,(is) the resting place (2),1,18:29:28,مُرْتَفَقًا
+PASS_PCPL,musaH~ariyn,مُسَحَّرِين,N,sHr,سحر,2,those bewitched (2),1,26:153:5,الْمُسَحَّرِیْنَ
+PASS_PCPL,musotaEaAn,مُسْتَعَان,N,Ewn,عون,2,(is) the One sought for help (1) | the One Whose help is sought (1),2,12:18:15,الْمُسْتَعَانُ
+PASS_PCPL,musotawodaE,مُسْتَوْدَع,N,wdE,ودع,2,and a resting place (1) | and its place of storage (1),2,6:98:8,وَّمُسْتَوْدَعٌ ؕ
+PASS_PCPL,muxal~aqap,مُخَلَّقَة,N,xlq,خلق,2,formed (1) | and unformed (1),1,22:5:22,مُّخَلَّقَةٍ
+PASS_PCPL,m~a$okuwr,مَّشْكُور,N,$kr,شكر,2,(is) appreciated (1) | appreciated (1),2,17:19:12,مَّشْكُوْرًا
+PASS_PCPL,m~aEoruw$a`t,مَّعْرُوشَٰت,ADJ,Er$,عرش,2,trellised (2),1,6:141:5,مَّعْرُوْشٰتٍ
+PASS_PCPL,m~aHofuwZ,مَّحْفُوظ,ADJ,HfZ,حفظ,2,protected (1) | Guarded (1),2,21:32:4,مَّحْفُوْظًا ۖۚ
+PASS_PCPL,m~aHojuwr,مَّحْجُور,N,Hjr,حجر,2,forbidden (2),1,25:22:10,مَّحْجُوْرًا
+PASS_PCPL,m~aforuwD,مَّفْرُوض,ADJ,frD,فرض,2,obligatory (1) | appointed (1),1,4:7:19,مَّفْرُوْضًا
+PASS_PCPL,m~ajomuwE,مَّجْمُوع,N,jmE,جمع,2,"(will) be gathered (1) | Surely, will be gathered (1)",2,11:103:11,مَّجْمُوْعٌ ۙ
+PASS_PCPL,m~amoduwd,مَّمْدُود,ADJ,mdd,مدد,2,extended (1) | extensive (1),2,56:30:2,مَّمْدُوْدٍ
+PASS_PCPL,m~anDuwd,مَّنضُود,ADJ,nDd,نضد,2,(in) layers (1) | layered (1),2,11:82:12,مَّنْضُوْدٍ
+PASS_PCPL,m~anvuwr,مَّنثُور,ADJ,nvr,نثر,2,dispersed (1) | scattered (1),2,25:23:9,مَّنْثُوْرًا
+PASS_PCPL,m~aqoDiy~,مَّقْضِيّ,ADJ,qDy,قضي,2,decreed.' (1) | decreed (1),1,19:21:15,مَّقْضِیًّا
+PASS_PCPL,m~aroquwm,مَّرْقُوم,ADJ,rqm,رقم,2,written (2),1,83:9:2,مَّرْقُوْمٌ
+PASS_PCPL,m~aziyd,مَّزِيد,N,zyd,زيد,2,more (1) | (is) more (1),1,50:30:9,مَّزِیْدٍ
+PASS_PCPL,m~ufotarFY,مُّفْتَرًى,N,fry,فري,2,invented (2),2,28:36:11,مُّفْتَرًی
+PASS_PCPL,m~ut~abaEuwn,مُّتَّبَعُون,N,tbE,تبع,2,(will be) followed (2),2,26:52:8,مُّتَّبَعُوْنَ
+PASS_PCPL,m~uvoqaluwn,مُّثْقَلُون,N,vql,ثقل,2,(are) overburdened (1) | (are) burdened (1),2,52:40:7,مُّثْقَلُوْنَ
+PASS_PCPL,m~uxal~aduwn,مُّخَلَّدُون,ADJ,xld,خلد,2,immortal (1) | made eternal (1),2,56:17:4,مُّخَلَّدُوْنَ
+PASS_PCPL,ma*o'uwm,مَذْءُوم,N,*Am,ذام,1,disgraced (1),1,7:18:4,مَذْءُوْمًا
+PASS_PCPL,ma>omuwn,مَأْمُون,N,Amn,امن,1,to be felt secure (of) - (1),1,70:28:5,مَاْمُوْنٍ
+PASS_PCPL,ma>otiy~N,مَأْتِيٌّ,N,Aty,اتي,1,sure to come (1),1,19:61:11,مَاْتِیًّا
+PASS_PCPL,maEokuwf,مَعْكُوف,N,Ekf,عكف,1,(was) prevented (1),1,48:25:9,مَعْكُوْفًا
+PASS_PCPL,maEomuwr,مَعْمُور,N,Emr,عمر,1,frequented (1),1,52:4:2,الْمَعْمُوْرِ
+PASS_PCPL,maEozuwluwn,مَعْزُولُون,N,Ezl,عزل,1,(are) surely banished (1),1,26:212:4,لَمَعْزُوْلُوْنَ
+PASS_PCPL,maHo$uwrap,مَحْشُورَة,N,H$r,حشر,1,assembled (1),1,38:19:2,مَحْشُوْرَةً ؕ
+PASS_PCPL,maHo*uwr,مَحْذُور,N,H*r,حذر,1,(ever) feared (1),1,17:57:18,مَحْذُوْرًا
+PASS_PCPL,maHoZuwr,مَحْظُور,N,HZr,حظر,1,restricted (1),1,17:20:12,مَحْظُوْرًا
+PASS_PCPL,maHojuwbuwn,مَحْجُوبُون,N,Hjb,حجب,1,surely will be partitioned (1),1,83:15:6,لَّمَحْجُوْبُوْنَ
+PASS_PCPL,maSoruwf,مَصْرُوف,N,Srf,صرف,1,(will be) averted (1),1,11:8:15,مَصْرُوْفًا
+PASS_PCPL,maToluwb,مَطْلُوب,N,Tlb,طلب,1,and the one who is sought (1),1,22:73:28,وَالْمَطْلُوْبُ
+PASS_PCPL,maTowiy~a`t,مَطْوِيَّٰت,N,Twy,طوي,1,(will be) folded (1),1,39:67:12,مَطْوِیّٰتٌ
+PASS_PCPL,maZoluwm,مَظْلُوم,N,Zlm,ظلم,1,wrongfully (1),1,17:33:11,مَظْلُوْمًا
+PASS_PCPL,mabosuwTataAn,مَبْسُوطَتَان,N,bsT,بسط,1,(are) stretched out (1),1,5:64:13,مَبْسُوْطَتٰنِ ۙ
+PASS_PCPL,mabovuwv,مَبْثُوث,ADJ,bvv,بثث,1,scattered (1),1,101:4:5,الْمَبْثُوْثِ
+PASS_PCPL,mabovuwvap,مَبْثُوثَة,ADJ,bvv,بثث,1,spread out (1),1,88:16:2,مَبْثُوْثَةٌ
+PASS_PCPL,mafotuwn,مَفْتُون,N,ftn,فتن,1,(is) the afflicted one (1),1,68:6:2,الْمَفْتُوْنُ
+PASS_PCPL,mago$iY~,مَغْشِىّ,N,g$w,غشو,1,(of) one fainting (1),1,47:20:22,الْمَغْشِیِّ
+PASS_PCPL,magoDuwb,مَغْضُوب,N,gDb,غضب,1,those who earned (Your) wrath (1),1,1:7:6,الْمَغْضُوْبِ
+PASS_PCPL,magoluwb,مَغْلُوب,N,glb,غلب,1,one overpowered (1),1,54:10:4,مَغْلُوْبٌ
+PASS_PCPL,mahojuwr,مَهْجُور,N,hjr,هجر,1,(as) a forsaken thing (1),1,25:30:9,مَهْجُوْرًا
+PASS_PCPL,mahozuwm,مَهْزُوم,N,hzm,هزم,1,(they will be) defeated (1),1,38:11:4,مَهْزُوْمٌ
+PASS_PCPL,majo*uw*,مَجْذُوذ,N,j**,جذذ,1,interrupted (1),1,11:108:18,مَجْذُوْذٍ
+PASS_PCPL,majuws,مَجُوس,PN,mjs,مجس,1,and the Magians (1),1,22:17:8,وَالْمَجُوْسَ
+PASS_PCPL,makiyduwn,مَكِيدُون,N,kyd,كيد,1,(are in) the plot (1),1,52:42:7,الْمَكِیْدُوْنَ
+PASS_PCPL,mako*uwb,مَكْذُوب,N,k*b,كذب,1,(to) be belied (1),1,11:65:11,مَكْذُوْبٍ
+PASS_PCPL,makoZuwm,مَكْظُوم,N,kZm,كظم,1,(was) distressed (1),1,68:48:11,مَكْظُوْمٌ
+PASS_PCPL,makoruwh,مَكْرُوه,N,krh,كره,1,hateful (1),1,17:38:7,مَكْرُوْهًا
+PASS_PCPL,makotuwb,مَكْتُوب,N,ktb,كتب,1,written (1),1,7:157:8,مَكْتُوْبًا
+PASS_PCPL,maloEuwnap,مَلْعُونَة,N,lEn,لعن,1,the accursed (1),1,17:60:17,الْمَلْعُوْنَةَ
+PASS_PCPL,mamonuwEap,مَمْنُوعَة,N,mnE,منع,1,forbidden (1),1,56:33:4,مَمْنُوْعَةٍ
+PASS_PCPL,manfuw$,مَنفُوش,ADJ,nf$,نفش,1,fluffed up (1),1,101:5:4,الْمَنْفُوْشِ
+PASS_PCPL,manquwS,مَنقُوص,N,nqS,نقص,1,being diminished (1),1,11:109:20,مَنْقُوْصٍ
+PASS_PCPL,maqiyl,مَقِيل,N,qyl,قيل,1,resting-place (1),1,25:24:7,مَقِیْلًا
+PASS_PCPL,maqoTuwE,مَقْطُوع,N,qTE,قطع,1,would be cut off (1),1,15:66:8,مَقْطُوْعٌ
+PASS_PCPL,maqoTuwEap,مَقْطُوعَة,N,qTE,قطع,1,limited (1),1,56:33:2,مَقْطُوْعَةٍ
+PASS_PCPL,maqobuwHiyn,مَقْبُوحِين,N,qbH,قبح,1,the despised (1),1,28:42:10,الْمَقْبُوْحِیْنَ
+PASS_PCPL,maroDiy~,مَرْضِيّ,N,rDw,رضو,1,pleasing (1),1,19:55:9,مَرْضِیًّا
+PASS_PCPL,marofuwE,مَرْفُوع,N,rfE,رفع,1,raised high (1),1,52:5:2,الْمَرْفُوْعِ
+PASS_PCPL,marofuwd,مَرْفُود,N,rfd,رفد,1,which (will) be given (1),1,11:99:9,الْمَرْفُوْدُ
+PASS_PCPL,marojuwmiyn,مَرْجُومِين,N,rjm,رجم,1,those who are stoned (1),1,26:116:8,الْمَرْجُوْمِیْنَ
+PASS_PCPL,marojuw~,مَرْجُوّ,N,rjw,رجو,1,the one in whom hope was placed (1),1,11:62:6,مَرْجُوًّا
+PASS_PCPL,masojuwniyn,مَسْجُونِين,N,sjn,سجن,1,those imprisoned (1),1,26:29:8,الْمَسْجُوْنِیْنَ
+PASS_PCPL,masojuwr,مَسْجُور,N,sjr,سجر,1,filled (1),1,52:6:2,الْمَسْجُوْرِ
+PASS_PCPL,masokuwnap,مَسْكُونَة,N,skn,سكن,1,inhabited (1),1,24:29:8,مَسْكُوْنَةٍ
+PASS_PCPL,mavobuwr,مَثْبُور,N,vbr,ثبر,1,(you are) destroyed (1),1,17:102:15,مَثْبُوْرًا
+PASS_PCPL,mawo'udap,مَوْءُدَة,N,wAd,واد,1,the female infant buried alive (1),1,81:8:2,الْمَوْءٗدَةُ
+PASS_PCPL,mawoEuwd,مَوْعُود,ADJ,wEd,وعد,1,Promised (1),1,85:2:2,الْمَوْعُوْدِ
+PASS_PCPL,mawoquw*ap,مَوْقُوذَة,N,wq*,وقذ,1,and that which is hit fatally (1),1,5:3:13,وَالْمَوْقُوْذَةُ
+PASS_PCPL,mawoquwfuwn,مَوْقُوفُون,N,wqf,وقف,1,will be made to stand (1),1,34:31:16,مَوْقُوْفُوْنَ
+PASS_PCPL,maworuwd,مَوْرُود,N,wrd,ورد,1,to which (they are) led (1),1,11:98:9,الْمَوْرُوْدُ
+PASS_PCPL,mu&al~afap,مُؤَلَّفَة,N,Alf,الف,1,and the ones inclined (1),1,9:60:7,وَالْمُؤَلَّفَةِ
+PASS_PCPL,muEal~am,مُعَلَّم,N,Elm,علم,1,One taught (1),1,44:14:5,مُعَلَّمٌ
+PASS_PCPL,muEal~aqap,مُعَلَّقَة,N,Elq,علق,1,like the suspended one (1),1,4:129:14,كَالْمُعَلَّقَةِ ؕ
+PASS_PCPL,muEotabiyn,مُعْتَبِين,N,Etb,عتب,1,those who receive favor (1),1,41:24:11,الْمُعْتَبِیْنَ
+PASS_PCPL,muHar~amap,مُحَرَّمَة,N,Hrm,حرم,1,(will be) forbidden (1),1,5:26:3,مُحَرَّمَةٌ
+PASS_PCPL,muHar~ar,مُحَرَّر,N,Hrr,حرر,1,dedicated (1),1,3:35:12,مُحَرَّرًا
+PASS_PCPL,muSoTafayon,مُصْطَفَيْن,N,Sfw,صفو,1,the chosen ones (1),1,38:47:4,الْمُصْطَفَیْنَ
+PASS_PCPL,muTah~aruwn,مُطَهَّرُون,N,Thr,طهر,1,the purified (1),1,56:79:4,الْمُطَهَّرُوْنَ
+PASS_PCPL,mubar~a'uwn,مُبَرَّءُون,N,brA,برا,1,(are) innocent (1),1,24:26:10,مُبَرَّءُوْنَ
+PASS_PCPL,mubaw~a>,مُبَوَّأ,N,bwA,بوا,1,(in) a settlement (1),1,10:93:5,مُبَوَّاَ
+PASS_PCPL,muboEaduwn,مُبْعَدُون,N,bEd,بعد,1,(will be) removed far (1),1,21:101:9,مُبْعَدُوْنَ
+PASS_PCPL,mudoHaDiyn,مُدْحَضِين,N,dHD,دحض,1,the losers (1),1,37:141:4,الْمُدْحَضِیْنَ
+PASS_PCPL,mudorakuwn,مُدْرَكُون,N,drk,درك,1,(are) surely to be overtaken (1),1,26:61:8,لَمُدْرَكُوْنَ
+PASS_PCPL,mud~axal,مُدَّخَل,N,dxl,دخل,1,a place to enter (1),1,9:57:7,مُدَّخَلًا
+PASS_PCPL,mufaS~al,مُفَصَّل,N,fSl,فصل,1,explained in detail (1),1,6:114:10,مُفَصَّلًا ؕ
+PASS_PCPL,mufotaraya`t,مُفْتَرَيَٰت,N,fry,فري,1,fabricated (1),1,11:13:9,مُفْتَرَیٰتٍ
+PASS_PCPL,mugoramuwn,مُغْرَمُون,N,grm,غرم,1,surely are laden with debt (1),1,56:66:2,لَمُغْرَمُوْنَ
+PASS_PCPL,mugotasal,مُغْتَسَل,N,gsl,غسل,1,(is a spring of) water to bathe (1),1,38:42:4,مُغْتَسَلٌۢ
+PASS_PCPL,muhaAn,مُهَان,N,hwn,هون,1,humiliated (1),1,25:69:8,مُهَانًا
+PASS_PCPL,muholakiyn,مُهْلَكِين,N,hlk,هلك,1,those who were destroyed (1),1,23:48:4,الْمُهْلَكِیْنَ
+PASS_PCPL,mun$a_#aAt,مُنشَـَٔات,ADJ,n$A,نشا,1,elevated (1),1,55:24:3,الْمُنْشَـٰٔتُ
+PASS_PCPL,mun$ariyn,مُنشَرِين,N,n$r,نشر,1,(will be) raised again (1),1,44:35:8,بِمُنْشَرِیْنَ
+PASS_PCPL,munaz~al,مُنَزَّل,N,nzl,نزل,1,(is) sent down (1),1,6:114:16,مُنَزَّلٌ
+PASS_PCPL,muqaAmap,مُقَامَة,N,qwm,قوم,1,(of) Eternity (1),1,35:35:4,الْمُقَامَةِ
+PASS_PCPL,muqad~asap,مُقَدَّسَة,ADJ,qds,قدس,1,the Holy (1),1,5:21:4,الْمُقَدَّسَةَ
+PASS_PCPL,muqanTarap,مُقَنطَرَة,ADJ,qnTr,قنطر,1,[the] stored up (1),1,3:14:9,الْمُقَنْطَرَةِ
+PASS_PCPL,mura`gam,مُرَٰغَم,N,rgm,رغم,1,place(s) of refuge - (1),1,4:100:9,مُرٰغَمًا
+PASS_PCPL,murojawon,مُرْجَوْن,N,rjw,رجو,1,deferred (1),1,9:106:2,مُرْجَوْنَ
+PASS_PCPL,murosala`t,مُرْسَلَٰت,N,rsl,رسل,1,By the ones sent forth (1),1,77:1:1,وَالْمُرْسَلٰتِ
+PASS_PCPL,musax~ar,مُسَخَّر,ADJ,sxr,سخر,1,[the] controlled (1),1,2:164:37,الْمُسَخَّرِ
+PASS_PCPL,musomaE,مُسْمَع,N,smE,سمع,1,to be heard (1),1,4:46:13,مُسْمَعٍ
+PASS_PCPL,mutab~ar,مُتَبَّر,N,tbr,تبر,1,destroyed (1),1,7:139:3,مُتَبَّرٌ
+PASS_PCPL,mutaqal~ab,مُتَقَلَّب,N,qlb,قلب,1,your movement (1),1,47:19:13,مُتَقَلَّبَكُمْ
+PASS_PCPL,mut~aka_#,مُتَّكَـٔ,N,wkA,وكا,1,a banquet (1),1,12:31:8,مُتَّكَاً
+PASS_PCPL,muvoqalap,مُثْقَلَة,N,vql,ثقل,1,a heavily laden (1),1,35:18:8,مُثْقَلَةٌ
+PASS_PCPL,muwqadap,مُوقَدَة,ADJ,wqd,وقد,1,kindled (1),1,104:6:3,الْمُوْقَدَةُ
+PASS_PCPL,muzodajar,مُزْدَجَر,N,zjr,زجر,1,(is) deterrence (1),1,54:4:7,مُزْدَجَرٌ
+PASS_PCPL,m~a$iyd,مَّشِيد,N,$yd,شيد,1,lofty (1),1,22:45:14,مَّشِیْدٍ
+PASS_PCPL,m~a*okuwr,مَّذْكُور,ADJ,*kr,ذكر,1,mentioned (1),1,76:1:11,مَّذْكُوْرًا
+PASS_PCPL,m~a>okuwl,مَّأْكُول,ADJ,Akl,اكل,1,eaten up (1),1,105:5:3,مَّاْكُوْلٍ
+PASS_PCPL,m~aEoduwd,مَّعْدُود,N,Edd,عدد,1,limited (1),1,11:104:5,مَّعْدُوْدٍ
+PASS_PCPL,m~aEoruwfap,مَّعْرُوفَة,N,Erf,عرف,1,(is) known (1),1,24:53:12,مَّعْرُوْفَةٌ ؕ
+PASS_PCPL,m~aHomuwd,مَّحْمُود,N,Hmd,حمد,1,praiseworthy (1),1,17:79:12,مَّحْمُوْدًا
+PASS_PCPL,m~aHosuwr,مَّحْسُور,N,Hsr,حسر,1,insolvent (1),1,17:29:13,مَّحْسُوْرًا
+PASS_PCPL,m~aboniy~ap,مَّبْنِيَّة,N,bny,بني,1,built high (1),1,39:20:10,مَّبْنِیَّةٌ ۙ
+PASS_PCPL,m~ahiyl,مَّهِيل,ADJ,hyl,هيل,1,pouring down (1),1,73:14:8,مَّهِیْلًا
+PASS_PCPL,m~aloEuwniyn,مَّلْعُونِين,N,lEn,لعن,1,Accursed (1),1,33:61:1,مَّلْعُوْنِیْنَ ۛۚ
+PASS_PCPL,m~amoluwk,مَّمْلُوك,N,mlk,ملك,1,(who is) owned (1),1,16:75:5,مَّمْلُوْكًا
+PASS_PCPL,m~ansiy~,مَّنسِيّ,N,nsy,نسي,1,forgotten (1),1,19:23:13,مَّنْسِیًّا
+PASS_PCPL,m~aqobuwDap,مَّقْبُوضَة,ADJ,qbD,قبض,1,in hand (1),1,2:283:9,مَّقْبُوْضَةٌ ؕ
+PASS_PCPL,m~aqoduwr,مَّقْدُور,N,qdr,قدر,1,destined (1),1,33:38:22,مَّقْدُوْرَا
+PASS_PCPL,m~aqosuwm,مَّقْسُوم,N,qsm,قسم,1,assigned (1),1,15:44:8,مَّقْسُوْمٌ
+PASS_PCPL,m~aroDiy~ap,مَّرْضِيَّة,N,rDw,رضو,1,and pleasing (1),1,89:28:5,مَّرْضِیَّةً
+PASS_PCPL,m~aroSuwS,مَّرْصُوص,ADJ,rSS,رصص,1,joined firmly (1),1,61:4:11,مَّرْصُوْصٌ
+PASS_PCPL,m~arokuwm,مَّرْكُوم,N,rkm,ركم,1,heaped up (1),1,52:44:9,مَّرْكُوْمٌ
+PASS_PCPL,m~asofuwH,مَّسْفُوح,ADJ,sfH,سفح,1,poured forth (1),1,6:145:18,مَّسْفُوْحًا
+PASS_PCPL,m~asokuwb,مَّسْكُوب,N,skb,سكب,1,poured forth (1),1,56:31:2,مَّسْكُوْبٍ
+PASS_PCPL,m~asotuwr,مَّسْتُور,N,str,ستر,1,hidden (1),1,17:45:12,مَّسْتُوْرًا
+PASS_PCPL,m~awoDuwEap,مَّوْضُوعَة,ADJ,wDE,وضع,1,put in place (1),1,88:14:2,مَّوْضُوْعَةٌ
+PASS_PCPL,m~awoDuwnap,مَّوْضُونَة,ADJ,wDn,وضن,1,decorated (1),1,56:15:3,مَّوْضُوْنَةٍ
+PASS_PCPL,m~awofuwr,مَّوْفُور,N,wfr,وفر,1,ample (1),1,17:63:10,مَّوْفُوْرًا
+PASS_PCPL,m~awoquwt,مَّوْقُوت,ADJ,wqt,وقت,1,(at) fixed times (1),1,4:103:20,مَّوْقُوْتًا
+PASS_PCPL,m~awozuwn,مَّوْزُون,N,wzn,وزن,1,well-balanced (1),1,15:19:11,مَّوْزُوْنٍ
+PASS_PCPL,m~axo*uwl,مَّخْذُول,N,x*l,خذل,1,forsaken (1),1,17:22:9,مَّخْذُوْلًا
+PASS_PCPL,m~axoDuwd,مَّخْضُود,ADJ,xDd,خضد,1,thornless (1),1,56:28:3,مَّخْضُوْدٍ
+PASS_PCPL,m~axotuwm,مَّخْتُوم,ADJ,xtm,ختم,1,sealed (1),1,83:25:4,مَّخْتُوْمٍ
+PASS_PCPL,m~ayosuwr,مَّيْسُور,N,ysr,يسر,1,gentle (1),1,17:28:12,مَّیْسُوْرًا
+PASS_PCPL,m~u$ay~adap,مُّشَيَّدَة,N,$yd,شيد,1,lofty (1),1,4:78:9,مُّشَیَّدَةٍ ؕ
+PASS_PCPL,m~u&aj~al,مُّؤَجَّل,ADJ,Ajl,اجل,1,determined (1),1,3:145:10,مُّؤَجَّلًا ؕ
+PASS_PCPL,m~u*abo*abiyn,مُّذَبْذَبِين,N,*b*b,ذبذب,1,Wavering (1),1,4:143:1,مُّذَبْذَبِیْنَ
+PASS_PCPL,m~uEaT~alap,مُّعَطَّلَة,N,ETl,عطل,1,abandoned (1),1,22:45:12,مُّعَطَّلَةٍ
+PASS_PCPL,m~uEam~ar,مُّعَمَّر,N,Emr,عمر,1,aged person (1),1,35:11:22,مُّعَمَّرٍ
+PASS_PCPL,m~uHaS~anap,مُّحَصَّنَة,ADJ,HSn,حصن,1,fortified (1),1,59:14:7,مُّحَصَّنَةٍ
+PASS_PCPL,m~uHokama`t,مُّحْكَمَٰت,ADJ,Hkm,حكم,1,absolutely clear - (1),1,3:7:8,مُّحْكَمٰتٌ
+PASS_PCPL,m~uHokamap,مُّحْكَمَة,N,Hkm,حكم,1,precise (1),1,47:20:10,مُّحْكَمَةٌ
+PASS_PCPL,m~uHotaDar,مُّحْتَضَر,N,HDr,حضر,1,attended (1),1,54:28:8,مُّحْتَضَرٌ
+PASS_PCPL,m~uSaf~FY,مُّصَفًّى,N,Sfw,صفو,1,purified (1),1,47:15:26,مُّصَفًّی ؕ
+PASS_PCPL,m~uTaAE,مُّطَاع,ADJ,TwE,طوع,1,One to be obeyed (1),1,81:21:1,مُّطَاعٍ
+PASS_PCPL,m~ufat~aHap,مُّفَتَّحَة,N,ftH,فتح,1,(will be) opened (1),1,38:50:3,مُّفَتَّحَةً
+PASS_PCPL,m~uforaTuwn,مُّفْرَطُون,N,frT,فرط,1,(will) be abandoned (1),1,16:62:17,مُّفْرَطُوْنَ
+PASS_PCPL,m~ukar~amap,مُّكَرَّمَة,ADJ,krm,كرم,1,honored (1),1,80:13:3,مُّكَرَّمَةٍ
+PASS_PCPL,m~umad~adap,مُّمَدَّدَة,ADJ,mdd,مدد,1,extended (1),1,104:9:3,مُّمَدَّدَةٍ
+PASS_PCPL,m~umar~ad,مُّمَرَّد,N,mrd,مرد,1,made smooth (1),1,27:44:15,مُّمَرَّدٌ
+PASS_PCPL,m~una$~arap,مُّنَشَّرَة,ADJ,n$r,نشر,1,spread out (1),1,74:52:9,مُّنَشَّرَةً
+PASS_PCPL,m~uqomaHuwn,مُّقْمَحُون,N,qmH,قمح,1,(are with) heads raised up (1),1,36:8:10,مُّقْمَحُوْنَ
+PASS_PCPL,m~usan~adap,مُّسَنَّدَة,ADJ,snd,سند,1,propped up (1),1,63:4:11,مُّسَنَّدَةٌ ؕ
+PASS_PCPL,m~usotaTar,مُّسْتَطَر,N,sTr,سطر,1,(is) written down (1),1,54:53:4,مُّسْتَطَرٌ
+PASS_PCPL,m~usotaxolafiyn,مُّسْتَخْلَفِين,N,xlf,خلف,1,trustees (1),1,57:7:7,مُّسْتَخْلَفِیْنَ
+PASS_PCPL,m~uzojaY`p,مُّزْجَىٰة,N,zjw,زجو,1,(of) little value (1),1,12:88:12,مُّزْجٰىةٍ

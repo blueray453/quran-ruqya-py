@@ -1,0 +1,346 @@
+﻿pos,case,case_meaning,definiteness,gender,number,derived_type,count,distinct_lemmas,first_word,example_text_indopak
+ADJ,ACC,Accusative case,indefinite (marked),M,S,,331,94,2:41:16,قَلِیْلًا ؗ
+ADJ,ACC,Accusative case,definite (Al-),M,P,ACT_PCPL,23,5,2:258:43,الظّٰلِمِیْنَ
+ADJ,ACC,Accusative case,indefinite (marked),M,,ACT_PCPL,20,8,2:126:8,اٰمِنًا
+ADJ,ACC,Accusative case,definite (Al-),F,S,,18,3,2:86:5,الدُّنْیَا
+ADJ,ACC,Accusative case,unmarked,M,P,ACT_PCPL,17,9,2:65:12,خٰسِـِٕیْنَ
+ADJ,ACC,Accusative case,indefinite (marked),F,P,,16,11,2:99:5,بَیِّنٰتٍ ۚ
+ADJ,ACC,Accusative case,indefinite (marked),M,P,,16,13,7:57:13,ثِقَالًا
+ADJ,ACC,Accusative case,indefinite (marked),M,,,14,11,2:35:9,رَغَدًا
+ADJ,ACC,Accusative case,indefinite (marked),M,,PASS_PCPL,14,10,2:235:26,مَّعْرُوْفًا ؕ۬
+ADJ,ACC,Accusative case,definite (Al-),M,S,,13,10,7:157:5,الْاُمِّیَّ
+ADJ,ACC,Accusative case,unmarked,M,S,,13,3,15:96:6,اٰخَرَ ۚ
+ADJ,ACC,Accusative case,indefinite (marked),F,S,,12,4,2:245:11,كَثِیْرَةً ؕ
+ADJ,ACC,Accusative case,indefinite (marked),F,,,10,7,2:213:4,وَّاحِدَةً ۫
+ADJ,ACC,Accusative case,unmarked,M,P,,10,5,4:135:7,شُهَدَآءَ
+ADJ,ACC,Accusative case,definite (Al-),M,P,PASS_PCPL,7,1,15:40:4,الْمُخْلَصِیْنَ
+ADJ,ACC,Accusative case,definite (Al-),M,,,6,2,5:2:10,الْحَرَامَ
+ADJ,ACC,Accusative case,indefinite (marked),M,P,ACT_PCPL,6,2,16:48:14,سُجَّدًا
+ADJ,ACC,Accusative case,unmarked,F,S,,5,2,6:19:25,اُخْرٰی ؕ
+ADJ,ACC,Accusative case,definite (Al-),F,,,5,2,20:21:7,الْاُوْلٰی
+ADJ,ACC,Accusative case,definite (Al-),M,,ACT_PCPL,4,2,1:6:3,الْمُسْتَقِیْمَ
+ADJ,ACC,Accusative case,indefinite (marked),F,,ACT_PCPL,4,4,2:128:8,مُّسْلِمَةً
+ADJ,ACC,Accusative case,definite (Al-),M,P,,4,3,13:12:9,الثِّقَالَ
+ADJ,ACC,Accusative case,indefinite (marked),F,P,PASS_PCPL,3,2,2:184:2,مَّعْدُوْدٰتٍ ؕ
+ADJ,ACC,Accusative case,definite (Al-),F,P,ACT_PCPL,3,2,4:25:9,الْمُؤْمِنٰتِ
+ADJ,ACC,Accusative case,indefinite (marked),F,P,ACT_PCPL,3,3,66:5:10,مُسْلِمٰتٍ
+ADJ,ACC,Accusative case,indefinite (marked),M,,VN,3,3,78:26:2,وِّفَاقًا
+ADJ,ACC,Accusative case,indefinite (marked),,,,2,2,2:143:4,وَّسَطًا
+ADJ,ACC,Accusative case,indefinite (marked),F,,PASS_PCPL,2,2,74:52:9,مُّنَشَّرَةً
+ADJ,ACC,Accusative case,indefinite (marked),F,S,PASS_PCPL,1,1,2:80:7,مَّعْدُوْدَةً ؕ
+ADJ,ACC,Accusative case,unmarked,M,D,ACT_PCPL,1,1,2:233:5,كَامِلَیْنِ
+ADJ,ACC,Accusative case,indefinite (marked),M,S,ACT_PCPL,1,1,3:67:10,مُّسْلِمًا ؕ
+ADJ,ACC,Accusative case,indefinite (marked),,,VN,1,1,4:9:8,ضِعٰفًا
+ADJ,ACC,Accusative case,definite (Al-),F,,PASS_PCPL,1,1,5:21:4,الْمُقَدَّسَةَ
+ADJ,ACC,Accusative case,definite (Al-),,P,,1,1,20:4:6,الْعُلٰی
+ADJ,ACC,Accusative case,unmarked,,,,1,1,20:58:14,سُوًی
+ADJ,ACC,Accusative case,unmarked,M,P,PASS_PCPL,1,1,38:38:2,مُقَرَّنِیْنَ
+ADJ,GEN,Genitive case,indefinite (marked),M,S,,163,63,2:61:8,وَّاحِدٍ
+ADJ,GEN,Genitive case,definite (Al-),M,S,,131,47,1:1:3,الرَّحْمٰنِ
+ADJ,GEN,Genitive case,definite (Al-),F,S,,42,3,2:85:38,الدُّنْیَا ۚ
+ADJ,GEN,Genitive case,definite (Al-),M,P,ACT_PCPL,30,8,2:250:15,الْكٰفِرِیْنَ
+ADJ,GEN,Genitive case,indefinite (marked),M,,ACT_PCPL,22,7,2:142:21,مُّسْتَقِیْمٍ
+ADJ,GEN,Genitive case,indefinite (marked),F,,ACT_PCPL,15,10,4:19:21,مُّبَیِّنَةٍ ۚ
+ADJ,GEN,Genitive case,definite (Al-),M,P,,14,5,2:125:22,السُّجُوْدِ
+ADJ,GEN,Genitive case,definite (Al-),M,,,14,3,2:144:14,الْحَرَامِ ؕ
+ADJ,GEN,Genitive case,indefinite (marked),F,P,,14,7,12:43:15,یٰبِسٰتٍ ؕ
+ADJ,GEN,Genitive case,indefinite (marked),F,S,,10,6,2:211:8,بَیِّنَةٍ ؕ
+ADJ,GEN,Genitive case,indefinite (marked),M,,PASS_PCPL,10,9,2:282:9,مُّسَمًّی
+ADJ,GEN,Genitive case,definite (Al-),M,,PASS_PCPL,7,6,2:164:37,الْمُسَخَّرِ
+ADJ,GEN,Genitive case,definite (Al-),F,,,7,5,2:238:5,الْوُسْطٰی ۗ
+ADJ,GEN,Genitive case,indefinite (marked),M,P,,6,5,5:54:15,اَذِلَّةٍ
+ADJ,GEN,Genitive case,unmarked,M,P,ACT_PCPL,5,5,9:14:11,مُّؤْمِنِیْنَ
+ADJ,GEN,Genitive case,indefinite (marked),F,P,PASS_PCPL,4,4,2:203:5,مَّعْدُوْدٰتٍ ؕ
+ADJ,GEN,Genitive case,indefinite (marked),F,,,4,2,2:249:52,قَلِیْلَةٍ
+ADJ,GEN,Genitive case,definite (Al-),M,,ACT_PCPL,4,2,3:184:12,الْمُنِیْرِ
+ADJ,GEN,Genitive case,definite (Al-),F,P,ACT_PCPL,3,2,4:25:16,الْمُؤْمِنٰتِ ؕ
+ADJ,GEN,Genitive case,unmarked,M,D,ACT_PCPL,3,2,4:92:53,مُتَتَابِعَیْنِ ؗ
+ADJ,GEN,Genitive case,definite (Al-),M,P,PASS_PCPL,3,3,12:24:19,الْمُخْلَصِیْنَ
+ADJ,GEN,Genitive case,unmarked,M,S,,3,3,20:53:19,شَتّٰی
+ADJ,GEN,Genitive case,indefinite (marked),F,,PASS_PCPL,3,3,56:15:3,مَّوْضُوْنَةٍ
+ADJ,GEN,Genitive case,unmarked,F,P,,2,1,2:184:13,اُخَرَ ؕ
+ADJ,GEN,Genitive case,definite (Al-),F,,PASS_PCPL,2,2,3:14:9,الْمُقَنْطَرَةِ
+ADJ,GEN,Genitive case,indefinite (marked),M,,,2,2,3:64:7,سَوَآءٍۭ
+ADJ,GEN,Genitive case,unmarked,M,P,,2,1,5:41:24,اٰخَرِیْنَ ۙ
+ADJ,GEN,Genitive case,indefinite (marked),,,,2,1,31:18:15,مُخْتَالٍ
+ADJ,GEN,Genitive case,definite (Al-),,,ACT_PCPL,1,1,4:75:20,الظَّالِمِ
+ADJ,GEN,Genitive case,indefinite (marked),F,S,PASS_PCPL,1,1,12:20:5,مَعْدُوْدَةٍ ۚ
+ADJ,GEN,Genitive case,unmarked,M,,,1,1,14:37:7,غَیْرِ
+ADJ,GEN,Genitive case,indefinite (marked),M,S,ACT_PCPL,1,1,50:32:6,حَفِیْظٍ
+ADJ,GEN,Genitive case,definite (Al-),F,,ACT_PCPL,1,1,69:24:8,الْخَالِیَةِ
+ADJ,NOM,Nominative case,indefinite (marked),M,S,,417,56,2:7:12,عَظِیْمٌ
+ADJ,NOM,Nominative case,definite (Al-),M,S,,170,38,2:32:12,الْحَكِیْمُ
+ADJ,NOM,Nominative case,unmarked,M,S,,39,14,9:97:2,اَشَدُّ
+ADJ,NOM,Nominative case,indefinite (marked),M,,ACT_PCPL,34,10,2:68:15,فَارِضٌ
+ADJ,NOM,Nominative case,definite (Al-),F,S,,30,5,2:94:6,الْاٰخِرَةُ
+ADJ,NOM,Nominative case,indefinite (marked),F,,ACT_PCPL,16,16,2:196:58,كَامِلَةٌ ؕ
+ADJ,NOM,Nominative case,definite (Al-),M,,ACT_PCPL,15,8,5:92:13,الْمُبِیْنُ
+ADJ,NOM,Nominative case,indefinite (marked),F,,PASS_PCPL,11,8,2:71:13,مُسَلَّمَةٌ
+ADJ,NOM,Nominative case,indefinite (marked),M,,PASS_PCPL,10,6,2:263:2,مَّعْرُوْفٌ
+ADJ,NOM,Nominative case,indefinite (marked),M,P,,9,7,2:197:3,مَّعْلُوْمٰتٌ ۚ
+ADJ,NOM,Nominative case,indefinite (marked),F,S,,7,4,4:94:25,كَثِیْرَةٌ ؕ
+ADJ,NOM,Nominative case,indefinite (marked),F,,,7,5,39:60:9,مُّسْوَدَّةٌ ؕ
+ADJ,NOM,Nominative case,unmarked,M,P,,6,6,2:266:23,ضُعَفَآءُ ۪ۖ
+ADJ,NOM,Nominative case,definite (Al-),M,,,5,4,2:194:2,الْحَرَامُ
+ADJ,NOM,Nominative case,definite (Al-),M,P,,5,3,9:5:4,الْحُرُمُ
+ADJ,NOM,Nominative case,indefinite (marked),M,S,ACT_PCPL,5,2,11:57:21,حَفِیْظٌ
+ADJ,NOM,Nominative case,indefinite (marked),M,,,4,4,2:68:17,بِكْرٌ ؕ
+ADJ,NOM,Nominative case,indefinite (marked),F,P,,4,3,3:97:3,بَیِّنٰتٌ
+ADJ,NOM,Nominative case,unmarked,M,P,ACT_PCPL,4,3,7:81:11,مُّسْرِفُوْنَ
+ADJ,NOM,Nominative case,unmarked,M,,,2,1,4:95:6,غَیْرُ
+ADJ,NOM,Nominative case,unmarked,F,S,,2,1,4:102:20,اُخْرٰی
+ADJ,NOM,Nominative case,definite (Al-),M,P,ACT_PCPL,2,2,6:47:14,الظّٰلِمُوْنَ
+ADJ,NOM,Nominative case,definite (Al-),F,,ACT_PCPL,2,2,6:149:4,الْبَالِغَةُ ۚ
+ADJ,NOM,Nominative case,unmarked,M,P,PASS_PCPL,2,2,8:26:5,مُّسْتَضْعَفُوْنَ
+ADJ,NOM,Nominative case,unmarked,M,D,,2,2,18:82:5,یَتِیْمَیْنِ
+ADJ,NOM,Nominative case,definite (Al-),,P,,2,1,30:50:14,الْمَوْتٰى ۚ
+ADJ,NOM,Nominative case,indefinite (marked),,P,,2,2,35:27:17,بِیْضٌ
+ADJ,NOM,Nominative case,indefinite (marked),F,S,PASS_PCPL,1,1,2:25:31,مُّطَهَّرَةٌ ۙۗ
+ADJ,NOM,Nominative case,unmarked,,,,1,1,2:69:14,صَفْرَآءُ ۙ
+ADJ,NOM,Nominative case,indefinite (marked),,,ACT_PCPL,1,1,2:69:15,فَاقِعٌ
+ADJ,NOM,Nominative case,indefinite (marked),F,P,PASS_PCPL,1,1,3:7:8,مُّحْكَمٰتٌ
+ADJ,NOM,Nominative case,indefinite (marked),M,P,ACT_PCPL,1,1,3:7:13,مُتَشٰبِهٰتٌ ؕ
+ADJ,NOM,Nominative case,definite (Al-),M,P,PASS_PCPL,1,1,4:172:10,الْمُقَرَّبُوْنَ ؕ
+ADJ,NOM,Nominative case,unmarked,M,,ACT_PCPL,1,1,6:92:5,مُّصَدِّقُ
+ADJ,NOM,Nominative case,definite (Al-),F,P,,1,1,20:75:10,الْعُلٰی
+ADJ,NOM,Nominative case,indefinite (marked),,,,1,1,40:34:30,مُّرْتَابُ
+ADJ,NOM,Nominative case,unmarked,F,,,1,1,53:22:4,ضِیْزٰی
+ADJ,NOM,Nominative case,definite (Al-),F,P,PASS_PCPL,1,1,55:24:3,الْمُنْشَـٰٔتُ
+ADJ,NOM,Nominative case,unmarked,F,D,,1,1,55:66:3,نَضَّاخَتٰنِ
+ADJ,NOM,Nominative case,definite (Al-),F,,,1,1,79:34:4,الْكُبْرٰی
+ADJ,NOM,Nominative case,definite (Al-),F,,PASS_PCPL,1,1,104:6:3,الْمُوْقَدَةُ
+N,ACC,Accusative case,indefinite (marked),M,,,1617,514,2:10:6,مَرَضًا ۚ
+N,ACC,Accusative case,unmarked,M,,,1457,242,1:7:1,صِرَاطَ
+N,ACC,Accusative case,definite (Al-),M,,,711,165,1:6:2,الصِّرَاطَ
+N,ACC,Accusative case,unmarked,M,P,,488,142,2:19:10,اَصَابِعَهُمْ
+N,ACC,Accusative case,indefinite (marked),F,,,347,130,2:17:5,نَارًا ۚ
+N,ACC,Accusative case,definite (Al-),F,,,338,66,2:3:5,الصَّلٰوةَ
+N,ACC,Accusative case,unmarked,M,P,ACT_PCPL,331,94,2:16:11,مُهْتَدِیْنَ
+N,ACC,Accusative case,indefinite (marked),M,S,,299,85,2:26:31,كَثِیْرًا ۙ
+N,ACC,Accusative case,definite (Al-),M,P,ACT_PCPL,210,59,2:26:39,الْفٰسِقِیْنَ
+N,ACC,Accusative case,definite (Al-),M,P,,205,73,2:30:17,الدِّمَآءَ ۚ
+N,ACC,Accusative case,indefinite (marked),M,P,,190,81,2:22:21,اَنْدَادًا
+N,ACC,Accusative case,unmarked,F,,,180,72,2:40:4,نِعْمَتِیَ
+N,ACC,Accusative case,unmarked,M,S,,180,32,2:41:9,اَوَّلَ
+N,ACC,Accusative case,indefinite (marked),M,,ACT_PCPL,172,78,2:25:27,مُتَشَابِهًا ؕ
+N,ACC,Accusative case,unmarked,F,P,,161,27,2:9:8,اَنْفُسَهُمْ
+N,ACC,Accusative case,indefinite (marked),M,,VN,159,75,2:59:4,قَوْلًا
+N,ACC,Accusative case,unmarked,M,,VN,93,37,2:19:15,حَذَرَ
+N,ACC,Accusative case,indefinite (marked),M,,PASS_PCPL,88,58,3:30:9,مُّحْضَرًا ۛۖۚ
+N,ACC,Accusative case,indefinite (marked),F,S,,82,9,2:72:3,نَفْسًا
+N,ACC,Accusative case,definite (Al-),F,P,,74,17,2:87:13,الْبَیِّنٰتِ
+N,ACC,Accusative case,indefinite (marked),F,P,,66,25,2:25:8,جَنّٰتٍ
+N,ACC,Accusative case,unmarked,F,S,,48,10,2:130:9,نَفْسَهٗ ؕ
+N,ACC,Accusative case,definite (Al-),F,P,ACT_PCPL,43,14,2:25:5,الصّٰلِحٰتِ
+N,ACC,Accusative case,unmarked,M,,ACT_PCPL,42,32,3:26:3,مٰلِكَ
+N,ACC,Accusative case,indefinite (marked),F,,ACT_PCPL,34,27,2:94:9,خَالِصَةً
+N,ACC,Accusative case,definite (Al-),F,S,,30,9,2:173:4,الْمَیْتَةَ
+N,ACC,Accusative case,definite (Al-),M,S,,28,12,2:267:16,الْخَبِیْثَ
+N,ACC,Accusative case,unmarked,,,,26,15,2:125:11,مُصَلًّی ؕ
+N,ACC,Accusative case,definite (Al-),M,,VN,22,7,10:5:13,وَالْحِسَابَ ؕ
+N,ACC,Accusative case,unmarked,M,D,,21,12,2:177:23,ذَوِی
+N,ACC,Accusative case,indefinite (marked),M,P,ACT_PCPL,15,6,2:58:13,سُجَّدًا
+N,ACC,Accusative case,definite (Al-),,P,,15,5,2:73:7,الْمَوْتٰی ۙ
+N,ACC,Accusative case,indefinite (marked),M,S,ACT_PCPL,13,7,4:16:13,تَوَّابًا
+N,ACC,Accusative case,definite (Al-),M,P,PASS_PCPL,13,2,4:98:2,الْمُسْتَضْعَفِیْنَ
+N,ACC,Accusative case,definite (Al-),M,,ACT_PCPL,12,7,2:220:16,الْمُفْسِدَ
+N,ACC,Accusative case,indefinite (marked),,,,12,6,3:154:7,اَمَنَةً
+N,ACC,Accusative case,unmarked,F,D,,12,8,4:88:5,فِئَتَیْنِ
+N,ACC,Accusative case,indefinite (marked),F,,VN,11,8,5:60:7,مَثُوْبَةً
+N,ACC,Accusative case,unmarked,M,P,PASS_PCPL,10,8,3:124:13,مُنْزَلِیْنَ
+N,ACC,Accusative case,unmarked,F,P,ACT_PCPL,10,2,4:25:33,مُتَّخِذٰتِ
+N,ACC,Accusative case,unmarked,,P,,9,5,2:58:18,خَطٰیٰكُمْ ؕ
+N,ACC,Accusative case,indefinite (marked),,P,,9,7,3:156:16,غُزًّی
+N,ACC,Accusative case,unmarked,M,,PASS_PCPL,7,7,10:93:5,مُبَوَّاَ
+N,ACC,Accusative case,definite (Al-),M,D,,6,5,6:143:10,ءٰٓالذَّكَرَیْنِ
+N,ACC,Accusative case,indefinite (marked),F,,PASS_PCPL,6,5,11:83:1,مُّسَوَّمَةً
+N,ACC,Accusative case,definite (Al-),,,,5,3,5:60:20,الطَّاغُوْتَ ؕ
+N,ACC,Accusative case,definite (Al-),F,,ACT_PCPL,5,3,17:18:4,الْعَاجِلَةَ
+N,ACC,Accusative case,unmarked,M,D,ACT_PCPL,3,3,2:128:3,مُسْلِمَیْنِ
+N,ACC,Accusative case,definite (Al-),F,P,PASS_PCPL,3,1,4:25:8,الْمُحْصَنٰتِ
+N,ACC,Accusative case,definite (Al-),F,D,,3,2,6:143:13,الْاُنْثَیَیْنِ
+N,ACC,Accusative case,unmarked,F,,ACT_PCPL,3,3,7:163:6,حَاضِرَةَ
+N,ACC,Accusative case,indefinite (marked),F,S,ACT_PCPL,3,1,41:39:6,خَاشِعَةً
+N,ACC,Accusative case,indefinite (marked),,,VN,2,1,3:191:5,وَّقُعُوْدًا
+N,ACC,Accusative case,indefinite (marked),F,P,PASS_PCPL,2,2,4:25:29,مُحْصَنٰتٍ
+N,ACC,Accusative case,indefinite (marked),M,P,VN,2,1,19:68:8,جِثِیًّا
+N,ACC,Accusative case,definite (Al-),M,,PASS_PCPL,2,1,22:72:11,الْمُنْكَرَ ؕ
+N,ACC,Accusative case,unmarked,F,,VN,2,2,53:27:8,تَسْمِیَةَ
+N,ACC,Accusative case,indefinite (marked),F,P,ACT_PCPL,2,2,60:10:14,مُؤْمِنٰتٍ
+N,ACC,Accusative case,indefinite (marked),F,S,VN,1,1,3:28:21,تُقٰىةً ؕ
+N,ACC,Accusative case,definite (Al-),F,,PASS_PCPL,1,1,17:60:17,الْمَلْعُوْنَةَ
+N,ACC,Accusative case,unmarked,,,VN,1,1,21:73:7,فِعْلَ
+N,ACC,Accusative case,unmarked,F,S,VN,1,1,66:1:10,مَرْضَاتَ
+N,ACC,Accusative case,unmarked,F,S,ACT_PCPL,1,1,111:4:2,حَمَّالَةَ
+N,GEN,Genitive case,unmarked,M,,,1759,237,1:1:1,بِسْمِ
+N,GEN,Genitive case,definite (Al-),M,,,1322,304,1:4:3,الدِّیْنِ
+N,GEN,Genitive case,indefinite (marked),M,,,1205,289,2:5:3,هُدًی
+N,GEN,Genitive case,definite (Al-),F,,,811,85,2:11:7,الْاَرْضِ ۙ
+N,GEN,Genitive case,unmarked,,,,661,22,2:4:9,قَبْلِكَ ۚ
+N,GEN,Genitive case,definite (Al-),M,P,,587,120,1:2:4,الْعٰلَمِیْنَ
+N,GEN,Genitive case,unmarked,M,P,,544,118,2:7:8,اَبْصَارِهِمْ
+N,GEN,Genitive case,definite (Al-),M,P,ACT_PCPL,518,101,1:7:9,الضَّآلِّیْنَ
+N,GEN,Genitive case,unmarked,F,P,,439,38,2:7:4,قُلُوْبِهِمْ
+N,GEN,Genitive case,definite (Al-),F,P,,293,32,2:19:14,الصَّوَاعِقِ
+N,GEN,Genitive case,indefinite (marked),F,,,258,113,2:23:10,بِسُوْرَةٍ
+N,GEN,Genitive case,unmarked,F,,,192,70,2:60:12,عَشْرَةَ
+N,GEN,Genitive case,definite (Al-),F,S,,155,11,2:4:10,وَبِالْاٰخِرَةِ
+N,GEN,Genitive case,indefinite (marked),M,,ACT_PCPL,154,69,2:74:35,بِغَافِلٍ
+N,GEN,Genitive case,unmarked,F,S,,113,10,2:97:9,قَلْبِكَ
+N,GEN,Genitive case,unmarked,M,,VN,110,28,2:15:6,طُغْیَانِهِمْ
+N,GEN,Genitive case,indefinite (marked),M,S,,110,36,2:105:14,خَیْرٍ
+N,GEN,Genitive case,indefinite (marked),F,P,,104,29,2:17:15,ظُلُمٰتٍ
+N,GEN,Genitive case,indefinite (marked),F,S,,104,9,2:48:7,نَّفْسٍ
+N,GEN,Genitive case,indefinite (marked),M,P,,97,48,2:60:17,اُنَاسٍ
+N,GEN,Genitive case,unmarked,M,S,,93,22,2:83:12,وَّذِی
+N,GEN,Genitive case,definite (Al-),M,S,,82,24,3:27:12,الْمَیِّتِ
+N,GEN,Genitive case,definite (Al-),F,P,ACT_PCPL,74,27,4:124:4,الصّٰلِحٰتِ
+N,GEN,Genitive case,definite (Al-),M,,VN,69,18,2:108:14,بِالْاِیْمَانِ
+N,GEN,Genitive case,indefinite (marked),M,,PASS_PCPL,68,31,2:229:4,بِمَعْرُوْفٍ
+N,GEN,Genitive case,definite (Al-),M,,PASS_PCPL,52,14,1:7:6,الْمَغْضُوْبِ
+N,GEN,Genitive case,unmarked,M,P,ACT_PCPL,48,27,2:8:11,بِمُؤْمِنِیْنَ
+N,GEN,Genitive case,indefinite (marked),M,,VN,47,25,2:137:14,شِقَاقٍ ۚ
+N,GEN,Genitive case,definite (Al-),M,P,PASS_PCPL,41,19,2:252:9,الْمُرْسَلِیْنَ
+N,GEN,Genitive case,unmarked,M,,ACT_PCPL,34,20,1:4:1,مٰلِكِ
+N,GEN,Genitive case,definite (Al-),M,,ACT_PCPL,34,16,2:42:4,بِالْبَاطِلِ
+N,GEN,Genitive case,definite (Al-),,P,,33,9,2:83:14,وَالْیَتٰمٰی
+N,GEN,Genitive case,unmarked,M,D,,31,16,2:143:27,عَقِبَیْهِ ؕ
+N,GEN,Genitive case,unmarked,F,D,,20,7,2:66:5,یَدَیْهَا
+N,GEN,Genitive case,definite (Al-),M,D,,15,6,2:83:10,وَبِالْوَالِدَیْنِ
+N,GEN,Genitive case,indefinite (marked),F,,ACT_PCPL,14,12,2:221:10,مُّشْرِكَةٍ
+N,GEN,Genitive case,unmarked,M,P,PASS_PCPL,12,7,6:29:9,بِمَبْعُوْثِیْنَ
+N,GEN,Genitive case,definite (Al-),,,,11,5,2:256:12,بِالطَّاغُوْتِ
+N,GEN,Genitive case,indefinite (marked),,P,,11,6,3:124:10,اٰلٰفٍ
+N,GEN,Genitive case,indefinite (marked),F,,PASS_PCPL,9,8,4:78:9,مُّشَیَّدَةٍ ؕ
+N,GEN,Genitive case,indefinite (marked),,,,8,4,5:103:11,حَامٍ ۙ
+N,GEN,Genitive case,definite (Al-),F,D,,7,4,4:11:8,الْاُنْثَیَیْنِ ۚ
+N,GEN,Genitive case,unmarked,,P,,7,4,4:127:14,یَتٰمَی
+N,GEN,Genitive case,definite (Al-),F,,ACT_PCPL,6,5,22:53:10,وَّالْقَاسِیَةِ
+N,GEN,Genitive case,unmarked,F,S,VN,4,1,2:207:7,مَرْضَاتِ
+N,GEN,Genitive case,indefinite (marked),F,P,PASS_PCPL,4,4,6:141:7,مَعْرُوْشٰتٍ
+N,GEN,Genitive case,unmarked,F,P,ACT_PCPL,4,3,37:48:2,قٰصِرٰتُ
+N,GEN,Genitive case,definite (Al-),F,P,PASS_PCPL,3,3,2:241:1,وَلِلْمُطَلَّقٰتِ
+N,GEN,Genitive case,indefinite (marked),F,P,ACT_PCPL,3,3,4:25:31,مُسٰفِحٰتٍ
+N,GEN,Genitive case,definite (Al-),F,,PASS_PCPL,3,3,4:129:14,كَالْمُعَلَّقَةِ ؕ
+N,GEN,Genitive case,indefinite (marked),F,,VN,2,2,4:86:3,بِتَحِیَّةٍ
+N,GEN,Genitive case,indefinite (marked),M,S,ACT_PCPL,2,1,6:104:15,بِحَفِیْظٍ
+N,GEN,Genitive case,definite (Al-),M,S,ACT_PCPL,1,1,2:233:31,الْوَارِثِ
+N,GEN,Genitive case,unmarked,F,,ACT_PCPL,1,1,5:110:11,وَالِدَتِكَ ۘ
+N,GEN,Genitive case,definite (Al-),,,VN,1,1,9:83:20,بِالْقُعُوْدِ
+N,GEN,Genitive case,indefinite (marked),F,S,PASS_PCPL,1,1,11:8:7,مَّعْدُوْدَةٍ
+N,GEN,Genitive case,unmarked,M,,PASS_PCPL,1,1,11:41:7,وَمُرْسٰىهَا ؕ
+N,GEN,Genitive case,unmarked,,,VN,1,1,16:80:17,اِقَامَتِكُمْ ۙ
+N,GEN,Genitive case,unmarked,,,ACT_PCPL,1,1,29:29:8,نَادِیْكُمُ
+N,GEN,Genitive case,indefinite (marked),F,S,ACT_PCPL,1,1,34:13:11,رّٰسِیٰتٍ ؕ
+N,GEN,Genitive case,unmarked,,S,,1,1,43:51:15,تَحْتِیْ ۚ
+N,GEN,Genitive case,indefinite (marked),M,P,ACT_PCPL,1,1,51:45:4,قِیَامٍ
+N,GEN,Genitive case,unmarked,F,,VN,1,1,57:27:31,رِعَایَتِهَا ۚ
+N,GEN,Genitive case,definite (Al-),F,,VN,1,1,74:49:4,التَّذْكِرَةِ
+N,GEN,Genitive case,definite (Al-),F,S,ACT_PCPL,1,1,88:1:4,الْغَاشِیَةِ
+N,NOM,Nominative case,unmarked,M,,,1169,188,2:17:1,مَثَلُهُمْ
+N,NOM,Nominative case,indefinite (marked),M,,,850,207,2:2:6,هُدًی
+N,NOM,Nominative case,definite (Al-),M,,,541,179,1:2:1,اَلْحَمْدُ
+N,NOM,Nominative case,unmarked,M,P,,439,106,2:39:6,اَصْحٰبُ
+N,NOM,Nominative case,indefinite (marked),M,S,,384,71,2:29:19,عَلِیْمٌ
+N,NOM,Nominative case,unmarked,M,S,,362,52,2:61:27,اَدْنٰی
+N,NOM,Nominative case,unmarked,M,P,ACT_PCPL,304,128,2:11:11,مُصْلِحُوْنَ
+N,NOM,Nominative case,definite (Al-),M,P,,250,68,2:13:7,النَّاسُ
+N,NOM,Nominative case,definite (Al-),M,P,ACT_PCPL,227,65,2:5:8,الْمُفْلِحُوْنَ
+N,NOM,Nominative case,indefinite (marked),F,,,208,93,2:7:9,غِشَاوَةٌ ؗ
+N,NOM,Nominative case,unmarked,,,,206,22,2:21:1,یٰۤاَیُّهَا
+N,NOM,Nominative case,definite (Al-),F,,,202,50,2:24:11,وَالْحِجَارَةُ ۖۚ
+N,NOM,Nominative case,indefinite (marked),M,,ACT_PCPL,187,86,2:19:18,مُحِیْطٌ
+N,NOM,Nominative case,unmarked,F,,,185,61,2:16:8,تِّجَارَتُهُمْ
+N,NOM,Nominative case,unmarked,F,P,,165,22,2:74:3,قُلُوْبُكُمْ
+N,NOM,Nominative case,definite (Al-),M,S,,154,35,2:32:11,الْعَلِیْمُ
+N,NOM,Nominative case,indefinite (marked),M,P,,93,50,2:18:3,عُمْیٌ
+N,NOM,Nominative case,unmarked,M,,VN,63,21,2:85:22,اِخْرَاجُهُمْ ؕ
+N,NOM,Nominative case,unmarked,F,S,,58,15,2:260:16,قَلْبِیْ ؕ
+N,NOM,Nominative case,unmarked,M,P,PASS_PCPL,53,28,9:106:2,مُرْجَوْنَ
+N,NOM,Nominative case,indefinite (marked),F,S,,51,11,2:45:5,لَكَبِیْرَةٌ
+N,NOM,Nominative case,indefinite (marked),F,,ACT_PCPL,51,32,2:156:4,مُّصِیْبَةٌ ۙ
+N,NOM,Nominative case,unmarked,M,,ACT_PCPL,50,35,2:124:9,جَاعِلُكَ
+N,NOM,Nominative case,definite (Al-),F,P,,47,20,2:194:5,وَالْحُرُمٰتُ
+N,NOM,Nominative case,indefinite (marked),F,P,,46,18,2:19:6,ظُلُمٰتٌ
+N,NOM,Nominative case,unmarked,M,D,,44,22,2:229:2,مَرَّتٰنِ ۪
+N,NOM,Nominative case,indefinite (marked),M,,PASS_PCPL,43,28,2:36:16,مُسْتَقَرٌّ
+N,NOM,Nominative case,unmarked,F,D,,39,9,2:60:11,اثْنَتَا
+N,NOM,Nominative case,definite (Al-),M,,ACT_PCPL,38,24,2:273:13,الْجَاهِلُ
+N,NOM,Nominative case,definite (Al-),F,S,,34,11,2:55:12,الصّٰعِقَةُ
+N,NOM,Nominative case,indefinite (marked),M,,VN,32,17,2:178:21,فَاتِّبَاعٌ
+N,NOM,Nominative case,definite (Al-),M,,VN,25,10,3:154:60,الْقَتْلُ
+N,NOM,Nominative case,definite (Al-),,,,24,2,2:126:30,الْمَصِیْرُ
+N,NOM,Nominative case,definite (Al-),M,D,,21,13,3:155:7,الْجَمْعٰنِ ۙ
+N,NOM,Nominative case,definite (Al-),M,P,PASS_PCPL,16,6,9:81:2,الْمُخَلَّفُوْنَ
+N,NOM,Nominative case,indefinite (marked),,P,,14,8,2:18:1,صُمٌّۢ
+N,NOM,Nominative case,definite (Al-),,P,,14,4,2:260:8,الْمَوْتٰی ؕ
+N,NOM,Nominative case,definite (Al-),F,,ACT_PCPL,14,10,5:3:12,وَالْمُنْخَنِقَةُ
+N,NOM,Nominative case,definite (Al-),F,P,ACT_PCPL,7,5,2:233:1,وَالْوَالِدٰتُ
+N,NOM,Nominative case,definite (Al-),M,,PASS_PCPL,7,6,11:98:9,الْمَوْرُوْدُ
+N,NOM,Nominative case,definite (Al-),M,S,ACT_PCPL,6,1,2:37:10,التَّوَّابُ
+N,NOM,Nominative case,indefinite (marked),F,,VN,6,2,2:103:5,لَمَثُوْبَةٌ
+N,NOM,Nominative case,indefinite (marked),F,,PASS_PCPL,6,6,5:26:3,مُحَرَّمَةٌ
+N,NOM,Nominative case,unmarked,F,,ACT_PCPL,5,3,3:185:3,ذَآىِٕقَةُ
+N,NOM,Nominative case,definite (Al-),F,P,PASS_PCPL,4,2,2:228:1,وَالْمُطَلَّقٰتُ
+N,NOM,Nominative case,indefinite (marked),F,P,ACT_PCPL,4,4,4:34:16,قٰنِتٰتٌ
+N,NOM,Nominative case,unmarked,F,,VN,4,2,10:10:5,وَتَحِیَّتُهُمْ
+N,NOM,Nominative case,indefinite (marked),M,S,ACT_PCPL,3,3,2:283:27,اٰثِمٌ
+N,NOM,Nominative case,unmarked,M,,PASS_PCPL,3,2,7:187:5,مُرْسٰىهَا ؕ
+N,NOM,Nominative case,definite (Al-),F,D,,3,3,8:48:18,الْفِئَتٰنِ
+N,NOM,Nominative case,unmarked,,,VN,3,3,11:88:29,تَوْفِیْقِیْۤ
+N,NOM,Nominative case,unmarked,,P,,3,2,12:58:2,اِخْوَةُ
+N,NOM,Nominative case,indefinite (marked),F,S,ACT_PCPL,3,2,12:107:4,غَاشِیَةٌ
+N,NOM,Nominative case,indefinite (marked),M,P,ACT_PCPL,3,3,13:11:2,مُعَقِّبٰتٌ
+N,NOM,Nominative case,indefinite (marked),,,,3,3,31:33:9,وَالِدٌ
+N,NOM,Nominative case,definite (Al-),F,,PASS_PCPL,2,2,5:3:13,وَالْمَوْقُوْذَةُ
+N,NOM,Nominative case,unmarked,,,ACT_PCPL,2,1,11:76:11,اٰتِیْهِمْ
+N,NOM,Nominative case,indefinite (marked),,,ACT_PCPL,2,1,11:107:13,فَعَّالٌ
+N,NOM,Nominative case,unmarked,M,D,ACT_PCPL,2,2,14:33:5,دَآىِٕبَیْنِ ۚ
+N,NOM,Nominative case,indefinite (marked),F,P,PASS_PCPL,2,2,16:12:8,مُسَخَّرٰتٌ
+N,NOM,Nominative case,unmarked,M,S,ACT_PCPL,1,1,2:249:8,مُبْتَلِیْكُمْ
+N,NOM,Nominative case,unmarked,F,D,PASS_PCPL,1,1,5:64:13,مَبْسُوْطَتٰنِ ۙ
+N,NOM,Nominative case,definite (Al-),M,D,ACT_PCPL,1,1,50:17:3,الْمُتَلَقِّیٰنِ
+N,NOM,Nominative case,unmarked,F,P,ACT_PCPL,1,1,55:56:2,قٰصِرٰتُ
+N,NOM,Nominative case,unmarked,F,D,ACT_PCPL,1,1,55:64:1,مُدْهَآمَّتٰنِ
+N,NOM,Nominative case,indefinite (marked),,,VN,1,1,85:6:4,قُعُوْدٌ
+PN,ACC,Accusative case,unmarked,,,,669,29,2:9:2,اللّٰهَ
+PN,ACC,Accusative case,unmarked,M,,,117,14,2:31:2,اٰدَمَ
+PN,ACC,Accusative case,definite (Al-),M,,,33,2,4:82:3,الْقُرْاٰنَ ؕ
+PN,ACC,Accusative case,definite (Al-),,,,22,7,2:158:2,الصَّفَا
+PN,ACC,Accusative case,indefinite (marked),M,,,20,6,2:111:8,هُوْدًا
+PN,ACC,Accusative case,definite (Al-),F,,,19,2,2:35:6,الْجَنَّةَ
+PN,ACC,Accusative case,definite (Al-),M,P,,9,2,2:102:12,الشَّیٰطِیْنَ
+PN,ACC,Accusative case,unmarked,F,,,8,1,3:36:17,مَرْیَمَ
+PN,ACC,Accusative case,definite (Al-),M,P,ACT_PCPL,5,2,2:62:7,وَالصّٰبِـِٕیْنَ
+PN,ACC,Accusative case,definite (Al-),,P,,3,1,2:62:6,وَالنَّصٰرٰی
+PN,ACC,Accusative case,unmarked,,P,,3,1,2:111:10,نَصٰرٰی ؕ
+PN,ACC,Accusative case,indefinite (marked),M,S,,1,1,3:67:4,یَهُوْدِیًّا
+PN,ACC,Accusative case,indefinite (marked),,,,1,1,3:67:6,نَصْرَانِیًّا
+PN,ACC,Accusative case,definite (Al-),M,,VN,1,1,5:3:49,الْاِسْلَامَ
+PN,ACC,Accusative case,definite (Al-),M,P,PASS_PCPL,1,1,22:17:8,وَالْمَجُوْسَ
+PN,GEN,Genitive case,unmarked,,,,1371,40,1:1:2,اللّٰهِ
+PN,GEN,Genitive case,unmarked,M,,,157,13,2:34:5,لِاٰدَمَ
+PN,GEN,Genitive case,definite (Al-),M,,,43,5,2:168:12,الشَّیْطٰنِ ؕ
+PN,GEN,Genitive case,definite (Al-),F,,,33,5,2:82:7,الْجَنَّةِ ۚ
+PN,GEN,Genitive case,unmarked,F,,,22,2,2:87:12,مَرْیَمَ
+PN,GEN,Genitive case,definite (Al-),,,,14,4,3:50:6,التَّوْرٰىةِ
+PN,GEN,Genitive case,definite (Al-),M,P,ACT_PCPL,10,1,6:163:8,الْمُسْلِمِیْنَ
+PN,GEN,Genitive case,indefinite (marked),,,,10,2,7:65:2,عَادٍ
+PN,GEN,Genitive case,definite (Al-),M,P,,6,2,17:27:5,الشَّیٰطِیْنِ ؕ
+PN,GEN,Genitive case,definite (Al-),M,,VN,4,1,3:85:4,الْاِسْلَامِ
+PN,GEN,Genitive case,indefinite (marked),M,,,4,2,10:15:12,بِقُرْاٰنٍ
+PN,GEN,Genitive case,definite (Al-),F,S,,3,1,9:101:8,الْمَدِیْنَةِ ؔۛ۫
+PN,GEN,Genitive case,unmarked,,P,,1,1,106:1:2,قُرَیْشٍ
+PN,NOM,Nominative case,unmarked,,,,1060,28,2:7:2,اللّٰهُ
+PN,NOM,Nominative case,unmarked,M,,,161,11,2:33:2,یٰۤاٰدَمُ
+PN,NOM,Nominative case,definite (Al-),M,,,44,3,2:36:2,الشَّیْطٰنُ
+PN,NOM,Nominative case,definite (Al-),,,,12,3,3:45:11,الْمَسِیْحُ
+PN,NOM,Nominative case,definite (Al-),M,P,,10,2,2:102:4,الشَّیٰطِیْنُ
+PN,NOM,Nominative case,definite (Al-),,P,,7,2,2:113:4,النَّصٰرٰی
+PN,NOM,Nominative case,definite (Al-),F,,,7,2,7:43:32,الْجَنَّةُ
+PN,NOM,Nominative case,indefinite (marked),,,,7,2,11:59:2,عَادٌ ۙ۫
+PN,NOM,Nominative case,unmarked,F,,,5,1,3:37:19,یٰمَرْیَمُ
+PN,NOM,Nominative case,indefinite (marked),M,,,3,1,36:69:11,وَّقُرْاٰنٌ
+PN,NOM,Nominative case,unmarked,,P,,2,1,5:14:5,نَصٰرٰۤی
+PN,NOM,Nominative case,definite (Al-),M,P,ACT_PCPL,2,2,5:69:6,وَالصّٰبِـُٔوْنَ
+PN,NOM,Nominative case,definite (Al-),M,,VN,1,1,3:19:5,الْاِسْلَامُ ۫

@@ -1,0 +1,58 @@
+{
+ "stage": "07_lexicon_tables",
+ "source_policy": "computed from the two JSON layers only",
+ "input_sha256": {
+  "indopak-nastaleeq-wbw-grammar-normalized.json": "bd5328f0fe0900cdad1e77e5723b7440cae9cfab31e737cc8d9622db5c435635",
+  "indopak-nastaleeq-sentence-grammar-normalized.json": "50d4c6475b024ef0a21d1ba57a78e6695ab298be635d197a91348afa1f8ec896"
+ },
+ "files": {
+  "quran-root-families.csv": {
+   "rows": 4657,
+   "columns": 13
+  },
+  "quran-surface-forms.csv": {
+   "rows": 22103,
+   "columns": 15
+  },
+  "quran-verb-paradigms.csv": {
+   "rows": 399,
+   "columns": 14
+  },
+  "quran-noun-features.csv": {
+   "rows": 345,
+   "columns": 11
+  },
+  "quran-pronouns.csv": {
+   "rows": 701,
+   "columns": 10
+  },
+  "quran-pronouns-summary.csv": {
+   "rows": 300,
+   "columns": 11
+  },
+  "quran-affixes.csv": {
+   "rows": 28,
+   "columns": 11
+  },
+  "quran-function-words.csv": {
+   "rows": 92,
+   "columns": 11
+  },
+  "quran-special-groups.csv": {
+   "rows": 20,
+   "columns": 9
+  },
+  "quran-hapax-lemmas.csv": {
+   "rows": 1994,
+   "columns": 10
+  },
+  "quran-hapax-roots.csv": {
+   "rows": 395,
+   "columns": 8
+  },
+  "quran-proper-nouns.csv": {
+   "rows": 104,
+   "columns": 7
+  }
+ }
+}

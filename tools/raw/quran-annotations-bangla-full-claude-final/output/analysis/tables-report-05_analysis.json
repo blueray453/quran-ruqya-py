@@ -1,0 +1,78 @@
+{
+ "stage": "05_analysis",
+ "source_policy": "computed from the two JSON layers only",
+ "input_sha256": {
+  "indopak-nastaleeq-wbw-grammar-normalized.json": "bd5328f0fe0900cdad1e77e5723b7440cae9cfab31e737cc8d9622db5c435635",
+  "indopak-nastaleeq-sentence-grammar-normalized.json": "50d4c6475b024ef0a21d1ba57a78e6695ab298be635d197a91348afa1f8ec896"
+ },
+ "files": {
+  "quran-verb-form-summary.csv": {
+   "rows": 12,
+   "columns": 8
+  },
+  "quran-verb-form-occurrences.csv": {
+   "rows": 19356,
+   "columns": 17
+  },
+  "quran-verb-form-words.csv": {
+   "rows": 1475,
+   "columns": 12
+  },
+  "quran-root-form-summary.csv": {
+   "rows": 943,
+   "columns": 17
+  },
+  "quran-derived-form-summary.csv": {
+   "rows": 3,
+   "columns": 8
+  },
+  "quran-derived-forms-words.csv": {
+   "rows": 1000,
+   "columns": 11
+  },
+  "quran-frequency-lemmas.csv": {
+   "rows": 4832,
+   "columns": 11
+  },
+  "quran-frequency-roots.csv": {
+   "rows": 1642,
+   "columns": 10
+  },
+  "quran-frequency-pos.csv": {
+   "rows": 45,
+   "columns": 3
+  },
+  "quran-frequency-functions.csv": {
+   "rows": 677,
+   "columns": 2
+  },
+  "quran-frequency-particles.csv": {
+   "rows": 36,
+   "columns": 3
+  },
+  "source-lists/sentences-crossing-ayah.csv": {
+   "rows": 836,
+   "columns": 6
+  },
+  "source-lists/words-merged-in-treebank.csv": {
+   "rows": 3,
+   "columns": 5
+  },
+  "source-lists/words-split-across-sentences.csv": {
+   "rows": 41,
+   "columns": 4
+  },
+  "source-lists/sentences-prefix-only-fragments.csv": {
+   "rows": 26,
+   "columns": 4
+  },
+  "source-lists/words-text-normalized-incomplete.csv": {
+   "rows": 16,
+   "columns": 5
+  },
+  "source-lists/segments-pos-differs-from-v04.csv": {
+   "rows": 132,
+   "columns": 3
+  }
+ }
+}

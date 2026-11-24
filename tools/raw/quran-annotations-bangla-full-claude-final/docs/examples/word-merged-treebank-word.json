@@ -1,0 +1,225 @@
+{
+ "note": "ONE example (of 3; complete list: output/analysis/source-lists/words-merged-in-treebank.csv). The Treebank writes the single word baEdamaA at 2:181:3; the IndoPak WBW text writes two words (2:181:3, 2:181:4). Its two segments are distributed over them, and every later Treebank word number in the ayah is one lower than the WBW word number (see segment locations of 2:181:14).",
+ "alignment_record": {
+  "treebank_word": "2:181:3",
+  "wbw_words": [
+   "2:181:3",
+   "2:181:4"
+  ],
+  "treebank_text": "بَعْدَمَا",
+  "segments": {
+   "2:181:3:1": "2:181:3",
+   "2:181:3:2": "2:181:4"
+  }
+ },
+ "words": {
+  "2:181:3": {
+   "wbw_id": 3476,
+   "text_indopak": "بَعْدَ",
+   "text_normalized": "بعد",
+   "text_exact": "بَعْدَ",
+   "annotation_status": "annotated",
+   "sentence_id": 509,
+   "segments": [
+    {
+     "treebank_tid": 6022,
+     "location": "2:181:3:1",
+     "type": "STEM",
+     "text_uthmani": "بَعْدَ",
+     "uthmani_bw": "baEoda",
+     "text_imlaai": "بعْد",
+     "imlaai_bw": "bEod",
+     "phonetic": "baʿdamā",
+     "gloss": "after what",
+     "pos": "T",
+     "pos_ar": "ظرف زمان",
+     "features_raw": "STEM|POS:T|LEM:baEod|ROOT:bEd",
+     "lemma": {
+      "bw": "baEod",
+      "ar": "بَعْد"
+     },
+     "root": {
+      "bw": "bEd",
+      "ar": "بعد"
+     },
+     "syntax_ref": {
+      "sentence_id": 509,
+      "token_id": 5
+     }
+    }
+   ],
+   "derived": {
+    "is_verb": false,
+    "verb_forms": [],
+    "nominal_form_annotations": [],
+    "derived_nouns": [],
+    "prefix_tags": [],
+    "suffix_tags": [],
+    "n_segments": 1,
+    "neighbors": {
+     "prev": "2:181:2",
+     "next": "2:181:4"
+    },
+    "projections": {
+     "pos_stem": "T",
+     "pos_all_segments": "T",
+     "function_all": "link",
+     "function_without_NonRel": "link",
+     "function_stem": "link"
+    }
+   },
+   "secondary_db": {
+    "stem": [
+     {
+      "id": 4795,
+      "text": "بَعْدَ"
+     }
+    ],
+    "lemma": [
+     {
+      "id": 4819,
+      "text": "بَعْدَ مَا"
+     }
+    ],
+    "root": [
+     {
+      "id": 989,
+      "text": "ب ع د"
+     }
+    ]
+   }
+  },
+  "2:181:4": {
+   "wbw_id": 3477,
+   "text_indopak": "مَا",
+   "text_normalized": "ما",
+   "text_exact": "مَا",
+   "annotation_status": "annotated",
+   "sentence_id": 509,
+   "segments": [
+    {
+     "treebank_tid": 6023,
+     "location": "2:181:3:2",
+     "type": "STEM",
+     "text_uthmani": "مَا",
+     "uthmani_bw": "maA",
+     "text_imlaai": "ما",
+     "imlaai_bw": "mA",
+     "phonetic": "baʿdamā",
+     "gloss": "after what",
+     "pos": "SUB",
+     "pos_ar": "حرف مصدري",
+     "features_raw": "STEM|POS:SUB|LEM:maA",
+     "lemma": {
+      "bw": "maA",
+      "ar": "مَا"
+     },
+     "syntax_ref": {
+      "sentence_id": 509,
+      "token_id": 6
+     }
+    }
+   ],
+   "derived": {
+    "is_verb": false,
+    "verb_forms": [],
+    "nominal_form_annotations": [],
+    "derived_nouns": [],
+    "prefix_tags": [],
+    "suffix_tags": [],
+    "n_segments": 1,
+    "neighbors": {
+     "prev": "2:181:3",
+     "next": "2:181:5"
+    },
+    "projections": {
+     "pos_stem": "SUB",
+     "pos_all_segments": "SUB",
+     "function_all": "Poss",
+     "function_without_NonRel": "Poss",
+     "function_stem": "Poss"
+    }
+   }
+  },
+  "2:181:14": {
+   "wbw_id": 3487,
+   "text_indopak": "عَلِیْمٌ",
+   "text_normalized": "عليم",
+   "text_exact": "عَلِيْمٌ",
+   "annotation_status": "annotated",
+   "sentence_id": 510,
+   "segments": [
+    {
+     "treebank_tid": 6041,
+     "location": "2:181:13:1",
+     "type": "STEM",
+     "text_uthmani": "عَلِيمٌ",
+     "uthmani_bw": "EaliymN",
+     "text_imlaai": "عليم",
+     "imlaai_bw": "Elym",
+     "phonetic": "ʿalīmun",
+     "gloss": "All-Knowing.",
+     "pos": "ADJ",
+     "pos_ar": "صفة",
+     "features_raw": "STEM|POS:ADJ|LEM:Ealiym|ROOT:Elm|MS|INDEF|NOM",
+     "state": "INDEF",
+     "case": "NOM",
+     "gender": "M",
+     "number": "S",
+     "lemma": {
+      "bw": "Ealiym",
+      "ar": "عَلِيم"
+     },
+     "root": {
+      "bw": "Elm",
+      "ar": "علم"
+     },
+     "syntax_ref": {
+      "sentence_id": 510,
+      "token_id": 3
+     }
+    }
+   ],
+   "derived": {
+    "is_verb": false,
+    "verb_forms": [],
+    "nominal_form_annotations": [],
+    "derived_nouns": [],
+    "prefix_tags": [],
+    "suffix_tags": [],
+    "n_segments": 1,
+    "neighbors": {
+     "prev": "2:181:13",
+     "next": null
+    },
+    "projections": {
+     "pos_stem": "ADJ",
+     "pos_all_segments": "ADJ",
+     "function_all": "Adj",
+     "function_without_NonRel": "Adj",
+     "function_stem": "Adj"
+    }
+   },
+   "secondary_db": {
+    "stem": [
+     {
+      "id": 11297,
+      "text": "عَلِيمٌ"
+     }
+    ],
+    "lemma": [
+     {
+      "id": 524,
+      "text": "عَلِيم"
+     }
+    ],
+    "root": [
+     {
+      "id": 1572,
+      "text": "ع ل م"
+     }
+    ]
+   }
+  }
+ }
+}

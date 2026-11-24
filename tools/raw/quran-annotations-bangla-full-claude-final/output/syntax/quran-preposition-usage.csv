@@ -1,0 +1,13 @@
+﻿preposition,preposition_uthmani,meaning,count,as_prefix,as_separate_word,governs_pos_mix,top_governed,top_linked_to,first_word,example_text_indopak
+min,من,from,3226,0,3226,N 2277 | PRON 564 | REL 192 | PN 122,<PRON> (564) | qabol (197) | duwn (135) | baEod (133) | maA (125) | rab~ (112),<N> (1084) | <ADJ> (227) | >axoraja (57) | <V> (44) | jaEala (44) | xalaqa (42),2:3:6,وَمِمَّا
+bi+,ب,Prepositional bāʼ,2544,2544,0,N 1435 | PRON 516 | REL 329 | PN 162,<PRON> (516) | maA (307) | {ll~ah (140) | 'aAyap (113) | Haq~ (77) | >an~ (46),<N> (247) | 'aAmana (175) | ka*~aba (104) | >ataY (101) | jaA^'a (72) | kafara (70),1:1:1,بِسْمِ
+l:P+,ل,Prepositional lām,2451,2449,2,PRON 1394 | N 664 | REL 184 | PN 180,<PRON> (1394) | {ll~ah (149) | {l~a*iY (85) | qawom (70) | man (64) | maA (55),<N> (845) | qaAla (201) | jaEala (96) | gafara (57) | xayor (39) | <ADJ> (36),1:2:2,لِلّٰهِ
+fiY,فى,in,1701,0,1701,N 1123 | PRON 423 | DEM 73 | REL 40,<PRON> (423) | >aroD (182) | samaA^' (90) | *a`lik (57) | sabiyl (51) | qalob (40),<N> (464) | <V> (93) | xa`lid (65) | jaEala (36) | {xotalafa (26) | <ADJ> (23),2:2:5,فِیْهِ ۛۚ
+EalaY`,على,on,1445,0,1445,PRON 732 | N 515 | PN 99 | REL 73,<PRON> (732) | {ll~ah (83) | kul~ (57) | maA (34) | {l~a*iY (27) | qalob (23),<N> (254) | talaY` (45) | >anzala (44) | tawak~alo (38) | qadiyr (37) | naz~ala (28),1:7:4,عَلَیْهِمْ ۙ۬ۦ
+<ilaY`,إلى,to,742,0,742,N 312 | PRON 308 | PN 92 | REL 27,<PRON> (308) | {ll~ah (47) | rab~ (40) | yawom (23) | {l~a*iY (17) | Sira`T (16),<N> (68) | >awoHaY`^ (66) | rajaEa (52) | >anzala (47) | daEaA (41) | >arosala (30),2:4:5,اِلَیْكَ
+Ean,عن,from,465,0,465,N 210 | PRON 189 | REL 54 | DEM 4,<PRON> (189) | maA (49) | sabiyl (38) | *ikor (13) | nafos (12) | munkar (9),sa>ala (33) | Sad~a (33) | nahaY` (27) | >aEoraDa (23) | EafaA (18) | >agonato (17),2:36:3,عَنْهَا
+ka+,ك,Prepositional kāf,295,295,0,DEM 126 | N 77 | SUB 64 | REL 28,*a`lik (126) | maA (59) | {l~a*iY (15) | maval (14) | man (9) | >an (9),<N> (59) | jaEala (8) | bay~anu (6) | jazaY` (6) | qaAla (5) | <V> (5),2:13:5,كَمَاۤ
+Hat~aY`,حتى,until,94,0,94,V 85 | N 7 | NEG 2,>ataY (7) | Hiyn (6) | balaga (5) | ra'aA (4) | tabay~ana (3) | 'aAmana (3),'aAmana (8) | qa`tala (4) | yaqorabu (4) | daxala (4) | ya*ara (3) | Sabara (3),2:55:7,حَتّٰی
+w:P+,وَ,Prepositional wāw,28,28,0,N 24 | PN 4,rab~ (6) | quro'aAn (3) | samaA^' (3) | kita`b (2) | {ll~ah (1) | Sa`^f~a`t (1),<V> (28),4:65:2,وَرَبِّكَ
+ta+,ت,Vocative tāʼ,9,9,0,PN 9,{ll~ah (9),<V> (9),12:73:2,تَاللّٰهِ
+maE2,مَعَ,with,5,0,5,N 3 | PRON 2,<PRON> (2) | Eusor (2) | raAkiE (1),<N> (2) | yarokaEu (1),2:41:6,مَعَكُمْ

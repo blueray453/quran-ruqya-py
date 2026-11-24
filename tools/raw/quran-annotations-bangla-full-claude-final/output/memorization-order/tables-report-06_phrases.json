@@ -1,0 +1,42 @@
+{
+ "stage": "06_phrases",
+ "source_policy": "computed from the two JSON layers only",
+ "input_sha256": {
+  "indopak-nastaleeq-wbw-grammar-normalized.json": "bd5328f0fe0900cdad1e77e5723b7440cae9cfab31e737cc8d9622db5c435635",
+  "indopak-nastaleeq-sentence-grammar-normalized.json": "50d4c6475b024ef0a21d1ba57a78e6695ab298be635d197a91348afa1f8ec896"
+ },
+ "files": {
+  "quran-greedy-order-words-and-phrases.csv": {
+   "rows": 6001,
+   "columns": 10
+  },
+  "quran-greedy-order-phrases-only.csv": {
+   "rows": 7109,
+   "columns": 10
+  },
+  "quran-greedy-order-words-only.csv": {
+   "rows": 6095,
+   "columns": 10
+  },
+  "quran-greedy-order-phrases-3plus.csv": {
+   "rows": 3939,
+   "columns": 10
+  },
+  "exact-diacritics/quran-greedy-order-words-and-phrases.csv": {
+   "rows": 6751,
+   "columns": 10
+  },
+  "exact-diacritics/quran-greedy-order-phrases-only.csv": {
+   "rows": 6661,
+   "columns": 10
+  },
+  "exact-diacritics/quran-greedy-order-words-only.csv": {
+   "rows": 6895,
+   "columns": 10
+  },
+  "exact-diacritics/quran-greedy-order-phrases-3plus.csv": {
+   "rows": 3627,
+   "columns": 10
+  }
+ }
+}

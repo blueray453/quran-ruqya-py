@@ -1,0 +1,7 @@
+﻿tag,tag_en,count,sentences,average_words,max_words,with_no_written_word
+PP,Prepositional phrase,12870,7156,1.41,8,0
+VS,Verbal sentence,10858,6083,3.14,111,0
+NS,Nominal sentence,1838,1554,4.29,43,0
+SC,Subordinate clause,564,523,3.94,10,0
+S,Sentence,183,179,9.35,99,0
+CS,Conditional sentence,150,144,5.7,27,0

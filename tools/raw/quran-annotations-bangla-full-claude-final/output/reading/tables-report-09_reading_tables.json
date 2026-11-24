@@ -1,0 +1,29 @@
+{
+ "stage": "09_reading_tables",
+ "source_policy": "computed from the two JSON layers only",
+ "input_sha256": {
+  "indopak-nastaleeq-wbw-grammar-normalized.json": "bd5328f0fe0900cdad1e77e5723b7440cae9cfab31e737cc8d9622db5c435635",
+  "indopak-nastaleeq-sentence-grammar-normalized.json": "50d4c6475b024ef0a21d1ba57a78e6695ab298be635d197a91348afa1f8ec896"
+ },
+ "files": {
+  "quran-ayah-vocabulary-load.csv": {
+   "rows": 6236,
+   "columns": 14
+  },
+  "quran-surah-profile.csv": {
+   "rows": 114,
+   "columns": 18
+  }
+ },
+ "notes": {
+  "top_ranks": [
+   100,
+   300,
+   500,
+   1000
+  ],
+  "rare_threshold_uses": 5,
+  "lemma_segments_total": 74608,
+  "lemma_types": 4832
+ }
+}

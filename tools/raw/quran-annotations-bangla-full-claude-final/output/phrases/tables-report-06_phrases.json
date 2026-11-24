@@ -1,0 +1,386 @@
+{
+ "stage": "06_phrases",
+ "source_policy": "computed from the two JSON layers only",
+ "input_sha256": {
+  "indopak-nastaleeq-wbw-grammar-normalized.json": "bd5328f0fe0900cdad1e77e5723b7440cae9cfab31e737cc8d9622db5c435635",
+  "indopak-nastaleeq-sentence-grammar-normalized.json": "50d4c6475b024ef0a21d1ba57a78e6695ab298be635d197a91348afa1f8ec896"
+ },
+ "files": {
+  "quran-phrases.csv": {
+   "rows": 31283,
+   "columns": 11
+  },
+  "quran-coverage-by-surah.csv": {
+   "rows": 114,
+   "columns": 6
+  },
+  "exact-diacritics/quran-phrases.csv": {
+   "rows": 30450,
+   "columns": 11
+  },
+  "exact-diacritics/quran-coverage-by-surah.csv": {
+   "rows": 114,
+   "columns": 6
+  }
+ },
+ "summary": {
+  "normalized": {
+   "match_field": "text_normalized",
+   "tokens": 77432,
+   "distinct_types": 14690,
+   "once_only_types": 8595,
+   "repeated_word_types": 6095,
+   "repeated_phrase_types": 25188,
+   "longest_unit_words": 24,
+   "phrases_never_stand_alone": 16598,
+   "covered_words_and_phrases": 68837,
+   "coverage_words_and_phrases_pct": 88.9,
+   "covered_phrases_only": 50057,
+   "coverage_phrases_only_pct": 64.65,
+   "uncovered_tokens": 8595,
+   "verses_fully_covered": 2263,
+   "verses_ge_90": 3357,
+   "verses_ge_75": 5287,
+   "verses_ge_50": 6058,
+   "memorization_order": {
+    "quran-greedy-order-words-and-phrases.csv": {
+     "units_selected": 6001,
+     "checkpoints": [
+      {
+       "units": 10,
+       "words_to_learn": 10,
+       "covered": 12442,
+       "pct": 16.07
+      },
+      {
+       "units": 100,
+       "words_to_learn": 100,
+       "covered": 29518,
+       "pct": 38.12
+      },
+      {
+       "units": 1000,
+       "words_to_learn": 1000,
+       "covered": 51551,
+       "pct": 66.58
+      },
+      {
+       "units": 2500,
+       "words_to_learn": 2509,
+       "covered": 60186,
+       "pct": 77.73
+      },
+      {
+       "units": 5000,
+       "words_to_learn": 5094,
+       "covered": 66835,
+       "pct": 86.31
+      },
+      {
+       "units": 6001,
+       "words_to_learn": 6095,
+       "covered": 68837,
+       "pct": 88.9
+      }
+     ]
+    },
+    "quran-greedy-order-phrases-only.csv": {
+     "units_selected": 7109,
+     "checkpoints": [
+      {
+       "units": 10,
+       "words_to_learn": 20,
+       "covered": 2638,
+       "pct": 3.41
+      },
+      {
+       "units": 100,
+       "words_to_learn": 200,
+       "covered": 9377,
+       "pct": 12.11
+      },
+      {
+       "units": 1000,
+       "words_to_learn": 2019,
+       "covered": 25381,
+       "pct": 32.78
+      },
+      {
+       "units": 2500,
+       "words_to_learn": 5113,
+       "covered": 35726,
+       "pct": 46.14
+      },
+      {
+       "units": 5000,
+       "words_to_learn": 10594,
+       "covered": 46147,
+       "pct": 59.6
+      },
+      {
+       "units": 7109,
+       "words_to_learn": 14854,
+       "covered": 50057,
+       "pct": 64.65
+      }
+     ]
+    },
+    "quran-greedy-order-words-only.csv": {
+     "units_selected": 6095,
+     "checkpoints": [
+      {
+       "units": 10,
+       "words_to_learn": 10,
+       "covered": 12442,
+       "pct": 16.07
+      },
+      {
+       "units": 100,
+       "words_to_learn": 100,
+       "covered": 29518,
+       "pct": 38.12
+      },
+      {
+       "units": 1000,
+       "words_to_learn": 1000,
+       "covered": 51551,
+       "pct": 66.58
+      },
+      {
+       "units": 2500,
+       "words_to_learn": 2500,
+       "covered": 60150,
+       "pct": 77.68
+      },
+      {
+       "units": 5000,
+       "words_to_learn": 5000,
+       "covered": 66647,
+       "pct": 86.07
+      },
+      {
+       "units": 6095,
+       "words_to_learn": 6095,
+       "covered": 68837,
+       "pct": 88.9
+      }
+     ]
+    },
+    "quran-greedy-order-phrases-3plus.csv": {
+     "units_selected": 3939,
+     "checkpoints": [
+      {
+       "units": 10,
+       "words_to_learn": 31,
+       "covered": 1531,
+       "pct": 1.98
+      },
+      {
+       "units": 100,
+       "words_to_learn": 304,
+       "covered": 5519,
+       "pct": 7.13
+      },
+      {
+       "units": 1000,
+       "words_to_learn": 3197,
+       "covered": 17400,
+       "pct": 22.47
+      },
+      {
+       "units": 2500,
+       "words_to_learn": 8579,
+       "covered": 28328,
+       "pct": 36.58
+      },
+      {
+       "units": 3939,
+       "words_to_learn": 12930,
+       "covered": 32360,
+       "pct": 41.79
+      }
+     ]
+    }
+   }
+  },
+  "exact": {
+   "match_field": "text_exact",
+   "tokens": 77432,
+   "distinct_types": 19478,
+   "once_only_types": 12583,
+   "repeated_word_types": 6895,
+   "repeated_phrase_types": 23555,
+   "longest_unit_words": 24,
+   "phrases_never_stand_alone": 15853,
+   "covered_words_and_phrases": 64849,
+   "coverage_words_and_phrases_pct": 83.75,
+   "covered_phrases_only": 45804,
+   "coverage_phrases_only_pct": 59.15,
+   "uncovered_tokens": 12583,
+   "verses_fully_covered": 1520,
+   "verses_ge_90": 2339,
+   "verses_ge_75": 4665,
+   "verses_ge_50": 5938,
+   "memorization_order": {
+    "quran-greedy-order-words-and-phrases.csv": {
+     "units_selected": 6751,
+     "checkpoints": [
+      {
+       "units": 10,
+       "words_to_learn": 10,
+       "covered": 7127,
+       "pct": 9.2
+      },
+      {
+       "units": 100,
+       "words_to_learn": 100,
+       "covered": 23904,
+       "pct": 30.87
+      },
+      {
+       "units": 1000,
+       "words_to_learn": 1001,
+       "covered": 45366,
+       "pct": 58.59
+      },
+      {
+       "units": 2500,
+       "words_to_learn": 2510,
+       "covered": 54220,
+       "pct": 70.02
+      },
+      {
+       "units": 5000,
+       "words_to_learn": 5144,
+       "covered": 61347,
+       "pct": 79.23
+      },
+      {
+       "units": 6751,
+       "words_to_learn": 6895,
+       "covered": 64849,
+       "pct": 83.75
+      }
+     ]
+    },
+    "quran-greedy-order-phrases-only.csv": {
+     "units_selected": 6661,
+     "checkpoints": [
+      {
+       "units": 10,
+       "words_to_learn": 20,
+       "covered": 2121,
+       "pct": 2.74
+      },
+      {
+       "units": 100,
+       "words_to_learn": 201,
+       "covered": 7966,
+       "pct": 10.29
+      },
+      {
+       "units": 1000,
+       "words_to_learn": 2025,
+       "covered": 22497,
+       "pct": 29.05
+      },
+      {
+       "units": 2500,
+       "words_to_learn": 5144,
+       "covered": 32299,
+       "pct": 41.71
+      },
+      {
+       "units": 5000,
+       "words_to_learn": 10748,
+       "covered": 42852,
+       "pct": 55.34
+      },
+      {
+       "units": 6661,
+       "words_to_learn": 14124,
+       "covered": 45804,
+       "pct": 59.15
+      }
+     ]
+    },
+    "quran-greedy-order-words-only.csv": {
+     "units_selected": 6895,
+     "checkpoints": [
+      {
+       "units": 10,
+       "words_to_learn": 10,
+       "covered": 7127,
+       "pct": 9.2
+      },
+      {
+       "units": 100,
+       "words_to_learn": 100,
+       "covered": 23904,
+       "pct": 30.87
+      },
+      {
+       "units": 1000,
+       "words_to_learn": 1000,
+       "covered": 45357,
+       "pct": 58.58
+      },
+      {
+       "units": 2500,
+       "words_to_learn": 2500,
+       "covered": 54180,
+       "pct": 69.97
+      },
+      {
+       "units": 5000,
+       "words_to_learn": 5000,
+       "covered": 61059,
+       "pct": 78.85
+      },
+      {
+       "units": 6895,
+       "words_to_learn": 6895,
+       "covered": 64849,
+       "pct": 83.75
+      }
+     ]
+    },
+    "quran-greedy-order-phrases-3plus.csv": {
+     "units_selected": 3627,
+     "checkpoints": [
+      {
+       "units": 10,
+       "words_to_learn": 31,
+       "covered": 1303,
+       "pct": 1.68
+      },
+      {
+       "units": 100,
+       "words_to_learn": 304,
+       "covered": 5041,
+       "pct": 6.51
+      },
+      {
+       "units": 1000,
+       "words_to_learn": 3194,
+       "covered": 16264,
+       "pct": 21.0
+      },
+      {
+       "units": 2500,
+       "words_to_learn": 8622,
+       "covered": 26950,
+       "pct": 34.8
+      },
+      {
+       "units": 3627,
+       "words_to_learn": 12024,
+       "covered": 29785,
+       "pct": 38.47
+      }
+     ]
+    }
+   }
+  }
+ }
+}

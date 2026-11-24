@@ -1,0 +1,324 @@
+﻿case,case_meaning,role,role_ar,head_pos,count,pct_of_case,first_word,example_text_indopak
+NOM,Nominative case,Subj,فاعل,V,2160,24.12,2:7:2,اللّٰهُ
+NOM,Nominative case,root,root,self,1160,12.96,1:2:1,اَلْحَمْدُ
+NOM,Nominative case,Pred,خبر,PRON,877,9.79,2:11:11,مُصْلِحُوْنَ
+NOM,Nominative case,Adj,صفة,N,798,8.91,2:7:12,عَظِیْمٌ
+NOM,Nominative case,pred<<in>>,خبر إن,ACC,575,6.42,2:20:25,قَدِیْرٌ
+NOM,Nominative case,conj,معطوف,N,438,4.89,2:19:7,وَّرَعْدٌ
+NOM,Nominative case,Pred,خبر,N,334,3.73,2:24:10,النَّاسُ
+NOM,Nominative case,voc,منادى,VOC,294,3.28,2:21:1,یٰۤاَیُّهَا
+NOM,Nominative case,Pred,خبر,DEM,286,3.19,2:2:6,هُدًی
+NOM,Nominative case,Pass,نائب فاعل,V,268,2.99,2:48:12,شَفَاعَةٌ
+NOM,Nominative case,Obj,مفعول به,V,220,2.46,2:69:8,لَوْنُهَا ؕ
+NOM,Nominative case,Pred,خبر,PN,189,2.11,2:19:18,مُحِیْطٌ
+NOM,Nominative case,subj <<kan>>,اسم كان,V,185,2.07,2:75:7,فَرِیْقٌ
+NOM,Nominative case,App,بدل,N,101,1.13,2:21:2,النَّاسُ
+NOM,Nominative case,pred<<an>>,خبر أن,ACC,64,0.71,2:26:17,الْحَقُّ
+NOM,Nominative case,Poss,مضاف إليه,N,63,0.7,5:43:4,التَّوْرٰىةُ
+NOM,Nominative case,Pred,خبر,REL,55,0.61,2:165:14,اَشَدُّ
+NOM,Nominative case,subj <<lays>>,اسم ليس,V,50,0.56,2:189:10,الْبِرُّ
+NOM,Nominative case,Adj,صفة,ADJ,48,0.54,9:40:43,حَكِیْمٌ
+NOM,Nominative case,rslt,جواب الشرط,COND,46,0.51,2:62:16,اَجْرُهُمْ
+NOM,Nominative case,Adj,صفة,PN,40,0.45,11:56:5,رَبِّیْ
+NOM,Nominative case,conj,معطوف,PN,39,0.44,2:120:6,النَّصٰرٰی
+NOM,Nominative case,Pred,خبر,INTG,37,0.41,2:114:2,اَظْلَمُ
+NOM,Nominative case,neg,نفي,NEG,37,0.41,2:62:20,خَوْفٌ
+NOM,Nominative case,App,بدل,DEM,32,0.36,2:2:2,الْكِتٰبُ
+NOM,Nominative case,conj,معطوف,PRON,30,0.34,2:35:5,وَزَوْجُكَ
+NOM,Nominative case,subj<<in>>,اسم إن,ACC,29,0.32,11:41:9,رَبِّیْ
+NOM,Nominative case,intg,استفهام,INTG,24,0.27,7:195:2,اَرْجُلٌ
+NOM,Nominative case,subj <<ykn>>,اسم يكن,V,24,0.27,2:196:63,اَهْلُهٗ
+NOM,Nominative case,subj <<ykon>>,اسم يكون,V,23,0.26,2:143:10,الرَّسُوْلُ
+NOM,Nominative case,App,بدل,PN,22,0.25,3:45:13,ابْنُ
+NOM,Nominative case,Pred,خبر,ACC,22,0.25,11:5:17,عَلِیْمٌۢ
+NOM,Nominative case,Poss,مضاف إليه,LOC,21,0.23,10:37:14,یَدَیْهِ
+NOM,Nominative case,emph,توكيد,N,17,0.19,4:171:38,وَّاحِدٌ ؕ
+NOM,Nominative case,pred <<ka'ana>>,خبر كأن,ACC,16,0.18,7:171:6,ظُلَّةٌ
+NOM,Nominative case,subj <<ma>>,اسم ما,NEG,15,0.17,2:74:34,اللّٰهُ
+NOM,Nominative case,sub,صلة,REL,13,0.15,2:24:9,وَقُوْدُهَا
+NOM,Nominative case,circ,حال,PRON,12,0.13,4:88:6,وَاللّٰهُ
+NOM,Nominative case,conj,معطوف,REL,12,0.13,2:177:36,وَالْمُوْفُوْنَ
+NOM,Nominative case,conj,معطوف,V,12,0.13,3:40:10,وَامْرَاَتِیْ
+NOM,Nominative case,circ,حال,N,11,0.12,6:131:9,وَّاَهْلُهَا
+NOM,Nominative case,conj,معطوف,ADJ,11,0.12,2:68:17,بِكْرٌ ؕ
+NOM,Nominative case,pred <<ma>>,خبر ما,REL,11,0.12,10:81:8,السِّحْرُ ؕ
+NOM,Nominative case,Subj,فاعل,N,10,0.11,2:283:28,قَلْبُهٗ ؕ
+NOM,Nominative case,subj <<tkon>>,اسم تكون,V,10,0.11,2:266:6,جَنَّةٌ
+NOM,Nominative case,cond,شرط,COND,9,0.1,2:64:7,فَضْلُ
+NOM,Nominative case,Pred,خبر,P,7,0.08,3:62:10,اللّٰهُ ؕ
+NOM,Nominative case,subj <<easaa>>,اسم عسى,V,7,0.08,4:84:12,اللّٰهُ
+NOM,Nominative case,subj <<la>>,اسم لا,NEG,7,0.08,2:38:13,خَوْفٌ
+NOM,Nominative case,circ,حال,V,6,0.07,2:36:10,بَعْضُكُمْ
+NOM,Nominative case,cog,مفعول مطلق,V,6,0.07,9:101:17,مَّرَّتَیْنِ
+NOM,Nominative case,link,متعلق,V,6,0.07,10:53:6,وَرَبِّیْۤ
+NOM,Nominative case,rslt,جواب الشرط,REL,6,0.07,11:17:24,فَالنَّارُ
+NOM,Nominative case,state,بيان,N,6,0.07,26:106:5,نُوْحٌ
+NOM,Nominative case,subj <<tkn>>,اسم تكن,V,6,0.07,3:104:3,اُمَّةٌ
+NOM,Nominative case,Pred,خبر,SUB,5,0.06,2:184:28,خَیْرٌ
+NOM,Nominative case,Pred,خبر,V,5,0.06,7:193:7,سَوَآءٌ
+NOM,Nominative case,circ,حال,PN,5,0.06,5:43:6,حُكْمُ
+NOM,Nominative case,neg,نفي,COND,5,0.06,11:110:8,كَلِمَةٌ
+NOM,Nominative case,pred <<lakun>>,خبر لاكن,ACC,5,0.06,2:251:24,ذُوْ
+NOM,Nominative case,pred <<lel>>,خبر لعل,ACC,5,0.06,11:12:2,تَارِكٌ
+NOM,Nominative case,pred <<ma>>,خبر ما,INTG,5,0.06,37:87:2,ظَنُّكُمْ
+NOM,Nominative case,ret,اضراب,RET,5,0.06,2:100:8,اَكْثَرُهُمْ
+NOM,Nominative case,App,بدل,PRON,4,0.04,4:66:15,قَلِیْلٌ
+NOM,Nominative case,Obj,مفعول به,N,4,0.04,4:155:12,قُلُوْبُنَا
+NOM,Nominative case,Pred,خبر,self,4,0.04,5:95:32,عَدْلُ
+NOM,Nominative case,amd,استدراك,AMD,4,0.04,4:162:2,الرّٰسِخُوْنَ
+NOM,Nominative case,exl,تفصيل,EXL,4,0.04,69:5:2,ثَمُوْدُ
+NOM,Nominative case,sur,فجاءة,T,4,0.04,16:54:7,فَرِیْقٌ
+NOM,Nominative case,App,بدل,REL,3,0.03,27:65:10,اللّٰهُ ؕ
+NOM,Nominative case,Pass,نائب فاعل,N,3,0.03,2:180:10,لْوَصِیَّةُ
+NOM,Nominative case,conj,معطوف,NEG,3,0.03,9:120:25,نَصَبٌ
+NOM,Nominative case,inc,ابتداء,INC,3,0.03,4:49:8,اللّٰهُ
+NOM,Nominative case,subj <<kant>>,اسم كانت,V,3,0.03,2:94:5,الدَّارُ
+NOM,Nominative case,subj <<layst>>,اسم ليست,V,3,0.03,2:113:4,النَّصٰرٰی
+NOM,Nominative case,subj<<an>>,اسم أن,ACC,3,0.03,17:65:2,عِبَادِیْ
+NOM,Nominative case,App,بدل,NEG,2,0.02,37:35:9,اللّٰهُۙ
+NOM,Nominative case,Poss,مضاف إليه,T,2,0.02,6:93:26,الظّٰلِمُوْنَ
+NOM,Nominative case,Subj,فاعل,ADJ,2,0.02,2:69:16,لَّوْنُهَا
+NOM,Nominative case,circ,حال,REL,2,0.02,5:103:19,وَاَكْثَرُهُمْ
+NOM,Nominative case,conj,معطوف,DEM,2,0.02,25:15:5,جَنَّةُ
+NOM,Nominative case,conj,معطوف,INTG,2,0.02,29:20:10,اللّٰهُ
+NOM,Nominative case,emph,توكيد,V,2,0.02,40:11:4,اثْنَتَیْنِ
+NOM,Nominative case,int,تفسير,INT,2,0.02,7:44:25,لَّعْنَةُ
+NOM,Nominative case,pred <<kan>>,خبر كان,V,2,0.02,10:2:3,عَجَبًا
+NOM,Nominative case,pred <<lakin>>,خبر لكن,ACC,2,0.02,22:2:22,شَدِیْدٌ
+NOM,Nominative case,pred<<in>>,خبر إن,N,2,0.02,14:34:15,كَفَّارٌ
+NOM,Nominative case,subj <<asbah>>,اسم أصبح,V,2,0.02,28:10:2,فُؤَادُ
+NOM,Nominative case,subj <<tkad>>,اسم تكاد,V,2,0.02,19:90:2,السَّمٰوٰتُ
+NOM,Nominative case,subj <<ykad>>,اسم يكاد,V,2,0.02,2:20:2,الْبَرْقُ
+NOM,Nominative case,subj <<ysbah>>,اسم يصبح,V,2,0.02,18:41:3,مَآؤُهَا
+NOM,Nominative case,sur,فجاءة,SUR,2,0.02,4:77:18,فَرِیْقٌ
+NOM,Nominative case,Adj,صفة,DEM,1,0.01,21:52:7,التَّمَاثِیْلُ
+NOM,Nominative case,Adj,صفة,INTG,1,0.01,10:32:9,الضَّلٰلُ ۖۚ
+NOM,Nominative case,Adj,صفة,V,1,0.01,13:18:4,الْحُسْنٰی ؔؕ
+NOM,Nominative case,App,بدل,V,1,0.01,17:57:8,اَیُّهُمْ
+NOM,Nominative case,Obj,مفعول به,REL,1,0.01,8:73:3,بَعْضُهُمْ
+NOM,Nominative case,Poss,مضاف إليه,ADJ,1,0.01,13:9:5,الْمُتَعَالِ
+NOM,Nominative case,Poss,مضاف إليه,V,1,0.01,9:114:3,اسْتِغْفَارُ
+NOM,Nominative case,Pred,خبر,EQ,1,0.01,2:6:4,سَوَآءٌ
+NOM,Nominative case,Pred,خبر,NEG,1,0.01,38:65:9,اللّٰهُ
+NOM,Nominative case,Pred,خبر,RES,1,0.01,3:144:4,رَسُوْلٌ ۚ
+NOM,Nominative case,amd,استدراك,RET,1,0.01,23:63:2,قُلُوْبُهُمْ
+NOM,Nominative case,circ,حال,INTG,1,0.01,57:8:6,وَالرَّسُوْلُ
+NOM,Nominative case,conj,معطوف,COND,1,0.01,6:148:10,اٰبَآؤُنَا
+NOM,Nominative case,conj,معطوف,P,1,0.01,47:15:32,وَمَغْفِرَةٌ
+NOM,Nominative case,emph,توكيد,REL,1,0.01,10:99:8,كُلُّهُمْ
+NOM,Nominative case,gen,مجرور,P,1,0.01,80:18:2,اَیِّ
+NOM,Nominative case,pred <<kan>>,خبر كان,ACC,1,0.01,52:24:6,لُؤْلُؤٌ
+NOM,Nominative case,pred <<ma>>,خبر ما,NEG,1,0.01,21:15:4,دَعْوٰىهُمْ
+NOM,Nominative case,pred <<tkon>>,خبر تكون,V,1,0.01,16:7:7,بٰلِغِیْهِ
+NOM,Nominative case,pred <<ykon>>,خبر يكون,V,1,0.01,35:42:9,اَهْدٰی
+NOM,Nominative case,pred<<in>>,خبر إن,DEM,1,0.01,22:70:18,یَسِیْرٌ
+NOM,Nominative case,pred<<in>>,خبر إن,PN,1,0.01,58:2:22,لَعَفُوٌّ
+NOM,Nominative case,rslt,جواب الشرط,EXL,1,0.01,10:46:9,مَرْجِعُهُمْ
+NOM,Nominative case,state,بيان,PN,1,0.01,48:29:2,رَّسُوْلُ
+NOM,Nominative case,sub,صلة,SUB,1,0.01,7:138:19,اٰلِهَةٌ ؕ
+NOM,Nominative case,subj <<la>>,اسم لا,N,1,0.01,30:26:6,كُلٌّ
+NOM,Nominative case,subj <<tknm>>,اسم تكنۢ,V,1,0.01,4:73:12,مَوَدَّةٌ
+NOM,Nominative case,subj <<yazal>>,اسم يزال,V,1,0.01,9:110:3,بُنْیَانُهُمُ
+NOM,Nominative case,subj <<zala>>,اسم ظل,V,1,0.01,26:4:9,اَعْنَاقُهُمْ
+NOM,Nominative case,voc,منادى,PRON,1,0.01,28:33:2,رَبِّ
+ACC,Accusative case,Obj,مفعول به,V,4467,43.24,1:6:2,الصِّرَاطَ
+ACC,Accusative case,link,متعلق,V,639,6.19,2:63:5,فَوْقَكُمُ
+ACC,Accusative case,conj,معطوف,N,624,6.04,2:53:5,وَالْفُرْقَانَ
+ACC,Accusative case,Adj,صفة,N,622,6.02,1:6:3,الْمُسْتَقِیْمَ
+ACC,Accusative case,subj<<in>>,اسم إن,ACC,559,5.41,2:20:21,اللّٰهَ
+ACC,Accusative case,pred <<kan>>,خبر كان,V,421,4.08,2:16:11,مُهْتَدِیْنَ
+ACC,Accusative case,cog,مفعول مطلق,V,305,2.95,2:25:18,رِّزْقًا ۙ
+ACC,Accusative case,link,متعلق,N,298,2.88,2:14:13,مَعَكُمْ ۙ
+ACC,Accusative case,circ,حال,PRON,262,2.54,2:162:1,خٰلِدِیْنَ
+ACC,Accusative case,voc,منادى,VOC,187,1.81,2:40:1,یٰبَنِیْۤ
+ACC,Accusative case,circ,حال,V,152,1.47,2:25:27,مُتَشَابِهًا ؕ
+ACC,Accusative case,circ,حال,N,146,1.41,2:91:18,مُصَدِّقًا
+ACC,Accusative case,subj<<an>>,اسم أن,ACC,136,1.32,2:25:8,جَنّٰتٍ
+ACC,Accusative case,subj <<la>>,اسم لا,NEG,124,1.2,2:2:4,رَیْبَ ۛۖۚ
+ACC,Accusative case,Spec,تمييز,N,115,1.11,2:51:5,لَیْلَةً
+ACC,Accusative case,conj,معطوف,PN,113,1.09,2:62:7,وَالصّٰبِـِٕیْنَ
+ACC,Accusative case,Spec,تمييز,V,87,0.84,2:96:13,اَلْفَ
+ACC,Accusative case,App,بدل,N,82,0.79,1:7:1,صِرَاطَ
+ACC,Accusative case,root,root,self,81,0.78,2:177:40,وَالصّٰبِرِیْنَ
+ACC,Accusative case,Obj,مفعول به,N,61,0.59,2:145:14,قِبْلَتَهُمْ ۚ
+ACC,Accusative case,prp,المفعول لأجله,V,57,0.55,2:19:15,حَذَرَ
+ACC,Accusative case,pred <<kn>>,خبر كن,V,43,0.42,2:23:20,صٰدِقِیْنَ
+ACC,Accusative case,exp,مستثني,RES,42,0.41,10:98:8,قَوْمَ
+ACC,Accusative case,Poss,مضاف إليه,N,34,0.33,9:31:10,مَرْیَمَ ۚ
+ACC,Accusative case,exp,مستثني,EXP,33,0.32,2:34:8,اِبْلِیْسَ ؕ
+ACC,Accusative case,conj,معطوف,LOC,29,0.28,3:30:18,وَبَیْنَهٗۤ
+ACC,Accusative case,conj,معطوف,PRON,29,0.28,3:36:21,وَذُرِّیَّتَهَا
+ACC,Accusative case,subj <<lakin>>,اسم لكن,ACC,28,0.27,10:44:8,النَّاسَ
+ACC,Accusative case,circ,حال,PN,27,0.26,2:135:11,حَنِیْفًا ؕ
+ACC,Accusative case,pred <<ykon>>,خبر يكون,V,26,0.25,2:143:12,شَهِیْدًا ؕ
+ACC,Accusative case,App,بدل,PN,25,0.24,2:87:11,ابْنَ
+ACC,Accusative case,pred <<tkon>>,خبر تكون,V,22,0.21,2:41:9,اَوَّلَ
+ACC,Accusative case,circ,حال,REL,21,0.2,3:35:12,مُحَرَّرًا
+ACC,Accusative case,subj <<lakun>>,اسم لاكن,ACC,21,0.2,2:102:12,الشَّیٰطِیْنَ
+ACC,Accusative case,emph,توكيد,N,18,0.17,2:31:4,كُلَّهَا
+ACC,Accusative case,pred <<ka>>,خبر ك,V,16,0.15,4:11:11,نِسَآءً
+ACC,Accusative case,emph,توكيد,PRON,15,0.15,6:149:8,اَجْمَعِیْنَ
+ACC,Accusative case,link,متعلق,ADJ,15,0.15,2:140:23,عِنْدَهٗ
+ACC,Accusative case,pred <<asbah>>,خبر أصبح,V,14,0.14,3:103:19,اِخْوَانًا ۚ
+ACC,Accusative case,Adj,صفة,PN,13,0.13,12:2:4,عَرَبِیًّا
+ACC,Accusative case,conj,معطوف,T,13,0.13,19:33:5,وَیَوْمَ
+ACC,Accusative case,App,بدل,DEM,12,0.12,2:35:15,الشَّجَرَةَ
+ACC,Accusative case,pred <<ykn>>,خبر يكن,V,12,0.12,2:196:64,حَاضِرِی
+ACC,Accusative case,state,بيان,N,12,0.12,11:50:4,هُوْدًا ؕ
+ACC,Accusative case,conj,معطوف,V,11,0.11,7:89:37,وَبَیْنَ
+ACC,Accusative case,pred <<kant>>,خبر كانت,V,11,0.11,2:143:30,لَكَبِیْرَةً
+ACC,Accusative case,Adj,صفة,ADJ,10,0.1,12:78:8,كَبِیْرًا
+ACC,Accusative case,cog,مفعول مطلق,N,10,0.1,7:164:12,عَذَابًا
+ACC,Accusative case,conj,معطوف,REL,10,0.1,2:62:6,وَالنَّصٰرٰی
+ACC,Accusative case,circ,حال,DEM,9,0.09,3:88:1,خٰلِدِیْنَ
+ACC,Accusative case,pred <<kon>>,خبر كون,V,9,0.09,2:65:11,قِرَدَةً
+ACC,Accusative case,link,متعلق,PRON,8,0.08,2:212:12,فَوْقَهُمْ
+ACC,Accusative case,conj,معطوف,ADJ,7,0.07,9:121:6,كَبِیْرَةً
+ACC,Accusative case,Spec,تمييز,ADJ,6,0.06,9:97:3,كُفْرًا
+ACC,Accusative case,circ,حال,P,6,0.06,3:15:15,خٰلِدِیْنَ
+ACC,Accusative case,intg,استفهام,INTG,6,0.06,10:51:7,آٰلْـٰٔنَ
+ACC,Accusative case,pred <<yk>>,خبر يك,V,6,0.06,8:53:6,مُغَیِّرًا
+ACC,Accusative case,Adj,صفة,T,5,0.05,2:184:2,مَّعْدُوْدٰتٍ ؕ
+ACC,Accusative case,Cpnd,مركب,N,5,0.05,5:12:10,عَشَرَ
+ACC,Accusative case,Pass,نائب فاعل,V,5,0.05,10:19:14,بَیْنَهُمْ
+ACC,Accusative case,Pred,خبر,V,5,0.05,27:12:18,قَوْمًا
+ACC,Accusative case,cog,مفعول مطلق,PN,5,0.05,10:4:6,حَقًّا ؕ
+ACC,Accusative case,neg,نفي,NEG,5,0.05,18:21:12,رَیْبَ
+ACC,Accusative case,pred <<akon>>,خبر اكون,V,5,0.05,5:31:17,مِثْلَ
+ACC,Accusative case,pred <<zala>>,خبر ظل,V,5,0.05,16:58:7,مُسْوَدًّا
+ACC,Accusative case,Subj,فاعل,V,4,0.04,7:160:18,اثْنَتَا
+ACC,Accusative case,pred <<lays>>,خبر ليس,V,4,0.04,2:177:2,الْبِرَّ
+ACC,Accusative case,Adj,صفة,LOC,3,0.03,19:16:10,شَرْقِیًّا
+ACC,Accusative case,Poss,مضاف إليه,REL,3,0.03,19:64:11,خَلْفَنَا
+ACC,Accusative case,Pred,خبر,N,3,0.03,10:68:16,عِنْدَكُمْ
+ACC,Accusative case,Pred,خبر,PRON,3,0.03,9:10:10,الْمُعْتَدُوْنَ
+ACC,Accusative case,Spec,تمييز,DEM,3,0.03,2:26:28,مَثَلًا ۘ
+ACC,Accusative case,circ,حال,ACC,3,0.03,4:139:14,جَمِیْعًا
+ACC,Accusative case,emph,توكيد,V,3,0.03,20:123:4,جَمِیْعًا
+ACC,Accusative case,pred <<akn>>,خبر اكن,V,3,0.03,4:72:17,شَهِیْدًا
+ACC,Accusative case,pred <<tkn>>,خبر تكن,V,3,0.03,4:97:20,وَاسِعَةً
+ACC,Accusative case,pred <<tusbih>>,خبر تصبح,V,3,0.03,18:40:14,صَعِیْدًا
+ACC,Accusative case,pred <<ysbah>>,خبر يصبح,V,3,0.03,5:52:28,نٰدِمِیْنَ
+ACC,Accusative case,prp,المفعول لأجله,N,3,0.03,2:243:10,حَذَرَ
+ACC,Accusative case,sub,صلة,REL,3,0.03,18:8:5,صَعِیْدًا
+ACC,Accusative case,App,بدل,EXL,2,0.02,19:75:16,الْعَذَابَ
+ACC,Accusative case,App,بدل,T,2,0.02,8:41:26,یَوْمَ
+ACC,Accusative case,Obj,مفعول به,PRON,2,0.02,40:10:10,اَنْفُسَكُمْ
+ACC,Accusative case,circ,حال,COND,2,0.02,11:108:6,خٰلِدِیْنَ
+ACC,Accusative case,circ,حال,EMPH,2,0.02,48:27:13,اٰمِنِیْنَ ۙ
+ACC,Accusative case,conj,معطوف,DEM,2,0.02,21:44:4,وَاٰبَآءَهُمْ
+ACC,Accusative case,conj,معطوف,EMPH,2,0.02,19:68:3,وَالشَّیٰطِیْنَ
+ACC,Accusative case,gen,مجرور,P,2,0.02,7:155:3,قَوْمَهٗ
+ACC,Accusative case,link,متعلق,NEG,2,0.02,2:249:40,الْیَوْمَ
+ACC,Accusative case,pred <<dm>>,خبر دم,V,2,0.02,3:75:22,قَآىِٕمًا ؕ
+ACC,Accusative case,pred <<lakin>>,خبر لكن,AMD,2,0.02,10:37:11,تَصْدِیْقَ
+ACC,Accusative case,pred <<nkon>>,خبر نكون,V,2,0.02,7:115:10,الْمُلْقِیْنَ
+ACC,Accusative case,pred <<yazal>>,خبر يزال,V,2,0.02,9:110:6,رِیْبَةً
+ACC,Accusative case,pred<<in>>,خبر إن,ACC,2,0.02,19:44:6,الشَّیْطٰنَ
+ACC,Accusative case,subj <<ka'ana>>,اسم كأن,ACC,2,0.02,28:82:8,اللّٰهَ
+ACC,Accusative case,subj <<layt>>,اسم ليت,ACC,2,0.02,28:79:13,مِثْلَ
+ACC,Accusative case,Adj,صفة,V,1,0.01,40:40:3,سَیِّئَةً
+ACC,Accusative case,App,بدل,ADJ,1,0.01,39:28:3,غَیْرَ
+ACC,Accusative case,App,بدل,V,1,0.01,6:161:10,مِّلَّةَ
+ACC,Accusative case,Obj,مفعول به,EMPH,1,0.01,5:68:24,طُغْیَانًا
+ACC,Accusative case,Obj,مفعول به,LOC,1,0.01,58:13:7,صَدَقٰتٍ ؕ
+ACC,Accusative case,Obj,مفعول به,REL,1,0.01,5:36:11,وَّمِثْلَهٗ
+ACC,Accusative case,Obj,مفعول به,self,1,0.01,9:48:8,الْاُمُوْرَ
+ACC,Accusative case,Poss,مضاف إليه,ADJ,1,0.01,14:37:8,ذِیْ
+ACC,Accusative case,Poss,مضاف إليه,INTG,1,0.01,18:12:5,الْحِزْبَیْنِ
+ACC,Accusative case,Poss,مضاف إليه,LOC,1,0.01,58:13:5,یَدَیْ
+ACC,Accusative case,Poss,مضاف إليه,T,1,0.01,11:10:5,ضَرَّآءَ
+ACC,Accusative case,Poss,مضاف إليه,V,1,0.01,23:91:8,مَعَهٗ
+ACC,Accusative case,Pred,خبر,ACC,1,0.01,35:45:25,بَصِیْرًا
+ACC,Accusative case,Pred,خبر,DEM,1,0.01,12:31:27,بَشَرًا ؕ
+ACC,Accusative case,Spec,تمييز,EMPH,1,0.01,18:18:22,رُعْبًا
+ACC,Accusative case,Spec,تمييز,P,1,0.01,18:88:7,جَزَآءَ
+ACC,Accusative case,Spec,تمييز,PN,1,0.01,5:3:50,دِیْنًا ؕ
+ACC,Accusative case,Spec,تمييز,T,1,0.01,5:26:6,سَنَةً ۚ
+ACC,Accusative case,Subj,فاعل,PRON,1,0.01,57:8:12,مِیْثَاقَكُمْ
+ACC,Accusative case,circ,حال,ADJ,1,0.01,26:202:2,بَغْتَةً
+ACC,Accusative case,circ,حال,PRO,1,0.01,26:183:9,مُفْسِدِیْنَ
+ACC,Accusative case,circ,حال,T,1,0.01,19:95:5,فَرْدًا
+ACC,Accusative case,cog,مفعول مطلق,ADJ,1,0.01,48:6:8,ظَنَّ
+ACC,Accusative case,conj,معطوف,NEG,1,0.01,9:10:7,ذِمَّةً ؕ
+ACC,Accusative case,conj,معطوف,P,1,0.01,24:58:19,وَحِیْنَ
+ACC,Accusative case,emph,توكيد,PN,1,0.01,26:65:5,اَجْمَعِیْنَ
+ACC,Accusative case,link,متعلق,P,1,0.01,10:92:6,خَلْفَكَ
+ACC,Accusative case,link,متعلق,PRO,1,0.01,9:28:11,بَعْدَ
+ACC,Accusative case,neg,نفي,RES,1,0.01,18:50:8,اِبْلِیْسَ ؕ
+ACC,Accusative case,pred <<barah>>,خبر برح,V,1,0.01,20:91:5,عٰكِفِیْنَ
+ACC,Accusative case,pred <<la>>,خبر لا,NEG,1,0.01,5:109:10,عِلْمَ
+ACC,Accusative case,pred <<las>>,خبر لس,V,1,0.01,4:94:17,مُؤْمِنًا ۚ
+ACC,Accusative case,pred <<ma>>,خبر ما,NEG,1,0.01,58:2:8,اُمَّهٰتِهِمْ ؕ
+ACC,Accusative case,pred <<tk>>,خبر تك,V,1,0.01,4:40:9,حَسَنَةً
+ACC,Accusative case,pred <<ykon>>,خبر يكون,SUB,1,0.01,43:33:5,اُمَّةً
+ACC,Accusative case,pred<<an>>,خبر أن,ACC,1,0.01,9:111:10,الْجَنَّةَ ؕ
+ACC,Accusative case,prp,المفعول لأجله,AMD,1,0.01,28:46:8,رَّحْمَةً
+ACC,Accusative case,ret,اضراب,RET,1,0.01,39:66:2,اللّٰهَ
+ACC,Accusative case,rslt,جواب الشرط,COND,1,0.01,47:8:3,فَتَعْسًا
+ACC,Accusative case,subj <<dam>>,اسم دام,V,1,0.01,19:31:11,حَیًّا
+ACC,Accusative case,subj <<la>>,اسم لا,RES,1,0.01,19:62:6,سَلٰمًا ؕ
+ACC,Accusative case,subj <<lakun>>,اسم لاكن,V,1,0.01,5:81:13,كَثِیْرًا
+ACC,Accusative case,subj <<lays>>,اسم ليس,V,1,0.01,46:32:14,اَوْلِیَآءُ ؕ
+ACC,Accusative case,subj <<lel>>,اسم لعل,ACC,1,0.01,65:1:37,اللّٰهَ
+ACC,Accusative case,subj<<en>>,اسم ان,ACC,1,0.01,2:146:9,فَرِیْقًا
+GEN,Genitive case,gen,مجرور,P,7375,58.4,1:1:1,بِسْمِ
+GEN,Genitive case,Poss,مضاف إليه,N,2964,23.47,1:1:2,اللّٰهِ
+GEN,Genitive case,conj,معطوف,N,670,5.31,1:7:9,الضَّآلِّیْنَ
+GEN,Genitive case,Adj,صفة,N,616,4.88,2:8:8,الْاٰخِرِ
+GEN,Genitive case,Poss,مضاف إليه,LOC,227,1.8,2:54:20,بَارِىِٕكُمْ ؕ
+GEN,Genitive case,Obj,مفعول به,V,155,1.23,9:11:11,الْاٰیٰتِ
+GEN,Genitive case,conj,معطوف,PN,141,1.12,2:62:11,وَالْیَوْمِ
+GEN,Genitive case,Poss,مضاف إليه,T,82,0.65,2:85:40,الْقِیٰمَةِ
+GEN,Genitive case,root,root,self,64,0.51,9:73:8,وَمَاْوٰىهُمْ
+GEN,Genitive case,Adj,صفة,PN,44,0.35,1:1:3,الرَّحْمٰنِ
+GEN,Genitive case,App,بدل,N,40,0.32,2:102:22,هَارُوْتَ
+GEN,Genitive case,App,بدل,DEM,32,0.25,3:117:6,الْحَیٰوةِ
+GEN,Genitive case,subj<<in>>,اسم إن,ACC,32,0.25,9:49:13,جَهَنَّمَ
+GEN,Genitive case,Poss,مضاف إليه,INTG,23,0.18,6:19:3,شَیْءٍ
+GEN,Genitive case,Adj,صفة,ADJ,20,0.16,11:59:12,عَنِیْدٍ
+GEN,Genitive case,App,بدل,PN,17,0.13,1:2:3,رَبِّ
+GEN,Genitive case,Subj,فاعل,V,15,0.12,16:29:7,مَثْوَی
+GEN,Genitive case,Poss,مضاف إليه,ADJ,12,0.1,4:95:7,اُولِی
+GEN,Genitive case,Pred,خبر,PRON,11,0.09,9:51:10,مَوْلٰىنَا ۚ
+GEN,Genitive case,circ,حال,N,10,0.08,16:79:5,مُسَخَّرٰتٍ
+GEN,Genitive case,emph,توكيد,N,6,0.05,3:119:8,كُلِّهٖ ۚ
+GEN,Genitive case,conj,معطوف,REL,5,0.04,3:20:13,وَالْاُمِّیّٖنَ
+GEN,Genitive case,pred<<in>>,خبر إن,ACC,4,0.03,27:77:2,لَهُدًی
+GEN,Genitive case,state,بيان,N,4,0.03,12:6:20,اِبْرٰهِیْمَ
+GEN,Genitive case,App,بدل,REL,3,0.02,1:7:5,غَیْرِ
+GEN,Genitive case,Poss,مضاف إليه,PN,3,0.02,17:78:9,الْفَجْرِ ؕ
+GEN,Genitive case,conj,معطوف,P,3,0.02,59:7:13,وَالْیَتٰمٰی
+GEN,Genitive case,gen,مجرور,N,3,0.02,50:17:5,الْیَمِیْنِ
+GEN,Genitive case,link,متعلق,V,3,0.02,46:34:12,وَرَبِّنَا ؕ
+GEN,Genitive case,subj <<lays>>,اسم ليس,V,3,0.02,29:68:16,مَثْوًی
+GEN,Genitive case,App,بدل,P,2,0.02,45:36:3,رَبِّ
+GEN,Genitive case,App,بدل,PRON,2,0.02,78:37:1,رَّبِّ
+GEN,Genitive case,Pred,خبر,DEM,2,0.02,39:23:22,هُدَی
+GEN,Genitive case,Spec,تمييز,V,2,0.02,9:72:5,جَنّٰتٍ
+GEN,Genitive case,circ,حال,PRON,2,0.02,16:28:4,ظَالِمِیْۤ
+GEN,Genitive case,conj,معطوف,NEG,2,0.02,9:16:19,الْمُؤْمِنِیْنَ
+GEN,Genitive case,conj,معطوف,PRP,2,0.02,7:2:12,وَذِكْرٰی
+GEN,Genitive case,emph,توكيد,PRON,2,0.02,7:18:12,اَجْمَعِیْنَ
+GEN,Genitive case,link,متعلق,N,2,0.02,11:41:6,مَؔجْرٖىهَا
+GEN,Genitive case,pred <<kan>>,خبر كان,V,2,0.02,28:59:16,مُهْلِكِی
+GEN,Genitive case,pred<<an>>,خبر أن,ACC,2,0.02,9:2:13,مُخْزِی
+GEN,Genitive case,prp,المفعول لأجله,V,2,0.02,35:8:20,حَسَرٰتٍ ؕ
+GEN,Genitive case,App,بدل,ADJ,1,0.01,14:2:1,اللّٰهِ
+GEN,Genitive case,Obj,مفعول به,N,1,0.01,33:53:16,اِنٰىهُ ۙ
+GEN,Genitive case,Pass,نائب فاعل,V,1,0.01,38:31:5,الصّٰفِنٰتُ
+GEN,Genitive case,Poss,مضاف إليه,ACC,1,0.01,5:73:8,ثَلٰثَةٍ ۘ
+GEN,Genitive case,Pred,خبر,N,1,0.01,47:12:21,مَثْوًی
+GEN,Genitive case,Pred,خبر,PN,1,0.01,33:37:19,مُبْدِیْهِ
+GEN,Genitive case,Pred,خبر,REL,1,0.01,13:29:5,طُوْبٰی
+GEN,Genitive case,Spec,تمييز,ADJ,1,0.01,17:21:9,دَرَجٰتٍ
+GEN,Genitive case,circ,حال,DEM,1,0.01,13:18:24,وَمَاْوٰىهُمْ
+GEN,Genitive case,emph,توكيد,PN,1,0.01,2:161:13,اَجْمَعِیْنَ
+GEN,Genitive case,gen,مجرور,CONJ,1,0.01,52:1:1,وَالطُّوْرِ
+GEN,Genitive case,gen,مجرور,self,1,0.01,9:91:23,سَبِیْلٍ ؕ
+GEN,Genitive case,neg,نفي,NEG,1,0.01,58:7:21,خَمْسَةٍ
+GEN,Genitive case,pred <<ma>>,خبر ما,REL,1,0.01,16:96:7,بَاقٍ ؕ
+GEN,Genitive case,subj <<kan>>,اسم كان,V,1,0.01,13:32:13,عِقَابِ
+GEN,Genitive case,subj <<ma>>,اسم ما,NEG,1,0.01,22:71:18,نَّصِیْرٍ
+GEN,Genitive case,subj <<ykad>>,اسم يكاد,V,1,0.01,24:43:35,سَنَا
+GEN,Genitive case,subj<<an>>,اسم أن,ACC,1,0.01,53:42:4,الْمُنْتَهٰی

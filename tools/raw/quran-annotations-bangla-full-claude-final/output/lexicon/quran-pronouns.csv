@@ -1,0 +1,702 @@
+﻿pronoun_uthmani,person,gender,number,attached,host_pos,role,count,first_word,example_text_indopak
+وا,3,M,P,attached,V,Subj,1068,9:3:30,كَفَرُوْا
+ون,3,M,P,attached,V,Subj,923,9:6:18,یَعْلَمُوْنَ
+وا۟,3,M,P,attached,V,Subj,648,2:6:3,كَفَرُوْا
+ونَ,3,M,P,attached,V,Subj,603,2:3:2,یُؤْمِنُوْنَ
+كُمْ,2,M,P,attached,N,Poss,574,2:21:9,قَبْلِكُمْ
+هُمْ,3,M,P,attached,N,Poss,534,2:9:8,اَنْفُسَهُمْ
+نا,1,,P,attached,V,Subj,520,9:42:15,اسْتَطَعْنَا
+كُمْ,2,M,P,attached,P,gen,518,2:22:17,لَّكُمْ ۚ
+وا۟,2,M,P,attached,V,Subj,510,2:11:5,تُفْسِدُوْا
+هُمْ,3,M,P,attached,P,gen,467,2:7:10,وَّلَهُمْ
+وا,2,M,P,attached,V,Subj,465,9:2:1,فَسِیْحُوْا
+ه,3,M,S,attached,N,Poss,460,9:1:4,وَرَسُوْلِهٖۤ
+ه,3,M,S,attached,P,gen,452,9:37:7,بِهِ
+ون,2,M,P,attached,V,Subj,373,9:13:2,تُقَاتِلُوْنَ
+هُ,3,M,S,attached,P,gen,348,2:60:10,مِنْهُ
+ها,3,F,S,attached,P,gen,341,9:21:8,فِیْهَا
+ك,2,M,S,attached,N,Poss,338,9:103:11,صَلٰوتَكَ
+نا,1,,P,attached,N,Poss,311,9:50:11,اَمْرَنَا
+ى,1,,S,attached,N,Poss,305,2:41:14,بِاٰیٰتِیْ
+هُ,3,M,S,attached,PRON,Obj,304,2:73:2,اضْرِبُوْهُ
+هُ,3,M,S,attached,N,Poss,303,2:207:5,نَفْسَهُ
+ونَ,2,M,P,attached,V,Subj,300,2:21:11,تَتَّقُوْنَ
+همْ,3,M,P,attached,N,Poss,299,9:4:18,مُدَّتِهِمْ ؕ
+ن,1,,P,attached,V,Subj,284,10:14:2,جَعَلْنٰكُمْ
+هُ,3,M,S,attached,V,Obj,279,2:102:60,اشْتَرٰىهُ
+هُمْ,3,M,P,attached,V,Obj,273,2:6:9,تُنْذِرْهُمْ
+و,2,M,P,attached,V,Subj,241,2:31:10,اَنْۢبِـُٔوْنِیْ
+كُمْ,2,M,P,attached,V,Obj,239,2:21:6,خَلَقَكُمْ
+هِمْ,3,M,P,attached,N,Poss,211,2:5:5,رَّبِّهِمْ ۗ
+و,3,M,P,attached,V,Subj,199,2:57:14,ظَلَمُوْنَا
+ا,1,,P,attached,ACC,subj<<in>>,194,2:14:12,اِنَّا
+تُمْ,2,M,P,attached,V,Subj,193,2:54:7,ظَلَمْتُمْ
+نَا,1,,P,attached,V,Subj,192,2:23:6,نَزَّلْنَا
+ها,3,F,S,attached,N,Poss,183,9:24:13,كَسَادَهَا
+هُمْ,3,M,P,attached,PRON,Obj,179,2:3:7,رَزَقْنٰهُمْ
+وا,3,M,P,attached,V,subj <<kan>>,178,9:9:12,كَانُوْا
+هِۦ,3,M,S,attached,N,Poss,175,2:23:12,مِّثْلِهٖ ۪
+هَا,3,F,S,attached,P,gen,168,2:25:15,مِنْهَا
+كَ,2,M,S,attached,N,Poss,158,2:4:9,قَبْلِكَ ۚ
+تُ,1,,S,attached,V,Subj,155,2:40:6,اَنْعَمْتُ
+هُم,3,M,P,attached,P,gen,155,2:20:7,لَهُمْ
+هُو,3,M,S,independent,,root,151,9:33:1,هُوَ
+ك,2,M,S,attached,P,gen,148,9:43:3,عَنْكَ ۚ
+كُم,2,M,P,attached,P,gen,147,2:29:4,لَكُمْ
+كُم,2,M,P,attached,V,Obj,143,2:92:2,جَآءَكُمْ
+ى,1,,S,attached,ACC,subj<<in>>,137,2:30:5,اِنِّیْ
+هُۥ,3,M,S,attached,N,Poss,135,2:64:10,وَرَحْمَتُهٗ
+نَا,1,,P,attached,N,Poss,134,2:23:8,عَبْدِنَا
+هُ,3,M,S,attached,ACC,subj<<in>>,133,9:117:24,اِنَّهٗ
+هُمُ,3,M,P,attached,V,Obj,124,2:10:4,فَزَادَهُمُ
+هِ,3,M,S,attached,P,gen,124,2:2:5,فِیْهِ ۛۚ
+وٓا۟,3,M,P,attached,V,Subj,123,2:11:8,قَالُوْۤا
+همْ,3,M,P,attached,P,gen,122,9:4:15,اِلَیْهِمْ
+ـ,1,,S,attached,N,Poss,121,10:71:8,یٰقَوْمِ
+ت,2,M,S,attached,V,Subj,118,9:43:5,اَذِنْتَ
+هَا,3,F,S,attached,N,Poss,114,2:24:9,وَقُوْدُهَا
+هِۦ,3,M,S,attached,P,gen,111,2:22:13,بِهٖ
+هُم,3,M,P,attached,N,Poss,110,2:120:18,اَهْوَآءَهُمْ
+ها,3,F,S,attached,PRON,Obj,103,9:24:10,قْتَرَفْتُمُوْهَا
+هُمْ,3,M,P,independent,,root,102,2:4:11,هُمْ
+نا,1,,P,attached,P,gen,97,9:51:8,لَنَا ۚ
+نَٰ,1,,P,attached,V,Subj,95,2:3:7,رَزَقْنٰهُمْ
+ك,2,M,S,attached,V,Obj,94,9:6:5,اسْتَجَارَكَ
+كُمْ,2,M,P,attached,PRON,Obj,94,2:47:9,فَضَّلْتُكُمْ
+هِمْ,3,M,P,attached,P,gen,92,1:7:4,عَلَیْهِمْ ۙ۬ۦ
+تُمْ,2,M,P,attached,V,subj <<kan>>,90,9:94:29,كُنْتُمْ
+نى,1,,S,attached,V,Obj,89,9:49:7,تَفْتِنِّیْ ؕ
+تُم,2,M,P,attached,V,Subj,88,2:64:2,تَوَلَّیْتُمْ
+ى,1,,S,attached,P,gen,88,2:38:7,مِّنِّیْ
+كُم,2,M,P,attached,N,Poss,87,2:23:14,شُهَدَآءَكُمْ
+وا۟,3,M,P,attached,V,subj <<kan>>,86,2:10:11,كَانُوْا
+هُم,3,M,P,attached,V,Obj,84,2:33:3,اَنْۢبِئْهُمْ
+كُمُ,2,M,P,attached,P,gen,82,2:22:3,لَكُمُ
+كَ,2,M,S,attached,P,gen,80,2:4:5,اِلَیْكَ
+ها,3,F,S,attached,V,Obj,79,9:114:9,وَّعَدَهَاۤ
+ك,2,M,S,attached,PRON,Obj,77,9:42:7,لَّاتَّبَعُوْكَ
+هُۥ,3,M,S,attached,P,gen,76,2:102:62,لَهٗ
+وٓا۟,2,M,P,attached,V,Subj,76,2:54:11,فَتُوْبُوْۤا
+هُمْ,3,M,P,independent,,circ,75,2:75:18,وَهُمْ
+ون,3,M,P,attached,V,Pass,75,9:30:23,یُؤْفَكُوْنَ
+وْا,3,M,P,attached,V,Subj,75,9:9:1,اِشْتَرَوْا
+هُوَ,3,M,S,independent,,root,73,2:29:1,هُوَ
+كَ,2,M,S,attached,V,Obj,72,2:120:21,جَآءَكَ
+نا,1,,P,attached,V,Obj,72,9:51:3,یُّصِیْبَنَاۤ
+تُمْ,2,M,P,attached,V,subj <<kn>>,70,2:23:2,كُنْتُمْ
+هُمْ,3,M,P,attached,ACC,subj<<an>>,70,2:46:6,وَاَنَّهُمْ
+هُمْ,3,M,P,attached,LOC,Poss,70,2:89:9,مَعَهُمْ ۙ
+تَ,2,M,S,attached,V,Subj,68,1:7:3,اَنْعَمْتَ
+كُمْ,2,M,P,attached,ACC,subj <<lel>>,67,2:21:10,لَعَلَّكُمْ
+هُمُ,3,M,P,attached,P,gen,67,2:86:9,عَنْهُمُ
+هُم,3,M,P,attached,PRON,Obj,66,2:76:13,اَتُحَدِّثُوْنَهُمْ
+هُمْ,3,M,P,attached,ACC,subj<<in>>,65,2:12:2,اِنَّهُمْ
+نَا,1,,P,attached,V,Obj,63,1:6:1,اِهْدِنَا
+وا,3,M,P,attached,V,Pass,63,9:29:21,اُوْتُوا
+وا۟,3,M,P,attached,V,Pass,63,2:25:14,رُزِقُوْا
+هُۥ,3,M,S,attached,V,Obj,62,2:97:7,نَزَّلَهٗ
+كُمُ,2,M,P,attached,V,Obj,61,2:55:11,فَاَخَذَتْكُمُ
+نا,1,,P,attached,V,subj <<kan>>,60,10:29:7,كُنَّا
+نَا,1,,P,attached,P,gen,59,2:61:10,لَنَا
+هُۥ,3,M,S,attached,ACC,subj<<in>>,58,2:37:8,اِنَّهٗ
+ون,2,M,P,attached,V,Pass,58,9:94:22,تُرَدُّوْنَ
+وْا۟,3,M,P,attached,V,Subj,58,2:14:8,خَلَوْا
+هَا,3,F,S,attached,V,Obj,56,2:106:6,نُنْسِهَا
+كَ,2,M,S,attached,PRON,Obj,53,2:119:2,اَرْسَلْنٰكَ
+هُمُ,3,M,P,independent,,Pred,51,2:27:19,هُمُ
+كُمْ,2,M,P,attached,LOC,Poss,50,2:14:13,مَعَكُمْ ۙ
+ن,1,,S,attached,PRON,Obj,49,10:71:33,تُنْظِرُوْنِ
+كُمُ,2,M,P,attached,N,Poss,48,2:21:4,رَبَّكُمُ
+ا,3,M,D,attached,V,Subj,46,2:229:20,یُقِیْمَا
+نَ,3,F,P,attached,V,Subj,44,2:222:14,یَطْهُرْنَ ۚ
+هُمْ,3,M,P,attached,ACC,subj <<lel>>,43,2:186:16,لَعَلَّهُمْ
+ا,1,,P,attached,P,gen,42,2:167:12,مِنَّا ؕ
+هُنَّ,3,F,P,attached,PRON,Obj,42,2:187:25,بَاشِرُوْهُنَّ
+ك,2,M,S,attached,ACC,subj<<in>>,41,10:88:4,اِنَّكَ
+نى,1,,S,attached,PRON,Obj,41,10:79:3,ائْتُوْنِیْ
+هم,3,M,P,attached,P,gen,41,10:22:13,بِهِمْ
+هُ,3,M,S,attached,LOC,Poss,41,9:22:6,عِنْدَهٗۤ
+تُمُو,2,M,P,attached,V,Subj,40,2:191:3,ثَقِفْتُمُوْهُمْ
+هِ,3,M,S,attached,N,Poss,39,2:97:15,یَدَیْهِ
+هم,3,M,P,attached,N,Poss,38,9:17:10,اَنْفُسِهِمْ
+هَا,3,F,S,attached,PRON,Obj,37,2:66:1,فَجَعَلْنٰهَا
+هُو,3,M,S,independent,,pred<<in>>,37,9:118:29,هُوَ
+ِ,1,,S,attached,N,Poss,36,2:54:5,یٰقَوْمِ
+كُم,2,M,P,attached,PRON,Obj,35,2:49:2,نَجَّیْنٰكُمْ
+هَآ,3,F,S,attached,P,gen,35,2:25:29,فِیْهَاۤ
+ان,2,,D,attached,V,Subj,34,12:41:19,تَسْتَفْتِیٰنِ
+كُما,2,,D,attached,N,Poss,34,10:87:7,لِقَوْمِكُمَا
+ن,3,F,P,attached,V,Subj,34,10:22:12,وَجَرَیْنَ
+نحْنُ,1,,P,independent,,root,34,9:52:8,وَنَحْنُ
+نَآ,1,,P,attached,V,Subj,34,2:50:6,وَاَغْرَقْنَاۤ
+هُمْ,3,M,P,independent,,neg,34,2:48:18,هُمْ
+هِم,3,M,P,attached,N,Poss,34,2:10:2,قُلُوْبِهِمْ
+ونَ,3,M,P,attached,V,Pass,34,2:48:19,یُنْصَرُوْنَ
+كُمْ,2,M,P,attached,ACC,subj<<in>>,33,2:54:6,اِنَّكُمْ
+نَآ,1,,P,attached,N,Poss,33,2:39:4,بِاٰیٰتِنَاۤ
+ـ,1,,S,attached,P,gen,32,10:15:31,اِلَیَّ ۚ
+نا,1,,P,attached,PRON,Obj,29,10:22:36,اَنْجَیْتَنَا
+هِۦٓ,3,M,S,attached,N,Poss,29,2:67:4,لِقَوْمِهٖۤ
+ونَ,2,M,P,attached,V,Pass,29,2:28:13,تُرْجَعُوْنَ
+نا,1,,P,attached,LOC,Poss,28,9:40:23,مَعَنَا ۚ
+هُمُ,3,M,P,attached,N,Poss,28,2:257:12,اَوْلِیٰٓـُٔهُمُ
+وْن,3,M,P,attached,V,Subj,28,9:67:8,وَیَنْهَوْنَ
+هن,3,F,P,attached,N,Poss,27,12:31:3,بِمَكْرِهِنَّ
+هُم,3,M,P,independent,,root,27,3:23:19,وَهُمْ
+هُۥٓ,3,M,S,attached,N,Poss,27,2:80:16,عَهْدَهٗۤ
+ا,1,,P,attached,ACC,subj<<an>>,26,3:52:19,بِاَنَّا
+ت,2,M,S,attached,V,subj <<kan>>,26,10:91:5,وَكُنْتَ
+كَ,2,M,S,attached,ACC,subj<<in>>,26,2:32:9,اِنَّكَ
+نَّا,1,,P,attached,V,Subj,26,2:8:5,اٰمَنَّا
+تُمُ,2,M,P,attached,V,Subj,25,2:51:7,اتَّخَذْتُمُ
+ى,1,,S,attached,LOC,Poss,25,6:19:9,بَیْنِیْ
+هُما,3,,D,attached,LOC,Poss,24,11:43:19,بَیْنَهُمَا
+تُم,2,M,P,attached,V,subj <<kn>>,23,2:64:11,لَكُنْتُمْ
+هُمْ,3,M,P,independent,,sub,23,7:139:5,هُمْ
+أنت,2,M,S,independent,,root,22,11:12:21,اَنْتَ
+تُ,1,,S,attached,V,Pass,22,6:14:15,اُمِرْتُ
+هُنَّ,3,F,P,attached,N,Poss,22,2:228:22,وَبُعُوْلَتُهُنَّ
+هُۥ,3,M,S,attached,PRON,Obj,22,2:75:13,یُحَرِّفُوْنَهٗ
+هِمْ,3,M,P,attached,V,Obj,22,2:129:12,وَیُزَكِّیْهِمْ ؕ
+وْ,3,M,P,attached,V,Subj,22,2:95:2,یَّتَمَنَّوْهُ
+هُ,3,M,S,attached,ACC,subj<<an>>,21,2:26:16,اَنَّهُ
+هُمْ,3,M,P,attached,EMPH,Obj,21,2:96:1,وَلَتَجِدَنَّهُمْ
+وْا,2,M,P,attached,V,Subj,21,9:96:3,لِتَرْضَوْا
+وْنَ,3,M,P,attached,V,Subj,21,2:165:22,یَرَوْنَ
+نَّا,1,,P,attached,V,subj <<ka>>,20,4:97:11,كُنَّا
+ه,3,M,S,attached,V,Obj,20,11:39:4,یَّاْتِیْهِ
+همُ,3,M,P,attached,P,gen,20,9:42:10,عَلَیْهِمُ
+همْ,3,M,P,attached,V,Obj,20,9:14:5,وَیُخْزِهِمْ
+هِۦٓ,3,M,S,attached,P,gen,20,2:26:37,بِهٖۤ
+ى,2,F,S,attached,V,Subj,20,3:43:2,اقْنُتِیْ
+أَنتُمْ,2,M,P,independent,,circ,19,2:22:22,وَّاَنْتُمْ
+هُو,3,M,S,independent,,circ,19,16:58:8,وَّهُوَ
+هِم,3,M,P,attached,P,gen,19,2:85:12,عَلَیْهِمْ
+هِمُ,3,M,P,attached,P,gen,19,2:61:38,عَلَیْهِمُ
+هُۥ,3,M,S,attached,LOC,Poss,18,2:17:9,حَوْلَهٗ
+أنا,1,,S,independent,,root,17,10:90:25,وَاَنَا
+هُم,3,M,P,attached,LOC,Poss,17,2:232:13,بَیْنَهُمْ
+هُما,3,M,D,attached,N,Poss,17,12:36:6,اَحَدُهُمَاۤ
+هُمُ,3,M,P,attached,PRON,Obj,17,2:121:2,اٰتَیْنٰهُمُ
+هُوَ,3,M,S,independent,,App,17,2:163:7,هُوَ
+وُا,3,M,P,attached,V,Subj,17,9:5:19,وَاٰتَوُا
+آ,1,,P,attached,ACC,subj<<in>>,16,2:70:13,وَاِنَّاۤ
+تُم,2,M,P,attached,V,subj <<kan>>,16,10:51:9,كُنْتُمْ
+تُمْ,2,M,P,attached,V,Pass,16,2:196:6,اُحْصِرْتُمْ
+ك,2,M,S,attached,EMPH,Obj,16,10:46:2,نُرِیَنَّكَ
+كُمْ,2,M,P,attached,EMPH,Obj,16,4:87:6,لَیَجْمَعَنَّكُمْ
+هُنَّ,3,F,P,attached,P,gen,16,2:187:13,لَّهُنَّ ؕ
+هُو,3,M,S,independent,,App,16,9:31:20,هُوَ ؕ
+ى,1,,S,attached,ACC,subj<<an>>,16,2:47:8,وَاَنِّیْ
+أنتُمْ,2,M,P,independent,,root,15,11:50:15,اَنْتُمْ
+ا,2,M,D,attached,V,Subj,15,2:125:17,طَهِّرَا
+نِى,1,,S,attached,PRON,Obj,15,2:31:10,اَنْۢبِـُٔوْنِیْ
+نِى,1,,S,attached,V,Obj,15,2:260:5,اَرِنِیْ
+هُوَ,3,M,S,independent,,pred<<in>>,15,2:37:9,هُوَ
+ىَ,1,,S,attached,N,Poss,15,2:38:11,هُدَایَ
+تُ,1,,S,attached,V,subj <<kan>>,14,11:28:5,كُنْتُ
+كُم,2,M,P,attached,LOC,Poss,14,2:188:4,بَیْنَكُمْ
+ن,1,,S,attached,V,Obj,14,11:46:12,تَسْـَٔلْنِ
+نا,1,,P,attached,V,Pass,14,11:70:15,اُرْسِلْنَاۤ
+نَا,1,,P,attached,PRON,Obj,14,2:57:14,ظَلَمُوْنَا
+همُ,3,M,P,attached,N,Poss,14,10:9:11,تَحْتِهِمُ
+هى,3,F,S,independent,,root,14,9:68:10,هِیَ
+هُمْ,3,M,P,independent,,sur,14,7:135:10,هُمْ
+هُن,3,F,P,attached,N,Poss,14,12:31:21,اَیْدِیَهُنَّ
+وا,3,M,P,attached,V,subj <<ykon>>,14,9:18:21,یَّكُوْنُوْا
+وْ,2,M,P,attached,V,Subj,14,2:150:25,تَخْشَوْهُمْ
+وْا۟,2,M,P,attached,V,Subj,14,2:60:25,تَعْثَوْا
+ىٓ,1,,S,attached,ACC,subj<<in>>,14,2:30:24,اِنِّیْۤ
+ك,2,M,S,attached,LOC,Poss,13,11:48:11,مَّعَكَ ؕ
+كُمْ,2,M,P,attached,ACC,subj<<an>>,13,2:187:16,اَنَّكُمْ
+نَآ,1,,P,attached,P,gen,13,2:32:5,لَنَاۤ
+نِ,1,,S,attached,PRON,Obj,13,2:40:13,فَارْهَبُوْنِ
+هن,3,F,P,attached,P,gen,13,9:36:24,فِیْهِنَّ
+هُو,3,M,S,independent,,Pred,13,9:72:22,هُوَ
+هُوَ,3,M,S,independent,,circ,13,2:85:19,وَهُوَ
+هِنَّ,3,F,P,attached,N,Poss,13,2:228:3,بِاَنْفُسِهِنَّ
+هِنَّ,3,F,P,attached,P,gen,13,2:197:6,فِیْهِنَّ
+أَنتَ,2,M,S,independent,,root,12,2:286:44,اَنْتَ
+تُم,2,M,P,attached,V,Pass,12,4:86:2,حُیِّیْتُمْ
+ن,2,F,P,attached,V,Subj,12,33:28:7,تُرِدْنَ
+هَآ,3,F,S,attached,N,Poss,12,2:106:11,مِثْلِهَا ؕ
+هُما,3,,D,attached,P,gen,12,12:42:6,مِّنْهُمَا
+هُمَا,3,,D,attached,P,gen,12,2:102:36,مِنْهُمَا
+هُمُ,3,M,P,independent,,root,12,23:7:6,هُمُ
+هُۥ,3,M,S,attached,ACC,subj<<an>>,12,3:18:3,اَنَّهٗ
+هُۥٓ,3,M,S,attached,P,gen,12,2:112:8,فَلَهٗۤ
+وا,2,M,P,attached,V,subj <<kan>>,12,12:9:10,وَتَكُوْنُوْا
+أنتُمْ,2,M,P,independent,,circ,11,11:28:17,وَاَنْتُمْ
+هُن,3,F,P,attached,V,Obj,11,12:43:8,یَّاْكُلُهُنَّ
+هُو,3,M,S,independent,,conj,11,12:64:15,وَّهُوَ
+هُو,3,M,S,independent,,rslt,11,9:3:18,فَهُوَ
+هِ,3,M,S,attached,V,Obj,11,3:44:5,نُوْحِیْهِ
+هِمُ,3,M,P,attached,N,Poss,11,2:93:17,قُلُوْبِهِمُ
+وٓا۟,3,M,P,attached,V,Pass,11,3:112:6,ثُقِفُوْۤا
+أنتُم,2,M,P,independent,,root,10,10:41:8,اَنْتُمْ
+ا,2,,D,attached,V,Subj,10,2:35:7,وَكُلَا
+ان,3,M,D,attached,V,Subj,10,11:24:8,یَسْتَوِیٰنِ
+تَ,2,M,S,attached,V,subj <<kn>>,10,2:143:17,كُنْتَ
+ك,2,F,S,attached,N,Poss,10,11:44:4,مَآءَكِ
+ها,3,F,S,attached,ACC,subj<<in>>,10,9:99:17,اِنَّهَا
+هم,3,M,P,attached,V,Obj,10,9:103:6,وَتُزَكِّیْهِمْ
+هما,3,,D,attached,P,gen,10,20:121:8,عَلَیْهِمَا
+هَا,3,F,S,attached,ACC,subj<<in>>,10,2:45:4,وَاِنَّهَا
+هَآ,3,F,S,attached,V,Obj,10,2:263:7,یَّتْبَعُهَاۤ
+هُم,3,M,P,attached,ACC,subj<<an>>,10,2:46:3,اَنَّهُمْ
+هُم,3,M,P,attached,EMPH,Obj,10,3:188:14,تَحْسَبَنَّهُمْ
+هُم,3,M,P,independent,,circ,10,9:13:9,وَهُمْ
+هُما,3,,D,attached,PRON,Obj,10,18:32:10,وَّحَفَفْنٰهُمَا
+هُمْ,3,M,P,attached,ACC,subj <<ka'ana>>,10,2:101:20,كَاَنَّهُمْ
+هُۥٓ,3,M,S,attached,V,Obj,10,2:126:25,اَضْطَرُّهٗۤ
+وا۟,2,M,P,attached,V,subj <<tkon>>,10,2:143:5,لِّتَكُوْنُوْا
+وْن,2,M,P,attached,V,Pass,10,10:52:9,تُجْزَوْنَ
+وْنَ,3,M,P,attached,V,Pass,10,2:234:2,یُتَوَفَّوْنَ
+ىٓ,1,,S,attached,N,Poss,10,2:40:9,بِعَهْدِیْۤ
+َ,1,,S,attached,P,gen,10,3:55:8,اِلَیَّ
+أنا,1,,S,independent,,emph,9,12:69:10,اَنَا
+أَنتَ,2,M,S,independent,,pred<<in>>,9,2:32:10,اَنْتَ
+هُ,3,M,S,attached,EMPH,Obj,9,12:35:9,لَیَسْجُنُنَّهٗ
+هُم,3,M,P,independent,,sub,9,6:113:11,هُمْ
+هُما,3,,D,attached,V,Obj,9,17:23:21,تَنْهَرْهُمَا
+هُمُ,3,M,P,attached,LOC,Poss,9,2:213:11,مَعَهُمُ
+هُمْ,3,M,P,attached,T,Poss,9,22:42:5,قَبْلَهُمْ
+هُن,3,F,P,attached,PRON,Obj,9,33:49:8,طَلَّقْتُمُوْهُنَّ
+هُوَ,3,M,S,independent,,Obj,9,2:222:5,هُوَ
+أَنتُمْ,2,M,P,independent,,root,8,2:85:2,اَنْتُمْ
+كَ,2,M,S,attached,LOC,Poss,8,4:102:10,مَّعَكَ
+نَحْنُ,1,,P,independent,,root,8,2:11:10,نَحْنُ
+هُم,3,M,P,attached,ACC,subj<<in>>,8,11:29:16,اِنَّهُمْ
+هُمَا,3,,D,attached,V,Obj,8,2:36:1,فَاَزَلَّهُمَا
+هُمَا,3,M,D,attached,N,Poss,8,2:255:47,حِفْظُهُمَا ۚ
+هُمُ,3,M,P,independent,,pred<<in>>,8,2:12:3,هُمُ
+هُمْ,3,M,P,independent,,Pred,8,3:10:14,هُمْ
+هُن,3,F,P,attached,P,gen,8,12:31:7,لَهُنَّ
+هُو,3,M,S,independent,,neg,8,12:104:7,هُوَ
+هُو,3,M,S,independent,,pred<<an>>,8,16:95:10,هُوَ
+هُوَ,3,M,S,independent,,rslt,8,2:184:23,فَهُوَ
+وْن,2,M,P,attached,V,Subj,8,9:13:13,اَتَخْشَوْنَهُمْ ۚ
+وْن,3,M,P,attached,V,Pass,8,18:31:9,یُحَلَّوْنَ
+وْنَ,2,M,P,attached,V,Subj,8,2:44:4,وَتَنْسَوْنَ
+أنا,1,,S,independent,,Obj,7,12:45:8,اَنَا
+أنت,2,M,S,independent,,intg,7,10:42:5,اَفَاَنْتَ
+أنتُمْ,2,M,P,independent,,emph,7,10:28:9,اَنْتُمْ
+أنتُمْ,2,M,P,independent,,neg,7,14:10:20,اَنْتُمْ
+كُم,2,M,P,attached,ACC,subj<<in>>,7,11:7:19,اِنَّكُمْ
+كُم,2,M,P,attached,EMPH,Obj,7,2:38:6,یَاْتِیَنَّكُمْ
+كُمُ,2,M,P,attached,LOC,Poss,7,2:63:5,فَوْقَكُمُ
+نحْنُ,1,,P,independent,,emph,7,15:9:2,نَحْنُ
+هما,3,M,D,attached,N,Poss,7,18:32:6,لِاَحَدِهِمَا
+هى,3,F,S,independent,,circ,7,11:42:1,وَهِیَ
+هَآ,3,F,S,attached,PRON,Obj,7,2:114:19,یَّدْخُلُوْهَاۤ
+هُم,3,M,P,independent,,subj <<ma>>,7,2:8:10,هُمْ
+هُم,3,M,P,independent,,sur,7,6:44:19,هُمْ
+هُنَّ,3,F,P,attached,V,Obj,7,2:29:13,فَسَوّٰىهُنَّ
+هُو,3,M,S,independent,,Obj,7,9:61:6,هُوَ
+هُو,3,M,S,independent,,emph,7,9:104:5,هُوَ
+هُۥ,3,M,S,attached,T,Poss,7,3:72:15,اٰخِرَهٗ
+هُۥٓ,3,M,S,attached,LOC,Poss,7,2:255:24,عِنْدَهٗۤ
+وا۟,2,M,P,attached,V,subj <<kon>>,7,2:65:10,كُوْنُوْا
+وُا۟,3,M,P,attached,V,Subj,7,2:16:3,اشْتَرَوُا
+أنا,1,,S,independent,,subj <<ma>>,6,10:108:20,اَنَا
+أنت,2,M,S,independent,,pred<<in>>,6,11:87:18,لَاَنْتَ
+أنتُمْ,2,M,P,independent,,intg,6,21:50:5,اَفَاَنْتُمْ
+انِ,3,M,D,attached,V,Subj,6,2:102:25,یُعَلِّمٰنِ
+آ,3,M,D,attached,V,Subj,6,2:102:29,یَقُوْلَاۤ
+تُّمْ,2,M,P,attached,V,Subj,6,2:233:45,اَرَدْتُّمْ
+كَ,2,M,S,attached,EMPH,Obj,6,2:144:7,فَلَنُوَلِّیَنَّكَ
+كُما,2,,D,attached,P,gen,6,10:78:9,لَكُمَا
+كُمُ,2,M,P,attached,EMPH,Obj,6,5:94:4,لَیَبْلُوَنَّكُمُ
+نحْنُ,1,,P,independent,,pred<<in>>,6,15:23:2,لَنَحْنُ
+نَا,1,,P,attached,LOC,Poss,6,3:64:8,بَیْنَنَا
+ه,3,M,S,attached,PRON,Obj,6,12:37:5,تُرْزَقٰنِهٖۤ
+همُ,3,M,P,attached,V,Obj,6,14:44:4,یَاْتِیْهِمُ
+هى,3,F,S,independent,,neg,6,11:83:5,هِیَ
+هُم,3,M,P,attached,T,Poss,6,19:74:3,قَبْلَهُمْ
+هُم,3,M,P,independent,,neg,6,9:56:6,هُمْ
+هُمْ,3,M,P,independent,,conj,6,2:18:4,فَهُمْ
+هُو,3,M,S,independent,,exp,6,13:30:24,هُوَ ۚ
+هُو,3,M,S,independent,,sub,6,19:75:21,هُوَ
+هُوَ,3,M,S,independent,,neg,6,3:78:11,هُوَ
+هِمَا,3,,D,attached,P,gen,6,2:158:17,بِهِمَا ؕ
+ى,1,,S,attached,ACC,subj <<lel>>,6,12:46:17,لَّعَلِّیْۤ
+أنا,1,,S,independent,,neg,5,14:22:29,اَنَا
+أنتُم,2,M,P,independent,,neg,5,10:53:10,اَنْتُمْ
+أَنتُمْ,2,M,P,independent,,conj,5,2:187:11,وَاَنْتُمْ
+أَنتُمْ,2,M,P,independent,,neg,5,6:148:35,اَنْتُمْ
+أَنَا۠,1,,S,independent,,root,5,3:81:30,وَاَنَا
+ا,1,,P,attached,N,Poss,5,18:65:11,لَّدُنَّا
+ت,2,M,S,attached,V,Pass,5,11:112:3,اُمِرْتَ
+تُ,1,,S,attached,V,subj <<kn>>,5,4:73:14,كُنْتُ
+ك,2,F,S,attached,P,gen,5,19:19:7,لَكِ
+كُن,2,F,P,attached,N,Poss,5,12:28:10,كَیْدِكُنَّ ؕ
+نحْنُ,1,,P,independent,,subj <<ma>>,5,10:78:14,نَحْنُ
+نى,1,,S,attached,ACC,subj<<in>>,5,11:2:5,اِنَّنِیْ
+نَا,1,,P,attached,V,Pass,5,2:25:22,رُزِقْنَا
+نَآ,1,,P,attached,V,Obj,5,2:118:9,تَاْتِیْنَاۤ
+هى,3,F,S,independent,,sur,5,20:20:3,هِیَ
+هَا,3,F,S,attached,LOC,Poss,5,2:26:11,فَوْقَهَا ؕ
+هُمَا,3,,D,attached,LOC,Poss,5,4:128:14,بَیْنَهُمَا
+هُمْ,3,M,P,attached,INTG,Poss,5,3:44:13,اَیُّهُمْ
+هُمْ,3,M,P,independent,,Adj,5,19:74:6,هُمْ
+هُمْ,3,M,P,independent,,emph,5,12:37:25,هُمْ
+هُوَ,3,M,S,independent,,Subj,5,2:249:32,هُوَ
+هُوَ,3,M,S,independent,,subj <<ma>>,5,2:96:16,هُوَ
+وا,3,M,P,attached,V,subj <<asbah>>,5,11:67:5,فَاَصْبَحُوْا
+وا۟,3,M,P,attached,V,subj <<asbah>>,5,5:53:14,فَاَصْبَحُوْا
+وٓا۟,3,M,P,attached,V,subj <<kan>>,5,2:57:16,كَانُوْۤا
+ي,2,F,S,attached,V,Subj,5,20:39:2,اقْذِفِیْهِ
+يَهْ,1,,S,attached,N,Poss,5,69:19:9,كِتٰبِیَهْ
+َ,1,,S,attached,N,Poss,5,2:132:6,یٰبَنِیَّ
+أنت,2,M,S,independent,,neg,4,26:154:2,اَنْتَ
+أنت,2,M,S,independent,,subj <<ma>>,4,11:91:16,اَنْتَ
+أَنَا۠,1,,S,independent,,neg,4,5:28:7,اَنَا
+إياهُ,3,M,S,independent,,Obj,4,9:114:10,اِیَّاهُ ۚ
+ا,2,,D,attached,V,subj <<tkon>>,4,2:35:16,فَتَكُوْنَا
+آ,1,,P,attached,P,gen,4,2:127:10,مِنَّا ؕ
+تا,3,F,D,attached,V,Subj,4,21:22:7,لَفَسَدَتَا ۚ
+ـ,1,,S,attached,LOC,Poss,4,27:10:18,لَدَیَّ
+ك,2,M,S,attached,ACC,subj <<lel>>,4,11:12:1,فَلَعَلَّكَ
+ك,2,M,S,attached,T,Poss,4,17:77:5,قَبْلَكَ
+كِ,2,F,S,attached,V,Obj,4,3:42:7,اصْطَفٰىكِ
+نا,1,,P,attached,ACC,subj<<in>>,4,11:62:15,وَاِنَّنَا
+نحْنُ,1,,P,independent,,neg,4,14:11:5,نَّحْنُ
+نى,1,,S,attached,ACC,subj <<layt>>,4,18:42:15,یٰلَیْتَنِیْ
+نِ,1,,S,attached,V,Obj,4,3:20:8,اتَّبَعَنِ ؕ
+نِى,1,,S,attached,ACC,subj <<layt>>,4,4:73:13,یّٰلَیْتَنِیْ
+نِىَ,1,,S,attached,V,Obj,4,3:40:8,بَلَغَنِیَ
+نَّٰ,1,,P,attached,V,Subj,4,2:159:12,بَیَّنّٰهُ
+ها,3,F,S,attached,LOC,Poss,4,18:86:12,عِنْدَهَا
+همْ,3,M,P,attached,LOC,Poss,4,12:102:9,لَدَیْهِمْ
+هُ,3,M,S,attached,ACC,subj <<ka'ana>>,4,27:42:7,كَاَنَّهٗ
+هُمُ,3,M,P,independent,,Subj,4,7:92:12,هُمُ
+هُمْ,3,M,P,independent,,intg,4,21:6:7,اَفَهُمْ
+هُوَ,3,M,S,independent,,conj,4,4:92:29,وَهُوَ
+هُۥٓ,3,M,S,attached,PRON,Obj,4,2:181:10,یُبَدِّلُوْنَهٗ ؕ
+هِم,3,M,P,attached,V,Obj,4,6:4:2,تَاْتِیْهِمْ
+هِمَا,3,M,D,attached,N,Poss,4,2:219:14,نَّفْعِهِمَا ؕ
+هِىَ,3,F,S,independent,,root,4,2:74:7,فَهِیَ
+هِىَ,3,F,S,independent,,sur,4,7:107:4,هِیَ
+هِۦ,3,M,S,attached,V,Obj,4,3:145:15,نُؤْتِهٖ
+وُا۟,2,M,P,attached,V,Subj,4,2:94:13,فَتَمَنَّوُا
+وْنَ,2,M,P,attached,V,Pass,4,3:185:6,تُوَفَّوْنَ
+ىٓ,1,,S,attached,P,gen,4,2:249:19,مِنِّیْۤ
+أنا,1,,S,independent,,App,3,16:2:17,اَنَا
+أَنتَ,2,M,S,independent,,Subj,3,2:35:4,اَنْتَ
+أَنتُم,2,M,P,independent,,circ,3,2:83:28,وَاَنْتُمْ
+أَنتُمْ,2,M,P,independent,,voc,3,3:66:1,هٰۤاَنْتُمْ
+أَنَا۠,1,,S,independent,,Obj,3,2:258:21,اَنَا
+ا,1,,P,attached,ACC,subj <<lakin>>,3,20:87:6,وَلٰكِنَّا
+ت,2,F,S,attached,V,Subj,3,19:27:8,جِئْتِ
+تَ,2,M,S,attached,V,subj <<las>>,3,4:94:16,لَسْتَ
+تُن,2,F,P,attached,V,Subj,3,12:32:4,لُمْتُنَّنِیْ
+كُما,2,,D,attached,V,Obj,3,12:37:3,یَاْتِیْكُمَا
+كُما,2,M,D,attached,N,Poss,3,10:89:4,دَّعْوَتُكُمَا
+كُمُو,2,M,P,attached,V,Obj,3,8:44:2,یُرِیْكُمُوْهُمْ
+كُمْ,2,M,P,attached,INTG,Poss,3,9:124:8,اَیُّكُمْ
+كُن,2,F,P,attached,P,gen,3,33:29:12,مِنْكُنَّ
+ن,1,,P,attached,V,Pass,3,16:88:7,زِدْنٰهُمْ
+نحْنُ,1,,P,independent,,Obj,3,27:33:2,نَحْنُ
+نَحْنُ,1,,P,independent,,Obj,3,3:52:13,نَحْنُ
+نَّ,3,F,P,attached,V,subj <<ka>>,3,2:228:17,كُنَّ
+نَّآ,1,,P,attached,V,Subj,3,4:47:22,لَعَنَّاۤ
+ها,3,F,S,attached,ACC,subj <<ka'ana>>,3,24:35:14,كَاَنَّهَا
+هَا,3,F,S,attached,EMPH,Obj,3,68:17:9,لَیَصْرِمُنَّهَا
+هُما,3,,D,attached,N,Poss,3,18:81:4,رَبُّهُمَا
+هُمَا,3,,D,attached,PRON,Obj,3,4:16:4,فَاٰذُوْهُمَا ۚ
+هُمَآ,3,M,D,attached,N,Poss,3,2:219:11,وَاِثْمُهُمَاۤ
+هُمْ,3,M,P,independent,,rslt,3,4:12:70,فَهُمْ
+هُو,3,M,S,independent,,cert,3,58:7:18,هُوَ
+هُو,3,M,S,independent,,sur,3,16:4:6,هُوَ
+هُوَ,3,M,S,independent,,Pred,3,5:76:14,هُوَ
+هُوَ,3,M,S,independent,,sub,3,2:61:26,هُوَ
+هِمَآ,3,,D,attached,P,gen,3,2:219:6,فِیْهِمَاۤ
+هِمْ,3,M,P,attached,LOC,Poss,3,3:44:9,لَدَیْهِمْ
+هِىَ,3,F,S,independent,,Obj,3,2:68:8,هِیَ ؕ
+هِىَ,3,F,S,independent,,neg,3,6:29:3,هِیَ
+هِىَ,3,F,S,independent,,pred<<in>>,3,73:6:4,هِیَ
+هْ,3,M,S,attached,V,Obj,3,7:111:2,اَرْجِهْ
+و,3,M,P,attached,V,Pass,3,2:213:25,اُوْتُوْهُ
+وا۟,3,M,P,attached,V,subj <<kad>>,3,2:71:23,كَادُوْا
+وُن,3,M,P,attached,V,Subj,3,9:19:17,یَسْتَوٗنَ
+ى,1,,S,attached,EMPH,Obj,3,12:66:10,لَتَاْتُنَّنِیْ
+أنا,1,,S,independent,,circ,2,11:72:4,وَاَنَا
+أنت,2,M,S,independent,,emph,2,11:49:10,اَنْتَ
+أنتُم,2,M,P,independent,,sur,2,30:20:9,اَنْتُمْ
+أنتُمُ,2,M,P,independent,,root,2,35:15:3,اَنْتُمُ
+أَنتَ,2,M,S,independent,,emph,2,3:35:16,اَنْتَ
+أَنتَ,2,M,S,independent,,rslt,2,80:6:1,فَاَنْتَ
+أَنتَ,2,M,S,independent,,subj <<ma>>,2,6:107:11,اَنْتَ
+أَنتُم,2,M,P,independent,,Poss,2,3:80:12,اَنْتُمْ
+أَنتُم,2,M,P,independent,,sub,2,5:88:10,اَنْتُمْ
+أَنتُمْ,2,M,P,independent,,emph,2,6:91:35,اَنْتُمْ
+أَنتُمْ,2,M,P,independent,,intg,2,2:140:14,ءَاَنْتُمْ
+أَنَا۠,1,,S,independent,,subj <<ma>>,2,6:79:10,اَنَا
+إياكُمْ,2,M,P,independent,,Obj,2,17:31:8,وَاِیَّاكُمْ ؕ
+إياكُمْ,2,M,P,independent,,conj,2,29:60:9,وَاِیَّاكُمْ ۖؗ
+إيانا,1,,P,independent,,Obj,2,10:28:17,اِیَّانَا
+إياهُ,3,M,S,independent,,exp,2,17:23:6,اِیَّاهُ
+إيى,1,,S,independent,,Obj,2,16:51:11,فَاِیَّایَ
+إِيَّاكَ,2,M,S,independent,,Obj,2,1:5:1,اِیَّاكَ
+إِيَّاكُمْ,2,M,P,independent,,conj,2,4:131:15,وَاِیَّاكُمْ
+إِيَّاهُ,3,M,S,independent,,Obj,2,2:172:13,اِیَّاهُ
+إِيَّٰىَ,1,,S,independent,,Obj,2,2:40:12,وَاِیَّایَ
+ا,2,M,P,attached,V,Subj,2,18:16:7,فَاْوٗۤا
+ا,3,M,D,attached,V,subj <<kan>>,2,2:36:6,كَانَا
+ا,3,M,D,attached,V,subj <<ykon>>,2,2:282:58,یَكُوْنَا
+ا۟,2,,D,attached,V,Subj,2,4:171:4,تَغْلُوْا
+ت,2,M,S,attached,V,subj <<kad>>,2,17:74:5,كِدْتَّ
+تَا,3,F,D,attached,V,Subj,2,3:13:7,الْتَقَتَا ؕ
+تَا,3,F,D,attached,V,subj <<kan>>,2,4:176:27,كَانَتَا
+تُ,1,,S,attached,V,subj <<las>>,2,6:66:7,لَّسْتُ
+تُم,2,M,P,attached,V,subj <<asbah>>,2,3:103:17,فَاَصْبَحْتُمْ
+تُمَا,2,,D,attached,V,Subj,2,2:35:11,شِئْتُمَا ۪
+تُمُو,2,M,P,attached,V,Pass,2,7:43:33,اُوْرِثْتُمُوْهَا
+تُن,2,F,P,attached,V,subj <<kan>>,2,33:28:6,كُنْتُنَّ
+تَّ,2,M,S,attached,V,Subj,2,3:194:4,وَعَدْتَّنَا
+تُّ,1,,S,attached,V,Subj,2,5:110:13,اَیَّدْتُّكَ
+تُّمُ,2,M,P,attached,V,Subj,2,4:20:2,اَرَدْتُّمُ
+ك,2,M,S,attached,ACC,subj<<an>>,2,15:97:3,اَنَّكَ
+كُم,2,M,P,attached,ACC,subj<<an>>,2,2:223:13,اَنَّكُمْ
+كُمَا,2,,D,attached,P,gen,2,7:21:3,لَكُمَا
+كُمَا,2,,D,attached,V,Obj,2,7:20:13,نَهٰىكُمَا
+كُمُ,2,M,P,attached,PRON,Obj,2,3:111:7,یُوَلُّوْكُمُ
+كُمْ,2,M,P,attached,ACC,subj <<lakin>>,2,30:56:17,وَلٰكِنَّكُمْ
+كُن,2,F,P,attached,V,Obj,2,33:28:12,اُمَتِّعْكُنَّ
+كِ,2,F,S,attached,N,Poss,2,3:43:3,لِرَبِّكِ
+ن,1,,S,attached,V,NonRel,2,18:66:8,تُعَلِّمَنِ
+ن,3,F,P,attached,V,Pass,2,33:59:15,یُّعْرَفْنَ
+ني,1,,S,attached,V,Obj,2,18:63:11,اَنْسٰىنِیْهُ
+نَا,1,,P,attached,ACC,subj<<an>>,2,5:111:12,بِاَنَّنَا
+نَآ,1,,P,attached,PRON,Obj,2,2:32:8,عَلَّمْتَنَا ؕ
+نَحْنُ,1,,P,independent,,circ,2,2:30:18,وَنَحْنُ
+نَحْنُ,1,,P,independent,,emph,2,7:113:10,نَحْنُ
+نَحْنُ,1,,P,independent,,subj <<ma>>,2,7:132:10,نَحْنُ
+نِى,1,,S,attached,ACC,subj<<in>>,2,6:19:34,وَّاِنَّنِیْ
+نِىٓ,1,,S,attached,PRON,Obj,2,2:152:1,فَاذْكُرُوْنِیْۤ
+نِىٓ,1,,S,attached,V,Obj,2,7:14:2,اَنْظِرْنِیْۤ
+نَّ,3,F,P,attached,V,Subj,2,2:221:5,یُؤْمِنَّ ؕ
+نَّحْنُ,1,,P,independent,,root,2,6:151:19,نَحْنُ
+ه,3,M,S,attached,LOC,Poss,2,18:91:5,لَدَیْهِ
+ها,3,F,S,attached,ACC,subj<<an>>,2,20:66:11,اَنَّهَا
+ها,3,F,S,attached,T,Poss,2,18:76:6,بَعْدَهَا
+هى,3,F,S,independent,,Obj,2,12:26:2,هِیَ
+هى,3,F,S,independent,,sub,2,17:53:5,هِیَ
+هُ,3,M,S,attached,ACC,subj <<lel>>,2,20:44:5,لَّعَلَّهٗ
+هُما,3,M,D,attached,ACC,subj<<in>>,2,15:79:3,وَاِنَّهُمَا
+هُمَا,3,,D,attached,ACC,subj<<an>>,2,5:107:4,اَنَّهُمَا
+هُمَآ,3,,D,attached,N,Poss,2,7:22:16,رَبُّهُمَاۤ
+هُمُ,3,M,P,attached,ACC,subj<<an>>,2,16:107:2,بِاَنَّهُمُ
+هُمُ,3,M,P,independent,,pred<<an>>,2,9:67:18,هُمُ
+هُمْ,3,M,P,independent,,Subj,2,39:68:20,هُمْ
+هُمْ,3,M,P,independent,,subj <<la>>,2,2:38:16,هُمْ
+هُن,3,F,P,attached,ACC,subj <<ka'ana>>,2,37:49:1,كَاَنَّهُنَّ
+هُن,3,F,P,independent,,Subj,2,39:38:21,هُنَّ
+هُنَّ,3,F,P,independent,,root,2,2:187:8,هُنَّ
+هُو,3,M,S,independent,,Adj,2,11:61:14,هُوَ
+هُو,3,M,S,independent,,Subj,2,17:51:20,هُوَ ؕ
+هُو,3,M,S,independent,,subj <<ma>>,2,13:14:20,هُوَ
+هُوَ,3,M,S,independent,,emph,2,73:20:69,هُوَ
+هُۥ,3,M,S,attached,ACC,subj <<ka'ana>>,2,7:171:5,كَاَنَّهٗ
+هُۥ,3,M,S,attached,EMPH,Obj,2,3:81:19,وَلَتَنْصُرُنَّهٗ ؕ
+هِىَ,3,F,S,independent,,circ,2,2:259:6,وَّهِیَ
+هِۦٓ,3,M,S,attached,V,Obj,2,3:75:8,یُّؤَدِّهٖۤ
+و,2,M,P,attached,V,Pass,2,65:6:8,تُضَآرُّوْهُنَّ
+وا,2,M,P,attached,V,subj <<kon>>,2,9:119:6,وَكُوْنُوْا
+وا,3,M,P,attached,V,subj <<kad>>,2,17:73:2,كَادُوْا
+وا۟,3,M,P,attached,V,subj <<lays>>,2,3:113:1,لَیْسُوْا
+وا۟,3,M,P,attached,V,subj <<ykon>>,2,4:102:15,فَلْیَكُوْنُوْا
+ون,3,M,P,attached,V,subj <<kad>>,2,18:93:11,یَكَادُوْنَ
+وْا۟,3,M,P,attached,V,Pass,2,5:33:22,یُنْفَوْا
+ى,1,,S,attached,ACC,subj <<lakin>>,2,11:29:19,وَلٰكِنِّیْۤ
+ى,1,,S,attached,ACC,subj <<lakun>>,2,7:61:6,وَّلٰكِنِّیْ
+ىَ,1,,S,attached,LOC,Poss,2,7:105:16,مَعِیَ
+ىَ,1,,S,attached,P,gen,2,7:150:33,بِیَ
+ءُو,2,M,P,attached,V,Subj,1,59:9:2,تَبَوَّؤُ
+أنا,1,,S,independent,,conj,1,10:41:12,وَاَنَا
+أنا,1,,S,independent,,pred<<in>>,1,27:9:3,اَنَا
+أنا,1,,S,independent,,rslt,1,43:81:6,فَاَنَا
+أنت,2,M,S,independent,,App,1,21:87:18,اَنْتَ
+أنت,2,M,S,independent,,Subj,1,20:42:2,اَنْتَ
+أنت,2,M,S,independent,,circ,1,26:19:5,وَاَنْتَ
+أنت,2,M,S,independent,,conj,1,20:58:12,اَنْتَ
+أنتُم,2,M,P,independent,,intg,1,11:14:15,اَنْتُمْ
+أنتُما,2,,D,independent,,root,1,28:35:12,اَنْتُمَا
+أنتُمُ,2,M,P,independent,,circ,1,47:35:6,وَاَنْتُمُ
+أنتُمُ,2,M,P,independent,,pred<<an>>,1,21:64:6,اَنْتُمُ
+أنتُمْ,2,M,P,independent,,Adj,1,38:68:1,اَنْتُمْ
+أنتُمْ,2,M,P,independent,,Obj,1,12:77:18,اَنْتُمْ
+أنتُمْ,2,M,P,independent,,Poss,1,12:89:9,اَنْتُمْ
+أنتُمْ,2,M,P,independent,,Subj,1,17:100:3,اَنْتُمْ
+أنتُمْ,2,M,P,independent,,conj,1,52:15:4,اَنْتُمْ
+أنتُمْ,2,M,P,independent,,ret,1,38:60:3,اَنْتُمْ ۫
+أنتُمْ,2,M,P,independent,,sur,1,30:25:15,اَنْتُمْ
+أنتُمْ,2,M,P,independent,,voc,1,47:38:1,هٰۤاَنْتُمْ
+أَنتَ,2,M,S,independent,,intg,1,5:116:7,ءَاَنْتَ
+أَنتَ,2,M,S,independent,,neg,1,2:145:12,اَنْتَ
+أَنتُم,2,M,P,independent,,inc,1,5:18:13,اَنْتُمْ
+أَنتُم,2,M,P,independent,,intg,1,5:91:19,اَنْتُمْ
+أَنتُم,2,M,P,independent,,subj <<ma>>,1,6:134:6,اَنْتُمْ
+أَنتُمُ,2,M,P,independent,,root,1,3:139:5,وَاَنْتُمُ
+أَنتُمْ,2,M,P,independent,,Poss,1,8:26:3,اَنْتُمْ
+أَنتُمْ,2,M,P,independent,,cond,1,5:106:21,اَنْتُمْ
+أَنتُمْ,2,M,P,independent,,ret,1,7:81:9,اَنْتُمْ
+أَنتُمْ,2,M,P,independent,,sub,1,3:179:8,اَنْتُمْ
+أَنَا,1,,S,independent,,root,1,2:160:9,وَاَنَا
+أَنَا۠,1,,S,independent,,Pred,1,6:163:6,وَاَنَا
+إِيَّاهُمْ,3,M,P,independent,,conj,1,6:151:21,وَاِیَّاهُمْ ۚ
+إِيَّٰىَ,1,,S,independent,,conj,1,7:155:17,وَاِیَّایَ ؕ
+ا,1,,P,attached,ACC,NonRel,1,18:38:1,لٰكِنَّاۡ
+ا,1,,P,attached,V,Obj,1,12:11:6,تَاْمَنَّا
+ا,2,F,D,attached,V,Subj,1,66:4:9,تَظٰهَرَا
+ان,2,F,D,attached,V,Subj,1,55:50:3,تَجْرِیٰنِ
+ان,2,M,D,attached,V,Pass,1,12:37:5,تُرْزَقٰنِهٖۤ
+ان,3,F,D,attached,V,Subj,1,46:17:6,اَتَعِدٰنِنِیْۤ
+آ,1,,P,attached,ACC,subj<<an>>,1,6:157:4,اَنَّاۤ
+آ,1,,P,attached,N,Poss,1,4:67:4,لَّدُنَّاۤ
+آ,2,,D,attached,V,Subj,1,66:4:2,تَتُوْبَاۤ
+آ,2,M,D,attached,V,Subj,1,5:24:13,فَقَاتِلَاۤ
+ت,2,F,S,attached,V,subj <<kan>>,1,12:29:8,كُنْتِ
+ت,2,M,S,attached,V,subj <<kn>>,1,50:19:7,كُنْتَ
+ت,2,M,S,attached,V,subj <<lays>>,1,13:43:4,لَسْتَ
+تا,3,F,D,attached,V,subj <<kan>>,1,21:30:8,كَانَتَا
+تَ,2,M,S,attached,V,Pass,1,3:159:5,لِنْتَ
+تَ,2,M,S,attached,V,subj <<dm>>,1,3:75:20,دُمْتَ
+تَا,3,F,D,attached,V,Pass,1,69:14:4,فَدُكَّتَا
+تُ,1,,S,attached,V,subj <<dam>>,1,19:31:10,دُمْتُ
+تُم,2,M,P,attached,V,subj <<las>>,1,2:267:19,وَلَسْتُمْ
+تُمْ,2,M,P,attached,V,subj <<dm>>,1,5:96:14,دُمْتُمْ
+تُمْ,2,M,P,attached,V,subj <<easaa>>,1,2:246:24,عَسَیْتُمْ
+تُمْ,2,M,P,attached,V,subj <<las>>,1,5:68:4,لَسْتُمْ
+تُمْ,2,M,P,attached,V,subj <<lays>>,1,15:20:6,لَّسْتُمْ
+تُن,2,F,P,attached,V,subj <<lays>>,1,33:32:3,لَسْتُنَّ
+تُّم,2,M,P,attached,V,Subj,1,7:44:14,وَجَدْتُّمْ
+تُّمُو,2,M,P,attached,V,Subj,1,4:89:22,وَجَدْتُّمُوْهُمْ ۪
+ك,2,F,S,attached,ACC,subj<<in>>,1,12:29:7,اِنَّكِ
+ك,2,F,S,attached,LOC,Poss,1,19:24:9,تَحْتَكِ
+كَ,2,M,S,attached,ACC,subj <<ka'ana>>,1,7:187:25,كَاَنَّكَ
+كَ,2,M,S,attached,ACC,subj<<an>>,1,73:20:4,اَنَّكَ
+كُم,2,M,P,attached,ACC,subj <<lel>>,1,13:2:23,لَعَلَّكُمْ
+كُم,2,M,P,attached,ADJ,Poss,1,6:38:12,اَمْثَالُكُمْ ؕ
+كُما,2,,D,attached,EMPH,Obj,1,20:117:9,یُخْرِجَنَّكُمَا
+كُما,2,,D,attached,LOC,Poss,1,20:46:5,مَعَكُمَاۤ
+كُما,2,,D,attached,PRON,Obj,1,12:37:7,نَبَّاْتُكُمَا
+كُمَا,2,,D,attached,N,Poss,1,7:20:14,رَبُّكُمَا
+كُمَا,2,M,D,attached,N,Poss,1,66:4:7,قُلُوْبُكُمَا ۚ
+كُمَآ,2,,D,attached,P,gen,1,7:22:23,لَّكُمَاۤ
+كُمُ,2,M,P,attached,ACC,subj<<an>>,1,45:35:2,بِاَنَّكُمُ
+كُمُ,2,M,P,attached,INTG,Poss,1,68:6:1,بِاَیِّىكُمُ
+كُمُو,2,M,P,attached,PRON,Obj,1,15:22:8,فَاَسْقَیْنٰكُمُوْهُ ۚ
+كُمْ,2,M,P,attached,N,Obj,1,66:8:10,رَبُّكُمْ
+كُنَّ,2,F,P,attached,P,gen,1,66:5:9,مِّنْكُنَّ
+كُنَّ,2,F,P,attached,V,Obj,1,66:5:4,طَلَّقَكُنَّ
+كِ,2,F,S,attached,P,gen,1,3:37:21,لَكِ
+كُّم,2,M,P,attached,V,Obj,1,77:20:2,نَخْلُقْكُّمْ
+كُّمُ,2,M,P,attached,V,Obj,1,4:78:3,یُدْرِكْكُّمُ
+ن,3,F,P,attached,V,subj <<yk>>,1,49:11:20,یَّكُنَّ
+نا,1,,P,attached,ACC,subj <<layt>>,1,33:66:7,یٰلَیْتَنَاۤ
+نا,1,,P,attached,ACC,subj <<lel>>,1,26:40:1,لَعَلَّنَا
+نا,1,,P,attached,INTG,Poss,1,20:71:23,اَیُّنَاۤ
+نا,1,,P,attached,V,subj <<ka>>,1,9:65:5,كُنَّا
+نحْنُ,1,,P,independent,,circ,1,12:14:5,وَنَحْنُ
+نحْنُ,1,,P,independent,,conj,1,15:23:5,وَنَحْنُ
+نحْنُ,1,,P,independent,,intg,1,34:32:6,اَنَحْنُ
+نحْنُ,1,,P,independent,,pred <<kan>>,1,26:41:11,نَحْنُ
+نَا,1,,P,attached,ACC,subj <<layt>>,1,6:27:8,یٰلَیْتَنَا
+نَا,1,,P,attached,ACC,subj<<in>>,1,3:193:2,اِنَّنَا
+نَآ,1,,P,attached,ACC,subj<<in>>,1,3:16:4,اِنَّنَاۤ
+نَآ,1,,P,attached,LOC,Poss,1,73:12:2,لَدَیْنَاۤ
+نَحْنُ,1,,P,independent,,conj,1,3:181:10,وَّنَحْنُ
+نَحْنُ,1,,P,independent,,neg,1,6:29:8,نَحْنُ
+نَحْنُ,1,,P,independent,,ret,1,68:27:2,نَحْنُ
+نَحْنُ,1,,P,independent,,subj <<nkon>>,1,7:115:9,نَحْنُ
+نَّ,3,F,P,attached,V,Pass,1,4:25:36,اُحْصِنَّ
+نَّآ,1,,P,attached,V,subj <<ka>>,1,6:157:8,لَكُنَّاۤ
+نِّى,1,,S,attached,PRON,Obj,1,6:80:4,اَتُحَآجُّوْٓنِّیْ
+هما,3,,D,attached,N,Poss,1,18:61:4,بَیْنِهِمَا
+هى,3,F,S,independent,,Adj,1,47:13:4,هِیَ
+هى,3,F,S,independent,,Pred,1,9:40:39,هِیَ
+هى,3,F,S,independent,,amd,1,39:49:17,هِیَ
+هى,3,F,S,independent,,conj,1,22:45:7,فَهِیَ
+هى,3,F,S,independent,,pred<<an>>,1,40:39:9,هِیَ
+هَا,3,F,S,attached,ACC,subj <<layt>>,1,69:27:1,یٰلَیْتَهَا
+هَا,3,F,S,attached,ACC,subj<<an>>,1,8:7:6,اَنَّهَا
+هَآ,3,F,S,attached,ACC,subj<<an>>,1,6:109:17,اَنَّهَاۤ
+هُ,3,M,S,attached,V,Pass,1,12:21:20,وَلِنُعَلِّمَهٗ
+هُم,3,M,P,attached,ACC,subj <<ka'ana>>,1,61:4:9,كَاَنَّهُمْ
+هُم,3,M,P,attached,ACC,subj <<lel>>,1,6:154:14,لَّعَلَّهُمْ
+هُم,3,M,P,attached,INTG,Poss,1,68:40:2,اَیُّهُمْ
+هُم,3,M,P,independent,,Adj,1,7:135:7,هُمْ
+هُم,3,M,P,independent,,Pred,1,28:52:6,هُمْ
+هُما,3,,D,independent,,circ,1,46:17:14,وَهُمَا
+هُما,3,,D,independent,,root,1,9:40:13,هُمَا
+هُمَا,3,,D,attached,N,Poss,1,7:189:23,رَبَّهُمَا
+هُمَآ,3,,D,attached,LOC,Poss,1,4:35:17,بَیْنَهُمَا ؕ
+هُمَآ,3,,D,attached,P,gen,1,4:16:9,عَنْهُمَا ؕ
+هُمَآ,3,,D,attached,V,Obj,1,7:21:1,وَقَاسَمَهُمَاۤ
+هُمُ,3,M,P,attached,ACC,subj<<in>>,1,7:30:7,اِنَّهُمُ
+هُمُ,3,M,P,attached,EMPH,Obj,1,22:58:10,لَیَرْزُقَنَّهُمُ
+هُمُ,3,M,P,independent,,App,1,27:5:9,هُمُ
+هُمُ,3,M,P,independent,,emph,1,2:5:7,هُمُ
+هُمُ,3,M,P,independent,,intg,1,21:44:17,اَفَهُمُ
+هُمُ,3,M,P,independent,,rslt,1,21:34:9,فَهُمُ
+هُمُ,3,M,P,independent,,sup,1,37:77:3,هُمُ
+هُمْ,3,M,P,attached,ACC,subj <<lakun>>,1,9:56:8,وَلٰكِنَّهُمْ
+هُمْ,3,M,P,independent,,App,1,27:3:8,هُمْ
+هُمْ,3,M,P,independent,,Obj,1,20:84:2,هُمْ
+هُمْ,3,M,P,independent,,Poss,1,51:13:2,هُمْ
+هُمْ,3,M,P,independent,,cond,1,85:6:2,هُمْ
+هُمْ,3,M,P,independent,,pred <<kan>>,1,53:52:7,هُمْ
+هُمْ,3,M,P,independent,,pred<<an>>,1,40:43:20,هُمْ
+هُمْ,3,M,P,independent,,pred<<in>>,1,2:137:12,هُمْ
+هُمْ,3,M,P,independent,,ret,1,7:179:26,هُمْ
+هُمْ,3,M,P,independent,,subj <<ma>>,1,82:16:2,هُمْ
+هُن,3,F,P,attached,ACC,subj<<in>>,1,14:36:2,اِنَّهُنَّ
+هُن,3,F,P,attached,T,Poss,1,24:58:36,بَعْدَهُنَّ ؕ
+هُن,3,F,P,independent,,Pred,1,11:78:14,هُنَّ
+هُن,3,F,P,independent,,subj <<ma>>,1,58:2:7,هُنَّ
+هُنَّ,3,F,P,attached,LOC,Poss,1,65:12:11,بَیْنَهُنَّ
+هُنَّ,3,F,P,independent,,neg,1,60:10:20,هُنَّ
+هُو,3,M,S,independent,,amd,1,18:38:2,هُوَ
+هُو,3,M,S,independent,,cond,1,26:79:2,هُوَ
+هُو,3,M,S,independent,,ret,1,34:27:9,هُوَ
+هُوَ,3,M,S,independent,,Adj,1,2:148:3,هُوَ
+هُوَ,3,M,S,independent,,NonRel,1,8:32:7,هُوَ
+هُوَ,3,M,S,independent,,inc,1,3:180:14,هُوَ
+هُۥ,3,M,S,attached,ACC,subj <<lel>>,1,80:3:3,لَعَلَّهٗ
+هُۥٓ,3,M,S,attached,ACC,subj <<lakun>>,1,7:176:5,وَلٰكِنَّهٗۤ
+هُۥٓ,3,M,S,attached,ACC,subj<<an>>,1,8:24:18,وَاَنَّهٗۤ
+هُۥٓ,3,M,S,attached,ACC,subj<<in>>,1,2:283:26,فَاِنَّهٗۤ
+هُۥٓ,3,M,S,attached,N,Obj,1,66:5:2,رَبُّهٗۤ
+هِ,3,M,S,attached,V,Poss,1,70:13:3,تُـْٔوِیْهِ
+هِمَا,3,,D,attached,N,Poss,1,4:35:4,بَیْنِهِمَا
+هِمَآ,3,M,D,attached,N,Poss,1,7:27:15,سَوْاٰتِهِمَا ؕ
+هِمُ,3,M,P,attached,V,Obj,1,2:167:14,یُرِیْهِمُ
+هِىَ,3,F,S,independent,,Subj,1,7:32:13,هِیَ
+هِىَ,3,F,S,independent,,rslt,1,2:271:5,هِیَ ۚ
+هِىَ,3,F,S,independent,,sub,1,6:152:7,هِیَ
+هِيَهْ,3,F,S,independent,,Pred,1,101:10:4,هِیَهْ
+هْ,3,M,S,attached,N,Poss,1,69:25:10,كِتٰبِیَهْ
+وا,2,M,P,attached,V,Pass,1,9:16:4,تُتْرَكُوْا
+وا,2,M,P,attached,V,subj <<asbah>>,1,49:6:13,فَتُصْبِحُوْا
+وا۟,3,M,P,attached,V,subj <<dam>>,1,5:24:8,دَامُوْا
+وا۟,3,M,P,attached,V,subj <<ysbah>>,1,5:52:22,فَیُصْبِحُوْا
+وليّي,1,,S,attached,N,Poss,1,12:101:14,وَلِیّٖ
+ون,3,M,P,attached,V,subj <<ykon>>,1,19:82:4,وَیَكُوْنُوْنَ
+ونَ,2,M,P,attached,V,subj <<tkon>>,1,4:89:6,فَتَكُوْنُوْنَ
+ونَ,3,M,P,attached,V,subj <<ykad>>,1,4:78:34,یَكَادُوْنَ
+ونَ,3,M,P,attached,V,subj <<ykon>>,1,72:19:8,یَكُوْنُوْنَ
+وُۥنَ,2,M,P,attached,V,Subj,1,3:153:4,تَلْوٗنَ
+وُۥنَ,3,M,P,attached,V,Subj,1,3:78:4,یَّلْوٗنَ
+وْ,2,M,P,attached,V,Pass,1,5:41:39,تُؤْتَوْهُ
+وْا,3,M,P,attached,V,Pass,1,9:58:12,یُعْطَوْا
+وٓ,2,M,P,attached,V,Pass,1,6:80:4,اَتُحَآجُّوْٓنِّیْ
+وٓا۟,2,M,P,attached,V,subj <<kon>>,1,61:14:4,كُوْنُوْۤا
+وٓا۟,2,M,P,attached,V,subj <<tkon>>,1,2:41:8,تَكُوْنُوْۤا
+ى,1,,S,attached,T,Poss,1,21:24:15,قَبْلِیْ ؕ
+ى,2,F,S,attached,V,subj <<kan>>,1,21:69:3,كُوْنِیْ
+ىٓ,1,,S,attached,ACC,subj<<an>>,1,3:49:11,اَنِّیْۤ
+ىٓ,2,F,S,attached,V,Subj,1,89:28:1,ارْجِعِیْۤ
+ىٰٓ,1,,S,attached,N,Poss,1,5:31:13,یٰوَیْلَتٰۤی
+ٰنِ,3,M,D,attached,V,Subj,1,4:16:2,یَاْتِیٰنِهَا
+ۥٓا۟,2,M,P,attached,V,Subj,1,4:135:29,تَلْوٗۤا

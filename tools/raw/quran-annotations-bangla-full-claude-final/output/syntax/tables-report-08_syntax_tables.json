@@ -1,0 +1,58 @@
+{
+ "stage": "08_syntax_tables",
+ "source_policy": "computed from the two JSON layers only",
+ "input_sha256": {
+  "indopak-nastaleeq-wbw-grammar-normalized.json": "bd5328f0fe0900cdad1e77e5723b7440cae9cfab31e737cc8d9622db5c435635",
+  "indopak-nastaleeq-sentence-grammar-normalized.json": "50d4c6475b024ef0a21d1ba57a78e6695ab298be635d197a91348afa1f8ec896"
+ },
+ "files": {
+  "quran-case-by-function.csv": {
+   "rows": 323,
+   "columns": 9
+  },
+  "quran-verb-valency.csv": {
+   "rows": 1475,
+   "columns": 17
+  },
+  "quran-verb-preposition-pairs.csv": {
+   "rows": 1823,
+   "columns": 11
+  },
+  "quran-idafa-pairs.csv": {
+   "rows": 3015,
+   "columns": 8
+  },
+  "quran-noun-adjective-pairs.csv": {
+   "rows": 1472,
+   "columns": 13
+  },
+  "quran-preposition-usage.csv": {
+   "rows": 12,
+   "columns": 11
+  },
+  "quran-particle-mood-government.csv": {
+   "rows": 448,
+   "columns": 12
+  },
+  "quran-implicit-elements.csv": {
+   "rows": 11157,
+   "columns": 13
+  },
+  "quran-implicit-elements-summary.csv": {
+   "rows": 151,
+   "columns": 7
+  },
+  "quran-constituents.csv": {
+   "rows": 26463,
+   "columns": 10
+  },
+  "quran-constituents-summary.csv": {
+   "rows": 6,
+   "columns": 7
+  },
+  "quran-sentence-length-distribution.csv": {
+   "rows": 70,
+   "columns": 5
+  }
+ }
+}

@@ -1,0 +1,34 @@
+{
+ "stage": "09_reading_tables",
+ "source_policy": "computed from the two JSON layers only",
+ "input_sha256": {
+  "indopak-nastaleeq-wbw-grammar-normalized.json": "bd5328f0fe0900cdad1e77e5723b7440cae9cfab31e737cc8d9622db5c435635",
+  "indopak-nastaleeq-sentence-grammar-normalized.json": "50d4c6475b024ef0a21d1ba57a78e6695ab298be635d197a91348afa1f8ec896"
+ },
+ "files": {
+  "quran-greedy-order-lemmas.csv": {
+   "rows": 4832,
+   "columns": 10
+  },
+  "quran-greedy-order-lemmas-content-words.csv": {
+   "rows": 4740,
+   "columns": 10
+  },
+  "quran-greedy-order-roots.csv": {
+   "rows": 1642,
+   "columns": 11
+  },
+  "quran-greedy-order-verbs.csv": {
+   "rows": 1475,
+   "columns": 11
+  },
+  "quran-greedy-order-ayahs.csv": {
+   "rows": 2361,
+   "columns": 8
+  },
+  "quran-greedy-order-surahs.csv": {
+   "rows": 113,
+   "columns": 8
+  }
+ }
+}

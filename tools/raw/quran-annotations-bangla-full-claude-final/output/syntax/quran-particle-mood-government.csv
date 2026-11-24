@@ -1,0 +1,449 @@
+﻿particle,particle_uthmani,pos,pos_en,direction,relation,verb_aspect,verb_mood,count,pct_of_particle,first_word,example_text_indopak
+laA,لا,NEG,Negative particle,verb depends on particle,neg,IMPF,none,808,56.4,2:6:10,لَا
+laA,لَا,PRO,Prohibition particle,verb depends on particle,Pro,IMPF,JUS,322,22.5,2:11:4,لَا
+laA,لَا,NEG,Negative particle,verb depends on particle,neg,IMPF,JUS,65,4.5,2:87:21,لَا
+laA,لَّا,NEG,Negative particle,verb depends on particle,neg,IMPF,SUBJ,53,3.7,2:150:15,لِئَلَّا
+laA,لا,NEG,Negative particle,verb depends on particle,Pro,IMPF,JUS,41,2.9,9:40:19,لَا
+laA,لا,NEG,Negative particle,particle depends on verb,Obj,PERF,none,19,1.3,2:124:16,لَا
+laA,لا,NEG,Negative particle,particle depends on verb,pred <<kan>>,PERF,none,15,1.0,2:170:18,لَا
+laA,لا,PRO,Prohibition particle,particle depends on verb,Obj,PERF,none,13,0.9,4:154:12,لَا
+laA,لا,NEG,Negative particle,verb depends on particle,Pro,IMPF,none,13,0.9,10:94:19,فَلَا
+laA,لَّآ,NEG,Negative particle,particle depends on verb,Obj,IMPV,none,11,0.8,5:100:2,لَّا
+laA,لا,NEG,Negative particle,particle depends on verb,emph,IMPF,none,9,0.6,10:18:8,وَلَا
+laA,لا,NEG,Negative particle,particle depends on verb,conj,IMPF,none,8,0.6,2:71:10,وَلَا
+laA,لا,NEG,Negative particle,particle depends on verb,conj,PERF,none,5,0.3,6:8:12,لَا
+laA,لَا,NEG,Negative particle,verb depends on particle,neg,PERF,none,5,0.3,10:16:8,وَلَاۤ
+laA,لا,NEG,Negative particle,verb depends on particle,Pro,IMPF,SUBJ,5,0.3,11:2:1,اَلَّا
+laA,لَا,PRO,Prohibition particle,verb depends on particle,conj,IMPV,none,3,0.2,3:175:6,فَلَا
+laA,لا,PRO,Prohibition particle,particle depends on verb,Obj,IMPV,none,3,0.2,9:94:7,لَّا
+laA,لا,PRO,Prohibition particle,particle depends on verb,Obj,IMPF,SUBJ,3,0.2,14:34:10,لَا
+laA,لَا,NEG,Negative particle,verb depends on particle,pred <<la>>,IMPF,none,2,0.1,2:38:15,وَلَا
+laA,لا,NEG,Negative particle,particle depends on verb,Obj,IMPF,none,2,0.1,9:40:19,لَا
+laA,لا,PRO,Prohibition particle,verb depends on particle,neg,IMPF,JUS,2,0.1,14:34:10,لَا
+laA,لا,NEG,Negative particle,verb depends on particle,conj,IMPF,none,2,0.1,34:42:2,لَا
+laA,لا,PRO,Prohibition particle,particle depends on verb,conj,IMPV,none,2,0.1,38:22:18,وَلَا
+laA,لَا,PRO,Prohibition particle,particle depends on verb,Pass,PERF,none,1,0.1,2:11:4,لَا
+laA,لَا,NEG,Negative particle,verb depends on particle,Pred,IMPF,none,1,0.1,2:217:29,وَلَا
+laA,لَا,NEG,Negative particle,particle depends on verb,emph,PERF,none,1,0.1,6:148:11,وَلَا
+laA,لَا,NEG,Negative particle,verb depends on particle,conj,PERF,none,1,0.1,6:148:11,وَلَا
+laA,لَا,NEG,Negative particle,verb depends on particle,Obj,PERF,none,1,0.1,8:59:1,وَلَا
+laA,لا,NEG,Negative particle,particle depends on verb,conj,IMPV,none,1,0.1,10:88:24,فَلَا
+laA,لا,NEG,Negative particle,verb depends on particle,Pro,IMPV,none,1,0.1,11:37:5,وَلَا
+laA,لا,NEG,Negative particle,particle depends on verb,Obj,IMPF,JUS,1,0.1,11:105:3,لَا
+laA,لا,NEG,Negative particle,particle depends on verb,imrs,IMPV,none,1,0.1,17:56:7,فَلَا
+laA,لا,NEG,Negative particle,particle depends on verb,conj,IMPF,SUBJ,1,0.1,20:40:16,وَلَا
+laA,لا,NEG,Negative particle,particle depends on verb,neg,IMPF,none,1,0.1,20:89:3,اَلَّا
+laA,لا,NEG,Negative particle,verb depends on particle,sub,IMPF,none,1,0.1,20:117:8,فَلَا
+laA,لا,NEG,Negative particle,particle depends on verb,emph,IMPF,SUBJ,1,0.1,20:118:6,وَلَا
+laA,لا,PRO,Prohibition particle,particle depends on verb,Pass,IMPF,none,1,0.1,21:13:1,لَا
+laA,لا,PRO,Prohibition particle,verb depends on particle,Poss,IMPF,JUS,1,0.1,23:94:2,فَلَا
+laA,لا,PRO,Prohibition particle,particle depends on verb,emph,IMPF,JUS,1,0.1,29:33:14,وَلَا
+laA,لا,NEG,Negative particle,verb depends on particle,App,IMPF,none,1,0.1,30:6:10,لَا
+laA,لا,NEG,Negative particle,particle depends on verb,pred <<asbah>>,PERF,none,1,0.1,46:25:7,لَا
+laA,لا,PRO,Prohibition particle,particle depends on verb,Pro,IMPF,JUS,1,0.1,58:9:6,فَلَا
+laA,لَا,PRO,Prohibition particle,particle depends on verb,Obj,IMPF,none,1,0.1,63:7:4,لَا
+laA,لَا,NEG,Negative particle,verb depends on particle,conj,IMPF,SUBJ,1,0.1,74:31:22,وَّلَا
+>an,أن,SUB,Subordinating conjunction,verb depends on particle,sub,IMPF,SUBJ,425,49.2,2:26:5,اَنْ
+>an,أَن,SUB,Subordinating conjunction,particle depends on verb,Obj,IMPF,none,88,10.2,2:26:5,اَنْ
+>an,أن,SUB,Subordinating conjunction,particle depends on verb,Obj,PERF,none,73,8.5,2:114:7,اَنْ
+>an,أن,SUB,Subordinating conjunction,verb depends on particle,sub,PERF,none,46,5.3,2:258:9,اَنْ
+>an,أن,INT,Particle of interpretation,verb depends on particle,int,IMPV,none,27,3.1,2:125:16,اَنْ
+>an,أن,SUB,Subordinating conjunction,particle depends on verb,link,PERF,none,27,3.1,2:198:4,اَنْ
+>an,أن,SUB,Subordinating conjunction,particle depends on verb,subj <<kan>>,PERF,none,19,2.2,2:114:18,اَنْ
+>an,أن,SUB,Subordinating conjunction,particle depends on verb,pred <<easaa>>,PERF,none,16,1.9,2:246:29,اَلَّا
+>an,أَن,SUB,Subordinating conjunction,verb depends on particle,sub,IMPF,none,13,1.5,2:228:9,اَنْ
+>an,أن,SUB,Subordinating conjunction,particle depends on verb,Subj,PERF,none,11,1.3,2:216:8,اَنْ
+>an,أن,SUB,Subordinating conjunction,verb depends on particle,sub,IMPV,none,11,1.3,5:49:1,وَاَنِ
+>an,أن,SUB,Subordinating conjunction,particle depends on verb,link,IMPF,none,11,1.3,9:44:8,اَنْ
+>an,أَن,SUB,Subordinating conjunction,particle depends on verb,Subj,IMPF,none,10,1.2,2:228:9,اَنْ
+>an,أن,SUB,Subordinating conjunction,particle depends on verb,prp,PERF,none,10,1.2,3:28:18,اَنْ
+>an,أَن,SUB,Subordinating conjunction,particle depends on verb,Obj,IMPF,JUS,9,1.0,2:282:18,اَنْ
+>an,أَن,SUB,Subordinating conjunction,particle depends on verb,Obj,IMPF,SUBJ,8,0.9,2:229:19,اَلَّا
+>an,أَن,INT,Particle of interpretation,particle depends on verb,Obj,PERF,none,7,0.8,4:66:5,اَنِ
+>an,أن,SUB,Subordinating conjunction,particle depends on verb,pred <<kan>>,PERF,none,7,0.8,7:5:8,اَنْ
+>an,أن,SUB,Subordinating conjunction,particle depends on verb,prp,IMPF,none,5,0.6,4:176:45,اَنْ
+>an,أن,SUB,Subordinating conjunction,particle depends on verb,pred <<lays>>,PERF,none,4,0.5,24:29:4,اَنْ
+>an,أن,SUB,Subordinating conjunction,particle depends on verb,link,IMPV,none,3,0.3,5:49:11,اَنْ
+>an,أ,SUB,Subordinating conjunction,verb depends on particle,neg,IMPF,SUBJ,3,0.3,9:92:20,اَلَّا
+>an,أنْ,INT,Particle of interpretation,verb depends on particle,sub,IMPV,none,3,0.3,10:105:1,وَاَنْ
+>an,أ,INT,Particle of interpretation,verb depends on particle,Pro,IMPF,JUS,3,0.3,27:31:1,اَلَّا
+>an,أن,SUB,Subordinating conjunction,particle depends on verb,link,IMPF,JUS,2,0.2,2:232:8,اَنْ
+>an,أنْ,SUB,Subordinating conjunction,particle depends on verb,Obj,IMPV,none,2,0.2,6:51:5,اَنْ
+>an,أن,SUB,Subordinating conjunction,particle depends on verb,prp,IMPV,none,2,0.2,6:70:12,اَنْ
+>an,أن,SUB,Subordinating conjunction,particle depends on verb,link,IMPF,SUBJ,2,0.2,12:76:22,اَنْ
+>an,أن,SUB,Subordinating conjunction,particle depends on verb,prp,IMPF,JUS,2,0.2,24:63:21,اَنْ
+>an,أ,SUB,Subordinating conjunction,verb depends on particle,neg,IMPF,none,2,0.2,53:38:1,اَلَّا
+>an,أَن,SUB,Subordinating conjunction,particle depends on verb,subj <<lays>>,PERF,none,1,0.1,2:177:3,اَنْ
+>an,أَن,SUB,Subordinating conjunction,particle depends on verb,Subj,IMPF,SUBJ,1,0.1,3:124:6,اَنْ
+>an,أَنْ,INT,Particle of interpretation,particle depends on verb,link,PERF,none,1,0.1,5:111:5,اَنْ
+>an,أَن,SUB,Subordinating conjunction,particle depends on verb,pred <<tkn>>,IMPF,JUS,1,0.1,6:23:6,اَنْ
+>an,أن,SUB,Subordinating conjunction,verb depends on particle,Poss,PERF,none,1,0.1,12:96:2,اَنْ
+>an,أن,SUB,Subordinating conjunction,verb depends on particle,rslt,PERF,none,1,0.1,12:96:2,اَنْ
+>an,أن,SUB,Subordinating conjunction,particle depends on verb,prp,IMPF,SUBJ,1,0.1,26:51:8,اَنْ
+>an,أن,SUB,Subordinating conjunction,particle depends on verb,subj <<ykon>>,IMPF,JUS,1,0.1,26:197:5,اَنْ
+>an,أ,SUB,Subordinating conjunction,particle depends on verb,int,IMPF,none,1,0.1,41:30:11,اَلَّا
+>an,أنْ,SUB,Subordinating conjunction,particle depends on verb,conj,IMPF,SUBJ,1,0.1,46:15:32,وَاَنْ
+>an,أن,SUB,Subordinating conjunction,verb depends on particle,pred<<an>>,PERF,none,1,0.1,53:39:1,وَاَنْ
+>an,أن,SUB,Subordinating conjunction,particle depends on verb,Subj,IMPF,JUS,1,0.1,57:16:5,اَنْ
+<in,إن,COND,Conditional particle,verb depends on particle,cond,PERF,none,376,44.7,2:23:1,وَاِنْ
+<in,إِن,COND,Conditional particle,verb depends on particle,cond,IMPF,JUS,119,14.1,2:220:11,وَاِنْ
+<in,إِن,COND,Conditional particle,verb depends on particle,rslt,IMPV,none,67,8.0,2:23:1,وَاِنْ
+<in,إِن,COND,Conditional particle,verb depends on particle,rslt,IMPF,JUS,58,6.9,2:282:35,فَاِنْ
+<in,ئن,COND,Conditional particle,verb depends on particle,rslt,IMPF,none,48,5.7,2:85:15,وَاِنْ
+<in,إن,COND,Conditional particle,verb depends on particle,cond,IMPF,SUBJ,29,3.4,9:8:2,وَاِنْ
+<in,إن,NEG,Negative particle,verb depends on particle,neg,IMPF,none,27,3.2,4:117:1,اِنْ
+<in,إن,COND,Conditional particle,particle depends on verb,Obj,PERF,none,27,3.2,6:40:3,اِنْ
+<in,إن,COND,Conditional particle,verb depends on particle,rslt,PERF,none,16,1.9,4:19:24,فَاِنْ
+<in,إن,NEG,Negative particle,particle depends on verb,Obj,PERF,none,12,1.4,5:110:59,اِنْ
+<in,إن,COND,Conditional particle,particle depends on verb,Obj,IMPV,none,11,1.3,2:94:2,اِنْ
+<in,إن,NEG,Negative particle,verb depends on particle,neg,PERF,none,10,1.2,4:62:12,اِنْ
+<in,إن,COND,Conditional particle,verb depends on particle,rslt,IMPF,SUBJ,10,1.2,9:50:5,وَاِنْ
+<in,إِ,COND,Conditional particle,verb depends on particle,cond,IMPF,none,8,1.0,2:85:15,وَاِنْ
+<in,إن,NEG,Negative particle,particle depends on verb,Obj,IMPF,none,6,0.7,6:25:28,اِنْ
+<in,إِنْ,COND,Conditional particle,particle depends on verb,Obj,IMPF,none,5,0.6,5:41:33,اِنْ
+<in,إن,CERT,Particle of certainty,verb depends on particle,cert,PERF,none,3,0.4,2:143:28,وَاِنْ
+<in,إن,COND,Conditional particle,verb depends on particle,conj,PERF,none,1,0.1,9:83:1,فَاِنْ
+<in,إن,COND,Conditional particle,verb depends on particle,pred<<an>>,PERF,none,1,0.1,12:3:11,وَاِنْ
+<in,إنْ,CERT,Particle of certainty,particle depends on verb,Obj,PERF,none,1,0.1,20:63:2,اِنْ
+<in,إن,COND,Conditional particle,particle depends on verb,circ,IMPF,JUS,1,0.1,21:47:10,وَاِنْ
+<in,إنْ,NEG,Negative particle,verb depends on particle,circ,IMPF,none,1,0.1,23:37:1,اِنْ
+<in,إن,COND,Conditional particle,verb depends on particle,neg,PERF,none,1,0.1,37:167:1,وَاِنْ
+<in,إن,NEG,Negative particle,verb depends on particle,neg,IMPF,SUBJ,1,0.1,38:70:1,اِنْ
+<in,إِن,CERT,Particle of certainty,verb depends on particle,cert,IMPF,none,1,0.1,68:51:1,وَاِنْ
+<in,إِنْ,NEG,Negative particle,particle depends on verb,Obj,IMPV,none,1,0.1,72:25:2,اِنْ
+<in~,إن,ACC,Accusative particle,verb depends on particle,pred<<in>>,PERF,none,259,37.9,2:54:6,اِنَّكُمْ
+<in~,إن,ACC,Accusative particle,verb depends on particle,pred<<in>>,IMPF,none,163,23.9,2:30:24,اِنِّیْۤ
+<in~,إن,ACC,Accusative particle,particle depends on verb,Obj,PERF,none,124,18.2,2:11:9,اِنَّمَا
+<in~,إن,ACC,Accusative particle,particle depends on verb,Obj,IMPV,none,48,7.0,2:120:11,اِنَّ
+<in~,إن,ACC,Accusative particle,verb depends on particle,pred<<an>>,IMPF,none,25,3.7,6:19:19,اَىِٕنَّكُمْ
+<in~,إن,ACC,Accusative particle,verb depends on particle,pred<<an>>,PERF,none,23,3.4,9:84:12,اِنَّهُمْ
+<in~,إِنَّ,ACC,Accusative particle,particle depends on verb,Obj,IMPF,none,18,2.6,2:68:12,اِنَّهَا
+<in~,إن,ACC,Accusative particle,verb depends on particle,pred<<in>>,IMPF,SUBJ,6,0.9,11:84:18,اِنِّیْۤ
+<in~,إن,ACC,Accusative particle,particle depends on verb,Obj,IMPF,JUS,4,0.6,7:22:24,اِنَّ
+<in~,إِنَّ,ACC,Accusative particle,particle depends on verb,Obj,IMPF,SUBJ,3,0.4,2:102:30,اِنَّمَا
+<in~,أنما,ACC,Accusative particle,verb depends on particle,sub,PERF,none,2,0.3,13:19:3,اَنَّمَاۤ
+<in~,إن,ACC,Accusative particle,verb depends on particle,Pred,IMPF,none,2,0.3,15:25:1,وَاِنَّ
+<in~,إِنَّ,ACC,Accusative particle,verb depends on particle,pred<<in>>,IMPV,none,1,0.1,3:21:1,اِنَّ
+<in~,إن,ACC,Accusative particle,particle depends on verb,res,IMPF,none,1,0.1,14:42:8,اِنَّمَا
+<in~,إن,ACC,Accusative particle,particle depends on verb,subj<<in>>,PERF,none,1,0.1,20:69:8,اِنَّمَا
+<in~,إن,ACC,Accusative particle,verb depends on particle,conj,IMPF,none,1,0.1,28:4:1,اِنَّ
+<in~,إن,ACC,Accusative particle,verb depends on particle,conj,PERF,none,1,0.1,38:23:1,اِنَّ
+<in~,إن,ACC,Accusative particle,particle depends on verb,Pass,PERF,none,1,0.1,41:43:11,اِنَّ
+maA,ما,NEG,Negative particle,verb depends on particle,neg,PERF,none,327,47.9,2:16:6,فَمَا
+maA,ما,NEG,Negative particle,verb depends on particle,neg,IMPF,none,129,18.9,2:9:5,وَمَا
+maA,مَا,SUB,Subordinating conjunction,verb depends on particle,sub,PERF,none,70,10.2,2:13:5,كَمَاۤ
+maA,ما,NEG,Negative particle,particle depends on verb,Obj,PERF,none,24,3.5,6:91:8,مَاۤ
+maA,مَآ,INTG,Interogative particle,verb depends on particle,Pred,PERF,none,17,2.5,2:142:5,مَا
+maA,مَا,INTG,Interogative particle,particle depends on verb,Obj,PERF,none,14,2.0,2:246:32,وَمَا
+maA,مَا,COND,Conditional particle,verb depends on particle,cond,IMPF,JUS,12,1.8,2:106:1,مَا
+maA,ما,SUB,Subordinating conjunction,verb depends on particle,sub,IMPF,none,10,1.5,2:146:5,كَمَا
+maA,مَآ,COND,Conditional particle,verb depends on particle,cond,PERF,none,9,1.3,2:215:5,مَاۤ
+maA,مَا,COND,Conditional particle,verb depends on particle,rslt,IMPF,JUS,6,0.9,2:106:1,مَا
+maA,ما,NEG,Negative particle,particle depends on verb,Obj,IMPV,none,5,0.7,10:15:18,مَا
+maA,مَا,INTG,Interogative particle,particle depends on verb,Subj,PERF,none,4,0.6,7:12:2,مَا
+maA,ما,NEG,Negative particle,verb depends on particle,neg,IMPF,SUBJ,4,0.6,11:27:7,مَا
+maA,م,INTG,Interogative particle,verb depends on particle,intg,IMPF,none,4,0.6,15:54:7,فَبِمَ
+maA,ما,NEG,Negative particle,verb depends on particle,sub,PERF,none,4,0.6,17:94:1,وَمَا
+maA,مَا,COND,Conditional particle,verb depends on particle,rslt,IMPV,none,3,0.4,4:24:22,فَمَا
+maA,ما,NEG,Negative particle,particle depends on verb,Obj,IMPF,none,3,0.4,9:74:3,مَا
+maA,ما,NEG,Negative particle,particle depends on verb,conj,PERF,none,2,0.3,2:71:22,وَمَا
+maA,مَا,INTG,Interogative particle,particle depends on verb,Obj,IMPF,none,2,0.3,2:133:11,مَا
+maA,مَا,INTG,Interogative particle,verb depends on particle,Pred,IMPF,none,2,0.3,6:109:15,وَمَا
+maA,مَّا,SUP,Supplemental particle,particle depends on verb,sup,IMPF,none,2,0.3,7:3:13,مَّا
+maA,ما,NEG,Negative particle,verb depends on particle,pred <<ma>>,IMPF,none,2,0.3,10:101:7,وَمَا
+maA,ما,NEG,Negative particle,verb depends on particle,sub,IMPF,none,2,0.3,12:104:1,وَمَا
+maA,ما,COND,Conditional particle,verb depends on particle,cond,IMPF,none,2,0.3,13:17:33,مَا
+maA,ما,PREV,Preventive particle,verb depends on particle,sub,PERF,none,2,0.3,28:78:2,اِنَّمَاۤ
+maA,مَا,SUB,Subordinating conjunction,verb depends on particle,sub,IMPV,none,1,0.1,2:167:10,كَمَا
+maA,مَآ,COND,Conditional particle,particle depends on verb,Obj,IMPV,none,1,0.1,2:215:5,مَاۤ
+maA,مَآ,NEG,Negative particle,particle depends on verb,circ,IMPF,none,1,0.1,3:65:7,وَمَاۤ
+maA,مَا,SUB,Subordinating conjunction,particle depends on verb,Obj,PERF,none,1,0.1,3:118:13,مَا
+maA,مَا,NEG,Negative particle,particle depends on verb,Obj,IMPF,SUBJ,1,0.1,5:19:14,مَا
+maA,مَّا,SUB,Subordinating conjunction,particle depends on verb,link,IMPF,SUBJ,1,0.1,5:24:7,مَّا
+maA,مَا,SUB,Subordinating conjunction,particle depends on verb,link,PERF,none,1,0.1,5:96:13,مَا
+maA,م,INTG,Interogative particle,verb depends on particle,intg,PERF,none,1,0.1,9:43:4,لِمَ
+maA,ما,NEG,Negative particle,verb depends on particle,conj,PERF,none,1,0.1,9:47:4,مَّا
+maA,ما,NEG,Negative particle,particle depends on verb,imrs,PERF,none,1,0.1,11:101:6,فَمَاۤ
+maA,ما,COND,Conditional particle,verb depends on particle,pred <<ma>>,IMPF,none,1,0.1,13:17:33,مَا
+maA,ما,SUB,Subordinating conjunction,verb depends on particle,rslt,PERF,none,1,0.1,17:97:24,كُلَّمَا
+maA,ما,INTG,Interogative particle,verb depends on particle,pred <<ma>>,PERF,none,1,0.1,20:83:1,وَمَاۤ
+maA,ما,NEG,Negative particle,verb depends on particle,rslt,IMPV,none,1,0.1,21:7:1,وَمَاۤ
+maA,ما,NEG,Negative particle,particle depends on verb,state,IMPF,none,1,0.1,28:68:6,مَا
+maA,ما,NEG,Negative particle,verb depends on particle,cond,PERF,none,1,0.1,34:47:2,مَا
+maA,ما,INTG,Interogative particle,particle depends on verb,Obj,IMPV,none,1,0.1,37:25:1,مَا
+maA,ما,INTG,Interogative particle,verb depends on particle,circ,IMPF,none,1,0.1,37:25:1,مَا
+maA,ما,PREV,Preventive particle,verb depends on particle,sub,IMPF,none,1,0.1,51:5:1,اِنَّمَا
+maA,ما,NEG,Negative particle,particle depends on verb,int,PERF,none,1,0.1,57:27:21,مَا
+maA,ما,NEG,Negative particle,particle depends on verb,App,PERF,none,1,0.1,58:14:10,مَا
+maA,مَا,SUB,Subordinating conjunction,particle depends on verb,Obj,IMPV,none,1,0.1,64:16:3,مَا
+l:PRP+,ل,PRP,Purpose lām prefix,verb depends on particle,sub,IMPF,SUBJ,312,62.8,2:76:18,لِیُحَآجُّوْكُمْ
+l:PRP+,ل,PRP,Purpose lām prefix,particle depends on verb,link,PERF,none,110,22.1,2:205:6,لِیُفْسِدَ
+l:PRP+,ل,PRP,Purpose lām prefix,particle depends on verb,link,IMPF,none,51,10.3,3:78:7,لِتَحْسَبُوْهُ
+l:PRP+,ل,PRP,Purpose lām prefix,particle depends on verb,conj,IMPF,SUBJ,11,2.2,9:122:16,وَلِیُنْذِرُوْا
+l:PRP+,ل,PRP,Purpose lām prefix,particle depends on verb,link,IMPF,JUS,8,1.6,2:231:14,لِّتَعْتَدُوْا ۚ
+l:PRP+,لِ,PRP,Purpose lām prefix,particle depends on verb,link,IMPF,SUBJ,1,0.2,8:8:1,لِیُحِقَّ
+l:PRP+,ل,PRP,Purpose lām prefix,particle depends on verb,conj,PERF,none,1,0.2,12:21:20,وَلِنُعَلِّمَهٗ
+l:PRP+,ل,PRP,Purpose lām prefix,verb depends on particle,conj,PERF,none,1,0.2,25:32:11,لِنُثَبِّتَ
+l:PRP+,ل,PRP,Purpose lām prefix,particle depends on verb,Obj,IMPF,none,1,0.2,33:33:19,لِیُذْهِبَ
+l:PRP+,ل,PRP,Purpose lām prefix,particle depends on verb,pred <<kan>>,PERF,none,1,0.2,35:44:19,لِیُعْجِزَهٗ
+qad,قدْ,CERT,Particle of certainty,verb depends on particle,cert,PERF,none,398,92.8,2:60:14,قَدْ
+qad,قدْ,CERT,Particle of certainty,particle depends on verb,Obj,PERF,none,14,3.3,4:72:9,قَدْ
+qad,قدْ,CERT,Particle of certainty,verb depends on particle,cert,IMPF,none,8,1.9,2:144:1,قَدْ
+qad,قدْ,CERT,Particle of certainty,particle depends on verb,circ,PERF,none,2,0.5,2:237:7,وَقَدْ
+qad,قَدْ,CERT,Particle of certainty,particle depends on verb,circ,IMPF,SUBJ,1,0.2,2:246:39,وَقَدْ
+qad,قَدْ,CERT,Particle of certainty,particle depends on verb,Obj,IMPV,none,1,0.2,3:183:16,قَدْ
+qad,قَدِ,CERT,Particle of certainty,particle depends on verb,pred <<ykon>>,IMPF,SUBJ,1,0.2,7:185:16,قَدِ
+qad,قدْ,CERT,Particle of certainty,particle depends on verb,Obj,IMPF,SUBJ,1,0.2,9:50:9,قَدْ
+qad,قدْ,CERT,Particle of certainty,verb depends on particle,conj,IMPF,none,1,0.2,34:53:1,وَّقَدْ
+qad,قَدْ,CERT,Particle of certainty,particle depends on verb,circ,IMPF,JUS,1,0.2,60:1:12,وَقَدْ
+qad,قَد,CERT,Particle of certainty,particle depends on verb,circ,IMPF,none,1,0.2,61:5:8,وَقَدْ
+lam,لمْ,NEG,Negative particle,verb depends on particle,neg,IMPF,JUS,345,94.8,2:6:8,لَمْ
+lam,لَمْ,NEG,Negative particle,particle depends on verb,conj,PERF,none,11,3.0,4:90:26,فَلَمْ
+lam,لَمَّا,NEG,Negative particle,verb depends on particle,neg,IMPF,SUBJ,2,0.5,5:41:38,لَّمْ
+lam,لمْ,NEG,Negative particle,particle depends on verb,Obj,PERF,none,2,0.5,15:33:2,لَمْ
+lam,لَمْ,NEG,Negative particle,particle depends on verb,circ,PERF,none,1,0.3,2:283:5,وَّلَمْ
+lam,لمْ,NEG,Negative particle,verb depends on particle,neg,IMPF,none,1,0.3,18:82:32,لَمْ
+lam,لمْ,NEG,Negative particle,verb depends on particle,Poss,IMPF,JUS,1,0.3,33:9:15,لَّمْ
+lam,لمْ,NEG,Negative particle,particle depends on verb,Obj,IMPV,none,1,0.3,49:14:5,لَّمْ
+l:EMPH+,ل,EMPH,Emphatic lām prefix,particle depends on verb,emph,IMPF,none,225,62.0,2:96:1,وَلَتَجِدَنَّهُمْ
+l:EMPH+,ل,EMPH,Emphatic lām prefix,particle depends on verb,emph,PERF,none,135,37.2,2:20:17,لَذَهَبَ
+l:EMPH+,لَ,EMPH,Emphatic lām prefix,verb depends on particle,conj,IMPF,none,2,0.6,7:6:1,فَلَنَسْـَٔلَنَّ
+l:EMPH+,ل,EMPH,Emphatic lām prefix,particle depends on verb,emph,IMPF,SUBJ,1,0.3,11:91:9,لَنَرٰىكَ
+A:INTG+,أ,INTG,Interogative particle,verb depends on particle,intg,PERF,none,103,33.4,2:80:9,اَتَّخَذْتُمْ
+A:INTG+,أَ,INTG,Interogative particle,verb depends on particle,intg,IMPF,none,81,26.3,2:13:9,اَنُؤْمِنُ
+A:INTG+,أ,INTG,Interogative particle,particle depends on verb,Obj,PERF,none,72,23.4,2:13:9,اَنُؤْمِنُ
+A:INTG+,أ,INTG,Interogative particle,particle depends on verb,Obj,IMPV,none,34,11.0,2:80:9,اَتَّخَذْتُمْ
+A:INTG+,أَ,INTG,Interogative particle,particle depends on verb,Obj,IMPF,none,10,3.2,3:124:4,اَلَنْ
+A:INTG+,أ,INTG,Interogative particle,particle depends on verb,Obj,IMPF,SUBJ,2,0.6,6:53:6,اَهٰۤؤُلَآءِ
+A:INTG+,أ,INTG,Interogative particle,verb depends on particle,neg,IMPF,none,2,0.6,9:13:1,اَلَا
+A:INTG+,ء,INTG,Interogative particle,verb depends on particle,conj,PERF,none,2,0.6,10:51:7,آٰلْـٰٔنَ
+A:INTG+,أَ,INTG,Interogative particle,particle depends on verb,circ,PERF,none,1,0.3,7:172:13,اَلَسْتُ
+A:INTG+,ء,INTG,Interogative particle,particle depends on verb,Pass,PERF,none,1,0.3,10:51:7,آٰلْـٰٔنَ
+law,لوْ,COND,Conditional particle,verb depends on particle,cond,PERF,none,114,39.6,2:20:14,وَلَوْ
+law,لوْ,COND,Conditional particle,verb depends on particle,rslt,PERF,none,87,30.2,2:20:14,وَلَوْ
+law,لوْ,COND,Conditional particle,verb depends on particle,cond,IMPF,none,30,10.4,2:165:17,وَلَوْ
+law,لوْ,COND,Conditional particle,particle depends on verb,Obj,PERF,none,10,3.5,2:167:4,لَوْ
+law,لَوْ,SUB,Subordinating conjunction,verb depends on particle,sub,IMPF,none,9,3.1,2:96:11,لَوْ
+law,لَوْ,SUB,Subordinating conjunction,verb depends on particle,sub,PERF,none,8,2.8,2:170:15,اَوَلَوْ
+law,لَوْ,SUB,Subordinating conjunction,particle depends on verb,Obj,PERF,none,7,2.4,2:109:6,لَوْ
+law,لوْ,COND,Conditional particle,particle depends on verb,Obj,IMPV,none,7,2.4,3:154:52,لَّوْ
+law,لَوْ,COND,Conditional particle,particle depends on verb,Obj,IMPF,none,4,1.4,3:154:42,لَوْ
+law,لَوْ,SUB,Subordinating conjunction,particle depends on verb,Obj,IMPF,none,3,1.0,2:96:11,لَوْ
+law,لوْ,COND,Conditional particle,particle depends on verb,Obj,IMPF,SUBJ,2,0.7,6:157:3,لَوْ
+law,لَوْ,COND,Conditional particle,verb depends on particle,rslt,IMPF,SUBJ,1,0.3,2:167:4,لَوْ
+law,لَوْ,SUB,Subordinating conjunction,particle depends on verb,circ,IMPF,JUS,1,0.3,2:221:23,وَّلَوْ
+law,لَوْ,SUB,Subordinating conjunction,particle depends on verb,circ,IMPF,none,1,0.3,5:100:6,وَلَوْ
+law,لوْ,SUB,Subordinating conjunction,particle depends on verb,circ,IMPF,SUBJ,1,0.3,9:32:13,وَلَوْ
+law,لوْ,COND,Conditional particle,verb depends on particle,cond,IMPV,none,1,0.3,48:25:33,لَوْ
+law,لوْ,COND,Conditional particle,verb depends on particle,sub,PERF,none,1,0.3,58:22:13,وَلَوْ
+law,لَوْ,COND,Conditional particle,verb depends on particle,rslt,IMPF,none,1,0.3,102:5:2,لَوْ
+man,مَن,COND,Conditional particle,verb depends on particle,cond,IMPF,JUS,91,35.0,2:108:11,وَمَنْ
+man,مَن,COND,Conditional particle,verb depends on particle,cond,PERF,none,86,33.1,2:38:9,فَمَنْ
+man,مَن,COND,Conditional particle,verb depends on particle,rslt,IMPF,JUS,29,11.2,2:185:13,فَمَنْ
+man,مَن,COND,Conditional particle,verb depends on particle,rslt,IMPF,none,16,6.2,2:126:20,وَمَنْ
+man,مَن,COND,Conditional particle,verb depends on particle,rslt,PERF,none,9,3.5,2:249:10,فَمَنْ
+man,مَن,INTG,Interogative particle,verb depends on particle,Pred,IMPF,none,7,2.7,3:135:12,وَمَنْ
+man,مَن,INTG,Interogative particle,particle depends on verb,Obj,IMPV,none,4,1.5,5:17:12,فَمَنْ
+man,من,COND,Conditional particle,particle depends on verb,Obj,PERF,none,3,1.2,2:102:59,لَمَنِ
+man,مَن,INTG,Interogative particle,verb depends on particle,intg,IMPF,none,3,1.2,2:130:1,وَمَنْ
+man,مَنْ,INTG,Interogative particle,verb depends on particle,Pred,PERF,none,3,1.2,6:91:16,مَنْ
+man,مَنِ,COND,Conditional particle,verb depends on particle,rslt,IMPV,none,2,0.8,2:194:7,فَمَنِ
+man,مَن,COND,Conditional particle,particle depends on verb,Obj,IMPV,none,1,0.4,2:97:2,مَنْ
+man,مَن,INTG,Interogative particle,verb depends on particle,intg,PERF,none,1,0.4,6:93:16,وَّمَنْ
+man,من,COND,Conditional particle,verb depends on particle,Pred,PERF,none,1,0.4,28:67:2,مَنْ
+man,من,COND,Conditional particle,particle depends on verb,Obj,IMPF,JUS,1,0.4,40:9:3,وَمَنْ
+man,مَنْ,INTG,Interogative particle,particle depends on verb,Obj,PERF,none,1,0.4,66:3:23,مَنْ
+man,مَنْ,INTG,Interogative particle,particle depends on verb,Obj,IMPF,none,1,0.4,72:24:7,مَنْ
+man,مَنْ,INTG,Interogative particle,particle depends on verb,Pass,PERF,none,1,0.4,75:27:2,مَنْ ٚ
+EMPH:n,ن,EMPH,Emphatic lām prefix,particle depends on verb,emph,IMPF,none,226,93.0,2:38:6,یَاْتِیَنَّكُمْ
+EMPH:n,ن,EMPH,Emphatic lām prefix,particle depends on verb,emph,IMPF,JUS,17,7.0,2:132:13,تَمُوْتُنَّ
+>an~,أَنَّ,ACC,Accusative particle,verb depends on particle,pred<<an>>,PERF,none,75,31.0,2:47:8,وَاَنِّیْ
+>an~,أن,ACC,Accusative particle,verb depends on particle,pred<<an>>,IMPF,none,33,13.6,2:77:3,اَنَّ
+>an~,أَنَّ,ACC,Accusative particle,particle depends on verb,Obj,IMPV,none,28,11.6,2:194:19,اَنَّ
+>an~,أَنَّ,ACC,Accusative particle,particle depends on verb,Obj,IMPF,none,27,11.2,2:26:16,اَنَّهُ
+>an~,أَنَّ,ACC,Accusative particle,particle depends on verb,Obj,PERF,none,23,9.5,2:25:6,اَنَّ
+>an~,أن,ACC,Accusative particle,verb depends on particle,pred<<in>>,PERF,none,18,7.4,13:31:2,اَنَّ
+>an~,أن,ACC,Accusative particle,particle depends on verb,Obj,IMPF,JUS,15,6.2,2:106:14,اَنَّ
+>an~,أن,ACC,Accusative particle,verb depends on particle,pred<<in>>,IMPF,none,14,5.8,3:49:11,اَنِّیْۤ
+>an~,أَنَّ,ACC,Accusative particle,particle depends on verb,Obj,IMPF,SUBJ,2,0.8,5:97:14,اَنَّ
+>an~,أن,ACC,Accusative particle,particle depends on verb,Pass,PERF,none,2,0.8,11:36:4,اَنَّهٗ
+>an~,أ,ACC,Accusative particle,verb depends on particle,neg,IMPF,none,1,0.4,20:89:3,اَلَّا
+>an~,أن,ACC,Accusative particle,particle depends on verb,App,PERF,none,1,0.4,27:51:6,اَنَّا
+>an~,أن,ACC,Accusative particle,verb depends on particle,pred <<lel>>,IMPF,none,1,0.4,51:23:8,اَنَّكُمْ
+>an~,أن,ACC,Accusative particle,verb depends on particle,pred<<an>>,IMPF,SUBJ,1,0.4,53:40:1,وَاَنَّ
+>an~,أَنَّ,ACC,Accusative particle,particle depends on verb,subj <<kan>>,PERF,none,1,0.4,59:17:3,اَنَّهُمَا
+ya+,ي,VOC,Vocative particle,particle depends on verb,Obj,PERF,none,101,80.8,2:33:2,یٰۤاٰدَمُ
+ya+,يَٰٓ,VOC,Vocative particle,particle depends on verb,Obj,IMPV,none,14,11.2,3:64:2,یٰۤاَهْلَ
+ya+,يَٰ,VOC,Vocative particle,particle depends on verb,Obj,IMPF,none,6,4.8,6:128:4,یٰمَعْشَرَ
+ya+,ي,VOC,Vocative particle,particle depends on verb,Pass,PERF,none,3,2.4,11:44:2,یٰۤاَرْضُ
+ya+,ي,VOC,Vocative particle,particle depends on verb,Obj,IMPF,SUBJ,1,0.8,39:56:4,یّٰحَسْرَتٰی
+laEal~,لعل,ACC,Accusative particle,verb depends on particle,pred <<lel>>,IMPF,none,118,97.5,2:21:10,لَعَلَّكُمْ
+laEal~,لعل,ACC,Accusative particle,particle depends on verb,link,IMPV,none,1,0.8,9:12:17,لَعَلَّهُمْ
+laEal~,لعل,ACC,Accusative particle,verb depends on particle,pred<<in>>,IMPF,none,1,0.8,35:12:27,وَلَعَلَّكُمْ
+laEal~,لَعَلَّ,ACC,Accusative particle,particle depends on verb,Obj,IMPF,none,1,0.8,65:1:36,لَعَلَّ
+lan,لن,NEG,Negative particle,verb depends on particle,neg,IMPF,SUBJ,103,85.8,2:24:4,وَلَنْ
+lan,لَن,NEG,Negative particle,particle depends on verb,Obj,PERF,none,10,8.3,2:80:2,لَنْ
+lan,لن,NEG,Negative particle,particle depends on verb,Obj,IMPV,none,4,3.3,9:51:2,لَّنْ
+lan,لن,NEG,Negative particle,particle depends on verb,imrs,IMPV,none,1,0.8,9:53:6,لَّنْ
+lan,لن,NEG,Negative particle,particle depends on verb,Obj,IMPF,none,1,0.8,11:31:19,لَنْ
+lan,لن,NEG,Negative particle,verb depends on particle,conj,IMPF,none,1,0.8,18:67:3,لَنْ
+sa+,س,FUT,Future particle,particle depends on verb,fut,IMPF,none,117,98.3,2:58:19,وَسَنَزِیْدُ
+sa+,س,FUT,Future particle,particle depends on verb,fut,IMPF,SUBJ,2,1.7,9:94:17,وَسَیَرَی
+f:CAUS+,ف,CAUS,Particle of cause,particle depends on verb,caus,IMPF,SUBJ,41,47.1,2:35:16,فَتَكُوْنَا
+f:CAUS+,فَ,CAUS,Particle of cause,particle depends on verb,caus,PERF,none,35,40.2,2:50:5,فَاَنْجَیْنٰكُمْ
+f:CAUS+,فَ,CAUS,Particle of cause,particle depends on verb,caus,IMPV,none,11,12.6,2:54:11,فَتُوْبُوْۤا
+hal,هلْ,INTG,Interogative particle,verb depends on particle,intg,IMPF,none,41,51.2,2:210:1,هَلْ
+hal,هَلْ,INTG,Interogative particle,verb depends on particle,intg,PERF,none,13,16.2,2:246:23,هَلْ
+hal,هلْ,INTG,Interogative particle,particle depends on verb,Obj,IMPV,none,9,11.2,5:60:2,هَلْ
+hal,هلْ,INTG,Interogative particle,particle depends on verb,Obj,PERF,none,7,8.8,2:246:23,هَلْ
+hal,هلْ,INTG,Interogative particle,particle depends on verb,Obj,IMPF,none,5,6.2,3:154:23,هَلْ
+hal,هَلْ,INTG,Interogative particle,particle depends on verb,circ,IMPF,none,1,1.2,5:59:4,هَلْ
+hal,هلْ,INTG,Interogative particle,verb depends on particle,intg,IMPF,SUBJ,1,1.2,9:127:9,هَلْ
+hal,هلْ,INTG,Interogative particle,particle depends on verb,Pass,IMPV,none,1,1.2,18:103:2,هَلْ
+hal,هلْ,INTG,Interogative particle,particle depends on verb,Pass,PERF,none,1,1.2,26:39:3,هَلْ
+hal,هَلْ,INTG,Interogative particle,verb depends on particle,Pred,IMPF,none,1,1.2,61:10:4,هَلْ
+l:IMPV+,لْ,IMPV,Imperative lām prefix,particle depends on verb,impv,IMPF,JUS,78,98.7,2:185:17,فَلْیَصُمْهُ ؕ
+l:IMPV+,لْ,IMPV,Imperative lām prefix,verb depends on particle,conj,IMPF,JUS,1,1.3,2:282:11,وَلْیَكْتُبْ
+kayof,كيْف,INTG,Interogative particle,particle depends on verb,pred <<kan>>,PERF,none,31,41.3,3:137:10,كَیْفَ
+kayof,كَيْفَ,INTG,Interogative particle,particle depends on verb,circ,IMPF,none,22,29.3,2:28:1,كَیْفَ
+kayof,كَيْفَ,INTG,Interogative particle,particle depends on verb,circ,PERF,none,18,24.0,6:24:2,كَیْفَ
+kayof,كيْف,INTG,Interogative particle,verb depends on particle,intg,IMPF,none,2,2.7,7:93:11,فَكَیْفَ
+kayof,كيْف,INTG,Interogative particle,particle depends on verb,circ,IMPF,SUBJ,1,1.3,18:68:1,وَكَیْفَ
+kayof,كَيْفَ,INTG,Interogative particle,particle depends on verb,Obj,IMPF,none,1,1.3,68:36:3,كَیْفَ
+lawolaA^,لوْلا,EXH,Exhortation particle,verb depends on particle,exh,PERF,none,24,32.0,4:77:33,لَوْلَاۤ
+lawolaA^,لوْلا,COND,Conditional particle,verb depends on particle,rslt,PERF,none,22,29.3,2:64:6,فَلَوْلَا
+lawolaA^,لوْلا,EXH,Exhortation particle,verb depends on particle,exh,IMPF,none,10,13.3,2:118:5,لَوْلَا
+lawolaA^,لوْلا,EXH,Exhortation particle,particle depends on verb,Obj,PERF,none,10,13.3,6:8:2,لَوْلَاۤ
+lawolaA^,لوْلا,EXH,Exhortation particle,particle depends on verb,Obj,IMPF,none,6,8.0,2:118:5,لَوْلَا
+lawolaA^,لوْلا,COND,Conditional particle,verb depends on particle,cond,PERF,none,1,1.3,9:122:6,فَلَوْلَا
+lawolaA^,لوْلا,EXH,Exhortation particle,verb depends on particle,rslt,IMPV,none,1,1.3,10:20:2,لَوْلَاۤ
+lawolaA^,لوْلا,EXH,Exhortation particle,particle depends on verb,Obj,IMPF,SUBJ,1,1.3,11:12:12,لَوْلَاۤ
+bal,بلْ,RET,Retraction particle,verb depends on particle,ret,PERF,none,38,58.5,2:88:4,بَلْ
+bal,بلْ,RET,Retraction particle,particle depends on verb,Obj,PERF,none,12,18.5,2:170:9,بَلْ
+bal,بَلْ,RET,Retraction particle,verb depends on particle,ret,IMPF,none,12,18.5,2:170:9,بَلْ
+bal,بَلْ,RET,Retraction particle,particle depends on verb,Obj,IMPV,none,1,1.5,2:135:8,بَلْ
+bal,بلْ,RET,Retraction particle,verb depends on particle,ret,IMPV,none,1,1.5,20:66:2,بَلْ
+bal,بلْ,RET,Retraction particle,particle depends on verb,Obj,IMPF,none,1,1.5,48:15:24,بَلْ
+f:SUP+,ف,SUP,Supplemental particle,particle depends on verb,sup,PERF,none,21,47.7,12:107:1,اَفَاَمِنُوْۤا
+f:SUP+,ف,SUP,Supplemental particle,particle depends on verb,sup,IMPF,none,12,27.3,2:75:1,اَفَتَطْمَعُوْنَ
+f:SUP+,فَ,SUP,Supplemental particle,particle depends on verb,sup,IMPV,none,9,20.5,3:168:10,فَادْرَءُوْا
+f:SUP+,فَ,SUP,Supplemental particle,particle depends on verb,sup,IMPF,JUS,1,2.3,5:11:22,فَلْیَتَوَكَّلِ
+f:SUP+,فَ,SUP,Supplemental particle,verb depends on particle,conj,IMPF,none,1,2.3,5:74:1,اَفَلَا
+la`kin,لكن,AMD,Amendment particle,verb depends on particle,amd,PERF,none,23,54.8,2:57:15,وَلٰكِنْ
+la`kin,لكن,AMD,Amendment particle,verb depends on particle,amd,IMPF,none,10,23.8,2:225:7,وَلٰكِنْ
+la`kin,لكن,AMD,Amendment particle,verb depends on particle,amd,IMPV,none,3,7.1,3:79:19,وَلٰكِنْ
+la`kin,لكن,ACC,Accusative particle,verb depends on particle,pred <<lakin>>,IMPF,none,2,4.8,11:29:19,وَلٰكِنِّیْۤ
+la`kin,لكن,ACC,Accusative particle,verb depends on particle,pred <<lakin>>,PERF,none,2,4.8,20:87:6,وَلٰكِنَّا
+la`kin,لكن,AMD,Amendment particle,verb depends on particle,pred <<lakin>>,IMPF,none,1,2.4,16:93:7,وَّلٰكِنْ
+la`kin,لكن,ACC,Accusative particle,verb depends on particle,amd,PERF,none,1,2.4,28:45:16,وَلٰكِنَّا
+sawof,سَوْفَ,FUT,Future particle,particle depends on verb,fut,IMPF,none,36,94.7,4:30:6,فَسَوْفَ
+sawof,سوْف,FUT,Future particle,particle depends on verb,imrs,IMPV,none,1,2.6,39:39:8,فَسَوْفَ
+sawof,سوْف,FUT,Future particle,particle depends on verb,fut,IMPF,SUBJ,1,2.6,53:40:3,سَوْفَ
+<il~aA,إلا,RES,Restriction particle,particle depends on verb,res,PERF,none,13,37.1,6:4:8,اِلَّا
+<il~aA,إلا,RES,Restriction particle,particle depends on verb,res,IMPF,none,7,20.0,6:59:17,اِلَّا
+<il~aA,إلا,RES,Restriction particle,verb depends on particle,rslt,IMPF,JUS,3,8.6,9:39:1,اِلَّا
+<il~aA,إلا,RES,Restriction particle,verb depends on particle,cond,IMPF,SUBJ,2,5.7,9:39:1,اِلَّا
+<il~aA,إلا,RES,Restriction particle,verb depends on particle,neg,IMPF,JUS,2,5.7,11:47:13,وَاِلَّا
+<il~aA,إلا,RES,Restriction particle,verb depends on particle,cert,PERF,none,2,5.7,12:37:6,اِلَّا
+<il~aA,إِلَّا,EXP,Exceptive particle,particle depends on verb,exp,IMPF,none,1,2.9,2:78:10,اِلَّا
+<il~aA,إلا,RES,Restriction particle,particle depends on verb,Obj,IMPF,SUBJ,1,2.9,9:32:9,اِلَّاۤ
+<il~aA,إلا,EXP,Exceptive particle,particle depends on verb,exp,PERF,none,1,2.9,9:74:18,اِلَّاۤ
+<il~aA,إلا,RES,Restriction particle,particle depends on verb,prp,IMPF,none,1,2.9,12:66:12,اِلَّاۤ
+<il~aA,إلا,RES,Restriction particle,verb depends on particle,cert,IMPF,none,1,2.9,36:15:14,اِلَّا
+<il~aA,إِلَّا,CERT,Particle of certainty,particle depends on verb,link,PERF,none,1,2.9,98:5:3,اِلَّا
+{l~a*iY,ٱلَّذِينَ,COND,Conditional particle,verb depends on particle,cond,PERF,none,17,48.6,2:26:13,الَّذِیْنَ
+{l~a*iY,ٱلَّذِينَ,COND,Conditional particle,verb depends on particle,rslt,IMPF,none,9,25.7,2:26:13,الَّذِیْنَ
+{l~a*iY,ٱلَّذِينَ,COND,Conditional particle,verb depends on particle,rslt,IMPV,none,2,5.7,4:33:8,وَالَّذِیْنَ
+{l~a*iY,الذين,COND,Conditional particle,verb depends on particle,Pred,PERF,none,2,5.7,9:124:13,الَّذِیْنَ
+{l~a*iY,الذين,COND,Conditional particle,verb depends on particle,sub,PERF,none,2,5.7,11:106:2,الَّذِیْنَ
+{l~a*iY,ٱلَّٰتِى,COND,Conditional particle,verb depends on particle,cond,IMPF,none,1,2.9,4:34:22,وَالّٰتِیْ
+{l~a*iY,الذين,COND,Conditional particle,verb depends on particle,sub,IMPF,none,1,2.9,9:34:17,وَالَّذِیْنَ
+{l~a*iY,الذين,COND,Conditional particle,verb depends on particle,Pred,IMPV,none,1,2.9,9:34:17,وَالَّذِیْنَ
+maA*aA,ماذا,INTG,Interogative particle,particle depends on verb,Obj,IMPF,none,10,35.7,2:26:24,مَاذَاۤ
+maA*aA,ماذا,INTG,Interogative particle,particle depends on verb,Obj,PERF,none,6,21.4,5:109:6,مَاذَاۤ
+maA*aA,ماذا,INTG,Interogative particle,verb depends on particle,Pred,PERF,none,4,14.3,5:4:2,مَاذَاۤ
+maA*aA,ماذا,INTG,Interogative particle,particle depends on verb,Obj,IMPV,none,3,10.7,27:28:10,مَاذَا
+maA*aA,ماذا,INTG,Interogative particle,particle depends on verb,Pass,PERF,none,2,7.1,16:24:4,مَّاذَاۤ
+maA*aA,ماذا,INTG,Interogative particle,verb depends on particle,intg,IMPF,none,2,7.1,27:28:10,مَاذَا
+maA*aA,ماذا,INTG,Interogative particle,verb depends on particle,Pred,IMPF,none,1,3.6,26:35:7,فَمَاذَا
+kam,كمْ,INTG,Interogative particle,particle depends on verb,Obj,PERF,none,14,53.8,2:211:4,كَمْ
+kam,كمْ,INTG,Interogative particle,verb depends on particle,intg,PERF,none,9,34.6,17:17:1,وَكَمْ
+kam,كَم,INTG,Interogative particle,verb depends on particle,Pred,PERF,none,1,3.8,2:249:49,كَمْ
+kam,كمْ,INTG,Interogative particle,particle depends on verb,Obj,IMPF,none,1,3.8,21:11:1,وَكَمْ
+kam,كمْ,INTG,Interogative particle,particle depends on verb,Obj,IMPF,JUS,1,3.8,36:31:3,كَمْ
+>an~aY`,أنى,INTG,Interogative particle,verb depends on particle,intg,IMPF,none,11,55.0,2:247:12,اَنّٰی
+>an~aY`,أَنَّىٰ,INTG,Interogative particle,particle depends on verb,Obj,PERF,none,3,15.0,2:247:12,اَنّٰی
+>an~aY`,أنى,INTG,Interogative particle,particle depends on verb,link,IMPF,none,3,15.0,29:61:12,فَاَنّٰی
+>an~aY`,أَنَّىٰ,INTG,Interogative particle,particle depends on verb,link,IMPV,none,1,5.0,2:223:6,اَنّٰی
+>an~aY`,أَنَّىٰ,INTG,Interogative particle,verb depends on particle,Poss,PERF,none,1,5.0,2:223:6,اَنّٰی
+>an~aY`,أَنَّىٰ,INTG,Interogative particle,particle depends on verb,circ,IMPF,none,1,5.0,63:4:21,اَنّٰی
+la`kin~,لَٰكِنَّ,ACC,Accusative particle,verb depends on particle,pred <<lakun>>,IMPF,none,7,35.0,2:253:48,وَلٰكِنَّ
+la`kin~,لَٰكِنَّ,ACC,Accusative particle,verb depends on particle,pred <<lakun>>,PERF,none,6,30.0,2:102:11,وَلٰكِنَّ
+la`kin~,لكن,ACC,Accusative particle,verb depends on particle,pred <<lakin>>,IMPF,none,4,20.0,10:44:7,وَّلٰكِنَّ
+la`kin~,لكن,ACC,Accusative particle,verb depends on particle,pred <<lakin>>,PERF,none,2,10.0,30:56:17,وَلٰكِنَّكُمْ
+la`kin~,لكن,ACC,Accusative particle,verb depends on particle,amd,PERF,none,1,5.0,57:14:7,وَلٰكِنَّكُمْ
+layot,لَيْتَ,ACC,Accusative particle,verb depends on particle,pred <<layt>>,PERF,none,6,46.2,4:73:13,یّٰلَیْتَنِیْ
+layot,ليْت,ACC,Accusative particle,particle depends on verb,Obj,PERF,none,4,30.8,6:27:8,یٰلَیْتَنَا
+layot,ليْت,ACC,Accusative particle,verb depends on particle,pred <<layt>>,IMPF,none,2,15.4,6:27:8,یٰلَیْتَنَا
+layot,ليْت,ACC,Accusative particle,verb depends on particle,pred<<in>>,PERF,none,1,7.7,33:66:7,یٰلَیْتَنَاۤ
+balaY`,بلى,ANS,Answer particle,particle depends on verb,Obj,PERF,none,8,72.7,2:260:13,بَلٰی
+balaY`,بلى,ANS,Answer particle,particle depends on verb,Obj,IMPV,none,2,18.2,34:3:8,بَلٰی
+balaY`,بَلَىٰ,ANS,Answer particle,verb depends on particle,ans,PERF,none,1,9.1,7:172:16,بَلٰی ۛۚ
+<im~aA,إما,EXL,Explanation particle,verb depends on particle,cond,IMPF,none,3,33.3,19:26:5,فَاِمَّا
+<im~aA,إما,EXL,Explanation particle,verb depends on particle,exl,IMPF,none,2,22.2,9:106:5,اِمَّا
+<im~aA,إما,EXL,Explanation particle,verb depends on particle,rslt,IMPV,none,2,22.2,19:26:5,فَاِمَّا
+<im~aA,إِمَّا,COND,Conditional particle,verb depends on particle,cond,IMPF,none,1,11.1,2:38:5,فَاِمَّا
+<im~aA,إما,EXL,Explanation particle,particle depends on verb,sup,IMPF,none,1,11.1,10:46:1,وَاِمَّا
+kal~aA,كَلَّا,AVR,Aversion particle,verb depends on particle,avr,IMPF,none,7,77.8,19:79:1,كَلَّا ؕ
+kal~aA,كلا,AVR,Aversion particle,particle depends on verb,Obj,PERF,none,1,11.1,26:15:2,كَلَّا ۚ
+kal~aA,كلا,AVR,Aversion particle,verb depends on particle,avr,IMPV,none,1,11.1,26:15:2,كَلَّا ۚ
+<i*FA,إذًا,SUR,Surprise particle,verb depends on particle,ans,PERF,none,5,62.5,17:42:8,اِذًا
+<i*FA,إِذًا,ANS,Answer particle,verb depends on particle,ans,PERF,none,1,12.5,4:67:1,وَّاِذًا
+<i*FA,إذًا,SUR,Surprise particle,particle depends on verb,pred <<kan>>,PERF,none,1,12.5,15:8:8,اِذًا
+<i*FA,إِذًا,ANS,Answer particle,particle depends on verb,Obj,PERF,none,1,12.5,79:12:3,اِذًا
+Hat~aY`,حَتَّىٰ,INC,Inceptive particle,verb depends on particle,inc,PERF,none,6,75.0,6:34:11,حَتّٰۤی
+Hat~aY`,حتى,INC,Inceptive particle,particle depends on verb,link,PERF,none,1,12.5,9:48:9,حَتّٰی
+Hat~aY`,حتى,INC,Inceptive particle,particle depends on verb,link,IMPF,none,1,12.5,23:99:1,حَتّٰۤی
+>aY~,أى,INTG,Interogative particle,particle depends on verb,Obj,IMPF,none,3,42.9,4:11:60,اَیُّهُمْ
+>aY~,أَىُّ,INTG,Interogative particle,particle depends on verb,Obj,IMPV,none,2,28.6,6:19:2,اَیُّ
+>aY~,أيُ,INTG,Interogative particle,particle depends on verb,App,IMPF,none,1,14.3,17:57:8,اَیُّهُمْ
+>aY~,أىُ,INTG,Interogative particle,particle depends on verb,Obj,PERF,none,1,14.3,19:73:11,اَیُّ
+kaY,كىْ,SUB,Subordinating conjunction,verb depends on particle,sub,IMPF,SUBJ,4,57.1,3:153:14,لِّكَیْلَا
+kaY,كيْلا,NEG,Negative particle,verb depends on particle,neg,IMPF,SUBJ,3,42.9,22:5:50,لِكَیْلَا
+>ayon,أَيْنَ,COND,Conditional particle,verb depends on particle,cond,IMPF,JUS,3,50.0,2:115:4,فَاَیْنَمَا
+>ayon,أَيْنَ,COND,Conditional particle,verb depends on particle,rslt,IMPF,JUS,2,33.3,2:148:7,اَیْنَ
+>ayon,أَيْنَ,INTG,Interogative particle,particle depends on verb,Obj,IMPF,none,1,16.7,81:26:1,فَاَیْنَ
+A:EQ+,أ,EQ,Equalization particle,verb depends on particle,eq,PERF,none,6,100.0,2:6:6,ءَاَنْذَرْتَهُمْ
+l~aEal~,لعل,ACC,Accusative particle,verb depends on particle,pred <<lel>>,IMPF,none,5,83.3,20:10:10,لَّعَلِّیْۤ
+l~aEal~,لعل,ACC,Accusative particle,verb depends on particle,pred<<in>>,IMPF,none,1,16.7,12:46:17,لَّعَلِّیْۤ
+Hayov2,حَيْثُ,COND,Conditional particle,verb depends on particle,cond,PERF,none,2,50.0,2:144:15,وَحَیْثُ
+Hayov2,حَيْثُ,COND,Conditional particle,verb depends on particle,rslt,IMPV,none,2,50.0,2:144:15,وَحَیْثُ
+VOC:m,م,VOC,Vocative particle,particle depends on verb,Obj,IMPV,none,2,50.0,3:26:2,اللّٰهُمَّ
+VOC:m,مَّ,VOC,Vocative particle,particle depends on verb,Obj,PERF,none,2,50.0,5:114:5,اللّٰهُمَّ
+w:SUP+,و,SUP,Supplemental particle,particle depends on verb,sup,PERF,none,2,50.0,29:10:25,اَوَلَیْسَ
+w:SUP+,و,SUP,Supplemental particle,verb depends on particle,sub,PERF,none,2,50.0,39:43:8,اَوَلَوْ
+>ay~aAn,أيان,INTG,Interogative particle,particle depends on verb,link,IMPF,none,2,66.7,27:65:13,اَیَّانَ
+>ay~aAn,أيان,INTG,Interogative particle,particle depends on verb,Obj,IMPF,none,1,33.3,16:21:6,اَیَّانَ
+ka>an~,كأن,ACC,Accusative particle,particle depends on verb,Obj,PERF,none,1,33.3,27:42:7,كَاَنَّهٗ
+ka>an~,كَأَنَّ,ACC,Accusative particle,particle depends on verb,circ,IMPF,none,1,33.3,61:4:9,كَاَنَّهُمْ
+ka>an~,كَأَنَّ,ACC,Accusative particle,verb depends on particle,pred <<ka'ana>>,IMPF,none,1,33.3,70:43:6,كَاَنَّهُمْ
+naEam,نَعَمْ,ANS,Answer particle,particle depends on verb,Obj,PERF,none,2,66.7,7:44:20,نَعَمْ ۚ
+naEam,نعمْ,ANS,Answer particle,particle depends on verb,Obj,IMPV,none,1,33.3,37:18:2,نَعَمْ
+<i*aA,إِذَا,COND,Conditional particle,verb depends on particle,cond,PERF,none,1,50.0,7:204:1,وَاِذَا
+<i*aA,إِذَا,COND,Conditional particle,verb depends on particle,rslt,IMPV,none,1,50.0,7:204:1,وَاِذَا
+<il~am,إلمْ,COND,Conditional particle,verb depends on particle,cond,IMPF,SUBJ,1,50.0,11:14:1,فَاِلَّمْ
+<il~am,إلمْ,COND,Conditional particle,verb depends on particle,rslt,IMPV,none,1,50.0,11:14:1,فَاِلَّمْ
+<iyn,إِي۟ن,COND,Conditional particle,verb depends on particle,cond,PERF,none,1,50.0,3:144:10,اَفَاۡىِٕنْ
+<iyn,إِي۟ن,COND,Conditional particle,verb depends on particle,rslt,PERF,none,1,50.0,3:144:10,اَفَاۡىِٕنْ
+mahomaA,مَهْمَا,COND,Conditional particle,particle depends on verb,Obj,PERF,none,1,50.0,7:132:2,مَهْمَا
+mahomaA,مَهْمَا,COND,Conditional particle,verb depends on particle,cond,IMPF,JUS,1,50.0,7:132:2,مَهْمَا
+wayoka>an~,ويْكأن,ACC,Accusative particle,particle depends on verb,Obj,IMPF,none,1,50.0,28:82:7,وَیْكَاَنَّ
+wayoka>an~,ويْكأن,ACC,Accusative particle,verb depends on particle,pred <<ka'ana>>,IMPF,none,1,50.0,28:82:7,وَیْكَاَنَّ
+<i*aA2,إذا,SUR,Surprise particle,verb depends on particle,Pred,IMPF,none,1,100.0,20:66:4,فَاِذَا
+<iY,إى,ANS,Answer particle,particle depends on verb,Obj,IMPV,none,1,100.0,10:53:5,اِیْ
+>alaA^,أَلَا,INC,Inceptive particle,verb depends on particle,inc,PERF,none,1,100.0,6:31:23,اَلَا
+>am~aA,أما,COND,Conditional particle,verb depends on particle,ans,IMPF,none,1,100.0,12:41:8,وَاَمَّا
+ha+,هَٰ,VOC,Vocative particle,particle depends on verb,link,PERF,none,1,100.0,3:154:50,هٰهُنَا ؕ
+haA^&um,هَآؤُمُ,IMPN,Imperative verbal noun,particle depends on verb,impv,IMPV,none,1,100.0,69:19:7,هَآؤُمُ
+l~am~aA,لَمَّا,NEG,Negative particle,verb depends on particle,neg,IMPF,JUS,1,100.0,2:214:6,وَلَمَّا
+mataY`,متى,INTG,Interogative particle,particle depends on verb,link,IMPF,none,1,100.0,17:51:19,مَتٰی

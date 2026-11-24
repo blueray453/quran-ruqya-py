@@ -1,0 +1,80 @@
+{
+ "note": "ONE example (of 836; complete list: output/analysis/source-lists/sentences-crossing-ayah.csv).",
+ "sentence": {
+  "sentence_id": 9243,
+  "span": {
+   "first_word": "42:1:1",
+   "last_word": "42:2:1",
+   "ayahs": [
+    "42:1",
+    "42:2"
+   ],
+   "crosses_ayah": true
+  },
+  "words": [
+   "42:1:1",
+   "42:2:1"
+  ],
+  "nodes": [
+   {
+    "token_id": 0,
+    "treebank_tid": 112038,
+    "sentence_word": 1,
+    "implicit": false,
+    "word": "42:1:1",
+    "segment": "42:1:1:1",
+    "pos": "INL",
+    "head": 0,
+    "rel": "NonRel",
+    "rel_ar": "NonRel",
+    "is_constituent": "-1"
+   },
+   {
+    "token_id": 1,
+    "treebank_tid": 112039,
+    "sentence_word": 1,
+    "implicit": false,
+    "word": "42:2:1",
+    "segment": "42:2:1:1",
+    "pos": "INL",
+    "head": 1,
+    "rel": "NonRel",
+    "rel_ar": "NonRel",
+    "is_constituent": "-1"
+   }
+  ],
+  "constituents": [],
+  "derived": {
+   "word_count": 2,
+   "node_count": 2,
+   "implicit_node_count": 0,
+   "is_prefix_only_fragment": false,
+   "split_words": [],
+   "root_nodes": [],
+   "pos_sequence": {
+    "stem": [
+     "INL",
+     "INL"
+    ],
+    "all_segments": [
+     "INL",
+     "INL"
+    ]
+   },
+   "function_sequence": {
+    "all": [
+     "NonRel",
+     "NonRel"
+    ],
+    "without_NonRel": [
+     "NonRel",
+     "NonRel"
+    ],
+    "stem": [
+     "NonRel",
+     "NonRel"
+    ]
+   }
+  }
+ }
+}

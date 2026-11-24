@@ -1,0 +1,400 @@
+﻿form,aspect,voice,mood,person_gender_number,person,gender,number,count,distinct_verbs,example_word,example_text_indopak,example_verb,example_gloss
+I,PERF,,,1P,1,,P,592,109,2:3:7,رَزَقْنٰهُمْ,رَزَقَ,We have provided them
+I,PERF,,,1S,1,,S,107,49,2:259:27,لَبِثْتُ,لَبِثَ,I remained
+I,PERF,,,2D,2,,D,2,1,2:35:11,شِئْتُمَا ۪,شَآءَ,you [both] wish
+I,PERF,,,2FP,2,F,P,4,3,12:32:4,لُمْتُنَّنِیْ,لُمْ,you blamed me
+I,PERF,,,2FS,2,F,S,3,3,12:29:8,كُنْتِ,كَانَ,are
+I,PERF,,,2MP,2,M,P,403,79,2:23:2,كُنْتُمْ,كَانَ,you are
+I,PERF,,,2MS,2,M,S,168,54,2:71:19,جِئْتَ,جَآءَ,you have come
+I,PERF,,,3FD,3,F,D,8,5,4:176:27,كَانَتَا,كَانَ,there were
+I,PERF,,,3FP,3,F,P,22,15,2:228:17,كُنَّ,كَانَ,they
+I,PERF,,,3FS,3,F,S,355,96,2:16:7,رَبِحَتْ,رَبِحَت,profited
+I,PERF,,,3MD,3,M,D,20,15,2:36:6,كَانَا,كَانَ,they [both] were
+I,PERF,,,3MP,3,M,P,1381,152,2:6:3,كَفَرُوْا,كَفَرَ,disbelieve[d]
+I,PERF,,,3MS,3,M,S,2557,263,2:7:1,خَتَمَ,خَتَمَ,Has set a seal
+I,PERF,PASS,,1P,1,,P,13,6,2:25:22,رُزِقْنَا,رَزَقَ,we were provided
+I,PERF,PASS,,1S,1,,S,17,6,6:14:15,اُمِرْتُ,أَمَرَ,[I] am commanded
+I,PERF,PASS,,2MP,2,M,P,7,6,3:157:2,قُتِلْتُمْ,قَتَلَ,you are killed
+I,PERF,PASS,,2MS,2,M,S,4,3,3:159:5,لِنْتَ,لِن,you dealt gently
+I,PERF,PASS,,3FD,3,F,D,1,1,69:14:4,فَدُكَّتَا,دُكَّتِ,and crushed
+I,PERF,PASS,,3FS,3,F,S,39,32,2:61:37,وَضُرِبَتْ,ضَرَبَ,And were struck
+I,PERF,PASS,,3MP,3,M,P,50,26,2:25:14,رُزِقُوْا,رَزَقَ,they are provided
+I,PERF,PASS,,3MS,3,M,S,165,49,2:11:2,قِیْلَ,قَالَ,it is said
+I,IMPF,,,1P,1,,P,224,77,1:5:2,نَعْبُدُ,عَبَدَ,we worship
+I,IMPF,,,1S,1,,S,173,61,2:30:25,اَعْلَمُ,عَلِمَ,[I] know
+I,IMPF,,,2D,2,,D,1,1,28:23:15,تَذُوْدٰنِ ۚ,تَذُودَ,keeping back
+I,IMPF,,,2FD,2,F,D,1,1,55:50:3,تَجْرِیٰنِ,جَرَيْ,flowing
+I,IMPF,,,2FS,2,F,S,3,3,11:73:2,اَتَعْجَبِیْنَ,عَجِبُ,Are you amazed
+I,IMPF,,,2MP,2,M,P,477,113,2:22:23,تَعْلَمُوْنَ,عَلِمَ,[you] know
+I,IMPF,,,2MS,2,M,S,153,49,2:30:11,اَتَجْعَلُ,جَعَلَ,Will You place
+I,IMPF,,,3FD,3,F,D,1,1,46:17:6,اَتَعِدٰنِنِیْۤ,وَعَدَ,Do you promise me
+I,IMPF,,,3FP,3,F,P,21,14,2:222:14,یَطْهُرْنَ ۚ,يَطْهُرْ,they are cleansed
+I,IMPF,,,3FS,3,F,S,227,90,2:25:9,تَجْرِیْ,جَرَيْ,flow
+I,IMPF,,,3MD,3,M,D,8,7,4:16:2,یَاْتِیٰنِهَا,أَتَى,commit it
+I,IMPF,,,3MP,3,M,P,989,195,2:9:6,یَخْدَعُوْنَ,يَخْدَعُ,they deceive
+I,IMPF,,,3MS,3,M,S,1008,194,2:8:4,یَّقُوْلُ,قَالَ,say
+I,IMPF,,JUS,1P,1,,P,38,21,2:58:16,نَّغْفِرْ,غَفَرَ,We will forgive
+I,IMPF,,JUS,1S,1,,S,25,13,2:33:10,اَقُلْ,قَالَ,I say
+I,IMPF,,JUS,2D,2,,D,7,5,2:35:13,تَقْرَبَا,يَقْرَبُ,[you two] approach
+I,IMPF,,JUS,2FP,2,F,P,1,1,33:32:10,تَخْضَعْنَ,تَخْضَعْ,be soft
+I,IMPF,,JUS,2FS,2,F,S,3,2,19:24:5,تَحْزَنِیْ,يَحْزُن,grieve
+I,IMPF,,JUS,2MP,2,M,P,181,74,2:22:19,تَجْعَلُوْا,جَعَلَ,set up
+I,IMPF,,JUS,2MS,2,M,S,126,47,2:102:34,تَكْفُرْ ؕ,كَفَرَ,disbelieve
+I,IMPF,,JUS,3FP,3,F,P,11,10,24:31:3,یَغْضُضْنَ,يَغُضُّ,(that) they should lower
+I,IMPF,,JUS,3FS,3,F,S,59,30,2:87:22,تَهْوٰۤی,هَوَىٰ,desire
+I,IMPF,,JUS,3MD,3,M,D,1,1,2:282:58,یَكُوْنَا,كَانَ,there are
+I,IMPF,,JUS,3MP,3,M,P,120,53,3:100:11,یَرُدُّوْكُمْ,رَدَّ,they will turn you back
+I,IMPF,,JUS,3MS,3,M,S,284,92,2:121:11,یَّكْفُرْ,كَفَرَ,disbelieves
+I,IMPF,,SUBJ,1P,1,,P,65,37,2:55:8,نَرَی,رَءَا,we see
+I,IMPF,,SUBJ,1S,1,,S,47,26,2:67:18,اَكُوْنَ,كَانَ,I be
+I,IMPF,,SUBJ,2D,2,,D,6,3,2:35:16,فَتَكُوْنَا,كَانَ,lest you [both] be
+I,IMPF,,SUBJ,2MP,2,M,P,116,64,2:24:5,تَفْعَلُوْا,فَعَلَ,will you do
+I,IMPF,,SUBJ,2MS,2,M,S,66,35,4:52:9,تَجِدَ,وَجَدَ,will you find
+I,IMPF,,SUBJ,3FP,3,F,P,3,3,33:51:22,یَحْزَنَّ,يَحْزُن,they grieve
+I,IMPF,,SUBJ,3FS,3,F,S,62,33,2:80:3,تَمَسَّنَا,مَسَّ,will touch us
+I,IMPF,,SUBJ,3MD,3,M,D,5,5,2:102:29,یَقُوْلَاۤ,قَالَ,they [both] say
+I,IMPF,,SUBJ,3MP,3,M,P,119,54,2:90:6,یَّكْفُرُوْا,كَفَرَ,they disbelieve
+I,IMPF,,SUBJ,3MS,3,M,S,261,83,2:26:6,یَّضْرِبَ,ضَرَبَ,set forth
+I,IMPF,PASS,,1P,1,,P,4,2,6:27:9,نُرَدُّ,رَدَّ,were sent back
+I,IMPF,PASS,,1S,1,,S,1,1,19:33:8,اُبْعَثُ,بَعَثَ,I will be raised
+I,IMPF,PASS,,2MD,2,M,D,1,1,12:37:5,تُرْزَقٰنِهٖۤ,رَزَقَ,you are provided with
+I,IMPF,PASS,,2MP,2,M,P,96,24,2:28:13,تُرْجَعُوْنَ,رَجَعَ,you will be returned
+I,IMPF,PASS,,2MS,2,M,S,4,3,2:119:7,تُسْـَٔلُ,سَأَلَ,you will be asked
+I,IMPF,PASS,,3FS,3,F,S,29,8,2:210:16,تُرْجَعُ,رَجَعَ,return
+I,IMPF,PASS,,3MP,3,M,P,88,31,2:48:19,یُنْصَرُوْنَ,نَصَرَ,will be helped
+I,IMPF,PASS,,3MS,3,M,S,53,33,2:48:10,یُقْبَلُ,يَقْبَلُ,will be accepted
+I,IMPF,PASS,JUS,2MP,2,M,P,4,1,2:272:28,تُظْلَمُوْنَ,ظَلَمَ,be wronged
+I,IMPF,PASS,JUS,3FS,3,F,S,2,1,5:101:9,تُبْدَ,بَدَا,made clear
+I,IMPF,PASS,JUS,3MP,3,M,P,14,1,2:281:15,یُظْلَمُوْنَ,ظَلَمَ,will be wronged
+I,IMPF,PASS,JUS,3MS,3,M,S,12,10,4:74:15,فَیُقْتَلْ,قَتَلَ,then he is killed
+I,IMPF,PASS,SUBJ,2MP,2,M,P,1,1,9:16:4,تُتْرَكُوْا,تَرَكَ,you would be left
+I,IMPF,PASS,SUBJ,2MS,2,M,S,1,1,20:39:20,وَلِتُصْنَعَ,صَنَعُ,and that you may be brought up
+I,IMPF,PASS,SUBJ,3FP,3,F,P,1,1,33:59:15,یُّعْرَفْنَ,عَرَفَ,they should be known
+I,IMPF,PASS,SUBJ,3FS,3,F,S,6,4,3:90:10,تُقْبَلَ,يَقْبَلُ,will be accepted
+I,IMPF,PASS,SUBJ,3MP,3,M,P,6,6,3:115:6,یُّكْفَرُوْهُ ؕ,كَفَرَ,will they be denied it
+I,IMPF,PASS,SUBJ,3MS,3,M,S,33,16,2:27:14,یُّوْصَلَ,يَصِلُ,be joined
+I,IMPV,,,2D,2,,D,4,2,2:35:7,وَكُلَا,أَكَلَ,and [you both] eat
+I,IMPV,,,2FP,2,F,P,3,3,33:32:17,وَّقُلْنَ,قَالَ,but say
+I,IMPV,,,2FS,2,F,S,20,16,3:43:2,اقْنُتِیْ,يَقْنُتْ,Be obedient
+I,IMPV,,,2MD,2,M,D,10,6,2:186:11,دَعَانِ ۙ,دَعَا,he calls Me
+I,IMPV,,,2MP,2,M,P,466,104,2:21:3,اعْبُدُوْا,عَبَدَ,worship
+I,IMPV,,,2MS,2,M,S,678,90,1:6:1,اِهْدِنَا,هَدَى,Guide us
+II,PERF,,,1P,1,,P,162,46,2:23:6,نَزَّلْنَا,نَزَّلَ,We have revealed
+II,PERF,,,1S,1,,S,14,11,2:47:9,فَضَّلْتُكُمْ,فَضَّلَ,[I] preferred you
+II,PERF,,,2MP,2,M,P,24,13,2:87:26,كَذَّبْتُمْ ؗ,كَذَّبَ,you denied
+II,PERF,,,2MS,2,M,S,15,12,2:32:8,عَلَّمْتَنَا ؕ,عَلَّمَ,You have taught us
+II,PERF,,,3FP,3,F,P,2,1,12:31:20,وَقَطَّعْنَ,قَطَّعَ,and cut
+II,PERF,,,3FS,3,F,S,36,8,2:95:5,قَدَّمَتْ,قَدَّمَ,(of what) sent ahead
+II,PERF,,,3MD,3,M,D,2,2,5:27:8,قَرَّبَا,قَرَّبَ,both offered
+II,PERF,,,3MP,3,M,P,89,16,2:39:3,وَكَذَّبُوْا,كَذَّبَ,and deny
+II,PERF,,,3MS,3,M,S,224,63,2:29:13,فَسَوّٰىهُنَّ,سَوَّىٰ,and fashioned them
+II,PERF,PASS,,1P,1,,P,2,2,20:87:7,حُمِّلْنَاۤ,حُمِّلَ,[we] were made to carry
+II,PERF,PASS,,2MP,2,M,P,5,5,4:86:2,حُیِّیْتُمْ,حَيَّ,you are greeted
+II,PERF,PASS,,2MS,2,M,S,1,1,18:66:10,عُلِّمْتَ,عَلَّمَ,you have been taught
+II,PERF,PASS,,3FS,3,F,S,30,20,3:25:8,وَوُفِّیَتْ,وَفَّىٰٓ,And will be paid in full
+II,PERF,PASS,,3MP,3,M,P,14,8,5:13:15,ذُكِّرُوْا,ذُكِّرَ,they were reminded
+II,PERF,PASS,,3MS,3,M,S,36,15,2:212:1,زُیِّنَ,زَيَّنَ,Beautified
+II,IMPF,,,1P,1,,P,57,29,2:30:19,نُسَبِّحُ,سَبَّحَ,[we] glorify (You)
+II,IMPF,,,1S,1,,S,29,11,2:126:22,فَاُمَتِّعُهٗ,مَّتَّعْ,[then] I will grant him enjoyment
+II,IMPF,,,2D,2,,D,31,1,55:13:4,تُكَذِّبٰنِ,كَذَّبَ,will you both deny
+II,IMPF,,,2MP,2,M,P,20,9,2:76:13,اَتُحَدِّثُوْنَهُمْ,تُحَدِّثُ,Do you tell them
+II,IMPF,,,2MS,2,M,S,4,4,3:121:5,تُبَوِّئُ,بَوَّأَ,to post
+II,IMPF,,,3FP,3,F,P,2,1,21:79:11,یُسَبِّحْنَ,سَبَّحَ,(to) glorify Our praises
+II,IMPF,,,3FS,3,F,S,9,8,9:64:7,تُنَبِّئُهُمْ,نَبَّأَ,informing them
+II,IMPF,,,3MD,3,M,D,1,1,2:102:25,یُعَلِّمٰنِ,عَلَّمَ,they both teach
+II,IMPF,,,3MP,3,M,P,38,23,2:49:9,یُذَبِّحُوْنَ,يُذَبِّحُ,slaughtering
+II,IMPF,,,3MS,3,M,S,145,42,2:118:6,یُكَلِّمُنَا,كَلَّمَ,speaks to us
+II,IMPF,,JUS,1P,1,,P,12,10,4:31:7,نُكَفِّرْ,كَفَّرَ,We will remove
+II,IMPF,,JUS,1S,1,,S,2,2,33:28:12,اُمَتِّعْكُنَّ,مَّتَّعْ,I will provide for you
+II,IMPF,,JUS,2MP,2,M,P,8,5,2:110:6,تُقَدِّمُوْا,قَدَّمَ,you send forth
+II,IMPF,,JUS,2MS,2,M,S,6,5,2:286:33,تُحَمِّلْنَا,حُمِّلَ,lay on us
+II,IMPF,,JUS,3FS,3,F,S,1,1,9:84:2,تُصَلِّ,صَلَّىٰ,you pray
+II,IMPF,,JUS,3MP,3,M,P,4,3,3:111:7,یُوَلُّوْكُمُ,وَلَّىٰ,they will turn (towards) you
+II,IMPF,,JUS,3MS,3,M,S,33,17,2:68:5,یُبَیِّنْ,بَيَّنُ,to make clear
+II,IMPF,,SUBJ,1P,1,,P,10,8,6:27:11,نُكَذِّبَ,كَذَّبَ,we would deny
+II,IMPF,,SUBJ,1S,1,,S,3,3,10:15:22,اُبَدِّلَهٗ,بَدَّلَ,I change it
+II,IMPF,,SUBJ,2MP,2,M,P,13,11,2:177:4,تُوَلُّوْا,وَلَّىٰ,you turn
+II,IMPF,,SUBJ,2MS,2,M,S,10,7,3:41:9,تُكَلِّمَ,كَلَّمَ,you will speak
+II,IMPF,,SUBJ,3FS,3,F,S,1,1,2:282:69,فَتُذَكِّرَ,ذُكِّرَ,then will remind
+II,IMPF,,SUBJ,3MP,3,M,P,14,9,4:65:6,یُحَكِّمُوْكَ,يُحَكِّمُ,they make you judge
+II,IMPF,,SUBJ,3MS,3,M,S,34,13,2:90:12,یُّنَزِّلَ,نَزَّلَ,sends down
+II,IMPF,PASS,,2MP,2,M,P,3,3,3:185:6,تُوَفَّوْنَ,وَفَّىٰٓ,you will be paid in full
+II,IMPF,PASS,,2MS,2,M,S,2,2,4:84:6,تُكَلَّفُ,يُكَلِّفُ,are you responsible
+II,IMPF,PASS,,3FS,3,F,S,8,6,2:233:18,تُكَلَّفُ,يُكَلِّفُ,is burdened
+II,IMPF,PASS,,3MP,3,M,P,8,6,3:180:17,سَیُطَوَّقُوْنَ,يُطَوَّقُ,Their necks will be encircled
+II,IMPF,PASS,,3MS,3,M,S,15,10,2:86:8,یُخَفَّفُ,خَفَّفَ,will be lightened
+II,IMPF,PASS,JUS,3MS,3,M,S,3,2,2:272:24,یُّوَفَّ,وَفَّىٰٓ,will be repaid in full
+II,IMPF,PASS,SUBJ,2MP,2,M,P,1,1,29:18:2,تُكَذِّبُوْا,كَذَّبَ,you deny
+II,IMPF,PASS,SUBJ,3FS,3,F,S,3,2,3:93:16,تُنَزَّلَ,نَزَّلَ,(was) revealed
+II,IMPF,PASS,SUBJ,3MP,3,M,P,2,2,5:33:12,یُّقَتَّلُوْۤا,قُتِّلُ,they be killed
+II,IMPF,PASS,SUBJ,3MS,3,M,S,7,4,2:96:21,یُّعَمَّرَ ؕ,يُعَمَّرُ,he should be granted life
+II,IMPV,,,2FS,2,F,S,1,1,34:10:7,اَوِّبِیْ,أَوِّبِ,Repeat praises
+II,IMPV,,,2MD,2,M,D,1,1,2:125:17,طَهِّرَا,طَهَّرَ,[You both] purify
+II,IMPV,,,2MP,2,M,P,24,17,2:144:18,فَوَلُّوْا,وَلَّىٰ,[so] turn
+II,IMPV,,,2MS,2,M,S,79,24,2:25:1,وَبَشِّرِ,بُشِّرَ,And give good news
+III,PERF,,,1P,1,,P,15,5,2:51:2,وٰعَدْنَا,وَٰعَدْ,We appointed
+III,PERF,,,1S,1,,S,2,1,12:32:7,رَاوَدْتُّهٗ,رَٰوَدُ,I sought to seduce him
+III,PERF,,,2FP,2,F,P,1,1,12:51:5,رَاوَدْتُّنَّ,رَٰوَدُ,you sought to seduce
+III,PERF,,,2MP,2,M,P,12,8,3:66:3,حَاجَجْتُمْ,حَآجَّ,argued
+III,PERF,,,2MS,2,M,S,2,2,8:56:2,عٰهَدْتَّ,عَٰهَدَ,you made a covenant
+III,PERF,,,3FP,3,F,P,1,1,33:50:26,هَاجَرْنَ,هَاجَرَ,emigrated
+III,PERF,,,3FS,3,F,S,3,2,3:39:1,فَنَادَتْهُ,نَادَىٰ,Then called him
+III,PERF,,,3MD,3,M,D,3,2,18:62:2,جَاوَزَا,جَاوَزَ,they had passed beyond
+III,PERF,,,3MP,3,M,P,45,11,2:100:2,عٰهَدُوْا,عَٰهَدَ,they took
+III,PERF,,,3MS,3,M,S,42,16,2:249:31,جَاوَزَهٗ,جَاوَزَ,he crossed it
+III,PERF,PASS,,2MP,2,M,P,2,2,16:126:6,عُوْقِبْتُمْ,عَاقَبَ,you were afflicted
+III,PERF,PASS,,3MP,3,M,P,2,2,7:43:29,وَنُوْدُوْۤا,نَادَىٰ,And they will be addressed
+III,PERF,PASS,,3MS,3,M,S,7,4,7:20:7,وٗرِیَ,وُۥرِىَ,was concealed
+III,IMPF,,,1P,1,,P,4,4,3:140:11,نُدَاوِلُهَا,نُدَاوِلُ,We alternate them
+III,IMPF,,,2MP,2,M,P,10,6,2:85:18,تُفٰدُوْهُمْ,تُفَٰدُ,you ransom them
+III,IMPF,,,2MS,2,M,S,1,1,58:1:6,تُجَادِلُكَ,جَٰدَلُ,disputes with you
+III,IMPF,,,3FP,3,F,P,1,1,60:12:6,یُبَایِعْنَكَ,بَايَعْ,pledging to you
+III,IMPF,,,3FS,3,F,S,3,3,3:13:9,تُقَاتِلُ,قَٰتَلَ,fighting
+III,IMPF,,,3MP,3,M,P,43,15,2:9:1,یُخٰدِعُوْنَ,يُخَٰدِعُ,They seek to deceive
+III,IMPF,,,3MS,3,M,S,28,10,2:225:2,یُؤَاخِذُكُمُ,يُؤَاخِذُ,will take you to task
+III,IMPF,,JUS,1P,1,,P,2,2,2:246:18,نُّقَاتِلْ,قَٰتَلَ,we may fight
+III,IMPF,,JUS,2MP,2,M,P,6,6,2:187:49,تُبَاشِرُوْهُنَّ,بَٰشِرُ,have relations with them
+III,IMPF,,JUS,2MS,2,M,S,6,5,2:286:15,تُؤَاخِذْنَاۤ,يُؤَاخِذُ,take us to task
+III,IMPF,,JUS,3FS,3,F,S,2,2,19:25:5,تُسٰقِطْ,تُسَٰقِطْ,it will drop
+III,IMPF,,JUS,3MP,3,M,P,5,3,3:111:6,یُّقَاتِلُوْكُمْ,قَٰتَلَ,they fight you
+III,IMPF,,JUS,3MS,3,M,S,11,7,2:284:15,یُحَاسِبْكُمْ,حَاسَبْ,will call you to account
+III,IMPF,,SUBJ,1P,1,,P,1,1,2:246:35,نُقَاتِلَ,قَٰتَلَ,we fight
+III,IMPF,,SUBJ,1S,1,,S,2,2,5:31:20,فَاُوَارِیَ,وُۥرِىَ,and hide
+III,IMPF,,SUBJ,2MP,2,M,P,2,1,2:246:30,تُقَاتِلُوْا ؕ,قَٰتَلَ,you fight
+III,IMPF,,SUBJ,3MP,3,M,P,14,7,2:76:18,لِیُحَآجُّوْكُمْ,حَآجَّ,so that they argue with you
+III,IMPF,,SUBJ,3MS,3,M,S,2,1,2:245:8,فَیُضٰعِفَهٗ,يُضَٰعِفُ,so (that) He multiplies it
+III,IMPF,PASS,,2MP,2,M,P,2,2,6:80:4,اَتُحَآجُّوْٓنِّیْ,حَآجَّ,Do you argue with me
+III,IMPF,PASS,,3MP,3,M,P,3,2,22:39:3,یُقٰتَلُوْنَ,قَٰتَلَ,are being fought
+III,IMPF,PASS,,3MS,3,M,S,3,2,11:20:15,یُضٰعَفُ,يُضَٰعِفُ,And will be doubled
+III,IMPF,PASS,JUS,2MP,2,M,P,1,1,65:6:8,تُضَآرُّوْهُنَّ,يُضَآرَّ,harm them
+III,IMPF,PASS,JUS,3MS,3,M,S,2,1,25:69:1,یُّضٰعَفْ,يُضَٰعِفُ,Will be doubled
+III,IMPF,PASS,SUBJ,3FS,3,F,S,1,1,2:233:23,تُضَآرَّ,يُضَآرَّ,made to suffer
+III,IMPF,PASS,SUBJ,3MS,3,M,S,1,1,2:282:112,یُضَآرَّ,يُضَآرَّ,(should) be harmed
+III,IMPV,,,2MD,2,M,D,1,1,5:24:13,فَقَاتِلَاۤ,قَٰتَلَ,and you both fight
+III,IMPV,,,2MP,2,M,P,27,13,2:187:25,بَاشِرُوْهُنَّ,بَٰشِرُ,have relations with them
+III,IMPV,,,2MS,2,M,S,13,10,2:104:6,رَاعِنَا,رَٰعِ,Raina
+IV,PERF,,,1P,1,,P,442,59,2:8:5,اٰمَنَّا,ءَامَنَ,We believed
+IV,PERF,,,1S,1,,S,39,24,2:40:6,اَنْعَمْتُ,أَنْعَمَ,I bestowed
+IV,PERF,,,2MP,2,M,P,65,35,2:84:13,اَقْرَرْتُمْ,أَقْرَرْ,you ratified
+IV,PERF,,,2MS,2,M,S,30,18,1:7:3,اَنْعَمْتَ,أَنْعَمَ,You have bestowed (Your) Favors
+IV,PERF,,,3FP,3,F,P,9,8,4:23:14,اَرْضَعْنَكُمْ,أَرْضَعَتْ,nursed you
+IV,PERF,,,3FS,3,F,S,40,24,2:17:7,اَضَآءَتْ,أَضَآءَ,it illuminated
+IV,PERF,,,3MD,3,M,D,6,6,2:233:35,اَرَادَا,أَرَادَ,they both desire
+IV,PERF,,,3MP,3,M,P,395,47,2:9:4,اٰمَنُوْا ۚ,ءَامَنَ,believe[d]
+IV,PERF,,,3MS,3,M,S,492,112,2:13:6,اٰمَنَ,ءَامَنَ,believed
+IV,PERF,PASS,,1P,1,,P,7,4,2:246:40,اُخْرِجْنَا,أَخْرَجَ,we have been driven
+IV,PERF,PASS,,1S,1,,S,5,2,7:87:7,اُرْسِلْتُ,أَرْسَلَ,I have been sent
+IV,PERF,PASS,,2MP,2,M,P,15,7,2:196:6,اُحْصِرْتُمْ,أُحْصِرُ,you are held back
+IV,PERF,PASS,,2MS,2,M,S,1,1,20:36:3,اُوْتِیْتَ,آتَى,you are granted
+IV,PERF,PASS,,3FP,3,F,P,1,1,4:25:36,اُحْصِنَّ,أَحْصَنَتْ,they are married
+IV,PERF,PASS,,3FS,3,F,S,23,11,2:24:12,اُعِدَّتْ,أَعَدَّ,prepared
+IV,PERF,PASS,,3MP,3,M,P,59,18,2:93:15,وَاُشْرِبُوْا,أُشْرِبُ,And they were made to drink
+IV,PERF,PASS,,3MS,3,M,S,104,14,2:4:4,اُنْزِلَ,أَنزَلَ,(is) sent down
+IV,IMPF,,,1P,1,,P,95,36,2:13:9,اَنُؤْمِنُ,ءَامَنَ,Should we believe
+IV,IMPF,,,1S,1,,S,51,27,2:186:7,اُجِیْبُ,أُجِيبَت,I respond
+IV,IMPF,,,2FP,2,F,P,2,1,33:28:7,تُرِدْنَ,أَرَادَ,desire
+IV,IMPF,,,2MP,2,M,P,97,39,2:33:19,تُبْدُوْنَ,يُبْدِىَ,you reveal
+IV,IMPF,,,2MS,2,M,S,35,22,2:260:7,تُحْیِ,أَحْيَا,You give life
+IV,IMPF,,,3FP,3,F,P,4,3,2:221:5,یُؤْمِنَّ ؕ,ءَامَنَ,they believe
+IV,IMPF,,,3FS,3,F,S,29,20,2:61:15,تُنْۢبِتُ,أَنۢبَتَ,grows
+IV,IMPF,,,3MD,3,M,D,3,2,5:106:32,فَیُقْسِمٰنِ,أَقْسَمُ,and let them both swear
+IV,IMPF,,,3MP,3,M,P,264,51,2:3:2,یُؤْمِنُوْنَ,ءَامَنَ,believe
+IV,IMPF,,,3MS,3,M,S,353,72,2:26:29,یُضِلُّ,أَضَلَّ,He lets go astray
+IV,IMPF,,JUS,1P,1,,P,14,9,2:106:6,نُنْسِهَا,أَنسَىٰ,[We] cause it to be forgotten
+IV,IMPF,,JUS,1S,1,,S,3,3,2:40:10,اُوْفِ,أَوْفَىٰ,I will fulfill
+IV,IMPF,,JUS,2FS,2,F,S,1,1,33:48:2,تُطِعِ,أَطَاعَ,obey
+IV,IMPF,,JUS,2MP,2,M,P,55,27,2:11:5,تُفْسِدُوْا,أَفْسَدُ,spread corruption
+IV,IMPF,,JUS,2MS,2,M,S,24,13,2:6:9,تُنْذِرْهُمْ,أَنذَرَ,you warn them
+IV,IMPF,,JUS,3FP,3,F,P,3,2,24:31:9,یُبْدِیْنَ,يُبْدِىَ,(to) display
+IV,IMPF,,JUS,3FS,3,F,S,15,8,4:78:11,تُصِبْهُمْ,أَصَابَ,befalls them
+IV,IMPF,,JUS,3MD,3,M,D,2,2,4:35:13,یُّرِیْدَاۤ,أَرَادَ,they both wish
+IV,IMPF,,JUS,3MP,3,M,P,19,10,2:186:14,وَلْیُؤْمِنُوْا,ءَامَنَ,and let them believe
+IV,IMPF,,JUS,3MS,3,M,S,94,35,2:61:12,یُخْرِجْ,أَخْرَجَ,to bring forth
+IV,IMPF,,SUBJ,1P,1,,P,27,14,2:55:5,نُّؤْمِنَ,ءَامَنَ,(will) we believe
+IV,IMPF,,SUBJ,1S,1,,S,9,8,2:150:27,وَلِاُتِمَّ,أَتَمَّ,And that I complete
+IV,IMPF,,SUBJ,2MP,2,M,P,34,22,2:185:36,وَلِتُكْمِلُوا,أَكْمَلْ,so that you complete
+IV,IMPF,,SUBJ,2MS,2,M,S,17,8,6:92:9,وَلِتُنْذِرَ,أَنذَرَ,so that you may warn
+IV,IMPF,,SUBJ,3FS,3,F,S,12,7,3:10:5,تُغْنِیَ,أَغْنَتْ,will avail
+IV,IMPF,,SUBJ,3MD,3,M,D,5,3,2:229:20,یُقِیْمَا,أَقَامَ,they both (can) keep
+IV,IMPF,,SUBJ,3MP,3,M,P,39,21,2:75:3,یُّؤْمِنُوْا,ءَامَنَ,they will believe
+IV,IMPF,,SUBJ,3MS,3,M,S,90,40,2:80:14,یُّخْلِفَ,أَخْلَفُ,will break
+IV,IMPF,PASS,,1S,1,,S,2,2,19:66:7,اُخْرَجُ,أَخْرَجَ,I be brought forth
+IV,IMPF,PASS,,2MP,2,M,P,4,2,3:186:1,لَتُبْلَوُنَّ,يُبْلِىَ,You will certainly be tested
+IV,IMPF,PASS,,2MS,2,M,S,1,1,17:39:14,فَتُلْقٰی,أَلْقَىٰٓ,lest you should be thrown
+IV,IMPF,PASS,,3FS,3,F,S,2,2,25:5:6,تُمْلٰی,أَمْلَىٰ,are dictated
+IV,IMPF,PASS,,3MP,3,M,P,11,5,2:162:9,یُنْظَرُوْنَ,يُنظَرُ,will be reprieved
+IV,IMPF,PASS,,3MS,3,M,S,17,12,4:12:77,یُّوْصٰی,أَوْصَٰ,was made
+IV,IMPF,PASS,JUS,3FS,3,F,S,1,1,69:25:9,اُوْتَ,آتَى,I had been given
+IV,IMPF,PASS,JUS,3MP,3,M,P,1,1,9:58:12,یُعْطَوْا,أَعْطَىٰ,they are given
+IV,IMPF,PASS,JUS,3MS,3,M,S,4,3,2:247:22,یُؤْتَ,آتَى,he has been given
+IV,IMPF,PASS,SUBJ,1P,1,,P,1,1,6:124:8,نُؤْتٰی,آتَى,we are given
+IV,IMPF,PASS,SUBJ,1S,1,,S,1,1,46:17:8,اُخْرَجَ,أَخْرَجَ,I will be brought forth
+IV,IMPF,PASS,SUBJ,2MP,2,M,P,1,1,5:41:39,تُؤْتَوْهُ,آتَى,you are given it
+IV,IMPF,PASS,SUBJ,2MS,2,M,S,1,1,20:97:15,تُخْلَفَهٗ ۚ,أَخْلَفُ,you will fail to (keep) it
+IV,IMPF,PASS,SUBJ,3FP,3,F,P,1,1,33:59:17,یُؤْذَیْنَ ؕ,أُوذِىَ,harmed
+IV,IMPF,PASS,SUBJ,3FS,3,F,S,1,1,6:70:13,تُبْسَلَ,أُبْسِلُ,is given up to destruction
+IV,IMPF,PASS,SUBJ,3MP,3,M,P,2,2,14:52:4,وَلِیُنْذَرُوْا,أَنذَرَ,that they may be warned
+IV,IMPF,PASS,SUBJ,3MS,3,M,S,18,6,3:73:13,یُّؤْتٰۤی,آتَى,is given
+IV,IMPV,,,2FP,2,F,P,4,4,33:28:11,فَتَعَالَیْنَ,تَعَالَ,then come
+IV,IMPV,,,2FS,2,F,S,4,4,11:44:6,اَقْلِعِیْ,أَقْلِعِ,Withhold
+IV,IMPV,,,2MD,2,M,D,2,1,50:24:1,اَلْقِیَا,أَلْقَىٰٓ,Throw
+IV,IMPV,,,2MP,2,M,P,169,38,2:13:4,اٰمِنُوْا,ءَامَنَ,Believe
+IV,IMPV,,,2MS,2,M,S,110,37,2:33:3,اَنْۢبِئْهُمْ,أَنۢبَأَ,Inform them
+V,PERF,,,1P,1,,P,7,3,7:89:33,تَوَكَّلْنَا ؕ,تَوَكَّلْ,we put our trust
+V,PERF,,,1S,1,,S,7,1,9:129:11,تَوَكَّلْتُ,تَوَكَّلْ,I put my trust
+V,PERF,,,2MP,2,M,P,9,2,2:64:2,تَوَلَّیْتُمْ,تَوَلَّىٰ,you turned away
+V,PERF,,,2MS,2,M,S,1,1,5:117:20,تَوَفَّیْتَنِیْ,تَوَفَّىٰ,You raised me
+V,PERF,,,3FP,3,F,P,1,1,2:222:16,تَطَهَّرْنَ,تَطَهَّرْ,they are purified
+V,PERF,,,3FS,3,F,S,8,7,2:166:10,وَتَقَطَّعَتْ,تَّقَطَّعَ,[and] will be cut off
+V,PERF,,,3MP,3,M,P,26,5,2:137:10,تَوَلَّوْا,تَوَلَّىٰ,they turn away
+V,PERF,,,3MS,3,M,S,63,25,2:37:1,فَتَلَقّٰۤی,تَلَقَّىٰٓ,Then received
+V,PERF,PASS,,3MS,3,M,S,2,1,5:27:10,فَتُقُبِّلَ,تَقَبَّلَ,and it was accepted
+V,IMPF,,,1P,1,,P,9,6,9:52:9,نَتَرَبَّصُ,تَرَبَّصْ,[we] await
+V,IMPF,,,1S,1,,S,1,1,20:18:4,اَتَوَكَّؤُا,أَتَوَكَّؤُا۟,I lean
+V,IMPF,,,2MP,2,M,P,28,7,2:219:26,تَتَفَكَّرُوْنَ,يَتَفَكَّرُ,ponder
+V,IMPF,,,2MS,2,M,S,2,2,21:103:5,وَتَتَلَقّٰىهُمُ,تَلَقَّىٰٓ,and will meet them
+V,IMPF,,,3FP,3,F,P,2,1,2:228:2,یَتَرَبَّصْنَ,تَرَبَّصْ,shall wait
+V,IMPF,,,3FS,3,F,S,11,6,11:105:4,تَكَلَّمُ,يَتَكَلَّمُ,will speak
+V,IMPF,,,3MP,3,M,P,53,20,2:102:35,فَیَتَعَلَّمُوْنَ,يَتَعَلَّمُ,But they learn
+V,IMPF,,,3MS,3,M,S,33,20,2:74:16,یَتَفَجَّرُ,يَتَفَجَّرُ,gush forth
+V,IMPF,,JUS,2FP,2,F,P,1,1,33:33:5,تَبَرَّجْنَ,تَبَرَّجْ,display yourselves
+V,IMPF,,JUS,2MP,2,M,P,11,6,2:267:15,تَیَمَّمُوا,تَيَمَّمُ,aim (at)
+V,IMPF,,JUS,2MS,2,M,S,1,1,12:101:18,تَوَفَّنِیْ,تَوَفَّىٰ,Cause me to die
+V,IMPF,,JUS,3MD,3,M,D,1,1,4:130:2,یَّتَفَرَّقَا,تَفَرَّقَ,they separate
+V,IMPF,,JUS,3MP,3,M,P,5,4,7:131:10,یَّطَّیَّرُوْا,ٱطَّيَّرْ,they ascribe evil omens
+V,IMPF,,JUS,3MS,3,M,S,25,7,2:108:12,یَّتَبَدَّلِ,يَتَبَدَّلِ,exchanges
+V,IMPF,,SUBJ,1P,1,,P,3,3,2:167:8,فَنَتَبَرَّاَ,تَبَرَّأَ,then we will disown
+V,IMPF,,SUBJ,1S,1,,S,1,1,63:10:18,فَاَصَّدَّقَ,تَصَدَّقَ,so I would give charity
+V,IMPF,,SUBJ,2MP,2,M,P,6,3,2:280:9,تَصَدَّقُوْا,تَصَدَّقَ,you remit as charity
+V,IMPF,,SUBJ,2MS,2,M,S,3,3,7:13:8,تَتَكَبَّرَ,يَتَكَبَّرُ,you be arrogant
+V,IMPF,,SUBJ,3FS,3,F,S,2,2,6:153:9,فَتَفَرَّقَ,تَفَرَّقَ,then they will separate
+V,IMPF,,SUBJ,3MP,3,M,P,12,9,2:95:2,یَّتَمَنَّوْهُ,يَتَمَنَّ,they wish for it
+V,IMPF,,SUBJ,3MS,3,M,S,21,11,2:158:16,یَّطَّوَّفَ,يَطَّوَّفَ,he walks
+V,IMPF,PASS,,3MP,3,M,P,2,1,2:234:2,یُتَوَفَّوْنَ,تَوَفَّىٰ,pass away
+V,IMPF,PASS,,3MS,3,M,S,2,2,22:5:43,یُّتَوَفّٰی,تَوَفَّىٰ,dies
+V,IMPF,PASS,JUS,1P,1,,P,1,1,28:57:6,نُتَخَطَّفْ,يَتَخَطَّفَ,we would be swept
+V,IMPF,PASS,JUS,3MS,3,M,S,1,1,5:27:14,یُتَقَبَّلْ,تَقَبَّلَ,was accepted
+V,IMPF,PASS,SUBJ,3MS,3,M,S,2,2,9:53:7,یُّتَقَبَّلَ,تَقَبَّلَ,will be accepted
+V,IMPV,,,2MD,2,M,D,1,1,10:87:6,تَبَوَّاٰ,يَتَبَوَّأُ,Settle
+V,IMPV,,,2MP,2,M,P,27,13,2:94:13,فَتَمَنَّوُا,يَتَمَنَّ,then wish
+V,IMPV,,,2MS,2,M,S,23,8,2:127:9,تَقَبَّلْ,تَقَبَّلَ,Accept
+VI,PERF,,,2MP,2,M,P,11,9,2:72:4,فَادّٰرَءْتُمْ,ٱدَّٰرَْٰٔ,then you disputed
+VI,PERF,,,3FS,3,F,S,3,3,2:118:18,تَشَابَهَتْ,تَشَٰبَهَ,Became alike
+VI,PERF,,,3MP,3,M,P,7,3,2:232:12,تَرَاضَوْا,تَرَٰضَ,they agree
+VI,PERF,,,3MS,3,M,S,15,4,2:70:11,تَشٰبَهَ,تَشَٰبَهَ,look alike
+VI,IMPF,,,1P,1,,P,1,1,46:16:8,وَنَتَجَاوَزُ,نَتَجَاوَزُ,and We will overlook
+VI,IMPF,,,2MP,2,M,P,4,4,2:85:11,تَظٰهَرُوْنَ,تَظَٰهَرُ,you support one another
+VI,IMPF,,,2MS,2,M,S,1,1,26:61:2,تَرَآءَ,تَرَآءَتِ,saw each other
+VI,IMPF,,,3FS,3,F,S,1,1,18:17:5,تَّزٰوَرُ,تَّزَٰوَرُ,inclining away
+VI,IMPF,,,3MP,3,M,P,17,9,5:79:3,یَتَنَاهَوْنَ,يَتَنَاهَ,forbidding each other
+VI,IMPF,,JUS,2FD,2,F,D,1,1,66:4:9,تَظٰهَرَا,تَظَٰهَرُ,you backup each other
+VI,IMPF,,JUS,2MP,2,M,P,4,4,5:2:43,تَعَاوَنُوْا,تَعَاوَنُ,help one another
+VI,IMPF,,JUS,3MS,3,M,S,1,1,83:26:5,فَلْیَتَنَافَسِ,يَتَنَافَسِ,let aspire
+VI,IMPF,,SUBJ,2MP,2,M,P,1,1,49:13:11,لِتَعَارَفُوْا ؕ,يَتَعَارَفُ,that you may know one another
+VI,IMPF,,SUBJ,3MD,3,M,D,3,2,2:230:18,یَّتَرَاجَعَاۤ,يَتَرَاجَعَ,they return to each other
+VI,IMPF,,SUBJ,3MP,3,M,P,2,2,4:60:17,یَّتَحَاكَمُوْۤا,يَتَحَاكَمُ,go for judgment
+VI,IMPF,,SUBJ,3MS,3,M,S,1,1,16:59:1,یَتَوَارٰی,تَوَارَتْ,He hides himself
+VI,IMPV,,,2MP,2,M,P,4,4,5:2:38,وَتَعَاوَنُوْا,تَعَاوَنُ,And help one another
+VII,PERF,,,2MP,2,M,P,3,2,3:144:14,انْقَلَبْتُمْ,ٱنقَلَبَ,will you turn back
+VII,PERF,,,3FS,3,F,S,7,5,2:60:9,فَانْفَجَرَتْ,ٱنفَجَرَتْ,Then gushed forth
+VII,PERF,,,3MD,3,M,D,3,1,18:71:1,فَانْطَلَقَا ۥ,ٱنطَلَقَ,So they both set out
+VII,PERF,,,3MP,3,M,P,9,4,3:159:12,لَانْفَضُّوْا,ٱنفَضُّ,surely they (would have) dispersed
+VII,PERF,,,3MS,3,M,S,8,7,7:175:7,فَانْسَلَخَ,ٱنسَلَخَ,but he detached
+VII,IMPF,,,3FS,3,F,S,1,1,19:90:5,وَتَنْشَقُّ,ٱنشَقَّ,and splits asunder
+VII,IMPF,,,3MP,3,M,P,1,1,26:227:19,یَّنْقَلِبُوْنَ,ٱنقَلَبَ,they will return
+VII,IMPF,,,3MS,3,M,S,9,3,2:143:25,یَّنْقَلِبُ,ٱنقَلَبَ,turns back
+VII,IMPF,,JUS,2MP,2,M,P,1,1,3:149:11,فَتَنْقَلِبُوْا,ٱنقَلَبَ,then you will turn back
+VII,IMPF,,JUS,3MS,3,M,S,2,1,3:144:18,یَّنْقَلِبْ,ٱنقَلَبَ,turns back
+VII,IMPF,,SUBJ,2MP,2,M,P,1,1,5:21:13,فَتَنْقَلِبُوْا,ٱنقَلَبَ,then you will turn back
+VII,IMPF,,SUBJ,3MP,3,M,P,2,2,3:127:8,فَیَنْقَلِبُوْا,ٱنقَلَبَ,so (that) they turn back
+VII,IMPF,,SUBJ,3MS,3,M,S,2,2,18:77:17,یَّنْقَضَّ,يَنقَضَّ,collapse
+VII,IMPV,,,2MP,2,M,P,2,1,77:29:1,اِنْطَلِقُوْۤا,ٱنطَلَقَ,Proceed
+VIII,PERF,,,1P,1,,P,17,9,2:130:11,اصْطَفَیْنٰهُ,ٱصْطَفَىٰ,We chose him
+VIII,PERF,,,1S,1,,S,8,7,7:144:4,اصْطَفَیْتُكَ,ٱصْطَفَىٰ,have chosen you
+VIII,PERF,,,2FP,2,F,P,1,1,33:32:8,اتَّقَیْتُنَّ,ٱتَّقَىٰ,you fear (Allah)
+VIII,PERF,,,2FS,2,F,S,1,1,50:30:5,امْتَلَاْتِ,ٱمْتَلَأْ,you filled
+VIII,PERF,,,2MP,2,M,P,20,9,2:51:7,اتَّخَذْتُمُ,ٱتَّخَذَ,you took
+VIII,PERF,,,2MS,2,M,S,10,6,2:120:17,اتَّبَعْتَ,ٱتَّبَعَ,you follow
+VIII,PERF,,,3FD,3,F,D,1,1,3:13:7,الْتَقَتَا ؕ,ٱلْتَقَى,which met -
+VIII,PERF,,,3FP,3,F,P,1,1,4:32:17,اكْتَسَبْنَ ؕ,ٱكْتَسَبَ,they earned
+VIII,PERF,,,3FS,3,F,S,22,17,2:229:33,افْتَدَتْ,ٱفْتَدَىٰ,she ransoms
+VIII,PERF,,,3MD,3,M,D,2,2,12:25:1,وَاسْتَبَقَا,ٱسْتَبَقَ,And they both raced
+VIII,PERF,,,3MP,3,M,P,126,28,2:16:3,اشْتَرَوُا,ٱشْتَرَىٰ,bought
+VIII,PERF,,,3MS,3,M,S,158,41,2:29:10,اسْتَوٰۤی,ٱسْتَوَىٰٓ,He turned
+VIII,PERF,PASS,,2MP,2,M,P,1,1,6:119:18,اضْطُرِرْتُمْ,ٱضْطُرَّ,you are compelled
+VIII,PERF,PASS,,3FS,3,F,S,1,1,14:26:6,جْتُثَّتْ,ٱجْتُثَّتْ,uprooted
+VIII,PERF,PASS,,3MP,3,M,P,1,1,2:166:4,اتُّبِعُوْا,ٱتَّبَعَ,were followed
+VIII,PERF,PASS,,3MS,3,M,S,9,5,2:173:14,اضْطُرَّ,ٱضْطُرَّ,(is) forced by necessity
+VIII,IMPF,,,1P,1,,P,11,8,2:170:10,نَتَّبِعُ,ٱتَّبَعَ,we follow
+VIII,IMPF,,,1S,1,,S,14,7,2:126:25,اَضْطَرُّهٗۤ,ٱضْطُرَّ,I will force him
+VIII,IMPF,,,2D,2,,D,1,1,55:35:8,تَنْتَصِرٰنِ,ٱنتَصَرَ,you will (be able to) defend yourselves
+VIII,IMPF,,,2MP,2,M,P,56,17,2:21:11,تَتَّقُوْنَ,ٱتَّقَىٰ,become righteous
+VIII,IMPF,,,2MS,2,M,S,4,3,2:67:12,اَتَتَّخِذُنَا,ٱتَّخَذَ,Do you take us
+VIII,IMPF,,,3FS,3,F,S,11,8,11:31:17,تَزْدَرِیْۤ,تَزْدَرِىٓ,look down upon
+VIII,IMPF,,,3MD,3,M,D,4,3,11:24:8,یَسْتَوِیٰنِ,ٱسْتَوَىٰٓ,they equal
+VIII,IMPF,,,3MP,3,M,P,119,26,2:61:59,یَعْتَدُوْنَ,ٱعْتَدَىٰ,transgressing
+VIII,IMPF,,,3MS,3,M,S,41,17,2:105:18,یَخْتَصُّ,يَخْتَصُّ,chooses
+VIII,IMPF,,JUS,1P,1,,P,6,4,3:61:20,نَبْتَهِلْ,نَبْتَهِلْ,let us pray humbly
+VIII,IMPF,,JUS,1S,1,,S,2,2,25:28:4,اَتَّخِذْ,ٱتَّخَذَ,I had taken
+VIII,IMPF,,JUS,2D,2,,D,1,1,10:89:7,تَتَّبِعٰٓنِّ,ٱتَّبَعَ,follow
+VIII,IMPF,,JUS,2MP,2,M,P,42,12,2:41:13,تَشْتَرُوْا,ٱشْتَرَىٰ,exchange
+VIII,IMPF,,JUS,2MS,2,M,S,11,3,5:48:19,تَتَّبِعْ,ٱتَّبَعَ,follow
+VIII,IMPF,,JUS,3FS,3,F,S,1,1,11:36:14,تَبْتَىِٕسْ,تَبْتَئِسْ,(be) distressed
+VIII,IMPF,,JUS,3MP,3,M,P,12,9,4:9:11,فَلْیَتَّقُوا,ٱتَّقَىٰ,So let them fear
+VIII,IMPF,,JUS,3MS,3,M,S,26,13,2:217:39,یَّرْتَدِدْ,ٱرْتَدَّ,turns away
+VIII,IMPF,,SUBJ,1P,1,,P,7,3,7:43:19,لِنَهْتَدِیَ,ٱهْتَدَىٰ,to receive guidance
+VIII,IMPF,,SUBJ,1S,1,,S,1,1,40:37:3,فَاَطَّلِعَ,طَّلَعَ,so I may look
+VIII,IMPF,,SUBJ,2MP,2,M,P,25,10,2:198:5,تَبْتَغُوْا,ٱبْتَغَىٰ,you seek
+VIII,IMPF,,SUBJ,2MS,2,M,S,5,4,2:120:8,تَتَّبِعَ,ٱتَّبَعَ,you follow
+VIII,IMPF,,SUBJ,3MP,3,M,P,8,6,2:79:12,لِیَشْتَرُوْا,ٱشْتَرَىٰ,to barter
+VIII,IMPF,,SUBJ,3MS,3,M,S,13,5,3:64:19,یَتَّخِذَ,ٱتَّخَذَ,take
+VIII,IMPF,PASS,SUBJ,3MS,3,M,S,3,2,10:35:19,یُّتَّبَعَ,ٱتَّبَعَ,he should be followed
+VIII,IMPV,,,2FP,2,F,P,1,1,33:55:22,وَاتَّقِیْنَ,ٱتَّقَىٰ,And fear
+VIII,IMPV,,,2FS,2,F,S,1,1,16:68:6,اتَّخِذِیْ,ٱتَّخَذَ,Take
+VIII,IMPV,,,2MP,2,M,P,131,21,2:24:6,فَاتَّقُوا,ٱتَّقَىٰ,then fear
+VIII,IMPV,,,2MS,2,M,S,27,11,2:206:4,اتَّقِ,ٱتَّقَىٰ,Fear
+IX,PERF,,,3FS,3,F,S,3,2,3:106:8,اسْوَدَّتْ,ٱسْوَدَّتْ,turn black
+IX,IMPF,,,3FS,3,F,S,2,2,3:106:2,تَبْیَضُّ,ٱبْيَضَّتْ,would become white
+X,PERF,,,1P,1,,P,5,2,9:42:15,اسْتَطَعْنَا,ٱسْتَطَاعَ,we were able
+X,PERF,,,1S,1,,S,2,2,7:188:16,لَاسْتَكْثَرْتُ,ٱسْتَكْثَرْ,surely I could have multiplied
+X,PERF,,,2MP,2,M,P,14,6,2:87:24,اسْتَكْبَرْتُمْ ۚ,ٱسْتَكْبَرَ,you acted arrogantly
+X,PERF,,,2MS,2,M,S,6,4,6:35:7,اسْتَطَعْتَ,ٱسْتَطَاعَ,you are able
+X,PERF,,,3FS,3,F,S,2,2,6:71:19,اسْتَهْوَتْهُ,ٱسْتَهْوَتْ,whom (has been) enticed
+X,PERF,,,3MD,3,M,D,2,2,5:107:5,اسْتَحَقَّاۤ,ٱسْتَحَقَّ,(were) guilty
+X,PERF,,,3MP,3,M,P,50,16,2:217:37,اسْتَطَاعُوْا ؕ,ٱسْتَطَاعَ,they are able
+X,PERF,,,3MS,3,M,S,40,26,2:17:4,اسْتَوْقَدَ,ٱسْتَوْقَدَ,kindled
+X,PERF,PASS,,3MP,3,M,P,6,2,5:44:17,اسْتُحْفِظُوْا,ٱسْتُحْفِظُ,they were entrusted
+X,PERF,PASS,,3MS,3,M,S,4,2,6:10:2,اسْتُهْزِئَ,ٱسْتُهْزِئَ,were mocked
+X,IMPF,,,1P,1,,P,5,4,1:5:4,نَسْتَعِیْنُ,ٱسْتَعِينُ,we ask for help
+X,IMPF,,,1S,1,,S,3,1,12:98:3,اَسْتَغْفِرُ,ٱسْتَغْفَرَ,I will ask forgiveness
+X,IMPF,,,2D,2,,D,1,1,12:41:19,تَسْتَفْتِیٰنِ,يَسْتَفْتُ,you both inquire
+X,IMPF,,,2MP,2,M,P,19,12,2:61:24,اَتَسْتَبْدِلُوْنَ,يَسْتَبْدِلْ,Would you exchange
+X,IMPF,,,2MS,2,M,S,2,2,18:82:33,تَسْطِعْ,ٱسْتَطَاعَ,you were able
+X,IMPF,,,3MD,3,M,D,1,1,46:17:15,یَسْتَغِیْثٰنِ,ٱسْتَغَٰثَ,seek help
+X,IMPF,,,3MP,3,M,P,81,23,2:49:11,وَیَسْتَحْیُوْنَ,يَسْتَحْىِۦٓ,and letting live
+X,IMPF,,,3MS,3,M,S,20,10,2:15:2,یَسْتَهْزِئُ,ٱسْتُهْزِئَ,mocks
+X,IMPF,,JUS,1P,1,,P,1,1,4:141:20,نَسْتَحْوِذْ,ٱسْتَحْوَذَ,we have advantage
+X,IMPF,,JUS,1S,1,,S,2,2,12:54:5,اَسْتَخْلِصْهُ,أَسْتَخْلِصْ,I will select him
+X,IMPF,,JUS,2MP,2,M,P,3,2,8:19:2,تَسْتَفْتِحُوْا,ٱسْتَفْتَحُ,you ask for victory
+X,IMPF,,JUS,2MS,2,M,S,6,4,9:80:5,تَسْتَغْفِرْ,ٱسْتَغْفَرَ,ask forgiveness
+X,IMPF,,JUS,3MP,3,M,P,10,5,2:186:12,فَلْیَسْتَجِیْبُوْا,ٱسْتَجَابَ,So let them respond
+X,IMPF,,JUS,3MS,3,M,S,12,8,4:6:23,فَلْیَسْتَعْفِفْ ۚ,يَسْتَعْفِفْ,then he should refrain
+X,IMPF,,SUBJ,2MP,2,M,P,5,5,2:233:47,تَسْتَرْضِعُوْۤا,تَسْتَرْضِعُ,ask another women to suckle
+X,IMPF,,SUBJ,2MS,2,M,S,4,1,18:41:6,تَسْتَطِیْعَ,ٱسْتَطَاعَ,you will be able
+X,IMPF,,SUBJ,3FP,3,F,P,1,1,24:60:18,یَّسْتَعْفِفْنَ,يَسْتَعْفِفْ,they modestly refrain
+X,IMPF,,SUBJ,3FS,3,F,S,1,1,6:55:4,وَلِتَسْتَبِیْنَ,تَسْتَبِينَ,so that becomes manifest
+X,IMPF,,SUBJ,3MD,3,M,D,1,1,18:82:20,وَیَسْتَخْرِجَا,ٱسْتَخْرَجَ,and bring forth
+X,IMPF,,SUBJ,3MP,3,M,P,6,5,9:113:7,یَّسْتَغْفِرُوْا,ٱسْتَغْفَرَ,they ask forgiveness
+X,IMPF,,SUBJ,3MS,3,M,S,6,6,4:172:2,یَّسْتَنْكِفَ,ٱسْتَنكَفُ,will disdain
+X,IMPF,PASS,,3MP,3,M,P,4,2,7:137:5,یُسْتَضْعَفُوْنَ,ٱسْتَضْعَفُ,considered weak -
+X,IMPF,PASS,,3MS,3,M,S,1,1,4:140:13,وَیُسْتَهْزَاُ,ٱسْتُهْزِئَ,and ridiculed
+X,IMPV,,,2FS,2,F,S,1,1,12:29:5,وَاسْتَغْفِرِیْ,ٱسْتَغْفَرَ,And ask forgiveness
+X,IMPV,,,2MD,2,M,D,1,1,10:89:5,فَاسْتَقِیْمَا,ٱسْتَقَٰمُ,So you two (keep to the) straight way
+X,IMPV,,,2MP,2,M,P,20,8,2:45:1,وَاسْتَعِیْنُوْا,ٱسْتَعِينُ,And seek help
+X,IMPV,,,2MS,2,M,S,21,7,3:159:17,وَاسْتَغْفِرْ,ٱسْتَغْفَرَ,and ask forgiveness
+XII,PERF,,,2MP,2,M,P,1,1,4:103:11,اطْمَاْنَنْتُمْ,ٱطْمَأَنَّ,you are secure
+XII,PERF,,,3MP,3,M,P,1,1,10:7:9,وَاطْمَاَنُّوْا,ٱطْمَأَنَّ,and feel satisfied
+XII,PERF,,,3MS,3,M,S,1,1,22:11:11,طْمَاَنَّ,ٱطْمَأَنَّ,he is content
+XII,IMPF,,,3FS,3,F,S,2,1,13:28:3,وَتَطْمَىِٕنُّ,ٱطْمَأَنَّ,and find satisfaction
+XII,IMPF,,SUBJ,3FS,3,F,S,3,1,3:126:7,وَلِتَطْمَىِٕنَّ,ٱطْمَأَنَّ,and to reassure
+XII,IMPF,,SUBJ,3MS,3,M,S,1,1,2:260:15,لِّیَطْمَىِٕنَّ,ٱطْمَأَنَّ,to satisfy

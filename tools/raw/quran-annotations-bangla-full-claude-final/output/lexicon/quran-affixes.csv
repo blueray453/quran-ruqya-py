@@ -1,0 +1,29 @@
+﻿kind,tag,pos,pos_en,meaning,most_common_text_uthmani,count,attaches_to_most,attaches_to_mix,first_word,example_text_indopak
+PREFIX,Al+,DET,Determiner,Definite article (Al),الْ,8377,N,N 7483 | ADJ 580 | PN 289 | T 25,1:1:3,الرَّحْمٰنِ
+PREFIX,w:CONJ+,CONJ,Coordinating conjunction,Coordinating wāw,و,8177,V,V 2698 | N 2048 | NEG 843 | REL 471,1:5:3,وَاِیَّاكَ
+PREFIX,bi+,P,Preposition,Prepositional bāʼ,ب,2544,N,N 1432 | PRON 516 | REL 329 | PN 162,1:1:1,بِسْمِ
+PREFIX,l:P+,P,Preposition,Prepositional lām,ل,2449,PRON,PRON 1394 | N 664 | REL 183 | PN 180,1:2:2,لِلّٰهِ
+PREFIX,f:REM+,REM,Resumption particle,Resumptive fāʼ,ف,1891,V,V 856 | T 159 | COND 151 | NEG 142,2:10:4,فَزَادَهُمُ
+PREFIX,w:REM+,REM,Resumption particle,Resumptive wāw,وَ,1034,V,V 189 | COND 160 | PN 139 | NEG 126,2:3:6,وَمِمَّا
+PREFIX,l:EMPH+,EMPH,Emphatic lām prefix,Emphatic lām,ل,1001,V,V 361 | N 283 | CERT 183 | COND 63,2:20:17,لَذَهَبَ
+PREFIX,f:CONJ+,CONJ,Coordinating conjunction,Coordinating fāʼ,ف,517,V,V 393 | T 27 | N 23 | NEG 20,2:18:4,فَهُمْ
+PREFIX,A:INTG+,INTG,Interogative particle,Interrogative hamza,أ,507,NEG,NEG 190 | V 172 | N 40 | PRON 24,2:13:9,اَنُؤْمِنُ
+PREFIX,ya+,VOC,Vocative particle,Vocative yāʼ,ي,361,N,N 282 | PN 66 | ACC 13,2:21:1,یٰۤاَیُّهَا
+PREFIX,f:RSLT+,RSLT,Result particle,Resultative fāʼ,فَ,350,V,V 118 | ACC 59 | NEG 38 | CERT 35,2:23:9,فَاْتُوْا
+PREFIX,l:PRP+,PRP,Purpose lām prefix,Purpose lām,ل,319,V,V 313 | NEG 5 | SUB 1,2:76:18,لِیُحَآجُّوْكُمْ
+PREFIX,ka+,P,Preposition,Prepositional kāf,ك,295,DEM,DEM 126 | N 77 | SUB 64 | REL 28,2:13:5,كَمَاۤ
+PREFIX,w:CIRC+,CIRC,Circumstantial particle,Circumstantial wāw,وَ,293,PRON,PRON 175 | V 30 | NEG 20 | N 20,2:8:9,وَمَا
+PREFIX,f:SUP+,SUP,Supplemental particle,Superfluous fāʼ,ف,155,NEG,NEG 60 | V 43 | REL 16 | N 12,2:44:9,اَفَلَا
+PREFIX,sa+,FUT,Future particle,Future particle sīn,س,119,V,V 119,2:58:19,وَسَنَزِیْدُ
+PREFIX,f:CAUS+,CAUS,Particle of cause,Causal fāʼ,فَ,88,V,V 87 | PRO 1,2:35:16,فَتَكُوْنَا
+PREFIX,l:IMPV+,IMPV,Imperative lām prefix,Imperative lām,لْ,78,V,V 78,2:185:17,فَلْیَصُمْهُ ؕ
+PREFIX,w:SUP+,SUP,Supplemental particle,Superfluous wāw,و,59,NEG,NEG 37 | AMD 7 | COND 5 | V 3,2:12:5,وَلٰكِنْ
+PREFIX,w:P+,P,Preposition,Prepositional wāw,وَ,28,N,N 24 | PN 4,4:65:2,وَرَبِّكَ
+PREFIX,ha+,VOC,Vocative particle,Vocative hāʼ,ه,10,DEM,PRON 4 | DEM 4 | V 2,3:66:1,هٰۤاَنْتُمْ
+PREFIX,ta+,P,Preposition,Vocative tāʼ,ت,9,PN,PN 9,12:73:2,تَاللّٰهِ
+PREFIX,A:EQ+,EQ,Equalization particle,Hamza of equivalence,أ,6,V,V 6,2:6:6,ءَاَنْذَرْتَهُمْ
+PREFIX,w:COM+,COM,Comitative particle,Comitative wāw,وَ,3,N,N 2 | V 1,3:142:12,وَیَعْلَمَ
+SUFFIX,PRON,PRON,Personal pronoun,ضمير متصل,وا,21384,V,V 12496 | N 5127 | P 2218 | ACC 1130,1:6:1,اِهْدِنَا
+SUFFIX,EMPH:n,EMPH,Emphatic lām prefix,نون التوكيد,ن,243,V,V 243,2:38:6,یَاْتِیَنَّكُمْ
+SUFFIX,VOC:m,VOC,Vocative particle,ميم النداء,مَّ,5,PN,PN 5,3:26:2,اللّٰهُمَّ
+SUFFIX,l:P+,P,Preposition,لام الجر,لِ,2,INTG,INTG 2,4:78:30,فَمَالِ
